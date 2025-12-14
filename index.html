@@ -2,13 +2,198 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>bijux</title>
-  <meta http-equiv="refresh" content="0; url=https://bijux.github.io/bijux-cli/">
-  <link rel="canonical" href="https://bijux.github.io/bijux-cli/">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>body{font:16px/1.4 system-ui, sans-serif; padding:2rem}</style>
+  <meta name="description" content="Projects and course books by bijux." />
+  <style>
+    :root {
+      --bg: #fbfbfc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #e2e8f0;
+      --shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+      --shadow-hover: 0 14px 40px rgba(2, 6, 23, 0.10);
+      --accent: #2563eb;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 56px 20px 64px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 650;
+      letter-spacing: -0.02em;
+    }
+
+    header p {
+      margin: 10px auto 0;
+      max-width: 60ch;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    section { margin-top: 34px; }
+
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin: 0 0 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 650;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow);
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(37, 99, 235, 0.25);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .meta {
+      margin-top: 12px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #fff;
+    }
+
+    footer {
+      margin-top: 48px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-  <p>Redirecting to <a href="https://bijux.github.io/bijux-cli/">bijux-cli docs</a>…</p>
+  <div class="wrap">
+    <header>
+      <h1>bijux</h1>
+      <p>Projects and course books—built for correctness, scalability, and sharp engineering ergonomics.</p>
+    </header>
+
+    <section aria-labelledby="projects">
+      <div class="section-title">
+        <h2 id="projects">Projects</h2>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3><a href="https://bijux.github.io/bijux-cli/">bijux-cli</a></h3>
+          <p>
+            A modern, predictable CLI framework for Python: strict global flag precedence, first-class plugins,
+            a DI kernel, and an interactive REPL—designed for testability and long-term maintainability.
+          </p>
+          <div class="meta">
+            <span class="pill">Python</span>
+            <span class="pill">Plugins</span>
+            <span class="pill">REPL</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="books">
+      <div class="section-title">
+        <h2 id="books">Course Books</h2>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3><a href="https://bijux.github.io/deep-dive-make/">Deep Dive Make</a></h3>
+          <p>
+            A course-book for mastering GNU Make as a declarative build-graph engine:
+            truthful DAGs, atomic publication, parallel safety, determinism, and self-testing invariants.
+          </p>
+          <div class="meta">
+            <span class="pill">GNU Make</span>
+            <span class="pill">Build Systems</span>
+            <span class="pill">Determinism</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> bijux
+      <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+    </footer>
+  </div>
 </body>
 </html>
