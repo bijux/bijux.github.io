@@ -4,16 +4,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>bijux</title>
-  <meta name="description" content="Projects and course books by bijux—focused on correctness, determinism, and engineering clarity." />
+  <meta name="description" content="Engineering-first projects and course books: correctness, determinism, and clarity." />
 
   <!-- Minimal shareability -->
   <meta property="og:title" content="bijux" />
-  <meta property="og:description" content="Projects and course books—focused on correctness, determinism, and engineering clarity." />
+  <meta property="og:description" content="Engineering-first projects and course books: correctness, determinism, and clarity." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bijux.github.io/" />
+  <meta property="og:image" content="https://bijux.github.io/assets/bijux_logo_hq.png" />
 
-  <!-- Tiny inline favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⬡</text></svg>">
+  <!-- Assets-based icons -->
+  <link rel="icon" type="image/png" href="./assets/bijux_icon.png" />
+  <link rel="apple-touch-icon" href="./assets/bijux_icon.png" />
+
+  <!-- Tiny inline fallback favicon -->
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⬡</text></svg>"
+  />
 
   <style>
     :root {
@@ -51,6 +59,20 @@
       background: var(--bg);
     }
 
+    .skip {
+      position: absolute;
+      left: -999px;
+      top: 8px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      color: var(--text);
+      z-index: 10;
+    }
+    .skip:focus { left: 12px; outline: none; box-shadow: var(--shadow-hover), var(--focus); }
+
     .wrap {
       max-width: 920px;
       margin: 0 auto;
@@ -63,6 +85,25 @@
       margin-bottom: 44px;
     }
 
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      margin-top: 4px;
+    }
+
+    .brand img {
+      display: block;
+      width: min(440px, 80vw);
+      height: auto;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 10px;
+    }
+
     h1 {
       margin: 0;
       font-size: clamp(2rem, 4vw, 2.8rem);
@@ -72,7 +113,7 @@
 
     header p {
       margin: 10px auto 0;
-      max-width: 62ch;
+      max-width: 66ch;
       color: var(--muted);
       font-size: 1.02rem;
     }
@@ -105,11 +146,7 @@
     .iconbtn:hover { box-shadow: var(--shadow-hover); }
     .iconbtn:focus-visible { outline: none; box-shadow: var(--shadow-hover), var(--focus); }
 
-    .icon {
-      width: 16px;
-      height: 16px;
-      display: inline-block;
-    }
+    .icon { width: 16px; height: 16px; display: inline-block; }
 
     main { margin-top: 28px; }
     section { margin-top: 34px; }
@@ -224,6 +261,34 @@
 
     .links a:hover { box-shadow: var(--shadow-hover); text-decoration: none; }
 
+    /* Principles strip */
+    .principles {
+      margin-top: 16px;
+      padding: 14px 14px 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: left;
+    }
+
+    .principles h3 {
+      margin: 0 0 10px;
+      font-size: 0.98rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    .principles ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .principles li { margin: 6px 0; }
+
     footer {
       margin-top: 48px;
       text-align: center;
@@ -233,6 +298,8 @@
   </style>
 </head>
 <body>
+  <a class="skip" href="#content">Skip to content</a>
+
   <div class="wrap">
     <header>
       <div class="topbar">
@@ -244,20 +311,36 @@
         </button>
       </div>
 
+      <div class="brand" aria-label="bijux brand">
+        <img src="./assets/bijux_logo_hq.png" alt="bijux logo" />
+      </div>
+
       <h1>bijux</h1>
-      <p>Projects and course books—built for correctness, determinism, and engineering clarity.</p>
+      <p>Engineering-first projects and course books—built for correctness, determinism, and clarity.</p>
     </header>
 
-    <main>
+    <main id="content">
       <section aria-labelledby="about">
         <div class="section-title">
           <h2 id="about">About</h2>
         </div>
+
         <p>
-          bijux is a small collection of engineering-first projects and course books.
-          The goal is simple: make systems predictable—through explicit contracts, sharp failure modes,
-          and executable verification hooks.
+          bijux publishes small, sharp tools and course books.
+          The contract is simple: explicit invariants, deterministic behavior, and failure modes you can trust.
+          Everything should be testable, explainable, and boring to operate.
         </p>
+
+        <div class="principles" aria-label="Principles">
+          <h3>Principles</h3>
+          <ul>
+            <li><strong>Determinism</strong> over convenience: same inputs, same outputs, same state.</li>
+            <li><strong>Explicit contracts</strong>: validation at boundaries; no implicit magic.</li>
+            <li><strong>Sharp failure modes</strong>: early, loud, and localized.</li>
+            <li><strong>Verifiable behavior</strong>: executable checks, probes, and tests as first-class artifacts.</li>
+            <li><strong>Operational clarity</strong>: predictable composition, minimal hidden coupling.</li>
+          </ul>
+        </div>
       </section>
 
       <section aria-labelledby="projects">
@@ -269,8 +352,8 @@
           <article class="card">
             <h3><a href="https://bijux.github.io/bijux-cli/">bijux-cli</a></h3>
             <p>
-              A predictable CLI framework for Python: strict flag precedence, first-class plugins,
-              a DI kernel, and an interactive REPL—built for testability and long-term maintainability.
+              A predictable CLI framework for Python: strict precedence rules, first-class plugins,
+              a DI kernel, and an interactive REPL—built for testing and long-lived maintenance.
             </p>
             <div class="meta">
               <div class="pills">
@@ -296,8 +379,8 @@
           <article class="card">
             <h3><a href="https://bijux.github.io/deep-dive-make/">Deep Dive Make</a></h3>
             <p>
-              Master GNU Make as a declarative build-graph engine: truthful DAGs, atomic publication,
-              parallel safety, determinism, and self-testing invariants.
+              GNU Make as a build-graph engine: truthful DAGs, atomic publication,
+              parallel safety, determinism, and self-checking invariants.
             </p>
             <div class="meta">
               <div class="pills">
@@ -313,10 +396,29 @@
           </article>
 
           <article class="card">
+            <h3><a href="https://bijux.github.io/deep-dive-snakemake/">Deep Dive Snakemake</a></h3>
+            <p>
+              Snakemake for reproducible pipelines: explicit rules, cacheable artifacts,
+              controlled side effects, provenance, and deterministic execution on laptop or HPC.
+            </p>
+            <div class="meta">
+              <div class="pills">
+                <span class="pill">Snakemake</span>
+                <span class="pill">Pipelines</span>
+                <span class="pill">Reproducibility</span>
+              </div>
+              <div class="links">
+                <a href="https://bijux.github.io/deep-dive-snakemake/">Docs</a>
+                <a href="https://github.com/bijux/deep-dive-snakemake">Source</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
             <h3><a href="https://bijux.github.io/python-meta-programming/">Python Meta-Programming</a></h3>
             <p>
-              A correctness-first course-book on Python metaprogramming: introspection, decorators,
-              descriptors, and metaclasses—taught as a traceable runtime model with executable probes.
+              A correctness-first course book on Python metaprogramming: introspection,
+              decorators, descriptors, and metaclasses—taught as a traceable runtime model.
             </p>
             <div class="meta">
               <div class="pills">
