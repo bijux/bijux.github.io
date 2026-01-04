@@ -139,7 +139,7 @@
       padding-bottom: 10px;
       border-bottom: 1px solid var(--border);
     }
-    .section-title h2 {
+    .section-title h2, .section-title h3 {
       margin: 0;
       font-size: 1.05rem;
       font-weight: 650;
@@ -317,45 +317,24 @@
         <div class="project-rows">
           <div class="project-row">
             <article class="card">
-              <h3><a href="https://bijux.github.io/bijux-vex/">bijux-vex</a></h3>
+              <h3><a href="https://bijux.github.io/bijux-cli/">bijux-cli</a></h3>
               <p>
-                Vector databases promise reproducibility but hide nondeterminism, unstable rankings, and unreplayable queries.
-                bijux-vex enforces explicit execution contracts: deterministic exact search or bounded approximate execution—so results remain verifiable, replayable, auditable, and provenance-tracked.
+                CLI frameworks often accumulate implicit configuration, fragile plugin loading, and untestable command resolution.
+                bijux-cli enforces deterministic resolution, explicit composition, first-class plugins, a DI kernel, and an interactive REPL—so systems stay testable and stable under growth.
               </p>
               <div class="meta">
-                <div class="pills" aria-label="bijux-vex tags">
+                <div class="pills" aria-label="bijux-cli tags">
                   <span class="pill">Python</span>
-                  <span class="pill">Vector Execution</span>
-                  <span class="pill">Determinism</span>
+                  <span class="pill">Plugins</span>
+                  <span class="pill">REPL</span>
                 </div>
-                <div class="links" aria-label="bijux-vex links">
-                  <a href="https://bijux.github.io/bijux-vex/">Docs</a>
-                  <a href="https://github.com/bijux/bijux-vex">Source</a>
-                  <a href="https://pypi.org/project/bijux-vex/">PyPI</a>
+                <div class="links" aria-label="bijux-cli links">
+                  <a href="https://bijux.github.io/bijux-cli/">Docs</a>
+                  <a href="https://github.com/bijux/bijux-cli">Source</a>
+                  <a href="https://pypi.org/project/bijux-cli/">PyPI</a>
                 </div>
               </div>
             </article>
-            <article class="card">
-              <h3><a href="https://bijux.github.io/bijux-rar/">bijux-rar</a></h3>
-              <p>
-                bijux-rar treats reasoning as a verifiable process: deterministic planning, traceable execution, artifact-backed evidence, and replayable verification.
-                Plausible but unverifiable outputs with hidden state are not tolerated—so reasoning results remain auditable and stable over time.
-              </p>
-              <div class="meta">
-                <div class="pills" aria-label="bijux-rar tags">
-                  <span class="pill">Python</span>
-                  <span class="pill">Determinism</span>
-                  <span class="pill">Verification</span>
-                </div>
-                <div class="links" aria-label="bijux-rar links">
-                  <a href="https://bijux.github.io/bijux-rar/">Docs</a>
-                  <a href="https://github.com/bijux/bijux-rar">Source</a>
-                  <a href="https://pypi.org/project/bijux-rar/">PyPI</a>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div class="project-row">
             <article class="card">
               <h3><a href="https://bijux.github.io/bijux-rag/">bijux-rag</a></h3>
               <p>
@@ -375,22 +354,43 @@
                 </div>
               </div>
             </article>
+          </div>
+          <div class="project-row">
             <article class="card">
-              <h3><a href="https://bijux.github.io/bijux-cli/">bijux-cli</a></h3>
+              <h3><a href="https://bijux.github.io/bijux-rar/">bijux-rar</a></h3>
               <p>
-                CLI frameworks often accumulate implicit configuration, fragile plugin loading, and untestable command resolution.
-                bijux-cli enforces deterministic resolution, explicit composition, first-class plugins, a DI kernel, and an interactive REPL—so systems stay testable and stable under growth.
+                bijux-rar treats reasoning as a verifiable process: deterministic planning, traceable execution, artifact-backed evidence, and replayable verification.
+                Plausible but unverifiable outputs with hidden state are not tolerated—so reasoning results remain auditable and stable over time.
               </p>
               <div class="meta">
-                <div class="pills" aria-label="bijux-cli tags">
+                <div class="pills" aria-label="bijux-rar tags">
                   <span class="pill">Python</span>
-                  <span class="pill">Plugins</span>
-                  <span class="pill">REPL</span>
+                  <span class="pill">Determinism</span>
+                  <span class="pill">Verification</span>
                 </div>
-                <div class="links" aria-label="bijux-cli links">
-                  <a href="https://bijux.github.io/bijux-cli/">Docs</a>
-                  <a href="https://github.com/bijux/bijux-cli">Source</a>
-                  <a href="https://pypi.org/project/bijux-cli/">PyPI</a>
+                <div class="links" aria-label="bijux-rar links">
+                  <a href="https://bijux.github.io/bijux-rar/">Docs</a>
+                  <a href="https://github.com/bijux/bijux-rar">Source</a>
+                  <a href="https://pypi.org/project/bijux-rar/">PyPI</a>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <h3><a href="https://bijux.github.io/bijux-vex/">bijux-vex</a></h3>
+              <p>
+                Vector databases promise reproducibility but hide nondeterminism, unstable rankings, and unreplayable queries.
+                bijux-vex enforces explicit execution contracts: deterministic exact search or bounded approximate execution—so results remain verifiable, replayable, auditable, and provenance-tracked.
+              </p>
+              <div class="meta">
+                <div class="pills" aria-label="bijux-vex tags">
+                  <span class="pill">Python</span>
+                  <span class="pill">Vector Execution</span>
+                  <span class="pill">Determinism</span>
+                </div>
+                <div class="links" aria-label="bijux-vex links">
+                  <a href="https://bijux.github.io/bijux-vex/">Docs</a>
+                  <a href="https://github.com/bijux/bijux-vex">Source</a>
+                  <a href="https://pypi.org/project/bijux-vex/">PyPI</a>
                 </div>
               </div>
             </article>
@@ -402,24 +402,49 @@
           <h2 id="books">Course Books</h2>
         </div>
         <div class="book-rows">
+          <div style="display: flex; align-items: baseline; gap: 10px; margin: 34px 0 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border);">
+            <h3 style="margin: 0; font-size: 1.05rem; font-weight: 650; letter-spacing: 0.02em; text-transform: uppercase; color: var(--muted);">Python Series</h3>
+          </div>
           <div class="book-row">
             <article class="card">
-              <h3><a href="https://bijux.github.io/deep-dive-make/">Deep Dive Make</a></h3>
+              <h3><a href="https://bijux.github.io/python-functional-programming/">Python Functional Programming</a></h3>
               <p>
-                For engineers maintaining large Make-based build systems: truthful DAGs, atomic publication, parallel safety, determinism, and self-checking invariants—so you can reason about and debug complex builds with confidence.
+                For Python engineers building production-grade functional systems: purity, monadic flows, algebraic data types, streaming pipelines, and property-based testing—grounded in a real FuncPipe RAG project—so you can deliver deterministic and verifiable code.
               </p>
               <div class="meta">
                 <div class="pills">
-                  <span class="pill">GNU Make</span>
-                  <span class="pill">Build Systems</span>
-                  <span class="pill">Determinism</span>
+                  <span class="pill">Python</span>
+                  <span class="pill">Functional Programming</span>
+                  <span class="pill">Correctness</span>
                 </div>
                 <div class="links">
-                  <a href="https://bijux.github.io/deep-dive-make/">Docs</a>
-                  <a href="https://github.com/bijux/deep-dive-make">Source</a>
+                  <a href="https://bijux.github.io/python-functional-programming/">Docs</a>
+                  <a href="https://github.com/bijux/python-functional-programming">Source</a>
                 </div>
               </div>
             </article>
+            <article class="card">
+              <h3><a href="https://bijux.github.io/python-meta-programming/">Python Meta-Programming</a></h3>
+              <p>
+                For Python engineers who need predictable runtime behavior: introspection, decorators, descriptors, and metaclasses taught as a traceable runtime model—so you can build systems without hidden surprises.
+              </p>
+              <div class="meta">
+                <div class="pills">
+                  <span class="pill">Python</span>
+                  <span class="pill">Metaprogramming</span>
+                  <span class="pill">Runtime Model</span>
+                </div>
+                <div class="links">
+                  <a href="https://bijux.github.io/python-meta-programming/">Docs</a>
+                  <a href="https://github.com/bijux/python-meta-programming">Source</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div style="display: flex; align-items: baseline; gap: 10px; margin: 34px 0 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border);">
+            <h3 style="margin: 0; font-size: 1.05rem; font-weight: 650; letter-spacing: 0.02em; text-transform: uppercase; color: var(--muted);">Deep Dive Series</h3>
+          </div>
+          <div class="book-row">
             <article class="card">
               <h3><a href="https://bijux.github.io/deep-dive-snakemake/">Deep Dive Snakemake</a></h3>
               <p>
@@ -437,22 +462,20 @@
                 </div>
               </div>
             </article>
-          </div>
-          <div class="book-row">
             <article class="card">
-              <h3><a href="https://bijux.github.io/python-meta-programming/">Python Meta-Programming</a></h3>
+              <h3><a href="https://bijux.github.io/deep-dive-make/">Deep Dive Make</a></h3>
               <p>
-                For Python engineers who need predictable runtime behavior: introspection, decorators, descriptors, and metaclasses taught as a traceable runtime model—so you can build systems without hidden surprises.
+                For engineers maintaining large Make-based build systems: truthful DAGs, atomic publication, parallel safety, determinism, and self-checking invariants—so you can reason about and debug complex builds with confidence.
               </p>
               <div class="meta">
                 <div class="pills">
-                  <span class="pill">Python</span>
-                  <span class="pill">Metaprogramming</span>
-                  <span class="pill">Runtime Model</span>
+                  <span class="pill">GNU Make</span>
+                  <span class="pill">Build Systems</span>
+                  <span class="pill">Determinism</span>
                 </div>
                 <div class="links">
-                  <a href="https://bijux.github.io/python-meta-programming/">Docs</a>
-                  <a href="https://github.com/bijux/python-meta-programming">Source</a>
+                  <a href="https://bijux.github.io/deep-dive-make/">Docs</a>
+                  <a href="https://github.com/bijux/deep-dive-make">Source</a>
                 </div>
               </div>
             </article>
