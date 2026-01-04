@@ -4,7 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>bijux</title>
-  <meta name="description" content="Projects and course books by bijux." />
+  <meta name="description" content="Projects and course books by bijux—focused on correctness, determinism, and engineering clarity." />
+
+  <!-- Minimal shareability -->
+  <meta property="og:title" content="bijux" />
+  <meta property="og:description" content="Projects and course books—focused on correctness, determinism, and engineering clarity." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bijux.github.io/" />
+
+  <!-- Tiny inline favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⬡</text></svg>">
+
   <style>
     :root {
       --bg: #fbfbfc;
@@ -16,6 +26,19 @@
       --shadow-hover: 0 14px 40px rgba(2, 6, 23, 0.10);
       --accent: #2563eb;
       --radius: 14px;
+      --focus: 0 0 0 3px rgba(37, 99, 235, 0.25);
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #0b1220;
+      --surface: #0f172a;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --border: rgba(148, 163, 184, 0.22);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      --shadow-hover: 0 14px 40px rgba(0, 0, 0, 0.45);
+      --accent: #60a5fa;
+      --focus: 0 0 0 3px rgba(96, 165, 250, 0.22);
     }
 
     * { box-sizing: border-box; }
@@ -35,6 +58,7 @@
     }
 
     header {
+      position: relative;
       text-align: center;
       margin-bottom: 44px;
     }
@@ -48,11 +72,46 @@
 
     header p {
       margin: 10px auto 0;
-      max-width: 60ch;
+      max-width: 62ch;
       color: var(--muted);
       font-size: 1.02rem;
     }
 
+    .topbar {
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .iconbtn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--text);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      user-select: none;
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+
+    .iconbtn:hover { box-shadow: var(--shadow-hover); }
+    .iconbtn:focus-visible { outline: none; box-shadow: var(--shadow-hover), var(--focus); }
+
+    .icon {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+    }
+
+    main { margin-top: 28px; }
     section { margin-top: 34px; }
 
     .section-title {
@@ -86,6 +145,10 @@
       padding: 18px 18px 16px;
       box-shadow: var(--shadow);
       transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 180px;
     }
 
     .card:hover {
@@ -94,8 +157,12 @@
       border-color: rgba(37, 99, 235, 0.25);
     }
 
+    :root[data-theme="dark"] .card:hover {
+      border-color: rgba(96, 165, 250, 0.28);
+    }
+
     .card h3 {
-      margin: 0 0 8px;
+      margin: 0;
       font-size: 1.15rem;
       font-weight: 700;
       letter-spacing: -0.01em;
@@ -107,20 +174,26 @@
       font-size: 0.98rem;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
+    a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
+    a:focus-visible { outline: none; box-shadow: var(--focus); border-radius: 6px; }
 
     .meta {
-      margin-top: 12px;
+      margin-top: auto;
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
       color: var(--muted);
       font-size: 0.9rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .pills {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
     }
 
     .pill {
@@ -130,8 +203,26 @@
       padding: 6px 10px;
       border: 1px solid var(--border);
       border-radius: 999px;
-      background: #fff;
+      background: var(--surface);
     }
+
+    .links {
+      display: inline-flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .links a {
+      font-size: 0.92rem;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .links a:hover { box-shadow: var(--shadow-hover); text-decoration: none; }
 
     footer {
       margin-top: 48px;
@@ -144,56 +235,149 @@
 <body>
   <div class="wrap">
     <header>
+      <div class="topbar">
+        <button class="iconbtn" id="themeToggle" type="button" aria-label="Toggle theme">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-16h1v3h-1V2Zm0 17h1v3h-1v-3ZM2 11h3v1H2v-1Zm17 0h3v1h-3v-1ZM4.22 4.22l2.12 2.12-.71.71L3.51 4.93l.71-.71Zm14.14 14.14 2.12 2.12-.71.71-2.12-2.12.71-.71ZM19.78 4.22l.71.71-2.12 2.12-.71-.71 2.12-2.12ZM5.64 17.66l.71.71-2.12 2.12-.71-.71 2.12-2.12Z"/>
+          </svg>
+          <span id="themeLabel">Theme</span>
+        </button>
+      </div>
+
       <h1>bijux</h1>
-      <p>Projects and course books—built for correctness, scalability, and sharp engineering ergonomics.</p>
+      <p>Projects and course books—built for correctness, determinism, and engineering clarity.</p>
     </header>
 
-    <section aria-labelledby="projects">
-      <div class="section-title">
-        <h2 id="projects">Projects</h2>
-      </div>
+    <main>
+      <section aria-labelledby="about">
+        <div class="section-title">
+          <h2 id="about">About</h2>
+        </div>
+        <p>
+          bijux is a small collection of engineering-first projects and course books.
+          The goal is simple: make systems predictable—through explicit contracts, sharp failure modes,
+          and executable verification hooks.
+        </p>
+      </section>
 
-      <div class="grid">
-        <article class="card">
-          <h3><a href="https://bijux.github.io/bijux-cli/">bijux-cli</a></h3>
-          <p>
-            A modern, predictable CLI framework for Python: strict global flag precedence, first-class plugins,
-            a DI kernel, and an interactive REPL—designed for testability and long-term maintainability.
-          </p>
-          <div class="meta">
-            <span class="pill">Python</span>
-            <span class="pill">Plugins</span>
-            <span class="pill">REPL</span>
-          </div>
-        </article>
-      </div>
-    </section>
+      <section aria-labelledby="projects">
+        <div class="section-title">
+          <h2 id="projects">Projects</h2>
+        </div>
 
-    <section aria-labelledby="books">
-      <div class="section-title">
-        <h2 id="books">Course Books</h2>
-      </div>
+        <div class="grid">
+          <article class="card">
+            <h3><a href="https://bijux.github.io/bijux-cli/">bijux-cli</a></h3>
+            <p>
+              A predictable CLI framework for Python: strict flag precedence, first-class plugins,
+              a DI kernel, and an interactive REPL—built for testability and long-term maintainability.
+            </p>
+            <div class="meta">
+              <div class="pills">
+                <span class="pill">Python</span>
+                <span class="pill">Plugins</span>
+                <span class="pill">REPL</span>
+              </div>
+              <div class="links">
+                <a href="https://bijux.github.io/bijux-cli/">Docs</a>
+                <a href="https://github.com/bijux/bijux-cli">Source</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
 
-      <div class="grid">
-        <article class="card">
-          <h3><a href="https://bijux.github.io/deep-dive-make/">Deep Dive Make</a></h3>
-          <p>
-            A course-book for mastering GNU Make as a declarative build-graph engine:
-            truthful DAGs, atomic publication, parallel safety, determinism, and self-testing invariants.
-          </p>
-          <div class="meta">
-            <span class="pill">GNU Make</span>
-            <span class="pill">Build Systems</span>
-            <span class="pill">Determinism</span>
-          </div>
-        </article>
-      </div>
-    </section>
+      <section aria-labelledby="books">
+        <div class="section-title">
+          <h2 id="books">Course Books</h2>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3><a href="https://bijux.github.io/deep-dive-make/">Deep Dive Make</a></h3>
+            <p>
+              Master GNU Make as a declarative build-graph engine: truthful DAGs, atomic publication,
+              parallel safety, determinism, and self-testing invariants.
+            </p>
+            <div class="meta">
+              <div class="pills">
+                <span class="pill">GNU Make</span>
+                <span class="pill">Build Systems</span>
+                <span class="pill">Determinism</span>
+              </div>
+              <div class="links">
+                <a href="https://bijux.github.io/deep-dive-make/">Docs</a>
+                <a href="https://github.com/bijux/deep-dive-make">Source</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3><a href="https://bijux.github.io/python-meta-programming/">Python Meta-Programming</a></h3>
+            <p>
+              A correctness-first course-book on Python metaprogramming: introspection, decorators,
+              descriptors, and metaclasses—taught as a traceable runtime model with executable probes.
+            </p>
+            <div class="meta">
+              <div class="pills">
+                <span class="pill">Python</span>
+                <span class="pill">Metaprogramming</span>
+                <span class="pill">Runtime Model</span>
+              </div>
+              <div class="links">
+                <a href="https://bijux.github.io/python-meta-programming/">Docs</a>
+                <a href="https://github.com/bijux/python-meta-programming">Source</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
 
     <footer>
-      © <span id="y"></span> bijux
+      © <span id="y"></span> bijux · <a href="https://github.com/bijux">GitHub</a>
       <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
     </footer>
   </div>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const btn = document.getElementById("themeToggle");
+      const label = document.getElementById("themeLabel");
+
+      const prefersDark = () =>
+        window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      const getStored = () => {
+        try { return localStorage.getItem("theme"); } catch { return null; }
+      };
+
+      const setStored = (v) => {
+        try { localStorage.setItem("theme", v); } catch {}
+      };
+
+      const apply = (theme) => {
+        root.setAttribute("data-theme", theme);
+        label.textContent = theme === "dark" ? "Dark" : "Light";
+      };
+
+      const stored = getStored();
+      const initial = stored ? stored : (prefersDark() ? "dark" : "light");
+      apply(initial);
+
+      btn.addEventListener("click", () => {
+        const current = root.getAttribute("data-theme") || "light";
+        const next = current === "dark" ? "light" : "dark";
+        apply(next);
+        setStored(next);
+      });
+
+      if (!stored && window.matchMedia) {
+        const mq = window.matchMedia("(prefers-color-scheme: dark)");
+        mq.addEventListener?.("change", () => apply(prefersDark() ? "dark" : "light"));
+      }
+    })();
+  </script>
 </body>
 </html>
