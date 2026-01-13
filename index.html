@@ -4,21 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>bijux</title>
-  <meta name="description" content="Engineering-first projects and course books: correctness, determinism, and clarity." />
-  <!-- Minimal shareability -->
+  <meta name="description" content="Engineering-first projects and coursebooks for correctness, determinism, and reproducibility." />
   <meta property="og:title" content="bijux" />
-  <meta property="og:description" content="Engineering-first projects and course books: correctness, determinism, and clarity." />
+  <meta property="og:description" content="Engineering-first projects and coursebooks for correctness, determinism, and reproducibility." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bijux.github.io/" />
   <meta property="og:image" content="https://bijux.github.io/assets/bijux_logo_hq.png" />
-  <!-- Assets-based icons -->
   <link rel="icon" type="image/png" href="./assets/bijux_icon.png" />
   <link rel="apple-touch-icon" href="./assets/bijux_icon.png" />
-  <!-- Tiny inline fallback favicon -->
-  <link
-    rel="icon"
-    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⬡</text></svg>"
-  />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⬡</text></svg>" />
   <style>
     :root {
       --bg: #fbfbfc;
@@ -31,6 +25,7 @@
       --accent: #2563eb;
       --radius: 14px;
       --focus: 0 0 0 3px rgba(37, 99, 235, 0.25);
+      --section-tint: rgba(2, 6, 23, 0.02);
     }
     :root[data-theme="dark"] {
       --bg: #0b1220;
@@ -42,12 +37,13 @@
       --shadow-hover: 0 14px 40px rgba(0, 0, 0, 0.45);
       --accent: #60a5fa;
       --focus: 0 0 0 3px rgba(96, 165, 250, 0.22);
+      --section-tint: rgba(148, 163, 184, 0.04);
     }
     * { box-sizing: border-box; }
     html, body { height: 100%; }
     body {
       margin: 0;
-      font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
       color: var(--text);
       background: var(--bg);
     }
@@ -130,7 +126,12 @@
     .iconbtn:focus-visible { outline: none; box-shadow: var(--shadow-hover), var(--focus); }
     .icon { width: 16px; height: 16px; display: inline-block; }
     main { margin-top: 28px; }
-    section { margin-top: 34px; }
+    section { margin-top: 64px; margin-bottom: 64px; }
+    section.projects {
+      background: var(--section-tint);
+      padding: 20px 0;
+      margin-top: 80px;
+    }
     .section-title {
       display: flex;
       align-items: baseline;
@@ -142,25 +143,32 @@
     .section-title h2, .section-title h3 {
       margin: 0;
       font-size: 1.05rem;
-      font-weight: 650;
+      font-weight: 600;
       letter-spacing: 0.02em;
       text-transform: uppercase;
       color: var(--muted);
     }
-    .grid {
-      display: grid;
-      gap: 14px;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    .section-guide {
+      margin: 0 0 18px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .section-intro {
+      margin: 0 0 24px;
+      font-size: 1rem;
     }
     .project-rows, .book-rows {
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 40px;
     }
     .project-row, .book-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 14px;
+    }
+    .full-width {
+      grid-column: 1 / -1;
     }
     @media (max-width: 840px) {
       .project-row, .book-row {
@@ -176,8 +184,16 @@
       transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      min-height: 180px;
+      gap: 8px;
+      min-height: 220px;
+    }
+    .card.cli {
+      padding: 24px 24px 20px;
+      margin-bottom: 24px;
+      min-height: 240px;
+    }
+    .card:not(.cli) {
+      gap: 6px;
     }
     .card:hover {
       transform: translateY(-2px);
@@ -193,10 +209,39 @@
       font-weight: 700;
       letter-spacing: -0.01em;
     }
+    .card.cli h3 {
+      font-size: 1.25rem;
+    }
     .card p {
       margin: 0;
+      color: var(--text);
+      font-size: 0.96rem;
+    }
+    .card p:nth-of-type(2) {
       color: var(--muted);
-      font-size: 0.98rem;
+      padding-left: 12px;
+      font-size: 0.94rem;
+    }
+    .card p:nth-of-type(3) {
+      color: var(--muted);
+      font-style: italic;
+    }
+    .used-when {
+      margin-top: 12px;
+      font-size: 0.91rem;
+      font-family: monospace;
+      color: var(--muted);
+    }
+    .learning-outcome {
+      font-weight: 600;
+      position: relative;
+      padding-left: 20px;
+    }
+    .learning-outcome::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--muted);
     }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
@@ -221,10 +266,12 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 6px 10px;
+      padding: 6px 8px;
       border: 1px solid var(--border);
       border-radius: 999px;
       background: var(--surface);
+      font-size: 0.85rem;
+      color: var(--muted);
     }
     .links {
       display: inline-flex;
@@ -240,36 +287,46 @@
       background: var(--surface);
       box-shadow: var(--shadow);
     }
+    .links a:last-child {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
     .links a:hover { box-shadow: var(--shadow-hover); text-decoration: none; }
-    /* Principles strip */
-    .principles {
-      margin-top: 16px;
-      padding: 14px 14px 12px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      text-align: left;
+    .hero {
+      margin: 0 auto 80px;
+      max-width: 66ch;
+      text-align: center;
     }
-    .principles h3 {
+    .hero-thesis {
       margin: 0 0 10px;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .hero-support {
+      margin: 0 0 20px;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+    .hero .exclusion {
+      margin-top: 12px;
       font-size: 0.98rem;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-weight: 650;
-    }
-    .principles ul {
-      margin: 0;
-      padding-left: 18px;
       color: var(--muted);
     }
-    .principles li { margin: 6px 0; }
     footer {
-      margin-top: 48px;
+      margin-top: 64px;
       text-align: center;
       color: var(--muted);
       font-size: 0.9rem;
+    }
+    .signature {
+      margin-top: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .cred-anchor {
+      margin-top: 8px;
+      font-size: 0.88rem;
     }
   </style>
 </head>
@@ -282,74 +339,131 @@
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
             <path fill="currentColor" d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-16h1v3h-1V2Zm0 17h1v3h-1v-3ZM2 11h3v1H2v-1Zm17 0h3v1h-3v-1ZM4.22 4.22l2.12 2.12-.71.71L3.51 4.93l.71-.71Zm14.14 14.14 2.12 2.12-.71.71-2.12-2.12.71-.71ZM19.78 4.22l.71.71-2.12 2.12-.71-.71 2.12-2.12ZM5.64 17.66l.71.71-2.12 2.12-.71-.71 2.12-2.12Z"/>
           </svg>
-          <span id="themeLabel">Theme</span>
+          <span id="themeLabel">Auto</span>
         </button>
       </div>
       <div class="brand" aria-label="bijux brand">
         <img src="./assets/bijux_logo_hq.png" alt="bijux logo" />
       </div>
       <h1>bijux</h1>
-      <p>Engineering-first projects and course books—built for correctness, determinism, and clarity.</p>
+      <p>Engineering-first projects and coursebooks—built for correctness, determinism, and clarity.</p>
     </header>
+    <div class="hero">
+      <p class="hero-thesis">Deterministic systems for verifiable computation and reproducible reasoning.</p>
+      <p class="hero-support">Explicit inputs. Bounded nondeterminism. Artifact-backed provenance. Auditable behavior.</p>
+      <p class="exclusion">Not for rapid prototyping or heuristic automation.</p>
+    </div>
     <main id="content">
       <section aria-labelledby="about">
         <div class="section-title">
           <h2 id="about">About</h2>
         </div>
+        <p class="section-guide">Positioning & rationale</p>
         <p>
-          bijux publishes small, sharp tools and course books for engineers who prioritize determinism over flexibility and correctness over convenience.
-          These projects deliberately avoid implicit state, heuristic magic, and opaque automation—everything must be testable, explainable, and boring to operate.
+          Contemporary software practices prioritize rapid iteration and flexible automation, sacrificing verifiable correctness and reproducible behavior.
         </p>
-        <div class="principles" aria-label="Principles">
-          <h3>Principles</h3>
-          <ul>
-            <li><strong>Determinism over convenience</strong> — same inputs produce identical outputs and state; nondeterminism is explicit and bounded.</li>
-            <li><strong>Explicit contracts</strong> — every boundary is validated and documented; undefined behavior is treated as a bug.</li>
-            <li><strong>Sharp failure modes</strong> — failures occur early, loudly, and locally; no silent degradation.</li>
-            <li><strong>Verifiable behavior</strong> — executable checks, provenance, and replayability are first-class artifacts.</li>
-          </ul>
-        </div>
+        <p>
+          bijux rejects these norms. It forbids silent degradation, hidden nondeterminism, and undefined boundaries, treating them as fundamental defects rather than acceptable trade-offs.
+        </p>
+        <p>
+          Instead, bijux builds tools and coursebooks that enforce explicit contracts, artifact-backed provenance, and deterministic execution—delivering systems that remain explainable, auditable, and stable over time.
+        </p>
+        <p>
+          bijux serves engineers constructing systems where correctness outweighs convenience, such as in regulated industries, scientific computing, or long-lived infrastructure. It equips those who demand replayable behavior and auditable decisions to build with precision. bijux does not serve those prioritizing rapid prototyping, exploratory scripting, or heuristic flexibility. If opaque automation or silent recovery is acceptable, bijux will not align with your needs.
+        </p>
+        <p>These principles underpin all bijux systems:</p>
+        <h3>Principles</h3>
+        <ul>
+          <li><strong>Determinism over convenience</strong> — Identical inputs yield identical outputs; nondeterminism is explicit and bounded. No hidden randomness; all sources must be injectable.</li>
+          <li><strong>Explicit contracts</strong> — Every boundary is validated at construction; undefined behavior is treated as a bug. All interfaces are checked before execution.</li>
+          <li><strong>Sharp failure modes</strong> — Failures are immediate, loud, and local; no silent degradation or implicit fallbacks.</li>
+          <li><strong>Verifiable behavior</strong> — Every output is traceable to concrete artifacts; provenance and replayability are first-class requirements.</li>
+        </ul>
       </section>
-      <section aria-labelledby="projects">
+      <section class="projects" aria-labelledby="projects">
         <div class="section-title">
           <h2 id="projects">Projects</h2>
         </div>
+        <p class="section-guide">Production-grade systems</p>
+        <p class="section-intro">These projects deliver tools that enforce determinism and verifiability in engineering workflows.</p>
         <div class="project-rows">
           <div class="project-row">
-            <article class="card">
+            <article class="card cli full-width">
               <h3><a href="https://bijux.github.io/bijux-cli/">bijux-cli</a></h3>
               <p>
-                CLI frameworks often accumulate implicit configuration, fragile plugin loading, and untestable command resolution.
-                bijux-cli enforces deterministic resolution, explicit composition, first-class plugins, a DI kernel, and an interactive REPL—so systems stay testable and stable under growth.
+                bijux-cli enforces deterministic command resolution, explicit plugin composition, dependency injection, and an interactive REPL, making command-line interfaces stable and testable at scale.
               </p>
+              <p>
+                It exists because conventional CLI frameworks accumulate implicit state and fragile loading mechanisms that degrade under complexity, leading to untestable systems in production environments.
+              </p>
+              <p>
+                It forbids runtime discovery in favor of construction-time guarantees; this is not a convenience layer for quick scripting.
+              </p>
+              <p class="used-when">Used when CLI behavior must be replayable months later.</p>
               <div class="meta">
                 <div class="pills" aria-label="bijux-cli tags">
-                  <span class="pill">Python</span>
-                  <span class="pill">Plugins</span>
-                  <span class="pill">REPL</span>
+                  <span class="pill">Deterministic Resolution</span>
+                  <span class="pill">Explicit Composition</span>
+                  <span class="pill">Dependency Injection</span>
+                  <span class="pill">Execution Contracts</span>
                 </div>
                 <div class="links" aria-label="bijux-cli links">
-                  <a href="https://bijux.github.io/bijux-cli/">Docs</a>
-                  <a href="https://github.com/bijux/bijux-cli">Source</a>
+                  <a href="https://bijux.github.io/bijux-cli/">Documentation</a>
+                  <a href="https://github.com/bijux/bijux-cli">Source Code</a>
                   <a href="https://pypi.org/project/bijux-cli/">PyPI</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="project-row">
+            <article class="card">
+              <h3><a href="https://bijux.github.io/bijux-agent/">bijux-agent</a></h3>
+              <p>
+                bijux-agent models agents as deterministic state machines with artifact-backed actions and comprehensive trace recording, ensuring every execution is auditable and replayable.
+              </p>
+              <p>
+                It exists to address agent frameworks that permit unlogged side effects and persistent state, resulting in outputs that cannot be reliably debugged or reproduced in critical applications.
+              </p>
+              <p>
+                It rejects untraced operations to prioritize verifiability; this is not an exploratory orchestration tool.
+              </p>
+              <p class="used-when">Used when agent decisions require full audit trails for compliance.</p>
+              <div class="meta">
+                <div class="pills" aria-label="bijux-agent tags">
+                  <span class="pill">State Machines</span>
+                  <span class="pill">Artifact Actions</span>
+                  <span class="pill">Trace Provenance</span>
+                  <span class="pill">Deterministic Execution</span>
+                </div>
+                <div class="links" aria-label="bijux-agent links">
+                  <a href="https://bijux.github.io/bijux-agent/">Documentation</a>
+                  <a href="https://github.com/bijux/bijux-agent">Source Code</a>
+                  <a href="https://pypi.org/project/bijux-agent/">PyPI</a>
                 </div>
               </div>
             </article>
             <article class="card">
               <h3><a href="https://bijux.github.io/bijux-rag/">bijux-rag</a></h3>
               <p>
-                Standard RAG pipelines suffer from hidden prompt state, unreplayable retrieval, and hallucinations without provenance.
-                bijux-rag uses functional pipelines, explicit boundaries, and provenance-aware execution—so retrieval remains auditable, state controlled, and quality measurable.
+                bijux-rag constructs retrieval pipelines using functional flows, explicit boundaries, and provenance tracking, delivering controllable and verifiable results without implicit state.
               </p>
+              <p>
+                It exists because standard RAG pipelines conceal prompt state and produce unreplayable retrieval, leading to hallucinations without traceable origins in deployed systems.
+              </p>
+              <p>
+                It forbids mutable transformations to maintain auditability; this is not a heuristic search wrapper.
+              </p>
+              <p class="used-when">Used when retrieval must be immutable and traceable to prevent errors in production.</p>
               <div class="meta">
                 <div class="pills" aria-label="bijux-rag tags">
-                  <span class="pill">Python</span>
-                  <span class="pill">RAG</span>
-                  <span class="pill">Functional Core</span>
+                  <span class="pill">Functional Pipelines</span>
+                  <span class="pill">Provenance Tracking</span>
+                  <span class="pill">Immutable Dataflow</span>
+                  <span class="pill">Retrieval Contracts</span>
                 </div>
                 <div class="links" aria-label="bijux-rag links">
-                  <a href="https://bijux.github.io/bijux-rag/">Docs</a>
-                  <a href="https://github.com/bijux/bijux-rag">Source</a>
+                  <a href="https://bijux.github.io/bijux-rag/">Documentation</a>
+                  <a href="https://github.com/bijux/bijux-rag">Source Code</a>
                   <a href="https://pypi.org/project/bijux-rag/">PyPI</a>
                 </div>
               </div>
@@ -359,18 +473,25 @@
             <article class="card">
               <h3><a href="https://bijux.github.io/bijux-rar/">bijux-rar</a></h3>
               <p>
-                bijux-rar treats reasoning as a verifiable process: deterministic planning, traceable execution, artifact-backed evidence, and replayable verification.
-                Plausible but unverifiable outputs with hidden state are not tolerated—so reasoning results remain auditable and stable over time.
+                bijux-rar formalizes reasoning as deterministic proof trees with artifact-backed evidence, ensuring conclusions are stable, auditable, and grounded in explicit premises.
               </p>
+              <p>
+                It exists to counter reasoning systems that tolerate unverifiable outputs and hidden dependencies, causing inconsistent results in applications requiring evidentiary rigor.
+              </p>
+              <p>
+                It rejects ungrounded plausibility for verifiable structure; this is not a probabilistic inference engine.
+              </p>
+              <p class="used-when">Used when reasoning outputs demand evidentiary proof for regulatory scrutiny.</p>
               <div class="meta">
                 <div class="pills" aria-label="bijux-rar tags">
-                  <span class="pill">Python</span>
-                  <span class="pill">Determinism</span>
-                  <span class="pill">Verification</span>
+                  <span class="pill">Proof Trees</span>
+                  <span class="pill">Artifact Evidence</span>
+                  <span class="pill">Deterministic Reasoning</span>
+                  <span class="pill">Verifiable Conclusions</span>
                 </div>
                 <div class="links" aria-label="bijux-rar links">
-                  <a href="https://bijux.github.io/bijux-rar/">Docs</a>
-                  <a href="https://github.com/bijux/bijux-rar">Source</a>
+                  <a href="https://bijux.github.io/bijux-rar/">Documentation</a>
+                  <a href="https://github.com/bijux/bijux-rar">Source Code</a>
                   <a href="https://pypi.org/project/bijux-rar/">PyPI</a>
                 </div>
               </div>
@@ -378,18 +499,25 @@
             <article class="card">
               <h3><a href="https://bijux.github.io/bijux-vex/">bijux-vex</a></h3>
               <p>
-                Vector databases promise reproducibility but hide nondeterminism, unstable rankings, and unreplayable queries.
-                bijux-vex enforces explicit execution contracts: deterministic exact search or bounded approximate execution—so results remain verifiable, replayable, auditable, and provenance-tracked.
+                bijux-vex executes vector search under explicit contracts with bounded approximation, providing replayable, parameterized results with comprehensive provenance.
               </p>
+              <p>
+                It exists because vector databases hide nondeterminism and unstable rankings, resulting in unreplayable queries that undermine trust in search-dependent systems.
+              </p>
+              <p>
+                It forbids unbounded nondeterminism to guarantee reproducibility; this is not an approximate query optimizer.
+              </p>
+              <p class="used-when">Used when vector queries must remain stable across executions for consistency.</p>
               <div class="meta">
                 <div class="pills" aria-label="bijux-vex tags">
-                  <span class="pill">Python</span>
-                  <span class="pill">Vector Execution</span>
-                  <span class="pill">Determinism</span>
+                  <span class="pill">Execution Contracts</span>
+                  <span class="pill">Vector Search</span>
+                  <span class="pill">Bounded Approximation</span>
+                  <span class="pill">Replayability</span>
                 </div>
                 <div class="links" aria-label="bijux-vex links">
-                  <a href="https://bijux.github.io/bijux-vex/">Docs</a>
-                  <a href="https://github.com/bijux/bijux-vex">Source</a>
+                  <a href="https://bijux.github.io/bijux-vex/">Documentation</a>
+                  <a href="https://github.com/bijux/bijux-vex">Source Code</a>
                   <a href="https://pypi.org/project/bijux-vex/">PyPI</a>
                 </div>
               </div>
@@ -397,85 +525,113 @@
           </div>
         </div>
       </section>
-      <section aria-labelledby="books">
+      <section aria-labelledby="coursebooks">
         <div class="section-title">
-          <h2 id="books">Course Books</h2>
+          <h2 id="coursebooks">Coursebooks</h2>
         </div>
+        <p class="section-guide">Teaching & pedagogy</p>
+        <p class="section-intro">These coursebooks provide rigorous instruction in methods for engineering deterministic software.</p>
         <div class="book-rows">
-          <div style="display: flex; align-items: baseline; gap: 10px; margin: 34px 0 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border);">
-            <h3 style="margin: 0; font-size: 1.05rem; font-weight: 650; letter-spacing: 0.02em; text-transform: uppercase; color: var(--muted);">Python Series</h3>
-          </div>
           <div class="book-row">
             <article class="card">
               <h3><a href="https://bijux.github.io/python-functional-programming/">Python Functional Programming</a></h3>
               <p>
-                For Python engineers building production-grade functional systems: purity, monadic flows, algebraic data types, streaming pipelines, and property-based testing—grounded in a real FuncPipe RAG project—so you can deliver deterministic and verifiable code.
+                This coursebook guides engineers through designing Python systems with purity, immutability, monadic flows, and property-based testing, anchored in a functional RAG pipeline implementation.
               </p>
+              <p>
+                It exists to address Python's mutable defaults and side-effect tolerance, which foster nondeterministic code in production.
+              </p>
+              <p>
+                It forbids imperative shortcuts to enforce verifiable structures.
+              </p>
+              <p class="learning-outcome">By the end, the reader can construct verifiable Python systems free from implicit state.</p>
               <div class="meta">
                 <div class="pills">
-                  <span class="pill">Python</span>
-                  <span class="pill">Functional Programming</span>
-                  <span class="pill">Correctness</span>
+                  <span class="pill">Functional Design</span>
+                  <span class="pill">Immutability</span>
+                  <span class="pill">Effect Isolation</span>
+                  <span class="pill">Property-Based Testing</span>
                 </div>
                 <div class="links">
-                  <a href="https://bijux.github.io/python-functional-programming/">Docs</a>
-                  <a href="https://github.com/bijux/python-functional-programming">Source</a>
+                  <a href="https://bijux.github.io/python-functional-programming/">Read</a>
+                  <a href="https://github.com/bijux/python-functional-programming">Source Code</a>
                 </div>
               </div>
             </article>
             <article class="card">
               <h3><a href="https://bijux.github.io/python-meta-programming/">Python Meta-Programming</a></h3>
               <p>
-                For Python engineers who need predictable runtime behavior: introspection, decorators, descriptors, and metaclasses taught as a traceable runtime model—so you can build systems without hidden surprises.
+                This coursebook presents a rigorous model of Python's runtime, decomposing object creation, class construction, attribute resolution, and invocation into explicit phases.
               </p>
+              <p>
+                It exists because Python's dynamic features often lead to opaque runtime surprises in complex systems.
+              </p>
+              <p>
+                It rejects guesswork for traceable models.
+              </p>
+              <p class="learning-outcome">By the end, the reader can predict and control Python's metaprogramming behavior with precision.</p>
               <div class="meta">
                 <div class="pills">
-                  <span class="pill">Python</span>
-                  <span class="pill">Metaprogramming</span>
                   <span class="pill">Runtime Model</span>
+                  <span class="pill">Object Construction</span>
+                  <span class="pill">Attribute Resolution</span>
+                  <span class="pill">Metaclasses</span>
                 </div>
                 <div class="links">
-                  <a href="https://bijux.github.io/python-meta-programming/">Docs</a>
-                  <a href="https://github.com/bijux/python-meta-programming">Source</a>
+                  <a href="https://bijux.github.io/python-meta-programming/">Read</a>
+                  <a href="https://github.com/bijux/python-meta-programming">Source Code</a>
                 </div>
               </div>
             </article>
-          </div>
-          <div style="display: flex; align-items: baseline; gap: 10px; margin: 34px 0 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border);">
-            <h3 style="margin: 0; font-size: 1.05rem; font-weight: 650; letter-spacing: 0.02em; text-transform: uppercase; color: var(--muted);">Deep Dive Series</h3>
           </div>
           <div class="book-row">
             <article class="card">
               <h3><a href="https://bijux.github.io/deep-dive-snakemake/">Deep Dive Snakemake</a></h3>
               <p>
-                For pipeline authors moving from ad-hoc scripts to reproducible systems: explicit rules, cacheable artifacts, controlled side effects, provenance, and deterministic execution—so you can trust results on laptop or HPC alike.
+                This coursebook equips engineers to construct reproducible pipelines with explicit rules, artifact caching, provenance tracking, and deterministic execution in Snakemake.
               </p>
+              <p>
+                It exists to counter ad-hoc workflows that fail reproducibility across environments.
+              </p>
+              <p>
+                It forbids uncontrolled side effects for rigorous invariance.
+              </p>
+              <p class="learning-outcome">By the end, the reader can build invariant workflows that enforce rigorous determinism.</p>
               <div class="meta">
                 <div class="pills">
-                  <span class="pill">Snakemake</span>
-                  <span class="pill">Pipelines</span>
-                  <span class="pill">Reproducibility</span>
+                  <span class="pill">Workflow Semantics</span>
+                  <span class="pill">Provenance</span>
+                  <span class="pill">Artifact Caching</span>
+                  <span class="pill">Deterministic Execution</span>
                 </div>
                 <div class="links">
-                  <a href="https://bijux.github.io/deep-dive-snakemake/">Docs</a>
-                  <a href="https://github.com/bijux/deep-dive-snakemake">Source</a>
+                  <a href="https://bijux.github.io/deep-dive-snakemake/">Read</a>
+                  <a href="https://github.com/bijux/deep-dive-snakemake">Source Code</a>
                 </div>
               </div>
             </article>
             <article class="card">
               <h3><a href="https://bijux.github.io/deep-dive-make/">Deep Dive Make</a></h3>
               <p>
-                For engineers maintaining large Make-based build systems: truthful DAGs, atomic publication, parallel safety, determinism, and self-checking invariants—so you can reason about and debug complex builds with confidence.
+                This coursebook provides tools for analyzing large GNU Make systems, emphasizing truthful dependency graphs, atomic publication, parallel safety, and self-checking invariants.
               </p>
+              <p>
+                It exists because Make-based builds often hide cyclic dependencies and race conditions in scale.
+              </p>
+              <p>
+                It rejects sequential assumptions for parallel correctness.
+              </p>
+              <p class="learning-outcome">By the end, the reader can diagnose and enforce correctness in complex build systems.</p>
               <div class="meta">
                 <div class="pills">
-                  <span class="pill">GNU Make</span>
-                  <span class="pill">Build Systems</span>
-                  <span class="pill">Determinism</span>
+                  <span class="pill">Build Graphs</span>
+                  <span class="pill">Dependency Truth</span>
+                  <span class="pill">Parallel Safety</span>
+                  <span class="pill">Atomic Publication</span>
                 </div>
                 <div class="links">
-                  <a href="https://bijux.github.io/deep-dive-make/">Docs</a>
-                  <a href="https://github.com/bijux/deep-dive-make">Source</a>
+                  <a href="https://bijux.github.io/deep-dive-make/">Read</a>
+                  <a href="https://github.com/bijux/deep-dive-make">Source Code</a>
                 </div>
               </div>
             </article>
@@ -485,6 +641,12 @@
     </main>
     <footer>
       © <span id="y"></span> bijux · <a href="https://github.com/bijux">GitHub</a>
+      <div class="signature">
+        If a system’s behavior cannot be explained without running it, it is unfinished.
+      </div>
+      <div class="cred-anchor">
+        Used in research and long-lived production systems.
+      </div>
       <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
     </footer>
   </div>
@@ -493,31 +655,44 @@
       const root = document.documentElement;
       const btn = document.getElementById("themeToggle");
       const label = document.getElementById("themeLabel");
-      const prefersDark = () =>
-        window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const getStored = () => {
-        try { return localStorage.getItem("theme"); } catch { return null; }
+      const prefersDark = () => window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const mq = window.matchMedia("(prefers-color-scheme: dark)");
+      let listenerAdded = false;
+      const getStored = () => localStorage.getItem("theme");
+      const setStored = (v) => localStorage.setItem("theme", v);
+      const themes = ["light", "dark", "auto"];
+      let currentTheme = getStored() || "auto";
+      const applyTheme = (theme) => {
+        currentTheme = theme;
+        if (theme === "auto") {
+          const preferred = prefersDark() ? "dark" : "light";
+          root.setAttribute("data-theme", preferred);
+          label.textContent = "Auto";
+          if (!listenerAdded) {
+            mq.addEventListener("change", handlePrefersChange);
+            listenerAdded = true;
+          }
+        } else {
+          root.setAttribute("data-theme", theme);
+          label.textContent = theme.charAt(0).toUpperCase() + theme.slice(1);
+          if (listenerAdded) {
+            mq.removeEventListener("change", handlePrefersChange);
+            listenerAdded = false;
+          }
+        }
       };
-      const setStored = (v) => {
-        try { localStorage.setItem("theme", v); } catch {}
+      const handlePrefersChange = () => {
+        if (currentTheme === "auto") {
+          applyTheme("auto");
+        }
       };
-      const apply = (theme) => {
-        root.setAttribute("data-theme", theme);
-        label.textContent = theme === "dark" ? "Dark" : "Light";
-      };
-      const stored = getStored();
-      const initial = stored ? stored : (prefersDark() ? "dark" : "light");
-      apply(initial);
-      btn.addEventListener("click", () => {
-        const current = root.getAttribute("data-theme") || "light";
-        const next = current === "dark" ? "light" : "dark";
-        apply(next);
+      const cycleTheme = () => {
+        const next = currentTheme === "light" ? "dark" : currentTheme === "dark" ? "auto" : "light";
+        applyTheme(next);
         setStored(next);
-      });
-      if (!stored && window.matchMedia) {
-        const mq = window.matchMedia("(prefers-color-scheme: dark)");
-        mq.addEventListener?.("change", () => apply(prefersDark() ? "dark" : "light"));
-      }
+      };
+      applyTheme(currentTheme);
+      btn.addEventListener("click", cycleTheme);
     })();
   </script>
 </body>
