@@ -4,15 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>bijux</title>
-  <meta name="description" content="Engineering-first projects and coursebooks for correctness, determinism, and reproducibility." />
+
+  <meta name="description" content="bijux builds deterministic, artifact-first systems across CS, AI/ML, data engineering, platform engineering/DevOps, and bioinformatics—replayable agents, verifiable AI reasoning, auditable data pipelines, and reproducible bioinformatics workflows." />
   <meta property="og:title" content="bijux" />
-  <meta property="og:description" content="Engineering-first projects and coursebooks for correctness, determinism, and reproducibility." />
+  <meta property="og:description" content="Deterministic, artifact-first systems across CS, AI/ML, data engineering, DevOps, and bioinformatics—replayable, auditable, verifiable." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bijux.github.io/" />
   <meta property="og:image" content="https://bijux.github.io/assets/bijux_logo_hq.png" />
+  <meta property="og:image:alt" content="bijux logo — deterministic systems across CS, AI, data, and bioinformatics" />
+
   <link rel="icon" type="image/png" href="./assets/bijux_icon.png" />
   <link rel="apple-touch-icon" href="./assets/bijux_icon.png" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⬡</text></svg>" />
+
   <style>
     :root {
       --bg: #fbfbfc;
@@ -30,8 +34,8 @@
     :root[data-theme="dark"] {
       --bg: #0b1220;
       --surface: #0f172a;
-      --text: #e5e7eb;
-      --muted: #94a3b8;
+      --text: #f3f4f6;
+      --muted: #a7b3c6;
       --border: rgba(148, 163, 184, 0.22);
       --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
       --shadow-hover: 0 14px 40px rgba(0, 0, 0, 0.45);
@@ -39,14 +43,17 @@
       --focus: 0 0 0 3px rgba(96, 165, 250, 0.22);
       --section-tint: rgba(148, 163, 184, 0.04);
     }
+
     * { box-sizing: border-box; }
     html, body { height: 100%; }
+
     body {
       margin: 0;
-      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font: 16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
       color: var(--text);
       background: var(--bg);
     }
+
     .skip {
       position: absolute;
       left: -999px;
@@ -60,16 +67,19 @@
       z-index: 10;
     }
     .skip:focus { left: 12px; outline: none; box-shadow: var(--shadow-hover), var(--focus); }
+
     .wrap {
-      max-width: 920px;
+      max-width: 980px;
       margin: 0 auto;
       padding: 56px 20px 64px;
     }
+
     header {
       position: relative;
       text-align: center;
-      margin-bottom: 44px;
+      margin-bottom: 40px;
     }
+
     .brand {
       display: inline-flex;
       flex-direction: column;
@@ -77,28 +87,32 @@
       gap: 14px;
       margin-top: 4px;
     }
+
     .brand img {
       display: block;
-      width: min(440px, 80vw);
+      width: min(440px, 82vw);
       height: auto;
       border-radius: 12px;
       box-shadow: var(--shadow);
       background: var(--surface);
       border: 1px solid var(--border);
-      padding: 10px;
+      padding: 12px;
     }
+
     h1 {
       margin: 0;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: 650;
+      font-size: clamp(2rem, 4vw, 2.9rem);
+      font-weight: 780;
       letter-spacing: -0.02em;
     }
+
     header p {
       margin: 10px auto 0;
-      max-width: 66ch;
+      max-width: 80ch;
       color: var(--muted);
-      font-size: 1.02rem;
+      font-size: 1.04rem;
     }
+
     .topbar {
       position: absolute;
       right: 0;
@@ -107,6 +121,7 @@
       gap: 10px;
       align-items: center;
     }
+
     .iconbtn {
       display: inline-flex;
       align-items: center;
@@ -124,14 +139,82 @@
     }
     .iconbtn:hover { box-shadow: var(--shadow-hover); }
     .iconbtn:focus-visible { outline: none; box-shadow: var(--shadow-hover), var(--focus); }
+
     .icon { width: 16px; height: 16px; display: inline-block; }
+
+    .hero {
+      margin: 0 auto 72px;
+      max-width: 82ch;
+      text-align: center;
+    }
+
+    .hero-thesis {
+      margin: 0 0 10px;
+      font-size: 1.52rem;
+      font-weight: 880;
+      letter-spacing: -0.012em;
+    }
+
+    .hero-support {
+      margin: 0 0 18px;
+      font-size: 1.06rem;
+      color: var(--text);
+    }
+
+    .hero .exclusion {
+      margin-top: 12px;
+      font-size: 0.98rem;
+      color: var(--muted);
+    }
+
+    .cta-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(37, 99, 235, 0.25);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--accent);
+      transition: transform 140ms ease, box-shadow 160ms ease;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cta { transition: box-shadow 160ms ease; }
+    }
+
+    .cta:hover { box-shadow: var(--shadow-hover); text-decoration: none; transform: scale(1.02); }
+    .cta:focus-visible { outline: none; box-shadow: var(--shadow-hover), var(--focus); }
+
+    /* All CTAs remain blue */
+    .cta.secondary {
+      border-color: rgba(37, 99, 235, 0.25);
+      color: var(--accent);
+      font-weight: 700;
+    }
+
     main { margin-top: 28px; }
     section { margin-top: 64px; margin-bottom: 64px; }
+
     section.projects {
       background: var(--section-tint);
-      padding: 20px 0;
+      padding: 28px 16px;
       margin-top: 80px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
     }
+
     .section-title {
       display: flex;
       align-items: baseline;
@@ -140,100 +223,130 @@
       padding-bottom: 10px;
       border-bottom: 1px solid var(--border);
     }
+
     .section-title h2, .section-title h3 {
       margin: 0;
       font-size: 1.05rem;
-      font-weight: 600;
+      font-weight: 720;
       letter-spacing: 0.02em;
       text-transform: uppercase;
       color: var(--muted);
     }
+
     .section-guide {
-      margin: 0 0 18px;
+      margin: 0 0 14px;
       font-size: 0.9rem;
       color: var(--muted);
     }
+
     .section-intro {
-      margin: 0 0 24px;
+      margin: 0 0 18px;
       font-size: 1rem;
+      max-width: 84ch;
     }
+
+    .quick-scan {
+      margin: 0 0 24px;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    .quick-scan li { margin: 6px 0; }
+
     .project-rows, .book-rows {
       display: flex;
       flex-direction: column;
       gap: 40px;
     }
+
     .project-row, .book-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 14px;
     }
-    .full-width {
-      grid-column: 1 / -1;
-    }
+
+    .full-width { grid-column: 1 / -1; }
+
     @media (max-width: 840px) {
-      .project-row, .book-row {
-        grid-template-columns: 1fr;
-      }
+      .project-row, .book-row { grid-template-columns: 1fr; }
+      section.projects { padding: 22px 12px; }
     }
+
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 18px 18px 16px;
+      padding: 22px 22px 18px;
       box-shadow: var(--shadow);
       transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      min-height: 220px;
+      gap: 10px;
+      min-height: 0;
     }
+
     .card.cli {
-      padding: 24px 24px 20px;
-      margin-bottom: 24px;
-      min-height: 240px;
+      padding: 28px 28px 22px;
+      margin-bottom: 18px;
+      min-height: 0;
     }
-    .card:not(.cli) {
-      gap: 6px;
+
+    .card.flagship {
+      border-width: 2px;
     }
+
+    .card.flagship h3 {
+      font-size: 1.58rem;
+      letter-spacing: -0.015em;
+      text-transform: none;
+    }
+
     .card:hover {
       transform: translateY(-2px);
       box-shadow: var(--shadow-hover);
       border-color: rgba(37, 99, 235, 0.25);
     }
-    :root[data-theme="dark"] .card:hover {
-      border-color: rgba(96, 165, 250, 0.28);
-    }
+    :root[data-theme="dark"] .card:hover { border-color: rgba(96, 165, 250, 0.28); }
+
     .card h3 {
       margin: 0;
-      font-size: 1.15rem;
-      font-weight: 700;
+      font-size: 1.18rem;
+      font-weight: 880;
       letter-spacing: -0.01em;
     }
     .card.cli h3 {
-      font-size: 1.25rem;
+      font-size: 1.28rem;
+      font-weight: 880;
     }
+
     .card p {
       margin: 0;
       color: var(--text);
-      font-size: 0.96rem;
+      font-size: 0.97rem;
+      line-height: 1.75;
     }
+
     .card p:nth-of-type(2) {
       color: var(--muted);
       padding-left: 12px;
-      font-size: 0.94rem;
+      border-left: 2px solid var(--border);
+      font-size: 0.95rem;
+      margin-top: 6px;
     }
+
     .card p:nth-of-type(3) {
       color: var(--muted);
       font-style: italic;
     }
+
     .used-when {
       margin-top: 12px;
       font-size: 0.91rem;
-      font-family: monospace;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
       color: var(--muted);
     }
+
     .learning-outcome {
-      font-weight: 600;
+      font-weight: 720;
       position: relative;
       padding-left: 20px;
     }
@@ -243,11 +356,15 @@
       left: 0;
       color: var(--muted);
     }
+
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
     a:focus-visible { outline: none; box-shadow: var(--focus); border-radius: 6px; }
+
     .meta {
-      margin-top: auto;
+      margin-top: 18px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
@@ -256,82 +373,71 @@
       align-items: center;
       justify-content: space-between;
     }
+
     .pills {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
       align-items: center;
     }
+
     .pill {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 6px 8px;
+      padding: 7px 10px;
       border: 1px solid var(--border);
       border-radius: 999px;
       background: var(--surface);
       font-size: 0.85rem;
       color: var(--muted);
     }
+
     .links {
       display: inline-flex;
       gap: 10px;
       flex-wrap: wrap;
       align-items: center;
     }
+
+    /* All link pills remain blue (no muted last-child rule) */
     .links a {
       font-size: 0.92rem;
-      padding: 6px 10px;
+      padding: 8px 12px;
       border: 1px solid var(--border);
       border-radius: 999px;
       background: var(--surface);
       box-shadow: var(--shadow);
+      text-decoration: none;
+      color: var(--accent);
     }
-    .links a:last-child {
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
+
     .links a:hover { box-shadow: var(--shadow-hover); text-decoration: none; }
-    .hero {
-      margin: 0 auto 80px;
-      max-width: 66ch;
-      text-align: center;
-    }
-    .hero-thesis {
-      margin: 0 0 10px;
-      font-size: 1.4rem;
-      font-weight: 700;
-    }
-    .hero-support {
-      margin: 0 0 20px;
-      font-size: 1.05rem;
-      color: var(--text);
-    }
-    .hero .exclusion {
-      margin-top: 12px;
-      font-size: 0.98rem;
-      color: var(--muted);
-    }
+
     footer {
       margin-top: 64px;
       text-align: center;
       color: var(--muted);
       font-size: 0.9rem;
     }
+
     .signature {
       margin-top: 12px;
       font-size: 1rem;
-      font-weight: 600;
+      font-weight: 780;
       color: var(--text);
     }
+
     .cred-anchor {
       margin-top: 8px;
       font-size: 0.88rem;
     }
   </style>
 </head>
+
 <body>
   <a class="skip" href="#content">Skip to content</a>
+
   <div class="wrap">
     <header>
       <div class="topbar">
@@ -342,64 +448,158 @@
           <span id="themeLabel">Auto</span>
         </button>
       </div>
+
       <div class="brand" aria-label="bijux brand">
-        <img src="./assets/bijux_logo_hq.png" alt="bijux logo" />
+        <img src="./assets/bijux_logo_hq.png" loading="lazy" alt="bijux logo — deterministic systems across CS, AI, data, and bioinformatics" />
       </div>
+
       <h1>bijux</h1>
-      <p>Engineering-first projects and coursebooks—built for correctness, determinism, and clarity.</p>
+      <p>Deterministic, artifact-first systems across computer science, AI/ML, data engineering, platform engineering/DevOps, and bioinformatics—built for replayability, auditability, and verification.</p>
     </header>
+
     <div class="hero">
-      <p class="hero-thesis">Deterministic systems for verifiable computation and reproducible reasoning.</p>
-      <p class="hero-support">Explicit inputs. Bounded nondeterminism. Artifact-backed provenance. Auditable behavior.</p>
-      <p class="exclusion">Not for rapid prototyping or heuristic automation.</p>
+      <p class="hero-thesis">Run it once. Explain it forever. Replay it anywhere.</p>
+      <p class="hero-support">bijux turns complex pipelines—agents, retrieval, reasoning, vector search, and scientific workflows—into auditable executions with explicit inputs, stable contracts, and artifact-backed provenance.</p>
+      <p class="exclusion">Prioritizes transparency over convenience: sharp failure modes, explicit boundaries, and verifiable outputs.</p>
+
+      <div class="cta-row" aria-label="Primary actions">
+        <a class="cta" href="https://bijux.github.io/agentic-proteins/">Agentic Proteins</a>
+        <a class="cta" href="https://bijux.github.io/bijux-agent/">Agentic Flows</a>
+        <a class="cta secondary" href="https://bijux.github.io/bijux-cli/">bijux-cli</a>
+      </div>
     </div>
+
     <main id="content">
       <section aria-labelledby="about">
         <div class="section-title">
           <h2 id="about">About</h2>
         </div>
-        <p class="section-guide">Positioning & rationale</p>
+
+        <p class="section-guide">Scope & philosophy</p>
+
+        <h3>What breaks in modern systems</h3>
         <p>
-          Contemporary software practices prioritize rapid iteration and flexible automation, sacrificing verifiable correctness and reproducible behavior.
+          Most ecosystems optimize for speed: implicit state, hidden nondeterminism, and “best-effort” execution that cannot be replayed.
+          That failure mode is universal—AI/ML pipelines, data platforms, DevOps tooling, and scientific workflows all degrade when behavior is not explainable.
         </p>
+
+        <h3>What bijux enforces</h3>
         <p>
-          bijux rejects these norms. It forbids silent degradation, hidden nondeterminism, and undefined boundaries, treating them as fundamental defects rather than acceptable trade-offs.
+          bijux is a strict toolkit for systems you can defend. Runs are defined by explicit inputs and validated boundaries, producing artifact-backed outputs
+          with traceable decisions and replayable execution trails. Failures are sharp and local—no silent fallbacks, no hidden recovery.
         </p>
+
+        <h3>Roadmap (near-term)</h3>
         <p>
-          Instead, bijux builds tools and coursebooks that enforce explicit contracts, artifact-backed provenance, and deterministic execution—delivering systems that remain explainable, auditable, and stable over time.
+          The direction is consolidation: a coherent agentic execution model in Python where composition, provenance, and replayability are non-negotiable.
+          This includes tighter integration between CLI substrate, agent orchestration, retrieval, reasoning, and vector search—without weakening determinism.
         </p>
-        <p>
-          bijux serves engineers constructing systems where correctness outweighs convenience, such as in regulated industries, scientific computing, or long-lived infrastructure. It equips those who demand replayable behavior and auditable decisions to build with precision. bijux does not serve those prioritizing rapid prototyping, exploratory scripting, or heuristic flexibility. If opaque automation or silent recovery is acceptable, bijux will not align with your needs.
-        </p>
-        <p>These principles underpin all bijux systems:</p>
-        <h3>Principles</h3>
+
+        <p>Principles:</p>
         <ul>
-          <li><strong>Determinism over convenience</strong> — Identical inputs yield identical outputs; nondeterminism is explicit and bounded. No hidden randomness; all sources must be injectable.</li>
-          <li><strong>Explicit contracts</strong> — Every boundary is validated at construction; undefined behavior is treated as a bug. All interfaces are checked before execution.</li>
-          <li><strong>Sharp failure modes</strong> — Failures are immediate, loud, and local; no silent degradation or implicit fallbacks.</li>
-          <li><strong>Verifiable behavior</strong> — Every output is traceable to concrete artifacts; provenance and replayability are first-class requirements.</li>
+          <li><strong>Determinism over convenience</strong> — Identical inputs yield identical outputs; nondeterminism is explicit, bounded, and injectable.</li>
+          <li><strong>Explicit contracts</strong> — Interfaces validate at construction; undefined behavior is a bug, not a feature.</li>
+          <li><strong>Sharp failure modes</strong> — Fail early, loudly, and locally; no silent fallback logic.</li>
+          <li><strong>Verifiable behavior</strong> — Outputs are traceable to artifacts; executions are replayable and reviewable.</li>
         </ul>
       </section>
+
       <section class="projects" aria-labelledby="projects">
         <div class="section-title">
           <h2 id="projects">Projects</h2>
         </div>
+
         <p class="section-guide">Production-grade systems</p>
-        <p class="section-intro">These projects deliver tools that enforce determinism and verifiability in engineering workflows.</p>
+        <p class="section-intro">The bijux ecosystem is intentionally cross-domain:</p>
+        <ul class="quick-scan">
+          <li><strong>Computer science</strong>: deterministic composition and replayable execution semantics.</li>
+          <li><strong>AI/ML</strong>: auditable agents, verifiable AI reasoning, grounded retrieval.</li>
+          <li><strong>Data engineering</strong>: attributable pipelines and reproducible transformations.</li>
+          <li><strong>Platform / DevOps</strong>: explicit contracts and stability across environments.</li>
+          <li><strong>Bioinformatics</strong>: reproducible bioinformatics workflows and lab-in-the-loop protein design.</li>
+        </ul>
+
         <div class="project-rows">
+
+          <div class="project-row">
+            <article class="card cli flagship full-width">
+              <h3><a href="https://bijux.github.io/agentic-proteins/">AGENTIC PROTEINS</a></h3>
+              <p>
+                A deterministic, artifact-first protein design runtime and CLI: traceable runs, structured evaluation, and explicit human-in-the-loop decision points—built for lab-grade reproducibility.
+              </p>
+              <p>
+                Protein design is treated as a verifiable execution model: inputs, plans, evaluations, and acceptance criteria are recorded as artifacts.
+                This aligns naturally with GLP-style traceability and review expectations in drug discovery workflows.
+              </p>
+              <p>
+                Structure prediction is provider-gated (explicit opt-in); the default path remains deterministic, inspectable, and auditable. No hidden side effects. No untracked choices.
+              </p>
+              <p class="used-when">Used when protein candidates must be compared, reviewed, and reproduced with audit-quality provenance.</p>
+
+              <div class="meta">
+                <div class="pills" aria-label="agentic-proteins tags">
+                  <span class="pill">Protein Design Runtime</span>
+                  <span class="pill">Artifact Provenance</span>
+                  <span class="pill">Human-in-the-Loop</span>
+                  <span class="pill">Provider-Gated Predictors</span>
+                </div>
+                <div class="links" aria-label="agentic-proteins links">
+                  <a href="https://bijux.github.io/agentic-proteins/">Documentation</a>
+                  <a href="https://github.com/bijux/agentic-proteins">Source Code</a>
+                  <a href="https://pypi.org/project/agentic-proteins/">PyPI</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="project-row">
+            <article class="card cli flagship full-width">
+              <h3><a href="https://bijux.github.io/bijux-agent/">AGENTIC FLOWS</a></h3>
+              <p>
+                A unified, replayable execution stack for agentic systems: deterministic agents, grounded retrieval, verifiable reasoning, and contract-driven vector search—composed under a single runtime model.
+              </p>
+              <p>
+                In practice, this is already real: <strong>bijux-cli</strong> is the substrate (composition, dependency injection, deterministic resolution),
+                and <strong>bijux-agent / bijux-rag / bijux-rar / bijux-vex</strong> provide the capabilities. The result is rare in Python:
+                agentic systems that can be replayed and audited with the same seriousness as a build pipeline.
+              </p>
+              <p>
+                Designed for governed AI and high-integrity automation—e.g., regulated workflows in healthcare or finance, and safety-oriented stacks where verification is non-negotiable (ISO 26262-style thinking).
+              </p>
+              <p class="used-when">Used when agentic workflows must be reproducible, reviewable, and provably grounded in artifacts.</p>
+
+              <div class="meta">
+                <div class="pills" aria-label="agentic-flows tags">
+                  <span class="pill">Replayable Execution</span>
+                  <span class="pill">Audit Trails</span>
+                  <span class="pill">Verification-First</span>
+                  <span class="pill">Composable Runtime</span>
+                </div>
+                <div class="links" aria-label="agentic-flows links">
+                  <a href="https://bijux.github.io/bijux-cli/">bijux-cli</a>
+                  <a href="https://bijux.github.io/bijux-agent/">bijux-agent</a>
+                  <a href="https://bijux.github.io/bijux-rag/">bijux-rag</a>
+                  <a href="https://bijux.github.io/bijux-rar/">bijux-rar</a>
+                  <a href="https://bijux.github.io/bijux-vex/">bijux-vex</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
           <div class="project-row">
             <article class="card cli full-width">
               <h3><a href="https://bijux.github.io/bijux-cli/">bijux-cli</a></h3>
               <p>
-                bijux-cli enforces deterministic command resolution, explicit plugin composition, dependency injection, and an interactive REPL, making command-line interfaces stable and testable at scale.
+                The substrate for bijux: deterministic command resolution, explicit composition, dependency injection, and an interactive REPL—so every bijux system stays stable as it grows.
               </p>
               <p>
-                It exists because conventional CLI frameworks accumulate implicit state and fragile loading mechanisms that degrade under complexity, leading to untestable systems in production environments.
+                Conventional CLI stacks accumulate implicit configuration and fragile discovery that collapses under complexity. bijux-cli forces construction-time guarantees and replayable behavior.
               </p>
               <p>
-                It forbids runtime discovery in favor of construction-time guarantees; this is not a convenience layer for quick scripting.
+                Designed as infrastructure: composable, testable, and predictable across environments.
               </p>
-              <p class="used-when">Used when CLI behavior must be replayable months later.</p>
+              <p class="used-when">Used when interfaces and execution semantics must remain reproducible across time, teams, and machines.</p>
+
               <div class="meta">
                 <div class="pills" aria-label="bijux-cli tags">
                   <span class="pill">Deterministic Resolution</span>
@@ -415,19 +615,15 @@
               </div>
             </article>
           </div>
+
           <div class="project-row">
             <article class="card">
               <h3><a href="https://bijux.github.io/bijux-agent/">bijux-agent</a></h3>
-              <p>
-                bijux-agent models agents as deterministic state machines with artifact-backed actions and comprehensive trace recording, ensuring every execution is auditable and replayable.
-              </p>
-              <p>
-                It exists to address agent frameworks that permit unlogged side effects and persistent state, resulting in outputs that cannot be reliably debugged or reproduced in critical applications.
-              </p>
-              <p>
-                It rejects untraced operations to prioritize verifiability; this is not an exploratory orchestration tool.
-              </p>
-              <p class="used-when">Used when agent decisions require full audit trails for compliance.</p>
+              <p>Deterministic agents as explicit state machines: artifact-backed actions, structured traces, and replayable execution.</p>
+              <p>Designed to replace opaque orchestration with inspectable decisions and local, debuggable failure modes.</p>
+              <p>Strict by design: effects are isolated and every action is traced.</p>
+              <p class="used-when">Used when agent behavior must be auditable and reproducible.</p>
+
               <div class="meta">
                 <div class="pills" aria-label="bijux-agent tags">
                   <span class="pill">State Machines</span>
@@ -442,18 +638,14 @@
                 </div>
               </div>
             </article>
+
             <article class="card">
               <h3><a href="https://bijux.github.io/bijux-rag/">bijux-rag</a></h3>
-              <p>
-                bijux-rag constructs retrieval pipelines using functional flows, explicit boundaries, and provenance tracking, delivering controllable and verifiable results without implicit state.
-              </p>
-              <p>
-                It exists because standard RAG pipelines conceal prompt state and produce unreplayable retrieval, leading to hallucinations without traceable origins in deployed systems.
-              </p>
-              <p>
-                It forbids mutable transformations to maintain auditability; this is not a heuristic search wrapper.
-              </p>
-              <p class="used-when">Used when retrieval must be immutable and traceable to prevent errors in production.</p>
+              <p>Retrieval pipelines as explicit, testable flows: strict boundaries, provenance-aware execution, and replayable outcomes.</p>
+              <p>Designed to eliminate hidden prompt state and unreplayable retrieval that undermines deployed systems.</p>
+              <p>Functional core, explicit contracts, immutable dataflow.</p>
+              <p class="used-when">Used when retrieval must be attributable and stable under change.</p>
+
               <div class="meta">
                 <div class="pills" aria-label="bijux-rag tags">
                   <span class="pill">Functional Pipelines</span>
@@ -469,19 +661,15 @@
               </div>
             </article>
           </div>
+
           <div class="project-row">
             <article class="card">
               <h3><a href="https://bijux.github.io/bijux-rar/">bijux-rar</a></h3>
-              <p>
-                bijux-rar formalizes reasoning as deterministic proof trees with artifact-backed evidence, ensuring conclusions are stable, auditable, and grounded in explicit premises.
-              </p>
-              <p>
-                It exists to counter reasoning systems that tolerate unverifiable outputs and hidden dependencies, causing inconsistent results in applications requiring evidentiary rigor.
-              </p>
-              <p>
-                It rejects ungrounded plausibility for verifiable structure; this is not a probabilistic inference engine.
-              </p>
-              <p class="used-when">Used when reasoning outputs demand evidentiary proof for regulatory scrutiny.</p>
+              <p>Reasoning as a verifiable process: explicit premises, artifact-backed evidence, deterministic proofs, and replayable verification.</p>
+              <p>Designed to replace persuasive outputs with inspectable structure and evidence trails.</p>
+              <p>Proof-like reasoning, not probabilistic hand-waving.</p>
+              <p class="used-when">Used when decisions require defensible evidence trails.</p>
+
               <div class="meta">
                 <div class="pills" aria-label="bijux-rar tags">
                   <span class="pill">Proof Trees</span>
@@ -496,18 +684,14 @@
                 </div>
               </div>
             </article>
+
             <article class="card">
               <h3><a href="https://bijux.github.io/bijux-vex/">bijux-vex</a></h3>
-              <p>
-                bijux-vex executes vector search under explicit contracts with bounded approximation, providing replayable, parameterized results with comprehensive provenance.
-              </p>
-              <p>
-                It exists because vector databases hide nondeterminism and unstable rankings, resulting in unreplayable queries that undermine trust in search-dependent systems.
-              </p>
-              <p>
-                It forbids unbounded nondeterminism to guarantee reproducibility; this is not an approximate query optimizer.
-              </p>
-              <p class="used-when">Used when vector queries must remain stable across executions for consistency.</p>
+              <p>Vector search with explicit execution contracts: deterministic exact search or bounded approximate execution, with provenance.</p>
+              <p>Designed to eliminate hidden nondeterminism and unstable rankings that break reproducibility.</p>
+              <p>Approximation is explicit, parameterized, and replayable.</p>
+              <p class="used-when">Used when search rankings must remain stable across runs.</p>
+
               <div class="meta">
                 <div class="pills" aria-label="bijux-vex tags">
                   <span class="pill">Execution Contracts</span>
@@ -523,28 +707,33 @@
               </div>
             </article>
           </div>
+
         </div>
       </section>
+
       <section aria-labelledby="coursebooks">
         <div class="section-title">
           <h2 id="coursebooks">Coursebooks</h2>
         </div>
+
         <p class="section-guide">Teaching & pedagogy</p>
-        <p class="section-intro">These coursebooks provide rigorous instruction in methods for engineering deterministic software.</p>
+        <p class="section-intro">Coursebooks that teach the discipline implemented across bijux projects:</p>
+        <ul class="quick-scan">
+          <li><strong>Python Functional Programming</strong>: underpins immutability and effect isolation used throughout bijux-rag and bijux-agent.</li>
+          <li><strong>Python Meta-Programming</strong>: informs controlled runtime behavior and predictable composition in bijux-cli.</li>
+          <li><strong>Deep Dive Snakemake</strong>: codifies reproducible workflow semantics for scientific and bioinformatics pipelines.</li>
+          <li><strong>Deep Dive Make</strong>: covers dependency truth and parallel safety—mirrors bijux’s verification-first philosophy.</li>
+        </ul>
+
         <div class="book-rows">
           <div class="book-row">
             <article class="card">
               <h3><a href="https://bijux.github.io/python-functional-programming/">Python Functional Programming</a></h3>
-              <p>
-                This coursebook guides engineers through designing Python systems with purity, immutability, monadic flows, and property-based testing, anchored in a functional RAG pipeline implementation.
-              </p>
-              <p>
-                It exists to address Python's mutable defaults and side-effect tolerance, which foster nondeterministic code in production.
-              </p>
-              <p>
-                It forbids imperative shortcuts to enforce verifiable structures.
-              </p>
-              <p class="learning-outcome">By the end, the reader can construct verifiable Python systems free from implicit state.</p>
+              <p>Production-grade functional Python: purity, immutability, monadic flows, algebraic data types, streaming pipelines, property-based testing.</p>
+              <p>Designed for engineers who need reproducibility and correctness, not convenience-driven mutation.</p>
+              <p>Functional discipline as an operational advantage.</p>
+              <p class="learning-outcome">By the end, you can build Python systems that remain stable, testable, and explainable under change.</p>
+
               <div class="meta">
                 <div class="pills">
                   <span class="pill">Functional Design</span>
@@ -558,18 +747,14 @@
                 </div>
               </div>
             </article>
+
             <article class="card">
               <h3><a href="https://bijux.github.io/python-meta-programming/">Python Meta-Programming</a></h3>
-              <p>
-                This coursebook presents a rigorous model of Python's runtime, decomposing object creation, class construction, attribute resolution, and invocation into explicit phases.
-              </p>
-              <p>
-                It exists because Python's dynamic features often lead to opaque runtime surprises in complex systems.
-              </p>
-              <p>
-                It rejects guesswork for traceable models.
-              </p>
-              <p class="learning-outcome">By the end, the reader can predict and control Python's metaprogramming behavior with precision.</p>
+              <p>A precise runtime model of Python: object creation, class construction, attribute resolution, invocation.</p>
+              <p>Designed to replace “metaprogramming tricks” with predictable engineering mechanics.</p>
+              <p>Traceable rules, not folklore.</p>
+              <p class="learning-outcome">By the end, you can reason about Python runtime behavior with engineering-level confidence.</p>
+
               <div class="meta">
                 <div class="pills">
                   <span class="pill">Runtime Model</span>
@@ -584,19 +769,15 @@
               </div>
             </article>
           </div>
+
           <div class="book-row">
             <article class="card">
               <h3><a href="https://bijux.github.io/deep-dive-snakemake/">Deep Dive Snakemake</a></h3>
-              <p>
-                This coursebook equips engineers to construct reproducible pipelines with explicit rules, artifact caching, provenance tracking, and deterministic execution in Snakemake.
-              </p>
-              <p>
-                It exists to counter ad-hoc workflows that fail reproducibility across environments.
-              </p>
-              <p>
-                It forbids uncontrolled side effects for rigorous invariance.
-              </p>
-              <p class="learning-outcome">By the end, the reader can build invariant workflows that enforce rigorous determinism.</p>
+              <p>Build invariant pipelines: explicit rules, cacheable artifacts, controlled side effects, provenance, deterministic execution.</p>
+              <p>Designed for research and production workflows that must reproduce across environments.</p>
+              <p>Provenance is a deliverable.</p>
+              <p class="learning-outcome">By the end, you can ship reproducible workflows with principled execution semantics.</p>
+
               <div class="meta">
                 <div class="pills">
                   <span class="pill">Workflow Semantics</span>
@@ -610,18 +791,14 @@
                 </div>
               </div>
             </article>
+
             <article class="card">
               <h3><a href="https://bijux.github.io/deep-dive-make/">Deep Dive Make</a></h3>
-              <p>
-                This coursebook provides tools for analyzing large GNU Make systems, emphasizing truthful dependency graphs, atomic publication, parallel safety, and self-checking invariants.
-              </p>
-              <p>
-                It exists because Make-based builds often hide cyclic dependencies and race conditions in scale.
-              </p>
-              <p>
-                It rejects sequential assumptions for parallel correctness.
-              </p>
-              <p class="learning-outcome">By the end, the reader can diagnose and enforce correctness in complex build systems.</p>
+              <p>Correctness in Make at scale: truthful dependency graphs, atomic publication, parallel safety, self-checking invariants.</p>
+              <p>Designed to eliminate cycles, races, and accidental dependencies that break reliability.</p>
+              <p>Build systems you can trust under parallelism.</p>
+              <p class="learning-outcome">By the end, you can make complex build systems predictable, parallel-safe, and maintainable.</p>
+
               <div class="meta">
                 <div class="pills">
                   <span class="pill">Build Graphs</span>
@@ -639,17 +816,15 @@
         </div>
       </section>
     </main>
+
     <footer>
-      © <span id="y"></span> bijux · <a href="https://github.com/bijux">GitHub</a>
-      <div class="signature">
-        If a system’s behavior cannot be explained without running it, it is unfinished.
-      </div>
-      <div class="cred-anchor">
-        Used in research and long-lived production systems.
-      </div>
+      © <span id="y"></span> bijux · <a href="https://github.com/bijux">GitHub</a> · <a href="https://github.com/bijux">Community</a>
+      <div class="signature">If you cannot replay it from artifacts, you do not yet control it.</div>
+      <div class="cred-anchor">Designed for long-lived systems: research, production, and regulated workflows.</div>
       <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
     </footer>
   </div>
+
   <script>
     (function () {
       const root = document.documentElement;
@@ -660,8 +835,8 @@
       let listenerAdded = false;
       const getStored = () => localStorage.getItem("theme");
       const setStored = (v) => localStorage.setItem("theme", v);
-      const themes = ["light", "dark", "auto"];
       let currentTheme = getStored() || "auto";
+
       const applyTheme = (theme) => {
         currentTheme = theme;
         if (theme === "auto") {
@@ -681,16 +856,17 @@
           }
         }
       };
+
       const handlePrefersChange = () => {
-        if (currentTheme === "auto") {
-          applyTheme("auto");
-        }
+        if (currentTheme === "auto") applyTheme("auto");
       };
+
       const cycleTheme = () => {
         const next = currentTheme === "light" ? "dark" : currentTheme === "dark" ? "auto" : "light";
         applyTheme(next);
         setStored(next);
       };
+
       applyTheme(currentTheme);
       btn.addEventListener("click", cycleTheme);
     })();
