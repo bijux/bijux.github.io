@@ -3,22 +3,59 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>bijux</title>
+  <title>bijux — deterministic, artifact-first systems</title>
 
-  <meta name="description" content="bijux builds deterministic, artifact-first systems across CS, AI/ML, data engineering, platform engineering/DevOps, and bioinformatics—replayable agents, verifiable AI reasoning, auditable data pipelines, and reproducible bioinformatics workflows." />
-  <meta property="og:title" content="bijux" />
-  <meta property="og:description" content="Deterministic, artifact-first systems across CS, AI/ML, data engineering, DevOps, and bioinformatics—replayable, auditable, verifiable." />
+  <meta name="description" content="bijux builds deterministic, artifact-first execution systems: replayable runs, contract-first invariants, and audit-ready provenance for agents, data, DevOps, and science." />
+  <link rel="canonical" href="https://bijux.github.io/" />
+  <meta property="og:title" content="bijux — deterministic, artifact-first systems" />
+  <meta property="og:description" content="bijux builds deterministic, artifact-first execution systems: replayable runs, contract-first invariants, and audit-ready provenance for agents, data, DevOps, and science." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bijux.github.io/" />
   <meta property="og:image" content="https://bijux.github.io/assets/bijux_logo_hq.png" />
   <meta property="og:image:alt" content="bijux logo — deterministic systems across CS, AI, data, and bioinformatics" />
+  <meta property="og:site_name" content="bijux" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="bijux — deterministic, artifact-first systems" />
+  <meta name="twitter:description" content="bijux builds deterministic, artifact-first execution systems: replayable runs, contract-first invariants, and audit-ready provenance for agents, data, DevOps, and science." />
+  <meta name="twitter:image" content="https://bijux.github.io/assets/bijux_logo_hq.png" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fbfbfc" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b1220" />
 
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "bijux",
+      "url": "https://bijux.github.io/",
+      "logo": "https://bijux.github.io/assets/bijux_logo_hq.png",
+      "description": "bijux builds deterministic, artifact-first execution systems: replayable runs, contract-first invariants, and audit-ready provenance for agents, data, DevOps, and science.",
+      "sameAs": [
+        "https://github.com/bijux",
+        "https://pypi.org/user/bijux/"
+      ]
+    }
+  </script>
+
+  <script>
+    (function () {
+      const stored = localStorage.getItem("theme") || "auto";
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const theme = stored === "auto" ? (prefersDark ? "dark" : "light") : stored;
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+
+  <link rel="preload" as="image" href="./assets/bijux_logo_hq.png" />
   <link rel="icon" type="image/png" href="./assets/bijux_icon.png" />
   <link rel="apple-touch-icon" href="./assets/bijux_icon.png" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⬡</text></svg>" />
 
   <style>
     :root {
+      color-scheme: light dark;
       --bg: #fbfbfc;
       --surface: #ffffff;
       --text: #0f172a;
@@ -197,12 +234,13 @@
     .cta:hover { box-shadow: var(--shadow-hover); text-decoration: none; transform: scale(1.02); }
     .cta:focus-visible { outline: none; box-shadow: var(--shadow-hover), var(--focus); }
 
-    /* All CTAs remain blue */
     .cta.secondary {
       border-color: rgba(37, 99, 235, 0.25);
       color: var(--accent);
       font-weight: 700;
     }
+
+    .card p { max-width: 78ch; }
 
     main { margin-top: 28px; }
     section { margin-top: 64px; margin-bottom: 64px; }
@@ -400,7 +438,6 @@
       align-items: center;
     }
 
-    /* All link pills remain blue (no muted last-child rule) */
     .links a {
       font-size: 0.92rem;
       padding: 8px 12px;
@@ -450,7 +487,14 @@
       </div>
 
       <div class="brand" aria-label="bijux brand">
-        <img src="./assets/bijux_logo_hq.png" loading="lazy" alt="bijux logo — deterministic systems across CS, AI, data, and bioinformatics" />
+        <img
+          src="./assets/bijux_logo_hq.png"
+          loading="eager"
+          decoding="async"
+          width="1200"
+          height="630"
+          alt="bijux logo — deterministic systems across CS, AI, data, and bioinformatics"
+        />
       </div>
 
       <h1>bijux</h1>
@@ -459,23 +503,29 @@
 
     <div class="hero">
       <p class="hero-thesis">Run it once. Explain it forever. Replay it anywhere.</p>
-      <p class="hero-support">bijux turns complex pipelines—agents, retrieval, reasoning, vector search, and scientific workflows—into auditable executions with explicit inputs, stable contracts, and artifact-backed provenance.</p>
+      <p class="hero-support">
+        bijux turns complex systems into governed execution: explicit inputs, stable contracts, and artifact-backed provenance you can replay and audit.
+      </p>
       <p class="exclusion">Prioritizes transparency over convenience: sharp failure modes, explicit boundaries, and verifiable outputs.</p>
 
       <div class="cta-row" aria-label="Primary actions">
         <a class="cta" href="https://bijux.github.io/agentic-proteins/">Agentic Proteins</a>
-        <a class="cta" href="https://bijux.github.io/bijux-agent/">Agentic Flows</a>
+        <a class="cta" href="https://bijux.github.io/agentic-flows/">Agentic Flows</a>
         <a class="cta secondary" href="https://bijux.github.io/bijux-cli/">bijux-cli</a>
+        <a class="cta secondary" href="https://github.com/bijux" rel="noopener noreferrer">GitHub</a>
       </div>
     </div>
 
-    <main id="content">
+    <main id="content" aria-label="Main content">
       <section aria-labelledby="about">
         <div class="section-title">
           <h2 id="about">About</h2>
         </div>
 
         <p class="section-guide">Scope & philosophy</p>
+        <p class="section-intro">
+          bijux is a strict execution model: explicit inputs, contract-first boundaries, and artifact-backed provenance—built to replay runs without guessing.
+        </p>
 
         <h3>What breaks in modern systems</h3>
         <p>
@@ -491,8 +541,9 @@
 
         <h3>Roadmap (near-term)</h3>
         <p>
-          The direction is consolidation: a coherent agentic execution model in Python where composition, provenance, and replayability are non-negotiable.
-          This includes tighter integration between CLI substrate, agent orchestration, retrieval, reasoning, and vector search—without weakening determinism.
+          The direction is consolidation: a coherent execution model in Python where composition, provenance, replayability, and verification are non-negotiable.
+          <strong>agentic-flows</strong> is the foundation for governed execution and replay, with deterministic defaults and explicitly-audited non-determinism.
+          Over time, higher-level capabilities (agents, retrieval, reasoning, and domain runtimes) remain additive—without weakening determinism.
         </p>
 
         <p>Principles:</p>
@@ -510,14 +561,9 @@
         </div>
 
         <p class="section-guide">Production-grade systems</p>
-        <p class="section-intro">The bijux ecosystem is intentionally cross-domain:</p>
-        <ul class="quick-scan">
-          <li><strong>Computer science</strong>: deterministic composition and replayable execution semantics.</li>
-          <li><strong>AI/ML</strong>: auditable agents, verifiable AI reasoning, grounded retrieval.</li>
-          <li><strong>Data engineering</strong>: attributable pipelines and reproducible transformations.</li>
-          <li><strong>Platform / DevOps</strong>: explicit contracts and stability across environments.</li>
-          <li><strong>Bioinformatics</strong>: reproducible bioinformatics workflows and lab-in-the-loop protein design.</li>
-        </ul>
+        <p class="section-intro">
+          The ecosystem spans agents, retrieval, reasoning, vector execution contracts, and reproducible scientific workflows.
+        </p>
 
         <div class="project-rows">
 
@@ -545,8 +591,8 @@
                 </div>
                 <div class="links" aria-label="agentic-proteins links">
                   <a href="https://bijux.github.io/agentic-proteins/">Documentation</a>
-                  <a href="https://github.com/bijux/agentic-proteins">Source Code</a>
-                  <a href="https://pypi.org/project/agentic-proteins/">PyPI</a>
+                  <a href="https://github.com/bijux/agentic-proteins" rel="noopener noreferrer">Source Code</a>
+                  <a href="https://pypi.org/project/agentic-proteins/" rel="noopener noreferrer">PyPI</a>
                 </div>
               </div>
             </article>
@@ -554,33 +600,37 @@
 
           <div class="project-row">
             <article class="card cli flagship full-width">
-              <h3><a href="https://bijux.github.io/bijux-agent/">AGENTIC FLOWS</a></h3>
+              <h3><a href="https://bijux.github.io/agentic-flows/">AGENTIC FLOWS</a></h3>
               <p>
-                A unified, replayable execution stack for agentic systems: deterministic agents, grounded retrieval, verifiable reasoning, and contract-driven vector search—composed under a single runtime model.
+                Governed execution and replay for high-integrity workflows: deterministic runs, contract-first invariants,
+                and audit-grade traces backed by immutable artifacts.
               </p>
               <p>
-                In practice, this is already real: <strong>bijux-cli</strong> is the substrate (composition, dependency injection, deterministic resolution),
-                and <strong>bijux-agent / bijux-rag / bijux-rar / bijux-vex</strong> provide the capabilities. The result is rare in Python:
-                agentic systems that can be replayed and audited with the same seriousness as a build pipeline.
+                <strong>agentic-flows</strong> defines how runs are planned, executed, traced, replayed, and compared—backed by immutable artifacts and
+                contract-checked invariants for high-integrity workflows.
               </p>
               <p>
-                Designed for governed AI and high-integrity automation—e.g., regulated workflows in healthcare or finance, and safety-oriented stacks where verification is non-negotiable (ISO 26262-style thinking).
+                Non-determinism is declared and governed, not hidden. The CLI supports <strong>plan</strong>, <strong>run</strong>, <strong>replay</strong>,
+                <strong>diff</strong>, and <strong>inspect</strong> so runs stay reviewable months later.
               </p>
-              <p class="used-when">Used when agentic workflows must be reproducible, reviewable, and provably grounded in artifacts.</p>
+              <p class="used-when">
+                Used when workflows must be reproducible, reviewable, and provably replayable from artifacts.
+              </p>
+              <p class="used-when">
+                Related libraries: <strong>bijux-agent</strong>, <strong>bijux-rag</strong>, <strong>bijux-rar</strong>, <strong>bijux-vex</strong>.
+              </p>
 
               <div class="meta">
                 <div class="pills" aria-label="agentic-flows tags">
-                  <span class="pill">Replayable Execution</span>
-                  <span class="pill">Audit Trails</span>
-                  <span class="pill">Verification-First</span>
-                  <span class="pill">Composable Runtime</span>
+                  <span class="pill">Deterministic Execution</span>
+                  <span class="pill">Contract-First Invariants</span>
+                  <span class="pill">Replay & Diff</span>
+                  <span class="pill">Audited Non-Determinism</span>
                 </div>
                 <div class="links" aria-label="agentic-flows links">
-                  <a href="https://bijux.github.io/bijux-cli/">bijux-cli</a>
-                  <a href="https://bijux.github.io/bijux-agent/">bijux-agent</a>
-                  <a href="https://bijux.github.io/bijux-rag/">bijux-rag</a>
-                  <a href="https://bijux.github.io/bijux-rar/">bijux-rar</a>
-                  <a href="https://bijux.github.io/bijux-vex/">bijux-vex</a>
+                  <a href="https://bijux.github.io/agentic-flows/">Documentation</a>
+                  <a href="https://github.com/bijux/agentic-flows" rel="noopener noreferrer">Source Code</a>
+                  <a href="https://pypi.org/project/agentic-flows/" rel="noopener noreferrer">PyPI</a>
                 </div>
               </div>
             </article>
@@ -609,8 +659,8 @@
                 </div>
                 <div class="links" aria-label="bijux-cli links">
                   <a href="https://bijux.github.io/bijux-cli/">Documentation</a>
-                  <a href="https://github.com/bijux/bijux-cli">Source Code</a>
-                  <a href="https://pypi.org/project/bijux-cli/">PyPI</a>
+                  <a href="https://github.com/bijux/bijux-cli" rel="noopener noreferrer">Source Code</a>
+                  <a href="https://pypi.org/project/bijux-cli/" rel="noopener noreferrer">PyPI</a>
                 </div>
               </div>
             </article>
@@ -633,8 +683,8 @@
                 </div>
                 <div class="links" aria-label="bijux-agent links">
                   <a href="https://bijux.github.io/bijux-agent/">Documentation</a>
-                  <a href="https://github.com/bijux/bijux-agent">Source Code</a>
-                  <a href="https://pypi.org/project/bijux-agent/">PyPI</a>
+                  <a href="https://github.com/bijux/bijux-agent" rel="noopener noreferrer">Source Code</a>
+                  <a href="https://pypi.org/project/bijux-agent/" rel="noopener noreferrer">PyPI</a>
                 </div>
               </div>
             </article>
@@ -655,8 +705,8 @@
                 </div>
                 <div class="links" aria-label="bijux-rag links">
                   <a href="https://bijux.github.io/bijux-rag/">Documentation</a>
-                  <a href="https://github.com/bijux/bijux-rag">Source Code</a>
-                  <a href="https://pypi.org/project/bijux-rag/">PyPI</a>
+                  <a href="https://github.com/bijux/bijux-rag" rel="noopener noreferrer">Source Code</a>
+                  <a href="https://pypi.org/project/bijux-rag/" rel="noopener noreferrer">PyPI</a>
                 </div>
               </div>
             </article>
@@ -679,8 +729,8 @@
                 </div>
                 <div class="links" aria-label="bijux-rar links">
                   <a href="https://bijux.github.io/bijux-rar/">Documentation</a>
-                  <a href="https://github.com/bijux/bijux-rar">Source Code</a>
-                  <a href="https://pypi.org/project/bijux-rar/">PyPI</a>
+                  <a href="https://github.com/bijux/bijux-rar" rel="noopener noreferrer">Source Code</a>
+                  <a href="https://pypi.org/project/bijux-rar/" rel="noopener noreferrer">PyPI</a>
                 </div>
               </div>
             </article>
@@ -701,8 +751,8 @@
                 </div>
                 <div class="links" aria-label="bijux-vex links">
                   <a href="https://bijux.github.io/bijux-vex/">Documentation</a>
-                  <a href="https://github.com/bijux/bijux-vex">Source Code</a>
-                  <a href="https://pypi.org/project/bijux-vex/">PyPI</a>
+                  <a href="https://github.com/bijux/bijux-vex" rel="noopener noreferrer">Source Code</a>
+                  <a href="https://pypi.org/project/bijux-vex/" rel="noopener noreferrer">PyPI</a>
                 </div>
               </div>
             </article>
@@ -743,7 +793,7 @@
                 </div>
                 <div class="links">
                   <a href="https://bijux.github.io/python-functional-programming/">Read</a>
-                  <a href="https://github.com/bijux/python-functional-programming">Source Code</a>
+                  <a href="https://github.com/bijux/python-functional-programming" rel="noopener noreferrer">Source Code</a>
                 </div>
               </div>
             </article>
@@ -764,7 +814,7 @@
                 </div>
                 <div class="links">
                   <a href="https://bijux.github.io/python-meta-programming/">Read</a>
-                  <a href="https://github.com/bijux/python-meta-programming">Source Code</a>
+                  <a href="https://github.com/bijux/python-meta-programming" rel="noopener noreferrer">Source Code</a>
                 </div>
               </div>
             </article>
@@ -787,7 +837,7 @@
                 </div>
                 <div class="links">
                   <a href="https://bijux.github.io/deep-dive-snakemake/">Read</a>
-                  <a href="https://github.com/bijux/deep-dive-snakemake">Source Code</a>
+                  <a href="https://github.com/bijux/deep-dive-snakemake" rel="noopener noreferrer">Source Code</a>
                 </div>
               </div>
             </article>
@@ -808,7 +858,7 @@
                 </div>
                 <div class="links">
                   <a href="https://bijux.github.io/deep-dive-make/">Read</a>
-                  <a href="https://github.com/bijux/deep-dive-make">Source Code</a>
+                  <a href="https://github.com/bijux/deep-dive-make" rel="noopener noreferrer">Source Code</a>
                 </div>
               </div>
             </article>
@@ -818,7 +868,7 @@
     </main>
 
     <footer>
-      © <span id="y"></span> bijux · <a href="https://github.com/bijux">GitHub</a> · <a href="https://github.com/bijux">Community</a>
+      © <span id="y"></span> bijux · <a href="https://github.com/bijux" rel="noopener noreferrer">GitHub</a>
       <div class="signature">If you cannot replay it from artifacts, you do not yet control it.</div>
       <div class="cred-anchor">Designed for long-lived systems: research, production, and regulated workflows.</div>
       <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
@@ -867,7 +917,19 @@
         setStored(next);
       };
 
-      applyTheme(currentTheme);
+      if (currentTheme === "auto") {
+        label.textContent = "Auto";
+        if (!listenerAdded) {
+          mq.addEventListener("change", handlePrefersChange);
+          listenerAdded = true;
+        }
+      } else {
+        label.textContent = currentTheme.charAt(0).toUpperCase() + currentTheme.slice(1);
+        if (listenerAdded) {
+          mq.removeEventListener("change", handlePrefersChange);
+          listenerAdded = false;
+        }
+      }
       btn.addEventListener("click", cycleTheme);
     })();
   </script>
