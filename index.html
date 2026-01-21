@@ -48,10 +48,8 @@
     })();
   </script>
 
-  <link rel="preload" as="image" href="./assets/bijux_logo_hq.png" />
-  <link rel="icon" type="image/png" href="./assets/bijux_icon.png" />
-  <link rel="apple-touch-icon" href="./assets/bijux_icon.png" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⬡</text></svg>" />
+  <link rel="preload" as="image" href="./assets/bijux_logo_hq.webp" type="image/webp" />
+  <link rel="icon" type="image/png" sizes="1296x1292" href="assets/bijux_icon.png" />
 
   <style>
     :root {
@@ -487,14 +485,17 @@
       </div>
 
       <div class="brand" aria-label="bijux brand">
-        <img
-          src="./assets/bijux_logo_hq.png"
-          loading="eager"
-          decoding="async"
-          width="1200"
-          height="630"
-          alt="bijux logo — deterministic systems across CS, AI, data, and bioinformatics"
-        />
+        <picture>
+          <source type="image/webp" srcset="./assets/bijux_logo_hq.webp" />
+          <img
+            src="./assets/bijux_logo_hq.png"
+            loading="eager"
+            decoding="async"
+            width="1200"
+            height="630"
+            alt="bijux logo — deterministic systems across CS, AI, data, and bioinformatics"
+          />
+        </picture>
       </div>
 
       <h1>bijux</h1>
@@ -539,19 +540,28 @@
           with traceable decisions and replayable execution trails. Failures are sharp and local—no silent fallbacks, no hidden recovery.
         </p>
 
-        <h3>Roadmap (near-term)</h3>
+        <h3>Roadmap (Near-Term)</h3>
         <p>
-          The direction is consolidation: a coherent execution model in Python where composition, provenance, replayability, and verification are non-negotiable.
-          <strong>agentic-flows</strong> is the foundation for governed execution and replay, with deterministic defaults and explicitly-audited non-determinism.
-          Over time, higher-level capabilities (agents, retrieval, reasoning, and domain runtimes) remain additive—without weakening determinism.
+          bijux's trajectory emphasizes ecosystem consolidation: a unified Python execution paradigm where composition, provenance, replayability, and verification are absolute.
+          Pure determinism provides stability but limited expressiveness; bijux uniquely integrates governed non-determinism (adaptive agents, probabilistic retrieval) via declarative contracts,
+          policy constraints, and audits, ensuring bounded, traceable, and accountable behavior for elite, versatile systems in AI, data, and bioinformatics.
         </p>
+
+        <p>Ecosystem layers:</p>
+        <ul>
+          <li><strong>Foundations</strong>: bijux-cli for deterministic resolution and injection; bijux-dag (forthcoming) for resilient DAG semantics, enabling predictable pipelines.</li>
+          <li><strong>Engines</strong>: bijux-vex as vector execution with bounded approximations and reproducible search; bijux-agent as state-machine orchestration with artifact-backed traces.</li>
+          <li><strong>Elite Systems</strong>: bijux-rag and bijux-rar as autonomous, verifiable RAG/RAR platforms; agentic-flows for governed execution, replay, and audit trails; agentic-proteins for lab-grade protein design with explicit evaluations; bijux-dna (new) for end-to-end genomics with deterministic transforms and provenance.</li>
+        </ul>
 
         <p>Principles:</p>
         <ul>
-          <li><strong>Determinism over convenience</strong> — Identical inputs yield identical outputs; nondeterminism is explicit, bounded, and injectable.</li>
-          <li><strong>Explicit contracts</strong> — Interfaces validate at construction; undefined behavior is a bug, not a feature.</li>
-          <li><strong>Sharp failure modes</strong> — Fail early, loudly, and locally; no silent fallback logic.</li>
-          <li><strong>Verifiable behavior</strong> — Outputs are traceable to artifacts; executions are replayable and reviewable.</li>
+          <li><strong>Governed Determinism</strong> — Identical inputs yield identical outputs; non-determinism is declared, bounded, policy-enforced, and replayable.</li>
+          <li><strong>Foundational Priority</strong> — CLI/DAG bedrock first; layers accrete without destabilizing invariants.</li>
+          <li><strong>Contractual Rigor</strong> — Construction-time validation; undefined behavior as defects, with policy-governed audits.</li>
+          <li><strong>Failure Precision</strong> — Early, emphatic, local failures; no implicit recovery.</li>
+          <li><strong>Artifact Provenance</strong> — Immutable anchors for inspection, diffing, review, and reproduction.</li>
+          <li><strong>Defensible Executions</strong> — Runs explicable across time and environments from artifacts alone.</li>
         </ul>
       </section>
 
@@ -668,28 +678,6 @@
 
           <div class="project-row">
             <article class="card">
-              <h3><a href="https://bijux.github.io/bijux-agent/">bijux-agent</a></h3>
-              <p>Deterministic agents as explicit state machines: artifact-backed actions, structured traces, and replayable execution.</p>
-              <p>Designed to replace opaque orchestration with inspectable decisions and local, debuggable failure modes.</p>
-              <p>Strict by design: effects are isolated and every action is traced.</p>
-              <p class="used-when">Used when agent behavior must be auditable and reproducible.</p>
-
-              <div class="meta">
-                <div class="pills" aria-label="bijux-agent tags">
-                  <span class="pill">State Machines</span>
-                  <span class="pill">Artifact Actions</span>
-                  <span class="pill">Trace Provenance</span>
-                  <span class="pill">Deterministic Execution</span>
-                </div>
-                <div class="links" aria-label="bijux-agent links">
-                  <a href="https://bijux.github.io/bijux-agent/">Documentation</a>
-                  <a href="https://github.com/bijux/bijux-agent" rel="noopener noreferrer">Source Code</a>
-                  <a href="https://pypi.org/project/bijux-agent/" rel="noopener noreferrer">PyPI</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="card">
               <h3><a href="https://bijux.github.io/bijux-rag/">bijux-rag</a></h3>
               <p>Retrieval pipelines as explicit, testable flows: strict boundaries, provenance-aware execution, and replayable outcomes.</p>
               <p>Designed to eliminate hidden prompt state and unreplayable retrieval that undermines deployed systems.</p>
@@ -710,9 +698,7 @@
                 </div>
               </div>
             </article>
-          </div>
 
-          <div class="project-row">
             <article class="card">
               <h3><a href="https://bijux.github.io/bijux-rar/">bijux-rar</a></h3>
               <p>Reasoning as a verifiable process: explicit premises, artifact-backed evidence, deterministic proofs, and replayable verification.</p>
@@ -731,6 +717,30 @@
                   <a href="https://bijux.github.io/bijux-rar/">Documentation</a>
                   <a href="https://github.com/bijux/bijux-rar" rel="noopener noreferrer">Source Code</a>
                   <a href="https://pypi.org/project/bijux-rar/" rel="noopener noreferrer">PyPI</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="project-row">
+            <article class="card">
+              <h3><a href="https://bijux.github.io/bijux-agent/">bijux-agent</a></h3>
+              <p>Deterministic agents as explicit state machines: artifact-backed actions, structured traces, and replayable execution.</p>
+              <p>Designed to replace opaque orchestration with inspectable decisions and local, debuggable failure modes.</p>
+              <p>Strict by design: effects are isolated and every action is traced.</p>
+              <p class="used-when">Used when agent behavior must be auditable and reproducible.</p>
+
+              <div class="meta">
+                <div class="pills" aria-label="bijux-agent tags">
+                  <span class="pill">State Machines</span>
+                  <span class="pill">Artifact Actions</span>
+                  <span class="pill">Trace Provenance</span>
+                  <span class="pill">Deterministic Execution</span>
+                </div>
+                <div class="links" aria-label="bijux-agent links">
+                  <a href="https://bijux.github.io/bijux-agent/">Documentation</a>
+                  <a href="https://github.com/bijux/bijux-agent" rel="noopener noreferrer">Source Code</a>
+                  <a href="https://pypi.org/project/bijux-agent/" rel="noopener noreferrer">PyPI</a>
                 </div>
               </div>
             </article>
