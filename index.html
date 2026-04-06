@@ -362,7 +362,8 @@
     .repo-grid,
     .family-grid,
     .principle-grid,
-    .signal-grid {
+    .signal-grid,
+    .proof-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
@@ -599,6 +600,33 @@
       font-size: 0.93rem;
     }
 
+    .proof-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+      background: var(--card-strong);
+    }
+
+    .proof-card strong {
+      display: block;
+      font-family: "Fraunces", serif;
+      font-size: 1.7rem;
+      line-height: 1.05;
+      color: var(--navy);
+    }
+
+    .proof-card h3 {
+      margin: 8px 0 0;
+      font-size: 0.95rem;
+      line-height: 1.3;
+    }
+
+    .proof-card p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
     .cta-row {
       margin-top: 18px;
       display: flex;
@@ -664,6 +692,7 @@
       .family-grid,
       .principle-grid,
       .signal-grid,
+      .proof-grid,
       .programs,
       .list { grid-template-columns: 1fr; }
       .stat strong { font-size: 1.26rem; }
@@ -725,6 +754,34 @@
       <div class="cta-row">
         <a class="button primary" href="https://github.com/bijux/bijux-core" target="_blank" rel="noopener">Open bijux-core</a>
         <a class="button secondary" href="https://github.com/bijux" target="_blank" rel="noopener">Explore All Repositories</a>
+      </div>
+    </section>
+
+    <section class="section panel reveal" style="--delay: 100ms;" id="signals">
+      <p class="section-kicker">Proof</p>
+      <h2>Public signals that make the ecosystem credible</h2>
+      <p class="lead">Good presentation should not rely on adjectives alone. The ecosystem already exposes enough public proof across repositories, docs, packages, crates, and course surfaces to show real execution depth.</p>
+      <div class="proof-grid">
+        <article class="proof-card">
+          <strong>7</strong>
+          <h3>Public repositories</h3>
+          <p>Core, canon, atlas, proteomics, pollenomics, masterclass, and GNSS are all visible as separate public products under the <a href="https://github.com/bijux" target="_blank" rel="noopener">GitHub bijux namespace</a>.</p>
+        </article>
+        <article class="proof-card">
+          <strong>5</strong>
+          <h3>Public documentation surfaces</h3>
+          <p>Core, canon, atlas, proteomics, and pollenomics already have dedicated docs sites that extend the product story beyond source code listings.</p>
+        </article>
+        <article class="proof-card">
+          <strong>12+</strong>
+          <h3>Public Python package surfaces</h3>
+          <p>The package line already spans runtime, agentic systems, knowledge systems, and proteomics layers, showing breadth with real published interfaces rather than private claims.</p>
+        </article>
+        <article class="proof-card">
+          <strong>2</strong>
+          <h3>Public masterclass tracks</h3>
+          <p>The learning surface already covers both Python engineering and reproducible science with individual course pages that make the educational line concrete and revisitable.</p>
+        </article>
       </div>
     </section>
 
