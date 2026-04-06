@@ -108,7 +108,91 @@
           "about": {
             "@id": "https://bijux.github.io/#org"
           },
-          "description": "Overview of bijux-core, bijux-canon, bijux-atlas, bijux-proteomics, bijux-pollenomics, bijux-masterclass, bijux-gnss, and the private bijux-genomics platform."
+          "description": "Overview of bijux-core, bijux-canon, bijux-atlas, bijux-proteomics, bijux-pollenomics, bijux-masterclass, bijux-gnss, and the private bijux-genomics platform.",
+          "mainEntity": {
+            "@id": "https://bijux.github.io/#products"
+          }
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://bijux.github.io/#products",
+          "name": "bijux public product portfolio",
+          "itemListElement": [
+            {
+              "@type": "SoftwareSourceCode",
+              "position": 1,
+              "name": "bijux-core",
+              "codeRepository": "https://github.com/bijux/bijux-core",
+              "url": "https://bijux.io/bijux-core/",
+              "programmingLanguage": [
+                "Rust",
+                "Python"
+              ],
+              "description": "Canonical runtime and governance backbone for CLI, DAG execution, evidence, replay, and release discipline."
+            },
+            {
+              "@type": "SoftwareSourceCode",
+              "position": 2,
+              "name": "bijux-canon",
+              "codeRepository": "https://github.com/bijux/bijux-canon",
+              "url": "https://bijux.io/bijux-canon/",
+              "programmingLanguage": [
+                "Python"
+              ],
+              "description": "Governed AI and knowledge system spanning ingest, index, runtime, reasoning, and agentic execution."
+            },
+            {
+              "@type": "SoftwareSourceCode",
+              "position": 3,
+              "name": "bijux-atlas",
+              "codeRepository": "https://github.com/bijux/bijux-atlas",
+              "url": "https://bijux.io/bijux-atlas/",
+              "programmingLanguage": [
+                "Rust"
+              ],
+              "description": "Data delivery platform combining ingest, server, API, and CLI surfaces."
+            },
+            {
+              "@type": "SoftwareSourceCode",
+              "position": 4,
+              "name": "bijux-proteomics",
+              "codeRepository": "https://github.com/bijux/bijux-proteomics",
+              "url": "https://bijux.io/bijux-proteomics/",
+              "programmingLanguage": [
+                "Python"
+              ],
+              "description": "Proteomics and drug-discovery acceleration stack across foundation, intelligence, knowledge, and lab planning."
+            },
+            {
+              "@type": "SoftwareSourceCode",
+              "position": 5,
+              "name": "bijux-pollenomics",
+              "codeRepository": "https://github.com/bijux/bijux-pollenomics",
+              "url": "https://bijux.io/bijux-pollenomics/",
+              "programmingLanguage": [
+                "Python"
+              ],
+              "description": "Evidence-mapping and site-selection product surface for archaeology, eDNA, aDNA, and pollenomics context."
+            },
+            {
+              "@type": "CreativeWork",
+              "position": 6,
+              "name": "bijux-masterclass",
+              "url": "https://bijux.io/bijux-masterclass/reproducible-research/",
+              "description": "Free public masterclass with Python programming and reproducible science tracks."
+            },
+            {
+              "@type": "SoftwareSourceCode",
+              "position": 7,
+              "name": "bijux-gnss",
+              "codeRepository": "https://github.com/bijux/bijux-gnss",
+              "url": "https://github.com/bijux/bijux-gnss",
+              "programmingLanguage": [
+                "Rust"
+              ],
+              "description": "In-progress GNSS implementation effort built around modern systems performance and safety."
+            }
+          ]
         }
       ]
     }
