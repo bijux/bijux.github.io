@@ -2,133 +2,136 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>bijux - platform engineering, runtime systems, and scientific software</title>
-  <meta
-    name="description"
-    content="bijux is the public home for software and course books by Bijan Mousavi: platform engineering, Rust and Python runtime systems, workflow execution, data platforms, bioinformatics infrastructure, and scientific computing."
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>bijux | platform engineering, AI systems, bioinformatics, and scientific software products</title>
+  <meta name="description" content="bijux is the public product hub by Bijan Mousavi for platform engineering, AI systems, bioinformatics, workflow runtimes, data products, and scientific software: bijux-core, bijux-canon, bijux-atlas, bijux-proteomics, bijux-pollenomics, bijux-masterclass, and bijux-gnss.">
   <meta name="author" content="Bijan Mousavi">
+  <meta name="application-name" content="bijux">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="keywords" content="bijux, Bijan Mousavi, platform engineering, software engineering, principal engineer, AI systems engineering, bioinformatics, machine learning engineering, data science, Rust, Python, workflow systems, DAG execution, genomics, proteomics, pollenomics, GNSS, reproducible research, scientific software">
   <link rel="canonical" href="https://bijux.github.io/">
 
-  <meta property="og:title" content="bijux - platform engineering, runtime systems, and scientific software">
-  <meta
-    property="og:description"
-    content="Public software and course books by Bijan Mousavi across platform engineering, control-plane design, workflow systems, bioinformatics, and scientific computing."
-  >
+  <meta property="og:title" content="bijux | platform engineering, AI systems, and bioinformatics products">
+  <meta property="og:description" content="Public hub for bijux-core, bijux-canon, bijux-atlas, bijux-proteomics, bijux-pollenomics, bijux-masterclass, and bijux-gnss, with a private genomics platform still in development.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bijux.github.io/">
   <meta property="og:image" content="https://bijux.github.io/assets/bijux_logo_hq.png">
-  <meta property="og:image:alt" content="bijux logo">
+  <meta property="og:image:alt" content="bijux logo and platform engineering portfolio hub">
   <meta property="og:site_name" content="bijux">
   <meta property="og:locale" content="en_US">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="bijux - platform engineering, runtime systems, and scientific software">
-  <meta
-    name="twitter:description"
-    content="Public software and course books by Bijan Mousavi across platform engineering, control-plane design, workflow systems, bioinformatics, and scientific computing."
-  >
+  <meta name="twitter:title" content="bijux | platform engineering, AI systems, and bioinformatics products">
+  <meta name="twitter:description" content="Product hub for runtime systems, DAG execution, governed AI workflows, genomics, proteomics, pollenomics, GNSS, and deep technical masterclass programs.">
   <meta name="twitter:image" content="https://bijux.github.io/assets/bijux_logo_hq.png">
+  <meta name="twitter:image:alt" content="bijux logo and platform engineering portfolio hub">
 
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f3f1ec">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0d141c">
+  <meta name="theme-color" content="#f5efe3">
+  <link rel="icon" type="image/png" sizes="1296x1292" href="assets/bijux_icon.png">
+  <link rel="preload" as="image" href="./assets/bijux_logo_hq.webp" type="image/webp">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
-  >
-
-  <link rel="preload" as="image" href="./assets/bijux_logo_hq.webp" type="image/webp">
-  <link rel="icon" type="image/png" sizes="1296x1292" href="assets/bijux_icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Bijan Mousavi",
-      "url": "https://bijux.github.io/",
-      "image": "https://bijux.github.io/assets/bijux_logo_hq.png",
-      "description": "Engineer building platform systems, control planes, runtime software, workflow execution tools, and reproducible scientific infrastructure.",
-      "sameAs": [
-        "https://github.com/bijux",
-        "https://pypi.org/user/bijux/",
-        "https://crates.io/users/bijux"
-      ],
-      "worksFor": {
-        "@type": "Organization",
-        "name": "bijux"
-      },
-      "jobTitle": "Software Engineer and Systems Architect",
-      "knowsAbout": [
-        "Rust",
-        "Python",
-        "Platform engineering",
-        "Control-plane design",
-        "Kubernetes",
-        "Workflow systems",
-        "Data platforms",
-        "Bioinformatics",
-        "Scientific computing",
-        "Reproducibility"
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://bijux.github.io/#org",
+          "name": "bijux",
+          "url": "https://bijux.github.io/",
+          "logo": "https://bijux.github.io/assets/bijux_logo_hq.png",
+          "description": "Product ecosystem for platform engineering, AI systems, bioinformatics, workflow runtime infrastructure, data products, and scientific software.",
+          "founder": {
+            "@id": "https://bijux.github.io/#person"
+          },
+          "sameAs": [
+            "https://github.com/bijux",
+            "https://pypi.org/user/bijux/",
+            "https://crates.io/users/bijux"
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://bijux.github.io/#person",
+          "name": "Bijan Mousavi",
+          "url": "https://bijux.github.io/",
+          "description": "Principal-level engineer building platform systems, runtime software, AI workflow infrastructure, bioinformatics execution systems, scientific data products, and deep technical education.",
+          "jobTitle": "Principal Platform and Software Engineer",
+          "worksFor": {
+            "@id": "https://bijux.github.io/#org"
+          },
+          "sameAs": [
+            "https://github.com/bijux",
+            "https://pypi.org/user/bijux/",
+            "https://crates.io/users/bijux"
+          ],
+          "knowsAbout": [
+            "Platform Engineering",
+            "Software Engineering",
+            "Rust",
+            "Python",
+            "AI Systems Engineering",
+            "Machine Learning Engineering",
+            "Data Science",
+            "Workflow Systems",
+            "Bioinformatics",
+            "Automation",
+            "Genomics",
+            "Proteomics",
+            "Scientific Computing"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://bijux.github.io/#website",
+          "url": "https://bijux.github.io/",
+          "name": "bijux",
+          "publisher": {
+            "@id": "https://bijux.github.io/#org"
+          },
+          "description": "Public hub for bijux products, documentation, packages, and masterclass programs."
+        },
+        {
+          "@type": "CollectionPage",
+          "@id": "https://bijux.github.io/#hub",
+          "url": "https://bijux.github.io/",
+          "name": "bijux product hub",
+          "isPartOf": {
+            "@id": "https://bijux.github.io/#website"
+          },
+          "about": {
+            "@id": "https://bijux.github.io/#org"
+          },
+          "description": "Overview of bijux-core, bijux-canon, bijux-atlas, bijux-proteomics, bijux-pollenomics, bijux-masterclass, bijux-gnss, and the private bijux-genomics platform."
+        }
       ]
     }
   </script>
 
-  <script>
-    (function () {
-      const stored = localStorage.getItem("theme") || "auto";
-      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const theme = stored === "auto" ? (prefersDark ? "dark" : "light") : stored;
-      document.documentElement.setAttribute("data-theme", theme);
-    })();
-  </script>
-
   <style>
     :root {
-      color-scheme: light dark;
-      --bg: #f5efe3;
-      --bg-alt: #ede5d6;
-      --surface: rgba(255, 255, 255, 0.76);
-      --surface-strong: rgba(255, 255, 255, 0.9);
-      --surface-alt: rgba(255, 248, 239, 0.7);
-      --text: #162130;
-      --muted: #5c6778;
-      --border: rgba(22, 33, 48, 0.12);
-      --border-strong: rgba(22, 33, 48, 0.2);
-      --accent: #0d7a6a;
-      --accent-soft: rgba(13, 122, 106, 0.12);
-      --private: #a05514;
-      --private-soft: rgba(160, 85, 20, 0.12);
-      --shadow: 0 18px 48px rgba(61, 47, 25, 0.10);
-      --shadow-hover: 0 28px 72px rgba(61, 47, 25, 0.16);
-      --focus: 0 0 0 3px rgba(13, 122, 106, 0.2);
+      --paper: #f5efe3;
+      --paper-2: #ede5d6;
+      --ink: #152033;
+      --muted: #546277;
+      --line: rgba(21, 32, 51, 0.14);
+      --line-strong: rgba(21, 32, 51, 0.25);
+      --card: rgba(255, 255, 255, 0.78);
+      --card-strong: rgba(255, 255, 255, 0.9);
+      --teal: #0b7a6d;
+      --teal-soft: rgba(11, 122, 109, 0.12);
+      --amber: #9f6118;
+      --amber-soft: rgba(159, 97, 24, 0.12);
+      --navy: #223f63;
+      --shadow: 0 18px 52px rgba(45, 51, 72, 0.12);
       --radius: 22px;
-      --radius-sm: 16px;
       --max: 1180px;
-    }
-
-    :root[data-theme="dark"] {
-      --bg: #0e141d;
-      --bg-alt: #121c27;
-      --surface: rgba(18, 28, 39, 0.8);
-      --surface-strong: rgba(19, 30, 42, 0.92);
-      --surface-alt: rgba(22, 34, 47, 0.74);
-      --text: #edf2f7;
-      --muted: #a7b3c0;
-      --border: rgba(150, 163, 184, 0.16);
-      --border-strong: rgba(150, 163, 184, 0.26);
-      --accent: #3dd6bf;
-      --accent-soft: rgba(79, 209, 181, 0.12);
-      --private: #f2a35e;
-      --private-soft: rgba(242, 163, 94, 0.12);
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.34);
-      --shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.42);
-      --focus: 0 0 0 3px rgba(61, 214, 191, 0.22);
     }
 
     * { box-sizing: border-box; }
@@ -136,1070 +139,976 @@
 
     body {
       margin: 0;
-      min-height: 100vh;
+      color: var(--ink);
+      font: 16px/1.65 "Plus Jakarta Sans", "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(13, 122, 106, 0.12), transparent 28%),
-        radial-gradient(circle at top right, rgba(160, 85, 20, 0.10), transparent 26%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
-      color: var(--text);
-      font: 16px/1.7 "Manrope", "Segoe UI", Arial, sans-serif;
+        radial-gradient(1200px 600px at 8% -10%, rgba(11, 122, 109, 0.16), transparent 60%),
+        radial-gradient(1000px 500px at 100% 0%, rgba(159, 97, 24, 0.14), transparent 62%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      min-height: 100vh;
     }
-
-    img { display: block; max-width: 100%; }
 
     a {
-      color: var(--accent);
+      color: var(--teal);
       text-decoration: none;
     }
-
     a:hover { text-decoration: underline; }
-
-    a:focus-visible,
-    button:focus-visible {
-      outline: none;
-      box-shadow: var(--focus);
+    code {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.9em;
+      background: rgba(34, 63, 99, 0.08);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 0.1em 0.34em;
     }
 
-    code,
-    .mono,
-    .kicker,
-    .badge,
-    .navlink,
-    .button,
-    .footer-copy {
-      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    }
-
-    .skip {
-      position: absolute;
-      left: -999px;
-      top: 12px;
-      z-index: 100;
-      padding: 10px 12px;
-      border: 1px solid var(--border-strong);
-      background: var(--surface-strong);
-      color: var(--text);
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-    }
-
-    .skip:focus { left: 12px; }
-
-    .wrap {
+    .page {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 24px 20px 72px;
+      padding: 26px 18px 84px;
     }
 
-    .topbar,
-    .hero,
-    .section,
-    footer {
-      border: 1px solid var(--border);
-      background: var(--surface);
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: rise 700ms ease forwards;
+      animation-delay: var(--delay, 0ms);
+    }
+
+    @keyframes rise {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
       box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
+      backdrop-filter: blur(14px);
     }
 
     .topbar {
       display: flex;
-      align-items: flex-start;
       justify-content: space-between;
-      gap: 22px;
-      padding: 16px 20px;
-      margin-bottom: 24px;
-      border-radius: 32px;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 18px;
+      margin-bottom: 18px;
     }
 
     .brand {
-      display: grid;
-      grid-template-columns: 64px minmax(0, auto);
-      grid-template-rows: auto auto;
-      column-gap: 14px;
-      row-gap: 2px;
+      display: flex;
       align-items: center;
+      gap: 12px;
       min-width: 0;
-      flex: 1 1 auto;
     }
 
     .brand img {
-      grid-column: 1;
-      grid-row: 1 / span 2;
-      width: 64px;
-      height: 64px;
-      padding: 8px;
-      border: 1px solid var(--border);
-      background: var(--surface-alt);
-      border-radius: 18px;
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: var(--card-strong);
+      padding: 6px;
       flex-shrink: 0;
     }
 
     .brand-title {
-      grid-column: 2;
-      grid-row: 1;
       margin: 0;
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
+      font: 700 0.95rem/1.2 "IBM Plex Mono", monospace;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      align-self: end;
     }
 
-    .brand-subtitle {
-      display: block;
-      grid-column: 2;
-      grid-row: 2;
-      margin: 0;
+    .brand-sub {
+      margin: 2px 0 0;
       color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.35;
-      align-self: start;
+      font-size: 0.88rem;
     }
 
-    .nav-row {
+    .nav {
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
       justify-content: flex-end;
-      gap: 14px;
-      flex-wrap: nowrap;
-      white-space: nowrap;
-      flex-shrink: 0;
-      align-self: center;
     }
 
-    .navlink,
-    .iconbtn {
+    .chip {
       display: inline-flex;
       align-items: center;
-      padding: 9px 12px;
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       border-radius: 999px;
-      background: var(--surface-strong);
-      box-shadow: var(--shadow);
-      color: var(--text);
-      font-size: 0.82rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .iconbtn {
-      gap: 6px;
-      cursor: pointer;
-      font: inherit;
-      line-height: 1;
-      font-size: 0.72rem;
-      padding: 7px 10px;
-    }
-
-    .navlink:hover,
-    .iconbtn:hover,
-    .button:hover,
-    .link-row a:hover,
-    .resource-links a:hover {
-      text-decoration: none;
-      border-color: var(--border-strong);
-      box-shadow: var(--shadow-hover);
-      transform: translateY(-1px);
-    }
-
-    .icon {
-      width: 16px;
-      height: 16px;
-      display: inline-block;
+      padding: 7px 11px;
+      font: 600 0.76rem/1 "IBM Plex Mono", monospace;
+      letter-spacing: 0.03em;
+      background: var(--card-strong);
+      color: var(--ink);
     }
 
     .hero {
+      padding: 34px 30px;
+      margin-bottom: 18px;
       position: relative;
       overflow: hidden;
-      padding: 28px;
-      border-radius: 32px;
-      background:
-        linear-gradient(140deg, rgba(255, 255, 255, 0.18), transparent 42%),
-        linear-gradient(180deg, var(--surface-strong), var(--surface));
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      inset: auto -70px -110px auto;
-      width: 240px;
-      height: 240px;
+      inset: auto -120px -140px auto;
+      width: 320px;
+      height: 320px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(13, 122, 106, 0.15), transparent 70%);
+      background: radial-gradient(circle, rgba(34, 63, 99, 0.13), transparent 70%);
       pointer-events: none;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.65fr) minmax(290px, 0.95fr);
-      gap: 24px;
-      align-items: start;
-    }
-
     .kicker {
-      display: inline-block;
-      padding: 8px 12px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: var(--surface-alt);
-      color: var(--accent);
-      font-size: 0.78rem;
+      margin: 0 0 12px;
+      color: var(--navy);
+      font: 600 0.78rem/1 "IBM Plex Mono", monospace;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
-    .hero h1 {
-      margin: 14px 0 0;
-      max-width: 15ch;
-      font-size: clamp(2.3rem, 5vw, 4.4rem);
-      line-height: 1;
-      letter-spacing: -0.05em;
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      font-family: "Fraunces", serif;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.12;
+      letter-spacing: -0.01em;
     }
 
-    .hero-subhead {
-      margin: 18px 0 0;
-      max-width: 70ch;
-      font-size: clamp(1.05rem, 1.8vw, 1.22rem);
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .hero-summary,
-    .section-intro,
-    .card p,
-    .course-card p,
-    .panel p,
-    .note p {
+    .hero p {
+      margin: 16px 0 0;
+      max-width: 860px;
       color: var(--muted);
+      font-size: 1.04rem;
     }
 
-    .hero-summary {
-      margin: 14px 0 0;
-      max-width: 72ch;
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 22px 0 0;
     }
 
-    .hero-links,
-    .resource-links {
+    .audience-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 20px;
+      gap: 8px;
+      margin: 14px 0 0;
     }
 
-    .button {
+    .audience-pill {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 11px 14px;
-      border: 1px solid var(--border);
       border-radius: 999px;
-      background: var(--surface-strong);
-      box-shadow: var(--shadow);
-      color: var(--text);
-      font-size: 0.82rem;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--navy);
+      font: 600 0.74rem/1 "IBM Plex Mono", monospace;
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
 
-    .button.primary {
-      border-color: var(--accent);
-      background: var(--accent-soft);
-      color: var(--accent);
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 11px 12px;
+      background: var(--card-strong);
     }
 
-    .panel {
-      padding: 18px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent),
-        var(--surface-alt);
-      box-shadow: var(--shadow);
+    .stat strong {
+      display: block;
+      font-family: "Fraunces", serif;
+      font-size: 1.42rem;
+      line-height: 1.05;
+      color: var(--navy);
     }
 
-    .panel + .panel {
+    .stat span {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .section {
+      padding: 26px;
       margin-top: 14px;
     }
 
-    .panel h2,
-    .panel h3,
-    .card h3,
-    .course-card h3 {
+    h2 {
       margin: 0;
-      letter-spacing: -0.02em;
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.45rem, 2.8vw, 2.1rem);
+      letter-spacing: -0.01em;
     }
 
-    .panel ul {
-      margin: 12px 0 0;
+    .lead {
+      margin: 8px 0 0;
+      color: var(--muted);
+      max-width: 900px;
+    }
+
+    .map-grid,
+    .repo-grid,
+    .family-grid,
+    .principle-grid,
+    .signal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .repo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      background: var(--card-strong);
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+
+    .card p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .section-kicker {
+      margin: 0 0 6px;
+      color: var(--navy);
+      font: 600 0.76rem/1 "IBM Plex Mono", monospace;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .subhead {
+      margin: 18px 0 0;
+      font: 700 0.98rem/1.3 "IBM Plex Mono", monospace;
+      color: var(--navy);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .status-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 5px 9px;
+      font: 600 0.72rem/1 "IBM Plex Mono", monospace;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--ink);
+    }
+
+    .status-pill.public {
+      color: var(--teal);
+      background: var(--teal-soft);
+      border-color: rgba(11, 122, 109, 0.24);
+    }
+
+    .status-pill.private {
+      color: var(--amber);
+      background: var(--amber-soft);
+      border-color: rgba(159, 97, 24, 0.24);
+    }
+
+    .status-pill.development {
+      color: var(--navy);
+      background: rgba(34, 63, 99, 0.10);
+      border-color: rgba(34, 63, 99, 0.2);
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+      align-items: center;
+    }
+
+    .badge-row a {
+      display: inline-flex;
+      line-height: 0;
+    }
+
+    .badge-row img {
+      display: block;
+      height: 20px;
+      border-radius: 4px;
+    }
+
+    .story {
+      margin-top: 10px;
+    }
+
+    .product-points {
+      margin: 9px 0 0;
+      padding-left: 17px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .product-points li { margin: 4px 0; }
+
+    .product-impact {
+      margin-top: 9px;
+      font-size: 0.85rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 7px 9px;
+      background: var(--teal-soft);
+      color: #0a5d53;
+      font-family: "IBM Plex Mono", monospace;
+    }
+
+    .rename {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      font-size: 0.86rem;
+      font-family: "IBM Plex Mono", monospace;
+    }
+
+    .rename .from {
+      background: var(--amber-soft);
+      color: var(--amber);
+      border: 1px solid rgba(159, 97, 24, 0.24);
+      border-radius: 10px;
+      padding: 4px 7px;
+    }
+
+    .rename .to {
+      background: var(--teal-soft);
+      color: var(--teal);
+      border: 1px solid rgba(11, 122, 109, 0.24);
+      border-radius: 10px;
+      padding: 4px 7px;
+      font-weight: 600;
+    }
+
+    .tree {
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #101b2a;
+      color: #deebff;
+      overflow-x: auto;
+      font: 500 0.84rem/1.5 "IBM Plex Mono", monospace;
+    }
+
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--card-strong);
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 12px 14px;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    .list {
+      margin: 0;
+      padding: 0 14px 14px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      list-style: none;
+    }
+
+    .list li {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 8px 10px;
+      font: 500 0.8rem/1.3 "IBM Plex Mono", monospace;
+      background: rgba(255, 255, 255, 0.6);
+      word-break: break-word;
+    }
+
+    .programs {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .program-list {
+      margin: 10px 0 0;
       padding-left: 18px;
       color: var(--muted);
     }
 
-    .panel li + li {
-      margin-top: 8px;
-    }
+    .program-list li { margin: 4px 0; }
 
-    .section {
-      margin-top: 24px;
-      padding: 24px;
-      border-radius: 28px;
+    .signal-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.14), transparent),
-        var(--surface);
+        linear-gradient(135deg, rgba(34, 63, 99, 0.05), transparent 48%),
+        var(--card-strong);
     }
 
-    .section-head {
-      margin-bottom: 18px;
+    .signal-card h3 {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.3;
     }
 
-    .section-title {
+    .signal-card p {
       margin: 8px 0 0;
-      font-size: clamp(1.55rem, 3vw, 2.15rem);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-    }
-
-    .section-intro {
-      margin: 10px 0 0;
-      max-width: 76ch;
-    }
-
-    .subsection-title {
-      margin: 0 0 14px;
-      font-size: 1.05rem;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-    }
-
-    .feature-grid,
-    .grid-2,
-    .grid-3 {
-      display: grid;
-      gap: 16px;
-    }
-
-    .feature-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .grid-2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .grid-3 {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .card,
-    .course-card {
-      padding: 20px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent),
-        var(--surface-alt);
-      box-shadow: var(--shadow);
-      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
-    }
-
-    .card.feature {
-      background:
-        linear-gradient(135deg, rgba(13, 122, 106, 0.08), transparent 42%),
-        var(--surface);
-    }
-
-    .card.private-card {
-      border-color: rgba(154, 77, 16, 0.28);
-      background:
-        linear-gradient(135deg, rgba(160, 85, 20, 0.08), transparent 42%),
-        var(--surface);
-    }
-
-    .card:hover,
-    .course-card:hover,
-    .panel:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--border-strong);
-    }
-
-    .card-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 12px;
-    }
-
-    .card h3,
-    .course-card h3 {
-      font-size: 1.18rem;
-      line-height: 1.2;
-    }
-
-    .mono {
-      margin-top: 6px;
       color: var(--muted);
-      font-size: 0.79rem;
-      line-height: 1.55;
+      font-size: 0.93rem;
     }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 5px 8px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      font-size: 0.72rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .badge.public {
-      color: var(--accent);
-      background: var(--accent-soft);
-      border-color: rgba(11, 118, 98, 0.24);
-    }
-
-    .badge.development {
-      color: #9a5a14;
-      background: rgba(154, 90, 20, 0.10);
-      border-color: rgba(154, 90, 20, 0.26);
-    }
-
-    .badge.private {
-      color: var(--private);
-      background: var(--private-soft);
-      border-color: rgba(154, 77, 16, 0.26);
-    }
-
-    .link-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 16px;
-      font-size: 0.94rem;
-    }
-
-    .link-row a,
-    .resource-links a {
-      display: inline-flex;
-      align-items: center;
-      padding: 8px 11px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: var(--surface-strong);
-      box-shadow: var(--shadow);
-    }
-
-    .card + .subsection-spacer {
-      margin-top: 10px;
-    }
-
-    .private-block {
-      margin-top: 16px;
-    }
-
-    .subsection-spaced {
-      margin-top: 24px;
-    }
-
-    .note {
+    .cta-row {
       margin-top: 18px;
-      padding-top: 18px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      border: 1px solid transparent;
+      border-radius: 12px;
+      padding: 10px 12px;
+      font: 600 0.78rem/1 "IBM Plex Mono", monospace;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    .button.primary {
+      background: var(--teal);
+      color: #ecfffb;
+      box-shadow: 0 10px 24px rgba(11, 122, 109, 0.28);
+    }
+
+    .button.secondary {
+      background: var(--card-strong);
+      color: var(--ink);
+      border-color: var(--line);
     }
 
     footer {
-      margin-top: 24px;
-      padding: 20px 24px;
-      border-radius: 24px;
-    }
-
-    .footer-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .footer-copy {
+      margin-top: 16px;
+      padding: 16px 20px;
+      font-size: 0.88rem;
       color: var(--muted);
-      font-size: 0.82rem;
-      line-height: 1.9;
-      letter-spacing: 0.03em;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
-    .footer-line {
-      margin-top: 8px;
-      font-weight: 600;
-    }
-
-    @media (max-width: 960px) {
-      .hero-grid,
-      .feature-grid,
-      .grid-2,
-      .grid-3 {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        max-width: none;
-      }
+    @media (max-width: 980px) {
+      .repo-grid { grid-template-columns: 1fr; }
+      .list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 760px) {
-      .footer-row {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .wrap {
-        padding-left: 16px;
-        padding-right: 16px;
-      }
-
-      .hero,
-      .section,
-      footer {
-        padding: 20px;
-      }
-
       .topbar {
         flex-direction: column;
         align-items: stretch;
-        border-radius: 28px;
       }
-
-      .brand {
-        grid-template-columns: 56px minmax(0, 1fr);
-      }
-
-      .brand img {
-        width: 56px;
-        height: 56px;
-      }
-
-      .nav-row {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-
-      .navlink,
-      .iconbtn,
-      .button,
-      .link-row a,
-      .resource-links a,
-      .card,
-      .course-card,
-      .panel {
-        transition: none;
-      }
+      .nav { justify-content: flex-start; }
+      .hero,
+      .section { padding: 20px; }
+      .map-grid,
+      .repo-grid,
+      .family-grid,
+      .principle-grid,
+      .signal-grid,
+      .programs,
+      .list { grid-template-columns: 1fr; }
+      .stat strong { font-size: 1.26rem; }
     }
   </style>
 </head>
-
 <body>
-  <a class="skip" href="#content">Skip to content</a>
-
-  <div class="wrap">
-    <div class="topbar">
+  <main class="page">
+    <header class="topbar panel reveal" style="--delay: 40ms;">
       <div class="brand">
-        <picture>
-          <source type="image/webp" srcset="./assets/bijux_logo_hq.webp">
-          <img
-            src="./assets/bijux_logo_hq.png"
-            width="84"
-            height="84"
-            loading="eager"
-            decoding="async"
-            alt="bijux logo"
-          >
-        </picture>
-
+        <img src="./assets/bijux_logo_hq.webp" alt="bijux logo">
         <div>
-          <p class="brand-title">bijux</p>
-          <p class="brand-subtitle">Platform, runtime, and scientific systems by Bijan Mousavi</p>
+          <p class="brand-title">bijux platform</p>
+          <p class="brand-sub">Contract-first systems for runtime, data, and scientific workflows</p>
         </div>
       </div>
-
-      <nav class="nav-row" aria-label="Primary">
-        <a class="navlink" href="#projects">Projects</a>
-        <a class="navlink" href="#courses">Course Books</a>
-        <a class="navlink" href="https://github.com/bijux" rel="noopener noreferrer">GitHub</a>
-        <a class="navlink" href="https://pypi.org/user/bijux/" rel="noopener noreferrer">Python Packages</a>
-        <a class="navlink" href="https://crates.io/users/bijux" rel="noopener noreferrer">Rust Packages</a>
-        <button class="navlink iconbtn" id="themeToggle" type="button" aria-label="Toggle theme">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path fill="currentColor" d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-16h1v3h-1V2Zm0 17h1v3h-1v-3ZM2 11h3v1H2v-1Zm17 0h3v1h-3v-1ZM4.22 4.22l2.12 2.12-.71.71L3.51 4.93l.71-.71Zm14.14 14.14 2.12 2.12-.71.71-2.12-2.12.71-.71ZM19.78 4.22l.71.71-2.12 2.12-.71-.71 2.12-2.12ZM5.64 17.66l.71.71-2.12 2.12-.71-.71 2.12-2.12Z"/>
-          </svg>
-          <span id="themeLabel">Auto</span>
-        </button>
+      <nav class="nav" aria-label="Primary">
+        <a class="chip" href="#model">Model</a>
+        <a class="chip" href="#profile">Profile</a>
+        <a class="chip" href="#products">Products</a>
+        <a class="chip" href="#packages">Inventory</a>
+        <a class="chip" href="#masterclass">Masterclass</a>
+        <a class="chip" href="#gnss">GNSS</a>
+        <a class="chip" href="https://github.com/bijux" target="_blank" rel="noopener">GitHub</a>
       </nav>
-    </div>
-
-    <header class="hero">
-      <div class="hero-grid">
-        <section>
-          <span class="kicker">Bijan Mousavi / bijux</span>
-          <h1>Platform systems, execution engines, and scientific software.</h1>
-
-          <p class="hero-subhead">
-            bijux is the public repository and documentation surface for projects by Bijan Mousavi across
-            platform engineering, control-plane design, Rust and Python runtime systems, workflow execution,
-            bioinformatics, data infrastructure, and scientific computing.
-          </p>
-
-          <p class="hero-summary">
-            This homepage is organized around the real public surfaces: source repositories, published Python
-            packages, published Rust crates, project documentation, and course books.
-          </p>
-
-          <p class="hero-summary">
-            The portfolio is strongest in software where command interfaces, release lines, deployment paths,
-            workflow behavior, and execution evidence have to remain understandable under operational pressure.
-          </p>
-
-          <div class="hero-links">
-            <a class="button primary" href="#projects">View projects</a>
-            <a class="button" href="#courses">View course books</a>
-            <a class="button" href="https://github.com/bijux" rel="noopener noreferrer">GitHub</a>
-            <a class="button" href="https://pypi.org/user/bijux/" rel="noopener noreferrer">Python packages</a>
-            <a class="button" href="https://crates.io/users/bijux" rel="noopener noreferrer">Rust packages</a>
-          </div>
-        </section>
-
-        <aside aria-label="Overview">
-          <div class="panel">
-            <span class="kicker">Start here</span>
-            <h2>Begin with Atlas, CLI, Flows, Proteins, and DNA</h2>
-            <ul>
-              <li><strong>bijux-atlas</strong> for dataset delivery, HTTP APIs, release evidence, and Kubernetes operations</li>
-              <li><strong>bijux-cli</strong> for command runtimes, plugin systems, structured output, and release tooling</li>
-              <li><strong>Agentic Flows</strong>, <strong>Agentic Proteins</strong>, and <strong>bijux-dna</strong> for workflow execution and scientific runtimes</li>
-            </ul>
-          </div>
-
-          <div class="panel">
-            <span class="kicker">Browse by surface</span>
-            <h2>Source, packages, and documentation</h2>
-            <p>Projects in this portfolio usually publish more than one surface at once: repository source, package artifacts, docs, API references, and operational or maintainer material.</p>
-            <div class="resource-links">
-              <a href="https://github.com/bijux" rel="noopener noreferrer">GitHub</a>
-              <a href="https://pypi.org/user/bijux/" rel="noopener noreferrer">Python packages</a>
-              <a href="https://crates.io/users/bijux" rel="noopener noreferrer">Rust packages</a>
-            </div>
-          </div>
-        </aside>
-      </div>
     </header>
 
-    <main id="content">
-      <section class="section" id="projects" aria-labelledby="projects-title">
-        <div class="section-head">
-          <span class="kicker">Projects</span>
-          <h2 class="section-title" id="projects-title">Flagship systems and focused repositories</h2>
-          <p class="section-intro">
-            The flagship systems are the broadest public entry points. The focused repositories are narrower by
-            scope, not by seriousness: they each concentrate on a hard problem in retrieval, replay, vector
-            execution, document processing, graph lineage, or GNSS receiver work.
-          </p>
-        </div>
+    <section class="hero panel reveal" style="--delay: 90ms;">
+      <p class="kicker">Updated Platform Map | April 2026</p>
+      <h1>Bijux is a contract-first product ecosystem for platform engineering, AI systems, bioinformatics, and scientific software.</h1>
+      <div class="audience-row" aria-label="Primary audiences">
+        <span class="audience-pill">Platform Engineering</span>
+        <span class="audience-pill">AI Systems</span>
+        <span class="audience-pill">Bioinformatics</span>
+        <span class="audience-pill">Scientific Software</span>
+        <span class="audience-pill">Principal-Level Ownership</span>
+      </div>
+      <p>
+        The center is <strong><code>bijux-core</code></strong>: a runtime and governance backbone for command execution, pipeline semantics, evidence, and release discipline.
+        Around it sit flagship systems with their own gravity: <strong><code>bijux-canon</code></strong> for governed AI and knowledge workflows,
+        <strong><code>bijux-atlas</code></strong> for data delivery, <strong><code>bijux-proteomics</code></strong> for discovery acceleration,
+        <strong><code>bijux-genomics</code></strong> as a private execution platform, <strong><code>bijux-pollenomics</code></strong> for evidence-driven site selection,
+        <strong><code>bijux-masterclass</code></strong> for deep technical education, and <strong><code>bijux-gnss</code></strong> as the next systems frontier.
+      </p>
+      <p>
+        Each repository is meant to stand as a serious product surface, not a side project. Taken together, the work demonstrates principal-level ownership across platform engineering,
+        software systems, bioinformatics infrastructure, AI systems engineering, machine-learning-adjacent tooling, and data-intensive product design.
+      </p>
+      <p>
+        This page is designed to make that legible quickly: what the flagship systems are, how they relate to one another, what is public today, what remains private or in progress,
+        and why the overall body of work matters to engineering leaders, scientific collaborators, and product-minded technical teams.
+      </p>
+      <div class="stats" aria-label="Platform metrics">
+        <div class="stat"><strong>6</strong><span>public product systems</span></div>
+        <div class="stat"><strong>1</strong><span>private genomics platform</span></div>
+        <div class="stat"><strong>2</strong><span>masterclass tracks</span></div>
+        <div class="stat"><strong>1</strong><span>gnss system in progress</span></div>
+      </div>
+      <div class="cta-row">
+        <a class="button primary" href="https://github.com/bijux/bijux-core" target="_blank" rel="noopener">Open bijux-core</a>
+        <a class="button secondary" href="https://github.com/bijux" target="_blank" rel="noopener">Explore All Repositories</a>
+      </div>
+    </section>
 
-        <h3 class="subsection-title">Flagship systems</h3>
-        <div class="feature-grid">
-          <article class="card feature">
-            <div class="card-head">
-              <div>
-                <h3><a href="https://bijux.github.io/bijux-atlas/">bijux-atlas</a></h3>
-                <div class="mono">genomics dataset delivery / GFF3 and FASTA ingest / governed HTTP APIs / Kubernetes operations</div>
-              </div>
-              <span class="badge public">Public</span>
-            </div>
+    <section class="section panel reveal" style="--delay: 110ms;" id="profile">
+      <p class="section-kicker">Positioning</p>
+      <h2>One platform thesis, applied across multiple engineering fronts</h2>
+      <p class="lead">The value of bijux is not only that the repositories exist. The value is that the same engineering discipline appears repeatedly across runtime systems, governed AI, scientific execution, data products, and education. That consistency is what makes the whole portfolio persuasive.</p>
+      <div class="signal-grid">
+        <article class="signal-card">
+          <h3>Platform engineering</h3>
+          <p>Control planes, release contracts, execution semantics, diagnostics, evidence, and lifecycle discipline are treated as first-class product concerns rather than invisible internal plumbing.</p>
+        </article>
+        <article class="signal-card">
+          <h3>AI systems engineering</h3>
+          <p>Canon is not framed as generic agent tooling. It is framed as a governed ingest, index, runtime, reasoning, and agentic system with clearer trust boundaries and inspectable execution.</p>
+        </article>
+        <article class="signal-card">
+          <h3>Bioinformatics and scientific software</h3>
+          <p>Genomics, proteomics, atlas, and pollenomics turn scientific and field workflows into coherent product surfaces with runtime discipline, documentation, and clear operating models.</p>
+        </article>
+        <article class="signal-card">
+          <h3>Principal-level range</h3>
+          <p>The portfolio reads across software engineering, platform engineering, AI systems, data-intensive products, reproducible research, and scientific computing without collapsing into a shallow collection of demos.</p>
+        </article>
+      </div>
+    </section>
 
-            <p>
-              <strong>bijux-atlas</strong> is a Rust-owned genomics dataset delivery platform for validated GFF3 and
-              FASTA ingest, immutable gene-query artifacts, governed HTTP APIs, and reproducible operations evidence
-              across local, kind, and Kubernetes deployments.
-            </p>
+    <section class="section panel reveal" style="--delay: 130ms;" id="model">
+      <p class="section-kicker">Architecture</p>
+      <h2>One center, multiple flagship systems</h2>
+      <p class="lead"><code>bijux-core</code> is the engineering center of gravity. Around it sit focused systems that solve adjacent but different problems: governed AI workflows, data delivery, proteomics acceleration, private genomics execution, evidence-led site selection, deep technical education, and GNSS receiver software.</p>
+      <div class="map-grid">
+        <article class="card">
+          <h3>Unified center</h3>
+          <div class="rename"><span class="from">bijux-cli</span><span>+</span><span class="from">bijux-dag</span><span>-&gt;</span><span class="to">bijux-core</span></div>
+          <p>The runtime, DAG engine, evidence model, release contracts, and maintainer control plane now belong to one canonical repository and one coherent public story.</p>
+        </article>
+        <article class="card">
+          <h3>Specialized constellation</h3>
+          <div class="rename"><span class="from">bijux-rag / bijux-rar / bijux-vex / bijux-agent / agentic-flows</span><span>-&gt;</span><span class="to">bijux-canon</span></div>
+          <p>The surrounding systems are not side notes. They are distinct products with their own technical meaning, made legible through shared engineering discipline and sharper product boundaries.</p>
+        </article>
+      </div>
+      <pre class="tree" aria-label="Current GitHub repository topology">github.com/bijux
+|- bijux-core
+|- bijux-canon
+|- bijux-atlas
+|- bijux-proteomics
+|- bijux-pollenomics
+|- bijux-masterclass
+|- bijux-gnss (in progress)
+|- bijux.github.io
+`- bijux-genomics (private)</pre>
+      <div class="status-row">
+        <span class="status-pill public">public today: core, canon, atlas, proteomics, pollenomics, masterclass, gnss</span>
+        <span class="status-pill private">private today: genomics</span>
+      </div>
+    </section>
 
-            <div class="link-row">
-              <a href="https://bijux.github.io/bijux-atlas/">Documentation</a>
-              <a href="https://github.com/bijux/bijux-atlas" rel="noopener noreferrer">Source</a>
-              <a href="https://crates.io/crates/bijux-atlas" rel="noopener noreferrer">Crates.io</a>
-              <a href="https://docs.rs/bijux-atlas" rel="noopener noreferrer">Rust docs</a>
-            </div>
-          </article>
+    <section class="section panel reveal" style="--delay: 170ms;" id="products">
+      <p class="section-kicker">Products</p>
+      <h2>Flagship systems worth following closely</h2>
+      <p class="lead">These are presented as products first. The purpose of this page is not only to document them accurately, but to show why each one deserves attention from engineering leaders, product-minded technical teams, and scientific organizations that value disciplined systems work.</p>
 
-          <article class="card feature">
-            <div class="card-head">
-              <div>
-                <h3><a href="https://bijux.github.io/bijux-cli/">bijux-cli</a></h3>
-                <div class="mono">Rust command runtime / plugin routing / JSON and YAML output / Python bridge</div>
-              </div>
-              <span class="badge public">Public</span>
-            </div>
-
-            <p>
-              <strong>bijux-cli</strong> is a Rust command runtime with routed plugins, structured machine-readable
-              output, REPL and CLI parity, runtime inspection commands, and a Python compatibility bridge for the
-              same underlying runtime.
-            </p>
-
-            <div class="link-row">
-              <a href="https://bijux.github.io/bijux-cli/">Documentation</a>
-              <a href="https://github.com/bijux/bijux-cli" rel="noopener noreferrer">Source</a>
-              <a href="https://pypi.org/project/bijux-cli/" rel="noopener noreferrer">PyPI</a>
-              <a href="https://crates.io/crates/bijux-cli" rel="noopener noreferrer">Crates.io</a>
-              <a href="https://docs.rs/bijux-cli" rel="noopener noreferrer">Rust docs</a>
-            </div>
-          </article>
-
-          <article class="card feature">
-            <div class="card-head">
-              <div>
-                <h3><a href="https://bijux.github.io/agentic-flows/">Agentic Flows</a></h3>
-                <div class="mono">workflow execution engine / replay / invariant checks / budgets / run traces</div>
-              </div>
-              <span class="badge public">Public</span>
-            </div>
-
-            <p>
-              <strong>Agentic Flows</strong> is a workflow execution engine for offline runs where replay, invariant
-              checks, execution budgets, and explicit run records matter. Runs are meant to be inspected, replayed,
-              and compared instead of treated as opaque automation.
-            </p>
-
-            <div class="link-row">
-              <a href="https://bijux.github.io/agentic-flows/">Documentation</a>
-              <a href="https://github.com/bijux/agentic-flows" rel="noopener noreferrer">Source</a>
-              <a href="https://pypi.org/project/agentic-flows/" rel="noopener noreferrer">PyPI</a>
-            </div>
-          </article>
-
-          <article class="card feature">
-            <div class="card-head">
-              <div>
-                <h3><a href="https://bijux.github.io/agentic-proteins/">Agentic Proteins</a></h3>
-                <div class="mono">protein design runtime / seeded search / artifact capture / CLI and API contracts</div>
-              </div>
-              <span class="badge public">Public</span>
-            </div>
-
-            <p>
-              <strong>Agentic Proteins</strong> is a protein design runtime that makes seeded search, run configuration,
-              artifact capture, and shared CLI/API contracts explicit. It is built for research workflows where
-              stochastic exploration still needs stable inputs, preserved outputs, and inspectable runs.
-            </p>
-
-            <div class="link-row">
-              <a href="https://bijux.github.io/agentic-proteins/">Documentation</a>
-              <a href="https://github.com/bijux/agentic-proteins" rel="noopener noreferrer">Source</a>
-              <a href="https://pypi.org/project/agentic-proteins/" rel="noopener noreferrer">PyPI</a>
-            </div>
-          </article>
-        </div>
-
-        <article class="card private-card private-block">
-          <div class="card-head">
-            <div>
-              <h3>bijux-dna</h3>
-              <div class="mono">private bioinformatics execution system / governed tool admission / FASTQ BAM VCF workflows / HPC portability</div>
-            </div>
-            <span class="badge private">Private</span>
+      <p class="subhead">Center</p>
+      <div class="repo-grid">
+        <article class="card">
+          <h3><a href="https://github.com/bijux/bijux-core" target="_blank" rel="noopener">bijux-core</a></h3>
+          <div class="status-row">
+            <span class="status-pill public">Public</span>
+            <span class="status-pill public">Runtime center</span>
+            <span class="status-pill development">bijux-dag public release planned at v0.4.0</span>
           </div>
-
-          <p>
-            <strong>bijux-dna</strong> is a private bioinformatics execution system with governed tool admission,
-            digest-pinned containers, FASTQ to BAM and VCF stage composition, policy-gated CI, and HPC-portable
-            operation. It is designed as a reusable execution substrate for genomics workflows rather than a single
-            one-off pipeline.
-          </p>
+          <div class="badge-row">
+            <a href="https://github.com/bijux/bijux-core" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--core-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-core"></a>
+            <a href="https://bijux.io/bijux-core/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-bijux.io-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="bijux-core docs"></a>
+            <a href="https://pypi.org/project/bijux-cli/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-cli?style=flat-square&amp;logo=pypi&amp;label=bijux-cli" alt="bijux-cli on PyPI"></a>
+            <a href="https://crates.io/crates/bijux-cli" target="_blank" rel="noopener"><img src="https://img.shields.io/crates/v/bijux-cli?style=flat-square&amp;logo=rust&amp;label=bijux-cli" alt="bijux-cli on crates.io"></a>
+            <a href="https://docs.rs/bijux-cli" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs.rs-bijux--cli-1f6feb?style=flat-square&amp;logo=rust&amp;logoColor=white" alt="bijux-cli docs.rs"></a>
+          </div>
+          <p class="story"><strong>bijux-core</strong> is the canonical runtime and governance backbone of the ecosystem. It joins the operator-facing CLI and the DAG/evidence engine into one source of truth so execution, replay, release evidence, and maintainer workflows stay aligned at repository scale.</p>
+          <ul class="product-points">
+            <li>Operator runtime through <code>bijux-cli</code></li>
+            <li>DAG definition, execution, replay, and diff through the unified DAG surface</li>
+            <li>Maintainer control-plane tooling for diagnostics, governance, contracts, and release checks</li>
+          </ul>
+          <p class="story"><strong>bijux-dag</strong> is the upcoming public DAG surface targeted for <strong>v0.4.0</strong>. The shortest serious description is: <strong>Git for pipelines</strong>. Not just pipeline execution, but pipeline identity, replay, diff, lineage, and semantic understanding of change, expressed as a durable operational model rather than a thin wrapper around task scheduling.</p>
+          <p class="product-impact">Why it matters: this is the system the rest of the platform is designed to orbit around, and the DAG line has the potential to become a reference model for pipeline change semantics, reproducibility, and release-grade execution control.</p>
         </article>
 
-        <h3 class="subsection-title subsection-spaced">Focused repositories</h3>
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-head">
-              <div>
-                <h3><a href="https://bijux.github.io/bijux-rag/">bijux-rag</a></h3>
-                <div class="mono">Python retrieval toolkit / CLI / FastAPI / typed library API / indexing and serving</div>
-              </div>
-              <span class="badge public">Public</span>
-            </div>
-
-            <p>
-              <strong>bijux-rag</strong> is a Python retrieval toolkit with CLI, FastAPI, and library entry points for
-              chunking, indexing, querying, and serving retrieval pipelines. The package emphasizes typed adapters,
-              testable transformations, streaming, retries, and deployable Python packaging.
-            </p>
-
-            <div class="link-row">
-              <a href="https://bijux.github.io/bijux-rag/">Documentation</a>
-              <a href="https://github.com/bijux/bijux-rag" rel="noopener noreferrer">Source</a>
-              <a href="https://pypi.org/project/bijux-rag/" rel="noopener noreferrer">PyPI</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-head">
-              <div>
-                <h3><a href="https://bijux.github.io/bijux-rar/">bijux-rar</a></h3>
-                <div class="mono">retrieval-augmented reasoning / replayable traces / verification / immutable artifacts</div>
-              </div>
-              <span class="badge public">Public</span>
-            </div>
-
-            <p>
-              <strong>bijux-rar</strong> is a retrieval-augmented reasoning system for runs that need to be checked,
-              replayed, and verified. Replayable traces, immutable run artifacts, and execution evidence are part of
-              the runtime contract rather than after-the-fact observability.
-            </p>
-
-            <div class="link-row">
-              <a href="https://bijux.github.io/bijux-rar/">Documentation</a>
-              <a href="https://github.com/bijux/bijux-rar" rel="noopener noreferrer">Source</a>
-              <a href="https://pypi.org/project/bijux-rar/" rel="noopener noreferrer">PyPI</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-head">
-              <div>
-                <h3><a href="https://bijux.github.io/bijux-vex/">bijux-vex</a></h3>
-                <div class="mono">vector execution engine / exact search / ANN search / provenance / replay boundaries</div>
-              </div>
-              <span class="badge public">Public</span>
-            </div>
-
-            <p>
-              <strong>bijux-vex</strong> separates exact, replayable vector execution from approximate ANN search and
-              makes approximation visible in the run record. Provenance, replay boundaries, and query behavior are
-              explicit parts of the execution surface.
-            </p>
-
-            <div class="link-row">
-              <a href="https://bijux.github.io/bijux-vex/">Documentation</a>
-              <a href="https://github.com/bijux/bijux-vex" rel="noopener noreferrer">Source</a>
-              <a href="https://pypi.org/project/bijux-vex/" rel="noopener noreferrer">PyPI</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-head">
-              <div>
-                <h3><a href="https://bijux.github.io/bijux-agent/">bijux-agent</a></h3>
-                <div class="mono">document-processing runtime / CLI / optional HTTP API / structured outputs / run traces</div>
-              </div>
-              <span class="badge public">Public</span>
-            </div>
-
-            <p>
-              <strong>bijux-agent</strong> is a document-processing runtime for files and text with structured outputs,
-              run traces, a CLI, and an optional HTTP API. It packages auditable text processing, explicit inputs,
-              and checksum-guarded reference material into a small but complete public system.
-            </p>
-
-            <div class="link-row">
-              <a href="https://bijux.github.io/bijux-agent/">Documentation</a>
-              <a href="https://github.com/bijux/bijux-agent" rel="noopener noreferrer">Source</a>
-              <a href="https://pypi.org/project/bijux-agent/" rel="noopener noreferrer">PyPI</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-head">
-              <div>
-                <h3><a href="https://github.com/bijux/bijux-dag">bijux-dag</a></h3>
-                <div class="mono">graph execution evidence / semantic diff / replay analysis / artifact lineage</div>
-              </div>
-              <span class="badge development">In development</span>
-            </div>
-
-            <p>
-              <strong>bijux-dag</strong> focuses on graph execution evidence: stable graph identity, run identity,
-              artifact lineage, replay classification, and semantic diff between runs. It is built for the question
-              of what changed, not just whether a run finished.
-            </p>
-
-            <div class="link-row">
-              <a href="https://github.com/bijux/bijux-dag" rel="noopener noreferrer">Source</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-head">
-              <div>
-                <h3><a href="https://github.com/bijux/bijux-gnss">bijux-gnss</a></h3>
-                <div class="mono">GNSS receiver systems / acquisition / tracking loops / navigation / RTK and PPP</div>
-              </div>
-              <span class="badge development">In development</span>
-            </div>
-
-            <p>
-              <strong>bijux-gnss</strong> is a GNSS receiver and geospatial systems repository spanning acquisition,
-              tracking loops, observation processing, navigation, and RTK/PPP-oriented foundations.
-            </p>
-
-            <div class="link-row">
-              <a href="https://github.com/bijux/bijux-gnss" rel="noopener noreferrer">Source</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="courses" aria-labelledby="courses-title">
-        <div class="section-head">
-          <span class="kicker">Course books</span>
-          <h2 class="section-title" id="courses-title">Free technical course books for software engineering and workflows</h2>
-          <p class="section-intro">
-            These course books cover Python functional programming, Python metaprogramming, build systems, and workflow
-            engineering. Examples, capstones, and repository state move with the text so the material stays close to
-            real build, runtime, and workflow problems.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <article class="course-card">
-            <h3><a href="https://bijux.github.io/python-functional-programming/">Python Functional Programming</a></h3>
-            <div class="mono">functional design / purity / effects / async streaming / algebraic modeling</div>
-            <p>
-              A ten-module course on functional programming in Python covering purity, effect handling, async streaming,
-              algebraic modeling, and software design tradeoffs, grounded in a real evolving codebase.
-            </p>
-            <div class="link-row">
-              <a href="https://bijux.github.io/python-functional-programming/">Course site</a>
-              <a href="https://github.com/bijux/python-functional-programming" rel="noopener noreferrer">Source</a>
-            </div>
-          </article>
-
-          <article class="course-card">
-            <h3><a href="https://bijux.github.io/python-meta-programming/">Python Meta-Programming</a></h3>
-            <div class="mono">introspection / decorators / descriptors / metaclasses / runtime semantics</div>
-            <p>
-              A course on Python metaprogramming for engineers who need to understand descriptors, decorators,
-              metaclasses, import behavior, and framework-level runtime mechanics.
-            </p>
-            <div class="link-row">
-              <a href="https://bijux.github.io/python-meta-programming/">Course site</a>
-              <a href="https://github.com/bijux/python-meta-programming" rel="noopener noreferrer">Source</a>
-            </div>
-          </article>
-
-          <article class="course-card">
-            <h3><a href="https://bijux.github.io/deep-dive-make/">Deep Dive Make</a></h3>
-            <div class="mono">build graphs / atomic outputs / parallel safety / reproducible builds / diagnostics</div>
-            <p>
-              A course book on GNU Make as a serious build-graph tool covering truthful dependencies, atomic outputs,
-              parallel safety, verification, diagnostics, and a runnable capstone.
-            </p>
-            <div class="link-row">
-              <a href="https://bijux.github.io/deep-dive-make/">Course site</a>
-              <a href="https://github.com/bijux/deep-dive-make" rel="noopener noreferrer">Source</a>
-            </div>
-          </article>
-
-          <article class="course-card">
-            <h3><a href="https://bijux.github.io/deep-dive-snakemake/">Deep Dive Snakemake</a></h3>
-            <div class="mono">workflow contracts / validated configuration / dynamic safety / reproducible pipelines</div>
-            <p>
-              A workflow-engineering course book on explicit inputs and outputs, validated configuration,
-              safe dynamic behavior, artifact checks, and executable reproducibility.
-            </p>
-            <div class="link-row">
-              <a href="https://bijux.github.io/deep-dive-snakemake/">Course site</a>
-              <a href="https://github.com/bijux/deep-dive-snakemake" rel="noopener noreferrer">Source</a>
-            </div>
-          </article>
-        </div>
-
-        <div class="note">
-          <p>bijux is the public engineering portfolio and repository namespace maintained by Bijan Mousavi.</p>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="footer-row">
-        <div>
-          <div class="footer-copy">
-            &copy; <span id="y"></span> bijux ·
-            <a href="https://github.com/bijux" rel="noopener noreferrer">GitHub</a> ·
-            <a href="https://pypi.org/user/bijux/" rel="noopener noreferrer">Python Packages</a> ·
-            <a href="https://crates.io/users/bijux" rel="noopener noreferrer">Rust Packages</a>
+        <article class="card">
+          <h3><a href="https://github.com/bijux/bijux-canon" target="_blank" rel="noopener">bijux-canon</a></h3>
+          <div class="status-row">
+            <span class="status-pill public">Public</span>
+            <span class="status-pill public">AI workflow system</span>
           </div>
-          <div class="footer-line">Created and maintained by Bijan Mousavi.</div>
-        </div>
-
-        <nav class="nav-row" aria-label="Footer">
-          <a class="navlink" href="#projects">Projects</a>
-          <a class="navlink" href="#courses">Course Books</a>
-          <a class="navlink" href="https://pypi.org/user/bijux/" rel="noopener noreferrer">Python Packages</a>
-          <a class="navlink" href="https://crates.io/users/bijux" rel="noopener noreferrer">Rust Packages</a>
-        </nav>
+          <div class="badge-row">
+            <a href="https://github.com/bijux/bijux-canon" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--canon-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-canon"></a>
+            <a href="https://bijux.io/bijux-canon/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-bijux.io-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="bijux-canon docs"></a>
+            <a href="https://pypi.org/project/bijux-canon-runtime/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-runtime?style=flat-square&amp;logo=pypi&amp;label=runtime" alt="bijux-canon-runtime"></a>
+            <a href="https://pypi.org/project/bijux-canon-agent/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-agent?style=flat-square&amp;logo=pypi&amp;label=agent" alt="bijux-canon-agent"></a>
+            <a href="https://pypi.org/project/bijux-canon-ingest/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-ingest?style=flat-square&amp;logo=pypi&amp;label=ingest" alt="bijux-canon-ingest"></a>
+            <a href="https://pypi.org/project/bijux-canon-index/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-index?style=flat-square&amp;logo=pypi&amp;label=index" alt="bijux-canon-index"></a>
+            <a href="https://pypi.org/project/bijux-canon-reason/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-reason?style=flat-square&amp;logo=pypi&amp;label=reason" alt="bijux-canon-reason"></a>
+          </div>
+          <p class="story"><strong>bijux-canon</strong> is the governed AI and knowledge system in the ecosystem. It is organized around ingest, index, runtime, reasoning, and agentic execution as separate but coherent layers so the system can grow without becoming opaque.</p>
+          <ul class="product-points">
+            <li>Knowledge and ingest surfaces that shape and prepare information</li>
+            <li>Index and retrieval execution with explicit package boundaries</li>
+            <li>Runtime, reasoning, and agentic orchestration built for replayable, inspectable runs</li>
+          </ul>
+          <p class="product-impact">Why it matters: it turns fragmented RAG and agent tooling into a governed systems architecture with clearer trust boundaries, better runtime legibility, and a much stronger long-term platform story.</p>
+        </article>
       </div>
+
+      <p class="subhead">Flagship domain systems</p>
+      <div class="repo-grid">
+        <article class="card">
+          <h3><a href="https://github.com/bijux/bijux-atlas" target="_blank" rel="noopener">bijux-atlas</a></h3>
+          <div class="status-row">
+            <span class="status-pill public">Public</span>
+            <span class="status-pill public">Data delivery platform</span>
+          </div>
+          <div class="badge-row">
+            <a href="https://github.com/bijux/bijux-atlas" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--atlas-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-atlas"></a>
+            <a href="https://bijux.io/bijux-atlas/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-bijux.io-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="bijux-atlas docs"></a>
+            <a href="https://crates.io/crates/bijux-atlas" target="_blank" rel="noopener"><img src="https://img.shields.io/crates/v/bijux-atlas?style=flat-square&amp;logo=rust&amp;label=bijux-atlas" alt="bijux-atlas crate"></a>
+            <a href="https://docs.rs/bijux-atlas" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs.rs-bijux--atlas-1f6feb?style=flat-square&amp;logo=rust&amp;logoColor=white" alt="bijux-atlas docs.rs"></a>
+          </div>
+          <p class="story"><strong>bijux-atlas</strong> presents a complete delivery story for genomics datasets: ingest, server, API, and CLI all treated as one product surface rather than disconnected tools. It reads like a data platform, not a utility bundle, and it shows that data delivery can be designed with the same rigor as runtime software.</p>
+          <ul class="product-points">
+            <li>Structured ingest for GFF3/FASTA-style data flows</li>
+            <li>Server runtime and API surface for governed delivery</li>
+            <li>CLI and maintainer routes for practical operations work</li>
+          </ul>
+          <p class="product-impact">Why it matters: it shows what a disciplined data product looks like when ingest, serving, APIs, and operations are designed together from the start instead of patched together later.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="https://github.com/bijux/bijux-proteomics" target="_blank" rel="noopener">bijux-proteomics</a></h3>
+          <div class="status-row">
+            <span class="status-pill public">Public</span>
+            <span class="status-pill public">Drug discovery acceleration</span>
+          </div>
+          <div class="badge-row">
+            <a href="https://github.com/bijux/bijux-proteomics" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--proteomics-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-proteomics"></a>
+            <a href="https://bijux.io/bijux-proteomics/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-bijux.io-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="bijux-proteomics docs"></a>
+            <a href="https://pypi.org/project/agentic-proteins/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/agentic-proteins?style=flat-square&amp;logo=pypi&amp;label=agentic-proteins" alt="agentic-proteins"></a>
+            <a href="https://pypi.org/project/bijux-proteomics-foundation/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-proteomics-foundation?style=flat-square&amp;logo=pypi&amp;label=foundation" alt="bijux-proteomics-foundation"></a>
+            <a href="https://pypi.org/project/bijux-proteomics-core/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-proteomics-core?style=flat-square&amp;logo=pypi&amp;label=core" alt="bijux-proteomics-core"></a>
+            <a href="https://pypi.org/project/bijux-proteomics-intelligence/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-proteomics-intelligence?style=flat-square&amp;logo=pypi&amp;label=intelligence" alt="bijux-proteomics-intelligence"></a>
+            <a href="https://pypi.org/project/bijux-proteomics-knowledge/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-proteomics-knowledge?style=flat-square&amp;logo=pypi&amp;label=knowledge" alt="bijux-proteomics-knowledge"></a>
+            <a href="https://pypi.org/project/bijux-proteomics-lab/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-proteomics-lab?style=flat-square&amp;logo=pypi&amp;label=lab" alt="bijux-proteomics-lab"></a>
+          </div>
+          <p class="story"><strong>bijux-proteomics</strong> is built as an engineering system for accelerating drug-discovery workflows, not as a single narrow package. It connects runtime execution, domain core, knowledge, intelligence, and lab planning into one coherent stack with real product ambition and a clear translation path from software architecture into scientific decision support.</p>
+          <ul class="product-points">
+            <li>Shared scientific contracts through foundation and core layers</li>
+            <li>Decision acceleration through intelligence and knowledge layers</li>
+            <li>Operational path from runtime execution to lab-facing planning</li>
+          </ul>
+          <p class="product-impact">Why it matters: it frames discovery work as a full-stack software, intelligence, and platform problem rather than a disconnected sequence of scripts, notebooks, and handoffs.</p>
+        </article>
+
+        <article class="card">
+          <h3>bijux-genomics</h3>
+          <div class="status-row">
+            <span class="status-pill private">Private</span>
+            <span class="status-pill private">Not publicly released</span>
+          </div>
+          <p class="story"><strong>bijux-genomics</strong> is still private, and it should be presented that way. The important point is the model: a genomics execution platform designed to reduce pipeline definition to two YAML files, one for the DAG and one for configuration and policy, while keeping the underlying execution, governance, and environment layers rigorous.</p>
+          <ul class="product-points">
+            <li>One YAML surface for graph structure and stage composition</li>
+            <li>One YAML surface for configuration, environments, and policy</li>
+            <li>A reusable execution substrate rather than a one-off pipeline</li>
+          </ul>
+          <p class="product-impact">Why it matters: this is the clearest expression of the platform's bioinformatics simplification philosophy, even before public release, and it shows how deeply the runtime ideas can travel into domain execution.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="https://github.com/bijux/bijux-pollenomics" target="_blank" rel="noopener">bijux-pollenomics</a></h3>
+          <div class="status-row">
+            <span class="status-pill public">Public</span>
+            <span class="status-pill public">Evidence mapping</span>
+          </div>
+          <div class="badge-row">
+            <a href="https://github.com/bijux/bijux-pollenomics" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--pollenomics-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-pollenomics"></a>
+            <a href="https://bijux.io/bijux-pollenomics/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-bijux.io-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="bijux-pollenomics docs"></a>
+          </div>
+          <p class="story"><strong>bijux-pollenomics</strong> is not presented here as a published package, because that would be inaccurate. What matters today is the product idea: a visual evidence surface for the Nordic region where archaeology, eDNA, aDNA, and pollenomics context converge into one map-driven site-selection story.</p>
+          <ul class="product-points">
+            <li>Visualization designed to make promising sampling regions legible</li>
+            <li>Integrated evidence perspective across archaeology and biomolecular signals</li>
+            <li>Includes field-linked iced-lake sampling context with publication work targeted for 2027</li>
+          </ul>
+          <p class="story">A concrete example is the <a href="https://bijux.io/bijux-pollenomics/outputs/lyngsjon-lake-fieldwork/" target="_blank" rel="noopener">Lyngsjön Lake fieldwork page</a>, which documents the iced-lake fieldwork itself with photo and video from on-site collection and makes the system feel anchored in real sampling practice rather than abstract mapping.</p>
+          <p class="product-impact">Why it matters: it points toward a more practical way to choose sampling locations from real evidence coverage, field documentation, and region-specific context instead of relying only on disconnected literature intuition.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section panel reveal" style="--delay: 210ms;" id="packages">
+      <p class="section-kicker">Surfaces</p>
+      <h2>Public package, repository, and documentation surfaces</h2>
+      <p class="lead">The badge map below makes the public surface area explicit: source repositories, docs sites, Python packages, Rust crates, and course pages. This is the discoverability layer of the platform, and it needs to be clear, indexable, easy to trust, and easy to revisit.</p>
+
+      <div class="family-grid">
+        <article class="card">
+          <h3>Public repositories</h3>
+          <div class="badge-row">
+            <a href="https://github.com/bijux/bijux-core" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--core-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-core"></a>
+            <a href="https://github.com/bijux/bijux-canon" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--canon-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-canon"></a>
+            <a href="https://github.com/bijux/bijux-atlas" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--atlas-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-atlas"></a>
+            <a href="https://github.com/bijux/bijux-proteomics" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--proteomics-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-proteomics"></a>
+            <a href="https://github.com/bijux/bijux-pollenomics" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--pollenomics-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-pollenomics"></a>
+            <a href="https://github.com/bijux/bijux-masterclass" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--masterclass-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-masterclass"></a>
+            <a href="https://github.com/bijux/bijux-gnss" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--gnss-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-gnss"></a>
+          </div>
+          <p>These are the live public repositories visible from the GitHub namespace today. <code>bijux-genomics</code> is intentionally not listed here because it remains private.</p>
+        </article>
+
+        <article class="card">
+          <h3>Documentation sites</h3>
+          <div class="badge-row">
+            <a href="https://bijux.io/bijux-core/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-bijux--core-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="bijux-core docs"></a>
+            <a href="https://bijux.io/bijux-canon/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-bijux--canon-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="bijux-canon docs"></a>
+            <a href="https://bijux.io/bijux-atlas/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-bijux--atlas-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="bijux-atlas docs"></a>
+            <a href="https://bijux.io/bijux-proteomics/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-bijux--proteomics-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="bijux-proteomics docs"></a>
+            <a href="https://bijux.io/bijux-pollenomics/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-bijux--pollenomics-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="bijux-pollenomics docs"></a>
+          </div>
+          <p>The docs sites are part of the public product surface, not afterthoughts. They should read as release-grade interfaces to the systems.</p>
+        </article>
+        <article class="card">
+          <h3>Python package families</h3>
+          <div class="badge-row">
+            <a href="https://pypi.org/project/bijux-cli/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-cli?style=flat-square&amp;logo=pypi&amp;label=bijux-cli" alt="bijux-cli on PyPI"></a>
+            <a href="https://pypi.org/project/bijux-canon-runtime/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-runtime?style=flat-square&amp;logo=pypi&amp;label=canon-runtime" alt="bijux-canon-runtime"></a>
+            <a href="https://pypi.org/project/bijux-canon-agent/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-agent?style=flat-square&amp;logo=pypi&amp;label=canon-agent" alt="bijux-canon-agent"></a>
+            <a href="https://pypi.org/project/bijux-canon-ingest/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-ingest?style=flat-square&amp;logo=pypi&amp;label=canon-ingest" alt="bijux-canon-ingest"></a>
+            <a href="https://pypi.org/project/bijux-canon-index/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-index?style=flat-square&amp;logo=pypi&amp;label=canon-index" alt="bijux-canon-index"></a>
+            <a href="https://pypi.org/project/bijux-canon-reason/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-reason?style=flat-square&amp;logo=pypi&amp;label=canon-reason" alt="bijux-canon-reason"></a>
+            <a href="https://pypi.org/project/agentic-proteins/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/agentic-proteins?style=flat-square&amp;logo=pypi&amp;label=agentic-proteins" alt="agentic-proteins"></a>
+            <a href="https://pypi.org/project/bijux-proteomics-foundation/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-proteomics-foundation?style=flat-square&amp;logo=pypi&amp;label=proteomics-foundation" alt="bijux-proteomics-foundation"></a>
+            <a href="https://pypi.org/project/bijux-proteomics-core/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-proteomics-core?style=flat-square&amp;logo=pypi&amp;label=proteomics-core" alt="bijux-proteomics-core"></a>
+            <a href="https://pypi.org/project/bijux-proteomics-intelligence/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-proteomics-intelligence?style=flat-square&amp;logo=pypi&amp;label=proteomics-intelligence" alt="bijux-proteomics-intelligence"></a>
+            <a href="https://pypi.org/project/bijux-proteomics-knowledge/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-proteomics-knowledge?style=flat-square&amp;logo=pypi&amp;label=proteomics-knowledge" alt="bijux-proteomics-knowledge"></a>
+            <a href="https://pypi.org/project/bijux-proteomics-lab/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-proteomics-lab?style=flat-square&amp;logo=pypi&amp;label=proteomics-lab" alt="bijux-proteomics-lab"></a>
+          </div>
+          <p>The Python side spans runtime, agentic, knowledge, domain, and scientific application layers across the public products. <code>bijux-pollenomics</code> is intentionally excluded here because it is not yet published as a package.</p>
+        </article>
+        <article class="card">
+          <h3>Compat and Rust crate surfaces</h3>
+          <div class="badge-row">
+            <a href="https://pypi.org/project/agentic-flows/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/agentic-flows?style=flat-square&amp;logo=pypi&amp;label=agentic-flows" alt="agentic-flows"></a>
+            <a href="https://pypi.org/project/bijux-agent/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-agent?style=flat-square&amp;logo=pypi&amp;label=bijux-agent" alt="bijux-agent"></a>
+            <a href="https://pypi.org/project/bijux-rag/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-rag?style=flat-square&amp;logo=pypi&amp;label=bijux-rag" alt="bijux-rag"></a>
+            <a href="https://pypi.org/project/bijux-rar/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-rar?style=flat-square&amp;logo=pypi&amp;label=bijux-rar" alt="bijux-rar"></a>
+            <a href="https://pypi.org/project/bijux-vex/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-vex?style=flat-square&amp;logo=pypi&amp;label=bijux-vex" alt="bijux-vex"></a>
+            <a href="https://crates.io/crates/bijux-cli" target="_blank" rel="noopener"><img src="https://img.shields.io/crates/v/bijux-cli?style=flat-square&amp;logo=rust&amp;label=bijux-cli" alt="bijux-cli crate"></a>
+            <a href="https://crates.io/crates/bijux-atlas" target="_blank" rel="noopener"><img src="https://img.shields.io/crates/v/bijux-atlas?style=flat-square&amp;logo=rust&amp;label=bijux-atlas" alt="bijux-atlas crate"></a>
+          </div>
+          <p>The old package names still exist as compatibility surfaces, while the public Rust crate line is currently anchored by <code>bijux-cli</code> and <code>bijux-atlas</code>.</p>
+        </article>
+      </div>
+
+      <details open>
+        <summary>Technical appendix: core, canon, proteomics, atlas, and private genomics inventories</summary>
+        <ul class="list">
+          <li>core rust: bijux-cli, bijux-cli-python, bijux-dag-core, bijux-dag-runtime, bijux-dag-app, bijux-dag-artifacts, bijux-dag-cli, bijux-dag-testkit, bijux-dev</li>
+          <li>atlas rust: bijux-atlas, bijux-dev-atlas</li>
+          <li>canon python: bijux-canon-runtime, bijux-canon-agent, bijux-canon-ingest, bijux-canon-index, bijux-canon-reason, bijux-canon-dev</li>
+          <li>canon compat: agentic-flows, bijux-agent, bijux-rag, bijux-rar, bijux-vex</li>
+          <li>proteomics python: agentic-proteins, bijux-proteomics-foundation, bijux-proteomics-core, bijux-proteomics-intelligence, bijux-proteomics-knowledge, bijux-proteomics-lab, bijux-proteomics-dev</li>
+          <li>pollenomics public surface today is repository plus docs and atlas outputs, not a published package badge line</li>
+          <li>private genomics rust includes the bijux-dna family across core, runtime, pipelines, policies, stage contracts, planners, domains, environments, infra, api, analysis, and testkit layers</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="section panel reveal" style="--delay: 250ms;" id="masterclass">
+      <p class="section-kicker">Learning</p>
+      <h2>Bijux Masterclass</h2>
+      <p class="lead">The masterclass is meant to give learners around the world access to real depth: software engineering, workflow systems, and scientific reproducibility taught without shallow shortcuts or misleading simplifications. The intention is not to decorate learners with vocabulary, but to give them the technical substance they actually need to build durable judgment.</p>
+      <div class="status-row">
+        <span class="status-pill public">Public</span>
+        <span class="status-pill public">Free course system</span>
+      </div>
+      <div class="badge-row">
+        <a href="https://github.com/bijux/bijux-masterclass" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--masterclass-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-masterclass"></a>
+        <a href="https://bijux.io/bijux-masterclass/reproducible-research/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-reproducible--research-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="Reproducible Research docs"></a>
+        <a href="https://bijux.io/bijux-masterclass/python-programming/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-python--programming-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="Python Programming docs"></a>
+      </div>
+
+      <div class="programs">
+        <article class="card">
+          <h3>Python programming path</h3>
+          <p>This path is for engineers who want deep command of Python as a language and runtime, not just framework familiarity or framework-specific habits. It is designed to reward serious learners who want transferable software engineering judgment.</p>
+          <div class="badge-row">
+            <a href="https://bijux.io/bijux-masterclass/python-programming/python-object-oriented-programming/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/course-python--oop-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="Python OOP course"></a>
+            <a href="https://bijux.io/bijux-masterclass/python-programming/python-functional-programming/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/course-python--functional-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="Python Functional Programming course"></a>
+            <a href="https://bijux.io/bijux-masterclass/python-programming/python-meta-programming/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/course-python--meta-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="Python Meta Programming course"></a>
+          </div>
+          <ul class="program-list">
+            <li>python-object-oriented-programming</li>
+            <li>python-functional-programming</li>
+            <li>python-meta-programming</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Reproducible science path</h3>
+          <p>This path is for learners who need serious workflow and automation discipline for data-intensive and scientific work, where reproducibility is operational, not decorative. It is especially relevant for research engineering, bioinformatics, and automation-heavy teams.</p>
+          <div class="badge-row">
+            <a href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-make/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/course-deep--dive--make-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="Deep Dive Make course"></a>
+            <a href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-snakemake/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/course-deep--dive--snakemake-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="Deep Dive Snakemake course"></a>
+            <a href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-dvc/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/course-deep--dive--dvc-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="Deep Dive DVC course"></a>
+          </div>
+          <ul class="program-list">
+            <li>deep-dive-make</li>
+            <li>deep-dive-snakemake</li>
+            <li>deep-dive-dvc</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section panel reveal" style="--delay: 270ms;" id="gnss">
+      <p class="section-kicker">In progress</p>
+      <h2>bijux-gnss</h2>
+      <p class="lead">GNSS is still under active construction, but it belongs in the story. It grows out of prior GNSS receiver-system work and is now being rewritten in Rust for the broader community because the space still lacks enough fast, safe, modern implementation work.</p>
+      <div class="status-row">
+        <span class="status-pill development">In development</span>
+        <span class="status-pill development">Public repository</span>
+      </div>
+      <div class="badge-row">
+        <a href="https://github.com/bijux/bijux-gnss" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--gnss-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-gnss"></a>
+      </div>
+      <div class="family-grid">
+        <article class="card">
+          <h3>Why it matters</h3>
+          <p>Receiver systems need speed, correctness, and operational trust at the same time. Rust is a strong fit for that missing combination, especially where performance pressure and software reliability need to coexist.</p>
+        </article>
+        <article class="card">
+          <h3>Current intention</h3>
+          <p>The goal is to build a community-useful GNSS implementation surface that brings performance and systems safety together instead of forcing a tradeoff, and to contribute a modern systems foundation that the space still lacks.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section panel reveal" style="--delay: 290ms;">
+      <h2>Engineering Principles</h2>
+      <p class="lead">The platform is designed around repeatability, inspectability, and explicit boundaries. In aggregate, the work reflects principal-level concerns across platform engineering, software systems, AI systems engineering, bioinformatics infrastructure, machine-learning-adjacent tooling, data-intensive product architecture, and release discipline.</p>
+      <div class="principle-grid">
+        <article class="card">
+          <h3>Contract-first architecture</h3>
+          <p>APIs, schemas, and operational surfaces are treated as versioned contracts, not incidental implementation details.</p>
+        </article>
+        <article class="card">
+          <h3>Deterministic execution</h3>
+          <p>Runtime systems prioritize replayable behavior, controlled side effects, and evidence-rich outputs suitable for governance workflows.</p>
+        </article>
+        <article class="card">
+          <h3>Cross-language depth</h3>
+          <p>Rust and Python are used intentionally across product surfaces, with clear package boundaries and reproducible release paths.</p>
+        </article>
+        <article class="card">
+          <h3>Platform coherence</h3>
+          <p>Repository topology, docs, automation, and release metadata are aligned so platform evolution stays legible at scale.</p>
+        </article>
+      </div>
+      <div class="cta-row">
+        <a class="button primary" href="https://github.com/bijux" target="_blank" rel="noopener">Explore bijux on GitHub</a>
+        <a class="button secondary" href="https://pypi.org/user/bijux/" target="_blank" rel="noopener">Python packages on PyPI</a>
+        <a class="button secondary" href="https://crates.io/users/bijux" target="_blank" rel="noopener">Rust crates on crates.io</a>
+      </div>
+    </section>
+
+    <footer class="panel reveal" style="--delay: 330ms;">
+      <span>Copyright <span id="year"></span> bijux | platform engineering and scientific software systems</span>
+      <span>Public hub for products, documentation, packages, and masterclass programs</span>
     </footer>
-  </div>
+  </main>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-
-    (function () {
-      const root = document.documentElement;
-      const btn = document.getElementById("themeToggle");
-      const label = document.getElementById("themeLabel");
-      const mq = window.matchMedia("(prefers-color-scheme: dark)");
-      let currentTheme = localStorage.getItem("theme") || "auto";
-
-      const setTheme = (theme) => {
-        currentTheme = theme;
-        if (theme === "auto") {
-          root.setAttribute("data-theme", mq.matches ? "dark" : "light");
-          label.textContent = "Auto";
-          return;
-        }
-
-        root.setAttribute("data-theme", theme);
-        label.textContent = theme.charAt(0).toUpperCase() + theme.slice(1);
-      };
-
-      const handlePrefersChange = () => {
-        if (currentTheme === "auto") {
-          root.setAttribute("data-theme", mq.matches ? "dark" : "light");
-        }
-      };
-
-      const addPrefersListener = () => {
-        if (mq.addEventListener) {
-          mq.addEventListener("change", handlePrefersChange);
-        } else if (mq.addListener) {
-          mq.addListener(handlePrefersChange);
-        }
-      };
-
-      const cycleTheme = () => {
-        const next = currentTheme === "light"
-          ? "dark"
-          : currentTheme === "dark"
-            ? "auto"
-            : "light";
-
-        setTheme(next);
-        localStorage.setItem("theme", next);
-      };
-
-      addPrefersListener();
-      setTheme(currentTheme);
-      btn.addEventListener("click", cycleTheme);
-    })();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
