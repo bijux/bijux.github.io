@@ -636,6 +636,36 @@
       font-size: 0.86rem;
     }
 
+    .product-meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .product-meta-item {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 8px 9px;
+      background: rgba(255, 255, 255, 0.62);
+    }
+
+    .product-meta-item strong {
+      display: block;
+      color: var(--navy);
+      font: 700 0.72rem/1.2 "IBM Plex Mono", monospace;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .product-meta-item span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.35;
+    }
+
     .model-note {
       margin-top: 8px;
       padding: 8px 10px;
@@ -879,6 +909,7 @@
       .list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .surface-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .product-meta { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 760px) {
@@ -1140,6 +1171,11 @@
             <a href="https://crates.io/crates/bijux-cli" target="_blank" rel="noopener"><img src="https://img.shields.io/crates/v/bijux-cli?style=flat-square&amp;logo=rust&amp;label=bijux-cli" alt="bijux-cli on crates.io"></a>
             <a href="https://docs.rs/bijux-cli" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs.rs-bijux--cli-1f6feb?style=flat-square&amp;logo=rust&amp;logoColor=white" alt="bijux-cli docs.rs"></a>
           </div>
+          <div class="product-meta">
+            <div class="product-meta-item"><strong>Role</strong><span>runtime, governance, and execution backbone</span></div>
+            <div class="product-meta-item"><strong>Today</strong><span>CLI, docs, PyPI, crates, docs.rs</span></div>
+            <div class="product-meta-item"><strong>Watch</strong><span>public <code>bijux-dag</code> line at <code>v0.4.0</code></span></div>
+          </div>
           <p class="product-fit"><strong>Best for:</strong> teams that need a serious runtime backbone for governed execution, evidence, release control, and pipeline lifecycle management.</p>
           <p class="story"><strong>bijux-core</strong> is the canonical runtime and governance backbone of the ecosystem. It joins the operator-facing CLI and the DAG/evidence engine into one source of truth so execution, replay, release evidence, and maintainer workflows stay aligned at repository scale.</p>
           <ul class="product-points">
@@ -1166,6 +1202,11 @@
             <a href="https://pypi.org/project/bijux-canon-index/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-index?style=flat-square&amp;logo=pypi&amp;label=index" alt="bijux-canon-index"></a>
             <a href="https://pypi.org/project/bijux-canon-reason/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-reason?style=flat-square&amp;logo=pypi&amp;label=reason" alt="bijux-canon-reason"></a>
           </div>
+          <div class="product-meta">
+            <div class="product-meta-item"><strong>Role</strong><span>governed ingest, index, runtime, reasoning, and agentic system</span></div>
+            <div class="product-meta-item"><strong>Today</strong><span>public repo, docs, and package family</span></div>
+            <div class="product-meta-item"><strong>Watch</strong><span>how the package boundaries mature into a stronger AI platform story</span></div>
+          </div>
           <p class="product-fit"><strong>Best for:</strong> organizations that want retrieval, reasoning, and agentic systems treated as governed runtime infrastructure instead of ad hoc prompt wiring.</p>
           <p class="story"><strong>bijux-canon</strong> is the governed AI and knowledge system in the ecosystem. It is organized around ingest, index, runtime, reasoning, and agentic execution as separate but coherent layers so the system can grow without becoming opaque.</p>
           <ul class="product-points">
@@ -1190,6 +1231,11 @@
             <a href="https://bijux.io/bijux-atlas/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-bijux.io-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="bijux-atlas docs"></a>
             <a href="https://crates.io/crates/bijux-atlas" target="_blank" rel="noopener"><img src="https://img.shields.io/crates/v/bijux-atlas?style=flat-square&amp;logo=rust&amp;label=bijux-atlas" alt="bijux-atlas crate"></a>
             <a href="https://docs.rs/bijux-atlas" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs.rs-bijux--atlas-1f6feb?style=flat-square&amp;logo=rust&amp;logoColor=white" alt="bijux-atlas docs.rs"></a>
+          </div>
+          <div class="product-meta">
+            <div class="product-meta-item"><strong>Role</strong><span>data delivery platform for ingest, service, API, and CLI</span></div>
+            <div class="product-meta-item"><strong>Today</strong><span>public Rust crate, docs, and repository</span></div>
+            <div class="product-meta-item"><strong>Watch</strong><span>the full ingest-to-serving surface behaving as one product</span></div>
           </div>
           <p class="product-fit"><strong>Best for:</strong> groups that need ingest, service delivery, APIs, and operator tooling to behave like one coherent data product.</p>
           <p class="story"><strong>bijux-atlas</strong> presents a complete delivery story for genomics datasets: ingest, server, API, and CLI all treated as one product surface rather than disconnected tools. It reads like a data platform, not a utility bundle, and it shows that data delivery can be designed with the same rigor as runtime software.</p>
@@ -1217,6 +1263,11 @@
             <a href="https://pypi.org/project/bijux-proteomics-knowledge/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-proteomics-knowledge?style=flat-square&amp;logo=pypi&amp;label=knowledge" alt="bijux-proteomics-knowledge"></a>
             <a href="https://pypi.org/project/bijux-proteomics-lab/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-proteomics-lab?style=flat-square&amp;logo=pypi&amp;label=lab" alt="bijux-proteomics-lab"></a>
           </div>
+          <div class="product-meta">
+            <div class="product-meta-item"><strong>Role</strong><span>discovery acceleration across scientific, knowledge, and lab layers</span></div>
+            <div class="product-meta-item"><strong>Today</strong><span>public repo, docs, and six-package family</span></div>
+            <div class="product-meta-item"><strong>Watch</strong><span>the bridge from software architecture into faster scientific decision support</span></div>
+          </div>
           <p class="product-fit"><strong>Best for:</strong> scientific and discovery teams that want software, intelligence, and lab planning represented as one acceleration system instead of disconnected analysis layers.</p>
           <p class="story"><strong>bijux-proteomics</strong> is built as an engineering system for accelerating drug-discovery workflows, not as a single narrow package. It connects runtime execution, domain core, knowledge, intelligence, and lab planning into one coherent stack with real product ambition and a clear translation path from software architecture into scientific decision support.</p>
           <ul class="product-points">
@@ -1232,6 +1283,11 @@
           <div class="status-row">
             <span class="status-pill private">Private</span>
             <span class="status-pill private">Not publicly released</span>
+          </div>
+          <div class="product-meta">
+            <div class="product-meta-item"><strong>Role</strong><span>genomics execution platform for governed pipelines</span></div>
+            <div class="product-meta-item"><strong>Today</strong><span>private model only, no public repo surface</span></div>
+            <div class="product-meta-item"><strong>Watch</strong><span>the two-YAML operating model as the clearest simplification thesis</span></div>
           </div>
           <p class="product-fit"><strong>Best for:</strong> pipeline-heavy bioinformatics environments that need to collapse operational complexity without losing execution rigor, policy control, or reproducibility.</p>
           <p class="story"><strong>bijux-genomics</strong> is still private, and it should be presented that way. The important point is the model: a genomics execution platform designed to reduce pipeline definition to two YAML files, one for the DAG and one for configuration and policy, while keeping the underlying execution, governance, and environment layers rigorous.</p>
@@ -1252,6 +1308,11 @@
           <div class="badge-row">
             <a href="https://github.com/bijux/bijux-pollenomics" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--pollenomics-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-pollenomics"></a>
             <a href="https://bijux.io/bijux-pollenomics/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-bijux.io-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="bijux-pollenomics docs"></a>
+          </div>
+          <div class="product-meta">
+            <div class="product-meta-item"><strong>Role</strong><span>evidence mapping and site-selection surface</span></div>
+            <div class="product-meta-item"><strong>Today</strong><span>public repo, docs, and field-linked outputs</span></div>
+            <div class="product-meta-item"><strong>Watch</strong><span>regional synthesis for better sampling decisions and future publications</span></div>
           </div>
           <p class="product-fit"><strong>Best for:</strong> evidence-led site selection, regional synthesis, and fieldwork planning where map context, biological signals, and archaeological context need to stay in one view.</p>
           <p class="story"><strong>bijux-pollenomics</strong> is not presented here as a published package, because that would be inaccurate. What matters today is the product idea: a visual evidence surface for the Nordic region where archaeology, eDNA, aDNA, and pollenomics context converge into one map-driven site-selection story.</p>
