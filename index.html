@@ -6,6 +6,8 @@
   <title>bijux | platform engineering, AI systems, bioinformatics, and scientific software products</title>
   <meta name="description" content="bijux is the public product hub by Bijan Mousavi for platform engineering, AI systems, bioinformatics, workflow runtimes, data products, and scientific software: bijux-core, bijux-canon, bijux-atlas, bijux-proteomics, bijux-pollenomics, bijux-masterclass, and bijux-gnss.">
   <meta name="author" content="Bijan Mousavi">
+  <meta name="creator" content="Bijan Mousavi (bijux)">
+  <meta name="publisher" content="bijux">
   <meta name="application-name" content="bijux">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="keywords" content="bijux, Bijan Mousavi, platform engineering, software engineering, principal engineer, AI systems engineering, bioinformatics, machine learning engineering, data science, Rust, Python, workflow systems, DAG execution, genomics, proteomics, pollenomics, GNSS, reproducible research, scientific software">
@@ -56,10 +58,21 @@
           "name": "bijux",
           "url": "https://bijux.github.io/",
           "logo": "https://bijux.github.io/assets/bijux_logo_hq.png",
+          "email": "bijan@bijux.io",
           "description": "Product ecosystem for platform engineering, AI systems, bioinformatics, workflow runtime infrastructure, data products, and scientific software.",
           "founder": {
             "@id": "https://bijux.github.io/#person"
           },
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "contactType": "maintainer",
+              "email": "bijan@bijux.io",
+              "availableLanguage": [
+                "English"
+              ]
+            }
+          ],
           "sameAs": [
             "https://github.com/bijux",
             "https://pypi.org/user/bijux/",
@@ -70,7 +83,9 @@
           "@type": "Person",
           "@id": "https://bijux.github.io/#person",
           "name": "Bijan Mousavi",
+          "alternateName": "bijux",
           "url": "https://bijux.github.io/",
+          "email": "bijan@bijux.io",
           "description": "Principal-level engineer building platform systems, runtime software, AI workflow infrastructure, bioinformatics execution systems, scientific data products, and deep technical education.",
           "jobTitle": "Principal Platform and Software Engineer",
           "worksFor": {
@@ -452,6 +467,22 @@
       font-size: 0.88rem;
     }
 
+    .brand-meta {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font: 500 0.74rem/1.45 "IBM Plex Mono", monospace;
+    }
+
+    .brand-meta a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .brand-meta a:hover {
+      color: var(--teal);
+      text-decoration: underline;
+    }
+
     .nav {
       display: flex;
       flex-wrap: wrap;
@@ -548,6 +579,13 @@
       margin: 14px 0 0;
     }
 
+    .maintainer-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 18px 0 0;
+    }
+
     .audience-pill {
       display: inline-flex;
       align-items: center;
@@ -559,6 +597,23 @@
       font: 600 0.74rem/1 "IBM Plex Mono", monospace;
       letter-spacing: 0.04em;
       text-transform: uppercase;
+    }
+
+    .identity-pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 7px 11px;
+      border: 1px solid var(--line);
+      background: var(--chip-surface);
+      color: var(--ink);
+      font: 600 0.74rem/1 "IBM Plex Mono", monospace;
+      letter-spacing: 0.03em;
+    }
+
+    .identity-pill strong {
+      color: var(--navy);
+      margin-right: 6px;
     }
 
     .snapshot-pill {
@@ -1100,6 +1155,7 @@
         <div>
           <p class="brand-title">bijux platform</p>
           <p class="brand-sub">Contract-first systems for runtime, data, and scientific workflows</p>
+          <p class="brand-meta">Maintained by Bijan Mousavi (<span aria-label="alias">bijux</span>) · <a href="mailto:bijan@bijux.io">bijan@bijux.io</a></p>
         </div>
       </div>
       <nav class="nav" aria-label="Primary">
@@ -1124,6 +1180,11 @@
     <section class="hero panel reveal" style="--delay: 90ms;">
       <p class="kicker">Updated Platform Map | April 2026</p>
       <h1>Bijux is a contract-first product ecosystem for platform engineering, AI systems, bioinformatics, and scientific software.</h1>
+      <div class="maintainer-row" aria-label="Author and maintainer">
+        <span class="identity-pill"><strong>Author</strong> Bijan Mousavi</span>
+        <span class="identity-pill"><strong>Alias</strong> bijux</span>
+        <a class="identity-pill" href="mailto:bijan@bijux.io"><strong>Email</strong> bijan@bijux.io</a>
+      </div>
       <div class="audience-row" aria-label="Primary audiences">
         <span class="audience-pill">Platform Engineering</span>
         <span class="audience-pill">AI Systems</span>
