@@ -409,6 +409,13 @@
       margin: 22px 0 0;
     }
 
+    .snapshot-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0 0;
+    }
+
     .audience-row {
       display: flex;
       flex-wrap: wrap;
@@ -427,6 +434,25 @@
       font: 600 0.74rem/1 "IBM Plex Mono", monospace;
       letter-spacing: 0.04em;
       text-transform: uppercase;
+    }
+
+    .snapshot-pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.76);
+      color: var(--ink);
+      font: 600 0.73rem/1 "IBM Plex Mono", monospace;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .snapshot-pill strong {
+      margin-right: 6px;
+      color: var(--navy);
+      font-weight: 700;
     }
 
     .stat {
@@ -942,11 +968,17 @@
         This page is designed to make that legible quickly: what the flagship systems are, how they relate to one another, what is public today, what remains private or in progress,
         and why the overall body of work matters to engineering leaders, scientific collaborators, and product-minded technical teams.
       </p>
+      <div class="snapshot-row" aria-label="Current platform state">
+        <span class="snapshot-pill"><strong>Public now</strong> core, canon, atlas, proteomics, pollenomics, masterclass</span>
+        <span class="snapshot-pill"><strong>Upcoming</strong> bijux-dag v0.4.0</span>
+        <span class="snapshot-pill"><strong>Private</strong> genomics</span>
+        <span class="snapshot-pill"><strong>In progress</strong> gnss</span>
+      </div>
       <div class="stats" aria-label="Platform metrics">
-        <div class="stat"><strong>6</strong><span>public product systems</span></div>
-        <div class="stat"><strong>1</strong><span>private genomics platform</span></div>
+        <div class="stat"><strong>7</strong><span>public repositories</span></div>
+        <div class="stat"><strong>6</strong><span>public flagship products</span></div>
         <div class="stat"><strong>2</strong><span>masterclass tracks</span></div>
-        <div class="stat"><strong>1</strong><span>gnss system in progress</span></div>
+        <div class="stat"><strong>2</strong><span>non-public or upcoming lines</span></div>
       </div>
       <div class="cta-row">
         <a class="button primary" href="https://github.com/bijux/bijux-core" target="_blank" rel="noopener">Open bijux-core</a>
