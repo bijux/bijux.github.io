@@ -523,6 +523,21 @@
       overflow: hidden;
     }
 
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.95fr);
+      gap: 24px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-main,
+    .hero-side {
+      position: relative;
+      z-index: 1;
+    }
+
     .hero::after {
       content: "";
       position: absolute;
@@ -544,11 +559,11 @@
 
     h1 {
       margin: 0;
-      max-width: 900px;
+      max-width: 14ch;
       font-family: "Fraunces", serif;
-      font-size: clamp(2rem, 4vw, 3.1rem);
-      line-height: 1.12;
-      letter-spacing: -0.01em;
+      font-size: clamp(2.3rem, 4.8vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
     }
 
     .hero p {
@@ -556,6 +571,59 @@
       max-width: 860px;
       color: var(--muted);
       font-size: 1.04rem;
+    }
+
+    .hero-lead {
+      color: var(--ink);
+      font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+      font-weight: 600;
+      max-width: 44rem;
+    }
+
+    .hero-summary {
+      max-width: 48rem;
+    }
+
+    .hero-brief {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent),
+        var(--card-strong);
+    }
+
+    .hero-brief + .hero-brief {
+      margin-top: 12px;
+    }
+
+    .hero-brief-label {
+      margin: 0;
+      color: var(--navy);
+      font: 700 0.76rem/1 "IBM Plex Mono", monospace;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-brief p {
+      margin: 10px 0 0;
+      max-width: none;
+      font-size: 0.94rem;
+    }
+
+    .hero-brief strong {
+      color: var(--navy);
+    }
+
+    .hero-brief-list {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .hero-brief-list li + li {
+      margin-top: 6px;
     }
 
     .stats {
@@ -1116,6 +1184,7 @@
     }
 
     @media (max-width: 980px) {
+      .hero-grid { grid-template-columns: 1fr; }
       .repo-grid { grid-template-columns: 1fr; }
       .flow-grid { grid-template-columns: 1fr; }
       .list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1178,50 +1247,58 @@
     </header>
 
     <section class="hero panel reveal" style="--delay: 90ms;">
-      <p class="kicker">Updated Platform Map | April 2026</p>
-      <h1>Bijux is a contract-first product ecosystem for platform engineering, AI systems, bioinformatics, and scientific software.</h1>
-      <div class="maintainer-row" aria-label="Author and maintainer">
-        <span class="identity-pill"><strong>Author</strong> Bijan Mousavi</span>
-        <span class="identity-pill"><strong>Alias</strong> bijux</span>
-        <a class="identity-pill" href="mailto:bijan@bijux.io"><strong>Email</strong> bijan@bijux.io</a>
-      </div>
-      <div class="audience-row" aria-label="Primary audiences">
-        <span class="audience-pill">Platform Engineering</span>
-        <span class="audience-pill">AI Systems</span>
-        <span class="audience-pill">Bioinformatics</span>
-        <span class="audience-pill">Scientific Software</span>
-        <span class="audience-pill">Principal-Level Ownership</span>
-      </div>
-      <p>
-        The center is <strong><code>bijux-core</code></strong>: a runtime and governance backbone for command execution, pipeline semantics, evidence, and release discipline.
-        Around it sit flagship systems with their own gravity: <strong><code>bijux-canon</code></strong> for governed AI and knowledge workflows,
-        <strong><code>bijux-atlas</code></strong> for data delivery, <strong><code>bijux-proteomics</code></strong> for discovery acceleration,
-        <strong><code>bijux-genomics</code></strong> as a private execution platform, <strong><code>bijux-pollenomics</code></strong> for evidence-driven site selection,
-        <strong><code>bijux-masterclass</code></strong> for deep technical education, and <strong><code>bijux-gnss</code></strong> as the next systems frontier.
-      </p>
-      <p>
-        Each repository is meant to stand as a serious product surface, not a side project. Taken together, the work demonstrates principal-level ownership across platform engineering,
-        software systems, bioinformatics infrastructure, AI systems engineering, machine-learning-adjacent tooling, and data-intensive product design.
-      </p>
-      <p>
-        This page is designed to make that legible quickly: what the flagship systems are, how they relate to one another, what is public today, what remains private or in progress,
-        and why the overall body of work matters to engineering leaders, scientific collaborators, and product-minded technical teams.
-      </p>
-      <div class="snapshot-row" aria-label="Current platform state">
-        <span class="snapshot-pill"><strong>Public now</strong> core, canon, atlas, proteomics, pollenomics, masterclass</span>
-        <span class="snapshot-pill"><strong>Upcoming</strong> bijux-dag v0.4.0</span>
-        <span class="snapshot-pill"><strong>Private</strong> genomics</span>
-        <span class="snapshot-pill"><strong>In progress</strong> gnss</span>
-      </div>
-      <div class="stats" aria-label="Platform metrics">
-        <div class="stat"><strong>7</strong><span>public repositories</span></div>
-        <div class="stat"><strong>6</strong><span>public flagship products</span></div>
-        <div class="stat"><strong>2</strong><span>masterclass tracks</span></div>
-        <div class="stat"><strong>2</strong><span>non-public or upcoming lines</span></div>
-      </div>
-      <div class="cta-row">
-        <a class="button primary" href="https://github.com/bijux/bijux-core" target="_blank" rel="noopener">Open bijux-core</a>
-        <a class="button secondary" href="https://github.com/bijux" target="_blank" rel="noopener">Explore All Repositories</a>
+      <div class="hero-grid">
+        <div class="hero-main">
+          <p class="kicker">Updated Platform Map | April 2026</p>
+          <h1>Bijux turns contract-first engineering into public, inspectable products.</h1>
+          <p class="hero-lead">One operator, one coherent ecosystem: runtime infrastructure, governed AI systems, bioinformatics platforms, and technical education built to stay legible in public.</p>
+          <div class="maintainer-row" aria-label="Author and maintainer">
+            <span class="identity-pill"><strong>Author</strong> Bijan Mousavi</span>
+            <span class="identity-pill"><strong>Alias</strong> bijux</span>
+            <a class="identity-pill" href="mailto:bijan@bijux.io"><strong>Email</strong> bijan@bijux.io</a>
+          </div>
+          <div class="audience-row" aria-label="Primary audiences">
+            <span class="audience-pill">Platform Engineering</span>
+            <span class="audience-pill">AI Systems</span>
+            <span class="audience-pill">Bioinformatics</span>
+            <span class="audience-pill">Scientific Software</span>
+            <span class="audience-pill">Principal-Level Ownership</span>
+          </div>
+          <p class="hero-summary">The center is <strong><code>bijux-core</code></strong>: a runtime and governance backbone for command execution, pipeline semantics, evidence, and release discipline. Around it sit flagship systems with their own gravity: <strong><code>bijux-canon</code></strong> for governed AI and knowledge workflows, <strong><code>bijux-atlas</code></strong> for data delivery, <strong><code>bijux-proteomics</code></strong> for discovery acceleration, <strong><code>bijux-genomics</code></strong> as a private execution platform, <strong><code>bijux-pollenomics</code></strong> for evidence-driven site selection, <strong><code>bijux-masterclass</code></strong> for deep technical education, and <strong><code>bijux-gnss</code></strong> as the next systems frontier.</p>
+          <p class="hero-summary">This homepage should answer four questions quickly: what bijux is, which systems are public today, what remains private or emerging, and why the overall body of work matters to engineering leaders, scientific collaborators, and product-minded technical teams.</p>
+          <div class="snapshot-row" aria-label="Current platform state">
+            <span class="snapshot-pill"><strong>Public now</strong> core, canon, atlas, proteomics, pollenomics, masterclass</span>
+            <span class="snapshot-pill"><strong>Upcoming</strong> bijux-dag v0.4.0</span>
+            <span class="snapshot-pill"><strong>Private</strong> genomics</span>
+            <span class="snapshot-pill"><strong>In progress</strong> gnss</span>
+          </div>
+          <div class="stats" aria-label="Platform metrics">
+            <div class="stat"><strong>7</strong><span>public repositories</span></div>
+            <div class="stat"><strong>6</strong><span>public flagship products</span></div>
+            <div class="stat"><strong>2</strong><span>masterclass tracks</span></div>
+            <div class="stat"><strong>2</strong><span>non-public or upcoming lines</span></div>
+          </div>
+          <div class="cta-row">
+            <a class="button primary" href="https://github.com/bijux/bijux-core" target="_blank" rel="noopener">Open bijux-core</a>
+            <a class="button secondary" href="https://github.com/bijux" target="_blank" rel="noopener">Explore All Repositories</a>
+          </div>
+        </div>
+        <aside class="hero-side" aria-label="Quick orientation">
+          <div class="hero-brief">
+            <p class="hero-brief-label">Read in 30 seconds</p>
+            <p><strong>Center:</strong> <code>bijux-core</code> anchors runtime, DAG semantics, evidence, and release discipline.</p>
+            <p><strong>Public now:</strong> core, canon, atlas, proteomics, pollenomics, masterclass, GNSS, and this hub are visible public surfaces.</p>
+            <p><strong>Private frontier:</strong> <code>bijux-genomics</code> remains private while GNSS and <code>bijux-dag</code> show the next visible frontier.</p>
+          </div>
+          <div class="hero-brief">
+            <p class="hero-brief-label">Why this matters</p>
+            <ul class="hero-brief-list">
+              <li>Platform engineering depth across Rust and Python</li>
+              <li>AI systems treated as governed runtime infrastructure</li>
+              <li>Bioinformatics and scientific software handled as product surfaces</li>
+            </ul>
+          </div>
+        </aside>
       </div>
     </section>
 
