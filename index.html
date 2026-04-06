@@ -1331,13 +1331,60 @@
 
     footer {
       margin-top: 16px;
-      padding: 16px 20px;
-      font-size: 0.88rem;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
+    }
+
+    .footer-block {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      background: var(--card-strong);
+    }
+
+    .footer-label {
+      display: block;
+      color: var(--navy);
+      font: 700 0.74rem/1.2 "IBM Plex Mono", monospace;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .footer-block strong {
+      display: block;
+      margin-top: 8px;
+      color: var(--ink);
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+
+    .footer-copy {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .footer-links a {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 10px;
+      background: var(--chip-surface);
+      color: var(--ink);
+      font: 600 0.72rem/1 "IBM Plex Mono", monospace;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
     @media (max-width: 980px) {
@@ -1350,6 +1397,7 @@
       .product-meta { grid-template-columns: 1fr; }
       .arc-grid { grid-template-columns: 1fr; }
       .trust-strip { grid-template-columns: 1fr; }
+      footer { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 760px) {
@@ -2132,6 +2180,11 @@
           <p>The masterclass is the fastest way to evaluate the educational side of the work and to see how the same engineering standards are translated into course design.</p>
         </article>
       </div>
+      <div class="cta-row">
+        <a class="button primary" href="mailto:bijan@bijux.io">Contact the maintainer</a>
+        <a class="button secondary" href="https://github.com/bijux" target="_blank" rel="noopener">Open GitHub namespace</a>
+        <a class="button secondary" href="https://bijux.io/bijux-core/" target="_blank" rel="noopener">Start with core docs</a>
+      </div>
     </section>
 
     <section class="section panel reveal" style="--delay: 320ms;" id="faq">
@@ -2165,8 +2218,35 @@
     </section>
 
     <footer class="panel reveal" style="--delay: 330ms;">
-      <span>Copyright <span id="year"></span> bijux | platform engineering and scientific software systems</span>
-      <span>Public hub for products, documentation, packages, and masterclass programs</span>
+      <div class="footer-block">
+        <span class="footer-label">Ownership</span>
+        <strong>Copyright <span id="year"></span> bijux</strong>
+        <p class="footer-copy">Maintained by Bijan Mousavi under the bijux alias for platform engineering, AI systems, bioinformatics, and scientific software products.</p>
+        <div class="footer-links">
+          <a href="mailto:bijan@bijux.io">bijan@bijux.io</a>
+          <a href="https://github.com/bijux" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-block">
+        <span class="footer-label">Best next step</span>
+        <strong>Follow the surface that matches your proof standard.</strong>
+        <p class="footer-copy">Start with source code for execution quality, docs for architecture, package registries for release discipline, or masterclass for teaching depth.</p>
+        <div class="footer-links">
+          <a href="#products">Flagships</a>
+          <a href="#packages">Inventory</a>
+          <a href="#masterclass">Masterclass</a>
+        </div>
+      </div>
+      <div class="footer-block">
+        <span class="footer-label">Public state</span>
+        <strong>Updated April 7, 2026</strong>
+        <p class="footer-copy">Public surfaces, private lines, and emerging work are labeled intentionally so the homepage stays useful as a trustworthy portfolio map instead of a vague brand page.</p>
+        <div class="footer-links">
+          <a href="#map">Page map</a>
+          <a href="#faq">FAQ</a>
+          <a href="#maintainer">Maintainer</a>
+        </div>
+      </div>
     </footer>
   </main>
 
