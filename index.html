@@ -18,17 +18,22 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bijux.github.io/">
   <meta property="og:image" content="https://bijux.github.io/assets/bijux_logo_hq.png">
+  <meta property="og:image:secure_url" content="https://bijux.github.io/assets/bijux_logo_hq.png">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:alt" content="bijux logo and platform engineering portfolio hub">
   <meta property="og:site_name" content="bijux">
   <meta property="og:locale" content="en_US">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:updated_time" content="2026-04-07">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="bijux | platform engineering, AI systems, and bioinformatics products">
   <meta name="twitter:description" content="Product hub for runtime systems, DAG execution, governed AI workflows, genomics, proteomics, pollenomics, GNSS, and deep technical masterclass programs.">
   <meta name="twitter:image" content="https://bijux.github.io/assets/bijux_logo_hq.png">
   <meta name="twitter:image:alt" content="bijux logo and platform engineering portfolio hub">
+  <meta name="last-modified" content="2026-04-07">
+  <meta property="article:modified_time" content="2026-04-07">
 
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5efe3">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0d141c">
@@ -117,6 +122,8 @@
           "@id": "https://bijux.github.io/#website",
           "url": "https://bijux.github.io/",
           "name": "bijux",
+          "inLanguage": "en-US",
+          "dateModified": "2026-04-07",
           "publisher": {
             "@id": "https://bijux.github.io/#org"
           },
@@ -127,6 +134,7 @@
           "@id": "https://bijux.github.io/#hub",
           "url": "https://bijux.github.io/",
           "name": "bijux product hub",
+          "dateModified": "2026-04-07",
           "isPartOf": {
             "@id": "https://bijux.github.io/#website"
           },
@@ -1215,6 +1223,36 @@
       font-size: 0.92rem;
     }
 
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .trust-item {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px;
+      background: var(--card-strong);
+    }
+
+    .trust-item strong {
+      display: block;
+      color: var(--navy);
+      font: 700 0.74rem/1.2 "IBM Plex Mono", monospace;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .trust-item span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
     .surface-summary {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1301,6 +1339,7 @@
       .surface-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .product-meta { grid-template-columns: 1fr; }
       .arc-grid { grid-template-columns: 1fr; }
+      .trust-strip { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 760px) {
@@ -1489,6 +1528,20 @@
           <h3>Public masterclass tracks</h3>
           <p>The learning surface already covers both Python engineering and reproducible science with individual course pages that make the educational line concrete and revisitable.</p>
         </article>
+      </div>
+      <div class="trust-strip" aria-label="Trust notes">
+        <div class="trust-item">
+          <strong>Reviewed</strong>
+          <span>Homepage public-state claims were refreshed on April 7, 2026 against visible repository, docs, PyPI, and crates surfaces.</span>
+        </div>
+        <div class="trust-item">
+          <strong>Ownership</strong>
+          <span>Author, maintainer, alias, and direct email are shown explicitly instead of being hidden only in metadata.</span>
+        </div>
+        <div class="trust-item">
+          <strong>Boundary</strong>
+          <span>Private and emerging lines are labeled intentionally so the page does not imply public release where one does not exist.</span>
+        </div>
       </div>
     </section>
 
