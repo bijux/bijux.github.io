@@ -904,6 +904,50 @@
       border-radius: 4px;
     }
 
+    .product-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .product-action {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 10px;
+      background: var(--chip-surface);
+      color: var(--ink);
+      font: 600 0.72rem/1 "IBM Plex Mono", monospace;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .product-action.primary {
+      color: var(--teal);
+      background: var(--teal-soft);
+      border-color: rgba(11, 122, 109, 0.24);
+    }
+
+    .product-action:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+      border-color: var(--line-strong);
+      box-shadow: var(--shadow);
+    }
+
+    .product-action-note {
+      margin-top: 12px;
+      padding: 8px 10px;
+      border: 1px dashed var(--line);
+      border-radius: 10px;
+      background: var(--model-bg);
+      color: var(--muted);
+      font: 500 0.82rem/1.45 "IBM Plex Mono", monospace;
+    }
+
     .story {
       margin-top: 10px;
     }
@@ -1553,12 +1597,12 @@
             <span class="status-pill public">Runtime center</span>
             <span class="status-pill development">bijux-dag public release planned at v0.4.0</span>
           </div>
-          <div class="badge-row">
-            <a href="https://github.com/bijux/bijux-core" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--core-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-core"></a>
-            <a href="https://bijux.io/bijux-core/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-bijux.io-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="bijux-core docs"></a>
-            <a href="https://pypi.org/project/bijux-cli/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-cli?style=flat-square&amp;logo=pypi&amp;label=bijux-cli" alt="bijux-cli on PyPI"></a>
-            <a href="https://crates.io/crates/bijux-cli" target="_blank" rel="noopener"><img src="https://img.shields.io/crates/v/bijux-cli?style=flat-square&amp;logo=rust&amp;label=bijux-cli" alt="bijux-cli on crates.io"></a>
-            <a href="https://docs.rs/bijux-cli" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs.rs-bijux--cli-1f6feb?style=flat-square&amp;logo=rust&amp;logoColor=white" alt="bijux-cli docs.rs"></a>
+          <div class="product-actions" aria-label="bijux-core links">
+            <a class="product-action primary" href="https://github.com/bijux/bijux-core" target="_blank" rel="noopener">Repository</a>
+            <a class="product-action primary" href="https://bijux.io/bijux-core/" target="_blank" rel="noopener">Documentation</a>
+            <a class="product-action" href="https://pypi.org/project/bijux-cli/" target="_blank" rel="noopener">PyPI CLI</a>
+            <a class="product-action" href="https://crates.io/crates/bijux-cli" target="_blank" rel="noopener">crates.io CLI</a>
+            <a class="product-action" href="https://docs.rs/bijux-cli" target="_blank" rel="noopener">docs.rs</a>
           </div>
           <div class="product-meta">
             <div class="product-meta-item"><strong>Role</strong><span>runtime, governance, and execution backbone</span></div>
@@ -1582,14 +1626,12 @@
             <span class="status-pill public">Public</span>
             <span class="status-pill public">AI workflow system</span>
           </div>
-          <div class="badge-row">
-            <a href="https://github.com/bijux/bijux-canon" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--canon-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-canon"></a>
-            <a href="https://bijux.io/bijux-canon/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-bijux.io-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="bijux-canon docs"></a>
-            <a href="https://pypi.org/project/bijux-canon-runtime/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-runtime?style=flat-square&amp;logo=pypi&amp;label=runtime" alt="bijux-canon-runtime"></a>
-            <a href="https://pypi.org/project/bijux-canon-agent/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-agent?style=flat-square&amp;logo=pypi&amp;label=agent" alt="bijux-canon-agent"></a>
-            <a href="https://pypi.org/project/bijux-canon-ingest/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-ingest?style=flat-square&amp;logo=pypi&amp;label=ingest" alt="bijux-canon-ingest"></a>
-            <a href="https://pypi.org/project/bijux-canon-index/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-index?style=flat-square&amp;logo=pypi&amp;label=index" alt="bijux-canon-index"></a>
-            <a href="https://pypi.org/project/bijux-canon-reason/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-reason?style=flat-square&amp;logo=pypi&amp;label=reason" alt="bijux-canon-reason"></a>
+          <div class="product-actions" aria-label="bijux-canon links">
+            <a class="product-action primary" href="https://github.com/bijux/bijux-canon" target="_blank" rel="noopener">Repository</a>
+            <a class="product-action primary" href="https://bijux.io/bijux-canon/" target="_blank" rel="noopener">Documentation</a>
+            <a class="product-action" href="https://pypi.org/project/bijux-canon-runtime/" target="_blank" rel="noopener">PyPI runtime</a>
+            <a class="product-action" href="#packages">Package family</a>
+            <a class="product-action" href="https://pypi.org/project/bijux-canon-reason/" target="_blank" rel="noopener">PyPI reason</a>
           </div>
           <div class="product-meta">
             <div class="product-meta-item"><strong>Role</strong><span>governed ingest, index, runtime, reasoning, and agentic system</span></div>
@@ -1615,11 +1657,11 @@
             <span class="status-pill public">Public</span>
             <span class="status-pill public">Data delivery platform</span>
           </div>
-          <div class="badge-row">
-            <a href="https://github.com/bijux/bijux-atlas" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--atlas-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-atlas"></a>
-            <a href="https://bijux.io/bijux-atlas/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-bijux.io-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="bijux-atlas docs"></a>
-            <a href="https://crates.io/crates/bijux-atlas" target="_blank" rel="noopener"><img src="https://img.shields.io/crates/v/bijux-atlas?style=flat-square&amp;logo=rust&amp;label=bijux-atlas" alt="bijux-atlas crate"></a>
-            <a href="https://docs.rs/bijux-atlas" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs.rs-bijux--atlas-1f6feb?style=flat-square&amp;logo=rust&amp;logoColor=white" alt="bijux-atlas docs.rs"></a>
+          <div class="product-actions" aria-label="bijux-atlas links">
+            <a class="product-action primary" href="https://github.com/bijux/bijux-atlas" target="_blank" rel="noopener">Repository</a>
+            <a class="product-action primary" href="https://bijux.io/bijux-atlas/" target="_blank" rel="noopener">Documentation</a>
+            <a class="product-action" href="https://crates.io/crates/bijux-atlas" target="_blank" rel="noopener">crates.io</a>
+            <a class="product-action" href="https://docs.rs/bijux-atlas" target="_blank" rel="noopener">docs.rs</a>
           </div>
           <div class="product-meta">
             <div class="product-meta-item"><strong>Role</strong><span>data delivery platform for ingest, service, API, and CLI</span></div>
@@ -1642,15 +1684,12 @@
             <span class="status-pill public">Public</span>
             <span class="status-pill public">Drug discovery acceleration</span>
           </div>
-          <div class="badge-row">
-            <a href="https://github.com/bijux/bijux-proteomics" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--proteomics-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-proteomics"></a>
-            <a href="https://bijux.io/bijux-proteomics/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-bijux.io-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="bijux-proteomics docs"></a>
-            <a href="https://pypi.org/project/agentic-proteins/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/agentic-proteins?style=flat-square&amp;logo=pypi&amp;label=agentic-proteins" alt="agentic-proteins"></a>
-            <a href="https://pypi.org/project/bijux-proteomics-foundation/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-proteomics-foundation?style=flat-square&amp;logo=pypi&amp;label=foundation" alt="bijux-proteomics-foundation"></a>
-            <a href="https://pypi.org/project/bijux-proteomics-core/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-proteomics-core?style=flat-square&amp;logo=pypi&amp;label=core" alt="bijux-proteomics-core"></a>
-            <a href="https://pypi.org/project/bijux-proteomics-intelligence/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-proteomics-intelligence?style=flat-square&amp;logo=pypi&amp;label=intelligence" alt="bijux-proteomics-intelligence"></a>
-            <a href="https://pypi.org/project/bijux-proteomics-knowledge/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-proteomics-knowledge?style=flat-square&amp;logo=pypi&amp;label=knowledge" alt="bijux-proteomics-knowledge"></a>
-            <a href="https://pypi.org/project/bijux-proteomics-lab/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-proteomics-lab?style=flat-square&amp;logo=pypi&amp;label=lab" alt="bijux-proteomics-lab"></a>
+          <div class="product-actions" aria-label="bijux-proteomics links">
+            <a class="product-action primary" href="https://github.com/bijux/bijux-proteomics" target="_blank" rel="noopener">Repository</a>
+            <a class="product-action primary" href="https://bijux.io/bijux-proteomics/" target="_blank" rel="noopener">Documentation</a>
+            <a class="product-action" href="https://pypi.org/project/agentic-proteins/" target="_blank" rel="noopener">PyPI agentic-proteins</a>
+            <a class="product-action" href="#packages">Package family</a>
+            <a class="product-action" href="https://pypi.org/project/bijux-proteomics-core/" target="_blank" rel="noopener">PyPI core</a>
           </div>
           <div class="product-meta">
             <div class="product-meta-item"><strong>Role</strong><span>discovery acceleration across scientific, knowledge, and lab layers</span></div>
@@ -1673,6 +1712,7 @@
             <span class="status-pill private">Private</span>
             <span class="status-pill private">Not publicly released</span>
           </div>
+          <p class="product-action-note">No public repository, docs site, or package links are shown here by design. The value of this card is the operating model and its relation to the rest of the platform.</p>
           <div class="product-meta">
             <div class="product-meta-item"><strong>Role</strong><span>genomics execution platform for governed pipelines</span></div>
             <div class="product-meta-item"><strong>Today</strong><span>private model only, no public repo surface</span></div>
@@ -1694,9 +1734,10 @@
             <span class="status-pill public">Public</span>
             <span class="status-pill public">Evidence mapping</span>
           </div>
-          <div class="badge-row">
-            <a href="https://github.com/bijux/bijux-pollenomics" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--pollenomics-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-pollenomics"></a>
-            <a href="https://bijux.io/bijux-pollenomics/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-bijux.io-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="bijux-pollenomics docs"></a>
+          <div class="product-actions" aria-label="bijux-pollenomics links">
+            <a class="product-action primary" href="https://github.com/bijux/bijux-pollenomics" target="_blank" rel="noopener">Repository</a>
+            <a class="product-action primary" href="https://bijux.io/bijux-pollenomics/" target="_blank" rel="noopener">Documentation</a>
+            <a class="product-action" href="https://bijux.io/bijux-pollenomics/outputs/lyngsjon-lake-fieldwork/" target="_blank" rel="noopener">Field output</a>
           </div>
           <div class="product-meta">
             <div class="product-meta-item"><strong>Role</strong><span>evidence mapping and site-selection surface</span></div>
