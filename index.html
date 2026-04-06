@@ -636,31 +636,14 @@
       font-size: 0.86rem;
     }
 
-    .rename {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px;
+    .model-note {
       margin-top: 8px;
-      font-size: 0.86rem;
-      font-family: "IBM Plex Mono", monospace;
-    }
-
-    .rename .from {
-      background: var(--amber-soft);
-      color: var(--amber);
-      border: 1px solid rgba(159, 97, 24, 0.24);
+      padding: 8px 10px;
       border-radius: 10px;
-      padding: 4px 7px;
-    }
-
-    .rename .to {
-      background: var(--teal-soft);
-      color: var(--teal);
-      border: 1px solid rgba(11, 122, 109, 0.24);
-      border-radius: 10px;
-      padding: 4px 7px;
-      font-weight: 600;
+      border: 1px solid var(--line);
+      background: rgba(34, 63, 99, 0.05);
+      color: var(--muted);
+      font: 500 0.83rem/1.45 "IBM Plex Mono", monospace;
     }
 
     .flow-grid {
@@ -1069,13 +1052,13 @@
       <div class="map-grid">
         <article class="card">
           <h3>Consolidated center</h3>
-          <div class="rename"><span class="from">bijux-cli</span><span>+</span><span class="from">bijux-dag</span><span>-&gt;</span><span class="to">bijux-core</span></div>
           <p>The runtime, DAG engine, evidence model, release contracts, and maintainer control plane now belong to one canonical repository and one coherent public story.</p>
+          <p class="model-note">consolidation: <code>bijux-cli</code> + <code>bijux-dag</code> now presented as <code>bijux-core</code></p>
         </article>
         <article class="card">
           <h3>Clear product boundaries</h3>
-          <div class="rename"><span class="from">bijux-rag / bijux-rar / bijux-vex / bijux-agent / agentic-flows</span><span>-&gt;</span><span class="to">bijux-canon</span></div>
           <p>The surrounding systems are not side notes. They are distinct products with their own technical meaning, made legible through shared engineering discipline and sharper product boundaries.</p>
+          <p class="model-note">consolidation: <code>bijux-rag</code>, <code>bijux-rar</code>, <code>bijux-vex</code>, <code>bijux-agent</code>, and <code>agentic-flows</code> now read as the canon product family</p>
         </article>
         <article class="card">
           <h3>Operating model</h3>
