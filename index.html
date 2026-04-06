@@ -193,6 +193,44 @@
               "description": "In-progress GNSS implementation effort built around modern systems performance and safety."
             }
           ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://bijux.github.io/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is public in bijux today?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "bijux-core, bijux-canon, bijux-atlas, bijux-proteomics, bijux-pollenomics, bijux-masterclass, bijux-gnss, and bijux.github.io are public surfaces today."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is bijux-genomics public?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. bijux-genomics is still private and is presented on the homepage as a private platform model rather than as a public repository."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is bijux-dag in relation to bijux-core?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "bijux-dag is the upcoming public DAG surface inside the bijux-core line, targeted for v0.4.0 and described as Git for pipelines."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is bijux-pollenomics already a published package?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. bijux-pollenomics is presented as a public repository and documentation surface, not as a published package."
+              }
+            }
+          ]
         }
       ]
     }
@@ -1591,6 +1629,36 @@
           <p>The masterclass is the fastest way to evaluate the educational side of the work and to see how the same engineering standards are translated into course design.</p>
         </article>
       </div>
+    </section>
+
+    <section class="section panel reveal" style="--delay: 320ms;" id="faq">
+      <p class="section-kicker">Questions</p>
+      <h2>Common questions, answered directly</h2>
+      <p class="lead">A page like this works better when it answers the obvious trust questions directly instead of hoping visitors infer the answers from scattered cues.</p>
+      <details>
+        <summary>What is public in bijux today?</summary>
+        <ul class="list">
+          <li>public repositories: core, canon, atlas, proteomics, pollenomics, masterclass, gnss, and the public hub itself</li>
+          <li>public docs: core, canon, atlas, proteomics, pollenomics, and masterclass paths</li>
+          <li>public packages: current Python and Rust surfaces listed in the inventory section</li>
+        </ul>
+      </details>
+      <details>
+        <summary>What is private or still emerging?</summary>
+        <ul class="list">
+          <li>bijux-genomics remains private and is described as a private platform direction</li>
+          <li>bijux-dag is the clearest upcoming release inside the core line with v0.4.0 as the public milestone</li>
+          <li>bijux-gnss is public as a repository and direction, but still in progress rather than release-grade</li>
+        </ul>
+      </details>
+      <details>
+        <summary>How should a serious visitor evaluate the work?</summary>
+        <ul class="list">
+          <li>start with the product cards for narrative clarity</li>
+          <li>use the inventory section for repos, docs, packages, and crates</li>
+          <li>use masterclass to evaluate the teaching and conceptual side of the work</li>
+        </ul>
+      </details>
     </section>
 
     <footer class="panel reveal" style="--delay: 330ms;">
