@@ -28,13 +28,23 @@
   <meta name="twitter:image" content="https://bijux.github.io/assets/bijux_logo_hq.png">
   <meta name="twitter:image:alt" content="bijux logo and platform engineering portfolio hub">
 
-  <meta name="theme-color" content="#f5efe3">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5efe3">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0d141c">
   <link rel="icon" type="image/png" sizes="1296x1292" href="assets/bijux_icon.png">
   <link rel="preload" as="image" href="./assets/bijux_logo_hq.webp" type="image/webp">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+
+  <script>
+    (function () {
+      const stored = localStorage.getItem("theme") || "auto";
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const theme = stored === "auto" ? (prefersDark ? "dark" : "light") : stored;
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
 
   <script type="application/ld+json">
     {
@@ -238,6 +248,7 @@
 
   <style>
     :root {
+      color-scheme: light dark;
       --paper: #f5efe3;
       --paper-2: #ede5d6;
       --ink: #152033;
@@ -252,8 +263,69 @@
       --amber-soft: rgba(159, 97, 24, 0.12);
       --navy: #223f63;
       --shadow: 0 18px 52px rgba(45, 51, 72, 0.12);
+      --bg-glow-a: rgba(11, 122, 109, 0.16);
+      --bg-glow-b: rgba(159, 97, 24, 0.14);
+      --code-bg: rgba(34, 63, 99, 0.08);
+      --focus-ring: rgba(11, 122, 109, 0.45);
+      --chip-surface: rgba(255, 255, 255, 0.76);
+      --hero-orb: rgba(34, 63, 99, 0.13);
+      --status-dev-bg: rgba(34, 63, 99, 0.10);
+      --status-dev-border: rgba(34, 63, 99, 0.2);
+      --impact-fg: #0a5d53;
+      --fit-bg: rgba(34, 63, 99, 0.06);
+      --meta-bg: rgba(255, 255, 255, 0.62);
+      --model-bg: rgba(34, 63, 99, 0.05);
+      --flow-glow: rgba(11, 122, 109, 0.06);
+      --tree-bg: #101b2a;
+      --tree-fg: #deebff;
+      --list-bg: rgba(255, 255, 255, 0.6);
+      --program-bg: rgba(11, 122, 109, 0.08);
+      --arc-bg: rgba(255, 255, 255, 0.68);
+      --signal-glow: rgba(34, 63, 99, 0.05);
+      --surface-bg: rgba(255, 255, 255, 0.68);
+      --button-primary-text: #ecfffb;
+      --button-shadow: 0 10px 24px rgba(11, 122, 109, 0.28);
       --radius: 22px;
       --max: 1180px;
+    }
+
+    :root[data-theme="dark"] {
+      --paper: #0d141c;
+      --paper-2: #12202d;
+      --ink: #edf4fb;
+      --muted: #a8b7c8;
+      --line: rgba(176, 193, 211, 0.16);
+      --line-strong: rgba(176, 193, 211, 0.26);
+      --card: rgba(14, 23, 33, 0.82);
+      --card-strong: rgba(18, 29, 41, 0.94);
+      --teal: #53d7c5;
+      --teal-soft: rgba(83, 215, 197, 0.14);
+      --amber: #f0b06c;
+      --amber-soft: rgba(240, 176, 108, 0.14);
+      --navy: #9bc8f8;
+      --shadow: 0 22px 60px rgba(0, 0, 0, 0.34);
+      --bg-glow-a: rgba(83, 215, 197, 0.12);
+      --bg-glow-b: rgba(240, 176, 108, 0.1);
+      --code-bg: rgba(155, 200, 248, 0.08);
+      --focus-ring: rgba(83, 215, 197, 0.42);
+      --chip-surface: rgba(24, 36, 49, 0.88);
+      --hero-orb: rgba(83, 215, 197, 0.12);
+      --status-dev-bg: rgba(155, 200, 248, 0.12);
+      --status-dev-border: rgba(155, 200, 248, 0.2);
+      --impact-fg: #9ff7ea;
+      --fit-bg: rgba(155, 200, 248, 0.08);
+      --meta-bg: rgba(21, 33, 46, 0.86);
+      --model-bg: rgba(155, 200, 248, 0.08);
+      --flow-glow: rgba(83, 215, 197, 0.08);
+      --tree-bg: #07111d;
+      --tree-fg: #eef5ff;
+      --list-bg: rgba(24, 36, 49, 0.88);
+      --program-bg: rgba(83, 215, 197, 0.12);
+      --arc-bg: rgba(21, 33, 46, 0.88);
+      --signal-glow: rgba(155, 200, 248, 0.08);
+      --surface-bg: rgba(21, 33, 46, 0.88);
+      --button-primary-text: #07231f;
+      --button-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
     }
 
     * { box-sizing: border-box; }
@@ -264,8 +336,8 @@
       color: var(--ink);
       font: 16px/1.65 "Plus Jakarta Sans", "Segoe UI", sans-serif;
       background:
-        radial-gradient(1200px 600px at 8% -10%, rgba(11, 122, 109, 0.16), transparent 60%),
-        radial-gradient(1000px 500px at 100% 0%, rgba(159, 97, 24, 0.14), transparent 62%),
+        radial-gradient(1200px 600px at 8% -10%, var(--bg-glow-a), transparent 60%),
+        radial-gradient(1000px 500px at 100% 0%, var(--bg-glow-b), transparent 62%),
         linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
       min-height: 100vh;
     }
@@ -278,14 +350,15 @@
     a:focus-visible,
     .button:focus-visible,
     .chip:focus-visible,
+    .theme-toggle:focus-visible,
     summary:focus-visible {
-      outline: 2px solid rgba(11, 122, 109, 0.45);
+      outline: 2px solid var(--focus-ring);
       outline-offset: 2px;
     }
     code {
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.9em;
-      background: rgba(34, 63, 99, 0.08);
+      background: var(--code-bg);
       border: 1px solid var(--line);
       border-radius: 6px;
       padding: 0.1em 0.34em;
@@ -386,7 +459,8 @@
       justify-content: flex-end;
     }
 
-    .chip {
+    .chip,
+    .theme-toggle {
       display: inline-flex;
       align-items: center;
       border: 1px solid var(--line);
@@ -394,8 +468,21 @@
       padding: 7px 11px;
       font: 600 0.76rem/1 "IBM Plex Mono", monospace;
       letter-spacing: 0.03em;
-      background: var(--card-strong);
+      background: var(--chip-surface);
       color: var(--ink);
+    }
+
+    .theme-toggle {
+      gap: 7px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .icon {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      flex-shrink: 0;
     }
 
     .hero {
@@ -412,7 +499,7 @@
       width: 320px;
       height: 320px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(34, 63, 99, 0.13), transparent 70%);
+      background: radial-gradient(circle, var(--hero-orb), transparent 70%);
       pointer-events: none;
     }
 
@@ -467,7 +554,7 @@
       border-radius: 999px;
       padding: 6px 10px;
       border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.72);
+      background: var(--chip-surface);
       color: var(--navy);
       font: 600 0.74rem/1 "IBM Plex Mono", monospace;
       letter-spacing: 0.04em;
@@ -480,7 +567,7 @@
       border-radius: 999px;
       padding: 6px 10px;
       border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.76);
+      background: var(--chip-surface);
       color: var(--ink);
       font: 600 0.73rem/1 "IBM Plex Mono", monospace;
       letter-spacing: 0.04em;
@@ -599,7 +686,7 @@
       letter-spacing: 0.03em;
       text-transform: uppercase;
       border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.7);
+      background: var(--chip-surface);
       color: var(--ink);
     }
 
@@ -617,8 +704,8 @@
 
     .status-pill.development {
       color: var(--navy);
-      background: rgba(34, 63, 99, 0.10);
-      border-color: rgba(34, 63, 99, 0.2);
+      background: var(--status-dev-bg);
+      border-color: var(--status-dev-border);
     }
 
     .badge-row {
@@ -660,7 +747,7 @@
       border-radius: 10px;
       padding: 7px 9px;
       background: var(--teal-soft);
-      color: #0a5d53;
+      color: var(--impact-fg);
       font-family: "IBM Plex Mono", monospace;
     }
 
@@ -669,7 +756,7 @@
       padding: 8px 10px;
       border-radius: 10px;
       border: 1px solid var(--line);
-      background: rgba(34, 63, 99, 0.06);
+      background: var(--fit-bg);
       color: var(--ink);
       font-size: 0.86rem;
     }
@@ -685,7 +772,7 @@
       border: 1px solid var(--line);
       border-radius: 10px;
       padding: 8px 9px;
-      background: rgba(255, 255, 255, 0.62);
+      background: var(--meta-bg);
     }
 
     .product-meta-item strong {
@@ -709,7 +796,7 @@
       padding: 8px 10px;
       border-radius: 10px;
       border: 1px solid var(--line);
-      background: rgba(34, 63, 99, 0.05);
+      background: var(--model-bg);
       color: var(--muted);
       font: 500 0.83rem/1.45 "IBM Plex Mono", monospace;
     }
@@ -726,7 +813,7 @@
       border-radius: 16px;
       padding: 14px;
       background:
-        linear-gradient(135deg, rgba(11, 122, 109, 0.06), transparent 50%),
+        linear-gradient(135deg, var(--flow-glow), transparent 50%),
         var(--card-strong);
     }
 
@@ -747,8 +834,8 @@
       padding: 14px;
       border-radius: 14px;
       border: 1px solid var(--line);
-      background: #101b2a;
-      color: #deebff;
+      background: var(--tree-bg);
+      color: var(--tree-fg);
       overflow-x: auto;
       font: 500 0.84rem/1.5 "IBM Plex Mono", monospace;
     }
@@ -787,7 +874,7 @@
       border-radius: 10px;
       padding: 8px 10px;
       font: 500 0.8rem/1.3 "IBM Plex Mono", monospace;
-      background: rgba(255, 255, 255, 0.6);
+      background: var(--list-bg);
       word-break: break-word;
     }
 
@@ -811,7 +898,7 @@
       padding: 8px 10px;
       border: 1px solid var(--line);
       border-radius: 10px;
-      background: rgba(11, 122, 109, 0.08);
+      background: var(--program-bg);
       color: var(--ink);
       font-size: 0.86rem;
     }
@@ -827,7 +914,7 @@
       border: 1px solid var(--line);
       border-radius: 16px;
       padding: 14px;
-      background: rgba(255, 255, 255, 0.68);
+      background: var(--arc-bg);
     }
 
     .arc-card h3 {
@@ -853,7 +940,7 @@
       border-radius: 16px;
       padding: 16px;
       background:
-        linear-gradient(135deg, rgba(34, 63, 99, 0.05), transparent 48%),
+        linear-gradient(135deg, var(--signal-glow), transparent 48%),
         var(--card-strong);
     }
 
@@ -907,7 +994,7 @@
       border: 1px solid var(--line);
       border-radius: 14px;
       padding: 12px;
-      background: rgba(255, 255, 255, 0.68);
+      background: var(--surface-bg);
     }
 
     .surface-stat strong {
@@ -952,8 +1039,8 @@
 
     .button.primary {
       background: var(--teal);
-      color: #ecfffb;
-      box-shadow: 0 10px 24px rgba(11, 122, 109, 0.28);
+      color: var(--button-primary-text);
+      box-shadow: var(--button-shadow);
     }
 
     .button.secondary {
@@ -1024,6 +1111,12 @@
         <a class="chip" href="#masterclass">Masterclass</a>
         <a class="chip" href="#gnss">GNSS</a>
         <a class="chip" href="#next">Next</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cycle color theme">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-16h1v3h-1V2Zm0 17h1v3h-1v-3ZM2 11h3v1H2v-1Zm17 0h3v1h-3v-1ZM4.22 4.22l2.12 2.12-.71.71L3.51 4.93l.71-.71Zm14.14 14.14 2.12 2.12-.71.71-2.12-2.12.71-.71ZM19.78 4.22l.71.71-2.12 2.12-.71-.71 2.12-2.12ZM5.64 17.66l.71.71-2.12 2.12-.71-.71 2.12-2.12Z"/>
+          </svg>
+          <span id="themeLabel">Auto</span>
+        </button>
         <a class="chip" href="https://github.com/bijux" target="_blank" rel="noopener">GitHub</a>
       </nav>
     </header>
@@ -1669,6 +1762,65 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    (function () {
+      const root = document.documentElement;
+      const button = document.getElementById("themeToggle");
+      const label = document.getElementById("themeLabel");
+
+      if (!button || !label) {
+        return;
+      }
+
+      const mediaQuery = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+      const getStored = function () {
+        return localStorage.getItem("theme") || "auto";
+      };
+
+      let currentTheme = getStored();
+
+      const toLabel = function (theme) {
+        return theme === "auto" ? "Auto" : theme.charAt(0).toUpperCase() + theme.slice(1);
+      };
+
+      const resolveTheme = function (theme) {
+        if (theme !== "auto") {
+          return theme;
+        }
+
+        return mediaQuery && mediaQuery.matches ? "dark" : "light";
+      };
+
+      const applyTheme = function (theme) {
+        currentTheme = theme;
+        root.setAttribute("data-theme", resolveTheme(theme));
+        label.textContent = toLabel(theme);
+        button.setAttribute("aria-label", "Cycle color theme. Current mode: " + toLabel(theme));
+      };
+
+      const cycleTheme = function () {
+        const nextTheme = currentTheme === "light" ? "dark" : currentTheme === "dark" ? "auto" : "light";
+        localStorage.setItem("theme", nextTheme);
+        applyTheme(nextTheme);
+      };
+
+      applyTheme(currentTheme);
+      button.addEventListener("click", cycleTheme);
+
+      if (mediaQuery) {
+        const syncAutoTheme = function () {
+          if (currentTheme === "auto") {
+            applyTheme("auto");
+          }
+        };
+
+        if (typeof mediaQuery.addEventListener === "function") {
+          mediaQuery.addEventListener("change", syncAutoTheme);
+        } else if (typeof mediaQuery.addListener === "function") {
+          mediaQuery.addListener(syncAutoTheme);
+        }
+      }
+    })();
   </script>
 </body>
 </html>
