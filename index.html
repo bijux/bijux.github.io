@@ -745,6 +745,7 @@
     }
 
     .map-grid,
+    .action-grid,
     .repo-grid,
     .family-grid,
     .principle-grid,
@@ -775,6 +776,59 @@
       margin: 8px 0 0;
       color: var(--muted);
       font-size: 0.94rem;
+    }
+
+    .action-card {
+      display: block;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      background:
+        linear-gradient(135deg, rgba(11, 122, 109, 0.05), transparent 44%),
+        var(--card-strong);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .action-card:hover {
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+      border-color: var(--line-strong);
+    }
+
+    .action-label {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 5px 9px;
+      border: 1px solid var(--line);
+      background: var(--chip-surface);
+      color: var(--navy);
+      font: 700 0.72rem/1 "IBM Plex Mono", monospace;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .action-card h3 {
+      margin: 12px 0 0;
+      color: var(--ink);
+      font-size: 1.02rem;
+      line-height: 1.3;
+    }
+
+    .action-card p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .action-link {
+      display: inline-flex;
+      margin-top: 12px;
+      color: var(--teal);
+      font: 700 0.8rem/1 "IBM Plex Mono", monospace;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
     .section-kicker {
@@ -1210,7 +1264,8 @@
       .proof-grid,
       .programs,
       .list,
-      .surface-summary { grid-template-columns: 1fr; }
+      .surface-summary,
+      .action-grid { grid-template-columns: 1fr; }
       .stat strong { font-size: 1.26rem; }
     }
   </style>
@@ -1299,6 +1354,38 @@
             </ul>
           </div>
         </aside>
+      </div>
+    </section>
+
+    <section class="section panel reveal" style="--delay: 95ms;" id="start">
+      <p class="section-kicker">Start here</p>
+      <h2>Choose the evaluation path that matches what you care about most</h2>
+      <p class="lead">A strong homepage should not force visitors to reverse-engineer where to click next. These are the fastest routes into source code, docs, published packages, and direct maintainer contact.</p>
+      <div class="action-grid">
+        <a class="action-card" href="https://github.com/bijux" target="_blank" rel="noopener">
+          <span class="action-label">Source code</span>
+          <h3>Inspect the GitHub namespace</h3>
+          <p>See how the public repositories are separated, named, and maintained as product surfaces instead of miscellaneous experiments.</p>
+          <span class="action-link">Open GitHub</span>
+        </a>
+        <a class="action-card" href="https://bijux.io/bijux-core/" target="_blank" rel="noopener">
+          <span class="action-label">Documentation</span>
+          <h3>Start with the runtime center</h3>
+          <p>Use the <code>bijux-core</code> docs as the fastest way to understand the execution model, release discipline, and platform thesis.</p>
+          <span class="action-link">Open docs</span>
+        </a>
+        <a class="action-card" href="#packages">
+          <span class="action-label">Published surfaces</span>
+          <h3>Review packages and crates in the wild</h3>
+          <p>Evaluate the ecosystem through the registries where public release discipline becomes visible, versioned, and easy to verify.</p>
+          <span class="action-link">Open package inventory</span>
+        </a>
+        <a class="action-card" href="mailto:bijan@bijux.io">
+          <span class="action-label">Maintainer</span>
+          <h3>Contact Bijan Mousavi directly</h3>
+          <p>Use email when you want to discuss collaboration, serious evaluation, or the direction of the platform in more detail.</p>
+          <span class="action-link">Email bijux</span>
+        </a>
       </div>
     </section>
 
