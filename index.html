@@ -778,6 +778,38 @@
       font-size: 0.86rem;
     }
 
+    .arc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .arc-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.68);
+    }
+
+    .arc-card h3 {
+      margin: 0;
+      font-size: 0.98rem;
+      line-height: 1.3;
+    }
+
+    .arc-card p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .arc-path {
+      margin-top: 10px;
+      color: var(--navy);
+      font: 600 0.8rem/1.45 "IBM Plex Mono", monospace;
+    }
+
     .signal-card {
       border: 1px solid var(--line);
       border-radius: 16px;
@@ -910,6 +942,7 @@
       .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .surface-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .product-meta { grid-template-columns: 1fr; }
+      .arc-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 760px) {
@@ -1432,6 +1465,18 @@
         <a href="https://bijux.io/bijux-masterclass/python-programming/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-python--programming-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="Python Programming docs"></a>
       </div>
       <p class="story">The masterclass is part of the same platform philosophy as the software: explicit models, precise language, reproducible practice, and a preference for substance over buzzword fluency.</p>
+      <div class="arc-grid">
+        <article class="arc-card">
+          <h3>Python engineering arc</h3>
+          <p>This path is structured to move from object models to functional style to meta-programming so learners build a stronger mental model of the language rather than collecting framework recipes.</p>
+          <p class="arc-path">python-programming -> object-oriented -> functional -> meta-programming</p>
+        </article>
+        <article class="arc-card">
+          <h3>Reproducible science arc</h3>
+          <p>This path is structured to move from workflow fundamentals into tool-specific depth so reproducibility becomes an operating model for collaborative technical work.</p>
+          <p class="arc-path">reproducible-research -> make -> snakemake -> dvc</p>
+        </article>
+      </div>
 
       <div class="programs">
         <article class="card">
