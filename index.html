@@ -353,6 +353,11 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
 
     body {
       margin: 0;
@@ -450,6 +455,11 @@
       align-items: center;
       gap: 12px;
       min-width: 0;
+    }
+
+    .brand picture {
+      display: flex;
+      flex-shrink: 0;
     }
 
     .brand img {
@@ -1362,6 +1372,24 @@
       .action-grid { grid-template-columns: 1fr; }
       .stat strong { font-size: 1.26rem; }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1369,7 +1397,10 @@
   <main class="page" id="content">
     <header class="topbar panel reveal" style="--delay: 40ms;">
       <div class="brand">
-        <img src="./assets/bijux_logo_hq.webp" alt="bijux logo">
+        <picture>
+          <source type="image/webp" srcset="./assets/bijux_logo_hq.webp">
+          <img src="./assets/bijux_logo_hq.png" width="1200" height="630" loading="eager" decoding="async" fetchpriority="high" alt="bijux logo">
+        </picture>
         <div>
           <p class="brand-title">bijux platform</p>
           <p class="brand-sub">Contract-first systems for runtime, data, and scientific workflows</p>
