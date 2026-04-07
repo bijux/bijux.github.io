@@ -955,13 +955,29 @@
       gap: 10px;
       align-items: center;
       border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 10px;
-      background: var(--list-bg);
+      border-radius: 16px;
+      padding: 12px;
+      background:
+        linear-gradient(135deg, rgba(34, 63, 99, 0.04), transparent 45%),
+        var(--list-bg);
     }
 
     .package-pair .badge-row {
       margin-top: 0;
+    }
+
+    .package-side {
+      display: grid;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .package-side-label {
+      margin: 0;
+      color: var(--navy);
+      font: 700 0.7rem/1.2 "IBM Plex Mono", monospace;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
 
     .pair-link {
@@ -969,6 +985,12 @@
       align-items: center;
       justify-content: center;
       color: var(--navy);
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--card-strong);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
       font: 700 1rem/1 "IBM Plex Mono", monospace;
       white-space: nowrap;
     }
@@ -2057,48 +2079,78 @@
           <h3>Canon package pairs</h3>
           <div class="package-pairs" aria-label="Canon package pairs">
             <div class="package-pair">
-              <div class="badge-row">
-                <a href="https://pypi.org/project/bijux-canon-runtime/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-runtime?style=flat-square&amp;logo=pypi&amp;label=bijux-canon-runtime" alt="bijux-canon-runtime"></a>
+              <div class="package-side">
+                <p class="package-side-label">Current canon</p>
+                <div class="badge-row">
+                  <a href="https://pypi.org/project/bijux-canon-runtime/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-runtime?style=flat-square&amp;logo=pypi&amp;label=bijux-canon-runtime" alt="bijux-canon-runtime"></a>
+                </div>
               </div>
               <span class="pair-link" aria-hidden="true">&#8646;</span>
-              <div class="badge-row">
-                <a href="https://pypi.org/project/agentic-flows/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/agentic-flows?style=flat-square&amp;logo=pypi&amp;label=agentic-flows" alt="agentic-flows"></a>
+              <div class="package-side">
+                <p class="package-side-label">Earlier name</p>
+                <div class="badge-row">
+                  <a href="https://pypi.org/project/agentic-flows/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/agentic-flows?style=flat-square&amp;logo=pypi&amp;label=agentic-flows" alt="agentic-flows"></a>
+                </div>
               </div>
             </div>
             <div class="package-pair">
-              <div class="badge-row">
-                <a href="https://pypi.org/project/bijux-canon-agent/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-agent?style=flat-square&amp;logo=pypi&amp;label=bijux-canon-agent" alt="bijux-canon-agent"></a>
+              <div class="package-side">
+                <p class="package-side-label">Current canon</p>
+                <div class="badge-row">
+                  <a href="https://pypi.org/project/bijux-canon-agent/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-agent?style=flat-square&amp;logo=pypi&amp;label=bijux-canon-agent" alt="bijux-canon-agent"></a>
+                </div>
               </div>
               <span class="pair-link" aria-hidden="true">&#8646;</span>
-              <div class="badge-row">
-                <a href="https://pypi.org/project/bijux-agent/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-agent?style=flat-square&amp;logo=pypi&amp;label=bijux-agent" alt="bijux-agent"></a>
+              <div class="package-side">
+                <p class="package-side-label">Earlier name</p>
+                <div class="badge-row">
+                  <a href="https://pypi.org/project/bijux-agent/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-agent?style=flat-square&amp;logo=pypi&amp;label=bijux-agent" alt="bijux-agent"></a>
+                </div>
               </div>
             </div>
             <div class="package-pair">
-              <div class="badge-row">
-                <a href="https://pypi.org/project/bijux-canon-reason/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-reason?style=flat-square&amp;logo=pypi&amp;label=bijux-canon-reason" alt="bijux-canon-reason"></a>
+              <div class="package-side">
+                <p class="package-side-label">Current canon</p>
+                <div class="badge-row">
+                  <a href="https://pypi.org/project/bijux-canon-reason/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-reason?style=flat-square&amp;logo=pypi&amp;label=bijux-canon-reason" alt="bijux-canon-reason"></a>
+                </div>
               </div>
               <span class="pair-link" aria-hidden="true">&#8646;</span>
-              <div class="badge-row">
-                <a href="https://pypi.org/project/bijux-rar/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-rar?style=flat-square&amp;logo=pypi&amp;label=bijux-rar" alt="bijux-rar"></a>
+              <div class="package-side">
+                <p class="package-side-label">Earlier name</p>
+                <div class="badge-row">
+                  <a href="https://pypi.org/project/bijux-rar/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-rar?style=flat-square&amp;logo=pypi&amp;label=bijux-rar" alt="bijux-rar"></a>
+                </div>
               </div>
             </div>
             <div class="package-pair">
-              <div class="badge-row">
-                <a href="https://pypi.org/project/bijux-canon-index/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-index?style=flat-square&amp;logo=pypi&amp;label=bijux-canon-index" alt="bijux-canon-index"></a>
+              <div class="package-side">
+                <p class="package-side-label">Current canon</p>
+                <div class="badge-row">
+                  <a href="https://pypi.org/project/bijux-canon-index/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-index?style=flat-square&amp;logo=pypi&amp;label=bijux-canon-index" alt="bijux-canon-index"></a>
+                </div>
               </div>
               <span class="pair-link" aria-hidden="true">&#8646;</span>
-              <div class="badge-row">
-                <a href="https://pypi.org/project/bijux-vex/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-vex?style=flat-square&amp;logo=pypi&amp;label=bijux-vex" alt="bijux-vex"></a>
+              <div class="package-side">
+                <p class="package-side-label">Earlier name</p>
+                <div class="badge-row">
+                  <a href="https://pypi.org/project/bijux-vex/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-vex?style=flat-square&amp;logo=pypi&amp;label=bijux-vex" alt="bijux-vex"></a>
+                </div>
               </div>
             </div>
             <div class="package-pair">
-              <div class="badge-row">
-                <a href="https://pypi.org/project/bijux-canon-ingest/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-ingest?style=flat-square&amp;logo=pypi&amp;label=bijux-canon-ingest" alt="bijux-canon-ingest"></a>
+              <div class="package-side">
+                <p class="package-side-label">Current canon</p>
+                <div class="badge-row">
+                  <a href="https://pypi.org/project/bijux-canon-ingest/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-ingest?style=flat-square&amp;logo=pypi&amp;label=bijux-canon-ingest" alt="bijux-canon-ingest"></a>
+                </div>
               </div>
               <span class="pair-link" aria-hidden="true">&#8646;</span>
-              <div class="badge-row">
-                <a href="https://pypi.org/project/bijux-rag/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-rag?style=flat-square&amp;logo=pypi&amp;label=bijux-rag" alt="bijux-rag"></a>
+              <div class="package-side">
+                <p class="package-side-label">Earlier name</p>
+                <div class="badge-row">
+                  <a href="https://pypi.org/project/bijux-rag/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-rag?style=flat-square&amp;logo=pypi&amp;label=bijux-rag" alt="bijux-rag"></a>
+                </div>
               </div>
             </div>
           </div>
@@ -2117,12 +2169,18 @@
           <h3>Rust and Python pairs</h3>
           <div class="package-pairs" aria-label="Rust and Python pairs">
             <div class="package-pair">
-              <div class="badge-row">
-                <a href="https://crates.io/crates/bijux-cli" target="_blank" rel="noopener"><img src="https://img.shields.io/crates/v/bijux-cli?style=flat-square&amp;logo=rust&amp;label=bijux-cli" alt="bijux-cli crate"></a>
+              <div class="package-side">
+                <p class="package-side-label">Rust crate</p>
+                <div class="badge-row">
+                  <a href="https://crates.io/crates/bijux-cli" target="_blank" rel="noopener"><img src="https://img.shields.io/crates/v/bijux-cli?style=flat-square&amp;logo=rust&amp;label=bijux-cli" alt="bijux-cli crate"></a>
+                </div>
               </div>
               <span class="pair-link" aria-hidden="true">&#8646;</span>
-              <div class="badge-row">
-                <a href="https://pypi.org/project/bijux-cli/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-cli?style=flat-square&amp;logo=pypi&amp;label=bijux-cli" alt="bijux-cli on PyPI"></a>
+              <div class="package-side">
+                <p class="package-side-label">Python surface</p>
+                <div class="badge-row">
+                  <a href="https://pypi.org/project/bijux-cli/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-cli?style=flat-square&amp;logo=pypi&amp;label=bijux-cli" alt="bijux-cli on PyPI"></a>
+                </div>
               </div>
             </div>
           </div>
