@@ -244,7 +244,7 @@
               "name": "Is bijux-genomics public?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "No. bijux-genomics is still private and is presented on the homepage as a private platform model rather than as a public repository."
+                "text": "No. bijux-genomics is still private and is presented as a private platform model rather than as a public repository."
               }
             },
             {
@@ -1457,12 +1457,13 @@
       </div>
       <nav class="nav" aria-label="Primary">
         <a class="chip" href="#start">Start</a>
+        <a class="chip" href="#overview">Overview</a>
         <a class="chip" href="#signals">Proof</a>
         <a class="chip" href="#products">Products</a>
         <a class="chip" href="#packages">Inventory</a>
+        <a class="chip" href="#emerging">Emerging</a>
+        <a class="chip" href="#masterclass">Learning</a>
         <a class="chip" href="#maintainer">Maintainer</a>
-        <a class="chip" href="#masterclass">Masterclass</a>
-        <a class="chip" href="#faq">FAQ</a>
         <a class="chip" href="mailto:bijan@bijux.io">Contact</a>
         <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cycle color theme">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -2025,7 +2026,7 @@
     <section class="section panel reveal" style="--delay: 250ms;" id="masterclass">
       <p class="section-kicker">Learning</p>
       <h2>Bijux Masterclass</h2>
-      <p class="lead">The masterclass is meant to give learners around the world access to real depth: software engineering, workflow systems, and scientific reproducibility taught without shallow shortcuts or misleading simplifications. The intention is not to decorate learners with vocabulary, but to give them the technical substance they actually need to build durable judgment.</p>
+      <p class="lead">Masterclass brings the same standards into teaching: software engineering, workflow systems, and scientific reproducibility taught for durable understanding rather than surface familiarity.</p>
       <div class="status-row">
         <span class="status-pill public">Public</span>
         <span class="status-pill public">Free course system</span>
@@ -2035,16 +2036,16 @@
         <a href="https://bijux.io/bijux-masterclass/reproducible-research/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-reproducible--research-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="Reproducible Research docs"></a>
         <a href="https://bijux.io/bijux-masterclass/python-programming/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-python--programming-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="Python Programming docs"></a>
       </div>
-      <p class="story">The masterclass is part of the same platform philosophy as the software: explicit models, precise language, reproducible practice, and a preference for substance over buzzword fluency.</p>
+      <p class="story">The masterclass extends the same platform values into teaching: explicit models, precise language, reproducible practice, and substance over buzzwords.</p>
       <div class="arc-grid">
         <article class="arc-card">
           <h3>Python engineering arc</h3>
-          <p>This path is structured to move from object models to functional style to meta-programming so learners build a stronger mental model of the language rather than collecting framework recipes.</p>
+          <p>This path moves from object models to functional style to meta-programming so learners build a stronger mental model of Python rather than collecting framework recipes.</p>
           <p class="arc-path">python-programming -> object-oriented -> functional -> meta-programming</p>
         </article>
         <article class="arc-card">
           <h3>Reproducible science arc</h3>
-          <p>This path is structured to move from workflow fundamentals into tool-specific depth so reproducibility becomes an operating model for collaborative technical work.</p>
+          <p>This path moves from workflow fundamentals into tool-specific depth so reproducibility becomes an operating model for collaborative technical work.</p>
           <p class="arc-path">reproducible-research -> make -> snakemake -> dvc</p>
         </article>
       </div>
@@ -2052,7 +2053,7 @@
       <div class="programs">
         <article class="card">
           <h3>Python programming path</h3>
-          <p>This path is for engineers who want deep command of Python as a language and runtime, not just framework familiarity or framework-specific habits. It is designed to reward serious learners who want transferable software engineering judgment.</p>
+          <p>This path is for engineers who want deep command of Python as a language and runtime, not just framework familiarity.</p>
           <div class="badge-row">
             <a href="https://bijux.io/bijux-masterclass/python-programming/python-object-oriented-programming/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/course-python--oop-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="Python OOP course"></a>
             <a href="https://bijux.io/bijux-masterclass/python-programming/python-functional-programming/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/course-python--functional-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="Python Functional Programming course"></a>
@@ -2068,7 +2069,7 @@
 
         <article class="card">
           <h3>Reproducible science path</h3>
-          <p>This path is for learners who need serious workflow and automation discipline for data-intensive and scientific work, where reproducibility is operational, not decorative. It is especially relevant for research engineering, bioinformatics, and automation-heavy teams.</p>
+          <p>This path is for learners who need workflow and automation discipline for data-intensive and scientific work where reproducibility is operational, not decorative.</p>
           <div class="badge-row">
             <a href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-make/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/course-deep--dive--make-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="Deep Dive Make course"></a>
             <a href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-snakemake/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/course-deep--dive--snakemake-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="Deep Dive Snakemake course"></a>
@@ -2084,10 +2085,10 @@
       </div>
     </section>
 
-    <section class="section panel reveal" style="--delay: 270ms;" id="gnss">
-      <p class="section-kicker">In progress</p>
-      <h2>bijux-gnss</h2>
-      <p class="lead">GNSS is still under active construction, but it belongs in the story. It grows out of prior GNSS receiver-system work, including earlier design work in China, and is now being rewritten in Rust for the broader community because the space still lacks enough fast, safe, modern implementation work.</p>
+    <section class="section panel reveal" style="--delay: 270ms;" id="emerging">
+      <p class="section-kicker">Emerging work</p>
+      <h2>GNSS and the next systems frontier</h2>
+      <p class="lead"><code>bijux-gnss</code> is still under active construction, but it belongs in the portfolio as the clearest new systems frontier. It grows out of earlier GNSS receiver-system design work and is being rebuilt in Rust as a community-facing implementation effort.</p>
       <div class="status-row">
         <span class="status-pill development">In development</span>
         <span class="status-pill development">Public repository</span>
@@ -2098,23 +2099,24 @@
       </div>
       <div class="family-grid">
         <article class="card">
-          <h3>Origin</h3>
-          <p>The work is rooted in earlier GNSS receiver-system design experience and is being carried forward here as a community-facing systems effort rather than left as closed domain knowledge.</p>
+          <h3>Background</h3>
+          <p>The work is rooted in earlier GNSS receiver-system design experience and is being carried forward here as an open systems effort instead of staying closed domain knowledge.</p>
         </article>
         <article class="card">
-          <h3>Current scope</h3>
-          <p>Today the honest state is a public repository and a visible systems direction, not yet a polished public product surface. That honesty matters because it keeps expectations aligned with the actual stage.</p>
+          <h3>Current state</h3>
+          <p>Today it is a public repository and a visible systems direction, not yet a polished release-grade product surface.</p>
         </article>
         <article class="card">
-          <h3>Next stage</h3>
-          <p>The next serious milestone is to turn the repository into a more legible implementation surface that demonstrates why Rust can matter in GNSS for speed, correctness, and operational trust at the same time.</p>
+          <h3>What comes next</h3>
+          <p>The next milestone is a more legible implementation surface that shows why Rust can matter in GNSS for speed, correctness, and operational trust at the same time.</p>
         </article>
       </div>
     </section>
 
     <section class="section panel reveal" style="--delay: 290ms;" id="principles">
-      <h2>Engineering Principles</h2>
-      <p class="lead">The platform is designed around repeatability, inspectability, and explicit boundaries. In aggregate, the work reflects principal-level concerns across platform engineering, software systems, AI systems engineering, bioinformatics infrastructure, machine-learning-adjacent tooling, data-intensive product architecture, and release discipline.</p>
+      <p class="section-kicker">Principles</p>
+      <h2>Engineering principles</h2>
+      <p class="lead">The work is designed around repeatability, inspectability, and explicit boundaries across runtime systems, AI workflows, scientific software, and release surfaces.</p>
       <div class="principle-grid">
         <article class="card">
           <h3>Contract-first architecture</h3>
@@ -2142,8 +2144,8 @@
 
     <section class="section panel reveal" style="--delay: 310ms;" id="next">
       <p class="section-kicker">Next step</p>
-      <h2>Where serious visitors should go next</h2>
-      <p class="lead">Different visitors will want different proof. The most useful next step is usually to follow the surface that matches the kind of signal you care about most: source code, product docs, packages, or course material.</p>
+      <h2>Choose your next step</h2>
+      <p class="lead">Different visitors care about different signals. Follow the surface that best matches what you want to evaluate next.</p>
       <div class="signal-grid">
         <article class="signal-card">
           <h3>For engineering leaders</h3>
@@ -2151,19 +2153,19 @@
         </article>
         <article class="signal-card">
           <h3>For scientific and bioinformatics teams</h3>
-          <p>Read the public docs for atlas, proteomics, and pollenomics, then use the private genomics description here as the bridge to the broader execution model behind the ecosystem.</p>
+          <p>Read the public docs for atlas, proteomics, and pollenomics, then use the genomics card here as the bridge to the broader execution model behind the ecosystem.</p>
         </article>
         <article class="signal-card">
           <h3>For runtime and package readers</h3>
-          <p>Use the inventory section to move directly into PyPI, crates.io, docs.rs, and GitHub surfaces and evaluate the public package line in its real published form.</p>
+          <p>Use the inventory section to move directly into PyPI, crates.io, docs.rs, and GitHub and evaluate the published surface area in its real released form.</p>
         </article>
         <article class="signal-card">
           <h3>For learners and teaching-focused visitors</h3>
-          <p>The masterclass is the fastest way to evaluate the educational side of the work and to see how the same engineering standards are translated into course design.</p>
+          <p>The masterclass is the fastest way to evaluate the teaching side of the work and see how the same engineering standards translate into course design.</p>
         </article>
       </div>
       <div class="cta-row">
-        <a class="button primary" href="mailto:bijan@bijux.io">Contact the maintainer</a>
+        <a class="button primary" href="mailto:bijan@bijux.io">Contact Bijan Mousavi</a>
         <a class="button secondary" href="https://github.com/bijux" target="_blank" rel="noopener">Open GitHub namespace</a>
         <a class="button secondary" href="https://bijux.io/bijux-core/" target="_blank" rel="noopener">Start with core docs</a>
       </div>
@@ -2172,7 +2174,7 @@
     <section class="section panel reveal" style="--delay: 320ms;" id="faq">
       <p class="section-kicker">Questions</p>
       <h2>Common questions, answered directly</h2>
-      <p class="lead">A page like this works better when it answers the obvious trust questions directly instead of hoping visitors infer the answers from scattered cues.</p>
+      <p class="lead">These are the questions most visitors need answered quickly.</p>
       <details>
         <summary>What is public in bijux today?</summary>
         <ul class="list">
@@ -2203,7 +2205,7 @@
       <div class="footer-block">
         <span class="footer-label">Ownership</span>
         <strong>Copyright <span id="year"></span> bijux</strong>
-        <p class="footer-copy">Maintained by Bijan Mousavi under the bijux alias for platform engineering, AI systems, bioinformatics, and scientific software products.</p>
+        <p class="footer-copy">Maintained by Bijan Mousavi under the bijux alias across platform systems, AI workflows, bioinformatics software, and technical education.</p>
         <div class="footer-links">
           <a href="mailto:bijan@bijux.io">bijan@bijux.io</a>
           <a href="https://github.com/bijux" target="_blank" rel="noopener">GitHub</a>
@@ -2211,8 +2213,8 @@
       </div>
       <div class="footer-block">
         <span class="footer-label">Best next step</span>
-        <strong>Follow the surface that matches your proof standard.</strong>
-        <p class="footer-copy">Start with source code for execution quality, docs for architecture, package registries for release discipline, or masterclass for teaching depth.</p>
+        <strong>Start with the surface that matters most to you.</strong>
+        <p class="footer-copy">Use source code for implementation depth, docs for architecture, package registries for release history, or masterclass for teaching depth.</p>
         <div class="footer-links">
           <a href="#products">Flagships</a>
           <a href="#packages">Inventory</a>
@@ -2220,9 +2222,9 @@
         </div>
       </div>
       <div class="footer-block">
-        <span class="footer-label">Public state</span>
+        <span class="footer-label">Release state</span>
         <strong>Updated April 7, 2026</strong>
-        <p class="footer-copy">Public surfaces, private lines, and emerging work are labeled intentionally so the homepage stays useful as a trustworthy portfolio map instead of a vague brand page.</p>
+        <p class="footer-copy">Public surfaces, private lines, and emerging work are labeled directly so the page stays useful as a clear portfolio map.</p>
         <div class="footer-links">
           <a href="#map">Page map</a>
           <a href="#faq">FAQ</a>
