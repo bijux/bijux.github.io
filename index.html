@@ -1223,6 +1223,24 @@
       word-break: break-word;
     }
 
+    .faq-list {
+      margin: 0;
+      padding: 0 14px 14px;
+      display: grid;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .faq-list li {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 12px;
+      background: var(--list-bg);
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
     .programs {
       margin-top: 14px;
       display: grid;
@@ -2389,26 +2407,26 @@
       <p class="lead">These are the questions most visitors need answered quickly.</p>
       <details>
         <summary>What is public in bijux today?</summary>
-        <ul class="list">
-          <li>public repositories: core, canon, atlas, proteomics, pollenomics, masterclass, gnss, and the public hub itself</li>
-          <li>public docs: core, canon, atlas, proteomics, pollenomics, and masterclass paths</li>
-          <li>public packages: current Python and Rust surfaces listed in the inventory section</li>
+        <ul class="faq-list">
+          <li>Public repositories include core, canon, atlas, proteomics, pollenomics, masterclass, GNSS, and this public hub.</li>
+          <li>Public docs include core, canon, atlas, proteomics, pollenomics, and masterclass paths.</li>
+          <li>Published package surfaces are listed in the inventory section across PyPI and Rust docs.</li>
         </ul>
       </details>
       <details>
         <summary>What is private or still emerging?</summary>
-        <ul class="list">
-          <li>bijux-genomics remains private and is described as a private platform direction</li>
-          <li>bijux-dag is the clearest upcoming release inside the core line with v0.4.0 as the public milestone</li>
-          <li>bijux-gnss is public as a repository and direction, but still in progress rather than release-grade</li>
+        <ul class="faq-list">
+          <li><code>bijux-genomics</code> remains private and is included here only as a platform direction.</li>
+          <li><code>bijux-dag</code> is the clearest upcoming release inside the core line, with <code>v0.4.0</code> as the public milestone.</li>
+          <li><code>bijux-gnss</code> is public as a repository and direction, but still in progress rather than release-grade.</li>
         </ul>
       </details>
       <details>
         <summary>How should a serious visitor evaluate the work?</summary>
-        <ul class="list">
-          <li>start with the product cards for narrative clarity</li>
-          <li>use the inventory section for repos, docs, packages, and crates</li>
-          <li>use masterclass to evaluate the teaching and conceptual side of the work</li>
+        <ul class="faq-list">
+          <li>Start with the product cards for the clearest narrative view of the portfolio.</li>
+          <li>Use the inventory section for repositories, docs, package references, and pair mappings.</li>
+          <li>Use masterclass to evaluate the teaching and conceptual side of the work.</li>
         </ul>
       </details>
     </section>
