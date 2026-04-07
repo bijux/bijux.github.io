@@ -2113,6 +2113,21 @@
           </div>
           <p>The public Rust crate line is currently anchored by <code>bijux-cli</code> and <code>bijux-atlas</code>, while the broader core runtime family is easier to follow through the repository and docs.</p>
         </article>
+        <article class="card">
+          <h3>Rust and Python pairs</h3>
+          <div class="package-pairs" aria-label="Rust and Python pairs">
+            <div class="package-pair">
+              <div class="badge-row">
+                <a href="https://crates.io/crates/bijux-cli" target="_blank" rel="noopener"><img src="https://img.shields.io/crates/v/bijux-cli?style=flat-square&amp;logo=rust&amp;label=bijux-cli" alt="bijux-cli crate"></a>
+              </div>
+              <span class="pair-link" aria-hidden="true">&#8646;</span>
+              <div class="badge-row">
+                <a href="https://pypi.org/project/bijux-cli/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-cli?style=flat-square&amp;logo=pypi&amp;label=bijux-cli" alt="bijux-cli on PyPI"></a>
+              </div>
+            </div>
+          </div>
+          <p><code>bijux-cli</code> is the clearest cross-language pair in the public surface. The Rust crate carries the core implementation, while the PyPI package is the Python-facing surface built on top of that Rust-centered CLI line.</p>
+        </article>
       </div>
 
       <details open>
@@ -2122,6 +2137,7 @@
           <li>atlas rust: bijux-atlas, bijux-dev-atlas</li>
           <li>canon python: bijux-canon-runtime, bijux-canon-agent, bijux-canon-ingest, bijux-canon-index, bijux-canon-reason, bijux-canon-dev</li>
           <li>canon pairs: bijux-canon-runtime -> agentic-flows, bijux-canon-agent -> bijux-agent, bijux-canon-reason -> bijux-rar, bijux-canon-index -> bijux-vex, bijux-canon-ingest -> bijux-rag</li>
+          <li>rust/python pair: bijux-cli crate -> bijux-cli on PyPI as the Python-facing surface on the Rust core</li>
           <li>proteomics python: agentic-proteins, bijux-proteomics-foundation, bijux-proteomics-core, bijux-proteomics-intelligence, bijux-proteomics-knowledge, bijux-proteomics-lab, bijux-proteomics-dev</li>
           <li>pollenomics public surface today is repository, docs, and atlas-linked outputs rather than a published package line</li>
           <li>private genomics rust includes the bijux-dna family across core, runtime, pipelines, policies, stage contracts, planners, domains, environments, infra, api, analysis, and testkit layers</li>
