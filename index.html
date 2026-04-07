@@ -1686,21 +1686,21 @@
     <section class="section panel reveal" style="--delay: 130ms;" id="model">
       <p class="section-kicker">Platform model</p>
       <h2>One engineering center, multiple product lines</h2>
-      <p class="lead"><code>bijux-core</code> is the engineering center of gravity. Around it sit focused systems that solve adjacent but different problems: governed AI workflows, data delivery, proteomics acceleration, private genomics execution, evidence-led site selection, deep technical education, and GNSS receiver software. The point is not repo sprawl; the point is one platform thesis expressed across several product lines.</p>
+      <p class="lead"><code>bijux-core</code> is the engineering center of gravity. Around it sit product lines for AI workflows, data delivery, proteomics, genomics, pollenomics, learning, and GNSS. The shape is deliberate: one runtime foundation, several focused applications.</p>
       <div class="map-grid">
         <article class="card">
           <h3>Consolidated center</h3>
-          <p>The runtime, DAG engine, evidence model, release contracts, and maintainer control plane now belong to one canonical repository and one coherent public story.</p>
+          <p>The runtime, DAG engine, evidence model, release contracts, and maintainer tooling now live in one canonical repository.</p>
           <p class="model-note">consolidation: <code>bijux-cli</code> + <code>bijux-dag</code> now presented as <code>bijux-core</code></p>
         </article>
         <article class="card">
           <h3>Clear product boundaries</h3>
-          <p>The surrounding systems are not side notes. They are distinct products with their own technical meaning, made legible through shared engineering discipline and sharper product boundaries.</p>
+          <p>The surrounding systems are distinct products with their own technical roles, linked by shared engineering discipline instead of blurred into one catch-all codebase.</p>
           <p class="model-note">consolidation: <code>bijux-rag</code>, <code>bijux-rar</code>, <code>bijux-vex</code>, <code>bijux-agent</code>, and <code>agentic-flows</code> now read as the canon product family</p>
         </article>
         <article class="card">
           <h3>Operating model</h3>
-          <p>The overall shape is straightforward: core provides the execution and governance spine, flagship repos apply it to domain problems, masterclass teaches the underlying ideas, and GNSS extends the systems work into a fresh domain still being built.</p>
+          <p>Core provides the execution and governance spine, flagship repos apply it to domain problems, masterclass teaches the ideas behind it, and GNSS extends the systems work into a new frontier.</p>
         </article>
       </div>
       <pre class="tree" aria-label="Current GitHub repository topology">github.com/bijux
@@ -1720,39 +1720,39 @@
       <div class="flow-grid">
         <article class="flow-card">
           <h3><code>bijux-core</code> to execution</h3>
-          <p>Core defines the runtime, DAG, evidence, replay, and governance model that makes execution legible across the rest of the ecosystem.</p>
+          <p>Core defines the runtime, DAG, evidence, replay, and governance model used across the rest of the ecosystem.</p>
         </article>
         <article class="flow-card">
           <h3><code>bijux-core</code> to products</h3>
-          <p>Canon, atlas, proteomics, genomics, and pollenomics each apply that discipline to a different product problem instead of reinventing their own control plane.</p>
+          <p>Canon, atlas, proteomics, genomics, and pollenomics apply that discipline to different product problems instead of reinventing their own control plane.</p>
         </article>
         <article class="flow-card">
           <h3><code>bijux-core</code> to education</h3>
-          <p>Masterclass translates the same engineering values into teaching, while GNSS extends the platform thesis into a fresh systems domain still under construction.</p>
+          <p>Masterclass teaches the same engineering values, while GNSS extends the platform model into a fresh systems domain still under construction.</p>
         </article>
       </div>
     </section>
 
     <section class="section panel reveal" style="--delay: 150ms;" id="roadmap">
       <p class="section-kicker">Release radar</p>
-      <h2>What is shipping, what is emerging, and what remains private</h2>
-      <p class="lead">The portfolio is strongest when its public-state boundaries are explicit. Some systems are fully public and followable now, some are clearly moving toward a public milestone, some remain private by design, and some are early but intentionally visible.</p>
+      <h2>What is public now, what is next, and what stays private</h2>
+      <p class="lead">The release picture is straightforward: some systems are already public and usable, some are heading toward clearer public milestones, and some remain private by design.</p>
       <div class="signal-grid">
         <article class="signal-card">
-          <h3>Shipping now</h3>
-          <p><code>bijux-core</code>, <code>bijux-canon</code>, <code>bijux-atlas</code>, <code>bijux-proteomics</code>, <code>bijux-pollenomics</code>, and <code>bijux-masterclass</code> are the public flagship surfaces to follow today.</p>
+          <h3>Public now</h3>
+          <p><code>bijux-core</code>, <code>bijux-canon</code>, <code>bijux-atlas</code>, <code>bijux-proteomics</code>, <code>bijux-pollenomics</code>, and <code>bijux-masterclass</code> are the main public surfaces to follow today.</p>
         </article>
         <article class="signal-card">
-          <h3>Emerging next</h3>
-          <p><code>bijux-dag</code> is the clearest upcoming public milestone inside the core line, with the public DAG surface targeted for <code>v0.4.0</code>.</p>
+          <h3>Next milestone</h3>
+          <p><code>bijux-dag</code> is the clearest upcoming public milestone inside the core line, targeted for <code>v0.4.0</code>.</p>
         </article>
         <article class="signal-card">
           <h3>Private by design</h3>
-          <p><code>bijux-genomics</code> remains private, and the page treats it as a model and direction of travel rather than pretending it is already a public surface.</p>
+          <p><code>bijux-genomics</code> remains private and is included here only as a platform direction, not as a released public surface.</p>
         </article>
         <article class="signal-card">
           <h3>Visible frontier</h3>
-          <p><code>bijux-gnss</code> is public as a repository and intentional as a direction, while still being honest about the fact that it is in progress.</p>
+          <p><code>bijux-gnss</code> is already public as a repository, while still clearly marked as work in progress rather than a finished product.</p>
         </article>
       </div>
     </section>
