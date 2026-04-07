@@ -936,17 +936,41 @@
 
     .package-group-shell {
       border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 10px;
-      background: var(--list-bg);
+      border-radius: 16px;
+      padding: 12px;
+      background:
+        linear-gradient(135deg, rgba(11, 122, 109, 0.05), transparent 50%),
+        var(--list-bg);
     }
 
     .package-group-label {
-      margin: 0 0 8px;
+      margin: 0;
       color: var(--navy);
       font: 700 0.72rem/1.2 "IBM Plex Mono", monospace;
       letter-spacing: 0.05em;
       text-transform: uppercase;
+    }
+
+    .package-group-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .package-group-count {
+      color: var(--muted);
+      font: 600 0.72rem/1 "IBM Plex Mono", monospace;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .package-group-copy {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.45;
     }
 
     .package-pair {
@@ -2047,13 +2071,21 @@
           <h3>Python package families</h3>
           <div class="package-groups" aria-label="Python package groups">
             <div class="package-group-shell">
-              <p class="package-group-label">CLI</p>
+              <div class="package-group-head">
+                <p class="package-group-label">CLI</p>
+                <span class="package-group-count">1 package</span>
+              </div>
+              <p class="package-group-copy">The Python entry point for the core CLI line.</p>
               <div class="badge-row">
                 <a href="https://pypi.org/project/bijux-cli/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-cli?style=flat-square&amp;logo=pypi&amp;label=bijux-cli" alt="bijux-cli on PyPI"></a>
               </div>
             </div>
             <div class="package-group-shell">
-              <p class="package-group-label">Canon</p>
+              <div class="package-group-head">
+                <p class="package-group-label">Canon</p>
+                <span class="package-group-count">5 packages</span>
+              </div>
+              <p class="package-group-copy">The current public package line for ingest, runtime, reasoning, indexing, and agent execution.</p>
               <div class="badge-row">
                 <a href="https://pypi.org/project/bijux-canon-runtime/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-runtime?style=flat-square&amp;logo=pypi&amp;label=bijux-canon-runtime" alt="bijux-canon-runtime"></a>
                 <a href="https://pypi.org/project/bijux-canon-agent/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-agent?style=flat-square&amp;logo=pypi&amp;label=bijux-canon-agent" alt="bijux-canon-agent"></a>
@@ -2063,7 +2095,11 @@
               </div>
             </div>
             <div class="package-group-shell">
-              <p class="package-group-label">Proteomics</p>
+              <div class="package-group-head">
+                <p class="package-group-label">Proteomics</p>
+                <span class="package-group-count">5 packages</span>
+              </div>
+              <p class="package-group-copy">The public acceleration stack across domain foundation, core workflows, intelligence, and knowledge layers.</p>
               <div class="badge-row">
                 <a href="https://pypi.org/project/agentic-proteins/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/agentic-proteins?style=flat-square&amp;logo=pypi&amp;label=agentic-proteins" alt="agentic-proteins"></a>
                 <a href="https://pypi.org/project/bijux-proteomics-foundation/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-proteomics-foundation?style=flat-square&amp;logo=pypi&amp;label=bijux-proteomics-foundation" alt="bijux-proteomics-foundation"></a>
