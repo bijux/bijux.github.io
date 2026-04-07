@@ -922,6 +922,38 @@
       border-radius: 4px;
     }
 
+    .package-pairs {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .package-pair {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      gap: 10px;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px;
+      background: var(--list-bg);
+    }
+
+    .package-pair .badge-row {
+      margin-top: 0;
+    }
+
+    .pair-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy);
+      font: 700 0.78rem/1 "IBM Plex Mono", monospace;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
     .product-actions {
       display: flex;
       flex-wrap: wrap;
@@ -1397,6 +1429,7 @@
       .product-meta { grid-template-columns: 1fr; }
       .arc-grid { grid-template-columns: 1fr; }
       .trust-strip { grid-template-columns: 1fr; }
+      .package-pair { grid-template-columns: 1fr; }
       footer { grid-template-columns: 1fr; }
     }
 
@@ -1989,19 +2022,54 @@
         </article>
         <article class="card">
           <h3>Canon package pairs</h3>
-          <div class="badge-row">
-            <a href="https://pypi.org/project/agentic-flows/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/agentic-flows?style=flat-square&amp;logo=pypi&amp;label=agentic-flows" alt="agentic-flows"></a>
-            <a href="https://pypi.org/project/bijux-canon-agent/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-agent?style=flat-square&amp;logo=pypi&amp;label=canon-agent" alt="bijux-canon-agent"></a>
-            <a href="https://pypi.org/project/bijux-rag/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-rag?style=flat-square&amp;logo=pypi&amp;label=bijux-rag" alt="bijux-rag"></a>
-            <a href="https://pypi.org/project/bijux-canon-runtime/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-runtime?style=flat-square&amp;logo=pypi&amp;label=canon-runtime" alt="bijux-canon-runtime"></a>
-            <a href="https://pypi.org/project/bijux-vex/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-vex?style=flat-square&amp;logo=pypi&amp;label=bijux-vex" alt="bijux-vex"></a>
-            <a href="https://pypi.org/project/bijux-canon-reason/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-reason?style=flat-square&amp;logo=pypi&amp;label=canon-reason" alt="bijux-canon-reason"></a>
-            <a href="https://pypi.org/project/bijux-rar/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-rar?style=flat-square&amp;logo=pypi&amp;label=bijux-rar" alt="bijux-rar"></a>
-            <a href="https://pypi.org/project/bijux-canon-index/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-index?style=flat-square&amp;logo=pypi&amp;label=canon-index" alt="bijux-canon-index"></a>
-            <a href="https://pypi.org/project/bijux-agent/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-agent?style=flat-square&amp;logo=pypi&amp;label=bijux-agent" alt="bijux-agent"></a>
-            <a href="https://pypi.org/project/bijux-canon-ingest/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-ingest?style=flat-square&amp;logo=pypi&amp;label=canon-ingest" alt="bijux-canon-ingest"></a>
+          <div class="package-pairs" aria-label="Canon package pairs">
+            <div class="package-pair">
+              <div class="badge-row">
+                <a href="https://pypi.org/project/bijux-canon-runtime/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-runtime?style=flat-square&amp;logo=pypi&amp;label=bijux-canon-runtime" alt="bijux-canon-runtime"></a>
+              </div>
+              <span class="pair-link">paired with</span>
+              <div class="badge-row">
+                <a href="https://pypi.org/project/agentic-flows/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/agentic-flows?style=flat-square&amp;logo=pypi&amp;label=agentic-flows" alt="agentic-flows"></a>
+              </div>
+            </div>
+            <div class="package-pair">
+              <div class="badge-row">
+                <a href="https://pypi.org/project/bijux-canon-agent/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-agent?style=flat-square&amp;logo=pypi&amp;label=bijux-canon-agent" alt="bijux-canon-agent"></a>
+              </div>
+              <span class="pair-link">paired with</span>
+              <div class="badge-row">
+                <a href="https://pypi.org/project/bijux-agent/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-agent?style=flat-square&amp;logo=pypi&amp;label=bijux-agent" alt="bijux-agent"></a>
+              </div>
+            </div>
+            <div class="package-pair">
+              <div class="badge-row">
+                <a href="https://pypi.org/project/bijux-canon-reason/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-reason?style=flat-square&amp;logo=pypi&amp;label=bijux-canon-reason" alt="bijux-canon-reason"></a>
+              </div>
+              <span class="pair-link">paired with</span>
+              <div class="badge-row">
+                <a href="https://pypi.org/project/bijux-rar/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-rar?style=flat-square&amp;logo=pypi&amp;label=bijux-rar" alt="bijux-rar"></a>
+              </div>
+            </div>
+            <div class="package-pair">
+              <div class="badge-row">
+                <a href="https://pypi.org/project/bijux-canon-index/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-index?style=flat-square&amp;logo=pypi&amp;label=bijux-canon-index" alt="bijux-canon-index"></a>
+              </div>
+              <span class="pair-link">paired with</span>
+              <div class="badge-row">
+                <a href="https://pypi.org/project/bijux-vex/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-vex?style=flat-square&amp;logo=pypi&amp;label=bijux-vex" alt="bijux-vex"></a>
+              </div>
+            </div>
+            <div class="package-pair">
+              <div class="badge-row">
+                <a href="https://pypi.org/project/bijux-canon-ingest/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-canon-ingest?style=flat-square&amp;logo=pypi&amp;label=bijux-canon-ingest" alt="bijux-canon-ingest"></a>
+              </div>
+              <span class="pair-link">paired with</span>
+              <div class="badge-row">
+                <a href="https://pypi.org/project/bijux-rag/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-rag?style=flat-square&amp;logo=pypi&amp;label=bijux-rag" alt="bijux-rag"></a>
+              </div>
+            </div>
           </div>
-          <p>The earlier canon package names and the current canon package line are shown together here as pairs, so the package family reads as one continuous surface instead of separate eras.</p>
+          <p>The earlier canon names and the current canon package line are grouped here as five explicit pairs so the relationship is visible immediately.</p>
         </article>
 
         <article class="card">
@@ -2020,7 +2088,7 @@
           <li>core rust: bijux-cli, bijux-cli-python, bijux-dag-core, bijux-dag-runtime, bijux-dag-app, bijux-dag-artifacts, bijux-dag-cli, bijux-dag-testkit, bijux-dev</li>
           <li>atlas rust: bijux-atlas, bijux-dev-atlas</li>
           <li>canon python: bijux-canon-runtime, bijux-canon-agent, bijux-canon-ingest, bijux-canon-index, bijux-canon-reason, bijux-canon-dev</li>
-          <li>canon pairs: agentic-flows -> bijux-canon-agent, bijux-rag -> bijux-canon-runtime, bijux-vex -> bijux-canon-reason, bijux-rar -> bijux-canon-index, bijux-agent -> bijux-canon-ingest</li>
+          <li>canon pairs: bijux-canon-runtime -> agentic-flows, bijux-canon-agent -> bijux-agent, bijux-canon-reason -> bijux-rar, bijux-canon-index -> bijux-vex, bijux-canon-ingest -> bijux-rag</li>
           <li>proteomics python: agentic-proteins, bijux-proteomics-foundation, bijux-proteomics-core, bijux-proteomics-intelligence, bijux-proteomics-knowledge, bijux-proteomics-lab, bijux-proteomics-dev</li>
           <li>pollenomics public surface today is repository, docs, and atlas-linked outputs rather than a published package line</li>
           <li>private genomics rust includes the bijux-dna family across core, runtime, pipelines, policies, stage contracts, planners, domains, environments, infra, api, analysis, and testkit layers</li>
