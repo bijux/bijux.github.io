@@ -1934,7 +1934,7 @@
     <section class="section panel reveal" style="--delay: 210ms;" id="packages">
       <p class="section-kicker">Surfaces</p>
       <h2>Public package, repository, and documentation surfaces</h2>
-      <p class="lead">The badge map below makes the public surface area explicit: source repositories, docs sites, Python packages, Rust crates, and course pages. This is the discoverability layer of the platform, and it needs to be clear, indexable, easy to trust, and easy to revisit.</p>
+      <p class="lead">Use this section to move directly into repositories, docs sites, Python packages, Rust crates, and course pages.</p>
       <div class="surface-summary" aria-label="Surface summary">
         <div class="surface-stat"><strong>7</strong><span>public repos</span></div>
         <div class="surface-stat"><strong>5</strong><span>docs sites</span></div>
@@ -1954,7 +1954,7 @@
             <a href="https://github.com/bijux/bijux-masterclass" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--masterclass-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-masterclass"></a>
             <a href="https://github.com/bijux/bijux-gnss" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/github-bijux--gnss-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub bijux-gnss"></a>
           </div>
-          <p>These are the live public repositories visible from the GitHub namespace today. <code>bijux-genomics</code> is intentionally not listed here because it remains private.</p>
+          <p>These are the live public repositories visible today. <code>bijux-genomics</code> is not listed because it remains private.</p>
         </article>
 
         <article class="card">
@@ -1966,7 +1966,7 @@
             <a href="https://bijux.io/bijux-proteomics/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-bijux--proteomics-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="bijux-proteomics docs"></a>
             <a href="https://bijux.io/bijux-pollenomics/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-bijux--pollenomics-2563eb?style=flat-square&amp;logo=materialformkdocs&amp;logoColor=white" alt="bijux-pollenomics docs"></a>
           </div>
-          <p>The docs sites are part of the public product surface, not afterthoughts. They should read as release-grade interfaces to the systems.</p>
+          <p>These docs sites are the clearest starting points for architecture, usage, and release context.</p>
         </article>
         <article class="card">
           <h3>Python package families</h3>
@@ -1984,7 +1984,7 @@
             <a href="https://pypi.org/project/bijux-proteomics-knowledge/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-proteomics-knowledge?style=flat-square&amp;logo=pypi&amp;label=proteomics-knowledge" alt="bijux-proteomics-knowledge"></a>
             <a href="https://pypi.org/project/bijux-proteomics-lab/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-proteomics-lab?style=flat-square&amp;logo=pypi&amp;label=proteomics-lab" alt="bijux-proteomics-lab"></a>
           </div>
-          <p>The Python side spans runtime, agentic, knowledge, domain, and scientific application layers across the public products. <code>bijux-pollenomics</code> is intentionally excluded here because it is not yet published as a package.</p>
+          <p>The Python line spans runtime, AI workflow, knowledge, and proteomics layers. <code>bijux-pollenomics</code> is excluded because it is not yet published as a package.</p>
         </article>
         <article class="card">
           <h3>Legacy compatibility surfaces</h3>
@@ -1995,7 +1995,7 @@
             <a href="https://pypi.org/project/bijux-rar/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-rar?style=flat-square&amp;logo=pypi&amp;label=bijux-rar" alt="bijux-rar"></a>
             <a href="https://pypi.org/project/bijux-vex/" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/bijux-vex?style=flat-square&amp;logo=pypi&amp;label=bijux-vex" alt="bijux-vex"></a>
           </div>
-          <p>These names are still important as continuity surfaces, but they should be read as compatibility and transition lines rather than the primary current product naming model.</p>
+          <p>These names still matter for continuity, but they now sit behind the clearer current product families.</p>
         </article>
 
         <article class="card">
@@ -2004,19 +2004,19 @@
             <a href="https://crates.io/crates/bijux-cli" target="_blank" rel="noopener"><img src="https://img.shields.io/crates/v/bijux-cli?style=flat-square&amp;logo=rust&amp;label=bijux-cli" alt="bijux-cli crate"></a>
             <a href="https://crates.io/crates/bijux-atlas" target="_blank" rel="noopener"><img src="https://img.shields.io/crates/v/bijux-atlas?style=flat-square&amp;logo=rust&amp;label=bijux-atlas" alt="bijux-atlas crate"></a>
           </div>
-          <p>The public Rust crate line is currently anchored by <code>bijux-cli</code> and <code>bijux-atlas</code>, with the broader core runtime family still more legible through repository and docs surfaces than through crates.io alone.</p>
+          <p>The public Rust crate line is currently anchored by <code>bijux-cli</code> and <code>bijux-atlas</code>, while the broader core runtime family is easier to follow through the repository and docs.</p>
         </article>
       </div>
 
       <details open>
-        <summary>Technical appendix: current inventories, legacy names, and private genomics scope</summary>
+        <summary>Technical appendix: package families and private genomics scope</summary>
         <ul class="list">
           <li>core rust: bijux-cli, bijux-cli-python, bijux-dag-core, bijux-dag-runtime, bijux-dag-app, bijux-dag-artifacts, bijux-dag-cli, bijux-dag-testkit, bijux-dev</li>
           <li>atlas rust: bijux-atlas, bijux-dev-atlas</li>
           <li>canon python: bijux-canon-runtime, bijux-canon-agent, bijux-canon-ingest, bijux-canon-index, bijux-canon-reason, bijux-canon-dev</li>
           <li>canon compat: agentic-flows, bijux-agent, bijux-rag, bijux-rar, bijux-vex</li>
           <li>proteomics python: agentic-proteins, bijux-proteomics-foundation, bijux-proteomics-core, bijux-proteomics-intelligence, bijux-proteomics-knowledge, bijux-proteomics-lab, bijux-proteomics-dev</li>
-          <li>pollenomics public surface today is repository plus docs and atlas outputs, not a published package badge line</li>
+          <li>pollenomics public surface today is repository, docs, and atlas-linked outputs rather than a published package line</li>
           <li>private genomics rust includes the bijux-dna family across core, runtime, pipelines, policies, stage contracts, planners, domains, environments, infra, api, analysis, and testkit layers</li>
         </ul>
       </details>
