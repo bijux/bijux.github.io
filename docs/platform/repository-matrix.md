@@ -10,8 +10,8 @@ last_reviewed: 2026-04-12
 # Repository Matrix
 
 This matrix is the shortest route to understanding how the public Bijux
-repositories differ by responsibility, inspection angle, and engineering
-signal.
+repositories differ by responsibility, inspection angle, and recurring
+work quality.
 
 ## System Family At A Glance
 

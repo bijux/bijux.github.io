@@ -48,7 +48,7 @@ engineering language is visible across all of them.</div>
 
 | Read this first when you need to understand... | Open |
 | --- | --- |
-| which public signals matter most in the portfolio | [Engineering signals](engineering-signals.md) |
+| which qualities recur across the public work | [Work qualities](work-qualities.md) |
 | the layered structure of the whole public system family | [System map](system-map.md) |
 | the repository split at a glance | [Repository matrix](repository-matrix.md) |
 | where public engineering proof shows up across the repositories | [Delivery signals](delivery-signals.md) |
