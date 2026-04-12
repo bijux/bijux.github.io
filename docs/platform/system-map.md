@@ -18,12 +18,12 @@ judgment are expected.
 
 ```mermaid
 flowchart TB
-    discipline["shared discipline<br/>contracts, release evidence, docs shell, operational guardrails"]
-    core["bijux-core<br/>cli, dag runtime, evidence, release backbone"]
-    canon["bijux-canon<br/>ingest, index, reason, agent, runtime"]
-    atlas["bijux-atlas<br/>delivery, api, datasets, docs control plane"]
-    products["domain products<br/>proteomics and pollenomics"]
-    learning["learning programs<br/>masterclass and deep dives"]
+    discipline["shared discipline<br/>contracts, release evidence, docs shell, operating rules"]
+    core["bijux-core<br/>runtime, cli, dag, artifacts, governance"]
+    canon["bijux-canon<br/>ingest, index, reasoning, orchestration, agents"]
+    atlas["bijux-atlas<br/>apis, datasets, reporting, delivery control plane"]
+    products["domain repositories<br/>proteomics and pollenomics"]
+    learning["learning programs<br/>masterclass programs and deep dives"]
 
     discipline --> core
     discipline --> canon
@@ -39,7 +39,7 @@ flowchart TB
 ## What Each Layer Owns
 
 | Layer | What it owns | Why it stays separate |
-| --- | --- |
+| --- | --- | --- |
 | Shared discipline | contracts, release evidence, documentation shell, navigation rules, and operating habits | the repositories are connected by repeatable engineering behavior rather than branding alone |
 | Core | command surfaces, runtime control, DAG execution, artifacts, and governance | execution authority and repository discipline stay visible instead of being scattered across scripts |
 | Canon | ingest, indexing, reasoning, orchestration, agents, and controlled runtime behavior | knowledge-system concerns are split into accountable parts instead of being merged into one opaque AI layer |
@@ -65,6 +65,6 @@ the repository pages.
 
 ## Open This Page When
 
-- you want the shortest explanation of how the public surfaces fit together
+- you want the shortest explanation of how the repository family fits together
 - you need to decide whether to open Core, Canon, Atlas, or a domain product first
 - you want to understand the repository family as an engineering system, not a list of projects
