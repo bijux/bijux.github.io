@@ -9,11 +9,18 @@ last_reviewed: 2026-04-12
 
 # Bijux
 
-`bijux.io` is the public surface of a deliberately connected body of
-work: governed runtime systems, documentation infrastructure, data
-delivery platforms, applied bioinformatics products, and technical
-education that is built with the same engineering discipline as the
-software itself.
+<section class="bijux-hero">
+  <div class="bijux-hero__eyebrow">systems, services, domain products, and technical education</div>
+  <h1 class="bijux-hero__title">A public body of work built around architecture, delivery discipline, and domain-aware engineering.</h1>
+  <p class="bijux-hero__lede"><code>bijux.io</code> is the public surface of a deliberately connected portfolio: governed runtime systems, documentation infrastructure, data delivery platforms, applied bioinformatics products, and technical education that is built with the same engineering discipline as the software itself.</p>
+  <div class="bijux-signal-row">
+    <span class="bijux-signal-pill">platform architecture</span>
+    <span class="bijux-signal-pill">data services</span>
+    <span class="bijux-signal-pill">bioinformatics products</span>
+    <span class="bijux-signal-pill">documentation as product</span>
+    <span class="bijux-signal-pill">teaching through systems</span>
+  </div>
+</section>
 
 <div class="bijux-callout"><strong>Start here when you want to understand the shape of the work before opening a single repository.</strong>
 The point of this hub is not to summarize everything into one page. The

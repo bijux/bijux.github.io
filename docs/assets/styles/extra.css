@@ -63,6 +63,24 @@
   --bijux-ribbon-fade: rgba(21, 26, 67, 0);
 }
 
+[data-md-color-scheme="slate"] .bijux-hero {
+  background:
+    radial-gradient(circle at top right, rgba(99, 102, 241, 0.18), transparent 34%),
+    radial-gradient(circle at left center, rgba(14, 165, 233, 0.12), transparent 28%),
+    linear-gradient(145deg, rgba(15, 23, 42, 0.92), rgba(17, 24, 39, 0.88));
+  border-color: rgba(129, 140, 248, 0.22);
+}
+
+[data-md-color-scheme="slate"] .bijux-hero__eyebrow,
+[data-md-color-scheme="slate"] .bijux-signal-pill {
+  color: #dbeafe;
+}
+
+[data-md-color-scheme="slate"] .bijux-signal-pill {
+  background: rgba(15, 23, 42, 0.62);
+  border-color: rgba(129, 140, 248, 0.22);
+}
+
 body,
 input,
 button {
@@ -173,6 +191,76 @@ button {
   box-shadow: var(--bijux-card-shadow);
   padding: 1rem 1.1rem;
   margin: 1rem 0 1.5rem;
+}
+
+.bijux-hero {
+  background:
+    radial-gradient(circle at top right, rgba(99, 102, 241, 0.2), transparent 34%),
+    radial-gradient(circle at left center, rgba(37, 99, 235, 0.12), transparent 28%),
+    linear-gradient(140deg, rgba(255, 255, 255, 0.9), rgba(236, 242, 255, 0.72));
+  border: 1px solid rgba(79, 70, 229, 0.16);
+  border-radius: 1.4rem;
+  box-shadow: 0 24px 64px rgba(30, 41, 89, 0.14);
+  margin: 0 0 1.6rem;
+  overflow: hidden;
+  padding: 1.5rem 1.45rem 1.35rem;
+  position: relative;
+}
+
+.bijux-hero::after {
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.18), rgba(79, 70, 229, 0.08), transparent);
+  content: "";
+  height: 0.28rem;
+  inset-inline: 0;
+  inset-block-start: 0;
+  position: absolute;
+}
+
+.bijux-hero__eyebrow {
+  color: #334155;
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  margin-bottom: 0.9rem;
+  text-transform: uppercase;
+}
+
+.bijux-hero__title {
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  margin: 0 0 1rem;
+  max-width: 16ch;
+}
+
+.bijux-hero__lede {
+  color: var(--bijux-ink);
+  font-size: 1.05rem;
+  line-height: 1.86;
+  margin: 0;
+  max-width: 62rem;
+}
+
+.bijux-signal-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+}
+
+.bijux-signal-pill {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(79, 70, 229, 0.16);
+  border-radius: 999px;
+  box-shadow: 0 12px 26px rgba(30, 41, 89, 0.08);
+  color: #334155;
+  display: inline-flex;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 0.58rem 0.88rem;
+  text-transform: uppercase;
 }
 
 .bijux-quicklinks {
@@ -657,6 +745,31 @@ button {
     border-radius: 0.9rem;
     box-shadow: 0 12px 26px rgba(30, 41, 89, 0.08);
     padding: 0.95rem 1rem;
+  }
+
+  .bijux-hero {
+    border-radius: 1.05rem;
+    padding: 1.15rem 1rem 1.05rem;
+  }
+
+  .bijux-hero__title {
+    font-size: clamp(1.8rem, 10vw, 2.5rem);
+    max-width: none;
+  }
+
+  .bijux-hero__lede {
+    font-size: 0.98rem;
+    line-height: 1.72;
+  }
+
+  .bijux-signal-row {
+    gap: 0.55rem;
+  }
+
+  .bijux-signal-pill {
+    font-size: 0.72rem;
+    justify-content: center;
+    width: 100%;
   }
 
   .md-typeset pre,
