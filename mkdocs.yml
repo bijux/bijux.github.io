@@ -52,6 +52,7 @@ nav:
       - Reading Paths: start-here.md
   - Platform:
       - Overview: platform/index.md
+      - Engineering Signals: platform/engineering-signals.md
       - System Map: platform/system-map.md
       - Delivery Signals: platform/delivery-signals.md
       - Applied Domains: platform/applied-domains.md
