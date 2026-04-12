@@ -38,6 +38,7 @@ parts of one engineering language.</div>
 | Read this first when you need to understand... | Open |
 | --- | --- |
 | the layered structure of the whole public system family | [System map](system-map.md) |
+| where public engineering proof shows up across the repositories | [Delivery signals](delivery-signals.md) |
 | why the docs shell is shared instead of duplicated carelessly | [Documentation network](documentation-network.md) |
 | which public destinations exist today | [Public surface](public-surface.md) |
 

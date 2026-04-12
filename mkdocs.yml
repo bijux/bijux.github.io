@@ -51,6 +51,7 @@ nav:
   - Platform:
       - Overview: platform/index.md
       - System Map: platform/system-map.md
+      - Delivery Signals: platform/delivery-signals.md
       - Documentation Network: platform/documentation-network.md
       - Public Surface: platform/public-surface.md
   - Projects:
