@@ -6,6 +6,7 @@
   --bijux-panel-strong: rgba(8, 145, 178, 0.08);
   --bijux-card-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
   --bijux-map-shadow: 0 22px 54px rgba(15, 23, 42, 0.13);
+  --bijux-card-shadow-hover: 0 26px 56px rgba(15, 23, 42, 0.14);
   --bijux-surface-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0));
   --bijux-shell-width: 84rem;
   --bijux-shell-width-wide: 92rem;
@@ -13,6 +14,8 @@
   --bijux-ribbon-bg: #10213b;
   --bijux-ribbon-bg-strong: #124e66;
   --bijux-ribbon-fade: rgba(16, 33, 59, 0);
+  --bijux-nav-indicator: linear-gradient(90deg, rgba(245, 158, 11, 0.95), rgba(45, 212, 191, 0.95));
+  --bijux-nav-active-shadow: 0 14px 28px rgba(15, 23, 42, 0.18);
 }
 
 [data-md-color-scheme="default"] {
@@ -40,6 +43,7 @@
   --bijux-panel-strong: rgba(8, 145, 178, 0.2);
   --bijux-card-shadow: 0 24px 48px rgba(2, 6, 23, 0.38);
   --bijux-map-shadow: 0 28px 58px rgba(2, 6, 23, 0.5);
+  --bijux-card-shadow-hover: 0 30px 64px rgba(2, 6, 23, 0.52);
   --bijux-surface-gradient: linear-gradient(180deg, rgba(30, 41, 59, 0.42), rgba(15, 23, 42, 0));
   --md-default-bg-color: #0b1120;
   --md-default-bg-color--light: #111827;
@@ -61,6 +65,8 @@
   --bijux-ribbon-bg: #091524;
   --bijux-ribbon-bg-strong: #0f3f56;
   --bijux-ribbon-fade: rgba(9, 21, 36, 0);
+  --bijux-nav-indicator: linear-gradient(90deg, rgba(251, 191, 36, 0.92), rgba(103, 232, 249, 0.92));
+  --bijux-nav-active-shadow: 0 18px 34px rgba(2, 6, 23, 0.48);
 }
 
 [data-md-color-scheme="slate"] .bijux-hero {
@@ -72,11 +78,11 @@
 }
 
 [data-md-color-scheme="slate"] .bijux-hero__eyebrow,
-[data-md-color-scheme="slate"] .bijux-signal-pill {
+[data-md-color-scheme="slate"] .bijux-topic-pill {
   color: #dbeafe;
 }
 
-[data-md-color-scheme="slate"] .bijux-signal-pill {
+[data-md-color-scheme="slate"] .bijux-topic-pill {
   background: rgba(15, 23, 42, 0.62);
   border-color: rgba(45, 212, 191, 0.22);
 }
@@ -106,9 +112,38 @@ button {
 
 .md-main {
   background:
-    radial-gradient(circle at top left, rgba(13, 148, 136, 0.05), transparent 22%),
+    radial-gradient(circle at top left, rgba(13, 148, 136, 0.07), transparent 22%),
+    radial-gradient(circle at 82% 10%, rgba(245, 158, 11, 0.06), transparent 18%),
     radial-gradient(circle at top right, rgba(8, 145, 178, 0.05), transparent 20%),
+    radial-gradient(circle at 24% 58%, rgba(20, 184, 166, 0.04), transparent 22%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0));
+}
+
+[data-md-color-scheme="slate"] .md-main {
+  background:
+    radial-gradient(circle at top left, rgba(45, 212, 191, 0.08), transparent 24%),
+    radial-gradient(circle at 80% 8%, rgba(251, 191, 36, 0.05), transparent 16%),
+    radial-gradient(circle at 28% 56%, rgba(103, 232, 249, 0.05), transparent 24%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.36), rgba(15, 23, 42, 0));
+}
+
+.md-typeset > h2 {
+  align-items: center;
+  display: flex;
+  gap: 0.85rem;
+  margin-top: 2.9rem;
+}
+
+.md-typeset > h2::after {
+  background: linear-gradient(90deg, rgba(15, 118, 110, 0.32), rgba(8, 145, 178, 0.08));
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  min-width: 3.5rem;
+}
+
+.md-typeset > h2 + p {
+  max-width: 64rem;
 }
 
 .md-typeset code {
@@ -197,10 +232,12 @@ button {
 
 .bijux-panel {
   background: var(--bijux-surface-gradient), var(--bijux-panel);
+  backdrop-filter: blur(10px);
   border: 1px solid var(--bijux-border);
   border-radius: 1rem;
   box-shadow: var(--bijux-card-shadow);
   min-height: 100%;
+  overflow: hidden;
   padding: 1rem 1.1rem;
   position: relative;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
@@ -222,6 +259,7 @@ button {
 
 .bijux-callout {
   background: linear-gradient(135deg, rgba(15, 118, 110, 0.12), rgba(8, 145, 178, 0.08));
+  backdrop-filter: blur(10px);
   border: 1px solid var(--bijux-border);
   border-radius: 1rem;
   box-shadow: var(--bijux-card-shadow);
@@ -234,9 +272,12 @@ button {
     radial-gradient(circle at top right, rgba(13, 148, 136, 0.18), transparent 34%),
     radial-gradient(circle at left center, rgba(8, 145, 178, 0.12), transparent 28%),
     linear-gradient(140deg, rgba(255, 255, 255, 0.94), rgba(236, 245, 244, 0.78));
+  backdrop-filter: blur(12px);
   border: 1px solid rgba(15, 118, 110, 0.14);
   border-radius: 1.4rem;
   box-shadow: 0 28px 64px rgba(15, 23, 42, 0.12);
+  display: grid;
+  gap: 0.55rem;
   margin: 0 0 1.6rem;
   overflow: hidden;
   padding: 1.5rem 1.45rem 1.35rem;
@@ -292,7 +333,7 @@ button {
   z-index: 1;
 }
 
-.bijux-signal-row {
+.bijux-topic-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.7rem;
@@ -301,7 +342,7 @@ button {
   z-index: 1;
 }
 
-.bijux-signal-pill {
+.bijux-topic-pill {
   background: rgba(255, 255, 255, 0.76);
   border: 1px solid rgba(15, 118, 110, 0.16);
   border-radius: 999px;
@@ -327,12 +368,18 @@ button {
   font-weight: 700;
   min-height: 2.6rem;
   padding-inline: 1.15rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
 }
 
 .md-typeset .md-button--primary {
   background: linear-gradient(135deg, #0f766e, #155e75);
   border-color: transparent;
   box-shadow: 0 12px 28px rgba(15, 118, 110, 0.22);
+}
+
+.md-typeset .md-button:hover {
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.14);
+  transform: translateY(-1px);
 }
 
 .bijux-site-tabs,
@@ -452,11 +499,27 @@ button {
   color: var(--bijux-hub-link);
   font-size: 0.8rem;
   font-weight: 700;
+  isolation: isolate;
   letter-spacing: 0.01em;
   line-height: 1.2;
   padding: 0.45rem 0.85rem;
+  position: relative;
   text-decoration: none;
-  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.bijux-tabs__link::after {
+  background: var(--bijux-nav-indicator);
+  border-radius: 999px;
+  bottom: 0.24rem;
+  content: "";
+  height: 0.14rem;
+  inset-inline: 0.85rem;
+  opacity: 0;
+  position: absolute;
+  transform: scaleX(0.45);
+  transform-origin: center;
+  transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
 .bijux-tabs__link--hub {
@@ -481,7 +544,9 @@ button {
 .bijux-hub-strip .bijux-tabs__item--active .bijux-tabs__link {
   background: var(--bijux-hub-link-active-bg);
   border-color: var(--bijux-hub-border);
+  box-shadow: var(--bijux-nav-active-shadow);
   color: #fff;
+  transform: translateY(-1px);
 }
 
 .bijux-tabs__link--site {
@@ -494,7 +559,9 @@ button {
 .bijux-site-tabs .bijux-tabs__item--active .bijux-tabs__link {
   background: rgba(255, 255, 255, 0.14);
   border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: var(--bijux-nav-active-shadow);
   color: #fff;
+  transform: translateY(-1px);
 }
 
 .bijux-tabs__link--detail {
@@ -515,7 +582,15 @@ button {
 .bijux-detail-tabs .bijux-tabs__item--active .bijux-tabs__link {
   background: var(--bijux-detail-link-active-bg);
   border-color: var(--bijux-detail-border);
+  box-shadow: var(--bijux-nav-active-shadow);
   color: var(--bijux-ink);
+  transform: translateY(-1px);
+}
+
+.bijux-tabs__item--active .bijux-tabs__link::after,
+.bijux-tabs__link[aria-current="page"]::after {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 .bijux-site-tabs .md-grid,
@@ -674,6 +749,7 @@ button {
 .md-sidebar--primary .md-nav__item--active > .md-nav__container > .md-nav__link,
 .md-sidebar--primary .md-nav__link--active {
   background: rgba(13, 148, 136, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(13, 148, 136, 0.14), 0 10px 22px rgba(15, 23, 42, 0.08);
   color: var(--bijux-ink);
   font-weight: 700;
 }
@@ -814,11 +890,11 @@ button {
     line-height: 1.72;
   }
 
-  .bijux-signal-row {
+  .bijux-topic-row {
     gap: 0.55rem;
   }
 
-  .bijux-signal-pill {
+  .bijux-topic-pill {
     font-size: 0.72rem;
     justify-content: center;
     width: 100%;
@@ -879,9 +955,11 @@ button {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.48)),
     var(--bijux-panel);
+  backdrop-filter: blur(10px);
   border: 1px solid var(--bijux-border);
   border-radius: 1.15rem;
   box-shadow: var(--bijux-card-shadow);
+  overflow: hidden;
   padding: 1.15rem 1.1rem;
   position: relative;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
@@ -895,6 +973,21 @@ button {
   inset-block-start: 0.95rem;
   inset-inline: 1.1rem 35%;
   position: absolute;
+}
+
+.bijux-showcase-card::after {
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.16), transparent 68%);
+  content: "";
+  height: 8.5rem;
+  position: absolute;
+  right: -2.5rem;
+  top: -2.5rem;
+  width: 8.5rem;
+}
+
+.bijux-showcase-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .bijux-showcase-card > h2 {
@@ -931,7 +1024,7 @@ button {
 .bijux-panel:hover,
 .bijux-showcase-card:hover {
   border-color: rgba(15, 118, 110, 0.22);
-  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.12);
+  box-shadow: var(--bijux-card-shadow-hover);
   transform: translateY(-2px);
 }
 

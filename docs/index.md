@@ -13,13 +13,13 @@ last_reviewed: 2026-04-12
   <div class="bijux-hero__eyebrow">runtime systems, data delivery, scientific products, and technical education</div>
   <h1 class="bijux-hero__title">Architecture, delivery, and domain work made inspectable.</h1>
   <p class="bijux-hero__lede"><code>bijux.io</code> is the public map of the Bijux body of work: execution and governance systems, knowledge and data services, applied bioinformatics products, and technical programs. It is organized so readers can move from a concise overview into repository handbooks, published destinations, and source surfaces without losing the thread.</p>
-  <div class="bijux-signal-row">
-    <span class="bijux-signal-pill">platform architecture</span>
-    <span class="bijux-signal-pill">runtime governance</span>
-    <span class="bijux-signal-pill">data-service design</span>
-    <span class="bijux-signal-pill">bioinformatics software</span>
-    <span class="bijux-signal-pill">documentation as delivery</span>
-    <span class="bijux-signal-pill">teaching through systems</span>
+  <div class="bijux-topic-row">
+    <span class="bijux-topic-pill">platform architecture</span>
+    <span class="bijux-topic-pill">runtime governance</span>
+    <span class="bijux-topic-pill">data-service design</span>
+    <span class="bijux-topic-pill">bioinformatics software</span>
+    <span class="bijux-topic-pill">documentation as delivery</span>
+    <span class="bijux-topic-pill">teaching through systems</span>
   </div>
 </section>
 
