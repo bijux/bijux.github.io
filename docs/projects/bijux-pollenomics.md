@@ -19,17 +19,34 @@ domain work.
 <a class="md-button" href="https://github.com/bijux/bijux-pollenomics">Open repository</a>
 </div>
 
-## What Pollenomics Reveals
+## Why It Matters
 
-- domain narratives grounded in evidence mapping rather than generic dashboards
-- product thinking that respects scientific context, historical context, and technical structure at once
-- engineering discipline applied to a domain that is unusual enough to require careful abstraction
+`bijux-pollenomics` is compelling because it takes an unusual domain and
+makes the outputs inspectable: tracked source data, rebuildable report
+bundles, a Nordic evidence atlas, and a documentation surface that
+explains where those artifacts come from.
 
-## Inspect Pollenomics When
+## What Pollenomics Makes Visible
+
+- evidence mapping framed as a reproducible product surface, not a one-off analysis notebook
+- tracked data, checked-in publication artifacts, and explicit rebuild paths
+- technical architecture adapted to archaeology-facing and field-oriented context without losing clarity
+- honest scope boundaries around what exists today and what does not
+
+## Public Signals To Inspect
+
+| Signal | What to inspect |
+| --- | --- |
+| reproducible publication | tracked `data/` and `docs/report/` outputs, plus the atlas and country bundles |
+| uncommon domain modeling | the archaeology, eDNA, aDNA, and pollenomics framing in the docs and repository layout |
+| scope discipline | the explicit limits around current capabilities, source categories, and report outputs |
+| public proof | the runtime handbook, data reference, and published Nordic atlas material |
+
+## Start Here When
 
 - the question is about evidence mapping, archaeology-facing context, or field-site selection
 - you want to understand how the portfolio handles uncommon domain boundaries
-- the work is product-specific and evidence-heavy rather than generic platform engineering
+- you care whether unusual domain work stays reproducible and reviewable
 
 ## Why It Matters In The Portfolio
 
