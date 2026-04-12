@@ -47,12 +47,12 @@ flowchart TB
 | Domain products | proteomics, pollenomics, evidence mapping, and field-oriented product framing | the platform posture survives subject-matter pressure and uncommon abstractions |
 | Learning | programs, deep dives, and reusable teaching structure | the same technical language becomes explainable and teachable without being diluted |
 
-## Why The Split Is Persuasive
+## Why The Split Holds Up
 
 Readers do not need a page claiming sophistication directly. They can
 infer it when the split remains coherent across runtime, delivery,
 domain, and learning surfaces without collapsing into one vague
-repository or one oversized story. The map is persuasive when each layer
+repository or one oversized story. The map holds up when each layer
 has a stable job and the boundaries still make sense after readers open
 the repository pages.
 

@@ -35,7 +35,7 @@ page.
 
 ## How To Use This Page
 
-- use the documentation links when you want the strongest public tour of a repository
+- use the documentation links when you want the clearest guided tour of a repository
 - use the repository links when you want to inspect structure, files, and source history directly
 - use the hub as the routing layer when you know the question but not yet the owning repository
 

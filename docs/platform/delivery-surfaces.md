@@ -16,8 +16,8 @@ between presentation and implementation.
 
 ## Where Delivery Shows Up
 
-| Signal | What to inspect | Why it matters |
-| --- | --- |
+| Surface | What to inspect | Why it matters |
+| --- | --- | --- |
 | Contract discipline | repository docs, generated artifacts, schema surfaces, and explicit handbook ownership | serious systems make their interfaces and operating rules visible |
 | Release posture | release workflows, published docs, versioned repositories, and visible distribution surfaces | public work should show how it is built, checked, and published |
 | Operational thinking | runtime handbooks, validation commands, docs checks, and repository automation | delivery quality is easier to trust when routine checks are part of the workflow |
@@ -33,11 +33,11 @@ between presentation and implementation.
 
 ## What Strong Public Delivery Looks Like
 
-The most convincing evidence is not any single badge, workflow, or
-diagram. It is the consistency between the public story and the public
-files. If a portfolio claims systems thinking, the repositories should
-show bounded systems. If it claims delivery discipline, the docs and
-release surfaces should withstand basic scrutiny.
+What matters most is not any single badge, workflow, or diagram. It is
+the consistency between the public story and the public files. If a
+portfolio claims systems thinking, the repositories should show bounded
+systems. If it claims delivery discipline, the docs and release
+surfaces should withstand basic scrutiny.
 
 ## Fast Routes
 

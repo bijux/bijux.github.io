@@ -21,10 +21,10 @@ machinery that should remain stable beneath higher-level products.
 
 ## Repository Shape
 
-`bijux-core` is where the portfolio becomes harder to dismiss as
-presentation. The repository owns the command runtime and DAG execution
-backbone that higher-level systems depend on, while keeping governance,
-evidence, and release discipline visible in the same public surface.
+`bijux-core` is where runtime and governance stop being abstract. The
+repository owns the command runtime and DAG execution backbone that
+higher-level systems depend on, while keeping governance, evidence, and
+release discipline visible in the same public surface.
 
 ## What Lives Here
 
@@ -45,7 +45,7 @@ evidence, and release discipline visible in the same public surface.
 ## Best Entry Questions
 
 - the question is about CLI behavior, DAG execution, runtime control, or release discipline
-- you want the strongest public evidence of platform engineering structure
+- you want the clearest public route into platform engineering structure
 - you care whether governance and release posture are visible instead of implied
 
 ## In The Larger Picture

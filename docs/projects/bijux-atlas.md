@@ -10,9 +10,9 @@ last_reviewed: 2026-04-12
 # Bijux Atlas
 
 `bijux-atlas` is the delivery and operational surface for services,
-datasets, APIs, and docs control-plane behavior. It is the strongest
-public signal in the portfolio for data delivery, service architecture,
-and operational visibility.
+datasets, APIs, and docs control-plane behavior. It is the clearest
+public route in the site for data delivery, service architecture, and
+operational visibility.
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-atlas/">Open Atlas docs</a>
@@ -41,7 +41,7 @@ artifacts.
 | service architecture | the split between CLI, server, OpenAPI export, and maintainer control plane |
 | data delivery posture | immutable dataset and artifact language in the docs and README |
 | operational seriousness | ops, configs, reporting, and documentation validation behavior |
-| public proof | the handbook structure and published docs site that route into concrete service surfaces |
+| public route | the handbook structure and published docs site that route into concrete service surfaces |
 
 ## Best Entry Questions
 
@@ -53,4 +53,4 @@ artifacts.
 
 Atlas shows that the work extends beyond internal architecture into
 delivery surfaces that have to be published, validated, and operated
-credibly.
+in the open.

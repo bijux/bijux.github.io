@@ -33,9 +33,9 @@ work quality.
 | domain products | `bijux-proteomics`, `bijux-pollenomics` | domain systems inherit platform discipline instead of becoming isolated one-off projects |
 | learning surface | `bijux-masterclass` | the same engineering language becomes teachable, reusable, and public-facing |
 
-## Evaluation Shortcuts
+## Quick Routes
 
-| If you are evaluating... | Open these repositories first |
+| If you are starting from... | Open these repositories first |
 | --- | --- |
 | platform engineering and runtime design | `bijux-core` -> `bijux-canon` |
 | data services and public delivery | `bijux-atlas` -> `bijux-canon` |
@@ -45,5 +45,5 @@ work quality.
 ## Reading Rule
 
 Use the matrix to choose the right repository quickly. Use the
-repository pages and handbook sites when the evaluation moves from
-orientation into proof.
+repository pages and handbook sites when orientation needs to turn into
+closer inspection.

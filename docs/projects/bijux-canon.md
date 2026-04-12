@@ -21,11 +21,11 @@ decomposition around AI and knowledge workflows.
 
 ## Repository Shape
 
-`bijux-canon` is persuasive because it resists the usual collapse of
-ingest, indexing, reasoning, orchestration, and policy into one blurred
-"AI platform" layer. The repository makes those concerns explicit
-through packages, contracts, compatibility surfaces, and runtime
-boundaries that readers can inspect directly.
+`bijux-canon` resists the usual collapse of ingest, indexing, reasoning,
+orchestration, and policy into one blurred "AI platform" layer. The
+repository makes those concerns explicit through packages, contracts,
+compatibility surfaces, and runtime boundaries that readers can inspect
+directly.
 
 ## What Lives Here
 
@@ -45,7 +45,7 @@ boundaries that readers can inspect directly.
 
 ## Best Entry Questions
 
-- the question is about ingest, indexing, reasoning, agents, or runtime proof
+- the question is about ingest, indexing, reasoning, agents, or runtime control
 - you want to see how a knowledge system is split into accountable components
 - you care whether AI-oriented architecture stays inspectable as the package family grows
 

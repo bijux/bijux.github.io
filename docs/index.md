@@ -85,7 +85,7 @@ the details.</div>
 ```mermaid
 flowchart LR
     hub["bijux.io"]
-    platform["platform argument"]
+    platform["platform guides"]
     projects["repository case studies"]
     learning["technical programs"]
     core["bijux-core"]
@@ -120,4 +120,4 @@ flowchart LR
 
 Use this page to choose where to inspect first. Once the strongest route
 is clear, move into the repository handbooks and let the public systems
-prove the depth.
+carry the detail.

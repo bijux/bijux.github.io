@@ -20,10 +20,10 @@ discipline carries into scientific and laboratory-adjacent work.
 
 ## Repository Shape
 
-`bijux-proteomics` is useful evidence because it treats protein
-discovery as a governed software system rather than a single pipeline.
-Runtime execution, domain contracts, decision intelligence, evidence
-governance, and lab planning are kept as explicit package boundaries.
+`bijux-proteomics` treats protein discovery as a governed software
+system rather than a single pipeline. Runtime execution, domain
+contracts, decision intelligence, evidence governance, and lab planning
+are kept as explicit package boundaries.
 
 ## What Lives Here
 
@@ -39,7 +39,7 @@ governance, and lab planning are kept as explicit package boundaries.
 | domain decomposition | the split across runtime, foundation, core, intelligence, knowledge, and lab packages |
 | governed product behavior | the repository’s emphasis on contracts, release discipline, and package-owned responsibilities |
 | scientific workflow maturity | the fact that lab planning and evidence resolution are explicit parts of the system model |
-| public proof | the package handbooks and release surfaces for the six published packages |
+| public route | the package handbooks and release surfaces for the six published packages |
 
 ## Best Entry Questions
 

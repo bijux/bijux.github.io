@@ -39,7 +39,7 @@ program-specific content, workflows, and verification routes.
 | technical communication | the program split across reproducible research and Python programming, plus their deep dives |
 | structured teaching | repository and program make targets, docs build rules, and per-program verification routes |
 | reusable curriculum design | the way each program keeps its own structure while living in one repository |
-| public proof | the published course books and the series site generated from the same repository state |
+| public route | the published course books and the series site generated from the same repository state |
 
 ## Best Entry Questions
 
@@ -49,5 +49,5 @@ program-specific content, workflows, and verification routes.
 
 ## In The Larger Picture
 
-Masterclass makes the portfolio more persuasive by showing that the work
-is not only buildable and operable, but also explainable.
+Masterclass shows that the work is not only buildable and operable, but
+also explainable.

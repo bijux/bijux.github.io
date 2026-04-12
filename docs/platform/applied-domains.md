@@ -9,11 +9,11 @@ last_reviewed: 2026-04-12
 
 # Applied Domains
 
-The public Bijux surface is not only about platform mechanics. The
-portfolio becomes more credible because the same engineering discipline
-is carried into domains where the data model, user expectations, and
-decision context are harder than generic infrastructure alone. This is
-where abstraction gets tested by real subject matter.
+The public Bijux surface is not only about platform mechanics. The work
+matters more because the same engineering discipline is carried into
+domains where the data model, user expectations, and decision context
+are harder than generic infrastructure alone. This is where abstraction
+gets tested by real subject matter.
 
 ## Domain Reach
 
@@ -26,9 +26,9 @@ where abstraction gets tested by real subject matter.
 
 ## Why This Matters
 
-Breadth alone is not persuasive. What matters is that the work moves
-between infrastructure, data systems, scientific products, and teaching
-without losing architectural clarity.
+Breadth alone does not help. What matters is that the work moves between
+infrastructure, data systems, scientific products, and teaching without
+losing architectural clarity.
 
 ## Domain-Driven Repositories
 

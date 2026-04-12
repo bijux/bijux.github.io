@@ -9,9 +9,9 @@ last_reviewed: 2026-04-12
 
 # Projects
 
-Use this section when you want the strongest public cross-section of the
-work itself. Each repository below reveals a different part of the same
-engineering posture, but not the same kind of evidence.
+Use this section when you want a concentrated cross-section of the work
+itself. Each repository below reveals a different part of the same
+system family through a different responsibility.
 
 <div class="bijux-showcase-grid">
   <article class="bijux-showcase-card">
@@ -82,9 +82,9 @@ engineering posture, but not the same kind of evidence.
   </article>
 </div>
 
-## What Each Repository Proves
+## What Each Repository Carries
 
-| Repository | The strongest public proof |
+| Repository | Open this to see |
 | --- | --- |
 | [Bijux Core](bijux-core.md) | execution backbone, release evidence, and governance that do not disappear into shell glue |
 | [Bijux Canon](bijux-canon.md) | contract-first knowledge-system design with visible package boundaries and compatibility discipline |
@@ -106,6 +106,5 @@ engineering posture, but not the same kind of evidence.
 
 ## Reading Rule
 
-Use the cards for orientation and the project pages for a tighter
-argument about what each repository contributes to the overall body of
-work.
+Use the cards for orientation and the project pages for a closer view of
+what each repository contributes to the overall body of work.

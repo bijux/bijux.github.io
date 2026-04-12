@@ -32,7 +32,7 @@ than by tool popularity.
 
 - workflow and automation thinking expressed as a teachable system
 - comfort with build, workflow, and reproducibility tooling that matters in real technical and scientific environments
-- capstone-backed programs where the claims stay attached to runnable proof
+- capstone-backed programs where the claims stay attached to executable capstones
 - the ability to teach system models instead of memorizing command syntax
 
 ## Open Here First
@@ -46,5 +46,5 @@ than by tool popularity.
 ## Best Entry Questions
 
 - you care about workflow systems, reproducibility, and scientific execution habits
-- you want proof that engineering discipline carries into research tooling and publication boundaries
+- you want to see engineering discipline carry into research tooling and publication boundaries
 - you want to inspect teaching material that is anchored to executable capstones

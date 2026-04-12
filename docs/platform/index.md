@@ -11,7 +11,7 @@ last_reviewed: 2026-04-12
 
 The public Bijux surface is intentionally split by responsibility. This
 section explains why the repository family is structured the way it is
-and what that structure says about the engineering posture behind it.
+and how that structure holds together in public.
 
 <div class="bijux-callout"><strong>The repository count matters less than the shape of the split.</strong>
 What matters here is that the split remains coherent under pressure.
@@ -23,9 +23,9 @@ engineering language is visible across all of them.</div>
 
 | Principle | Why it matters in public |
 | --- | --- |
-| boundaries before breadth | a portfolio becomes more believable when ownership is explicit instead of collapsed into a vague super-repository |
+| boundaries before breadth | clear ownership is easier to inspect than a vague super-repository |
 | delivery as part of design | documentation, release posture, and public routes should reinforce the architecture rather than decorate it |
-| domain pressure is part of the proof | the engineering posture should survive scientific and evidence-heavy contexts, not stop at generic tooling |
+| domain pressure belongs in the system | the engineering posture should survive scientific and evidence-heavy contexts, not stop at generic tooling |
 | explainability matters | systems that can be taught, sequenced, and documented clearly are usually better understood and easier to operate |
 
 ## System Shape
@@ -37,12 +37,12 @@ engineering language is visible across all of them.</div>
   <div class="bijux-panel"><h3>Products And Programs</h3><p>Proteomics, Pollenomics, and Masterclass show how the same system language survives domain products and technical education instead of remaining trapped in platform internals.</p></div>
 </div>
 
-## What This Branch Helps You Evaluate
+## What This Branch Helps You See
 
 - whether the repository split reflects real system boundaries
 - whether delivery posture is part of the architecture rather than an afterthought
 - whether the same engineering standards survive domain and learning contexts
-- whether the public surface gives enough proof to justify deeper inspection
+- whether the public surface is concrete enough to justify deeper inspection
 
 ## System Reading Order
 

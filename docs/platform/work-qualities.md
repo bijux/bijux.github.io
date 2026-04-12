@@ -52,4 +52,4 @@ of shape.</div>
 
 Do not treat this page as a conclusion. Treat it as a routing layer for
 inspection. The repositories and published documentation should carry
-the actual proof.
+the actual depth.
