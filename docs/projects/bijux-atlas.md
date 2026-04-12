@@ -19,7 +19,7 @@ and operational visibility.
 <a class="md-button" href="https://github.com/bijux/bijux-atlas">Open repository</a>
 </div>
 
-## Why It Matters
+## Repository Shape
 
 `bijux-atlas` is where the portfolio shows data-service work as an
 operated product surface rather than a loose data tool. The repository
@@ -27,29 +27,29 @@ publishes a CLI, server, OpenAPI export surface, and maintainer control
 plane around governed genomics dataset delivery and immutable query
 artifacts.
 
-## What Atlas Makes Visible
+## What Lives Here
 
 - API and dataset delivery treated as first-class product interfaces
 - immutable artifact thinking instead of ad hoc mutable dataset handling
 - docs-aware validation, operational reporting, and control-plane behavior as part of delivery
 - explicit runtime surfaces: CLI, server, OpenAPI export, and maintainer tooling
 
-## Public Signals To Inspect
+## Open Here First
 
-| Signal | What to inspect |
+| If you are looking for... | Open this part of Atlas |
 | --- | --- |
 | service architecture | the split between CLI, server, OpenAPI export, and maintainer control plane |
 | data delivery posture | immutable dataset and artifact language in the docs and README |
 | operational seriousness | ops, configs, reporting, and documentation validation behavior |
 | public proof | the handbook structure and published docs site that route into concrete service surfaces |
 
-## Start Here When
+## Best Entry Questions
 
 - the question is about API delivery, dataset publishing, or service behavior
 - you are tracing docs UX checks, ops validation, or operational evidence
 - you want the clearest public example of data-service engineering in the Bijux portfolio
 
-## Why It Matters In The Portfolio
+## In The Larger Picture
 
 Atlas shows that the work extends beyond internal architecture into
 delivery surfaces that have to be published, validated, and operated

@@ -19,7 +19,7 @@ decomposition around AI and knowledge workflows.
 <a class="md-button" href="https://github.com/bijux/bijux-canon">Open repository</a>
 </div>
 
-## Why It Matters
+## Repository Shape
 
 `bijux-canon` is persuasive because it resists the usual collapse of
 ingest, indexing, reasoning, orchestration, and policy into one blurred
@@ -27,29 +27,29 @@ ingest, indexing, reasoning, orchestration, and policy into one blurred
 through packages, contracts, compatibility surfaces, and runtime
 boundaries that readers can inspect directly.
 
-## What Canon Makes Visible
+## What Lives Here
 
 - a contract-first package family instead of one all-purpose AI library
 - explicit separation between ingest, index, reason, agent, and runtime responsibilities
 - compatibility handled openly through dedicated package surfaces rather than hidden breaking changes
 - release and documentation discipline aligned with the repository layout
 
-## Public Signals To Inspect
+## Open Here First
 
-| Signal | What to inspect |
+| If you are looking for... | Open this part of Canon |
 | --- | --- |
 | knowledge-system boundaries | the package map across runtime, ingest, index, reason, and agent surfaces |
 | contract discipline | checked-in schemas, package-specific docs, and the repository-owned documentation structure |
 | compatibility judgment | the compat packages and consolidation material that keep older names explicit |
 | governed execution | runtime and replay language that makes control and verification part of the system model |
 
-## Start Here When
+## Best Entry Questions
 
 - the question is about ingest, indexing, reasoning, agents, or runtime proof
 - you want to see how a knowledge system is split into accountable components
 - you care whether AI-oriented architecture stays inspectable as the package family grows
 
-## Why It Matters In The Portfolio
+## In The Larger Picture
 
 Canon demonstrates architectural judgment in a space where systems often
 collapse into indistinct AI stories. The split itself carries the
