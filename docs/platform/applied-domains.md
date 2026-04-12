@@ -24,9 +24,9 @@ subject matter.
 | Bioinformatics and scientific computing | products shaped around proteomics, pollenomics, evidence mapping, and scientific workflows rather than abstract examples |
 | Technical education | the ability to translate deep technical systems into reusable learning programs without flattening the underlying rigor |
 
-## Why This Branch Exists
+## Why This Branch Is Here
 
-Breadth alone is not useful. What matters is that the work moves between
+Breadth alone is not useful. The important point is that the work moves between
 infrastructure, data systems, scientific products, and teaching without
 losing architectural clarity.
 
@@ -34,8 +34,8 @@ losing architectural clarity.
 
 <div class="bijux-panel-grid">
   <div class="bijux-panel"><h3>Bijux Proteomics</h3><p>A domain product surface for proteomics and discovery work, where engineering structure has to remain clear while serving laboratory and scientific context.</p></div>
-  <div class="bijux-panel"><h3>Bijux Pollenomics</h3><p>An evidence-mapping and site-selection surface that shows how technical architecture can support archaeology, eDNA, aDNA, and pollenomics narratives without collapsing into generic geodata language.</p></div>
-  <div class="bijux-panel"><h3>Bijux Masterclass</h3><p>A learning surface that demonstrates the ability to turn systems discipline into technical programs that still respect architecture, workflow rigor, and operational detail.</p></div>
+  <div class="bijux-panel"><h3>Bijux Pollenomics</h3><p>An evidence-mapping and site-selection surface where technical architecture supports archaeology, eDNA, aDNA, and pollenomics narratives without collapsing into generic geodata language.</p></div>
+  <div class="bijux-panel"><h3>Bijux Masterclass</h3><p>A learning surface where systems discipline is turned into technical programs that still respect architecture, workflow rigor, and operational detail.</p></div>
 </div>
 
 ## Questions Worth Asking
