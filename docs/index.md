@@ -10,85 +10,85 @@ last_reviewed: 2026-04-12
 # Bijux
 
 <section class="bijux-hero">
-  <div class="bijux-hero__eyebrow">systems, services, domain products, and technical education</div>
-  <h1 class="bijux-hero__title">A public body of work built around architecture, delivery discipline, and domain-aware engineering.</h1>
-  <p class="bijux-hero__lede"><code>bijux.io</code> is the public surface of a deliberately connected portfolio: governed runtime systems, documentation infrastructure, data delivery platforms, applied bioinformatics products, and technical education that is built with the same engineering discipline as the software itself.</p>
+  <div class="bijux-hero__eyebrow">runtime systems, data delivery, scientific products, and technical education</div>
+  <h1 class="bijux-hero__title">Architecture, delivery, and domain work made inspectable.</h1>
+  <p class="bijux-hero__lede"><code>bijux.io</code> is a public map of the Bijux body of work: execution and governance systems, knowledge and data services, applied bioinformatics products, and learning programs built from the same engineering discipline. The point is not to compress everything into one slogan. The point is to help serious readers inspect boundaries, delivery posture, and technical judgment through the work itself.</p>
   <div class="bijux-signal-row">
     <span class="bijux-signal-pill">platform architecture</span>
-    <span class="bijux-signal-pill">data services</span>
-    <span class="bijux-signal-pill">bioinformatics products</span>
-    <span class="bijux-signal-pill">documentation as product</span>
+    <span class="bijux-signal-pill">runtime governance</span>
+    <span class="bijux-signal-pill">data-service design</span>
+    <span class="bijux-signal-pill">bioinformatics software</span>
+    <span class="bijux-signal-pill">documentation as delivery</span>
     <span class="bijux-signal-pill">teaching through systems</span>
   </div>
 </section>
 
-<div class="bijux-callout"><strong>Start here when you want to understand the shape of the work before opening a single repository.</strong>
-The point of this hub is not to summarize everything into one page. The
-point is to make the structure legible enough that a careful reader can
-see how platform thinking, delivery discipline, domain products, and
-teaching practice reinforce each other across the Bijux ecosystem.</div>
+<div class="bijux-callout"><strong>A strong portfolio should not ask for trust before inspection.</strong>
+This hub is strongest when it helps readers move quickly from a public
+argument into repository structure, published documentation, delivery
+surfaces, and domain-specific systems that hold up under closer
+inspection.</div>
 
 <div class="bijux-panel-grid">
-  <div class="bijux-panel"><h3>Systems With Boundaries</h3><p>The repositories are split by responsibility on purpose. Runtime, knowledge systems, delivery surfaces, and domain applications are separated clearly enough that ownership can stay visible under change.</p></div>
-  <div class="bijux-panel"><h3>Operationally Serious</h3><p>The public work is not presented as loose experiments. It is documented through contracts, release flows, evidence artifacts, navigation discipline, and repositories that are built to stand up to inspection.</p></div>
-  <div class="bijux-panel"><h3>Domain-Aware</h3><p>The platform work does not stop at generic infrastructure. It carries into proteomics, pollenomics, evidence mapping, data products, and learning programs where technical architecture has to meet real subject matter.</p></div>
+  <div class="bijux-panel"><h3>Boundaries That Survive Change</h3><p>Core, Canon, Atlas, and the domain repositories are split by real responsibility. Runtime control, knowledge workflows, delivery surfaces, and scientific products are separate enough that ownership stays legible when the system grows.</p></div>
+  <div class="bijux-panel"><h3>Delivery, Not Portfolio Theater</h3><p>The public story routes into documentation systems, repository handbooks, published destinations, and operational surfaces. The material is meant to be checked, not merely read.</p></div>
+  <div class="bijux-panel"><h3>Domain Pressure, Not Generic Demos</h3><p>The engineering posture carries into proteomics, pollenomics, evidence mapping, and technical education. That matters because architecture is easier to claim in the abstract than under subject-matter constraints.</p></div>
+  <div class="bijux-panel"><h3>Explainable Technical Depth</h3><p>The same body of work is also teachable. When systems thinking can travel from implementation into clear learning programs without flattening the structure, that is a meaningful engineering signal on its own.</p></div>
 </div>
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="projects/">Browse the work</a>
-<a class="md-button" href="platform/">Open the platform narrative</a>
-<a class="md-button" href="learning/">Open the learning surface</a>
+<a class="md-button md-button--primary" href="projects/">Browse the repositories</a>
+<a class="md-button" href="platform/">Inspect the platform story</a>
+<a class="md-button" href="start-here/">Choose a reading path</a>
 </div>
 
-## What This Surface Makes Visible
+## What A Careful Reader Can Prove Quickly
 
-| Area | What a careful reader can see |
+| If the question is... | Open this first | Why it matters |
 | --- | --- |
-| Platform engineering | systems are organized by clear ownership, constrained interfaces, and documentation that behaves like part of the product |
-| Software engineering | repositories show architectural separation, operational guardrails, release discipline, and maintainable information design |
-| Data and service engineering | Atlas, Canon, and Core expose delivery, runtime, evidence, API, and contract thinking as first-class concerns |
-| Applied bioinformatics | Proteomics and Pollenomics show how the same engineering posture extends into domain-specific products rather than stopping at infrastructure |
+| are the repositories split by real responsibility or just naming | [Platform overview](platform/index.md) -> [System map](platform/system-map.md) | a coherent split across runtime, knowledge, delivery, and domain work is one of the strongest signals in the portfolio |
+| is there delivery and operational seriousness behind the presentation | [Delivery signals](platform/delivery-signals.md) -> [Bijux Atlas](projects/bijux-atlas.md) | a credible public surface should route into maintained systems, not brochure copy |
+| does the work extend beyond generic infrastructure | [Applied domains](platform/applied-domains.md) -> [Bijux Proteomics](projects/bijux-proteomics.md) -> [Bijux Pollenomics](projects/bijux-pollenomics.md) | domain-heavy systems show whether the engineering posture survives real subject-matter pressure |
+| can the technical thinking be explained as clearly as it is built | [Learning catalog](learning/index.md) -> [Bijux Masterclass](projects/bijux-masterclass.md) | teaching depth is a strong signal that the underlying systems are understood rather than assembled mechanically |
 
-## Navigate By Intent
+## What This Surface Is Arguing
 
-| If you want to understand... | Open this first |
-| --- | --- |
-| how the repositories fit together as one engineering system | [Platform overview](platform/index.md) |
-| the strongest cross-section of public work | [Project catalog](projects/index.md) |
-| how the engineering style carries into teaching | [Learning catalog](learning/index.md) |
-| the fastest routes through the strongest public material | [Reading paths](start-here.md) |
+- the repositories form a system family instead of a loose namespace
+- architecture is visible through boundaries, not claimed through titles
+- delivery discipline shows up in documentation, navigation, and published destinations
+- the work remains structured when it moves into scientific and educational contexts
 
-## Fast Reading Paths
+## Start By Evaluation Mode
 
 <div class="bijux-showcase-grid">
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">for architecture-first readers</div>
-    <h2>Start with platform structure</h2>
-    <p>Open the system map, then Core and Canon, if you want to assess architecture, system boundaries, and technical judgment first.</p>
+    <h2>Start with the system split</h2>
+    <p>Open the system map, then Core and Canon, if you want to evaluate architecture, boundary setting, and runtime judgment before anything else.</p>
     <p><a href="start-here.md">Open the reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">for delivery-focused readers</div>
-    <h2>Start with service and proof surfaces</h2>
-    <p>Open Delivery Signals, then Atlas, if you care most about operational seriousness, data delivery, and public proof paths.</p>
+    <h2>Start with delivery surfaces</h2>
+    <p>Open Delivery Signals, then Atlas, if you care most about service design, operational visibility, documentation quality, and proof paths.</p>
     <p><a href="start-here.md">Open the reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">for domain and teaching readers</div>
-    <h2>Start with scientific and learning work</h2>
-    <p>Open Applied Domains, then Proteomics, Pollenomics, and Masterclass, if you want to see how engineering structure survives in specialized contexts.</p>
+    <h2>Start where the work gets harder</h2>
+    <p>Open Applied Domains, then Proteomics, Pollenomics, and Masterclass, if you want to see how engineering structure survives scientific context and public explanation.</p>
     <p><a href="start-here.md">Open the reading paths</a></p>
   </article>
 </div>
 
-## Public Surface Map
+## Portfolio Map
 
 ```mermaid
 flowchart LR
     hub["bijux.io"]
-    platform["platform narrative"]
-    projects["repository portfolio"]
-    learning["learning programs"]
+    platform["platform argument"]
+    projects["repository case studies"]
+    learning["technical programs"]
     core["bijux-core"]
     canon["bijux-canon"]
     atlas["bijux-atlas"]
@@ -106,19 +106,19 @@ flowchart LR
     learning --> masterclass
 ```
 
-## Main Repositories
+## Repository Family
 
-| Repository | Role in the system family | Docs |
+| Repository | Role in the portfolio | Strongest public signal |
 | --- | --- | --- |
-| `bijux-core` | CLI, DAG runtime, repository governance, evidence, and release backbone | [Core docs](https://bijux.io/bijux-core/) |
-| `bijux-canon` | governed ingest, retrieval, reasoning, orchestration, and runtime control | [Canon docs](https://bijux.io/bijux-canon/) |
-| `bijux-atlas` | data delivery, service interfaces, dataset operations, and docs control-plane behavior | [Atlas docs](https://bijux.io/bijux-atlas/) |
-| `bijux-proteomics` | proteomics and discovery-oriented product system | [Proteomics docs](https://bijux.io/bijux-proteomics/) |
-| `bijux-pollenomics` | evidence mapping and site-selection product system | [Pollenomics docs](https://bijux.io/bijux-pollenomics/) |
-| `bijux-masterclass` | public programs and deep-dive teaching tracks | [Masterclass docs](https://bijux.io/bijux-masterclass/) |
+| `bijux-core` | execution and governance backbone | runtime control, DAG behavior, evidence, and release posture |
+| `bijux-canon` | governed knowledge-system stack | ingest, indexing, reasoning, orchestration, and controlled runtime boundaries |
+| `bijux-atlas` | data and service delivery surface | APIs, datasets, operational reporting, and docs-aware delivery behavior |
+| `bijux-proteomics` | scientific product system | proteomics-oriented engineering under real domain pressure |
+| `bijux-pollenomics` | evidence mapping product system | archaeology-facing context, site-selection framing, and unusual domain boundaries |
+| `bijux-masterclass` | public learning surface | the ability to explain architecture, language depth, and workflow rigor clearly |
 
 ## Reading Rule
 
-Use this page to understand the body of work before choosing a handbook.
-Once the owned surface is clear, move into the repository docs and let
-the repository prove the details.
+Use this page to choose where to inspect first. Once the strongest route
+is clear, move into the repository handbooks and let the public systems
+prove the depth.
