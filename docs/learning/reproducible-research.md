@@ -15,9 +15,9 @@ engineering structure through practical research tooling without
 reducing the work to tool-specific recipes.
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="https://bijux.io/bijux-masterclass/reproducible-research/">Open the program</a>
-<a class="md-button" href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-make/">Deep Dive Make</a>
-<a class="md-button" href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-snakemake/">Deep Dive Snakemake</a>
+<a class="md-button md-button--primary" href="https://bijux.io/bijux-masterclass/reproducible-research/">Open program docs</a>
+<a class="md-button" href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-make/">Open Deep Dive Make</a>
+<a class="md-button" href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-snakemake/">Open Deep Dive Snakemake</a>
 </div>
 
 ## Family Shape

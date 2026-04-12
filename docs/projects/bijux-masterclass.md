@@ -14,8 +14,8 @@ and deep-dive courses. It shows that the underlying engineering is clear
 enough to be taught without being diluted.
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="https://bijux.io/bijux-masterclass/">Open Masterclass docs</a>
-<a class="md-button" href="https://github.com/bijux/bijux-masterclass">Open repository</a>
+<a class="md-button md-button--primary" href="https://bijux.io/bijux-masterclass/">Open published docs</a>
+<a class="md-button" href="https://github.com/bijux/bijux-masterclass">Open GitHub repository</a>
 </div>
 
 ## Repository Shape

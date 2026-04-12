@@ -14,8 +14,8 @@ the Bijux repository family. It shows how the same platform and software
 discipline carries into scientific and laboratory-adjacent work.
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="https://bijux.io/bijux-proteomics/">Open Proteomics docs</a>
-<a class="md-button" href="https://github.com/bijux/bijux-proteomics">Open repository</a>
+<a class="md-button md-button--primary" href="https://bijux.io/bijux-proteomics/">Open published docs</a>
+<a class="md-button" href="https://github.com/bijux/bijux-proteomics">Open GitHub repository</a>
 </div>
 
 ## Repository Shape

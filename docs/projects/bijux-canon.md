@@ -15,8 +15,8 @@ acceptance. It is a clear route into system decomposition around AI and
 knowledge workflows.
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="https://bijux.io/bijux-canon/">Open Canon docs</a>
-<a class="md-button" href="https://github.com/bijux/bijux-canon">Open repository</a>
+<a class="md-button md-button--primary" href="https://bijux.io/bijux-canon/">Open published docs</a>
+<a class="md-button" href="https://github.com/bijux/bijux-canon">Open GitHub repository</a>
 </div>
 
 ## Repository Shape

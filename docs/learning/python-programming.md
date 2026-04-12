@@ -15,9 +15,9 @@ abstraction and software design without reducing them to framework
 recipes.
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="https://bijux.io/bijux-masterclass/python-programming/">Open the program</a>
-<a class="md-button" href="https://bijux.io/bijux-masterclass/python-programming/python-object-oriented-programming/">Object-Oriented</a>
-<a class="md-button" href="https://bijux.io/bijux-masterclass/python-programming/python-functional-programming/">Functional</a>
+<a class="md-button md-button--primary" href="https://bijux.io/bijux-masterclass/python-programming/">Open program docs</a>
+<a class="md-button" href="https://bijux.io/bijux-masterclass/python-programming/python-object-oriented-programming/">Open Object-Oriented</a>
+<a class="md-button" href="https://bijux.io/bijux-masterclass/python-programming/python-functional-programming/">Open Functional</a>
 </div>
 
 ## Family Shape

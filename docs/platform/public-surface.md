@@ -14,7 +14,7 @@ open directly from `bijux.io` today. The goal is to make the hub
 behave like a maintained documentation network, not a static landing
 page.
 
-## Documentation Destinations
+## Published Documentation
 
 - [bijux-core](https://bijux.io/bijux-core/)
 - [bijux-canon](https://bijux.io/bijux-canon/)

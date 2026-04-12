@@ -15,8 +15,8 @@ the site for data delivery, service architecture, and operational
 visibility.
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="https://bijux.io/bijux-atlas/">Open Atlas docs</a>
-<a class="md-button" href="https://github.com/bijux/bijux-atlas">Open repository</a>
+<a class="md-button md-button--primary" href="https://bijux.io/bijux-atlas/">Open published docs</a>
+<a class="md-button" href="https://github.com/bijux/bijux-atlas">Open GitHub repository</a>
 </div>
 
 ## Repository Shape

@@ -15,8 +15,8 @@ how structured engineering can support field-oriented, evidence-heavy
 domain work.
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="https://bijux.io/bijux-pollenomics/">Open Pollenomics docs</a>
-<a class="md-button" href="https://github.com/bijux/bijux-pollenomics">Open repository</a>
+<a class="md-button md-button--primary" href="https://bijux.io/bijux-pollenomics/">Open published docs</a>
+<a class="md-button" href="https://github.com/bijux/bijux-pollenomics">Open GitHub repository</a>
 </div>
 
 ## Repository Shape
