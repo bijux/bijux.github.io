@@ -108,6 +108,7 @@ button {
 .md-typeset li {
   line-height: 1.75;
   color: var(--bijux-ink);
+  overflow-wrap: anywhere;
 }
 
 .md-main {
@@ -174,6 +175,11 @@ button {
   font-size: 0.74rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  vertical-align: top;
+}
+
+.md-typeset table:not([class]) td {
+  vertical-align: top;
 }
 
 .md-typeset table:not([class]) tr:nth-child(even) td {
@@ -891,14 +897,16 @@ button {
   }
 
   .bijux-panel-grid,
-  .bijux-media-grid {
+  .bijux-media-grid,
+  .bijux-showcase-grid {
     gap: 0.9rem;
     grid-template-columns: 1fr;
     margin: 1.25rem 0;
   }
 
   .bijux-panel,
-  .bijux-callout {
+  .bijux-callout,
+  .bijux-showcase-card {
     border-radius: 0.9rem;
     box-shadow: 0 12px 26px rgba(30, 41, 89, 0.08);
     padding: 0.95rem 1rem;
@@ -948,9 +956,16 @@ button {
 
   .md-typeset table:not([class]) {
     display: block;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     overflow-x: auto;
-    white-space: nowrap;
+    white-space: normal;
+    width: 100%;
+  }
+
+  .md-typeset table:not([class]) th,
+  .md-typeset table:not([class]) td {
+    min-width: 10.5rem;
+    white-space: normal;
   }
 
   .md-typeset .mermaid {
@@ -959,7 +974,7 @@ button {
 
   .md-typeset .mermaid svg {
     max-width: none;
-    min-width: 24rem;
+    min-width: 18rem;
   }
 
   .md-typeset .md-button {
@@ -1062,7 +1077,9 @@ button {
   display: inline-flex;
   font-size: 0.74rem;
   font-weight: 700;
+  line-height: 1.35;
   padding: 0.35rem 0.68rem;
+  text-align: center;
 }
 
 .bijux-panel:hover,
