@@ -9,35 +9,48 @@ last_reviewed: 2026-04-12
 
 # Platform
 
-The public Bijux surface is intentionally split by responsibility. The
-hub should explain the shape of the system family without flattening the
-differences that each repository owns.
+The public Bijux surface is intentionally split by responsibility. This
+section explains why the repository family is structured the way it is
+and what that structure says about the engineering posture behind it.
 
-<div class="bijux-callout"><strong>The most important signal here is not the number of repositories.</strong>
-The important signal is that the split stays coherent. Runtime
-governance, knowledge systems, delivery surfaces, domain applications,
-and teaching material all have their own homes, but they still read like
-parts of one engineering language.</div>
+<div class="bijux-callout"><strong>The strongest platform signal here is not repository count.</strong>
+The stronger signal is that the split remains coherent under pressure.
+Runtime governance, knowledge workflows, delivery surfaces, domain
+products, and learning programs each have their own home, but the same
+engineering language is visible across all of them.</div>
 
-## Platform Shape
+## Platform Principles
+
+| Principle | Why it matters in public |
+| --- | --- |
+| boundaries before breadth | a portfolio becomes more believable when ownership is explicit instead of collapsed into a vague super-repository |
+| delivery as part of design | documentation, release posture, and public routes should reinforce the architecture rather than decorate it |
+| domain pressure is part of the proof | the engineering posture should survive scientific and evidence-heavy contexts, not stop at generic tooling |
+| explainability matters | systems that can be taught, sequenced, and documented clearly are usually better understood and easier to operate |
+
+## System Shape
 
 <div class="bijux-panel-grid">
-  <div class="bijux-panel"><h3>Core</h3><p>The execution and governance backbone for commands, DAG behavior, evidence, and repository discipline.</p></div>
-  <div class="bijux-panel"><h3>Canon</h3><p>The governed knowledge-system stack for ingest, indexing, reasoning, orchestration, and runtime acceptance.</p></div>
-  <div class="bijux-panel"><h3>Atlas</h3><p>The delivery and control-plane surface for APIs, datasets, docs UX checks, and operational reporting.</p></div>
+  <div class="bijux-panel"><h3>Core</h3><p>The execution and governance backbone for command surfaces, DAG behavior, evidence, and repository discipline.</p></div>
+  <div class="bijux-panel"><h3>Canon</h3><p>The governed knowledge-system stack for ingest, indexing, reasoning, orchestration, and controlled runtime behavior.</p></div>
+  <div class="bijux-panel"><h3>Atlas</h3><p>The delivery and control-plane surface for APIs, datasets, docs-aware checks, and operational reporting.</p></div>
+  <div class="bijux-panel"><h3>Products And Programs</h3><p>Proteomics, Pollenomics, and Masterclass show how the same system language survives domain products and technical education instead of remaining trapped in platform internals.</p></div>
 </div>
 
-## Domain Products
+## What This Branch Helps You Evaluate
 
-- `bijux-proteomics` applies the platform to proteomics and discovery work.
-- `bijux-pollenomics` applies it to evidence mapping, archaeology, and site selection.
-- `bijux-masterclass` turns the same discipline into public learning material.
+- whether the repository split reflects real system boundaries
+- whether delivery posture is part of the architecture rather than an afterthought
+- whether the same engineering standards survive domain and learning contexts
+- whether the public surface gives enough proof to justify deeper inspection
 
 ## System Reading Order
 
 | Read this first when you need to understand... | Open |
 | --- | --- |
+| which public signals matter most in the portfolio | [Engineering signals](engineering-signals.md) |
 | the layered structure of the whole public system family | [System map](system-map.md) |
+| the repository split at a glance | [Repository matrix](repository-matrix.md) |
 | where public engineering proof shows up across the repositories | [Delivery signals](delivery-signals.md) |
 | how the engineering extends into domain-heavy product work | [Applied domains](applied-domains.md) |
 | the broader operating context behind the current public body of work | [Operating context](operating-context.md) |
@@ -47,7 +60,7 @@ parts of one engineering language.</div>
 ## What Belongs Here
 
 - the route between repositories
-- the reason the docs shell is shared
+- the principles that make the split coherent
 - the stable public surface that readers can navigate today
 
 ## What Does Not Belong Here

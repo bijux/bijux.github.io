@@ -10,7 +10,9 @@ last_reviewed: 2026-04-12
 # System Map
 
 The Bijux public surface is easier to understand as a layered system
-than as a list of repositories.
+than as a list of repositories. The map matters because it shows where
+responsibility changes hands and where different kinds of engineering
+judgment are expected.
 
 ## Layered View
 
@@ -34,23 +36,32 @@ flowchart TB
     atlas --> learning
 ```
 
-## What Each Layer Signals
+## What Each Layer Owns
 
-| Layer | Why it matters |
+| Layer | What it owns | Why it matters |
 | --- | --- |
-| Shared discipline | The repositories are tied together by repeatable engineering habits rather than a visual brand alone. |
-| Core | The execution and governance backbone shows command, runtime, DAG, artifact, and release thinking. |
-| Canon | The knowledge-system layer shows how ingest, retrieval, reasoning, orchestration, and governed execution are separated cleanly. |
-| Atlas | The delivery surface shows service and operational thinking around APIs, datasets, reporting, and docs operations. |
-| Domain products | The portfolio extends into real subject-matter systems instead of stopping at general infrastructure. |
-| Learning | The same architecture and discipline are expressed as teachable programs, which is a different kind of systems clarity. |
+| Shared discipline | contracts, release evidence, documentation shell, navigation rules, and operating habits | the repositories are connected by repeatable engineering behavior rather than branding alone |
+| Core | command surfaces, runtime control, DAG execution, artifacts, and governance | execution authority and repository discipline stay visible instead of being scattered across scripts |
+| Canon | ingest, indexing, reasoning, orchestration, agents, and controlled runtime behavior | knowledge-system concerns are split into accountable parts instead of being merged into one opaque AI layer |
+| Atlas | APIs, datasets, service delivery, reporting, and docs-aware validation | data-service and delivery concerns are treated as maintained product surfaces |
+| Domain products | proteomics, pollenomics, evidence mapping, and field-oriented product framing | the platform posture survives subject-matter pressure and uncommon abstractions |
+| Learning | programs, deep dives, and reusable teaching structure | the same technical language becomes explainable and teachable without being diluted |
 
 ## Why The Split Is Persuasive
 
 Readers do not need a page claiming sophistication directly. They can
 infer it when the split remains coherent across runtime, delivery,
 domain, and learning surfaces without collapsing into one vague
-repository or one oversized story.
+repository or one oversized story. The map is persuasive when each layer
+has a stable job and the boundaries still make sense after readers open
+the repository pages.
+
+## Boundary Questions To Ask
+
+- does each repository own a distinct problem instead of a renamed slice of the same problem
+- does the delivery surface stay separate from the runtime and knowledge internals
+- do the domain systems inherit the platform posture without being forced into generic abstractions
+- can a reader move across layers and still keep a consistent mental model
 
 ## Use This Page When
 

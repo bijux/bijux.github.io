@@ -13,6 +13,12 @@ The documentation network works only if every site behaves like part of
 the same system family. Readers should be able to jump between repos and
 keep the same mental model for where they are and what to do next.
 
+<div class="bijux-callout"><strong>Documentation is part of the product surface here.</strong>
+The shared shell matters because the portfolio is trying to prove
+delivery and systems thinking, not just collect screenshots of separate
+repositories. Navigation consistency is one way that engineering quality
+becomes visible to readers.</div>
+
 ## Shared Navigation Contract
 
 - the hub strip moves between repositories

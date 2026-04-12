@@ -22,6 +22,12 @@ usually infer it from the kinds of problems a portfolio chooses to make
 legible: bounded architectures, delivery surfaces, documentation
 systems, domain products, and teachable technical programs.
 
+## Context Behind The Current Public Work
+
+- shaped across engineering work in Iran, China, Austria, Germany, and Sweden
+- built across software engineering, platform concerns, data-service architecture, and scientific systems
+- organized as a recent public surface that reflects current work more than a career timeline
+
 ## What The Public Surface Suggests
 
 - engineering habits shaped by heterogeneous technical environments
