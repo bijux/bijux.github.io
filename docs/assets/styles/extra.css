@@ -1,43 +1,43 @@
 :root {
-  --bijux-ink: #1e2852;
-  --bijux-muted: #5f6d8d;
-  --bijux-border: rgba(49, 46, 129, 0.16);
-  --bijux-panel: rgba(79, 70, 229, 0.05);
-  --bijux-panel-strong: rgba(79, 70, 229, 0.08);
-  --bijux-card-shadow: 0 18px 42px rgba(30, 41, 89, 0.09);
-  --bijux-map-shadow: 0 22px 54px rgba(30, 41, 89, 0.14);
-  --bijux-surface-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0));
+  --bijux-ink: #142033;
+  --bijux-muted: #5d6c7e;
+  --bijux-border: rgba(20, 32, 51, 0.12);
+  --bijux-panel: rgba(13, 148, 136, 0.06);
+  --bijux-panel-strong: rgba(8, 145, 178, 0.08);
+  --bijux-card-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+  --bijux-map-shadow: 0 22px 54px rgba(15, 23, 42, 0.13);
+  --bijux-surface-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0));
   --bijux-shell-width: 84rem;
   --bijux-shell-width-wide: 92rem;
   --bijux-shell-width-ultra: 102rem;
-  --bijux-ribbon-bg: #2b2f6e;
-  --bijux-ribbon-bg-strong: #4338ca;
-  --bijux-ribbon-fade: rgba(43, 47, 110, 0);
+  --bijux-ribbon-bg: #10213b;
+  --bijux-ribbon-bg-strong: #124e66;
+  --bijux-ribbon-fade: rgba(16, 33, 59, 0);
 }
 
 [data-md-color-scheme="default"] {
-  --md-default-bg-color: #f5f7fd;
-  --md-default-bg-color--light: #fbfcff;
+  --md-default-bg-color: #f4f6f4;
+  --md-default-bg-color--light: #fbfcfa;
   --md-default-fg-color: var(--bijux-ink);
-  --md-primary-fg-color: #4338ca;
-  --md-accent-fg-color: #4f46e5;
-  --md-typeset-a-color: #3730a3;
-  --bijux-hub-bg: rgba(24, 28, 64, 0.96);
+  --md-primary-fg-color: #0f766e;
+  --md-accent-fg-color: #155e75;
+  --md-typeset-a-color: #0f5f73;
+  --bijux-hub-bg: rgba(11, 20, 34, 0.97);
   --bijux-hub-border: rgba(255, 255, 255, 0.12);
   --bijux-hub-link: rgba(255, 255, 255, 0.76);
   --bijux-hub-link-active-bg: rgba(255, 255, 255, 0.14);
-  --bijux-detail-bg: rgba(255, 255, 255, 0.94);
-  --bijux-detail-border: rgba(63, 81, 181, 0.12);
-  --bijux-detail-link: #31406f;
-  --bijux-detail-link-active-bg: rgba(79, 70, 229, 0.12);
+  --bijux-detail-bg: rgba(255, 255, 255, 0.95);
+  --bijux-detail-border: rgba(15, 118, 110, 0.14);
+  --bijux-detail-link: #2d4b5c;
+  --bijux-detail-link-active-bg: rgba(13, 148, 136, 0.12);
 }
 
 [data-md-color-scheme="slate"] {
-  --bijux-ink: #e8ecff;
-  --bijux-muted: #b6bfdc;
-  --bijux-border: rgba(129, 140, 248, 0.2);
-  --bijux-panel: rgba(99, 102, 241, 0.12);
-  --bijux-panel-strong: rgba(99, 102, 241, 0.18);
+  --bijux-ink: #e7eef5;
+  --bijux-muted: #b2c2cf;
+  --bijux-border: rgba(45, 212, 191, 0.18);
+  --bijux-panel: rgba(15, 118, 110, 0.14);
+  --bijux-panel-strong: rgba(8, 145, 178, 0.2);
   --bijux-card-shadow: 0 24px 48px rgba(2, 6, 23, 0.38);
   --bijux-map-shadow: 0 28px 58px rgba(2, 6, 23, 0.5);
   --bijux-surface-gradient: linear-gradient(180deg, rgba(30, 41, 59, 0.42), rgba(15, 23, 42, 0));
@@ -46,29 +46,29 @@
   --md-default-fg-color: #e8ecff;
   --md-default-fg-color--light: #cdd5f3;
   --md-default-fg-color--lighter: #9ea9d0;
-  --md-primary-fg-color: #4338ca;
-  --md-primary-fg-color--light: #6366f1;
-  --md-accent-fg-color: #a5b4fc;
-  --md-typeset-a-color: #a5b4fc;
+  --md-primary-fg-color: #0f766e;
+  --md-primary-fg-color--light: #14b8a6;
+  --md-accent-fg-color: #67e8f9;
+  --md-typeset-a-color: #7dd3fc;
   --bijux-hub-bg: rgba(8, 11, 29, 0.98);
-  --bijux-hub-border: rgba(129, 140, 248, 0.16);
+  --bijux-hub-border: rgba(45, 212, 191, 0.16);
   --bijux-hub-link: rgba(229, 231, 255, 0.82);
-  --bijux-hub-link-active-bg: rgba(129, 140, 248, 0.16);
+  --bijux-hub-link-active-bg: rgba(45, 212, 191, 0.16);
   --bijux-detail-bg: rgba(15, 23, 42, 0.96);
-  --bijux-detail-border: rgba(129, 140, 248, 0.18);
-  --bijux-detail-link: #c7d2fe;
-  --bijux-detail-link-active-bg: rgba(99, 102, 241, 0.18);
-  --bijux-ribbon-bg: #151a43;
-  --bijux-ribbon-bg-strong: #312e81;
-  --bijux-ribbon-fade: rgba(21, 26, 67, 0);
+  --bijux-detail-border: rgba(45, 212, 191, 0.18);
+  --bijux-detail-link: #d0f3f0;
+  --bijux-detail-link-active-bg: rgba(13, 148, 136, 0.18);
+  --bijux-ribbon-bg: #091524;
+  --bijux-ribbon-bg-strong: #0f3f56;
+  --bijux-ribbon-fade: rgba(9, 21, 36, 0);
 }
 
 [data-md-color-scheme="slate"] .bijux-hero {
   background:
-    radial-gradient(circle at top right, rgba(99, 102, 241, 0.18), transparent 34%),
-    radial-gradient(circle at left center, rgba(14, 165, 233, 0.12), transparent 28%),
-    linear-gradient(145deg, rgba(15, 23, 42, 0.92), rgba(17, 24, 39, 0.88));
-  border-color: rgba(129, 140, 248, 0.22);
+    radial-gradient(circle at top right, rgba(45, 212, 191, 0.16), transparent 34%),
+    radial-gradient(circle at left center, rgba(103, 232, 249, 0.12), transparent 28%),
+    linear-gradient(145deg, rgba(15, 23, 42, 0.92), rgba(10, 20, 33, 0.9));
+  border-color: rgba(45, 212, 191, 0.2);
 }
 
 [data-md-color-scheme="slate"] .bijux-hero__eyebrow,
@@ -78,7 +78,7 @@
 
 [data-md-color-scheme="slate"] .bijux-signal-pill {
   background: rgba(15, 23, 42, 0.62);
-  border-color: rgba(129, 140, 248, 0.22);
+  border-color: rgba(45, 212, 191, 0.22);
 }
 
 body,
@@ -104,6 +104,13 @@ button {
   color: var(--bijux-ink);
 }
 
+.md-main {
+  background:
+    radial-gradient(circle at top left, rgba(13, 148, 136, 0.05), transparent 22%),
+    radial-gradient(circle at top right, rgba(8, 145, 178, 0.05), transparent 20%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0));
+}
+
 .md-typeset code {
   border-radius: 0.35rem;
 }
@@ -119,10 +126,27 @@ button {
 
 .md-typeset table:not([class]) {
   border: 1px solid var(--bijux-border);
+  border-collapse: separate;
+  border-radius: 0.95rem;
+  border-spacing: 0;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.04);
+}
+
+.md-typeset table:not([class]) th {
+  background: rgba(15, 118, 110, 0.08);
+  color: var(--bijux-ink);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) td {
+  background: rgba(8, 145, 178, 0.03);
 }
 
 .md-typeset blockquote {
-  border-left: 0.2rem solid #4f46e5;
+  border-left: 0.2rem solid #0f766e;
   background: var(--bijux-panel);
   padding: 0.1rem 0.8rem;
 }
@@ -148,7 +172,7 @@ button {
 }
 
 .bijux-map-frame {
-  background: linear-gradient(180deg, rgba(79, 70, 229, 0.09), rgba(99, 102, 241, 0.05));
+  background: linear-gradient(180deg, rgba(13, 148, 136, 0.1), rgba(8, 145, 178, 0.05));
   border: 1px solid var(--bijux-border);
   border-radius: 1.2rem;
   box-shadow: var(--bijux-map-shadow);
@@ -178,6 +202,18 @@ button {
   box-shadow: var(--bijux-card-shadow);
   min-height: 100%;
   padding: 1rem 1.1rem;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.bijux-panel::after {
+  background: linear-gradient(90deg, rgba(15, 118, 110, 0.22), rgba(8, 145, 178, 0.08), transparent);
+  border-radius: 999px;
+  content: "";
+  height: 0.18rem;
+  inset-block-start: 0;
+  inset-inline: 1rem;
+  position: absolute;
 }
 
 .bijux-panel h3 {
@@ -185,7 +221,7 @@ button {
 }
 
 .bijux-callout {
-  background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(99, 102, 241, 0.06));
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.12), rgba(8, 145, 178, 0.08));
   border: 1px solid var(--bijux-border);
   border-radius: 1rem;
   box-shadow: var(--bijux-card-shadow);
@@ -195,20 +231,30 @@ button {
 
 .bijux-hero {
   background:
-    radial-gradient(circle at top right, rgba(99, 102, 241, 0.2), transparent 34%),
-    radial-gradient(circle at left center, rgba(37, 99, 235, 0.12), transparent 28%),
-    linear-gradient(140deg, rgba(255, 255, 255, 0.9), rgba(236, 242, 255, 0.72));
-  border: 1px solid rgba(79, 70, 229, 0.16);
+    radial-gradient(circle at top right, rgba(13, 148, 136, 0.18), transparent 34%),
+    radial-gradient(circle at left center, rgba(8, 145, 178, 0.12), transparent 28%),
+    linear-gradient(140deg, rgba(255, 255, 255, 0.94), rgba(236, 245, 244, 0.78));
+  border: 1px solid rgba(15, 118, 110, 0.14);
   border-radius: 1.4rem;
-  box-shadow: 0 24px 64px rgba(30, 41, 89, 0.14);
+  box-shadow: 0 28px 64px rgba(15, 23, 42, 0.12);
   margin: 0 0 1.6rem;
   overflow: hidden;
   padding: 1.5rem 1.45rem 1.35rem;
   position: relative;
 }
 
+.bijux-hero::before {
+  background: radial-gradient(circle at center, rgba(245, 158, 11, 0.16), transparent 58%);
+  content: "";
+  height: 16rem;
+  position: absolute;
+  right: -4rem;
+  top: -5rem;
+  width: 16rem;
+}
+
 .bijux-hero::after {
-  background: linear-gradient(90deg, rgba(59, 130, 246, 0.18), rgba(79, 70, 229, 0.08), transparent);
+  background: linear-gradient(90deg, rgba(15, 118, 110, 0.24), rgba(8, 145, 178, 0.12), transparent);
   content: "";
   height: 0.28rem;
   inset-inline: 0;
@@ -217,7 +263,7 @@ button {
 }
 
 .bijux-hero__eyebrow {
-  color: #334155;
+  color: #264554;
   font-size: 0.73rem;
   font-weight: 800;
   letter-spacing: 0.11em;
@@ -232,6 +278,8 @@ button {
   line-height: 1.02;
   margin: 0 0 1rem;
   max-width: 16ch;
+  position: relative;
+  z-index: 1;
 }
 
 .bijux-hero__lede {
@@ -240,6 +288,8 @@ button {
   line-height: 1.86;
   margin: 0;
   max-width: 62rem;
+  position: relative;
+  z-index: 1;
 }
 
 .bijux-signal-row {
@@ -247,14 +297,16 @@ button {
   flex-wrap: wrap;
   gap: 0.7rem;
   margin-top: 1.2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .bijux-signal-pill {
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(79, 70, 229, 0.16);
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(15, 118, 110, 0.16);
   border-radius: 999px;
-  box-shadow: 0 12px 26px rgba(30, 41, 89, 0.08);
-  color: #334155;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
+  color: #264554;
   display: inline-flex;
   font-size: 0.76rem;
   font-weight: 800;
@@ -278,9 +330,9 @@ button {
 }
 
 .md-typeset .md-button--primary {
-  background: linear-gradient(135deg, #3949ab, #4f46e5);
+  background: linear-gradient(135deg, #0f766e, #155e75);
   border-color: transparent;
-  box-shadow: 0 12px 28px rgba(63, 81, 181, 0.22);
+  box-shadow: 0 12px 28px rgba(15, 118, 110, 0.22);
 }
 
 .bijux-site-tabs,
@@ -616,12 +668,12 @@ button {
 
 .md-sidebar--primary .md-nav__link:hover,
 .md-sidebar--primary .md-nav__container > .md-nav__link:hover {
-  background: rgba(79, 70, 229, 0.08);
+  background: rgba(13, 148, 136, 0.08);
 }
 
 .md-sidebar--primary .md-nav__item--active > .md-nav__container > .md-nav__link,
 .md-sidebar--primary .md-nav__link--active {
-  background: rgba(79, 70, 229, 0.12);
+  background: rgba(13, 148, 136, 0.12);
   color: var(--bijux-ink);
   font-weight: 700;
 }
@@ -825,17 +877,29 @@ button {
 
 .bijux-showcase-card {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.42)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.48)),
     var(--bijux-panel);
   border: 1px solid var(--bijux-border);
   border-radius: 1.15rem;
   box-shadow: var(--bijux-card-shadow);
   padding: 1.15rem 1.1rem;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.bijux-showcase-card::before {
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.24), rgba(13, 148, 136, 0.14), transparent);
+  border-radius: 999px;
+  content: "";
+  height: 0.16rem;
+  inset-block-start: 0.95rem;
+  inset-inline: 1.1rem 35%;
+  position: absolute;
 }
 
 .bijux-showcase-card > h2 {
   font-size: 1.35rem;
-  margin: 0.15rem 0 0.55rem;
+  margin: 0.4rem 0 0.55rem;
 }
 
 .bijux-showcase-card__eyebrow {
@@ -854,14 +918,21 @@ button {
 }
 
 .bijux-tag {
-  background: rgba(79, 70, 229, 0.1);
-  border: 1px solid rgba(79, 70, 229, 0.12);
+  background: rgba(13, 148, 136, 0.09);
+  border: 1px solid rgba(13, 148, 136, 0.14);
   border-radius: 999px;
   color: var(--bijux-ink);
   display: inline-flex;
   font-size: 0.74rem;
   font-weight: 700;
   padding: 0.35rem 0.68rem;
+}
+
+.bijux-panel:hover,
+.bijux-showcase-card:hover {
+  border-color: rgba(15, 118, 110, 0.22);
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.12);
+  transform: translateY(-2px);
 }
 
 .bijux-media-card {
