@@ -10,6 +10,8 @@ DOCS_HOST            ?= 127.0.0.1
 DOCS_PORT            ?= 8000
 SITE_URL             ?= https://bijux.io/
 DOCS_ENV             := DISABLE_MKDOCS_2_WARNING=true
+PYTHON_BIN           ?= $(shell command -v python3 2>/dev/null)
+TABLE_GUARD          ?= internal/quality/markdown_table_guard.py
 
 ifeq ($(strip $(UV_BIN)),)
   ifeq ($(strip $(MKDOCS_BIN_CAND)),)
@@ -21,13 +23,15 @@ else
   DOCS_RUN = XDG_CACHE_HOME="$(DOCS_CACHE_DIR)" $(DOCS_ENV) "$(UV_BIN)" run --with-requirements "$(DOCS_REQUIREMENTS)" mkdocs
 endif
 
-.PHONY: docs docs-clean docs-require docs-serve
+.PHONY: docs docs-clean docs-require docs-serve docs-sanity
 
 ##@ Documentation
 docs-require: ## Verify the documentation build inputs are present
 	@test -f "$(MKDOCS_CFG)" || (echo "ERROR: missing $(MKDOCS_CFG)" && exit 1)
 	@test -f "$(DOCS_REQUIREMENTS)" || (echo "ERROR: missing $(DOCS_REQUIREMENTS)" && exit 1)
 	@test -n "$(DOCS_RUN)" || (echo "ERROR: install uv or mkdocs to build docs" && exit 1)
+	@test -n "$(PYTHON_BIN)" || (echo "ERROR: install python3 for docs sanity checks" && exit 1)
+	@test -f "$(TABLE_GUARD)" || (echo "ERROR: missing $(TABLE_GUARD)" && exit 1)
 
 docs: docs-clean docs-require ## Build documentation into artifacts/docs/site
 	@echo "Building documentation"
@@ -35,6 +39,10 @@ docs: docs-clean docs-require ## Build documentation into artifacts/docs/site
 	@SITE_URL="$(SITE_URL)" $(DOCS_RUN) build --strict --config-file "$(MKDOCS_CFG)" --site-dir "$(DOCS_SITE_DIR)"
 	@if test -f CNAME; then cp CNAME "$(DOCS_SITE_DIR)/CNAME"; fi
 	@echo "Documentation build complete"
+
+docs-sanity: docs-require ## Run lightweight documentation sanity checks
+	@"$(PYTHON_BIN)" "$(TABLE_GUARD)" docs
+	@$(MAKE) docs
 
 docs-serve: docs-require ## Serve documentation locally with automatic reloads
 	@HOST=$${HOST:-$(DOCS_HOST)}; PORT=$${PORT:-$(DOCS_PORT)}; \
