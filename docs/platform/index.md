@@ -13,8 +13,8 @@ The public Bijux surface is intentionally split by responsibility. This
 section explains why the repository family is structured the way it is
 and what that structure says about the engineering posture behind it.
 
-<div class="bijux-callout"><strong>The strongest platform signal here is not repository count.</strong>
-The stronger signal is that the split remains coherent under pressure.
+<div class="bijux-callout"><strong>The repository count matters less than the shape of the split.</strong>
+What matters here is that the split remains coherent under pressure.
 Runtime governance, knowledge workflows, delivery surfaces, domain
 products, and learning programs each have their own home, but the same
 engineering language is visible across all of them.</div>
@@ -51,7 +51,7 @@ engineering language is visible across all of them.</div>
 | which qualities recur across the public work | [Work qualities](work-qualities.md) |
 | the layered structure of the whole public system family | [System map](system-map.md) |
 | the repository split at a glance | [Repository matrix](repository-matrix.md) |
-| where public engineering proof shows up across the repositories | [Delivery signals](delivery-signals.md) |
+| where delivery work shows up most clearly across the repositories | [Delivery surfaces](delivery-surfaces.md) |
 | how the engineering extends into domain-heavy product work | [Applied domains](applied-domains.md) |
 | the broader operating context behind the current public body of work | [Operating context](operating-context.md) |
 | why the docs shell is shared instead of duplicated carelessly | [Documentation network](documentation-network.md) |

@@ -24,7 +24,7 @@ of shape.</div>
 | Quality | What it looks like | Where to inspect first |
 | --- | --- | --- |
 | Boundary judgment | systems split by responsibility instead of collapsing into a single vague platform | [System map](system-map.md), [Bijux Core](../projects/bijux-core.md), [Bijux Canon](../projects/bijux-canon.md) |
-| Delivery ownership | documentation, validation, release posture, and destination URLs treated as product surfaces | [Delivery signals](delivery-signals.md), [Bijux Atlas](../projects/bijux-atlas.md) |
+| Delivery ownership | documentation, validation, release posture, and destination URLs treated as product surfaces | [Delivery surfaces](delivery-surfaces.md), [Bijux Atlas](../projects/bijux-atlas.md) |
 | Data and service architecture | APIs, datasets, ingest, indexing, runtime control, and documentation behavior separated into owned surfaces | [Platform overview](index.md), [Bijux Atlas](../projects/bijux-atlas.md), [Bijux Canon](../projects/bijux-canon.md) |
 | Domain adaptation | the same engineering posture surviving scientific and evidence-heavy contexts | [Applied domains](applied-domains.md), [Bijux Proteomics](../projects/bijux-proteomics.md), [Bijux Pollenomics](../projects/bijux-pollenomics.md) |
 | Technical communication | architecture and workflow depth translated into teaching without losing rigor | [Learning catalog](../learning/index.md), [Bijux Masterclass](../projects/bijux-masterclass.md) |
@@ -43,7 +43,7 @@ of shape.</div>
 | If you want to start with... | Read this route |
 | --- | --- |
 | platform and software architecture | [System map](system-map.md) -> [Bijux Core](../projects/bijux-core.md) -> [Bijux Canon](../projects/bijux-canon.md) |
-| delivery posture and public surfaces | [Delivery signals](delivery-signals.md) -> [Bijux Atlas](../projects/bijux-atlas.md) -> [Public surface](public-surface.md) |
+| delivery posture and public surfaces | [Delivery surfaces](delivery-surfaces.md) -> [Bijux Atlas](../projects/bijux-atlas.md) -> [Public surface](public-surface.md) |
 | data-service and knowledge-system design | [Platform overview](index.md) -> [Bijux Atlas](../projects/bijux-atlas.md) -> [Bijux Canon](../projects/bijux-canon.md) |
 | bioinformatics and domain-heavy engineering | [Applied domains](applied-domains.md) -> [Bijux Proteomics](../projects/bijux-proteomics.md) -> [Bijux Pollenomics](../projects/bijux-pollenomics.md) |
 | technical clarity and education | [Learning catalog](../learning/index.md) -> [Reproducible Research](../learning/reproducible-research.md) -> [Python Programming](../learning/python-programming.md) |

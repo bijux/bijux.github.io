@@ -46,7 +46,7 @@ the details.</div>
 | If you want to understand... | Open this first | What you will find |
 | --- | --- |
 | how the repositories fit together | [Platform overview](platform/index.md) -> [System map](platform/system-map.md) | the split across runtime, knowledge, delivery, and domain work |
-| how delivery shows up publicly | [Delivery signals](platform/delivery-signals.md) -> [Bijux Atlas](projects/bijux-atlas.md) | documentation, published destinations, and operated service surfaces |
+| how delivery shows up publicly | [Delivery surfaces](platform/delivery-surfaces.md) -> [Bijux Atlas](projects/bijux-atlas.md) | documentation, published destinations, and operated service surfaces |
 | how the work behaves under domain pressure | [Applied domains](platform/applied-domains.md) -> [Bijux Proteomics](projects/bijux-proteomics.md) -> [Bijux Pollenomics](projects/bijux-pollenomics.md) | scientific and evidence-heavy product systems |
 | how the technical style carries into teaching | [Learning catalog](learning/index.md) -> [Bijux Masterclass](projects/bijux-masterclass.md) | course books and programs built around the same technical language |
 
@@ -69,7 +69,7 @@ the details.</div>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">for delivery-focused readers</div>
     <h2>Start with delivery surfaces</h2>
-    <p>Open Delivery Signals, then Atlas, if you care most about service design, operational visibility, documentation quality, and published destinations.</p>
+    <p>Open Delivery Surfaces, then Atlas, if you care most about service design, operational visibility, documentation quality, and published destinations.</p>
     <p><a href="reading-paths.md">Open the reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
