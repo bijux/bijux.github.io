@@ -10,9 +10,9 @@ last_reviewed: 2026-04-12
 # Python Programming
 
 The Python programming program is the route into language depth through
-object-oriented, functional, and metaprogramming tracks. It also shows
-how abstraction and software design are taught without being reduced to
-framework recipes.
+object-oriented, functional, and metaprogramming tracks. It teaches
+abstraction and software design without reducing them to framework
+recipes.
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-masterclass/python-programming/">Open the program</a>

@@ -30,7 +30,7 @@ collection of detached notes.</div>
 - programs organized by design pressure instead of generic topic buckets
 - course books and capstones that stay close to runnable systems
 - a documentation structure that matches the same editorial discipline as the repository docs
-- another route into how the broader repository family explains itself
+- another route into how the repository family explains its own systems
 
 ## Fast Routes
 
@@ -43,4 +43,4 @@ collection of detached notes.</div>
 ## Reading Rule
 
 Use the learning pages when you want to see how technical depth is
-turned into public-facing programs without losing structure.
+turned into public programs without losing structure.

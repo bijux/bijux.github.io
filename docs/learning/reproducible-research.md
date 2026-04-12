@@ -31,7 +31,7 @@ than by tool popularity.
 ## What Lives Here
 
 - workflow and automation thinking arranged as a teachable system
-- comfort with build, workflow, and reproducibility tooling that matters in real technical and scientific environments
+- comfort with build, workflow, and reproducibility tooling used in real technical and scientific environments
 - capstone-backed programs where the claims stay attached to executable capstones
 - the ability to teach system models instead of memorizing command syntax
 
