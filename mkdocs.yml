@@ -70,7 +70,3 @@ nav:
       - Overview: learning/index.md
       - Reproducible Research: learning/reproducible-research.md
       - Python Programming: learning/python-programming.md
-  - Stewardship:
-      - Overview: stewardship/index.md
-      - Documentation Principles: stewardship/documentation-principles.md
-      - Navigation Contract: stewardship/navigation-contract.md
