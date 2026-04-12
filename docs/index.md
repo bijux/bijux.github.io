@@ -79,23 +79,26 @@ source surfaces that hold the detail.</div>
   </article>
 </div>
 
-## Site Map
+## Site Routes
 
 ```mermaid
 flowchart LR
-    hub["bijux.io"]
-    platform["platform guides"]
-    projects["repository case studies"]
-    learning["technical programs"]
+    hub["bijux.io hub"]
+    routes["start pages<br/>home, platform, projects, learning"]
+    platform["platform branch<br/>system structure and delivery"]
+    projects["project branch<br/>repository briefs"]
+    learning["learning branch<br/>program briefs"]
     core["bijux-core"]
     canon["bijux-canon"]
     atlas["bijux-atlas"]
     proteomics["bijux-proteomics"]
     pollenomics["bijux-pollenomics"]
     masterclass["bijux-masterclass"]
-    hub --> platform
-    hub --> projects
-    hub --> learning
+
+    hub --> routes
+    routes --> platform
+    routes --> projects
+    routes --> learning
     projects --> core
     projects --> canon
     projects --> atlas
