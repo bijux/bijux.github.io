@@ -189,10 +189,23 @@ button {
   font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
+html {
+  scroll-padding-top: 8.2rem;
+}
+
 .md-typeset h1,
 .md-typeset h2,
 .md-typeset h3 {
   letter-spacing: -0.02em;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  scroll-margin-top: 8.2rem;
 }
 
 .md-typeset h1 {
@@ -241,6 +254,22 @@ button {
 
 .md-typeset > h2 + p {
   max-width: 64rem;
+}
+
+.md-typeset > h2 + .bijux-panel-grid,
+.md-typeset > h2 + .bijux-showcase-grid,
+.md-typeset > h2 + .bijux-media-grid,
+.md-typeset > h2 + table:not([class]),
+.md-typeset > h2 + .bijux-callout,
+.md-typeset > h2 + .bijux-map-frame,
+.md-typeset > h2 + blockquote,
+.md-typeset > h2 + ul,
+.md-typeset > h2 + ol {
+  margin-top: 1.2rem;
+}
+
+.md-typeset > h3 {
+  margin-top: 2rem;
 }
 
 .md-typeset code {
@@ -910,6 +939,19 @@ input:focus-visible,
 }
 
 @media screen and (max-width: 60em) {
+  html {
+    scroll-padding-top: 4.8rem;
+  }
+
+  .md-typeset h1,
+  .md-typeset h2,
+  .md-typeset h3,
+  .md-typeset h4,
+  .md-typeset h5,
+  .md-typeset h6 {
+    scroll-margin-top: 4.8rem;
+  }
+
   .md-header__inner {
     gap: 0.45rem;
     padding-block: 0.35rem;
@@ -1199,6 +1241,32 @@ input:focus-visible,
   border-color: rgba(15, 118, 110, 0.22);
   box-shadow: var(--bijux-card-shadow-hover);
   transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .bijux-panel:hover,
+  .bijux-showcase-card:hover,
+  .md-typeset .md-button:hover,
+  .bijux-hub-strip .bijux-tabs__link:hover,
+  .bijux-hub-strip .bijux-tabs__item--active .bijux-tabs__link,
+  .bijux-site-tabs .bijux-tabs__link:hover,
+  .bijux-site-tabs .bijux-tabs__item--active .bijux-tabs__link,
+  .bijux-detail-tabs .bijux-tabs__link:hover,
+  .bijux-detail-tabs .bijux-tabs__item--active .bijux-tabs__link {
+    transform: none;
+  }
 }
 
 .bijux-media-card {
