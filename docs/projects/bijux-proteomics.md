@@ -10,7 +10,7 @@ last_reviewed: 2026-04-12
 # Bijux Proteomics
 
 `bijux-proteomics` is the proteomics and discovery product surface in
-the Bijux ecosystem. It shows how the same platform and software
+the Bijux repository family. It shows how the same platform and software
 discipline carries into scientific and laboratory-adjacent work.
 
 <div class="bijux-quicklinks">
@@ -39,7 +39,7 @@ are kept as explicit package boundaries.
 | domain decomposition | the split across runtime, foundation, core, intelligence, knowledge, and lab packages |
 | governed product behavior | the repository’s emphasis on contracts, release discipline, and package-owned responsibilities |
 | scientific workflow maturity | the fact that lab planning and evidence resolution are explicit parts of the system model |
-| public route | the package handbooks and release surfaces for the six published packages |
+| published entry points | the package handbooks and release surfaces for the six published packages |
 
 ## Best Entry Questions
 

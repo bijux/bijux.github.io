@@ -40,7 +40,7 @@ artifacts come from.
 | reproducible publication | tracked `data/` and `docs/report/` outputs, plus the atlas and country bundles |
 | uncommon domain modeling | the archaeology, eDNA, aDNA, and pollenomics framing in the docs and repository layout |
 | scope discipline | the explicit limits around current capabilities, source categories, and report outputs |
-| public route | the runtime handbook, data reference, and published Nordic atlas material |
+| published entry points | the runtime handbook, data reference, and published Nordic atlas material |
 
 ## Best Entry Questions
 

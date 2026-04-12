@@ -41,7 +41,7 @@ artifacts.
 | service architecture | the split between CLI, server, OpenAPI export, and maintainer control plane |
 | data delivery posture | immutable dataset and artifact language in the docs and README |
 | operational seriousness | ops, configs, reporting, and documentation validation behavior |
-| public route | the handbook structure and published docs site that route into concrete service surfaces |
+| published entry points | the handbook structure and published docs site that route into concrete service surfaces |
 
 ## Best Entry Questions
 

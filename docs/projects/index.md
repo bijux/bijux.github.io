@@ -82,9 +82,9 @@ system family through a different responsibility.
   </article>
 </div>
 
-## What Each Repository Carries
+## What Each Repository Covers
 
-| Repository | Open this to see |
+| Repository | Open it for |
 | --- | --- |
 | [Bijux Core](bijux-core.md) | execution backbone, release evidence, and governance that do not disappear into shell glue |
 | [Bijux Canon](bijux-canon.md) | contract-first knowledge-system design with visible package boundaries and compatibility discipline |
@@ -107,4 +107,4 @@ system family through a different responsibility.
 ## Reading Rule
 
 Use the cards for orientation and the project pages for a closer view of
-what each repository contributes to the overall body of work.
+what each repository owns.
