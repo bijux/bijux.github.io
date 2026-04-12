@@ -54,6 +54,7 @@ nav:
       - Overview: platform/index.md
       - Engineering Signals: platform/engineering-signals.md
       - System Map: platform/system-map.md
+      - Repository Matrix: platform/repository-matrix.md
       - Delivery Signals: platform/delivery-signals.md
       - Applied Domains: platform/applied-domains.md
       - Operating Context: platform/operating-context.md
