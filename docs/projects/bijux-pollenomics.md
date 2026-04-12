@@ -21,10 +21,10 @@ domain work.
 
 ## Repository Shape
 
-`bijux-pollenomics` is compelling because it takes an unusual domain and
-makes the outputs inspectable: tracked source data, rebuildable report
-bundles, a Nordic evidence atlas, and a documentation surface that
-explains where those artifacts come from.
+`bijux-pollenomics` takes an unusual domain and makes the outputs
+inspectable: tracked source data, rebuildable report bundles, a Nordic
+evidence atlas, and a documentation surface that explains where those
+artifacts come from.
 
 ## What Lives Here
 
@@ -45,11 +45,10 @@ explains where those artifacts come from.
 ## Best Entry Questions
 
 - the question is about evidence mapping, archaeology-facing context, or field-site selection
-- you want to understand how the portfolio handles uncommon domain boundaries
+- you want to understand how the repository family handles uncommon domain boundaries
 - you care whether unusual domain work stays reproducible and reviewable
 
 ## In The Larger Picture
 
-Pollenomics helps show that the public work is not only broad but also
-adaptable, capable of carrying structure into specialized domains that
-do not come with off-the-shelf engineering narratives.
+Pollenomics carries the same structural habits into a specialized domain
+that does not come with off-the-shelf engineering narratives.

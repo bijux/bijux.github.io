@@ -20,8 +20,8 @@ enough to be taught without being diluted.
 
 ## Repository Shape
 
-`bijux-masterclass` matters because it turns technical depth into
-durable programs rather than isolated notes. The repository keeps
+`bijux-masterclass` turns technical depth into durable programs rather
+than isolated notes. The repository keeps
 multiple program families under one long-lived structure while preserving
 program-specific content, workflows, and verification routes.
 
@@ -49,5 +49,5 @@ program-specific content, workflows, and verification routes.
 
 ## In The Larger Picture
 
-Masterclass shows that the work is not only buildable and operable, but
-also explainable.
+Masterclass keeps the technical language teachable without flattening
+the underlying systems.

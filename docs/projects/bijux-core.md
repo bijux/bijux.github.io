@@ -10,9 +10,9 @@ last_reviewed: 2026-04-12
 # Bijux Core
 
 `bijux-core` is the execution and governance backbone for the public
-Bijux system family. It is the best starting point when the question is
+Bijux system family. It is the primary starting point when the question is
 about runtime authority, repository discipline, or the engineering
-machinery that should remain stable beneath higher-level products.
+machinery that should remain stable beneath dependent systems.
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-core/">Open Core docs</a>
@@ -23,7 +23,7 @@ machinery that should remain stable beneath higher-level products.
 
 `bijux-core` is where runtime and governance stop being abstract. The
 repository owns the command runtime and DAG execution backbone that
-higher-level systems depend on, while keeping governance, evidence, and
+dependent systems depend on, while keeping governance, evidence, and
 release discipline visible in the same public surface.
 
 ## What Lives Here
@@ -45,11 +45,11 @@ release discipline visible in the same public surface.
 ## Best Entry Questions
 
 - the question is about CLI behavior, DAG execution, runtime control, or release discipline
-- you want the clearest public route into platform engineering structure
+- you want a direct route into platform engineering structure
 - you care whether governance and release posture are visible instead of implied
 
 ## In The Larger Picture
 
-Core shows that the rest of the portfolio is not resting on vague
-infrastructure claims. The backbone is visible, named, and inspectable,
-which makes the higher-level product work more credible.
+Core keeps the rest of the repository family grounded in visible runtime
+and governance machinery. The backbone is named, inspectable, and
+stable enough to support the higher layers around it.

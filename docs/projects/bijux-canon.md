@@ -11,8 +11,8 @@ last_reviewed: 2026-04-12
 
 `bijux-canon` is the governed knowledge-system stack for deterministic
 ingest, retrieval, reasoning, orchestration, and controlled runtime
-acceptance. It is the clearest public demonstration of system
-decomposition around AI and knowledge workflows.
+acceptance. It is a clear route into system decomposition around AI and
+knowledge workflows.
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-canon/">Open Canon docs</a>
@@ -51,6 +51,6 @@ directly.
 
 ## In The Larger Picture
 
-Canon demonstrates architectural judgment in a space where systems often
-collapse into indistinct AI stories. The split itself carries the
-argument because it is costly to maintain unless the boundaries are real.
+Canon keeps AI and knowledge workflows split into maintained parts
+instead of collapsing them into one vague layer. The package boundaries
+stay visible all the way out to the public docs.

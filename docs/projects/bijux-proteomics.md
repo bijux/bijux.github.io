@@ -49,6 +49,6 @@ are kept as explicit package boundaries.
 
 ## In The Larger Picture
 
-Proteomics shows that the portfolio can move from infrastructure and
-delivery into domain systems where data, workflow, and subject-matter
-context matter at the same time.
+Proteomics keeps software structure visible while moving into domain
+systems where data, workflow, and subject-matter context all matter at
+the same time.

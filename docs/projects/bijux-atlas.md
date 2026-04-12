@@ -10,9 +10,9 @@ last_reviewed: 2026-04-12
 # Bijux Atlas
 
 `bijux-atlas` is the delivery and operational surface for services,
-datasets, APIs, and docs control-plane behavior. It is the clearest
-public route in the site for data delivery, service architecture, and
-operational visibility.
+datasets, APIs, and docs control-plane behavior. It is a direct route in
+the site for data delivery, service architecture, and operational
+visibility.
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-atlas/">Open Atlas docs</a>
@@ -21,8 +21,8 @@ operational visibility.
 
 ## Repository Shape
 
-`bijux-atlas` is where the portfolio shows data-service work as an
-operated product surface rather than a loose data tool. The repository
+`bijux-atlas` presents data-service work as an operated product surface
+rather than a loose data tool. The repository
 publishes a CLI, server, OpenAPI export surface, and maintainer control
 plane around governed genomics dataset delivery and immutable query
 artifacts.
@@ -47,10 +47,9 @@ artifacts.
 
 - the question is about API delivery, dataset publishing, or service behavior
 - you are tracing docs UX checks, ops validation, or operational evidence
-- you want the clearest public example of data-service engineering in the Bijux portfolio
+- you want a concrete public route into data-service engineering
 
 ## In The Larger Picture
 
-Atlas shows that the work extends beyond internal architecture into
-delivery surfaces that have to be published, validated, and operated
-in the open.
+Atlas keeps delivery work out in the open as something that is
+published, validated, and operated rather than described abstractly.

@@ -17,7 +17,7 @@ system family through a different responsibility.
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">runtime and governance backbone</div>
     <h2>Bijux Core</h2>
-    <p>Shows command surfaces, DAG execution, evidence handling, release discipline, and the repository backbone that higher-level systems can stand on.</p>
+    <p>Covers command surfaces, DAG execution, evidence handling, release discipline, and the repository backbone that dependent systems can stand on.</p>
     <div class="bijux-tag-list">
       <span class="bijux-tag">cli</span>
       <span class="bijux-tag">runtime</span>
@@ -28,7 +28,7 @@ system family through a different responsibility.
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">governed knowledge system</div>
     <h2>Bijux Canon</h2>
-    <p>Shows how ingest, index, reasoning, orchestration, compatibility, and controlled runtime behavior can be split into clear package boundaries.</p>
+    <p>Covers how ingest, index, reasoning, orchestration, compatibility, and controlled runtime behavior are split into clear package boundaries.</p>
     <div class="bijux-tag-list">
       <span class="bijux-tag">ingest</span>
       <span class="bijux-tag">reasoning</span>
@@ -39,7 +39,7 @@ system family through a different responsibility.
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">data and service delivery</div>
     <h2>Bijux Atlas</h2>
-    <p>Shows API, dataset, and docs-aware control-plane thinking, where delivery and operational visibility are first-class product concerns.</p>
+    <p>Covers API, dataset, and docs-aware control-plane work, where delivery and operational visibility are treated as product concerns.</p>
     <div class="bijux-tag-list">
       <span class="bijux-tag">api</span>
       <span class="bijux-tag">datasets</span>
@@ -50,7 +50,7 @@ system family through a different responsibility.
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">applied scientific products</div>
     <h2>Bijux Proteomics</h2>
-    <p>Shows how a disciplined software posture carries into discovery and proteomics-oriented product work.</p>
+    <p>Covers how a disciplined software posture carries into discovery and proteomics-oriented product work.</p>
     <div class="bijux-tag-list">
       <span class="bijux-tag">proteomics</span>
       <span class="bijux-tag">product</span>
@@ -61,7 +61,7 @@ system family through a different responsibility.
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">evidence and site selection</div>
     <h2>Bijux Pollenomics</h2>
-    <p>Shows evidence mapping, archaeology-facing narratives, and domain-specific reasoning surfaces supported by structured engineering.</p>
+    <p>Covers evidence mapping, archaeology-facing narratives, and domain-specific reasoning surfaces supported by structured engineering.</p>
     <div class="bijux-tag-list">
       <span class="bijux-tag">pollenomics</span>
       <span class="bijux-tag">evidence mapping</span>
@@ -72,7 +72,7 @@ system family through a different responsibility.
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">teaching through architecture</div>
     <h2>Bijux Masterclass</h2>
-    <p>Shows how technical depth is translated into public programs without losing structural honesty or engineering rigor.</p>
+    <p>Covers how technical depth is translated into public programs without losing structural honesty or engineering rigor.</p>
     <div class="bijux-tag-list">
       <span class="bijux-tag">education</span>
       <span class="bijux-tag">python</span>
@@ -93,7 +93,7 @@ system family through a different responsibility.
 | [Bijux Pollenomics](bijux-pollenomics.md) | evidence-heavy domain modeling in an unusual archaeology-facing context |
 | [Bijux Masterclass](bijux-masterclass.md) | the ability to teach architecture, workflow rigor, and programming design without flattening them |
 
-## Portfolio Reading Guide
+## Reading Guide
 
 | If you care most about... | Start here |
 | --- | --- |
