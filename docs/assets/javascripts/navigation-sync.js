@@ -4,9 +4,42 @@ function bijuxNormalizePath(target) {
   return path || "/";
 }
 
+function bijuxBestMatchingLink(container, attribute, currentPath) {
+  let bestMatch = null;
+
+  for (const link of container.querySelectorAll(`[${attribute}]`)) {
+    const linkPath = bijuxNormalizePath(link.getAttribute(attribute) || "/");
+    const isMatch =
+      currentPath === linkPath ||
+      (linkPath !== "/" && currentPath.startsWith(`${linkPath}/`));
+
+    if (isMatch && (!bestMatch || linkPath.length > bestMatch.path.length)) {
+      bestMatch = { node: link, path: linkPath };
+    }
+  }
+
+  return bestMatch;
+}
+
 function bijuxBestSitePath() {
-  const authoredActiveLink = document.querySelector(
-    ".bijux-site-tabs [data-bijux-site-path][aria-current='page'], .bijux-site-tabs .bijux-tabs__item--active [data-bijux-site-path]"
+  const siteTabs = document.querySelector(".bijux-site-tabs");
+  if (!siteTabs) {
+    return null;
+  }
+
+  const currentPath = bijuxNormalizePath(window.location.pathname);
+  const matchedLink = bijuxBestMatchingLink(
+    siteTabs,
+    "data-bijux-site-path",
+    currentPath
+  );
+
+  if (matchedLink) {
+    return matchedLink.path;
+  }
+
+  const authoredActiveLink = siteTabs.querySelector(
+    "[data-bijux-site-path][aria-current='page'], .bijux-tabs__item--active [data-bijux-site-path]"
   );
   if (authoredActiveLink) {
     return bijuxNormalizePath(
@@ -14,27 +47,7 @@ function bijuxBestSitePath() {
     );
   }
 
-  const currentPath = bijuxNormalizePath(window.location.pathname);
-  const siteLinks = document.querySelectorAll(
-    ".bijux-site-tabs [data-bijux-site-path]"
-  );
-  let bestMatch = null;
-
-  for (const link of siteLinks) {
-    const linkPath = bijuxNormalizePath(
-      link.getAttribute("data-bijux-site-path") || "/"
-    );
-    if (
-      currentPath === linkPath ||
-      (linkPath !== "/" && currentPath.startsWith(`${linkPath}/`))
-    ) {
-      if (!bestMatch || linkPath.length > bestMatch.length) {
-        bestMatch = linkPath;
-      }
-    }
-  }
-
-  return bestMatch;
+  return null;
 }
 
 function bijuxSyncSiteTabActiveState() {
@@ -86,9 +99,6 @@ function bijuxSyncDetailStripVisibility() {
 function bijuxSyncDetailStripActiveState() {
   const activeStrip = document.querySelector("[data-bijux-detail-strip]:not([hidden])");
   const currentPath = bijuxNormalizePath(window.location.pathname);
-  const authoredActiveLink = activeStrip?.querySelector(
-    "[data-bijux-detail-path][aria-current='page'], .bijux-tabs__item--active [data-bijux-detail-path]"
-  );
 
   for (const item of document.querySelectorAll(
     "[data-bijux-detail-strip] .bijux-tabs__item"
@@ -105,28 +115,24 @@ function bijuxSyncDetailStripActiveState() {
     return;
   }
 
-  let activeLink = null;
+  const matchedLink = bijuxBestMatchingLink(
+    activeStrip,
+    "data-bijux-detail-path",
+    currentPath
+  );
+  const authoredActiveLink = activeStrip.querySelector(
+    "[data-bijux-detail-path][aria-current='page'], .bijux-tabs__item--active [data-bijux-detail-path]"
+  );
 
-  if (authoredActiveLink) {
+  let activeLink = matchedLink;
+
+  if (!activeLink && authoredActiveLink) {
     activeLink = {
       path: bijuxNormalizePath(
         authoredActiveLink.getAttribute("data-bijux-detail-path") || "/"
       ),
       node: authoredActiveLink,
     };
-  } else {
-    for (const link of activeStrip.querySelectorAll("[data-bijux-detail-path]")) {
-      const linkPath = bijuxNormalizePath(
-        link.getAttribute("data-bijux-detail-path") || "/"
-      );
-      const isMatch =
-        currentPath === linkPath ||
-        (linkPath !== "/" && currentPath.startsWith(`${linkPath}/`));
-
-      if (isMatch && (!activeLink || linkPath.length > activeLink.path.length)) {
-        activeLink = { path: linkPath, node: link };
-      }
-    }
   }
 
   if (activeLink) {
