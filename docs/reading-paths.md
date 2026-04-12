@@ -9,34 +9,28 @@ last_reviewed: 2026-04-12
 
 # Reading Paths
 
-The hub is strongest when readers can choose a path that matches the
-kind of evaluation they want to make.
+The hub is strongest when readers can choose a short path that matches
+the part of the work they care about first.
 
-## Evaluation Routes
+## By Interest
 
-| If your first question is... | Read this sequence |
+| If you want to start with... | Read this sequence |
 | --- | --- |
-| is there real platform and systems depth here | [Work qualities](platform/work-qualities.md) -> [System map](platform/system-map.md) -> [Bijux Core](projects/bijux-core.md) -> [Bijux Canon](projects/bijux-canon.md) |
-| can this work handle delivery, services, and operational visibility | [Repository matrix](platform/repository-matrix.md) -> [Delivery surfaces](platform/delivery-surfaces.md) -> [Bijux Atlas](projects/bijux-atlas.md) -> [Public surface](platform/public-surface.md) |
-| does the engineering carry into serious domain products | [Applied domains](platform/applied-domains.md) -> [Bijux Proteomics](projects/bijux-proteomics.md) -> [Bijux Pollenomics](projects/bijux-pollenomics.md) |
-| is the technical thinking clear enough to teach | [Learning catalog](learning/index.md) -> [Reproducible Research](learning/reproducible-research.md) -> [Python Programming](learning/python-programming.md) -> [Bijux Masterclass](projects/bijux-masterclass.md) |
+| platform structure and repository boundaries | [Work qualities](platform/work-qualities.md) -> [System map](platform/system-map.md) -> [Bijux Core](projects/bijux-core.md) -> [Bijux Canon](projects/bijux-canon.md) |
+| delivery, services, and public operating surfaces | [Repository matrix](platform/repository-matrix.md) -> [Delivery surfaces](platform/delivery-surfaces.md) -> [Bijux Atlas](projects/bijux-atlas.md) -> [Public surface](platform/public-surface.md) |
+| scientific and domain-heavy work | [Applied domains](platform/applied-domains.md) -> [Bijux Proteomics](projects/bijux-proteomics.md) -> [Bijux Pollenomics](projects/bijux-pollenomics.md) |
+| technical programs and course books | [Learning catalog](learning/index.md) -> [Reproducible Research](learning/reproducible-research.md) -> [Python Programming](learning/python-programming.md) -> [Bijux Masterclass](projects/bijux-masterclass.md) |
 
-## Time-Boxed Reviews
+## Short Routes
 
 | If you have... | Read this route |
 | --- | --- |
 | 10 minutes | [Home](index.md) -> [Work qualities](platform/work-qualities.md) -> [Projects](projects/index.md) |
-| 20 minutes | [Reading paths](reading-paths.md) -> [System map](platform/system-map.md) -> [Repository matrix](platform/repository-matrix.md) -> one project page that matches your interest |
-| 30 minutes | one platform route, one delivery route, and one domain or learning route so the portfolio is judged from more than one angle |
-
-## Route Selection Rule
-
-- start with the question you actually want answered, not with the repository name you recognize first
-- stop once a route has produced enough proof; depth matters more than breadth
-- switch branches only when the current route has already justified the next click
+| 20 minutes | [System map](platform/system-map.md) -> [Repository matrix](platform/repository-matrix.md) -> one project page that matches your interest |
+| 30 minutes | one platform route, one delivery route, and one domain or learning route to get a broader cross-section |
 
 ## Reading Rule
 
-Do not try to read everything. Choose the path that matches the kind of
-judgment you want to make first, then go deeper only where the public
-surfaces justify it.
+- do not try to read everything
+- start with the branch that matches your real interest, then go deeper only where it keeps paying off
+- switch branches when you want a broader picture of the repository family rather than more depth in one area
