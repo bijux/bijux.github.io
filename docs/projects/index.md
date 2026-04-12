@@ -11,13 +11,13 @@ last_reviewed: 2026-04-12
 
 Use this section when you want the strongest public cross-section of the
 work itself. Each repository below reveals a different part of the same
-engineering posture.
+engineering posture, but not the same kind of evidence.
 
 <div class="bijux-showcase-grid">
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">runtime and governance backbone</div>
     <h2>Bijux Core</h2>
-    <p>Shows command surfaces, DAG execution, evidence handling, release discipline, and repository-wide operational structure.</p>
+    <p>Shows command surfaces, DAG execution, evidence handling, release discipline, and the repository backbone that higher-level systems can stand on.</p>
     <div class="bijux-tag-list">
       <span class="bijux-tag">cli</span>
       <span class="bijux-tag">runtime</span>
@@ -28,7 +28,7 @@ engineering posture.
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">governed knowledge system</div>
     <h2>Bijux Canon</h2>
-    <p>Shows how ingest, index, reasoning, orchestration, and controlled runtime acceptance can be split into clear package boundaries.</p>
+    <p>Shows how ingest, index, reasoning, orchestration, compatibility, and controlled runtime behavior can be split into clear package boundaries.</p>
     <div class="bijux-tag-list">
       <span class="bijux-tag">ingest</span>
       <span class="bijux-tag">reasoning</span>
@@ -39,7 +39,7 @@ engineering posture.
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">data and service delivery</div>
     <h2>Bijux Atlas</h2>
-    <p>Shows API, dataset, and docs control-plane thinking, where delivery and operational visibility are first-class product concerns.</p>
+    <p>Shows API, dataset, and docs-aware control-plane thinking, where delivery and operational visibility are first-class product concerns.</p>
     <div class="bijux-tag-list">
       <span class="bijux-tag">api</span>
       <span class="bijux-tag">datasets</span>
@@ -81,6 +81,17 @@ engineering posture.
     <p><a href="bijux-masterclass.md">Read the project page</a></p>
   </article>
 </div>
+
+## What Each Repository Proves
+
+| Repository | The strongest public proof |
+| --- | --- |
+| [Bijux Core](bijux-core.md) | execution backbone, release evidence, and governance that do not disappear into shell glue |
+| [Bijux Canon](bijux-canon.md) | contract-first knowledge-system design with visible package boundaries and compatibility discipline |
+| [Bijux Atlas](bijux-atlas.md) | data-service architecture, immutable delivery thinking, and operationally serious public surfaces |
+| [Bijux Proteomics](bijux-proteomics.md) | scientific product work that keeps structure under laboratory and discovery constraints |
+| [Bijux Pollenomics](bijux-pollenomics.md) | evidence-heavy domain modeling in an unusual archaeology-facing context |
+| [Bijux Masterclass](bijux-masterclass.md) | the ability to teach architecture, workflow rigor, and programming design without flattening them |
 
 ## Portfolio Reading Guide
 

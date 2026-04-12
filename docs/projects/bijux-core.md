@@ -19,19 +19,37 @@ machinery that should remain stable beneath higher-level products.
 <a class="md-button" href="https://github.com/bijux/bijux-core">Open repository</a>
 </div>
 
-## What Core Reveals
+## Why It Matters
 
+`bijux-core` is where the portfolio becomes harder to dismiss as
+presentation. The repository owns the command runtime and DAG execution
+backbone that higher-level systems depend on, while keeping governance,
+evidence, and release discipline visible in the same public surface.
+
+## What Core Makes Visible
+
+- two distinct products with shared governance: `bijux-cli` and `bijux-dag`
 - command and runtime thinking that is explicit rather than hidden in scripts
-- repository-wide governance, evidence, and release posture
-- a preference for bounded operational surfaces over loose utility sprawl
+- evidence, release, and repository control surfaces treated as first-class concerns
+- crate and package boundaries that keep execution, artifacts, and governance legible
 
-## Inspect Core When
+## Public Signals To Inspect
+
+| Signal | What to inspect |
+| --- | --- |
+| runtime authority | the CLI and DAG handbooks, plus the crate split across runtime, artifacts, and app layers |
+| repository discipline | release flows, evidence surfaces, and maintainer control-plane material |
+| product boundaries | the fact that `bijux-cli` and `bijux-dag` are separate products under one governance backbone |
+| traceability | public docs, tagged releases, and repository-owned operating rules that align with the code layout |
+
+## Start Here When
 
 - the question is about CLI behavior, DAG execution, runtime control, or release discipline
 - you want the strongest public evidence of platform engineering structure
-- the answer likely lives in contracts, validation flows, or repository-owned operating rules
+- you care whether governance and release posture are visible instead of implied
 
 ## Why It Matters In The Portfolio
 
 Core shows that the rest of the portfolio is not resting on vague
-infrastructure claims. The backbone is visible, named, and inspectable.
+infrastructure claims. The backbone is visible, named, and inspectable,
+which makes the higher-level product work more credible.
