@@ -13,6 +13,12 @@ The public Bijux surface is intentionally split by responsibility. The
 hub should explain the shape of the system family without flattening the
 differences that each repository owns.
 
+<div class="bijux-callout"><strong>The most important signal here is not the number of repositories.</strong>
+The important signal is that the split stays coherent. Runtime
+governance, knowledge systems, delivery surfaces, domain applications,
+and teaching material all have their own homes, but they still read like
+parts of one engineering language.</div>
+
 ## Platform Shape
 
 <div class="bijux-panel-grid">
@@ -26,6 +32,14 @@ differences that each repository owns.
 - `bijux-proteomics` applies the platform to proteomics and discovery work.
 - `bijux-pollenomics` applies it to evidence mapping, archaeology, and site selection.
 - `bijux-masterclass` turns the same discipline into public learning material.
+
+## System Reading Order
+
+| Read this first when you need to understand... | Open |
+| --- | --- |
+| the layered structure of the whole public system family | [System map](system-map.md) |
+| why the docs shell is shared instead of duplicated carelessly | [Documentation network](documentation-network.md) |
+| which public destinations exist today | [Public surface](public-surface.md) |
 
 ## What Belongs Here
 

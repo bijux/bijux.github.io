@@ -50,6 +50,7 @@ nav:
   - Home: index.md
   - Platform:
       - Overview: platform/index.md
+      - System Map: platform/system-map.md
       - Documentation Network: platform/documentation-network.md
       - Public Surface: platform/public-surface.md
   - Projects:
