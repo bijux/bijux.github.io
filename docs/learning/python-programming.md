@@ -10,9 +10,9 @@ last_reviewed: 2026-04-12
 # Python Programming
 
 The Python programming program is the route into language depth through
-object-oriented, functional, and metaprogramming tracks. It shows that
-the portfolio includes not only system construction, but also the
-ability to teach abstraction and software design clearly.
+object-oriented, functional, and metaprogramming tracks. It also shows
+how abstraction and software design are taught without being reduced to
+framework recipes.
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-masterclass/python-programming/">Open the program</a>
@@ -25,7 +25,7 @@ ability to teach abstraction and software design clearly.
 This family shows depth in Python beyond framework familiarity. The
 tracks are organized around real design pressures: ownership and
 invariants, purity and effects, runtime inspection and metaprogramming.
-That makes the public teaching surface more revealing than a generic
+That makes the teaching surface more revealing than a generic
 "Python course" label.
 
 ## What Lives Here
@@ -33,7 +33,7 @@ That makes the public teaching surface more revealing than a generic
 - language-level thinking that goes deeper than framework familiarity
 - the ability to explain design tradeoffs, abstractions, and programming styles clearly
 - capstone-backed learning paths for object design, functional design, and runtime judgment
-- a teaching surface that reflects engineering maturity rather than introductory content alone
+- a teaching surface that stays technical rather than introductory
 
 ## Open Here First
 
@@ -47,4 +47,4 @@ That makes the public teaching surface more revealing than a generic
 
 - you want to assess language depth rather than framework-specific experience
 - you care how software design tradeoffs are explained under real maintenance pressure
-- you want to inspect a teaching surface that still feels like engineering work
+- you want to inspect teaching material that still feels like engineering work

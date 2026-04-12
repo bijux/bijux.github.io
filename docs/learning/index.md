@@ -9,10 +9,9 @@ last_reviewed: 2026-04-12
 
 # Learning
 
-The public learning surface lives in `bijux-masterclass`, but it matters
-to the portfolio for a larger reason: it shows that the systems thinking
-behind the repositories is clear enough to be taught, sequenced, and
-reused.
+The public learning surface lives in `bijux-masterclass`. It keeps the
+same systems language teachable, sequenced, and reusable across
+long-form programs.
 
 <div class="bijux-callout"><strong>The learning branch is organized like the rest of the work.</strong>
 Programs are grouped by technical pressure, routed through stable entry
@@ -31,7 +30,7 @@ collection of detached notes.</div>
 - programs organized by design pressure instead of generic topic buckets
 - course books and capstones that stay close to runnable systems
 - a documentation structure that matches the same editorial discipline as the repository docs
-- another route into the technical style of the broader Bijux body of work
+- another route into how the broader repository family explains itself
 
 ## Fast Routes
 
@@ -44,4 +43,4 @@ collection of detached notes.</div>
 ## Reading Rule
 
 Use the learning pages when you want to see how technical depth is
-translated into public-facing programs without losing structure.
+turned into public-facing programs without losing structure.

@@ -9,8 +9,8 @@ last_reviewed: 2026-04-12
 
 # Reading Paths
 
-The hub is strongest when readers can choose a short path that matches
-the part of the work they care about first.
+Use this page to choose a short path that matches the part of the work
+you care about first.
 
 ## By Interest
 
@@ -32,5 +32,5 @@ the part of the work they care about first.
 ## Reading Rule
 
 - do not try to read everything
-- start with the branch that matches your real interest, then go deeper only where it keeps paying off
-- switch branches when you want a broader picture of the repository family rather than more depth in one area
+- start with the branch that matches your real interest, then go deeper only where the material keeps paying off
+- switch branches when you want a broader view of the repository family rather than more depth in one area
