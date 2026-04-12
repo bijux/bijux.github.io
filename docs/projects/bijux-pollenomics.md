@@ -19,36 +19,36 @@ domain work.
 <a class="md-button" href="https://github.com/bijux/bijux-pollenomics">Open repository</a>
 </div>
 
-## Why It Matters
+## Repository Shape
 
 `bijux-pollenomics` is compelling because it takes an unusual domain and
 makes the outputs inspectable: tracked source data, rebuildable report
 bundles, a Nordic evidence atlas, and a documentation surface that
 explains where those artifacts come from.
 
-## What Pollenomics Makes Visible
+## What Lives Here
 
 - evidence mapping framed as a reproducible product surface, not a one-off analysis notebook
 - tracked data, checked-in publication artifacts, and explicit rebuild paths
 - technical architecture adapted to archaeology-facing and field-oriented context without losing clarity
 - honest scope boundaries around what exists today and what does not
 
-## Public Signals To Inspect
+## Open Here First
 
-| Signal | What to inspect |
+| If you are looking for... | Open this part of Pollenomics |
 | --- | --- |
 | reproducible publication | tracked `data/` and `docs/report/` outputs, plus the atlas and country bundles |
 | uncommon domain modeling | the archaeology, eDNA, aDNA, and pollenomics framing in the docs and repository layout |
 | scope discipline | the explicit limits around current capabilities, source categories, and report outputs |
 | public proof | the runtime handbook, data reference, and published Nordic atlas material |
 
-## Start Here When
+## Best Entry Questions
 
 - the question is about evidence mapping, archaeology-facing context, or field-site selection
 - you want to understand how the portfolio handles uncommon domain boundaries
 - you care whether unusual domain work stays reproducible and reviewable
 
-## Why It Matters In The Portfolio
+## In The Larger Picture
 
 Pollenomics helps show that the public work is not only broad but also
 adaptable, capable of carrying structure into specialized domains that
