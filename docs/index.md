@@ -12,7 +12,7 @@ last_reviewed: 2026-04-12
 <section class="bijux-hero">
   <div class="bijux-hero__eyebrow">runtime systems, data delivery, scientific products, and technical education</div>
   <h1 class="bijux-hero__title">Architecture, delivery, and domain work made inspectable.</h1>
-  <p class="bijux-hero__lede"><code>bijux.io</code> is the public map of the Bijux body of work: execution and governance systems, knowledge and data services, applied bioinformatics products, and technical programs. It is organized so readers can move from a concise overview into repository handbooks, published destinations, and source surfaces without losing the thread.</p>
+  <p class="bijux-hero__lede"><code>bijux.io</code> is the documentation hub for the current Bijux repository family: execution and governance systems, knowledge and data services, applied bioinformatics products, and technical programs. It is arranged so readers can move from orientation into repository handbooks, published destinations, and source surfaces without losing ownership boundaries.</p>
   <div class="bijux-topic-row">
     <span class="bijux-topic-pill">platform architecture</span>
     <span class="bijux-topic-pill">runtime governance</span>
@@ -23,16 +23,15 @@ last_reviewed: 2026-04-12
   </div>
 </section>
 
-<div class="bijux-callout"><strong>This hub works best as a route into the work, not a substitute for it.</strong>
-Use it to understand the repository family, choose the right entry
-point, and then move into the documentation and source surfaces that own
-the details.</div>
+<div class="bijux-callout"><strong>Use the hub to locate the owning repository first.</strong>
+Once the right branch is clear, continue inside the documentation and
+source surfaces that hold the detail.</div>
 
 <div class="bijux-panel-grid">
-  <div class="bijux-panel"><h3>Boundaries That Survive Change</h3><p>Core, Canon, Atlas, and the domain repositories are split by real responsibility. Runtime control, knowledge workflows, delivery surfaces, and scientific products are separate enough that ownership stays legible when the system grows.</p></div>
-  <div class="bijux-panel"><h3>Public Work With Operating Surfaces</h3><p>The site routes into repository handbooks, published docs, source repositories, and maintained destinations. The emphasis is on material that can be opened and checked directly.</p></div>
-  <div class="bijux-panel"><h3>Domain Pressure, Not Generic Demos</h3><p>The engineering posture carries into proteomics, pollenomics, evidence mapping, and technical education. The same structure has to survive subject-matter constraints, not just generic infrastructure language.</p></div>
-  <div class="bijux-panel"><h3>Depth That Travels</h3><p>The same body of work also appears as technical programs and course books. That keeps implementation, explanation, and long-term documentation close to one another instead of splitting them into unrelated surfaces.</p></div>
+  <div class="bijux-panel"><h3>Boundaries That Hold</h3><p>Core, Canon, Atlas, and the domain repositories are separated by operating responsibility. Runtime control, knowledge workflows, delivery surfaces, and scientific products stay legible when opened side by side.</p></div>
+  <div class="bijux-panel"><h3>Public Surfaces You Can Open</h3><p>The hub routes into repository handbooks, published docs, and source repositories rather than screenshots or abstract summaries. The useful material is meant to be inspected directly.</p></div>
+  <div class="bijux-panel"><h3>Work Under Domain Pressure</h3><p>Proteomics, Pollenomics, and Masterclass keep the same engineering language under scientific and teaching pressure. The structure has to hold outside generic platform context.</p></div>
+  <div class="bijux-panel"><h3>Explanation Near Implementation</h3><p>Technical programs and course books stay close to the repositories. Explanation, implementation, and long-lived documentation reinforce one another instead of drifting apart.</p></div>
 </div>
 
 <div class="bijux-quicklinks">
@@ -52,10 +51,10 @@ the details.</div>
 
 ## Read This Site As
 
-- the repositories form a system family instead of a loose namespace
-- architecture is visible through boundaries, not claimed through titles
-- delivery discipline shows up in documentation, navigation, and published destinations
-- the work remains structured when it moves into scientific and educational contexts
+- a documentation network with clear repository ownership
+- architecture made visible through boundaries, not titles
+- delivery work expressed through docs, routes, and published destinations
+- the same engineering language carried into scientific and educational contexts
 
 ## Where To Start
 
@@ -63,24 +62,24 @@ the details.</div>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">for architecture-first readers</div>
     <h2>Start with the system split</h2>
-    <p>Open the system map, then Core and Canon, if you want to start with boundaries, runtime structure, and repository ownership.</p>
+    <p>Open the system map, then Core and Canon, to start from boundaries, runtime structure, and repository ownership.</p>
     <p><a href="reading-paths.md">Open the reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">for delivery-focused readers</div>
     <h2>Start with delivery surfaces</h2>
-    <p>Open Delivery Surfaces, then Atlas, if you care most about service design, operational visibility, documentation quality, and published destinations.</p>
+    <p>Open Delivery Surfaces, then Atlas, to start from service design, operational visibility, documentation quality, and published destinations.</p>
     <p><a href="reading-paths.md">Open the reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">for domain and teaching readers</div>
     <h2>Start where the work gets harder</h2>
-    <p>Open Applied Domains, then Proteomics, Pollenomics, and Masterclass, if you want to see how the same structure carries into scientific context and public teaching.</p>
+    <p>Open Applied Domains, then Proteomics, Pollenomics, and Masterclass, to see how the same structure carries into scientific context and public teaching.</p>
     <p><a href="reading-paths.md">Open the reading paths</a></p>
   </article>
 </div>
 
-## Portfolio Map
+## Site Map
 
 ```mermaid
 flowchart LR
@@ -118,6 +117,5 @@ flowchart LR
 
 ## Reading Rule
 
-Use this page to choose where to inspect first. Once the strongest route
-is clear, move into the repository handbooks and let the public systems
-carry the detail.
+Use this page to choose an entry point. Then move into the owning
+repository and stay there long enough to inspect the actual surfaces.
