@@ -10,7 +10,7 @@ last_reviewed: 2026-04-12
 # Public Surface
 
 The public Bijux surface is the set of destinations that readers can
-open directly from `bijux.io` today. The goal is to make the portfolio
+open directly from `bijux.io` today. The goal is to make the hub
 behave like a maintained documentation network, not a static landing
 page.
 
@@ -35,7 +35,7 @@ page.
 
 ## How To Use This Page
 
-- use the documentation links when you want the clearest guided tour of a repository
+- use the documentation links when you want the clearest first tour of a repository
 - use the repository links when you want to inspect structure, files, and source history directly
 - use the hub as the routing layer when you know the question but not yet the owning repository
 

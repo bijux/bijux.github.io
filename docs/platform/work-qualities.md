@@ -9,9 +9,8 @@ last_reviewed: 2026-04-12
 
 # Work Qualities
 
-This page is for readers who want the shortest route into the recurring
-qualities of the Bijux body of work and where those qualities become
-visible publicly.
+This page is the shortest route into the recurring qualities of the
+Bijux repositories and where those qualities become visible publicly.
 
 <div class="bijux-callout"><strong>The useful question is how the work is organized when it becomes public.</strong>
 Across the repositories, the same patterns recur: bounded systems,
@@ -29,12 +28,12 @@ of shape.</div>
 | Domain adaptation | the same engineering posture surviving scientific and evidence-heavy contexts | [Applied domains](applied-domains.md), [Bijux Proteomics](../projects/bijux-proteomics.md), [Bijux Pollenomics](../projects/bijux-pollenomics.md) |
 | Technical communication | architecture and workflow depth translated into teaching without losing rigor | [Learning catalog](../learning/index.md), [Bijux Masterclass](../projects/bijux-masterclass.md) |
 
-## Why These Qualities Matter
+## Why These Qualities Recur
 
 <div class="bijux-panel-grid">
   <div class="bijux-panel"><h3>Bounded Systems</h3><p>Clear repository boundaries are costly to maintain unless they reflect real ownership. They are one of the fastest ways to distinguish systems thinking from namespace inflation.</p></div>
   <div class="bijux-panel"><h3>Inspectable Delivery</h3><p>A strong public surface routes into maintained documentation, published endpoints, automation, and operating rules. Delivery should be visible before anyone asks for private context.</p></div>
-  <div class="bijux-panel"><h3>Domain Pressure</h3><p>Infrastructure alone is not enough. Technical judgment becomes more credible when it survives proteomics, pollenomics, evidence mapping, and scientific workflow constraints.</p></div>
+  <div class="bijux-panel"><h3>Domain Pressure</h3><p>Infrastructure alone is not enough. Technical judgment is easier to inspect when it survives proteomics, pollenomics, evidence mapping, and scientific workflow constraints.</p></div>
   <div class="bijux-panel"><h3>Explainable Depth</h3><p>Engineers who can teach architecture, workflow discipline, and programming design usually understand the systems well enough to build and evolve them cleanly.</p></div>
 </div>
 

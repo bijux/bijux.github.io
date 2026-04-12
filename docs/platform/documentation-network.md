@@ -14,9 +14,8 @@ the same system family. Readers should be able to jump between repos and
 keep the same mental model for where they are and what to do next.
 
 <div class="bijux-callout"><strong>Documentation is part of the product surface here.</strong>
-The shared shell matters because the work is delivered as a
-documentation network, not a pile of disconnected screenshots.
-Navigation consistency is one way that engineering quality becomes
+The shared shell keeps navigation and reader expectations stable across
+repositories. That consistency is one way engineering quality becomes
 visible to readers.</div>
 
 ## Shared Navigation Contract
@@ -26,7 +25,7 @@ visible to readers.</div>
 - the detail strip narrows to the active branch within the current site
 - the left navigation stays scoped to the active branch instead of showing the whole tree at once
 
-## Why This Matters
+## Why Shared Chrome Exists
 
 Without a shared shell, the root site becomes a brochure and each repo
 becomes an island. With a shared shell, the root site is a real starting

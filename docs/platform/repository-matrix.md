@@ -15,7 +15,7 @@ work quality.
 
 ## System Family At A Glance
 
-| Repository | Primary responsibility | What it owns publicly | Strongest inspection angle | Start here |
+| Repository | Primary responsibility | What it owns publicly | Inspection angle | Start here |
 | --- | --- | --- | --- | --- |
 | `bijux-core` | execution backbone and repository governance | CLI surfaces, DAG runtime, artifacts, evidence, release rules | runtime authority and operational discipline | [Project page](../projects/bijux-core.md) |
 | `bijux-canon` | governed knowledge-system architecture | ingest, indexing, reasoning, orchestration, controlled runtime | AI and knowledge workflows split into accountable components | [Project page](../projects/bijux-canon.md) |
@@ -26,7 +26,7 @@ work quality.
 
 ## How The Repositories Work Together
 
-| Layer | Repositories | Why the split matters |
+| Layer | Repositories | Why the split stays useful |
 | --- | --- | --- |
 | backbone | `bijux-core` | execution, evidence, and governance stay visible instead of disappearing into scripts and convention |
 | knowledge and service architecture | `bijux-canon`, `bijux-atlas` | knowledge workflows and delivery surfaces can evolve independently without losing system coherence |

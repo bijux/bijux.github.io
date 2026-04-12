@@ -31,11 +31,11 @@ between presentation and implementation.
   <div class="bijux-panel"><h3>Atlas</h3><p>Inspect the delivery and reporting surfaces to see how APIs, datasets, docs checks, and operational workflows are treated as maintained product surfaces instead of side utilities.</p></div>
 </div>
 
-## What Strong Public Delivery Looks Like
+## What To Look For
 
 What matters most is not any single badge, workflow, or diagram. It is
 the consistency between the public story and the public files. If a
-portfolio claims systems thinking, the repositories should show bounded
+page claims systems thinking, the repositories should show bounded
 systems. If it claims delivery discipline, the docs and release
 surfaces should withstand basic scrutiny.
 
@@ -50,6 +50,6 @@ surfaces should withstand basic scrutiny.
 
 ## Use This Page When
 
-- you want quick routes into the clearest delivery-oriented material
+- you want direct routes into the strongest delivery-oriented material
 - you care more about concrete surfaces than summary alone
 - you want to understand why the public docs are treated as part of delivery rather than an afterthought

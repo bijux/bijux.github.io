@@ -9,24 +9,24 @@ last_reviewed: 2026-04-12
 
 # Applied Domains
 
-The public Bijux surface is not only about platform mechanics. The work
-matters more because the same engineering discipline is carried into
-domains where the data model, user expectations, and decision context
-are harder than generic infrastructure alone. This is where abstraction
-gets tested by real subject matter.
+The public Bijux surface is not only about platform mechanics. The same
+engineering discipline is carried into domains where the data model,
+user expectations, and decision context are harder than generic
+infrastructure alone. This is where abstraction gets tested by real
+subject matter.
 
 ## Domain Reach
 
-| Domain | What the public work demonstrates |
+| Domain | What shows up here |
 | --- | --- |
 | Platform engineering | runtime control, repository governance, documentation systems, and operationally inspectable structures |
 | Data service architecture | delivery surfaces, API and dataset thinking, repository-level reporting, and bounded service responsibilities |
 | Bioinformatics and scientific computing | products shaped around proteomics, pollenomics, evidence mapping, and scientific workflows rather than abstract examples |
 | Technical education | the ability to translate deep technical systems into reusable learning programs without flattening the underlying rigor |
 
-## Why This Matters
+## Why This Branch Exists
 
-Breadth alone does not help. What matters is that the work moves between
+Breadth alone is not useful. What matters is that the work moves between
 infrastructure, data systems, scientific products, and teaching without
 losing architectural clarity.
 
@@ -38,7 +38,7 @@ losing architectural clarity.
   <div class="bijux-panel"><h3>Bijux Masterclass</h3><p>A learning surface that demonstrates the ability to turn systems discipline into technical programs that still respect architecture, workflow rigor, and operational detail.</p></div>
 </div>
 
-## What These Repositories Test
+## Questions Worth Asking
 
 - whether the platform posture survives real scientific vocabulary and decision context
 - whether uncommon domain models are handled through structure instead of jargon

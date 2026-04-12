@@ -10,7 +10,7 @@ last_reviewed: 2026-04-12
 # System Map
 
 The Bijux public surface is easier to understand as a layered system
-than as a list of repositories. The map matters because it shows where
+than as a list of repositories. The map helps because it shows where
 responsibility changes hands and where different kinds of engineering
 judgment are expected.
 
@@ -38,7 +38,7 @@ flowchart TB
 
 ## What Each Layer Owns
 
-| Layer | What it owns | Why it matters |
+| Layer | What it owns | Why it stays separate |
 | --- | --- |
 | Shared discipline | contracts, release evidence, documentation shell, navigation rules, and operating habits | the repositories are connected by repeatable engineering behavior rather than branding alone |
 | Core | command surfaces, runtime control, DAG execution, artifacts, and governance | execution authority and repository discipline stay visible instead of being scattered across scripts |
@@ -63,8 +63,8 @@ the repository pages.
 - do the domain systems inherit the platform posture without being forced into generic abstractions
 - can a reader move across layers and still keep a consistent mental model
 
-## Use This Page When
+## Open This Page When
 
 - you want the shortest explanation of how the public surfaces fit together
 - you need to decide whether to open Core, Canon, Atlas, or a domain product first
-- you want to understand the portfolio as an engineering system, not a list of projects
+- you want to understand the repository family as an engineering system, not a list of projects

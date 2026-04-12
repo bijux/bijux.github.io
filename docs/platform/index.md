@@ -13,13 +13,13 @@ The public Bijux surface is intentionally split by responsibility. This
 section explains why the repository family is structured the way it is
 and how that structure holds together in public.
 
-<div class="bijux-callout"><strong>The repository count matters less than the shape of the split.</strong>
+<div class="bijux-callout"><strong>The split matters more than the count.</strong>
 What matters here is that the split remains coherent under pressure.
 Runtime governance, knowledge workflows, delivery surfaces, domain
 products, and learning programs each have their own home, but the same
 engineering language is visible across all of them.</div>
 
-## Platform Principles
+## Working Principles
 
 | Principle | Why it matters in public |
 | --- | --- |
@@ -37,7 +37,7 @@ engineering language is visible across all of them.</div>
   <div class="bijux-panel"><h3>Products And Programs</h3><p>Proteomics, Pollenomics, and Masterclass show how the same system language survives domain products and technical education instead of remaining trapped in platform internals.</p></div>
 </div>
 
-## What This Branch Helps You See
+## Questions This Branch Answers
 
 - whether the repository split reflects real system boundaries
 - whether delivery posture is part of the architecture rather than an afterthought
@@ -53,7 +53,7 @@ engineering language is visible across all of them.</div>
 | the repository split at a glance | [Repository matrix](repository-matrix.md) |
 | where delivery work shows up most clearly across the repositories | [Delivery surfaces](delivery-surfaces.md) |
 | how the engineering extends into domain-heavy product work | [Applied domains](applied-domains.md) |
-| the broader operating context behind the current public body of work | [Operating context](operating-context.md) |
+| the broader operating context behind the current repository family | [Operating context](operating-context.md) |
 | why the docs shell is shared instead of duplicated carelessly | [Documentation network](documentation-network.md) |
 | which public destinations exist today | [Public surface](public-surface.md) |
 

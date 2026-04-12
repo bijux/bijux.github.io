@@ -15,10 +15,10 @@ multiple engineering contexts, multiple countries, and multiple kinds of
 technical responsibility before being consolidated into the present
 public system family.
 
-## Why This Matters
+## Why Context Exists Here
 
 Readers do not need a biography page to understand experience. They can
-usually infer it from the kinds of problems a portfolio chooses to make
+usually infer it from the kinds of problems the work chooses to make
 legible: bounded architectures, delivery surfaces, documentation
 systems, domain products, and teachable technical programs.
 
@@ -28,7 +28,7 @@ systems, domain products, and teachable technical programs.
 - built across software engineering, platform concerns, data-service architecture, and scientific systems
 - organized as a recent public surface that reflects current work more than a career timeline
 
-## What The Public Surface Suggests
+## What This Context Helps Explain
 
 - engineering habits shaped by heterogeneous technical environments
 - comfort moving between software architecture, platform concerns, data delivery, and scientific products
@@ -40,4 +40,4 @@ The repositories and docs published here emphasize recent work across
 runtime systems, service and data architecture, applied bioinformatics,
 and technical education. The public presentation is intentionally
 organized around the work itself, so that the structure and quality of
-the systems do more of the talking than a profile statement would.
+the systems do more of the talking than a profile narrative would.
