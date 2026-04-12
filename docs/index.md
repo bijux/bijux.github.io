@@ -58,6 +58,29 @@ teaching practice reinforce each other across the Bijux ecosystem.</div>
 | how the engineering style carries into teaching | [Learning catalog](learning/index.md) |
 | the standards behind the docs shell itself | [Stewardship overview](stewardship/index.md) |
 
+## Fast Reading Paths
+
+<div class="bijux-showcase-grid">
+  <article class="bijux-showcase-card">
+    <div class="bijux-showcase-card__eyebrow">for architecture-first readers</div>
+    <h2>Start with platform structure</h2>
+    <p>Open the system map, then Core and Canon, if you want to assess architecture, system boundaries, and technical judgment first.</p>
+    <p><a href="start-here.md">Open reading paths</a></p>
+  </article>
+  <article class="bijux-showcase-card">
+    <div class="bijux-showcase-card__eyebrow">for delivery-focused readers</div>
+    <h2>Start with service and proof surfaces</h2>
+    <p>Open Delivery Signals, then Atlas, if you care most about operational seriousness, data delivery, and public proof paths.</p>
+    <p><a href="start-here.md">Open reading paths</a></p>
+  </article>
+  <article class="bijux-showcase-card">
+    <div class="bijux-showcase-card__eyebrow">for domain and teaching readers</div>
+    <h2>Start with scientific and learning work</h2>
+    <p>Open Applied Domains, then Proteomics, Pollenomics, and Masterclass, if you want to see how engineering structure survives in specialized contexts.</p>
+    <p><a href="start-here.md">Open reading paths</a></p>
+  </article>
+</div>
+
 ## Public Surface Map
 
 ```mermaid

@@ -47,7 +47,9 @@ extra:
         url: https://bijux.io/bijux-masterclass/
 
 nav:
-  - Home: index.md
+  - Home:
+      - Overview: index.md
+      - Reading Paths: start-here.md
   - Platform:
       - Overview: platform/index.md
       - System Map: platform/system-map.md
