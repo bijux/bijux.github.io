@@ -14,32 +14,24 @@ to the portfolio for a larger reason: it shows that the systems thinking
 behind the repositories is clear enough to be taught, sequenced, and
 reused.
 
-<div class="bijux-callout"><strong>Teaching is part of the signal, not a separate hobby surface.</strong>
-If architecture, workflow discipline, and language depth can be turned
-into coherent programs, that usually means the underlying engineering
-has enough clarity to travel well between implementation and explanation.</div>
-
-## What The Learning Surface Proves
-
-| Signal | Why it matters |
-| --- | --- |
-| technical ideas are sequenced clearly | strong engineering judgment is easier to trust when it can be taught without hand-waving |
-| programs are organized by design pressure, not just topic labels | this shows a problem-first view of software and workflow practice |
-| capstones and verification routes exist alongside narrative content | the material stays tied to runnable systems rather than detached theory |
-| the teaching surface shares the same documentation discipline as the product repos | learning is treated like a maintained system, not a static PDF shelf |
+<div class="bijux-callout"><strong>The learning branch is organized like the rest of the work.</strong>
+Programs are grouped by technical pressure, routed through stable entry
+pages, and tied to course books and capstones rather than treated as a
+collection of detached notes.</div>
 
 ## Program Families
 
-| Program | What it demonstrates | Destination |
+| Program | Focus | Destination |
 | --- | --- | --- |
 | Reproducible Research | workflow systems, automation discipline, build truth, and scientific execution habits | [Program docs](https://bijux.io/bijux-masterclass/reproducible-research/) |
-| Python Programming | language depth, runtime judgment, software design tradeoffs, and the ability to teach structure rather than shortcuts | [Program docs](https://bijux.io/bijux-masterclass/python-programming/) |
+| Python Programming | language depth, runtime judgment, software design tradeoffs, and long-form programming instruction | [Program docs](https://bijux.io/bijux-masterclass/python-programming/) |
 
-## Why It Belongs In The Portfolio
+## What You Will Find Here
 
-- it extends the portfolio from building systems into explaining them
-- it shows repeatable engineering thinking rather than one-off repository knowledge
-- it gives readers another way to inspect clarity, sequencing, verification, and technical judgment
+- programs organized by design pressure instead of generic topic buckets
+- course books and capstones that stay close to runnable systems
+- a documentation structure that matches the same editorial discipline as the repository docs
+- another route into the technical style of the broader Bijux body of work
 
 ## Fast Routes
 
@@ -47,7 +39,7 @@ has enough clarity to travel well between implementation and explanation.</div>
 | --- | --- |
 | workflow and reproducibility judgment | [Reproducible Research](reproducible-research.md) |
 | language design and software architecture judgment | [Python Programming](python-programming.md) |
-| how the programs fit into the larger portfolio | [Bijux Masterclass](../projects/bijux-masterclass.md) |
+| how the programs fit into the larger repository family | [Bijux Masterclass](../projects/bijux-masterclass.md) |
 
 ## Reading Rule
 
