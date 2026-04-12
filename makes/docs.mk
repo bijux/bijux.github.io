@@ -12,6 +12,7 @@ SITE_URL             ?= https://bijux.io/
 DOCS_ENV             := DISABLE_MKDOCS_2_WARNING=true
 PYTHON_BIN           ?= $(shell command -v python3 2>/dev/null)
 TABLE_GUARD          ?= internal/quality/markdown_table_guard.py
+SITE_PUBLISH_SCRIPT  ?= internal/scripts/publish_site_root.sh
 
 ifeq ($(strip $(UV_BIN)),)
   ifeq ($(strip $(MKDOCS_BIN_CAND)),)
@@ -23,7 +24,7 @@ else
   DOCS_RUN = XDG_CACHE_HOME="$(DOCS_CACHE_DIR)" $(DOCS_ENV) "$(UV_BIN)" run --with-requirements "$(DOCS_REQUIREMENTS)" mkdocs
 endif
 
-.PHONY: docs docs-clean docs-require docs-serve docs-sanity
+.PHONY: docs docs-clean docs-require docs-serve docs-sanity site-root
 
 ##@ Documentation
 docs-require: ## Verify the documentation build inputs are present
@@ -43,6 +44,11 @@ docs: docs-clean docs-require ## Build documentation into artifacts/docs/site
 docs-sanity: docs-require ## Run lightweight documentation sanity checks
 	@"$(PYTHON_BIN)" "$(TABLE_GUARD)" docs
 	@$(MAKE) docs
+
+site-root: docs ## Publish the built site into the repository root served by GitHub Pages
+	@test -f "$(SITE_PUBLISH_SCRIPT)" || (echo "ERROR: missing $(SITE_PUBLISH_SCRIPT)" && exit 1)
+	@bash "$(SITE_PUBLISH_SCRIPT)" "$(DOCS_SITE_DIR)"
+	@echo "Repository root publication complete"
 
 docs-serve: docs-require ## Serve documentation locally with automatic reloads
 	@HOST=$${HOST:-$(DOCS_HOST)}; PORT=$${PORT:-$(DOCS_PORT)}; \
