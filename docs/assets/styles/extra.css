@@ -816,6 +816,54 @@ button {
   margin: 1.5rem 0;
 }
 
+.bijux-showcase-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin: 1.6rem 0 1.8rem;
+}
+
+.bijux-showcase-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.42)),
+    var(--bijux-panel);
+  border: 1px solid var(--bijux-border);
+  border-radius: 1.15rem;
+  box-shadow: var(--bijux-card-shadow);
+  padding: 1.15rem 1.1rem;
+}
+
+.bijux-showcase-card > h2 {
+  font-size: 1.35rem;
+  margin: 0.15rem 0 0.55rem;
+}
+
+.bijux-showcase-card__eyebrow {
+  color: var(--bijux-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.bijux-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.85rem 0 1rem;
+}
+
+.bijux-tag {
+  background: rgba(79, 70, 229, 0.1);
+  border: 1px solid rgba(79, 70, 229, 0.12);
+  border-radius: 999px;
+  color: var(--bijux-ink);
+  display: inline-flex;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.35rem 0.68rem;
+}
+
 .bijux-media-card {
   margin: 0;
   background: var(--bijux-surface-gradient), var(--bijux-panel);

@@ -9,21 +9,92 @@ last_reviewed: 2026-04-12
 
 # Projects
 
-Use this section when you know you need one repository and want the
-shortest route to its handbook and source.
+Use this section when you want the strongest public cross-section of the
+work itself. Each repository below reveals a different part of the same
+engineering posture.
 
-## Project Map
+<div class="bijux-showcase-grid">
+  <article class="bijux-showcase-card">
+    <div class="bijux-showcase-card__eyebrow">runtime and governance backbone</div>
+    <h2>Bijux Core</h2>
+    <p>Shows command surfaces, DAG execution, evidence handling, release discipline, and repository-wide operational structure.</p>
+    <div class="bijux-tag-list">
+      <span class="bijux-tag">cli</span>
+      <span class="bijux-tag">runtime</span>
+      <span class="bijux-tag">governance</span>
+    </div>
+    <p><a href="bijux-core.md">Read the project page</a></p>
+  </article>
+  <article class="bijux-showcase-card">
+    <div class="bijux-showcase-card__eyebrow">governed knowledge system</div>
+    <h2>Bijux Canon</h2>
+    <p>Shows how ingest, index, reasoning, orchestration, and controlled runtime acceptance can be split into clear package boundaries.</p>
+    <div class="bijux-tag-list">
+      <span class="bijux-tag">ingest</span>
+      <span class="bijux-tag">reasoning</span>
+      <span class="bijux-tag">agents</span>
+    </div>
+    <p><a href="bijux-canon.md">Read the project page</a></p>
+  </article>
+  <article class="bijux-showcase-card">
+    <div class="bijux-showcase-card__eyebrow">data and service delivery</div>
+    <h2>Bijux Atlas</h2>
+    <p>Shows API, dataset, and docs control-plane thinking, where delivery and operational visibility are first-class product concerns.</p>
+    <div class="bijux-tag-list">
+      <span class="bijux-tag">api</span>
+      <span class="bijux-tag">datasets</span>
+      <span class="bijux-tag">operations</span>
+    </div>
+    <p><a href="bijux-atlas.md">Read the project page</a></p>
+  </article>
+  <article class="bijux-showcase-card">
+    <div class="bijux-showcase-card__eyebrow">applied scientific products</div>
+    <h2>Bijux Proteomics</h2>
+    <p>Shows how a disciplined software posture carries into discovery and proteomics-oriented product work.</p>
+    <div class="bijux-tag-list">
+      <span class="bijux-tag">proteomics</span>
+      <span class="bijux-tag">product</span>
+      <span class="bijux-tag">scientific software</span>
+    </div>
+    <p><a href="bijux-proteomics.md">Read the project page</a></p>
+  </article>
+  <article class="bijux-showcase-card">
+    <div class="bijux-showcase-card__eyebrow">evidence and site selection</div>
+    <h2>Bijux Pollenomics</h2>
+    <p>Shows evidence mapping, archaeology-facing narratives, and domain-specific reasoning surfaces supported by structured engineering.</p>
+    <div class="bijux-tag-list">
+      <span class="bijux-tag">pollenomics</span>
+      <span class="bijux-tag">evidence mapping</span>
+      <span class="bijux-tag">archaeology</span>
+    </div>
+    <p><a href="bijux-pollenomics.md">Read the project page</a></p>
+  </article>
+  <article class="bijux-showcase-card">
+    <div class="bijux-showcase-card__eyebrow">teaching through architecture</div>
+    <h2>Bijux Masterclass</h2>
+    <p>Shows how technical depth is translated into public programs without losing structural honesty or engineering rigor.</p>
+    <div class="bijux-tag-list">
+      <span class="bijux-tag">education</span>
+      <span class="bijux-tag">python</span>
+      <span class="bijux-tag">reproducibility</span>
+    </div>
+    <p><a href="bijux-masterclass.md">Read the project page</a></p>
+  </article>
+</div>
 
-| Project | Owns | Docs | Repository |
-| --- | --- | --- | --- |
-| `bijux-core` | CLI, DAG, evidence, release governance | [Docs](https://bijux.io/bijux-core/) | [GitHub](https://github.com/bijux/bijux-core) |
-| `bijux-canon` | governed AI and knowledge workflows | [Docs](https://bijux.io/bijux-canon/) | [GitHub](https://github.com/bijux/bijux-canon) |
-| `bijux-atlas` | delivery APIs, runtime operations, docs control plane | [Docs](https://bijux.io/bijux-atlas/) | [GitHub](https://github.com/bijux/bijux-atlas) |
-| `bijux-proteomics` | proteomics and discovery product surface | [Docs](https://bijux.io/bijux-proteomics/) | [GitHub](https://github.com/bijux/bijux-proteomics) |
-| `bijux-pollenomics` | evidence mapping and site selection workflows | [Docs](https://bijux.io/bijux-pollenomics/) | [GitHub](https://github.com/bijux/bijux-pollenomics) |
-| `bijux-masterclass` | public masterclass programs and courses | [Docs](https://bijux.io/bijux-masterclass/) | [GitHub](https://github.com/bijux/bijux-masterclass) |
+## Portfolio Reading Guide
 
-## Decision Rule
+| If you care most about... | Start here |
+| --- | --- |
+| platform and runtime engineering | [Bijux Core](bijux-core.md) |
+| governed AI and knowledge systems | [Bijux Canon](bijux-canon.md) |
+| data delivery and service architecture | [Bijux Atlas](bijux-atlas.md) |
+| bioinformatics and scientific product work | [Bijux Proteomics](bijux-proteomics.md) |
+| evidence mapping and field-oriented domain systems | [Bijux Pollenomics](bijux-pollenomics.md) |
+| teaching and engineering communication | [Bijux Masterclass](bijux-masterclass.md) |
 
-Open the repository page that matches the owned behavior. If the concern
-still spans multiple repos after that, come back to the platform pages.
+## Reading Rule
+
+Use the cards for orientation and the project pages for a tighter
+argument about what each repository contributes to the overall body of
+work.
