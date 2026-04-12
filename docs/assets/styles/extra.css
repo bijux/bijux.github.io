@@ -77,6 +77,40 @@
   border-color: rgba(45, 212, 191, 0.2);
 }
 
+[data-md-color-scheme="slate"] .bijux-panel,
+[data-md-color-scheme="slate"] .bijux-showcase-card,
+[data-md-color-scheme="slate"] .bijux-media-card {
+  background:
+    linear-gradient(180deg, rgba(30, 41, 59, 0.56), rgba(15, 23, 42, 0.34)),
+    linear-gradient(160deg, rgba(10, 18, 32, 0.94), rgba(9, 16, 28, 0.92));
+  border-color: rgba(45, 212, 191, 0.14);
+}
+
+[data-md-color-scheme="slate"] .bijux-callout {
+  background:
+    linear-gradient(145deg, rgba(15, 118, 110, 0.16), rgba(8, 145, 178, 0.12)),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(11, 18, 32, 0.9));
+  border-color: rgba(45, 212, 191, 0.18);
+}
+
+[data-md-color-scheme="slate"] .bijux-map-frame {
+  background: linear-gradient(180deg, rgba(15, 118, 110, 0.16), rgba(8, 145, 178, 0.1));
+  border-color: rgba(45, 212, 191, 0.18);
+}
+
+[data-md-color-scheme="slate"] .bijux-panel::after,
+[data-md-color-scheme="slate"] .bijux-showcase-card::before {
+  background: linear-gradient(90deg, rgba(251, 191, 36, 0.32), rgba(45, 212, 191, 0.18), transparent);
+}
+
+[data-md-color-scheme="slate"] .bijux-showcase-card::after {
+  background: radial-gradient(circle, rgba(103, 232, 249, 0.16), transparent 70%);
+}
+
+[data-md-color-scheme="slate"] .bijux-showcase-card__eyebrow {
+  color: #d7e4ee;
+}
+
 [data-md-color-scheme="slate"] .bijux-hero__eyebrow,
 [data-md-color-scheme="slate"] .bijux-topic-pill {
   color: #dbeafe;
