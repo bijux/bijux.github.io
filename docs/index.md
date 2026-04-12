@@ -39,7 +39,7 @@ inspection.</div>
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="projects/">Browse the repositories</a>
 <a class="md-button" href="platform/">Inspect the platform story</a>
-<a class="md-button" href="start-here/">Choose a reading path</a>
+<a class="md-button" href="reading-paths/">Choose a reading path</a>
 </div>
 
 ## What A Careful Reader Can Prove Quickly
@@ -65,19 +65,19 @@ inspection.</div>
     <div class="bijux-showcase-card__eyebrow">for architecture-first readers</div>
     <h2>Start with the system split</h2>
     <p>Open the system map, then Core and Canon, if you want to evaluate architecture, boundary setting, and runtime judgment before anything else.</p>
-    <p><a href="start-here.md">Open the reading paths</a></p>
+    <p><a href="reading-paths.md">Open the reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">for delivery-focused readers</div>
     <h2>Start with delivery surfaces</h2>
     <p>Open Delivery Signals, then Atlas, if you care most about service design, operational visibility, documentation quality, and proof paths.</p>
-    <p><a href="start-here.md">Open the reading paths</a></p>
+    <p><a href="reading-paths.md">Open the reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">for domain and teaching readers</div>
     <h2>Start where the work gets harder</h2>
     <p>Open Applied Domains, then Proteomics, Pollenomics, and Masterclass, if you want to see how engineering structure survives scientific context and public explanation.</p>
-    <p><a href="start-here.md">Open the reading paths</a></p>
+    <p><a href="reading-paths.md">Open the reading paths</a></p>
   </article>
 </div>
 

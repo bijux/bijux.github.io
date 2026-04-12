@@ -49,7 +49,7 @@ extra:
 nav:
   - Home:
       - Overview: index.md
-      - Reading Paths: start-here.md
+      - Reading Paths: reading-paths.md
   - Platform:
       - Overview: platform/index.md
       - Engineering Signals: platform/engineering-signals.md
