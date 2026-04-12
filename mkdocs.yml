@@ -53,6 +53,7 @@ nav:
       - System Map: platform/system-map.md
       - Delivery Signals: platform/delivery-signals.md
       - Applied Domains: platform/applied-domains.md
+      - Operating Context: platform/operating-context.md
       - Documentation Network: platform/documentation-network.md
       - Public Surface: platform/public-surface.md
   - Projects:
