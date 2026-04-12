@@ -36,13 +36,13 @@ source surfaces that hold the detail.</div>
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="projects/">Browse the repositories</a>
-<a class="md-button" href="platform/">Inspect the platform story</a>
+<a class="md-button" href="platform/">Read the platform branch</a>
 <a class="md-button" href="reading-paths/">Choose a reading path</a>
 </div>
 
 ## What Lives Here
 
-| If you want to understand... | Open this first | What you will find |
+| Start here for... | Open this first | What you will find |
 | --- | --- |
 | how the repositories fit together | [Platform overview](platform/index.md) -> [System map](platform/system-map.md) | the split across runtime, knowledge, delivery, and domain work |
 | how delivery shows up publicly | [Delivery surfaces](platform/delivery-surfaces.md) -> [Bijux Atlas](projects/bijux-atlas.md) | documentation, published destinations, and operated service surfaces |
@@ -62,19 +62,19 @@ source surfaces that hold the detail.</div>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">for architecture-first readers</div>
     <h2>Start with the system split</h2>
-    <p>Open the system map, then Core and Canon, to start from boundaries, runtime structure, and repository ownership.</p>
+    <p>Open the system map, then Core and Canon, for boundaries, runtime structure, and repository ownership.</p>
     <p><a href="reading-paths.md">Open the reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">for delivery-focused readers</div>
     <h2>Start with delivery surfaces</h2>
-    <p>Open Delivery Surfaces, then Atlas, to start from service design, operational visibility, documentation quality, and published destinations.</p>
+    <p>Open Delivery Surfaces, then Atlas, for service design, operational visibility, documentation quality, and published destinations.</p>
     <p><a href="reading-paths.md">Open the reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">for domain and teaching readers</div>
     <h2>Start where the work gets harder</h2>
-    <p>Open Applied Domains, then Proteomics, Pollenomics, and Masterclass, to see how the same structure carries into scientific context and public teaching.</p>
+    <p>Open Applied Domains, then Proteomics, Pollenomics, and Masterclass, for the same structure under scientific context and public teaching.</p>
     <p><a href="reading-paths.md">Open the reading paths</a></p>
   </article>
 </div>
