@@ -20,8 +20,31 @@ ability to teach abstraction and software design clearly.
 <a class="md-button" href="https://bijux.io/bijux-masterclass/python-programming/python-functional-programming/">Functional</a>
 </div>
 
-## What It Reveals
+## Why It Matters
+
+This family shows depth in Python beyond framework familiarity. The
+tracks are organized around real design pressures: ownership and
+invariants, purity and effects, runtime inspection and metaprogramming.
+That makes the public teaching surface more revealing than a generic
+"Python course" label.
+
+## What It Makes Visible
 
 - language-level thinking that goes deeper than framework familiarity
-- the ability to explain design tradeoffs, abstractions, and programming styles
+- the ability to explain design tradeoffs, abstractions, and programming styles clearly
+- capstone-backed learning paths for object design, functional design, and runtime judgment
 - a teaching surface that reflects engineering maturity rather than introductory content alone
+
+## Public Signals To Inspect
+
+| Signal | What to inspect |
+| --- | --- |
+| object-design judgment | [Python Object-Oriented Programming](https://bijux.io/bijux-masterclass/python-programming/python-object-oriented-programming/) and its focus on invariants, roles, persistence, and runtime pressure |
+| functional design maturity | [Python Functional Programming](https://bijux.io/bijux-masterclass/python-programming/python-functional-programming/) and its emphasis on purity, effects, async coordination, and composable systems |
+| runtime and framework honesty | [Python Metaprogramming](https://bijux.io/bijux-masterclass/python-programming/python-meta-programming/) and its focus on inspection, wrappers, descriptors, and metaclasses |
+
+## Start Here When
+
+- you want to assess language depth rather than framework-specific experience
+- you care how software design tradeoffs are explained under real maintenance pressure
+- you want to inspect a teaching surface that still feels like engineering work
