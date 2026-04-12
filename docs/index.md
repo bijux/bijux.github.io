@@ -9,68 +9,88 @@ last_reviewed: 2026-04-12
 
 # Bijux
 
-`bijux.io` is the public hub for the Bijux documentation network. The
-goal is simple: let readers move between the platform story, product
-handbooks, and learning paths without having to re-learn the navigation
-system in every repository.
+`bijux.io` is the public surface of a deliberately connected body of
+work: governed runtime systems, documentation infrastructure, data
+delivery platforms, applied bioinformatics products, and technical
+education that is built with the same engineering discipline as the
+software itself.
 
-<div class="bijux-callout"><strong>Use the hub to choose the right site, then stay inside the same navigation shell.</strong>
-The top strip moves between repositories. The site tabs explain the
-current hub area. The detail strip narrows to the active section. That
-same pattern now starts here instead of only inside project sites.</div>
+<div class="bijux-callout"><strong>Start here when you want to understand the shape of the work before opening a single repository.</strong>
+The point of this hub is not to summarize everything into one page. The
+point is to make the structure legible enough that a careful reader can
+see how platform thinking, delivery discipline, domain products, and
+teaching practice reinforce each other across the Bijux ecosystem.</div>
 
 <div class="bijux-panel-grid">
-  <div class="bijux-panel"><h3>Platform Story</h3><p>Open the platform pages when you need the cross-repository picture: how the public surfaces fit together, which handbook to open first, and how the documentation network is shaped.</p></div>
-  <div class="bijux-panel"><h3>Project Handbooks</h3><p>Open the project pages when you already know the repository you need and want the shortest path into its docs, code, and release surface.</p></div>
-  <div class="bijux-panel"><h3>Learning Paths</h3><p>Open the learning pages for the public masterclass tracks and course-level routes into reproducible research and Python programming.</p></div>
+  <div class="bijux-panel"><h3>Systems With Boundaries</h3><p>The repositories are split by responsibility on purpose. Runtime, knowledge systems, delivery surfaces, and domain applications are separated clearly enough that ownership can stay visible under change.</p></div>
+  <div class="bijux-panel"><h3>Operationally Serious</h3><p>The public work is not presented as loose experiments. It is documented through contracts, release flows, evidence artifacts, navigation discipline, and repositories that are built to stand up to inspection.</p></div>
+  <div class="bijux-panel"><h3>Domain-Aware</h3><p>The platform work does not stop at generic infrastructure. It carries into proteomics, pollenomics, evidence mapping, data products, and learning programs where technical architecture has to meet real subject matter.</p></div>
 </div>
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="projects/">Browse the project handbooks</a>
-<a class="md-button" href="platform/">Open the platform overview</a>
-<a class="md-button" href="learning/">Open the learning catalog</a>
+<a class="md-button md-button--primary" href="projects/">Browse the work</a>
+<a class="md-button" href="platform/">Open the platform narrative</a>
+<a class="md-button" href="learning/">Open the learning surface</a>
 </div>
 
-## How the Public Surface Fits Together
+## What This Surface Makes Visible
+
+| Area | What a careful reader can see |
+| --- | --- |
+| Platform engineering | systems are organized by clear ownership, constrained interfaces, and documentation that behaves like part of the product |
+| Software engineering | repositories show architectural separation, operational guardrails, release discipline, and maintainable information design |
+| Data and service engineering | Atlas, Canon, and Core expose delivery, runtime, evidence, API, and contract thinking as first-class concerns |
+| Applied bioinformatics | Proteomics and Pollenomics show how the same engineering posture extends into domain-specific products rather than stopping at infrastructure |
+
+## Navigate By Intent
+
+| If you want to understand... | Open this first |
+| --- | --- |
+| how the repositories fit together as one engineering system | [Platform overview](platform/index.md) |
+| the strongest cross-section of public work | [Project catalog](projects/index.md) |
+| how the engineering style carries into teaching | [Learning catalog](learning/index.md) |
+| the standards behind the docs shell itself | [Stewardship overview](stewardship/index.md) |
+
+## Public Surface Map
 
 ```mermaid
 flowchart LR
-    hub["bijux.io hub"]
+    hub["bijux.io"]
+    platform["platform narrative"]
+    projects["repository portfolio"]
+    learning["learning programs"]
+    stewardship["documentation discipline"]
     core["bijux-core"]
     canon["bijux-canon"]
     atlas["bijux-atlas"]
     proteomics["bijux-proteomics"]
     pollenomics["bijux-pollenomics"]
     masterclass["bijux-masterclass"]
-    hub --> core
-    hub --> canon
-    hub --> atlas
-    hub --> proteomics
-    hub --> pollenomics
-    hub --> masterclass
+    hub --> platform
+    hub --> projects
+    hub --> learning
+    hub --> stewardship
+    projects --> core
+    projects --> canon
+    projects --> atlas
+    projects --> proteomics
+    projects --> pollenomics
+    learning --> masterclass
 ```
-
-## Start Here
-
-| Surface | Open It When | Destination |
-| --- | --- | --- |
-| Platform | you need cross-repository orientation before opening a specific handbook | [Platform overview](platform/index.md) |
-| Projects | you want the fastest route into one repository’s docs and code | [Project catalog](projects/index.md) |
-| Learning | you want public course material and program-level entry points | [Learning catalog](learning/index.md) |
-| Stewardship | you want the rules behind the shared docs shell and content discipline | [Stewardship overview](stewardship/index.md) |
 
 ## Main Repositories
 
-| Repository | Role | Docs |
+| Repository | Role in the system family | Docs |
 | --- | --- | --- |
-| `bijux-core` | CLI, DAG runtime, and governance backbone | [Core docs](https://bijux.io/bijux-core/) |
-| `bijux-canon` | governed ingest, retrieval, reasoning, and runtime system | [Canon docs](https://bijux.io/bijux-canon/) |
-| `bijux-atlas` | data delivery, server, API, and documentation control plane | [Atlas docs](https://bijux.io/bijux-atlas/) |
-| `bijux-proteomics` | proteomics and discovery software platform | [Proteomics docs](https://bijux.io/bijux-proteomics/) |
-| `bijux-pollenomics` | evidence mapping and site selection product surface | [Pollenomics docs](https://bijux.io/bijux-pollenomics/) |
-| `bijux-masterclass` | public learning programs and deep-dive courses | [Masterclass docs](https://bijux.io/bijux-masterclass/) |
+| `bijux-core` | CLI, DAG runtime, repository governance, evidence, and release backbone | [Core docs](https://bijux.io/bijux-core/) |
+| `bijux-canon` | governed ingest, retrieval, reasoning, orchestration, and runtime control | [Canon docs](https://bijux.io/bijux-canon/) |
+| `bijux-atlas` | data delivery, service interfaces, dataset operations, and docs control-plane behavior | [Atlas docs](https://bijux.io/bijux-atlas/) |
+| `bijux-proteomics` | proteomics and discovery-oriented product system | [Proteomics docs](https://bijux.io/bijux-proteomics/) |
+| `bijux-pollenomics` | evidence mapping and site-selection product system | [Pollenomics docs](https://bijux.io/bijux-pollenomics/) |
+| `bijux-masterclass` | public programs and deep-dive teaching tracks | [Masterclass docs](https://bijux.io/bijux-masterclass/) |
 
-## Decision Rule
+## Reading Rule
 
-Use this hub when the first question is “which handbook owns this?”
-Move into the repository docs as soon as ownership is clear.
+Use this page to understand the body of work before choosing a handbook.
+Once the owned surface is clear, move into the repository docs and let
+the repository prove the details.
