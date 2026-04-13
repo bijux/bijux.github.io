@@ -1015,7 +1015,40 @@ input:focus-visible,
   .bijux-hub-strip,
   .bijux-site-tabs,
   .bijux-detail-tabs {
-    display: none;
+    display: block;
+  }
+
+  .bijux-hub-strip {
+    background: linear-gradient(90deg, var(--bijux-hub-bg), var(--bijux-ribbon-bg-strong));
+    border-top: 1px solid var(--bijux-hub-border);
+    flex: 1 1 100%;
+    margin-inline: calc(var(--md-default-spacing) * -1);
+    padding-inline: var(--md-default-spacing);
+  }
+
+  .bijux-hub-strip .bijux-tabs__list,
+  .bijux-site-tabs .bijux-tabs__list,
+  .bijux-detail-tabs .bijux-tabs__list {
+    -webkit-overflow-scrolling: touch;
+    padding-block: 0.45rem;
+    scroll-padding-inline: var(--md-default-spacing);
+  }
+
+  .bijux-hub-strip .bijux-tabs__link,
+  .bijux-site-tabs .bijux-tabs__link,
+  .bijux-detail-tabs .bijux-tabs__link {
+    font-size: 0.72rem;
+    min-height: 2.2rem;
+    padding: 0.38rem 0.7rem;
+  }
+
+  .bijux-hub-strip::before,
+  .bijux-hub-strip::after,
+  .bijux-site-tabs .md-grid::before,
+  .bijux-site-tabs .md-grid::after,
+  .bijux-detail-tabs .md-grid::before,
+  .bijux-detail-tabs .md-grid::after {
+    width: 0.9rem;
   }
 
   .bijux-nav--mobile .md-nav__source {
