@@ -23,7 +23,7 @@ system family through a different responsibility.
       <span class="bijux-tag">runtime</span>
       <span class="bijux-tag">governance</span>
     </div>
-    <p><a href="bijux-core.md">Read the project page</a></p>
+    <p><a href="bijux-core/">Read the project page</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">governed knowledge system</div>
@@ -34,7 +34,7 @@ system family through a different responsibility.
       <span class="bijux-tag">reasoning</span>
       <span class="bijux-tag">agents</span>
     </div>
-    <p><a href="bijux-canon.md">Read the project page</a></p>
+    <p><a href="bijux-canon/">Read the project page</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">data and service delivery</div>
@@ -45,7 +45,7 @@ system family through a different responsibility.
       <span class="bijux-tag">datasets</span>
       <span class="bijux-tag">operations</span>
     </div>
-    <p><a href="bijux-atlas.md">Read the project page</a></p>
+    <p><a href="bijux-atlas/">Read the project page</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">applied scientific products</div>
@@ -56,7 +56,7 @@ system family through a different responsibility.
       <span class="bijux-tag">product</span>
       <span class="bijux-tag">scientific software</span>
     </div>
-    <p><a href="bijux-proteomics.md">Read the project page</a></p>
+    <p><a href="bijux-proteomics/">Read the project page</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">evidence and site selection</div>
@@ -67,7 +67,7 @@ system family through a different responsibility.
       <span class="bijux-tag">evidence mapping</span>
       <span class="bijux-tag">archaeology</span>
     </div>
-    <p><a href="bijux-pollenomics.md">Read the project page</a></p>
+    <p><a href="bijux-pollenomics/">Read the project page</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">teaching through architecture</div>
@@ -78,7 +78,7 @@ system family through a different responsibility.
       <span class="bijux-tag">python</span>
       <span class="bijux-tag">reproducibility</span>
     </div>
-    <p><a href="bijux-masterclass.md">Read the project page</a></p>
+    <p><a href="bijux-masterclass/">Read the project page</a></p>
   </article>
 </div>
 
