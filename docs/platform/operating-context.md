@@ -9,53 +9,42 @@ last_reviewed: 2026-04-13
 
 # Operating Context
 
-The public Bijux repository family is recent, but the engineering habits
-visible here were not shaped in a single narrow setting. The current
-surface reflects work carried across different technical environments,
-delivery contexts, and domain pressures before being consolidated into a
-coherent public system family.
+This repository family brings together three related kinds of public
+work: platform engineering, applied project work, and technical
+education.
 
-<div class="bijux-callout"><strong>Use this page as orientation, not as a profile note.</strong>
-The useful question is what kind of work tends to produce this public
-shape: boundary-conscious repositories, documentation treated as part of
-delivery, domain-heavy software that still keeps engineering structure
-visible, and teaching material that stays technically honest.</div>
+The split is intentional. Each part of the repository family answers a
+different question for the reader:
 
-## What Shapes The Current Public Work
+- **Platform** shows system structure, runtime concerns, and operational design.
+- **Projects** show how that structure is applied in domain-specific settings.
+- **Learning** explains methods, trade-offs, and workflow decisions that appear across both.
 
-The recurring pattern across the repositories is not tied to one tool,
-one industry label, or one delivery surface. It is shaped by work that
-crosses runtime systems, data and service architecture, scientific
-software, evidence-heavy domains, and technical teaching.
+The work published here is shaped by environments where software has to
+stay inspectable under change. That includes service and data systems,
+evidence-heavy workflows, and scientific or technical contexts where
+reproducibility, clear boundaries, and explicit contracts matter.
 
-That broader context helps explain why the public system emphasizes
-clear ownership, reproducibility, explicit contracts, and public
-documentation that behaves like part of the product rather than an
-afterthought.
+This is why the repositories tend to look the way they do.
+Responsibilities are separated at the repository level. Documentation is
+part of delivery, not a side artifact. Domain-specific work is
+presented with enough engineering structure to make the system legible
+to someone outside the project.
 
-## What Readers Will Notice
+## What Readers Should Expect
 
-| Visible pattern | Why it matters |
+| Pattern | What it means in practice |
 | --- | --- |
-| repository boundaries are explicit | responsibilities are separated on purpose, so architecture stays inspectable under change |
-| documentation is treated as a delivery surface | the public route, not just the source tree, is part of the engineering standard |
-| domain work stays structurally legible | scientific and evidence-heavy contexts are presented without dropping system discipline |
-| learning programs sit next to production-facing repositories | teaching is used to make technical judgment visible, not to soften or market the work |
-
-## Present Public Emphasis
-
-- runtime, governance, and repository discipline where execution behavior needs to remain inspectable
-- service, dataset, and control-plane work where delivery posture matters as much as implementation
-- scientific and evidence-oriented product work where engineering rigor must survive domain pressure
-- technical education that explains architecture and workflow judgment without flattening them into tutorials
+| clear repository boundaries | repositories are split by responsibility so system edges stay visible |
+| documentation as part of delivery | the public docs are part of the surface readers use, not just internal notes |
+| domain work with visible structure | applied and scientific work is presented in a way that keeps the system readable |
+| learning material tied to real practice | teaching content explains working methods and decisions instead of generic tutorials |
 
 ## How To Read The Repository Family
 
-Read the current repositories as the most useful context. The split
-between platform, projects, and learning is already doing explanatory
-work: it shows what kinds of systems are being built, how they are
-delivered, and which technical pressures are treated as important enough
-to document carefully in public.
+- start in **Platform** for the architectural and operational foundation
+- read **Projects** to see how those ideas are applied in specific domains
+- use **Learning** to understand the recurring patterns, trade-offs, and workflows behind both
 
-That makes the operating context visible in the structure itself. The
-page is here to sharpen that reading, not to replace it.
+This page is only meant to clarify that structure. The repositories
+themselves are the main explanation.
