@@ -4,40 +4,58 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-12
+last_reviewed: 2026-04-13
 ---
 
 # Operating Context
 
-The current public Bijux surface is recent, but it is not coming from a
-single narrow environment. The work shown here has been shaped across
-multiple engineering contexts, multiple countries, and multiple kinds of
-technical responsibility before being consolidated into the present
-public system family.
+The public Bijux repository family is recent, but the engineering habits
+visible here were not shaped in a single narrow setting. The current
+surface reflects work carried across different technical environments,
+delivery contexts, and domain pressures before being consolidated into a
+coherent public system family.
 
-## Why Context Exists Here
+<div class="bijux-callout"><strong>Use this page as orientation, not as a profile note.</strong>
+The useful question is what kind of work tends to produce this public
+shape: boundary-conscious repositories, documentation treated as part of
+delivery, domain-heavy software that still keeps engineering structure
+visible, and teaching material that stays technically honest.</div>
 
-Readers do not need a biography page to understand experience. They can
-usually infer it from the kinds of problems the work chooses to make
-legible: bounded architectures, delivery surfaces, documentation
-systems, domain products, and teachable technical programs.
+## What Shapes The Current Public Work
 
-## Context Behind The Current Public Work
+The recurring pattern across the repositories is not tied to one tool,
+one industry label, or one delivery surface. It is shaped by work that
+crosses runtime systems, data and service architecture, scientific
+software, evidence-heavy domains, and technical teaching.
 
-- shaped across engineering work in Iran, China, Austria, Germany, and Sweden
-- built across software engineering, platform concerns, data-service architecture, and scientific systems
-- organized as a recent public surface that reflects current work more than a career timeline
+That broader context helps explain why the public system emphasizes
+clear ownership, reproducibility, explicit contracts, and public
+documentation that behaves like part of the product rather than an
+afterthought.
 
-## What This Context Helps Explain
+## What Readers Will Notice
 
-- engineering habits shaped by heterogeneous technical environments
-- comfort moving between software architecture, platform concerns, data delivery, and scientific products
-- a preference for systems that remain understandable across teams, contexts, and time
+| Visible pattern | Why it matters |
+| --- | --- |
+| repository boundaries are explicit | responsibilities are separated on purpose, so architecture stays inspectable under change |
+| documentation is treated as a delivery surface | the public route, not just the source tree, is part of the engineering standard |
+| domain work stays structurally legible | scientific and evidence-heavy contexts are presented without dropping system discipline |
+| learning programs sit next to production-facing repositories | teaching is used to make technical judgment visible, not to soften or market the work |
 
-## Current Public Focus
+## Present Public Emphasis
 
-The repositories and docs published here emphasize recent work across
-runtime systems, service and data architecture, applied bioinformatics,
-and technical education. The public presentation is intentionally
-organized around the work itself, so that the structure and quality of
-the systems do more of the talking than a profile narrative would.
+- runtime, governance, and repository discipline where execution behavior needs to remain inspectable
+- service, dataset, and control-plane work where delivery posture matters as much as implementation
+- scientific and evidence-oriented product work where engineering rigor must survive domain pressure
+- technical education that explains architecture and workflow judgment without flattening them into tutorials
+
+## How To Read The Repository Family
+
+Read the current repositories as the most useful context. The split
+between platform, projects, and learning is already doing explanatory
+work: it shows what kinds of systems are being built, how they are
+delivered, and which technical pressures are treated as important enough
+to document carefully in public.
+
+That makes the operating context visible in the structure itself. The
+page is here to sharpen that reading, not to replace it.
