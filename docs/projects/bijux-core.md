@@ -26,6 +26,13 @@ repository owns the command runtime and DAG execution backbone that
 dependent systems depend on, while keeping governance, evidence, and
 release discipline visible in the same public surface.
 
+## What This Repository Shows About My Engineering Approach
+
+- runtime truth: command behavior and execution authority are explicit, not implied
+- deterministic execution: DAG behavior is modeled as a stable contract surface
+- control-plane separation: governance and release rules are maintained without blurring runtime logic
+- documentation as ownership map: repository docs mirror the actual operational split
+
 ## What Lives Here
 
 - two distinct products with shared governance: `bijux-cli` and `bijux-dag`

@@ -13,6 +13,8 @@ last_reviewed: 2026-04-12
 ingest, retrieval, reasoning, orchestration, and controlled runtime
 acceptance. It is a clear route into system decomposition around AI and
 knowledge workflows.
+In plain language, Canon is where knowledge-system work is turned into a
+maintained engineering stack instead of a single opaque AI layer.
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-canon/">Open published docs</a>
@@ -26,6 +28,13 @@ orchestration, and policy into one blurred "AI platform" layer. The
 repository makes those concerns explicit through packages, contracts,
 compatibility surfaces, and runtime boundaries that readers can inspect
 directly.
+
+## Why The Package Split Is Intentional
+
+- ingest, indexing, reasoning, orchestration, and runtime acceptance change at different speeds
+- compatibility work is visible as its own surface instead of hidden migration breakage
+- each package boundary creates a reviewable interface rather than a private internal convention
+- growth in one area does not force unrelated redesign in the rest of the system
 
 ## What Lives Here
 
@@ -42,6 +51,12 @@ directly.
 | contract discipline | checked-in schemas, package-specific docs, and the repository-owned documentation structure |
 | compatibility judgment | the compat packages and consolidation material that keep older names explicit |
 | governed execution | runtime and replay language that makes control and verification part of the system model |
+
+## One Path Through The Stack
+
+1. start at ingest and indexing contracts to see how system inputs are normalized
+2. follow reasoning and orchestration packages to see how decision flow stays explicit
+3. end at controlled runtime acceptance and replay surfaces to inspect verification behavior
 
 ## Best Entry Questions
 
