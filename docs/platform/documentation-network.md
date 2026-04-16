@@ -57,9 +57,11 @@ product.
 
 ## Reader Path
 
-1. Start at the hub when the owned repository is not obvious yet.
-2. Move into the repository handbook that owns the concern.
-3. Stay inside the same chrome while moving deeper into that site.
+1. When the owning repository is not obvious yet, the hub offers the
+   fastest orientation point.
+2. From there, readers can move into the handbook that owns the
+   concern.
+3. The same chrome stays in place while moving deeper into that site.
 
 ## Maintenance Rule
 
