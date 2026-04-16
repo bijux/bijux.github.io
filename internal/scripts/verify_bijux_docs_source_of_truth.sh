@@ -44,7 +44,7 @@ assert_absent() {
 
 # shared -> docs (authoritative docs source)
 compare_required "shared/bijux-docs/partials/header.html" "docs/overrides/partials/header.html"
-compare_required "shared/bijux-docs/partials/copyright.html" "docs/overrides/partials/copyright.html"
+compare_required "shared/bijux-docs/partials/footer-profile-links.html" "docs/overrides/partials/copyright.html"
 compare_required "shared/bijux-docs/partials/nav.html" "docs/overrides/partials/nav.html"
 compare_required "shared/bijux-docs/partials/nav-item.html" "docs/overrides/partials/nav-item.html"
 compare_required "shared/bijux-docs/partials/bijux-nav.html" "docs/overrides/partials/bijux-nav.html"

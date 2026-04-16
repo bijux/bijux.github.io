@@ -263,43 +263,68 @@
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.42rem 0.68rem;
+  gap: 0.36rem 0.62rem;
 }
 
 .bijux-footer-strip__copyright {
-  color: var(--bijux-muted);
-  font-size: 0.74rem;
+  color: color-mix(in srgb, var(--bijux-ink) 70%, white 30%);
+  font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.01em;
+}
+
+.bijux-footer-strip__divider {
+  background: color-mix(in srgb, var(--bijux-border) 70%, transparent 30%);
+  border-radius: 999px;
+  height: 0.24rem;
+  width: 0.24rem;
 }
 
 .bijux-footer-strip__links {
   align-items: center;
   display: inline-flex;
-  gap: 0.34rem;
+  gap: 0.3rem;
 }
 
 .bijux-footer-strip__links a {
   align-items: center;
+  background: color-mix(in srgb, var(--md-default-bg-color) 86%, transparent 14%);
+  border: 1px solid color-mix(in srgb, var(--bijux-border) 80%, transparent 20%);
   border-radius: 999px;
-  color: var(--md-typeset-a-color);
+  color: color-mix(in srgb, var(--bijux-ink) 68%, var(--md-typeset-a-color) 32%);
   display: inline-flex;
-  height: 1.8rem;
+  height: 1.7rem;
   justify-content: center;
-  opacity: 0.82;
-  transition: background-color 0.16s ease, color 0.16s ease, opacity 0.16s ease, transform 0.16s ease;
-  width: 1.8rem;
+  transition: background-color 0.16s ease, color 0.16s ease, border-color 0.16s ease, transform 0.16s ease;
+  width: 1.7rem;
 }
 
 .bijux-footer-strip__links a:hover {
-  background: var(--bijux-detail-link-active-bg);
-  opacity: 1;
+  background: color-mix(in srgb, var(--bijux-detail-link-active-bg) 88%, transparent 12%);
+  border-color: color-mix(in srgb, var(--md-typeset-a-color) 36%, transparent 64%);
+  color: color-mix(in srgb, var(--bijux-ink) 88%, white 12%);
   transform: translateY(-1px);
 }
 
 .bijux-footer-strip__links a svg {
-  height: 0.96rem;
-  width: 0.96rem;
+  height: 0.9rem;
+  width: 0.9rem;
+}
+
+[data-md-color-scheme="slate"] .bijux-footer-strip__copyright {
+  color: color-mix(in srgb, var(--bijux-ink) 82%, #fff 18%);
+}
+
+[data-md-color-scheme="slate"] .bijux-footer-strip__links a {
+  background: rgba(2, 6, 23, 0.34);
+  border-color: rgba(45, 212, 191, 0.24);
+  color: #d4f5f1;
+}
+
+[data-md-color-scheme="slate"] .bijux-footer-strip__links a:hover {
+  background: rgba(15, 118, 110, 0.22);
+  border-color: rgba(45, 212, 191, 0.42);
+  color: #f2f8ff;
 }
 
 .bijux-tag-list {
