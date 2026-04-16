@@ -68,16 +68,16 @@ concerns explicit rather than hidden in ad hoc glue.
 - reproducibility and reviewability treated as part of the product, not a later cleanup step
 - public scientific software that still looks engineered rather than improvised
 
-## Open Here First
+## Where To Begin
 
-| If you are looking for... | Open this part of Proteomics |
+| If you are looking for... | Start with this part of Proteomics |
 | --- | --- |
 | domain decomposition | the split across runtime, foundation, core, intelligence, knowledge, and lab packages |
 | governed product behavior | the repository’s emphasis on contracts, release discipline, and package-owned responsibilities |
 | scientific workflow maturity | the fact that lab planning and evidence resolution are explicit parts of the system model |
 | published entry points | the package handbooks and release surfaces for the six published packages |
 
-## Best Entry Questions
+## When This Page Is Most Useful
 
 - the work is specifically about proteomics, discovery, or lab-facing workflows
 - you want to see how engineering structure adapts to scientific product work

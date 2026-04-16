@@ -62,9 +62,9 @@ be reviewed as connected but distinct responsibilities.
 - compatibility handled openly through dedicated package surfaces rather than hidden breaking changes
 - release and documentation discipline aligned with the repository layout
 
-## Open Here First
+## Where To Begin
 
-| If you are looking for... | Open this part of Canon |
+| If you are looking for... | Start with this part of Canon |
 | --- | --- |
 | knowledge-system boundaries | the package map across runtime, ingest, index, reason, and agent surfaces |
 | contract discipline | checked-in schemas, package-specific docs, and the repository-owned documentation structure |
@@ -77,7 +77,7 @@ be reviewed as connected but distinct responsibilities.
 2. continue through reasoning and orchestration packages to follow explicit decision flow
 3. finish with controlled runtime acceptance and replay surfaces to inspect verification behavior
 
-## Best Entry Questions
+## When This Page Is Most Useful
 
 - the question is about ingest, indexing, reasoning, agents, or runtime control
 - you want to see how a knowledge system is split into accountable components
