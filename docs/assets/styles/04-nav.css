@@ -18,9 +18,8 @@
 .bijux-site-tabs .md-tabs__list.bijux-tabs__list--site {
   align-items: center;
   display: flex;
-  min-height: 2.9rem;
-  padding-block: 0.32rem;
-  transform: translateY(-1px);
+  min-height: 3.05rem;
+  padding-block: 0.42rem;
 }
 
 .bijux-site-tabs .md-tabs__item.bijux-tabs__item {
@@ -31,7 +30,7 @@
 .bijux-site-tabs .md-tabs__link.bijux-tabs__link--site {
   align-items: center;
   display: inline-flex;
-  min-height: 2.2rem;
+  min-height: 2.45rem;
 }
 
 .bijux-detail-tabs {
