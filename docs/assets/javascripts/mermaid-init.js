@@ -28,8 +28,10 @@ function normalizeMermaidBlocks() {
 function prepareMermaidNodesForRerender() {
   const nodes = document.querySelectorAll("div.mermaid");
   nodes.forEach((node) => {
-    const source = node.dataset.bijuxMermaidSource || node.textContent || "";
-    node.dataset.bijuxMermaidSource = source;
+    const source = node.dataset.bijuxMermaidSource;
+    if (!source) {
+      return;
+    }
     node.removeAttribute("data-processed");
     node.textContent = source;
   });
@@ -49,6 +51,18 @@ function renderMermaidDiagrams() {
   const nodes = document.querySelectorAll("div.mermaid");
   if (!nodes.length) {
     return;
+  }
+
+  // Persist original Mermaid definitions once, before Mermaid mutates the node.
+  // Never infer source back from rendered SVG text.
+  for (const node of nodes) {
+    if (node.dataset.bijuxMermaidSource) {
+      continue;
+    }
+    if (node.querySelector("svg")) {
+      continue;
+    }
+    node.dataset.bijuxMermaidSource = node.textContent || "";
   }
 
   mermaid.run({ nodes });
