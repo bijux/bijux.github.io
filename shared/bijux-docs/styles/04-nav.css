@@ -155,7 +155,12 @@
 .bijux-site-tabs .md-tabs__list.bijux-tabs__list--site {
   align-items: center !important;
   margin-block: 0 !important;
+  transform: translateY(-2px);
   width: 100%;
+}
+
+.bijux-site-tabs .bijux-tabs__link--site {
+  line-height: 1.1;
 }
 
 .bijux-site-tabs .md-grid::before,

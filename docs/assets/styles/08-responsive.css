@@ -145,6 +145,10 @@
     padding: 0.38rem 0.7rem;
   }
 
+  .bijux-site-tabs .md-tabs__list.bijux-tabs__list--site {
+    transform: none;
+  }
+
   .bijux-hub-strip::before,
   .bijux-hub-strip::after,
   .bijux-site-tabs .md-grid::before,
