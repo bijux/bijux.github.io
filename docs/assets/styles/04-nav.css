@@ -6,6 +6,7 @@
 }
 
 .bijux-site-tabs {
+  display: block;
   background: linear-gradient(90deg, var(--bijux-ribbon-bg), var(--bijux-ribbon-bg-strong));
 }
 
