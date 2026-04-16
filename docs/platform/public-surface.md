@@ -42,3 +42,9 @@ page.
 
 The links above should stay stable enough that the hub can be treated as
 an index, not a marketing page snapshot.
+
+The public surface is designed to make the work reviewable from
+multiple angles: documentation for orientation, repositories for
+verification, and project pages for context. That combination matters
+because credibility comes from consistent inspection outcomes, not from
+visibility alone.

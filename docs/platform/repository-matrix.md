@@ -61,3 +61,9 @@ work quality.
 Use the matrix to choose the right repository quickly. Use the
 repository pages and handbook sites when orientation needs to turn into
 closer inspection.
+
+The repository matrix is meant to show that the split across the Bijux
+family is deliberate, with each repository carrying a distinct
+responsibility, delivery surface, and architectural role. Read together,
+the matrix makes clear that growth and evaluation happen against stable
+ownership boundaries rather than accidental overlap.

@@ -62,5 +62,9 @@ to someone outside the project.
 - documentation structure supports maintenance and cross-repository continuity
 - domain pressure does not collapse the architecture model into ad hoc changes
 
-This page is only meant to clarify that structure. The repositories
-themselves are the main explanation.
+Operating context matters because software quality is defined by the
+change pressure, evidence burden, and long-lived responsibility a system
+must absorb. The repository family is shaped around that reality, which
+is why bounded authority, reproducibility, and documentation discipline
+are treated as baseline engineering requirements rather than optional
+extras.

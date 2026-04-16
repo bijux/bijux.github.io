@@ -77,3 +77,9 @@ the repository pages.
 - you want the shortest explanation of how the repository family fits together
 - you need to decide whether to open Core, Canon, Atlas, or a domain product first
 - you want to understand the repository family as an engineering system, not a list of projects
+
+The system map exists to make the landscape legible before readers dive
+into local detail. It shows how platform guides, project repositories,
+and learning surfaces belong to one designed system where relationships
+are explicit, responsibilities are visible, and complexity is managed
+through structure rather than implication.

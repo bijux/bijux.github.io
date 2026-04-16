@@ -70,3 +70,10 @@ artifacts.
 
 Atlas keeps delivery work out in the open as something that is
 published, validated, and operated rather than described abstractly.
+
+Bijux Atlas should be read as a delivery-facing system where contracts,
+artifacts, and public access must align cleanly enough to stay
+inspectable and useful over time. Within the broader family, it shows
+that publication and data delivery are architectural concerns, requiring
+the same boundary discipline and operational rigor as any core runtime
+surface.

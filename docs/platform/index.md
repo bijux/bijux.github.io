@@ -88,3 +88,9 @@ engineering language is visible across all of them.</div>
 - package-level implementation details
 - repository-specific maintainer rules
 - course-level teaching detail that already lives in masterclass
+
+The platform branch exists to explain the logic that holds the Bijux
+family together: why repository boundaries exist, what qualities they
+protect, and where evidence for those choices can be inspected. Its
+value is not only orientation, but a clear model of software design,
+delivery, and ownership that readers can evaluate directly.
