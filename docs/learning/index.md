@@ -30,6 +30,12 @@ collection of detached notes.</div>
 - documentation discipline that mirrors repository-level engineering standards
 - leadership-through-explanation: the same language works in design, delivery, and instruction
 
+## Why Masterclass Belongs In The Same System Family
+
+- it translates architecture, workflows, and system design into structured long-form programs
+- it keeps boundary discipline and systems reasoning visible in instruction, not only in repositories
+- it proves that technical communication here is an engineering capability, not a side activity
+
 ## Program Families
 
 | Program | Focus | Destination |

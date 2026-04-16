@@ -13,6 +13,16 @@ Use this section when you want a concentrated cross-section of the work
 itself. Each repository below reveals a different part of the same
 system family through a different responsibility.
 
+## Capability Clusters
+
+| Capability cluster | Repositories |
+| --- | --- |
+| core runtime and platform backbone | [Bijux Core](bijux-core.md) |
+| governed knowledge and data-system architecture | [Bijux Canon](bijux-canon.md) |
+| delivery and data-service product surfaces | [Bijux Atlas](bijux-atlas.md) |
+| scientific systems under domain pressure | [Bijux Proteomics](bijux-proteomics.md), [Bijux Pollenomics](bijux-pollenomics.md) |
+| technical education systems | [Learning catalog](../learning/index.md) and published `bijux-masterclass` programs |
+
 <div class="bijux-showcase-grid">
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">runtime and governance backbone</div>
@@ -71,15 +81,21 @@ system family through a different responsibility.
   </article>
 </div>
 
-## What Each Repository Covers
+## What Each Repository Demonstrates
 
-| Repository | Open it for |
+| Repository | What it demonstrates |
 | --- | --- |
-| [Bijux Core](bijux-core.md) | execution backbone, release evidence, and governance that do not disappear into shell glue |
-| [Bijux Canon](bijux-canon.md) | contract-first knowledge-system design with visible package boundaries and compatibility discipline |
-| [Bijux Atlas](bijux-atlas.md) | data-service architecture, immutable delivery thinking, and operationally serious public surfaces |
-| [Bijux Proteomics](bijux-proteomics.md) | scientific product work that keeps structure under laboratory and discovery constraints |
-| [Bijux Pollenomics](bijux-pollenomics.md) | evidence-heavy domain modeling in an unusual archaeology-facing context |
+| [Bijux Core](bijux-core.md) | runtime truth, deterministic execution, and control-plane separation in a stable backbone |
+| [Bijux Canon](bijux-canon.md) | governed knowledge-system decomposition with explicit package contracts and compatibility surfaces |
+| [Bijux Atlas](bijux-atlas.md) | data-service delivery treated as operated product architecture with immutable artifact posture |
+| [Bijux Proteomics](bijux-proteomics.md) | scientific product engineering with explicit evidence governance and domain contracts |
+| [Bijux Pollenomics](bijux-pollenomics.md) | uncommon domain adaptation that keeps reproducibility and engineering structure visible |
+
+## What A Reviewer Should Be Able To Conclude
+
+- this is a coherent portfolio of system ownership, not disconnected experiments
+- each repository is responsible for a distinct layer in the broader architecture
+- architecture, delivery, domain pressure, and technical communication are all inspectable in public
 
 ## Reading Guide
 
