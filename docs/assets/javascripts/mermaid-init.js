@@ -68,6 +68,20 @@ function renderMermaidDiagrams() {
   mermaid.run({ nodes });
 }
 
+function captureScrollPosition() {
+  return {
+    x: window.scrollX || window.pageXOffset || 0,
+    y: window.scrollY || window.pageYOffset || 0,
+  };
+}
+
+function restoreScrollPosition(position) {
+  if (!position) {
+    return;
+  }
+  window.scrollTo(position.x, position.y);
+}
+
 document$.subscribe(() => {
   renderMermaidDiagrams();
 
@@ -76,8 +90,12 @@ document$.subscribe(() => {
   }
 
   window.__bijuxMermaidThemeBound = true;
-  window.addEventListener("bijux:theme-change", () => {
+  window.addEventListener("bijux:theme-change", (event) => {
+    const targetScroll = event?.detail?.scroll || captureScrollPosition();
     prepareMermaidNodesForRerender();
     renderMermaidDiagrams();
+    restoreScrollPosition(targetScroll);
+    requestAnimationFrame(() => restoreScrollPosition(targetScroll));
+    setTimeout(() => restoreScrollPosition(targetScroll), 80);
   });
 });
