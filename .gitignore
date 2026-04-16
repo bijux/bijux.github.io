@@ -2,3 +2,13 @@ artifacts/
 .venv/
 __pycache__/
 .DS_Store
+/assets/
+/404.html
+/index.html
+/learning/
+/platform/
+/projects/
+/reading-paths/
+/search/
+/sitemap.xml
+/sitemap.xml.gz

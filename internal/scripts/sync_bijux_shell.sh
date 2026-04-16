@@ -24,7 +24,7 @@ for required in \
   fi
 done
 
-# Shared -> docs
+# shared -> docs
 sync_file "${shared_root}/partials/header.html" "${repo_root}/docs/overrides/partials/header.html"
 sync_file "${shared_root}/partials/nav.html" "${repo_root}/docs/overrides/partials/nav.html"
 sync_file "${shared_root}/partials/nav-item.html" "${repo_root}/docs/overrides/partials/nav-item.html"
@@ -39,13 +39,4 @@ for script in bootstrap.js detail-tabs.js nav-reveal.js nav-state.js theme-persi
 done
 sync_file "${shared_root}/scripts/nav-sync.js" "${repo_root}/docs/assets/javascripts/navigation-sync.js"
 
-# docs -> generated root mirrors
-for style in 00-tokens.css 01-theme.css 02-layout.css 03-header.css 04-nav.css 05-content.css 06-components.css 07-utilities.css 08-responsive.css extra.css; do
-  sync_file "${repo_root}/docs/assets/styles/${style}" "${repo_root}/assets/styles/${style}"
-done
-for script in bootstrap.js detail-tabs.js nav-reveal.js nav-state.js theme-persistence.js viewport-profile.js; do
-  sync_file "${repo_root}/docs/assets/javascripts/shell/${script}" "${repo_root}/assets/javascripts/shell/${script}"
-done
-sync_file "${repo_root}/docs/assets/javascripts/navigation-sync.js" "${repo_root}/assets/javascripts/navigation-sync.js"
-
-echo "Bijux shell synchronized: shared -> docs -> assets"
+echo "Bijux shell synchronized: shared -> docs"

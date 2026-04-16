@@ -14,7 +14,6 @@ DOCS_ENV             := DISABLE_MKDOCS_2_WARNING=true
 PYTHON_BIN           ?= $(shell command -v python3 2>/dev/null)
 TABLE_GUARD          ?= internal/quality/markdown_table_guard.py
 SHELL_SYNC_SCRIPT    ?= internal/scripts/sync_bijux_shell.sh
-SITE_PUBLISH_SCRIPT  ?= internal/scripts/publish_site_root.sh
 SHELL_SOT_GUARD      ?= internal/scripts/verify_shell_source_of_truth.sh
 SHELL_CONTRACT_GUARD ?= internal/quality/validate_shell_contract.py
 
@@ -28,7 +27,7 @@ else
   DOCS_RUN = XDG_CACHE_HOME="$(DOCS_CACHE_DIR)" UV_PROJECT_ENVIRONMENT="$(DOCS_VENV_DIR)" $(DOCS_ENV) "$(UV_BIN)" run --with-requirements "$(DOCS_REQUIREMENTS)" mkdocs
 endif
 
-.PHONY: docs docs-clean docs-require docs-serve docs-sanity site-root shell-sync shell-check
+.PHONY: docs docs-clean docs-require docs-serve docs-sanity shell-sync shell-check
 
 ##@ Documentation
 docs-require: ## Verify the documentation build inputs are present
@@ -60,11 +59,6 @@ docs-sanity: docs-require ## Run lightweight documentation sanity checks
 	@$(MAKE) shell-sync
 	@$(MAKE) shell-check
 	@$(MAKE) docs
-
-site-root: docs ## Publish the built site into the repository root served by GitHub Pages
-	@test -f "$(SITE_PUBLISH_SCRIPT)" || (echo "ERROR: missing $(SITE_PUBLISH_SCRIPT)" && exit 1)
-	@bash "$(SITE_PUBLISH_SCRIPT)" "$(DOCS_SITE_DIR)"
-	@echo "Repository root publication complete"
 
 docs-serve: docs-require ## Serve documentation locally with automatic reloads
 	@HOST=$${HOST:-$(DOCS_HOST)}; PORT=$${PORT:-$(DOCS_PORT)}; \

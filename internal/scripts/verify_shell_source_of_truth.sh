@@ -33,6 +33,15 @@ compare_required() {
   fi
 }
 
+assert_absent() {
+  local rel_path="$1"
+  if [[ -e "${repo_root}/${rel_path}" ]]; then
+    echo "ERROR: generated root path must not exist: ${rel_path}" >&2
+    echo "Source-only root policy keeps generated site output out of main branch." >&2
+    exit 1
+  fi
+}
+
 # shared -> docs (authoritative shell source)
 compare_required "shared/bijux-shell/partials/header.html" "docs/overrides/partials/header.html"
 compare_required "shared/bijux-shell/partials/nav.html" "docs/overrides/partials/nav.html"
@@ -48,16 +57,16 @@ for script in bootstrap.js detail-tabs.js nav-reveal.js nav-state.js theme-persi
 done
 compare_required "shared/bijux-shell/scripts/nav-sync.js" "docs/assets/javascripts/navigation-sync.js"
 
-# docs -> generated root mirrors
-for style in 00-tokens.css 01-theme.css 02-layout.css 03-header.css 04-nav.css 05-content.css 06-components.css 07-utilities.css 08-responsive.css extra.css; do
-  compare_required "docs/assets/styles/${style}" "assets/styles/${style}"
-done
-for script in bootstrap.js detail-tabs.js nav-reveal.js nav-state.js theme-persistence.js viewport-profile.js; do
-  compare_required "docs/assets/javascripts/shell/${script}" "assets/javascripts/shell/${script}"
-done
-compare_required "docs/assets/javascripts/navigation-sync.js" "assets/javascripts/navigation-sync.js"
-compare_required "docs/assets/javascripts/external-links.js" "assets/javascripts/external-links.js"
-compare_required "docs/assets/javascripts/mermaid-init.js" "assets/javascripts/mermaid-init.js"
-compare_required "docs/assets/javascripts/vendor/mermaid-11.6.0.min.js" "assets/javascripts/vendor/mermaid-11.6.0.min.js"
+# root must stay source-only
+assert_absent "assets"
+assert_absent "404.html"
+assert_absent "index.html"
+assert_absent "learning"
+assert_absent "platform"
+assert_absent "projects"
+assert_absent "reading-paths"
+assert_absent "search"
+assert_absent "sitemap.xml"
+assert_absent "sitemap.xml.gz"
 
 echo "Shell source-of-truth checks passed"
