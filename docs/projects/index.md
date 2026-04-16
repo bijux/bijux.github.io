@@ -9,9 +9,9 @@ last_reviewed: 2026-04-12
 
 # Projects
 
-Use this section when you want a concentrated cross-section of the work
-itself. Each repository below reveals a different part of the same
-system family through a different responsibility.
+This section offers a concentrated cross-section of the work itself.
+Each repository below reveals a different part of the same system
+family through a different responsibility.
 This map provides a quick structural view before diving into individual
 project pages.
 
@@ -30,8 +30,8 @@ graph TD
     learning_systems --> masterclass["Masterclass"]
 ```
 
-Use it as orientation, then switch to the project pages for repository
-specific detail and inspection routes.
+It can serve as orientation before moving to the project pages for
+repository-specific detail and inspection routes.
 
 ## Capability Clusters
 
