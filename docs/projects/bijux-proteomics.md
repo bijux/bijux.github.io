@@ -47,12 +47,12 @@ graph TD
 It reflects the repository's design choice to keep scientific workflow
 concerns explicit rather than hidden in ad hoc glue.
 
-## Why This Work Is Harder Than Generic Application Code
+## How This Work Differs From Generic Application Code
 
-- domain contracts must remain correct while scientific assumptions evolve
-- evidence handling and lab planning cannot be treated as optional side outputs
-- runtime behavior has to support reproducibility and review, not only convenience
-- package boundaries must stay coherent under both engineering and domain pressure
+- domain contracts need to remain correct while scientific assumptions evolve
+- evidence handling and lab planning are treated as core outputs rather than optional side results
+- runtime behavior supports reproducibility and review, not only convenience
+- package boundaries stay coherent under both engineering and domain pressure
 
 ## What This Repository Demonstrates Architecturally
 
