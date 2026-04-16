@@ -74,12 +74,8 @@
       </nav>
     {% endif %}
     <div class="bijux-header-tools">
-      {% if config.theme.palette %}
-        {% if not config.theme.palette is mapping %}
-          {% include "partials/palette.html" %}
-        {% endif %}
-      {% endif %}
       {% if not config.theme.palette is mapping %}
+        {% include "partials/palette.html" %}
         {% include "partials/javascripts/palette.html" %}
       {% endif %}
       {% if config.extra.alternate %}
@@ -96,6 +92,11 @@
         <div class="md-header__source">
           {% include "partials/source.html" %}
         </div>
+      {% endif %}
+      {% if config.theme.palette and not config.theme.palette is mapping %}
+        <button class="md-header__button md-icon bijux-theme-toggle" type="button" data-bijux-theme-toggle hidden>
+          {% include ".icons/material/theme-light-dark.svg" %}
+        </button>
       {% endif %}
     </div>
   </nav>

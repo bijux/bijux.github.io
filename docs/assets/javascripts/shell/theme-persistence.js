@@ -101,6 +101,42 @@
     );
   }
 
+  function selectedOption() {
+    return paletteOptions().find((option) => option.checked) || null;
+  }
+
+  function currentMode() {
+    const option = selectedOption();
+    if (!option) {
+      return "auto";
+    }
+    return modeFromOption(option);
+  }
+
+  function nextMode(mode) {
+    if (mode === "auto") {
+      return "light";
+    }
+
+    if (mode === "light") {
+      return "dark";
+    }
+
+    return "auto";
+  }
+
+  function modeLabel(mode) {
+    if (mode === "light") {
+      return "Light";
+    }
+
+    if (mode === "dark") {
+      return "Dark";
+    }
+
+    return "Auto";
+  }
+
   function activeSchemeFromDom() {
     return document.body?.getAttribute("data-md-color-scheme") || null;
   }
@@ -159,6 +195,25 @@
     }
 
     return true;
+  }
+
+  function refreshThemeToggleButtons() {
+    const mode = currentMode();
+    const modeName = modeLabel(mode);
+    const nextModeName = modeLabel(nextMode(mode));
+
+    for (const button of document.querySelectorAll("[data-bijux-theme-toggle]")) {
+      button.hidden = false;
+      button.setAttribute(
+        "aria-label",
+        `Theme mode: ${modeName}. Switch to ${nextModeName}.`
+      );
+      button.setAttribute(
+        "title",
+        `Theme mode: ${modeName}. Switch to ${nextModeName}.`
+      );
+      button.setAttribute("data-bijux-theme-mode", mode);
+    }
   }
 
   function parseStoredChoice(rawValue) {
@@ -235,6 +290,26 @@
           return;
         }
         applyOption(themeKey, option, true);
+        refreshThemeToggleButtons();
+      });
+    }
+  }
+
+  function bindThemeToggle(themeKey) {
+    for (const button of document.querySelectorAll("[data-bijux-theme-toggle]")) {
+      if (button.dataset.bijuxThemeToggleBound === "true") {
+        continue;
+      }
+
+      button.dataset.bijuxThemeToggleBound = "true";
+      button.addEventListener("click", () => {
+        const targetMode = nextMode(currentMode());
+        const targetOption = optionByMode(targetMode);
+        if (!targetOption) {
+          return;
+        }
+        applyOption(themeKey, targetOption, true);
+        refreshThemeToggleButtons();
       });
     }
   }
@@ -257,12 +332,14 @@
       if (savedChoice.signature) {
         const signedOption = findOptionBySignature(savedChoice.signature);
         applyOption(themeKey, signedOption, false);
+        refreshThemeToggleButtons();
         return;
       }
 
       if (savedChoice.mode) {
         const modeOption = optionByMode(savedChoice.mode);
         applyOption(themeKey, modeOption, false);
+        refreshThemeToggleButtons();
       }
     });
   }
@@ -270,8 +347,10 @@
   function init() {
     const themeKey = resolveThemeKey();
     bindPaletteChanges(themeKey);
+    bindThemeToggle(themeKey);
     initializeGlobalTheme(themeKey);
     bindCrossTabSync(themeKey);
+    refreshThemeToggleButtons();
   }
 
   document$.subscribe(init);
