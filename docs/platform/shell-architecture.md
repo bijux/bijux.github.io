@@ -24,7 +24,8 @@ Generated mirrors:
 
 ## Project Contract
 
-Each consuming project must provide shell config under `extra.bijux`:
+Each consuming project is expected to provide shell config under
+`extra.bijux`:
 
 ```yaml
 extra:
