@@ -84,9 +84,9 @@ graph TD
 
 ## Reading Rule
 
-Do not treat this page as a conclusion. Treat it as a routing layer for
-inspection. The repositories and published documentation should carry
-the actual depth.
+This page works best as a routing layer for inspection rather than a
+standalone conclusion. The repositories and published documentation
+carry the depth.
 
 These qualities are intended to function as engineering standards rather
 than style preferences. Bounded systems, inspectable delivery, domain
