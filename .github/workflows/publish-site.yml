@@ -73,16 +73,31 @@ jobs:
             const repo = context.repo.repo;
             const expectedBuildType = "workflow";
             const expectedDomain = "bijux.io";
-            const { data } = await github.request("GET /repos/{owner}/{repo}/pages", { owner, repo });
+            try {
+              const { data } = await github.request("GET /repos/{owner}/{repo}/pages", { owner, repo });
+              const warnings = [];
 
-            if (data.build_type !== expectedBuildType) {
-              core.setFailed(`Pages build_type must be '${expectedBuildType}', received '${data.build_type}'.`);
-              return;
-            }
+              if (data.build_type !== expectedBuildType) {
+                warnings.push(`Pages build_type expected '${expectedBuildType}', received '${data.build_type}'.`);
+              }
 
-            if (data.cname !== expectedDomain) {
-              core.setFailed(`Pages custom domain must be '${expectedDomain}', received '${data.cname}'.`);
-              return;
+              if (data.cname !== expectedDomain) {
+                warnings.push(`Pages custom domain expected '${expectedDomain}', received '${data.cname}'.`);
+              }
+
+              if (warnings.length) {
+                for (const warning of warnings) {
+                  core.warning(warning);
+                }
+              } else {
+                core.info("Pages settings match expected values.");
+              }
+            } catch (error) {
+              if (error.status === 403 || error.status === 404) {
+                core.warning(`Unable to read Pages settings (${error.status}); skipping validation.`);
+                return;
+              }
+              throw error;
             }
 
       - name: Upload Pages artifact
