@@ -47,9 +47,12 @@ graph TD
 
 ## How To Use This Page
 
-- use the documentation links when you want the first guided tour of a repository
-- use the source links when you want to inspect structure, files, and history directly
-- use the hub when you know the question but not yet the owning repository
+- documentation links are a good starting point for a guided tour of a
+  repository
+- source links help when readers want to inspect structure, files, and
+  history directly
+- the hub helps when the question is clear but the owning repository is
+  not yet obvious
 
 ## Stability Expectation
 
