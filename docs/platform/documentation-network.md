@@ -13,7 +13,7 @@ The documentation network works only if every site behaves like part of
 the same system family. Readers should be able to jump between repos and
 keep the same mental model for where they are and what to do next.
 
-<div class="bijux-callout"><strong>Documentation is part of the product surface here.</strong>
+<div class="bijux-callout"><strong>Documentation here is part of the system's control surface.</strong>
 The shared shell keeps navigation and reader expectations stable across
 repositories. That consistency is one way engineering quality becomes
 visible to readers.</div>
@@ -31,6 +31,14 @@ Without a shared shell, the root site becomes a brochure and each repo
 becomes an island. With a shared shell, the root site is a real starting
 point and every handbook feels like part of the same documentation
 product.
+
+## Why This Matters
+
+- it reduces documentation drift across related repositories
+- it preserves ownership boundaries while keeping navigation coherent
+- it shortens onboarding by keeping route patterns predictable
+- it speeds review because repository intent and destination paths are explicit
+- it supports operational continuity when repository surfaces evolve
 
 ## Reader Path
 

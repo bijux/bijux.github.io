@@ -13,6 +13,13 @@ The public Bijux surface is meant to reward inspection. A strong reader
 should be able to move from a narrative page into concrete repositories,
 docs, workflows, contracts, and release surfaces without hitting a gap
 between presentation and implementation.
+Delivery quality is part of the system design, not an afterthought.
+
+## What This Page Demonstrates
+
+- delivery surfaces are treated as first-class architecture interfaces
+- documentation sites, package publishing, release flows, and contracts are reviewed as one system
+- operational quality is inspected through routines and public evidence, not summary language alone
 
 ## Where Delivery Shows Up
 
@@ -30,6 +37,13 @@ between presentation and implementation.
   <div class="bijux-panel"><h3>Canon</h3><p>Inspect the package split across ingest, indexing, reasoning, orchestration, and controlled runtime behavior to see how knowledge-system boundaries are expressed directly in the docs and repository structure.</p></div>
   <div class="bijux-panel"><h3>Atlas</h3><p>Inspect the delivery and reporting surfaces to see how APIs, datasets, docs checks, and operational workflows are treated as maintained product surfaces instead of side utilities.</p></div>
 </div>
+
+## Proof Anchors To Inspect
+
+- docs sites and repository handbooks as operational interfaces
+- package and release workflows as governed publication boundaries
+- contract and schema surfaces as explicit compatibility commitments
+- automation and checks as routine reliability behavior
 
 ## What To Check
 
