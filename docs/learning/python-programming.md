@@ -64,3 +64,8 @@ That makes the teaching surface more revealing than a generic
 - `bijux-core`: command/runtime boundaries and extension surfaces are shaped by abstraction discipline
 - `bijux-canon`: package splits reflect explicit ownership and composition choices
 - `bijux-atlas`: delivery and reporting layers emphasize interface clarity over hidden coupling
+
+This program treats Python as a way to study how software structure is
+formed by design choices around objects, functions, and metaprogramming.
+The value is not syntax coverage alone, but stronger judgment about
+abstraction, extensibility, and maintainability in long-lived systems.

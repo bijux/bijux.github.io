@@ -69,3 +69,9 @@ losing architectural clarity.
 Use the platform pages to understand the engineering posture. Use the
 domain repositories to see how that posture survives outside a purely
 generic platform setting.
+
+Applied domains matter here because they force engineering decisions to
+answer to evidence constraints, domain semantics, and consequences of
+error. What carries across those contexts is disciplined system design:
+clear boundaries, honest scope, and inspectable outputs that remain
+useful even when the subject matter is specialized.

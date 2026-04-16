@@ -146,3 +146,9 @@ flowchart LR
 
 Use this page to choose an entry point. Then move into the owning
 repository and stay there long enough to inspect the actual surfaces.
+
+Bijux is intended to be read as one coherent body of engineering work,
+not as isolated projects. Platform structure, repository boundaries,
+delivery surfaces, domain systems, and technical education are presented
+together so readers can inspect design discipline directly and evaluate
+the work by its architectural clarity rather than summary claims.

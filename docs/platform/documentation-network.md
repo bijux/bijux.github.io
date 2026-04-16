@@ -50,3 +50,9 @@ product.
 
 If the hub describes a repository, the destination repository should
 still expose the same top-strip navigation and stable public URL.
+
+The documentation network is designed to preserve shared orientation
+without collapsing local ownership into one vague center. That balance
+keeps context, navigation, and implementation aligned, allowing
+documentation to function as engineering infrastructure instead of
+decorative summary.

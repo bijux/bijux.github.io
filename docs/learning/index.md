@@ -62,3 +62,9 @@ collection of detached notes.</div>
 
 Use the learning pages when you want to see how technical depth is
 turned into public programs without losing structure.
+
+The learning branch exists to make difficult technical ideas durable,
+legible, and useful under real engineering pressure. These programs are
+part of the same system discipline as the repositories, translating
+bounded design, clear models, and implementation-adjacent explanation
+into material that can be reused, taught, and trusted.

@@ -67,3 +67,9 @@ surfaces should withstand basic scrutiny.
 - you want direct routes into the strongest delivery-oriented material
 - you care more about concrete surfaces than summary alone
 - you want to understand why the public docs are treated as part of delivery rather than an afterthought
+
+Delivery is where architecture stops being intention and becomes
+something others can inspect and rely on. Public docs, contracts,
+release behavior, and published artifacts are treated here as system
+components, because they are where boundary clarity and engineering
+rigor are tested under real use and real change.
