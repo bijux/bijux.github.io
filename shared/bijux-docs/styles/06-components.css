@@ -318,11 +318,28 @@
   border-radius: 0.95rem;
   box-shadow: 0 6px 16px rgba(15, 23, 42, 0.07);
   color: color-mix(in srgb, var(--bijux-ink) 84%, white 16%);
+  min-width: min(26rem, 42vw);
   opacity: 1;
+  padding-block: 0.6rem;
+  padding-inline: 0.95rem;
 }
 
 .md-footer__inner.bijux-footer-nav .md-footer__direction {
   color: var(--bijux-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+.md-footer__inner.bijux-footer-nav .md-footer__title {
+  max-width: none;
+}
+
+.md-footer__inner.bijux-footer-nav .md-footer__title .md-ellipsis {
+  font-size: 0.74rem;
+  font-weight: 700;
+  line-height: 1.18;
+  max-width: none;
 }
 
 [data-md-color-scheme="slate"] .md-footer__inner.bijux-footer-nav .md-footer__link {
