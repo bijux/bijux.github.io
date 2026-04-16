@@ -31,10 +31,74 @@
     );
   }
 
-  function optionByScheme(scheme) {
-    return paletteOptions().find((option) => {
-      return option.getAttribute("data-md-color-scheme") === scheme;
-    });
+  function optionSignature(option) {
+    return {
+      media: option.getAttribute("data-md-color-media") || "",
+      scheme: option.getAttribute("data-md-color-scheme") || "",
+      primary: option.getAttribute("data-md-color-primary") || "",
+      accent: option.getAttribute("data-md-color-accent") || "",
+    };
+  }
+
+  function findOptionBySignature(signature) {
+    const options = paletteOptions();
+    return (
+      options.find((option) => {
+        const current = optionSignature(option);
+        return (
+          current.media === (signature.media || "") &&
+          current.scheme === (signature.scheme || "") &&
+          current.primary === (signature.primary || "") &&
+          current.accent === (signature.accent || "")
+        );
+      }) || null
+    );
+  }
+
+  function modeFromOption(option) {
+    const media = option.getAttribute("data-md-color-media") || "";
+    const scheme = option.getAttribute("data-md-color-scheme") || "";
+
+    if (media === "(prefers-color-scheme)") {
+      return "auto";
+    }
+
+    if (media.includes("dark") || scheme === "slate") {
+      return "dark";
+    }
+
+    return "light";
+  }
+
+  function optionByMode(mode) {
+    if (mode === "auto") {
+      return (
+        paletteOptions().find((option) => {
+          return (
+            (option.getAttribute("data-md-color-media") || "") ===
+            "(prefers-color-scheme)"
+          );
+        }) || null
+      );
+    }
+
+    if (mode === "dark") {
+      return (
+        paletteOptions().find((option) => {
+          const media = option.getAttribute("data-md-color-media") || "";
+          const scheme = option.getAttribute("data-md-color-scheme") || "";
+          return media.includes("dark") || scheme === "slate";
+        }) || null
+      );
+    }
+
+    return (
+      paletteOptions().find((option) => {
+        const media = option.getAttribute("data-md-color-media") || "";
+        const scheme = option.getAttribute("data-md-color-scheme") || "";
+        return media.includes("light") || scheme === "default";
+      }) || null
+    );
   }
 
   function activeSchemeFromDom() {
@@ -54,20 +118,34 @@
   }
 
   function writeMaterialPalette(option) {
-    const color = {
-      media: option.getAttribute("data-md-color-media") || "",
-      scheme: option.getAttribute("data-md-color-scheme") || "default",
-      primary: option.getAttribute("data-md-color-primary") || "teal",
-      accent: option.getAttribute("data-md-color-accent") || "cyan",
-    };
+    const color = optionSignature(option);
+    if (!color.scheme) {
+      color.scheme = "default";
+    }
+    if (!color.primary) {
+      color.primary = "teal";
+    }
+    if (!color.accent) {
+      color.accent = "cyan";
+    }
 
     if (typeof window.__md_set === "function") {
       window.__md_set(MD_PALETTE_KEY, { color });
     }
   }
 
-  function applyScheme(themeKey, scheme, persistGlobal) {
-    const option = optionByScheme(scheme);
+  function persistThemeChoice(themeKey, option) {
+    safeSetGlobalTheme(
+      themeKey,
+      JSON.stringify({
+        version: 2,
+        mode: modeFromOption(option),
+        signature: optionSignature(option),
+      })
+    );
+  }
+
+  function applyOption(themeKey, option, persistGlobal) {
     if (!option) {
       return false;
     }
@@ -77,29 +155,71 @@
     writeMaterialPalette(option);
 
     if (persistGlobal) {
-      safeSetGlobalTheme(
-        themeKey,
-        option.getAttribute("data-md-color-scheme") || "default"
-      );
+      persistThemeChoice(themeKey, option);
     }
 
     return true;
   }
 
-  function normalizeKnownScheme(scheme) {
-    return optionByScheme(scheme) ? scheme : null;
+  function parseStoredChoice(rawValue) {
+    if (!rawValue) {
+      return null;
+    }
+
+    try {
+      const parsed = JSON.parse(rawValue);
+      if (!parsed || typeof parsed !== "object") {
+        return null;
+      }
+      return parsed;
+    } catch (error) {
+      return { version: 1, scheme: rawValue };
+    }
   }
 
   function initializeGlobalTheme(themeKey) {
-    const savedScheme = normalizeKnownScheme(safeGetGlobalTheme(themeKey));
-    if (savedScheme) {
-      applyScheme(themeKey, savedScheme, false);
+    const savedChoice = parseStoredChoice(safeGetGlobalTheme(themeKey));
+
+    if (savedChoice) {
+      if (savedChoice.signature) {
+        const signedOption = findOptionBySignature(savedChoice.signature);
+        if (signedOption) {
+          applyOption(themeKey, signedOption, false);
+          return;
+        }
+      }
+
+      if (savedChoice.mode) {
+        const modeOption = optionByMode(savedChoice.mode);
+        if (modeOption) {
+          applyOption(themeKey, modeOption, false);
+          return;
+        }
+      }
+
+      if (savedChoice.scheme) {
+        const legacyMode = savedChoice.scheme === "slate" ? "dark" : "light";
+        const legacyOption = optionByMode(legacyMode);
+        if (legacyOption) {
+          applyOption(themeKey, legacyOption, false);
+          return;
+        }
+      }
+    }
+
+    const selectedOption = paletteOptions().find((option) => option.checked);
+    if (selectedOption) {
+      persistThemeChoice(themeKey, selectedOption);
       return;
     }
 
-    const activeScheme = normalizeKnownScheme(activeSchemeFromDom());
+    const activeScheme = activeSchemeFromDom();
     if (activeScheme) {
-      safeSetGlobalTheme(themeKey, activeScheme);
+      const inferredMode = activeScheme === "slate" ? "dark" : "light";
+      const inferredOption = optionByMode(inferredMode);
+      if (inferredOption) {
+        persistThemeChoice(themeKey, inferredOption);
+      }
     }
   }
 
@@ -114,8 +234,7 @@
         if (!option.checked) {
           return;
         }
-        const scheme = option.getAttribute("data-md-color-scheme") || "default";
-        applyScheme(themeKey, scheme, true);
+        applyOption(themeKey, option, true);
       });
     }
   }
@@ -130,7 +249,21 @@
       if (event.key !== themeKey || !event.newValue) {
         return;
       }
-      applyScheme(themeKey, event.newValue, false);
+      const savedChoice = parseStoredChoice(event.newValue);
+      if (!savedChoice) {
+        return;
+      }
+
+      if (savedChoice.signature) {
+        const signedOption = findOptionBySignature(savedChoice.signature);
+        applyOption(themeKey, signedOption, false);
+        return;
+      }
+
+      if (savedChoice.mode) {
+        const modeOption = optionByMode(savedChoice.mode);
+        applyOption(themeKey, modeOption, false);
+      }
     });
   }
 
