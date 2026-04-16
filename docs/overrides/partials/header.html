@@ -121,6 +121,20 @@
       {% set is_hidden = "" if nav_item.active else "hidden" %}
       <nav class="bijux-detail-tabs" aria-label="{{ nav_item.title }} sections" data-bijux-detail-strip data-bijux-detail-root-path="{{ bijux_nav.first_page_path(nav_item) | trim }}" {{ is_hidden }}>
         <div class="md-grid">
+          <div class="bijux-detail-select-wrap">
+            <label class="bijux-detail-select-label" for="bijux-detail-select-{{ loop.index }}">Section</label>
+            <select class="bijux-detail-select" id="bijux-detail-select-{{ loop.index }}" data-bijux-detail-select>
+              {% for child in nav_item.children %}
+                {% set option_selected = "" %}
+                {% if nav_item == active_section.item and child.active %}
+                  {% set option_selected = "selected" %}
+                {% endif %}
+                <option value="{{ bijux_nav.first_page_url(child) }}" data-bijux-detail-path="{{ bijux_nav.first_page_path(child) | trim }}" {{ option_selected }}>
+                  {{ bijux_nav.detail_label(child) }}
+                </option>
+              {% endfor %}
+            </select>
+          </div>
           <ul class="bijux-tabs__list bijux-tabs__list--detail">
             {% for child in nav_item.children %}
               {% set item_class = "bijux-tabs__item" %}
