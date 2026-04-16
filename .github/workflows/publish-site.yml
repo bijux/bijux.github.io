@@ -16,7 +16,8 @@ on:
       - "makes/**"
       - "mkdocs.shared.yml"
       - "mkdocs.yml"
-      - "shared/bijux-shell/**"
+      - "shared/bijux-docs/**"
+      - "shared/shared-dir-sha256.txt"
   workflow_dispatch:
 
 permissions:
