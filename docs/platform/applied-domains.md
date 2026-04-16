@@ -89,8 +89,8 @@ losing architectural clarity.
 
 ## Reading Rule
 
-Use the platform pages to understand the engineering posture. Use the
-domain repositories to see how that posture survives outside a purely
+The platform pages help readers understand the engineering posture. The
+domain repositories then show how that posture survives outside a purely
 generic platform setting.
 
 Applied domains matter here because they force engineering decisions to
