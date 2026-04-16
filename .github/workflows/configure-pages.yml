@@ -1,0 +1,61 @@
+name: configure-pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/configure-pages.yml"
+      - "CNAME"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+
+jobs:
+  configure:
+    name: Enforce Pages configuration
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Configure Pages source and domain
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const cname = "bijux.io";
+
+            let pagesSiteExists = true;
+            try {
+              await github.request("GET /repos/{owner}/{repo}/pages", { owner, repo });
+            } catch (error) {
+              if (error.status !== 404) {
+                throw error;
+              }
+              pagesSiteExists = false;
+            }
+
+            if (!pagesSiteExists) {
+              core.info("Pages site not found; creating initial Pages site.");
+              await github.request("POST /repos/{owner}/{repo}/pages", {
+                owner,
+                repo,
+                source: {
+                  branch: "main",
+                  path: "/",
+                },
+              });
+            }
+
+            const { data } = await github.request("PUT /repos/{owner}/{repo}/pages", {
+              owner,
+              repo,
+              build_type: "workflow",
+              cname,
+            });
+
+            core.info(`Pages build type: ${data.build_type}`);
+            core.info(`Pages custom domain: ${data.cname}`);
