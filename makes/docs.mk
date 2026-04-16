@@ -13,6 +13,7 @@ DOCS_ENV             := DISABLE_MKDOCS_2_WARNING=true
 PYTHON_BIN           ?= $(shell command -v python3 2>/dev/null)
 TABLE_GUARD          ?= internal/quality/markdown_table_guard.py
 SITE_PUBLISH_SCRIPT  ?= internal/scripts/publish_site_root.sh
+SHELL_SOT_GUARD      ?= internal/scripts/verify_shell_source_of_truth.sh
 
 ifeq ($(strip $(UV_BIN)),)
   ifeq ($(strip $(MKDOCS_BIN_CAND)),)
@@ -33,6 +34,7 @@ docs-require: ## Verify the documentation build inputs are present
 	@test -n "$(DOCS_RUN)" || (echo "ERROR: install uv or mkdocs to build docs" && exit 1)
 	@test -n "$(PYTHON_BIN)" || (echo "ERROR: install python3 for docs sanity checks" && exit 1)
 	@test -f "$(TABLE_GUARD)" || (echo "ERROR: missing $(TABLE_GUARD)" && exit 1)
+	@test -f "$(SHELL_SOT_GUARD)" || (echo "ERROR: missing $(SHELL_SOT_GUARD)" && exit 1)
 
 docs: docs-clean docs-require ## Build documentation into artifacts/docs/site
 	@echo "Building documentation"
@@ -43,6 +45,7 @@ docs: docs-clean docs-require ## Build documentation into artifacts/docs/site
 
 docs-sanity: docs-require ## Run lightweight documentation sanity checks
 	@"$(PYTHON_BIN)" "$(TABLE_GUARD)" docs
+	@bash "$(SHELL_SOT_GUARD)"
 	@$(MAKE) docs
 
 site-root: docs ## Publish the built site into the repository root served by GitHub Pages

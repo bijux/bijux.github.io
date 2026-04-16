@@ -176,7 +176,14 @@ function bijuxRevealActiveNavigationTarget() {
 }
 
 function bijuxRevealMobileDrawerContext() {
-  if (!window.matchMedia("(max-width: 76.2344em)").matches) {
+  const viewportMode =
+    window.bijuxViewportProfile && typeof window.bijuxViewportProfile.current === "function"
+      ? window.bijuxViewportProfile.current()
+      : window.matchMedia("(max-width: 76.2344em)").matches
+        ? "phone"
+        : "normal";
+
+  if (viewportMode !== "phone") {
     return;
   }
 
