@@ -37,6 +37,13 @@ That makes the teaching surface more revealing than a generic
 - explicit treatment of decorators, descriptors, metaclasses, and runtime customization as first-class design topics
 - a teaching surface that stays technical rather than introductory
 
+## Why This Matters In Production Systems
+
+- API boundary decisions become clearer when abstraction models are explicit
+- plugin and extension models depend on honest composition and ownership rules
+- maintainability improves when OOP and FP tradeoffs are chosen deliberately, not stylistically
+- metaprogramming becomes safer when runtime behavior is inspected as a system concern
+
 ## Open Here First
 
 | If you want to start with... | Open |
@@ -51,3 +58,9 @@ That makes the teaching surface more revealing than a generic
 - you care how software design tradeoffs are explained under real maintenance pressure
 - you want metaprogramming to be treated as engineering design pressure rather than as a bag of tricks
 - you want to inspect teaching material that still feels like engineering work
+
+## How This Thinking Appears In Bijux Repositories
+
+- `bijux-core`: command/runtime boundaries and extension surfaces are shaped by abstraction discipline
+- `bijux-canon`: package splits reflect explicit ownership and composition choices
+- `bijux-atlas`: delivery and reporting layers emphasize interface clarity over hidden coupling

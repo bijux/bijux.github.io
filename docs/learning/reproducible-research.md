@@ -37,6 +37,13 @@ failure mode and design pressure rather than by tool popularity.
 - capstone-backed programs where the claims stay attached to executable capstones
 - the ability to teach system models instead of memorizing command syntax
 
+## Engineering Judgment Demonstrated Here
+
+- state identity design for experiments and reproducible artifact lineage
+- workflow truth: choosing orchestration models that match failure and change pressure
+- publication boundaries that separate build, review, and release responsibilities
+- recovery posture after drift, parameter churn, or runtime evolution
+
 ## Open Here First
 
 | If you want to start with... | Open |
@@ -52,3 +59,10 @@ failure mode and design pressure rather than by tool popularity.
 - you want to see engineering discipline carry into research tooling and publication boundaries
 - you want to understand when DVC is the right model for experiment state, recovery, and promotion boundaries
 - you want to inspect teaching material that is anchored to executable capstones
+
+## Why This Matters Outside Research
+
+- CI/CD: deterministic workflows and explicit build boundaries reduce release ambiguity
+- data pipelines: state and artifact discipline improve traceability under evolving inputs
+- ML workflows: parameter/metric handling patterns map directly to experiment governance
+- platform reliability: failure-mode-first workflow design supports stable operational behavior

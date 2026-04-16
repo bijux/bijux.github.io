@@ -27,6 +27,30 @@ last_reviewed: 2026-04-12
 Once the right branch is clear, continue inside the documentation and
 source surfaces that hold the detail.</div>
 
+## What This Work Demonstrates
+
+- architecture that stays legible under change instead of collapsing into ad hoc glue
+- deterministic execution and runtime governance as first-class design concerns
+- delivery surfaces (docs, contracts, release behavior) treated as owned engineering outputs
+- domain adaptation in scientific contexts without losing boundary clarity
+- documentation used as an operational surface rather than a marketing wrapper
+
+## Representative Engineering Themes
+
+- platform systems and runtime control-plane design
+- governed knowledge and data-service architecture
+- scientific software delivery under evidence and traceability pressure
+- architecture documentation, reviewability, and long-lived maintenance posture
+- technical education that codifies engineering judgment instead of summarizing tools
+
+## For Hiring Managers And Technical Reviewers
+
+Use [reading paths](reading-paths.md) and [project pages](projects/index.md) to inspect:
+
+- how ownership boundaries are defined and preserved
+- where delivery quality is made verifiable
+- how the same technical language survives runtime, delivery, domain, and teaching contexts
+
 <div class="bijux-panel-grid">
   <div class="bijux-panel"><h3>Boundaries That Hold</h3><p>Core, Canon, Atlas, and the domain repositories are separated by operating responsibility. Runtime control, knowledge workflows, delivery surfaces, and scientific products stay legible when opened side by side.</p></div>
   <div class="bijux-panel"><h3>Public Surfaces You Can Open</h3><p>The hub routes into repository handbooks, published docs, and source repositories rather than screenshots or abstract summaries. The useful material is meant to be inspected directly.</p></div>
@@ -74,7 +98,7 @@ source surfaces that hold the detail.</div>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">for domain and teaching readers</div>
     <h2>Start where the work gets harder</h2>
-    <p>Open Applied Domains, then Proteomics, Pollenomics, and Masterclass, for the same structure under scientific context and public teaching.</p>
+    <p>Open Applied Domains, then Proteomics, Pollenomics, and Learning, for the same structure under scientific context and public teaching.</p>
     <p><a href="reading-paths.md">Open the reading paths</a></p>
   </article>
 </div>

@@ -13,10 +13,22 @@ The public learning surface lives in `bijux-masterclass`. It keeps the
 same systems language teachable, sequenced, and reusable across
 long-form programs.
 
+These programs are not detached side content. They are another proof
+surface for how technical judgment is structured, taught, and reused
+without losing architectural rigor.
+
 <div class="bijux-callout"><strong>The learning branch is organized like the rest of the work.</strong>
 Programs are grouped by technical pressure, routed through stable entry
 pages, and tied to course books and capstones rather than treated as a
 collection of detached notes.</div>
+
+## What This Branch Demonstrates
+
+- decomposition of complex technical material into durable learning paths
+- conceptual compression without flattening design tradeoffs
+- systems teaching that stays attached to implementation pressure
+- documentation discipline that mirrors repository-level engineering standards
+- leadership-through-explanation: the same language works in design, delivery, and instruction
 
 ## Program Families
 
