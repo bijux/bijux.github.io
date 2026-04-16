@@ -67,9 +67,11 @@ graph LR
 
 ## How To Read The Repository Family
 
-- start in **Platform** for the architectural and operational foundation
-- read **Projects** to see how those ideas are applied in specific domains
-- use **Learning** to understand the recurring patterns, trade-offs, and workflows behind both
+- many readers begin in **Platform** for architectural and operational
+  foundations
+- **Projects** then show how those ideas are applied in specific domains
+- **Learning** helps connect recurring patterns, trade-offs, and
+  workflows behind both
 
 ## What A Technical Reviewer Should Be Able To Conclude
 
