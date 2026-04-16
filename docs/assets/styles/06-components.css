@@ -265,11 +265,14 @@
 
 .bijux-footer-nav {
   align-items: center;
+  background: transparent !important;
+  box-shadow: none;
   display: grid;
   gap: 0.8rem;
   grid-template-areas: "prev center next";
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  padding-block: 0.8rem;
+  min-height: 5.15rem;
+  padding-block: 0.7rem;
 }
 
 .bijux-footer-nav .md-footer__link--prev {
@@ -283,34 +286,45 @@
 }
 
 .bijux-footer-center {
+  align-items: center;
+  display: flex;
   grid-area: center;
   justify-self: center;
+  min-height: 100%;
 }
 
 .bijux-footer-nav .md-footer__link {
-  background: color-mix(in srgb, var(--md-default-bg-color) 86%, transparent 14%);
-  border: 1px solid color-mix(in srgb, var(--bijux-border) 72%, transparent 28%);
+  background: color-mix(in srgb, var(--md-default-bg-color) 94%, transparent 6%);
+  border: 1px solid color-mix(in srgb, var(--bijux-border) 66%, transparent 34%);
   border-radius: 0.95rem;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.07);
+  color: color-mix(in srgb, var(--bijux-ink) 84%, white 16%);
+  opacity: 1;
+}
+
+.bijux-footer-nav .md-footer__direction {
+  color: var(--bijux-muted);
 }
 
 [data-md-color-scheme="slate"] .bijux-footer-nav .md-footer__link {
-  background: rgba(2, 6, 23, 0.34);
-  border-color: rgba(45, 212, 191, 0.2);
-  box-shadow: 0 10px 24px rgba(2, 6, 23, 0.28);
+  background: rgba(2, 6, 23, 0.28);
+  border-color: rgba(45, 212, 191, 0.22);
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.26);
+  color: #e9f2ff;
 }
 
 .bijux-footer-strip {
   display: grid;
-  gap: 0.3rem;
+  gap: 0.24rem;
   justify-items: center;
+  line-height: 1;
   text-align: center;
 }
 
 .bijux-footer-strip__copyright {
-  color: color-mix(in srgb, var(--bijux-ink) 70%, white 30%);
+  color: color-mix(in srgb, var(--bijux-ink) 78%, white 22%);
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.01em;
 }
 
@@ -322,14 +336,14 @@
 
 .bijux-footer-strip__links a {
   align-items: center;
-  background: color-mix(in srgb, var(--md-default-bg-color) 86%, transparent 14%);
-  border: 1px solid color-mix(in srgb, var(--bijux-border) 80%, transparent 20%);
+  background: color-mix(in srgb, var(--md-default-bg-color) 94%, transparent 6%);
+  border: 1px solid color-mix(in srgb, var(--bijux-border) 76%, transparent 24%);
   border-radius: 999px;
-  color: color-mix(in srgb, var(--bijux-ink) 68%, var(--md-typeset-a-color) 32%);
+  color: color-mix(in srgb, var(--bijux-ink) 76%, var(--md-typeset-a-color) 24%);
   display: inline-flex;
   height: 1.7rem;
   justify-content: center;
-  transition: background-color 0.16s ease, color 0.16s ease, border-color 0.16s ease, transform 0.16s ease;
+  transition: background-color 0.16s ease, color 0.16s ease, border-color 0.16s ease, transform 0.16s ease, box-shadow 0.16s ease;
   width: 1.7rem;
 }
 
@@ -337,28 +351,31 @@
   background: color-mix(in srgb, var(--bijux-detail-link-active-bg) 88%, transparent 12%);
   border-color: color-mix(in srgb, var(--md-typeset-a-color) 36%, transparent 64%);
   color: color-mix(in srgb, var(--bijux-ink) 88%, white 12%);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.12);
   transform: translateY(-1px);
 }
 
 .bijux-footer-strip__links a svg {
+  fill: currentColor;
   height: 0.9rem;
   width: 0.9rem;
 }
 
 [data-md-color-scheme="slate"] .bijux-footer-strip__copyright {
-  color: color-mix(in srgb, var(--bijux-ink) 82%, #fff 18%);
+  color: #e8f2ff;
 }
 
 [data-md-color-scheme="slate"] .bijux-footer-strip__links a {
-  background: rgba(2, 6, 23, 0.34);
-  border-color: rgba(45, 212, 191, 0.24);
-  color: #d4f5f1;
+  background: rgba(2, 6, 23, 0.24);
+  border-color: rgba(45, 212, 191, 0.3);
+  color: #e0f6f3;
 }
 
 [data-md-color-scheme="slate"] .bijux-footer-strip__links a:hover {
-  background: rgba(15, 118, 110, 0.22);
-  border-color: rgba(45, 212, 191, 0.42);
-  color: #f2f8ff;
+  background: rgba(15, 118, 110, 0.26);
+  border-color: rgba(45, 212, 191, 0.5);
+  box-shadow: 0 4px 12px rgba(2, 6, 23, 0.3);
+  color: #ffffff;
 }
 
 @media screen and (max-width: 76.2344em) {
