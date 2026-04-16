@@ -23,9 +23,9 @@ last_reviewed: 2026-04-12
   </div>
 </section>
 
-<div class="bijux-callout"><strong>Use the hub to locate the owning repository first.</strong>
-Once the right branch is clear, continue inside the documentation and
-source surfaces that hold the detail.</div>
+<div class="bijux-callout"><strong>This hub helps you locate the owning repository first.</strong>
+Once you find the right branch, you can continue into the documentation
+and source surfaces that carry the implementation detail.</div>
 
 ## What This Work Demonstrates
 
@@ -45,7 +45,7 @@ source surfaces that hold the detail.</div>
 
 ## For Hiring Managers And Technical Reviewers
 
-Use [reading paths](reading-paths.md) and [project pages](projects/index.md) to inspect:
+You can use [reading paths](reading-paths.md) and [project pages](projects/index.md) to inspect:
 
 - how ownership boundaries are defined and preserved
 - where delivery quality is made verifiable
@@ -53,7 +53,7 @@ Use [reading paths](reading-paths.md) and [project pages](projects/index.md) to 
 
 <div class="bijux-panel-grid">
   <div class="bijux-panel"><h3>Boundaries That Hold</h3><p>Core, Canon, Atlas, and the domain repositories are separated by operating responsibility. Runtime control, knowledge workflows, delivery surfaces, and scientific products stay legible when opened side by side.</p></div>
-  <div class="bijux-panel"><h3>Public Surfaces You Can Open</h3><p>The hub routes into repository handbooks, published docs, and source repositories rather than screenshots or abstract summaries. The useful material is meant to be inspected directly.</p></div>
+  <div class="bijux-panel"><h3>Public Surfaces You Can Open</h3><p>The hub routes into repository handbooks, published docs, and source repositories rather than screenshots or abstract summaries, so readers can inspect the material directly at their own pace.</p></div>
   <div class="bijux-panel"><h3>Work Under Domain Pressure</h3><p>Proteomics, Pollenomics, and Masterclass keep the same engineering language under scientific and teaching pressure. The structure has to hold outside generic platform context.</p></div>
   <div class="bijux-panel"><h3>Explanation Near Implementation</h3><p>Technical programs and course books stay close to the repositories. Explanation, implementation, and long-lived documentation reinforce one another instead of drifting apart.</p></div>
 </div>
@@ -86,19 +86,19 @@ Use [reading paths](reading-paths.md) and [project pages](projects/index.md) to 
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">for architecture-first readers</div>
     <h2>Start with the system split</h2>
-    <p>Open the system map, then Core and Canon, for boundaries, runtime structure, and repository ownership.</p>
+    <p>You can begin with the system map, then Core and Canon, to review boundaries, runtime structure, and repository ownership.</p>
     <p><a href="reading-paths.md">Open the reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">for delivery-focused readers</div>
     <h2>Start with delivery surfaces</h2>
-    <p>Open Delivery Surfaces, then Atlas, for service design, operational visibility, documentation quality, and published destinations.</p>
+    <p>You can start with Delivery Surfaces, then Atlas, for service design, operational visibility, documentation quality, and published destinations.</p>
     <p><a href="reading-paths.md">Open the reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">for domain and teaching readers</div>
     <h2>Start where the work gets harder</h2>
-    <p>Open Applied Domains, then Proteomics, Pollenomics, and Learning, for the same structure under scientific context and public teaching.</p>
+    <p>You can open Applied Domains, then Proteomics, Pollenomics, and Learning, to see the same structure under scientific context and public teaching.</p>
     <p><a href="reading-paths.md">Open the reading paths</a></p>
   </article>
 </div>
@@ -140,8 +140,9 @@ graph TD
 
 ## Reading Rule
 
-Use this page to choose an entry point. Then move into the owning
-repository and stay there long enough to inspect the actual surfaces.
+This page offers a starting point based on your interest. From there,
+you can move into the owning repository and spend time with the actual
+surfaces that matter for your review.
 
 Bijux is intended to be read as one coherent body of engineering work,
 not as isolated projects. Platform structure, repository boundaries,
