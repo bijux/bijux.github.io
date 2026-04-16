@@ -112,3 +112,9 @@ system family through a different responsibility.
 
 Use the cards for orientation and the project pages for a closer view of
 what each repository owns.
+
+The projects branch is meant to be read as a coherent family of systems
+rather than disconnected experiments. Each repository owns a distinct
+slice of runtime, delivery, domain, or learning responsibility, and
+together they show a consistent pattern of boundary design, explanation,
+and system-level engineering judgment.

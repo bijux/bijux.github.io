@@ -60,3 +60,9 @@ release discipline visible in the same public surface.
 Core keeps the rest of the repository family grounded in visible runtime
 and governance machinery. The backbone is named, inspectable, and
 stable enough to support the higher layers around it.
+
+Bijux Core represents the layer where runtime truth, deterministic
+execution, and repository control must remain least ambiguous. Beyond
+the tools themselves, it demonstrates a discipline of explicit
+authority, clear workflow semantics, and structural rigor that keeps
+core behavior understandable under long-term change.

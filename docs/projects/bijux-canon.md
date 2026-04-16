@@ -69,3 +69,9 @@ directly.
 Canon keeps AI and knowledge workflows split into maintained parts
 instead of collapsing them into one vague layer. The package boundaries
 stay visible all the way out to the public docs.
+
+Bijux Canon is organized around the idea that knowledge systems stay
+durable only when ingest, indexing, reasoning, orchestration, and
+runtime responsibilities are separated with intention. Its value is not
+the package count alone, but the layered governance model that keeps the
+system extensible, inspectable, and coherent as it evolves.

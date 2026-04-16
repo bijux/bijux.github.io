@@ -43,3 +43,9 @@ you care about first.
 - do not try to read everything
 - start with the branch that matches your real interest, then go deeper only where the material keeps paying off
 - switch branches when you want a broader view of the repository family rather than more depth in one area
+
+The reading paths exist so different readers can inspect the same body
+of work from different starting points without losing coherence. That
+flexibility matters because strong technical systems should remain
+legible to students, specialists, and evaluators alike while preserving
+the same architectural signals across routes.
