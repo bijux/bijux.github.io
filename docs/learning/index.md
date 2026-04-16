@@ -66,7 +66,7 @@ graph LR
 
 ## Fast Routes
 
-| If you want to inspect... | Start here |
+| If you want to inspect... | Good starting point |
 | --- | --- |
 | workflow and reproducibility judgment | [Reproducible Research](reproducible-research.md) |
 | language design and software architecture judgment | [Python Programming](python-programming.md) |
@@ -74,8 +74,8 @@ graph LR
 
 ## Reading Rule
 
-Use the learning pages when you want to see how technical depth is
-turned into public programs without losing structure.
+The learning pages are useful when you want to see how technical depth
+becomes public programs without losing structure.
 
 The learning branch exists to make difficult technical ideas durable,
 legible, and useful under real engineering pressure. These programs are
