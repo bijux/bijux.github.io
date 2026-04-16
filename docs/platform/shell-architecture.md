@@ -1,12 +1,12 @@
 # Shell Architecture
 
-The Bijux shell is centralized and shared.
+The Bijux docs shell is centralized and shared.
 
 Canonical source:
 
-- `shared/bijux-shell/partials/*`
-- `shared/bijux-shell/styles/*`
-- `shared/bijux-shell/scripts/*`
+- `shared/bijux-docs/partials/*`
+- `shared/bijux-docs/styles/*`
+- `shared/bijux-docs/scripts/*`
 
 Generated mirrors:
 
@@ -14,15 +14,13 @@ Generated mirrors:
 - `docs/assets/styles/*`
 - `docs/assets/javascripts/shell/*`
 - `docs/assets/javascripts/navigation-sync.js`
-- `assets/styles/*`
-- `assets/javascripts/shell/*`
-- `assets/javascripts/navigation-sync.js`
 
 ## Commands
 
-- `make shell-sync` to synchronize shell files (`shared -> docs -> assets`)
-- `make shell-check` to validate shell contract and drift checks
-- `make docs-sanity` to run shell checks plus docs build
+- `make bijux-docs-sync` to synchronize docs shell files (`shared -> docs`)
+- `make bijux-docs-check` to validate docs shell contract and drift checks
+- `make docs-sanity` to run docs shell checks plus docs build
+- Backward-compatible aliases: `make shell-sync`, `make shell-check`
 
 ## Project Contract
 
@@ -44,4 +42,4 @@ Notes:
 
 - `theme_key` must remain shared (`bijux:theme`) for cross-project dark/light persistence.
 - `nav_mode` is currently `default` and reserved for controlled shell-level behavior changes.
-- Projects can customize labels and URLs, but should not fork shell partial structure or shell runtime logic.
+- Projects can customize labels and URLs, but should not fork docs shell partial structure or runtime logic.

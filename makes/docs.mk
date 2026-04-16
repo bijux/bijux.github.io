@@ -13,9 +13,6 @@ SITE_URL             ?= https://bijux.io/
 DOCS_ENV             :=
 PYTHON_BIN           ?= $(shell command -v python3 2>/dev/null)
 TABLE_GUARD          ?= internal/quality/markdown_table_guard.py
-SHELL_SYNC_SCRIPT    ?= internal/scripts/sync_bijux_shell.sh
-SHELL_SOT_GUARD      ?= internal/scripts/verify_shell_source_of_truth.sh
-SHELL_CONTRACT_GUARD ?= internal/quality/validate_shell_contract.py
 
 ifeq ($(strip $(UV_BIN)),)
   ifeq ($(strip $(MKDOCS_BIN_CAND)),)
@@ -27,7 +24,7 @@ else
   DOCS_RUN = XDG_CACHE_HOME="$(DOCS_CACHE_DIR)" UV_PROJECT_ENVIRONMENT="$(DOCS_VENV_DIR)" $(DOCS_ENV) "$(UV_BIN)" run --with-requirements "$(DOCS_REQUIREMENTS)" mkdocs
 endif
 
-.PHONY: docs docs-clean docs-require docs-serve docs-sanity shell-sync shell-check
+.PHONY: docs docs-clean docs-require docs-serve docs-sanity
 
 ##@ Documentation
 docs-require: ## Verify the documentation build inputs are present
@@ -36,28 +33,21 @@ docs-require: ## Verify the documentation build inputs are present
 	@test -n "$(DOCS_RUN)" || (echo "ERROR: install uv or mkdocs to build docs" && exit 1)
 	@test -n "$(PYTHON_BIN)" || (echo "ERROR: install python3 for docs sanity checks" && exit 1)
 	@test -f "$(TABLE_GUARD)" || (echo "ERROR: missing $(TABLE_GUARD)" && exit 1)
-	@test -f "$(SHELL_SYNC_SCRIPT)" || (echo "ERROR: missing $(SHELL_SYNC_SCRIPT)" && exit 1)
-	@test -f "$(SHELL_SOT_GUARD)" || (echo "ERROR: missing $(SHELL_SOT_GUARD)" && exit 1)
-	@test -f "$(SHELL_CONTRACT_GUARD)" || (echo "ERROR: missing $(SHELL_CONTRACT_GUARD)" && exit 1)
+	@test -f "$(BIJUX_DOCS_SYNC_SCRIPT)" || (echo "ERROR: missing $(BIJUX_DOCS_SYNC_SCRIPT)" && exit 1)
+	@test -f "$(BIJUX_DOCS_SOT_GUARD)" || (echo "ERROR: missing $(BIJUX_DOCS_SOT_GUARD)" && exit 1)
+	@test -f "$(BIJUX_DOCS_CONTRACT_GUARD)" || (echo "ERROR: missing $(BIJUX_DOCS_CONTRACT_GUARD)" && exit 1)
 
-docs: docs-clean docs-require shell-sync ## Build documentation into artifacts/docs/site
+docs: docs-clean docs-require bijux-docs-sync ## Build documentation into artifacts/docs/site
 	@echo "Building documentation"
 	@mkdir -p "$(DOCS_CACHE_DIR)" "$(DOCS_VENV_DIR)"
 	@SITE_URL="$(SITE_URL)" $(DOCS_RUN) build --strict --config-file "$(MKDOCS_CFG)" --site-dir "$(DOCS_SITE_DIR)"
 	@if test -f CNAME; then cp CNAME "$(DOCS_SITE_DIR)/CNAME"; fi
 	@echo "Documentation build complete"
 
-shell-sync: docs-require ## Synchronize shared shell into docs and generated root mirrors
-	@bash "$(SHELL_SYNC_SCRIPT)"
-
-shell-check: docs-require ## Verify shared shell mirrors and contract checks
-	@"$(PYTHON_BIN)" "$(SHELL_CONTRACT_GUARD)" .
-	@bash "$(SHELL_SOT_GUARD)"
-
 docs-sanity: docs-require ## Run lightweight documentation sanity checks
 	@"$(PYTHON_BIN)" "$(TABLE_GUARD)" docs
-	@$(MAKE) shell-sync
-	@$(MAKE) shell-check
+	@$(MAKE) bijux-docs-sync
+	@$(MAKE) bijux-docs-check
 	@$(MAKE) docs
 
 docs-serve: docs-require ## Serve documentation locally with automatic reloads
