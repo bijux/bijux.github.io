@@ -10,7 +10,7 @@ DOCS_VENV_DIR        ?= artifacts/.venv
 DOCS_HOST            ?= 127.0.0.1
 DOCS_PORT            ?= 8000
 SITE_URL             ?= https://bijux.io/
-DOCS_ENV             := DISABLE_MKDOCS_2_WARNING=true
+DOCS_ENV             :=
 PYTHON_BIN           ?= $(shell command -v python3 2>/dev/null)
 TABLE_GUARD          ?= internal/quality/markdown_table_guard.py
 SHELL_SYNC_SCRIPT    ?= internal/scripts/sync_bijux_shell.sh
