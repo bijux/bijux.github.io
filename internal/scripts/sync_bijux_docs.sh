@@ -13,6 +13,7 @@ sync_file() {
 
 for required in \
   "${shared_root}/partials/header.html" \
+  "${shared_root}/partials/copyright.html" \
   "${shared_root}/partials/nav.html" \
   "${shared_root}/partials/nav-item.html" \
   "${shared_root}/partials/bijux-nav.html" \
@@ -26,6 +27,7 @@ done
 
 # shared -> docs
 sync_file "${shared_root}/partials/header.html" "${repo_root}/docs/overrides/partials/header.html"
+sync_file "${shared_root}/partials/copyright.html" "${repo_root}/docs/overrides/partials/copyright.html"
 sync_file "${shared_root}/partials/nav.html" "${repo_root}/docs/overrides/partials/nav.html"
 sync_file "${shared_root}/partials/nav-item.html" "${repo_root}/docs/overrides/partials/nav-item.html"
 sync_file "${shared_root}/partials/bijux-nav.html" "${repo_root}/docs/overrides/partials/bijux-nav.html"
