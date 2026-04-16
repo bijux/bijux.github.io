@@ -22,7 +22,7 @@ work quality.
 | `bijux-atlas` | data and service delivery | APIs, datasets, reporting, docs-aware control-plane behavior | service architecture and public delivery posture | [Project page](../projects/bijux-atlas.md) |
 | `bijux-proteomics` | proteomics-oriented product system | domain workflows, discovery context, scientific product framing | bioinformatics software under real domain pressure | [Project page](../projects/bijux-proteomics.md) |
 | `bijux-pollenomics` | evidence mapping and site-selection product system | archaeology-facing narratives, evidence surfaces, domain framing | unusual domain adaptation without structural collapse | [Project page](../projects/bijux-pollenomics.md) |
-| `bijux-masterclass` | public technical education | sequenced programs, deep dives, reusable learning structure | technical clarity that remains rigorous enough to teach | [Project page](../projects/bijux-masterclass.md) |
+| `bijux-masterclass` | public technical education | sequenced programs, deep dives, reusable learning structure | technical clarity that remains rigorous enough to teach | [Learning catalog](../learning/index.md) |
 
 ## How The Repositories Work Together
 

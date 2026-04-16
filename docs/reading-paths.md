@@ -19,7 +19,7 @@ you care about first.
 | platform structure and repository boundaries | [Work qualities](platform/work-qualities.md) -> [System map](platform/system-map.md) -> [Bijux Core](projects/bijux-core.md) -> [Bijux Canon](projects/bijux-canon.md) |
 | delivery, services, and public operating surfaces | [Repository matrix](platform/repository-matrix.md) -> [Delivery surfaces](platform/delivery-surfaces.md) -> [Bijux Atlas](projects/bijux-atlas.md) -> [Public surface](platform/public-surface.md) |
 | scientific and domain-heavy work | [Applied domains](platform/applied-domains.md) -> [Bijux Proteomics](projects/bijux-proteomics.md) -> [Bijux Pollenomics](projects/bijux-pollenomics.md) |
-| technical programs and course books | [Learning catalog](learning/index.md) -> [Reproducible Research](learning/reproducible-research.md) -> [Python Programming](learning/python-programming.md) -> [Bijux Masterclass](projects/bijux-masterclass.md) |
+| technical programs and course books | [Learning catalog](learning/index.md) -> [Reproducible Research](learning/reproducible-research.md) -> [Python Programming](learning/python-programming.md) |
 
 ## Short Routes
 

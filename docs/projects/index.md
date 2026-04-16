@@ -69,17 +69,6 @@ system family through a different responsibility.
     </div>
     <p><a href="bijux-pollenomics/">Read the project page</a></p>
   </article>
-  <article class="bijux-showcase-card">
-    <div class="bijux-showcase-card__eyebrow">teaching through architecture</div>
-    <h2>Bijux Masterclass</h2>
-    <p>Covers how technical depth is translated into public programs without losing structural honesty or engineering rigor.</p>
-    <div class="bijux-tag-list">
-      <span class="bijux-tag">education</span>
-      <span class="bijux-tag">python</span>
-      <span class="bijux-tag">reproducibility</span>
-    </div>
-    <p><a href="bijux-masterclass/">Read the project page</a></p>
-  </article>
 </div>
 
 ## What Each Repository Covers
@@ -91,7 +80,6 @@ system family through a different responsibility.
 | [Bijux Atlas](bijux-atlas.md) | data-service architecture, immutable delivery thinking, and operationally serious public surfaces |
 | [Bijux Proteomics](bijux-proteomics.md) | scientific product work that keeps structure under laboratory and discovery constraints |
 | [Bijux Pollenomics](bijux-pollenomics.md) | evidence-heavy domain modeling in an unusual archaeology-facing context |
-| [Bijux Masterclass](bijux-masterclass.md) | the ability to teach architecture, workflow rigor, and programming design without flattening them |
 
 ## Reading Guide
 
@@ -102,7 +90,7 @@ system family through a different responsibility.
 | data delivery and service architecture | [Bijux Atlas](bijux-atlas.md) |
 | bioinformatics and scientific product work | [Bijux Proteomics](bijux-proteomics.md) |
 | evidence mapping and field-oriented domain systems | [Bijux Pollenomics](bijux-pollenomics.md) |
-| teaching and engineering communication | [Bijux Masterclass](bijux-masterclass.md) |
+| teaching and engineering communication | [Learning catalog](../learning/index.md) |
 
 ## Reading Rule
 

@@ -47,7 +47,7 @@ source surfaces that hold the detail.</div>
 | how the repositories fit together | [Platform overview](platform/index.md) -> [System map](platform/system-map.md) | the split across runtime, knowledge, delivery, and domain work |
 | how delivery shows up publicly | [Delivery surfaces](platform/delivery-surfaces.md) -> [Bijux Atlas](projects/bijux-atlas.md) | documentation, published destinations, and operated service surfaces |
 | how the work behaves under domain pressure | [Applied domains](platform/applied-domains.md) -> [Bijux Proteomics](projects/bijux-proteomics.md) -> [Bijux Pollenomics](projects/bijux-pollenomics.md) | scientific and evidence-heavy product systems |
-| how the technical style carries into teaching | [Learning catalog](learning/index.md) -> [Bijux Masterclass](projects/bijux-masterclass.md) | course books and programs built around the same technical language |
+| how the technical style carries into teaching | [Learning catalog](learning/index.md) | course books and programs built around the same technical language |
 
 ## Read This Site As
 

@@ -38,7 +38,7 @@ collection of detached notes.</div>
 | --- | --- |
 | workflow and reproducibility judgment | [Reproducible Research](reproducible-research.md) |
 | language design and software architecture judgment | [Python Programming](python-programming.md) |
-| how the programs fit into the larger repository family | [Bijux Masterclass](../projects/bijux-masterclass.md) |
+| how the programs fit into the larger repository family | [Published Masterclass docs](https://bijux.io/bijux-masterclass/) |
 
 ## Reading Rule
 

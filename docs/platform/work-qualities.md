@@ -26,7 +26,7 @@ of shape.</div>
 | Delivery ownership | documentation, validation, release posture, and destination URLs treated as product surfaces | [Delivery surfaces](delivery-surfaces.md), [Bijux Atlas](../projects/bijux-atlas.md) |
 | Data and service architecture | APIs, datasets, ingest, indexing, runtime control, and documentation behavior separated into owned surfaces | [Platform overview](index.md), [Bijux Atlas](../projects/bijux-atlas.md), [Bijux Canon](../projects/bijux-canon.md) |
 | Domain adaptation | the same engineering posture surviving scientific and evidence-heavy contexts | [Applied domains](applied-domains.md), [Bijux Proteomics](../projects/bijux-proteomics.md), [Bijux Pollenomics](../projects/bijux-pollenomics.md) |
-| Technical communication | architecture and workflow depth translated into teaching without losing rigor | [Learning catalog](../learning/index.md), [Bijux Masterclass](../projects/bijux-masterclass.md) |
+| Technical communication | architecture and workflow depth translated into teaching without losing rigor | [Learning catalog](../learning/index.md), [Published Masterclass docs](https://bijux.io/bijux-masterclass/) |
 
 ## Why These Qualities Recur
 

@@ -71,7 +71,6 @@ nav:
       - Bijux Atlas: projects/bijux-atlas.md
       - Bijux Proteomics: projects/bijux-proteomics.md
       - Bijux Pollenomics: projects/bijux-pollenomics.md
-      - Bijux Masterclass: projects/bijux-masterclass.md
   - Learning:
       - Overview: learning/index.md
       - Reproducible Research: learning/reproducible-research.md
