@@ -59,9 +59,9 @@ graph TD
 - docs-aware validation, operational reporting, and control-plane behavior as part of delivery
 - explicit runtime surfaces: CLI, server, OpenAPI export, and maintainer tooling
 
-## Open Here First
+## Where To Begin
 
-| If you are looking for... | Open this part of Atlas |
+| If you are looking for... | Start with this part of Atlas |
 | --- | --- |
 | service architecture | the split between CLI, server, OpenAPI export, and maintainer control plane |
 | data delivery posture | immutable dataset and artifact language in the docs and README |
@@ -75,7 +75,7 @@ graph TD
 - maintenance workflows remain explicit, reducing hidden operational risk
 - documentation and implementation move together, improving trust in public surfaces
 
-## Best Entry Questions
+## When This Page Is Most Useful
 
 - the question is about API delivery, dataset publishing, or service behavior
 - you are tracing docs UX checks, ops validation, or operational evidence
