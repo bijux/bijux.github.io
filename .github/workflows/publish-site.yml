@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - ".github/workflows/publish-site.yml"
+      - ".github/workflows/**"
       - "CNAME"
       - "Makefile"
       - "configs/**"
@@ -56,6 +56,11 @@ jobs:
         env:
           SITE_URL: ${{ env.DOCS_SITE_URL }}
         run: make docs
+
+      - name: Validate Pages bundle
+        run: |
+          test -f artifacts/docs/site/index.html
+          test -f artifacts/docs/site/CNAME
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
