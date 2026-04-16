@@ -15,10 +15,10 @@ abstraction and software design without reducing them to framework
 recipes.
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="https://bijux.io/bijux-masterclass/python-programming/">Open Family Docs</a>
-<a class="md-button" href="https://bijux.io/bijux-masterclass/python-programming/python-object-oriented-programming/">Open Python Object-Oriented Programming</a>
-<a class="md-button" href="https://bijux.io/bijux-masterclass/python-programming/python-functional-programming/">Open Python Functional Programming</a>
-<a class="md-button" href="https://bijux.io/bijux-masterclass/python-programming/python-meta-programming/">Open Python Metaprogramming</a>
+<a class="md-button md-button--primary" href="https://bijux.io/bijux-masterclass/python-programming/">View Family Docs</a>
+<a class="md-button" href="https://bijux.io/bijux-masterclass/python-programming/python-object-oriented-programming/">View Python Object-Oriented Programming</a>
+<a class="md-button" href="https://bijux.io/bijux-masterclass/python-programming/python-functional-programming/">View Python Functional Programming</a>
+<a class="md-button" href="https://bijux.io/bijux-masterclass/python-programming/python-meta-programming/">View Python Metaprogramming</a>
 </div>
 
 ## Family Shape
@@ -57,9 +57,9 @@ graph TD
 - maintainability improves when OOP and FP tradeoffs are chosen deliberately, not stylistically
 - metaprogramming becomes safer when runtime behavior is inspected as a system concern
 
-## Open Here First
+## Where To Begin
 
-| If you want to start with... | Open |
+| If you want to start with... | Start with |
 | --- | --- |
 | object-design judgment | [Python Object-Oriented Programming](https://bijux.io/bijux-masterclass/python-programming/python-object-oriented-programming/) and its focus on invariants, roles, persistence, and runtime pressure |
 | functional design maturity | [Python Functional Programming](https://bijux.io/bijux-masterclass/python-programming/python-functional-programming/) and its emphasis on purity, effects, async coordination, and composable systems |
