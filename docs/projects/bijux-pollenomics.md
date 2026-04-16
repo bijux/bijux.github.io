@@ -61,16 +61,16 @@ outside the immediate subject area.
 - technical architecture adapted to archaeology-facing and field-oriented context without losing clarity
 - honest scope boundaries around what exists today and what does not
 
-## Open Here First
+## Where To Begin
 
-| If you are looking for... | Open this part of Pollenomics |
+| If you are looking for... | Start with this part of Pollenomics |
 | --- | --- |
 | reproducible publication | tracked `data/` and `docs/report/` outputs, plus the atlas and country bundles |
 | uncommon domain modeling | the archaeology, eDNA, aDNA, and pollenomics framing in the docs and repository layout |
 | scope discipline | the explicit limits around current capabilities, source categories, and report outputs |
 | published entry points | the runtime handbook, data reference, and published Nordic atlas material |
 
-## Best Entry Questions
+## When This Page Is Most Useful
 
 - the question is about evidence mapping, archaeology-facing context, or field-site selection
 - you want to understand how the repository family handles uncommon domain boundaries
