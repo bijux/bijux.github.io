@@ -10,6 +10,24 @@
   background: linear-gradient(90deg, var(--bijux-ribbon-bg), var(--bijux-ribbon-bg-strong));
 }
 
+.bijux-site-tabs .md-tabs__list.bijux-tabs__list--site {
+  align-items: center;
+  display: flex;
+  min-height: 2.9rem;
+  padding-block: 0.32rem;
+}
+
+.bijux-site-tabs .md-tabs__item.bijux-tabs__item {
+  align-items: center;
+  display: flex;
+}
+
+.bijux-site-tabs .md-tabs__link.bijux-tabs__link--site {
+  align-items: center;
+  display: inline-flex;
+  min-height: 2.2rem;
+}
+
 .bijux-detail-tabs {
   background: var(--bijux-detail-bg);
   border-color: var(--bijux-detail-border);
