@@ -22,7 +22,7 @@ engineering language is visible across all of them.</div>
 ## Platform Map
 
 ```mermaid
-flowchart TD
+graph TD
     platform["Platform"] --> context["Operating Context"]
     platform --> map["System Map"]
     platform --> matrix["Repository Matrix"]

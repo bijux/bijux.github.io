@@ -34,7 +34,7 @@ to someone outside the project.
 ## Context Map
 
 ```mermaid
-flowchart LR
+graph LR
     context["Operating Context"] --> long_lived["Long-lived systems"]
     context --> science["Scientific work"]
     context --> artifacts["Artifact-heavy work"]

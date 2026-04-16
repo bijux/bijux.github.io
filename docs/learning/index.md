@@ -25,7 +25,7 @@ collection of detached notes.</div>
 ## Learning Map
 
 ```mermaid
-flowchart LR
+graph LR
     learning["Learning"] --> models["Programming models"]
     learning --> workflows["Reproducible workflows"]
 
@@ -39,7 +39,7 @@ flowchart LR
 ## Masterclass Surface Map
 
 ```mermaid
-flowchart TD
+graph TD
     masterclass["Bijux Masterclass"] --> topics["Technical topics"]
     masterclass --> structure["Program structure"]
     masterclass --> paths["Learning paths"]

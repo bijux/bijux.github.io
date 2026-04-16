@@ -16,7 +16,7 @@ This map provides a quick structural view before diving into individual
 project pages.
 
 ```mermaid
-flowchart TD
+graph TD
     projects["Projects"] --> core_platform["Core platform"]
     projects --> knowledge_systems["Knowledge systems"]
     projects --> delivery_systems["Delivery systems"]

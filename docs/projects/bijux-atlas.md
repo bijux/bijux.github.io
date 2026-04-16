@@ -33,7 +33,7 @@ artifacts.
 ## System Map
 
 ```mermaid
-flowchart TD
+graph TD
     atlas["Bijux Atlas"] --> source["Source data"]
     atlas --> contracts["Contracts"]
     atlas --> artifacts["Artifacts"]

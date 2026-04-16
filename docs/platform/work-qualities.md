@@ -21,7 +21,7 @@ of shape.</div>
 ## Qualities Map
 
 ```mermaid
-flowchart TD
+graph TD
     qualities["Work Qualities"] --> bounded["Bounded systems"]
     qualities --> inspectable["Inspectable delivery"]
     qualities --> pressure["Domain pressure"]

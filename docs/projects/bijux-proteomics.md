@@ -30,7 +30,7 @@ are kept as explicit package boundaries.
 This map summarizes the core technical surfaces in the repository.
 
 ```mermaid
-flowchart TD
+graph TD
     proteomics["Bijux Proteomics"] --> runtime["Runtime execution"]
     proteomics --> contracts["Domain contracts"]
     proteomics --> governance["Evidence governance"]

@@ -32,7 +32,7 @@ This map shows how domain interpretation is grounded by evidence and
 public context.
 
 ```mermaid
-flowchart TD
+graph TD
     pollenomics["Bijux Pollenomics"] --> questions["Domain questions"]
     pollenomics --> evidence["Evidence"]
     pollenomics --> interpretation["Interpretation"]

@@ -14,7 +14,7 @@ you care about first.
 This map shows the main route families at a glance.
 
 ```mermaid
-flowchart LR
+graph LR
     paths["Reading Paths"] --> ideas["Learn the ideas"]
     paths --> platform["Understand the platform"]
     paths --> repositories["Inspect the repositories"]

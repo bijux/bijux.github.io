@@ -32,7 +32,7 @@ failure mode and design pressure rather than by tool popularity.
 ## Program Map
 
 ```mermaid
-flowchart TD
+graph TD
     program["Reproducible Research"] --> structure["Workflow structure"]
     program --> state["State management"]
     program --> artifacts["Artifact control"]

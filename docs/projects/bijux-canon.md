@@ -31,7 +31,7 @@ directly.
 This map shows the package layers as one governed knowledge system.
 
 ```mermaid
-flowchart TD
+graph TD
     canon["Bijux Canon"] --> ingest["Ingest"]
     canon --> index["Index"]
     canon --> reasoning["Reasoning"]

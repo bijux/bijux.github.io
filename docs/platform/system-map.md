@@ -19,7 +19,7 @@ implementation detail.
 ## Layered View
 
 ```mermaid
-flowchart TD
+graph TD
     system["Bijux System"] --> platform["Platform"]
     system --> projects["Projects"]
     system --> learning["Learning"]

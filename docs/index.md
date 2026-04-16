@@ -106,7 +106,7 @@ Use [reading paths](reading-paths.md) and [project pages](projects/index.md) to 
 ## Site Routes
 
 ```mermaid
-flowchart TD
+graph TD
     bijux["Bijux"] --> platform["Platform"]
     bijux --> projects["Projects"]
     bijux --> learning["Learning"]

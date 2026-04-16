@@ -16,7 +16,7 @@ work quality.
 ## Matrix Map
 
 ```mermaid
-flowchart LR
+graph LR
     family["Repository Family"] --> core["Core"]
     family --> canon["Canon"]
     family --> atlas["Atlas"]

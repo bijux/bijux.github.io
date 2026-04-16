@@ -21,7 +21,7 @@ visible to readers.</div>
 ## Network Map
 
 ```mermaid
-flowchart TD
+graph TD
     network["Documentation Network"] --> orientation["Shared orientation"]
     network --> handbooks["Repository handbooks"]
     network --> context["Project context"]

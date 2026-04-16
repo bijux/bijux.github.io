@@ -18,7 +18,7 @@ subject matter.
 ## Domain Map
 
 ```mermaid
-flowchart LR
+graph LR
     domains["Applied Domains"] --> shared["Shared engineering discipline"]
     domains --> pressure["Domain-specific pressure"]
 

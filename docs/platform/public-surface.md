@@ -17,7 +17,7 @@ page.
 ## Surface Map
 
 ```mermaid
-flowchart TD
+graph TD
     surface["Public Surface"] --> docs["Documentation sites"]
     surface --> source["Source repositories"]
     surface --> projects["Project pages"]

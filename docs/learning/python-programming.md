@@ -32,7 +32,7 @@ That makes the teaching surface more revealing than a generic
 ## Program Map
 
 ```mermaid
-flowchart TD
+graph TD
     program["Python Programming"] --> oop["Object-oriented"]
     program --> fp["Functional"]
     program --> meta["Metaprogramming"]

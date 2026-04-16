@@ -24,7 +24,7 @@ Delivery quality is part of the system design, not an afterthought.
 ## Delivery Map
 
 ```mermaid
-flowchart TD
+graph TD
     delivery["Delivery Surfaces"] --> repos["Repositories"]
     delivery --> docs["Documentation"]
     delivery --> outputs["Published outputs"]

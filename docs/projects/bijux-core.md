@@ -28,7 +28,7 @@ release discipline visible in the same public surface.
 This map summarizes the authority split that keeps Core legible.
 
 ```mermaid
-flowchart LR
+graph LR
     core["Bijux Core"] --> cli["CLI runtime"]
     core --> dag["DAG execution"]
     core --> control["Repository control"]
