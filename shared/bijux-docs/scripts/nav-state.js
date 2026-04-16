@@ -7,10 +7,11 @@
     return path || "/";
   }
 
-  function bestMatchingLink(container, attribute, currentPath) {
+  function bestMatchingLink(container, attribute, currentPath, selector) {
     let bestMatch = null;
+    const query = selector || `[${attribute}]`;
 
-    for (const link of container.querySelectorAll(`[${attribute}]`)) {
+    for (const link of container.querySelectorAll(query)) {
       const linkPath = normalizePath(link.getAttribute(attribute) || "/");
       const isMatch =
         currentPath === linkPath ||
