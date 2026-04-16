@@ -25,6 +25,21 @@ machinery that should remain stable beneath dependent systems.
 repository owns the command runtime and DAG execution backbone that
 dependent systems depend on, while keeping governance, evidence, and
 release discipline visible in the same public surface.
+This map summarizes the authority split that keeps Core legible.
+
+```mermaid
+flowchart LR
+    core["Bijux Core"] --> cli["CLI runtime"]
+    core --> dag["DAG execution"]
+    core --> control["Repository control"]
+
+    cli --> command["Command behavior"]
+    dag --> workflow["Workflow behavior"]
+    control --> governance["Workspace governance"]
+```
+
+The split keeps command semantics, workflow semantics, and repository
+governance explicit instead of blending them into one opaque layer.
 
 ## What This Repository Shows About My Engineering Approach
 

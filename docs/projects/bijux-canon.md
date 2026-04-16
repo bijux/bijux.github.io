@@ -28,6 +28,25 @@ orchestration, and policy into one blurred "AI platform" layer. The
 repository makes those concerns explicit through packages, contracts,
 compatibility surfaces, and runtime boundaries that readers can inspect
 directly.
+This map shows the package layers as one governed knowledge system.
+
+```mermaid
+flowchart TD
+    canon["Bijux Canon"] --> ingest["Ingest"]
+    canon --> index["Index"]
+    canon --> reasoning["Reasoning"]
+    canon --> orchestration["Orchestration"]
+    canon --> runtime["Runtime"]
+
+    ingest --> system["Governed knowledge system"]
+    index --> system
+    reasoning --> system
+    orchestration --> system
+    runtime --> system
+```
+
+Each layer stays explicit so inputs, reasoning, and runtime behavior can
+be reviewed as connected but distinct responsibilities.
 
 ## Why The Package Split Is Intentional
 

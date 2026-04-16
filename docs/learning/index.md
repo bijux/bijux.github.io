@@ -36,6 +36,24 @@ flowchart LR
     research --> control["Workflow control and artifact trust"]
 ```
 
+## Masterclass Surface Map
+
+```mermaid
+flowchart TD
+    masterclass["Bijux Masterclass"] --> topics["Technical topics"]
+    masterclass --> structure["Program structure"]
+    masterclass --> paths["Learning paths"]
+    masterclass --> surface["Public teaching surface"]
+
+    topics --> understanding["Durable understanding"]
+    structure --> understanding
+    paths --> understanding
+    surface --> understanding
+```
+
+This keeps the teaching surface connected to structure, not detached
+from the rest of the system family.
+
 ## What This Branch Demonstrates
 
 - decomposition of complex technical material into durable learning paths

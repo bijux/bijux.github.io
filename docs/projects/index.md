@@ -12,6 +12,27 @@ last_reviewed: 2026-04-12
 Use this section when you want a concentrated cross-section of the work
 itself. Each repository below reveals a different part of the same
 system family through a different responsibility.
+This map provides a quick structural view before diving into individual
+project pages.
+
+```mermaid
+flowchart TD
+    projects["Projects"] --> core_platform["Core platform"]
+    projects --> knowledge_systems["Knowledge systems"]
+    projects --> delivery_systems["Delivery systems"]
+    projects --> scientific_systems["Scientific systems"]
+    projects --> learning_systems["Learning systems"]
+
+    core_platform --> core["Core"]
+    knowledge_systems --> canon["Canon"]
+    delivery_systems --> atlas["Atlas"]
+    scientific_systems --> proteomics["Proteomics"]
+    scientific_systems --> pollenomics["Pollenomics"]
+    learning_systems --> masterclass["Masterclass"]
+```
+
+Use it as orientation, then switch to the project pages for repository
+specific detail and inspection routes.
 
 ## Capability Clusters
 

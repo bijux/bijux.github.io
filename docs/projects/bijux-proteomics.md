@@ -27,6 +27,25 @@ runtime behavior, and evidence paths.
 system rather than a single pipeline. Runtime execution, domain
 contracts, decision intelligence, evidence governance, and lab planning
 are kept as explicit package boundaries.
+This map summarizes the core technical surfaces in the repository.
+
+```mermaid
+flowchart TD
+    proteomics["Bijux Proteomics"] --> runtime["Runtime execution"]
+    proteomics --> contracts["Domain contracts"]
+    proteomics --> governance["Evidence governance"]
+    proteomics --> decisions["Decision support"]
+    proteomics --> planning["Lab planning"]
+
+    runtime --> integrated["Integrated scientific system"]
+    contracts --> integrated
+    governance --> integrated
+    decisions --> integrated
+    planning --> integrated
+```
+
+It reflects the repository's design choice to keep scientific workflow
+concerns explicit rather than hidden in ad hoc glue.
 
 ## Why This Work Is Harder Than Generic Application Code
 

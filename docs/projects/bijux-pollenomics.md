@@ -28,6 +28,24 @@ system structure.
 inspectable: tracked source data, rebuildable report bundles, a Nordic
 evidence atlas, and a documentation surface that explains where those
 artifacts come from.
+This map shows how domain interpretation is grounded by evidence and
+public context.
+
+```mermaid
+flowchart TD
+    pollenomics["Bijux Pollenomics"] --> questions["Domain questions"]
+    pollenomics --> evidence["Evidence"]
+    pollenomics --> interpretation["Interpretation"]
+    pollenomics --> context["Public context"]
+
+    questions --> domain_work["Structured domain work"]
+    evidence --> domain_work
+    interpretation --> domain_work
+    context --> domain_work
+```
+
+The goal is a domain system that remains reviewable even for readers
+outside the immediate subject area.
 
 ## What This Repository Demonstrates
 

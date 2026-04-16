@@ -11,6 +11,23 @@ last_reviewed: 2026-04-12
 
 Use this page to choose a short path that matches the part of the work
 you care about first.
+This map shows the main route families at a glance.
+
+```mermaid
+flowchart LR
+    paths["Reading Paths"] --> ideas["Learn the ideas"]
+    paths --> platform["Understand the platform"]
+    paths --> repositories["Inspect the repositories"]
+    paths --> domains["See domain applications"]
+
+    ideas --> learning["Learning"]
+    platform --> platform_branch["Platform"]
+    repositories --> projects["Projects"]
+    domains --> applied["Applied Domains"]
+```
+
+Use the route tables below when you want a more specific sequence for
+time budget or entry context.
 
 ## By Audience
 
