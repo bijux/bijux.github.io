@@ -313,15 +313,16 @@
 }
 
 .md-footer__inner.bijux-footer-nav .md-footer__link {
-  background: color-mix(in srgb, var(--md-default-bg-color) 94%, transparent 6%);
-  border: 1px solid color-mix(in srgb, var(--bijux-border) 66%, transparent 34%);
-  border-radius: 0.95rem;
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.07);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
   color: color-mix(in srgb, var(--bijux-ink) 84%, white 16%);
-  min-width: min(26rem, 42vw);
+  max-width: min(13rem, 21vw);
+  min-width: 0;
   opacity: 1;
-  padding-block: 0.6rem;
-  padding-inline: 0.95rem;
+  padding-block: 0.28rem;
+  padding-inline: 0.35rem;
 }
 
 .md-footer__inner.bijux-footer-nav .md-footer__direction {
@@ -343,9 +344,9 @@
 }
 
 [data-md-color-scheme="slate"] .md-footer__inner.bijux-footer-nav .md-footer__link {
-  background: rgba(2, 6, 23, 0.28);
-  border-color: rgba(45, 212, 191, 0.22);
-  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.26);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
   color: #e9f2ff;
 }
 
