@@ -2,8 +2,7 @@
   const shell = (window.bijuxShell = window.bijuxShell || {});
 
   function runShellNavigationSync() {
-    shell.detailTabs?.syncDetailStripVisibility();
-    shell.detailTabs?.syncDetailStripActiveState();
+    shell.detailTabs?.runDetailTabsSync();
     shell.navReveal?.revealActiveNavigationTarget();
     shell.navReveal?.bindMobileDrawerReveal();
   }
