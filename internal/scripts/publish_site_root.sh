@@ -16,12 +16,12 @@ protected_entries=(
   ".venv"
   "artifacts"
   "docs"
+  "configs"
   "internal"
   "makes"
   "Makefile"
   "mkdocs.shared.yml"
   "mkdocs.yml"
-  "requirements-docs.txt"
 )
 
 is_protected() {

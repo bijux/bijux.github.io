@@ -2,7 +2,7 @@
 
 UV_BIN               := $(shell command -v uv 2>/dev/null)
 MKDOCS_BIN_CAND      ?= $(shell command -v mkdocs 2>/dev/null)
-DOCS_REQUIREMENTS    ?= requirements-docs.txt
+DOCS_REQUIREMENTS    ?= configs/docs/requirements-docs.txt
 MKDOCS_CFG           ?= mkdocs.yml
 DOCS_SITE_DIR        ?= artifacts/docs/site
 DOCS_CACHE_DIR       ?= artifacts/docs/.cache
