@@ -29,6 +29,19 @@ invariants, purity and effects, runtime inspection and metaprogramming.
 That makes the teaching surface more revealing than a generic
 "Python course" label.
 
+## Program Map
+
+```mermaid
+flowchart TD
+    program["Python Programming"] --> oop["Object-oriented"]
+    program --> fp["Functional"]
+    program --> meta["Metaprogramming"]
+
+    oop --> interfaces["Interfaces and encapsulation"]
+    fp --> composition["Composition and transformations"]
+    meta --> extensibility["Runtime extensibility"]
+```
+
 ## What Lives Here
 
 - language-level thinking that goes deeper than framework familiarity

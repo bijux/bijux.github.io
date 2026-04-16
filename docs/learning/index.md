@@ -22,6 +22,20 @@ Programs are grouped by technical pressure, routed through stable entry
 pages, and tied to course books and capstones rather than treated as a
 collection of detached notes.</div>
 
+## Learning Map
+
+```mermaid
+flowchart LR
+    learning["Learning"] --> models["Programming models"]
+    learning --> workflows["Reproducible workflows"]
+
+    models --> python["Python Programming"]
+    workflows --> research["Reproducible Research"]
+
+    python --> abstraction["Abstraction and design choices"]
+    research --> control["Workflow control and artifact trust"]
+```
+
 ## What This Branch Demonstrates
 
 - decomposition of complex technical material into durable learning paths

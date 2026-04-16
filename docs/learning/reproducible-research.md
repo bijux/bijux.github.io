@@ -29,6 +29,23 @@ publish boundaries, dynamic workflow safety, state identity, experiment
 discipline, and reproducible execution. The programs are organized by
 failure mode and design pressure rather than by tool popularity.
 
+## Program Map
+
+```mermaid
+flowchart TD
+    program["Reproducible Research"] --> structure["Workflow structure"]
+    program --> state["State management"]
+    program --> artifacts["Artifact control"]
+
+    structure --> make["Make"]
+    structure --> snakemake["Snakemake"]
+    state --> dvc["DVC"]
+
+    make --> dependencies["Task dependencies"]
+    snakemake --> dependencies
+    dvc --> identity["Versioned data and model state"]
+```
+
 ## What Lives Here
 
 - workflow and automation thinking arranged as a teachable system
