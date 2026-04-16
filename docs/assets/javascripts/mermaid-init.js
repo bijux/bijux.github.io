@@ -9,6 +9,8 @@ function activeMermaidTheme() {
 }
 
 function normalizeMermaidBlocks() {
+  // Normalize superfences output (<pre class="mermaid"><code>...</code></pre>)
+  // into <div class="mermaid">...</div> so Mermaid receives raw diagram text.
   const preNodes = document.querySelectorAll("pre.mermaid");
   preNodes.forEach((pre) => {
     const code = pre.querySelector("code");
@@ -23,14 +25,14 @@ function normalizeMermaidBlocks() {
   });
 }
 
-function prepareMermaidNodes() {
+function prepareMermaidNodesForRerender() {
   const nodes = document.querySelectorAll("div.mermaid");
   nodes.forEach((node) => {
     const source = node.dataset.bijuxMermaidSource || node.textContent || "";
     node.dataset.bijuxMermaidSource = source;
+    node.removeAttribute("data-processed");
     node.textContent = source;
   });
-  return nodes;
 }
 
 function renderMermaidDiagrams() {
@@ -44,7 +46,7 @@ function renderMermaidDiagrams() {
   });
 
   normalizeMermaidBlocks();
-  const nodes = prepareMermaidNodes();
+  const nodes = document.querySelectorAll("div.mermaid");
   if (!nodes.length) {
     return;
   }
@@ -61,6 +63,7 @@ document$.subscribe(() => {
 
   window.__bijuxMermaidThemeBound = true;
   window.addEventListener("bijux:theme-change", () => {
+    prepareMermaidNodesForRerender();
     renderMermaidDiagrams();
   });
 });
