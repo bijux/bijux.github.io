@@ -31,6 +31,16 @@ part of delivery, not a side artifact. Domain-specific work is
 presented with enough engineering structure to make the system legible
 to someone outside the project.
 
+## Contexts Where This Style Matters
+
+| Context | Why this approach helps |
+| --- | --- |
+| regulated-adjacent delivery and audit-sensitive work | explicit boundaries and inspectable artifacts reduce review ambiguity |
+| science and reproducible analysis workflows | evidence, traceability, and workflow truth remain visible under change |
+| long-lived CLI and automation surfaces | runtime authority is separated from delivery concerns, reducing accidental coupling |
+| knowledge workflows and retrieval-heavy systems | ingest, indexing, reasoning, and orchestration can evolve without role confusion |
+| artifact-heavy pipelines | immutable output posture and clear contracts improve reliability and recovery |
+
 ## What Readers Should Expect
 
 | Pattern | What it means in practice |
@@ -45,6 +55,12 @@ to someone outside the project.
 - start in **Platform** for the architectural and operational foundation
 - read **Projects** to see how those ideas are applied in specific domains
 - use **Learning** to understand the recurring patterns, trade-offs, and workflows behind both
+
+## What A Technical Reviewer Should Be Able To Conclude
+
+- repository boundaries are intentional and operationally useful
+- documentation structure supports maintenance and cross-repository continuity
+- domain pressure does not collapse the architecture model into ad hoc changes
 
 This page is only meant to clarify that structure. The repositories
 themselves are the main explanation.

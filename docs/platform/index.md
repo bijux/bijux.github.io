@@ -19,6 +19,26 @@ Runtime governance, knowledge workflows, delivery surfaces, domain
 products, and learning programs each have their own home, but the same
 engineering language is visible across all of them.</div>
 
+## What This Branch Demonstrates
+
+- boundary design that remains legible under repository growth
+- operating context awareness for evidence-heavy and scientific workloads
+- delivery reasoning that treats docs and release posture as architecture surfaces
+- system-level documentation that maps ownership before implementation detail
+
+## Platform Problems This Branch Solves
+
+- how to separate runtime authority, knowledge architecture, and delivery control without fragmentation
+- how to keep repository boundaries stable while still allowing domain-specific evolution
+- how to make public documentation useful for inspection, not only orientation
+
+## Where To Inspect Evidence
+
+- repository ownership and split intent: [Repository matrix](repository-matrix.md)
+- layer boundaries and responsibility flow: [System map](system-map.md)
+- delivery and publication posture: [Delivery surfaces](delivery-surfaces.md)
+- recurring standards that remain stable across repositories: [Work qualities](work-qualities.md)
+
 ## Principles
 
 | Principle | What it changes in public |
