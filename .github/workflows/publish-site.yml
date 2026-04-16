@@ -65,6 +65,26 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Verify Pages settings
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const expectedBuildType = "workflow";
+            const expectedDomain = "bijux.io";
+            const { data } = await github.request("GET /repos/{owner}/{repo}/pages", { owner, repo });
+
+            if (data.build_type !== expectedBuildType) {
+              core.setFailed(`Pages build_type must be '${expectedBuildType}', received '${data.build_type}'.`);
+              return;
+            }
+
+            if (data.cname !== expectedDomain) {
+              core.setFailed(`Pages custom domain must be '${expectedDomain}', received '${data.cname}'.`);
+              return;
+            }
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
