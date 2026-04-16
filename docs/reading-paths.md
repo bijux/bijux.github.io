@@ -9,9 +9,9 @@ last_reviewed: 2026-04-12
 
 # Reading Paths
 
-Use this page to choose a short path that matches the part of the work
-you care about first.
-This map shows the main route families at a glance.
+This page helps you choose a short path that matches the part of the
+work you care about first.
+The map below summarizes the main route families at a glance.
 
 ```mermaid
 graph LR
@@ -26,8 +26,8 @@ graph LR
     domains --> applied["Applied Domains"]
 ```
 
-Use the route tables below when you want a more specific sequence for
-time budget or entry context.
+If you want a more specific sequence for your time budget or entry
+context, the route tables below can help.
 
 ## By Audience
 
@@ -57,9 +57,9 @@ time budget or entry context.
 
 ## Reading Rule
 
-- do not try to read everything
-- start with the branch that matches your real interest, then go deeper only where the material keeps paying off
-- switch branches when you want a broader view of the repository family rather than more depth in one area
+- you do not need to read everything
+- start with the branch that best matches your interest, then go deeper where the material keeps paying off
+- switch branches when you want a broader view of the repository family instead of more depth in one area
 
 The reading paths exist so different readers can inspect the same body
 of work from different starting points without losing coherence. That
