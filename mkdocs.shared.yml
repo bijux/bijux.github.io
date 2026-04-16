@@ -78,6 +78,8 @@ extra:
   homepage: https://bijux.io/
   bijux:
     repository: bijux
+    nav_mode: default
+    theme_key: bijux:theme
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/bijux

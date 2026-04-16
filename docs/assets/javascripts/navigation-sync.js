@@ -1,6 +1,6 @@
 (function () {
-  // Compatibility entrypoint: shell navigation logic now lives under docs/assets/javascripts/shell/*
-  // and is wired through shell/bootstrap.js.
+  // Compatibility entrypoint: shell navigation logic lives in shared/bijux-shell/scripts/*
+  // and is wired through bootstrap.js after synchronization into docs/assets/javascripts/shell/*.
   if (window.bijuxShell?.bootstrap?.ensureBound) {
     window.bijuxShell.bootstrap.ensureBound();
   }
