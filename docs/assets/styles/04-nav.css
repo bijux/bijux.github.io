@@ -115,7 +115,10 @@
 }
 
 .bijux-tabs__list--site {
+  align-items: center;
   gap: 0.32rem 0.42rem;
+  min-height: 3.05rem;
+  padding-block: 0.42rem;
 }
 
 .bijux-tabs__list--detail {
