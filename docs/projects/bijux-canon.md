@@ -23,7 +23,7 @@ maintained engineering stack instead of a single opaque AI layer.
 
 ## Repository Shape
 
-`bijux-canon` resists the usual collapse of ingest, indexing, reasoning,
+`bijux-canon` avoids collapsing ingest, indexing, reasoning,
 orchestration, and policy into one blurred "AI platform" layer. The
 repository makes those concerns explicit through packages, contracts,
 compatibility surfaces, and runtime boundaries that readers can inspect
