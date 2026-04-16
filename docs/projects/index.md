@@ -130,8 +130,8 @@ repository-specific detail and inspection routes.
 
 ## Reading Rule
 
-Use the cards for orientation and the project pages for a closer view of
-what each repository owns.
+The cards provide orientation, and the project pages offer a closer view
+of what each repository owns.
 
 The projects branch is meant to be read as a coherent family of systems
 rather than disconnected experiments. Each repository owns a distinct
