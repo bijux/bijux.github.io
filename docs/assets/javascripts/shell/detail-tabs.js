@@ -34,21 +34,22 @@
     }
 
     const authoredActiveLink = activeStrip.querySelector(
-      "[data-bijux-detail-path][aria-current='page'], .bijux-tabs__item--active [data-bijux-detail-path]"
+      "a[data-bijux-detail-path][aria-current='page'], .bijux-tabs__item--active a[data-bijux-detail-path]"
     );
 
     for (const item of activeStrip.querySelectorAll(".bijux-tabs__item")) {
       item.classList.remove("bijux-tabs__item--active");
     }
 
-    for (const link of activeStrip.querySelectorAll("[data-bijux-detail-path]")) {
+    for (const link of activeStrip.querySelectorAll("a[data-bijux-detail-path]")) {
       link.removeAttribute("aria-current");
     }
 
     const matchedLink = navState.bestMatchingLink(
       activeStrip,
       "data-bijux-detail-path",
-      currentPath
+      currentPath,
+      "a[data-bijux-detail-path]"
     );
 
     let activeLink = matchedLink;
@@ -67,7 +68,7 @@
         activeStrip.getAttribute("data-bijux-detail-root-path") || "/"
       );
       const homeLink = activeStrip.querySelector(
-        `[data-bijux-detail-path="${rootPath}"]`
+        `a[data-bijux-detail-path="${rootPath}"]`
       );
       if (homeLink) {
         activeLink = {
@@ -78,7 +79,7 @@
     }
 
     if (!activeLink) {
-      const firstLink = activeStrip.querySelector("[data-bijux-detail-path]");
+      const firstLink = activeStrip.querySelector("a[data-bijux-detail-path]");
       if (firstLink) {
         activeLink = {
           path: navState.normalizePath(
@@ -125,7 +126,7 @@
     }
 
     const activeLink = activeStrip.querySelector(
-      "[data-bijux-detail-path][aria-current='page']"
+      "a[data-bijux-detail-path][aria-current='page']"
     );
 
     if (!activeLink) {
