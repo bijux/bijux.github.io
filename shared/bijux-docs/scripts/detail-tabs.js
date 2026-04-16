@@ -16,6 +16,18 @@
       );
       strip.hidden = rootPath !== activeSitePath;
     }
+
+    const header = document.querySelector("[data-md-component='header']");
+    if (!header) {
+      return;
+    }
+    const hasVisibleDetailStrip = document.querySelector(
+      "[data-bijux-detail-strip]:not([hidden])"
+    );
+    header.setAttribute(
+      "data-bijux-detail-visible",
+      hasVisibleDetailStrip ? "true" : "false"
+    );
   }
 
   function syncDetailStripActiveState() {
