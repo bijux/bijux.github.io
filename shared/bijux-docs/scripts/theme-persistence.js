@@ -183,10 +183,26 @@
     );
   }
 
+  function captureScrollPosition() {
+    return {
+      x: window.scrollX || window.pageXOffset || 0,
+      y: window.scrollY || window.pageYOffset || 0,
+    };
+  }
+
+  function restoreScrollPosition(position) {
+    if (!position) {
+      return;
+    }
+    window.scrollTo(position.x, position.y);
+  }
+
   function applyOption(themeKey, option, persistGlobal) {
     if (!option) {
       return false;
     }
+
+    const scrollBeforeThemeChange = captureScrollPosition();
 
     option.checked = true;
     applyThemeAttributes(option);
@@ -201,9 +217,16 @@
         detail: {
           mode: modeFromOption(option),
           scheme: option.getAttribute("data-md-color-scheme") || "default",
+          scroll: scrollBeforeThemeChange,
         },
       })
     );
+
+    // Keep the user anchored to the same viewport position while the page
+    // restyles and any theme listeners (for example Mermaid) rerender.
+    restoreScrollPosition(scrollBeforeThemeChange);
+    requestAnimationFrame(() => restoreScrollPosition(scrollBeforeThemeChange));
+    setTimeout(() => restoreScrollPosition(scrollBeforeThemeChange), 80);
 
     return true;
   }
