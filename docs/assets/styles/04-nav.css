@@ -8,6 +8,7 @@
 .bijux-site-tabs {
   display: block;
   background: linear-gradient(90deg, var(--bijux-ribbon-bg), var(--bijux-ribbon-bg-strong));
+  min-height: 3.15rem;
 }
 
 .bijux-detail-tabs {
@@ -117,8 +118,8 @@
 .bijux-tabs__list--site {
   align-items: center;
   gap: 0.32rem 0.42rem;
-  min-height: 3.05rem;
-  padding-block: 0.42rem;
+  min-height: 3.15rem;
+  padding-block: 0.2rem;
 }
 
 .bijux-tabs__list--detail {
@@ -143,6 +144,18 @@
 .bijux-site-tabs .md-grid,
 .bijux-detail-tabs .md-grid {
   position: relative;
+}
+
+.bijux-site-tabs .md-grid {
+  align-items: center;
+  display: flex;
+  min-height: inherit;
+}
+
+.bijux-site-tabs .md-tabs__list.bijux-tabs__list--site {
+  align-items: center !important;
+  margin-block: 0 !important;
+  width: 100%;
 }
 
 .bijux-site-tabs .md-grid::before,
