@@ -34,5 +34,9 @@ compare_if_present "docs/assets/javascripts/navigation-sync.js" "assets/javascri
 compare_if_present "docs/assets/javascripts/vendor/mermaid-11.6.0.min.js" "assets/javascripts/vendor/mermaid-11.6.0.min.js"
 compare_if_present "docs/assets/javascripts/shell/theme-persistence.js" "assets/javascripts/shell/theme-persistence.js"
 compare_if_present "docs/assets/javascripts/shell/viewport-profile.js" "assets/javascripts/shell/viewport-profile.js"
+compare_if_present "docs/assets/javascripts/shell/nav-state.js" "assets/javascripts/shell/nav-state.js"
+compare_if_present "docs/assets/javascripts/shell/detail-tabs.js" "assets/javascripts/shell/detail-tabs.js"
+compare_if_present "docs/assets/javascripts/shell/nav-reveal.js" "assets/javascripts/shell/nav-reveal.js"
+compare_if_present "docs/assets/javascripts/shell/bootstrap.js" "assets/javascripts/shell/bootstrap.js"
 
 echo "Shell source-of-truth checks passed"
