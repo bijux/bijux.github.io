@@ -13,6 +13,8 @@ The Bijux public surface is easier to understand as a layered system
 than as a list of repositories. The map helps because it shows where
 responsibility changes hands and where different kinds of engineering
 judgment are expected.
+This map is meant to make system responsibility legible before
+implementation detail.
 
 ## Layered View
 
@@ -55,6 +57,13 @@ domain, and learning surfaces without collapsing into one vague
 repository or one oversized story. The map holds up when each layer
 has a stable job and the boundaries still make sense after readers open
 the repository pages.
+
+## Why The Split Matters
+
+- easier review because each layer has a clear job and inspection route
+- easier evolution because changes stay local to the owning layer
+- less accidental coupling between runtime, delivery, and domain concerns
+- clearer operational truth when responsibilities are explicit in public
 
 ## Boundary Questions To Ask
 

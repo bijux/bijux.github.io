@@ -13,6 +13,20 @@ This matrix is the shortest route to understanding how the public Bijux
 repositories differ by responsibility, inspection angle, and recurring
 work quality.
 
+## What This Split Demonstrates
+
+- bounded responsibility that keeps ownership clear across the family
+- interface clarity between runtime, knowledge, delivery, domain, and learning surfaces
+- maintainability through repository-level separation instead of ad hoc modules
+- reviewability because each repository exposes a distinct inspection angle
+
+## Common Mistakes This Split Avoids
+
+- monolithic ownership where unrelated concerns are forced into one codebase
+- documentation drift caused by unclear repository intent
+- policy and runtime semantics being mixed into the same layer
+- delivery concerns being hidden behind implementation details
+
 ## System Family At A Glance
 
 | Repository | Primary responsibility | What it owns publicly | Inspection angle | Start here |

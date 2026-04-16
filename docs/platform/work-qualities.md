@@ -28,6 +28,26 @@ of shape.</div>
 | Domain adaptation | the same engineering posture surviving scientific and evidence-heavy contexts | [Applied domains](applied-domains.md), [Bijux Proteomics](../projects/bijux-proteomics.md), [Bijux Pollenomics](../projects/bijux-pollenomics.md) |
 | Technical communication | architecture and workflow depth translated into teaching without losing rigor | [Learning catalog](../learning/index.md), [Published Masterclass docs](https://bijux.io/bijux-masterclass/) |
 
+## How To Verify These Qualities
+
+| Quality | Verification signal |
+| --- | --- |
+| Boundary judgment | repository scopes remain stable and non-overlapping in docs and source structure |
+| Delivery ownership | release behavior, docs validation, and publication routes are visible and maintained |
+| Data and service architecture | APIs, datasets, and control-plane behavior are separated into clear operational surfaces |
+| Domain adaptation | domain repositories preserve system structure under scientific and evidence-heavy constraints |
+| Technical communication | learning material explains real repository trade-offs instead of detached tutorial examples |
+
+## Failure Signals When A Quality Is Missing
+
+| Quality | Failure signal |
+| --- | --- |
+| Boundary judgment | one repository absorbs unrelated concerns and interface intent becomes unclear |
+| Delivery ownership | docs and release behavior drift away from repository reality |
+| Data and service architecture | runtime, delivery, and policy responsibilities become entangled |
+| Domain adaptation | domain-specific work relies on one-off scripts and weak contracts |
+| Technical communication | explanation becomes abstract and cannot be traced back to working systems |
+
 ## Why These Qualities Recur
 
 <div class="bijux-panel-grid">
