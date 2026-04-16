@@ -95,6 +95,11 @@
   margin: 0;
 }
 
+.bijux-header-tools .md-source__icon svg {
+  height: 1.05rem;
+  width: 1.05rem;
+}
+
 .bijux-header-tools [data-md-component="palette"] {
   display: none;
 }
