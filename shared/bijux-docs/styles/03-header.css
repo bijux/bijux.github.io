@@ -96,10 +96,10 @@
 }
 
 .bijux-header-tools [data-md-component="palette"] {
-  margin: 0;
+  display: none;
 }
 
-.bijux-header-tools [data-md-component="palette"] .md-header__button {
+.bijux-header-tools .bijux-theme-toggle {
   background:
     radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0)),
     linear-gradient(135deg, rgba(15, 118, 110, 0.2), rgba(21, 94, 117, 0.3));
@@ -108,13 +108,13 @@
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
-.bijux-header-tools [data-md-component="palette"] .md-header__button:hover {
+.bijux-header-tools .bijux-theme-toggle:hover {
   border-color: rgba(15, 118, 110, 0.34);
   box-shadow: 0 12px 26px rgba(15, 23, 42, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.45);
   transform: translateY(-1px);
 }
 
-[data-md-color-scheme="slate"] .bijux-header-tools [data-md-component="palette"] .md-header__button {
+[data-md-color-scheme="slate"] .bijux-header-tools .bijux-theme-toggle {
   background:
     radial-gradient(circle at 20% 18%, rgba(148, 163, 184, 0.2), rgba(148, 163, 184, 0)),
     linear-gradient(135deg, rgba(15, 23, 42, 0.84), rgba(8, 47, 73, 0.84));
