@@ -27,35 +27,39 @@ jobs:
             const owner = context.repo.owner;
             const repo = context.repo.repo;
             const cname = "bijux.io";
+            const expectedBuildType = "workflow";
 
-            let pagesSiteExists = true;
             try {
-              await github.request("GET /repos/{owner}/{repo}/pages", { owner, repo });
-            } catch (error) {
-              if (error.status !== 404) {
-                throw error;
+              const { data } = await github.request("GET /repos/{owner}/{repo}/pages", { owner, repo });
+              core.info(`Current Pages build type: ${data.build_type}`);
+              core.info(`Current Pages custom domain: ${data.cname}`);
+
+              if (data.build_type === expectedBuildType && data.cname === cname) {
+                core.info("Pages configuration is already correct.");
+                return;
               }
-              pagesSiteExists = false;
+            } catch (error) {
+              if (error.status === 403) {
+                core.warning("Insufficient token permissions to read Pages configuration. Skipping.");
+                return;
+              }
+              throw error;
             }
 
-            if (!pagesSiteExists) {
-              core.info("Pages site not found; creating initial Pages site.");
-              await github.request("POST /repos/{owner}/{repo}/pages", {
+            try {
+              const { data } = await github.request("PUT /repos/{owner}/{repo}/pages", {
                 owner,
                 repo,
-                source: {
-                  branch: "main",
-                  path: "/",
-                },
+                build_type: expectedBuildType,
+                cname,
               });
+
+              core.info(`Updated Pages build type: ${data.build_type}`);
+              core.info(`Updated Pages custom domain: ${data.cname}`);
+            } catch (error) {
+              if (error.status === 403) {
+                core.warning("Insufficient token permissions to update Pages configuration. Skipping.");
+                return;
+              }
+              throw error;
             }
-
-            const { data } = await github.request("PUT /repos/{owner}/{repo}/pages", {
-              owner,
-              repo,
-              build_type: "workflow",
-              cname,
-            });
-
-            core.info(`Pages build type: ${data.build_type}`);
-            core.info(`Pages custom domain: ${data.cname}`);
