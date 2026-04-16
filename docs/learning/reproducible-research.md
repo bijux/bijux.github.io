@@ -15,10 +15,10 @@ engineering structure through practical research tooling without
 reducing the work to tool-specific recipes.
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="https://bijux.io/bijux-masterclass/reproducible-research/">Open Family Docs</a>
-<a class="md-button" href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-make/">Open Deep Dive Make</a>
-<a class="md-button" href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-snakemake/">Open Deep Dive Snakemake</a>
-<a class="md-button" href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-dvc/">Open Deep Dive DVC</a>
+<a class="md-button md-button--primary" href="https://bijux.io/bijux-masterclass/reproducible-research/">View Family Docs</a>
+<a class="md-button" href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-make/">View Deep Dive Make</a>
+<a class="md-button" href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-snakemake/">View Deep Dive Snakemake</a>
+<a class="md-button" href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-dvc/">View Deep Dive DVC</a>
 </div>
 
 ## Family Shape
@@ -61,9 +61,9 @@ graph TD
 - publication boundaries that separate build, review, and release responsibilities
 - recovery posture after drift, parameter churn, or runtime evolution
 
-## Open Here First
+## Where To Begin
 
-| If you want to start with... | Open |
+| If you want to start with... | Start with |
 | --- | --- |
 | build-system judgment | [Deep Dive Make](https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-make/) and its emphasis on truthful DAGs, atomic publication, and parallel safety |
 | workflow-engineering depth | [Deep Dive Snakemake](https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-snakemake/) and its contract-driven view of workflow design |
