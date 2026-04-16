@@ -17,13 +17,12 @@ project pages.
 
 ```mermaid
 graph TD
-    projects["Projects"] --> core_platform["Core platform"]
-    core_platform --> knowledge_systems["Knowledge systems"]
-    core_platform --> delivery_systems["Delivery systems"]
-    core_platform --> scientific_systems["Scientific systems"]
-    core_platform --> learning_systems["Learning systems"]
+    projects["Projects"] --> core_platform["Core Platform"]
+    projects --> learning_systems["Learning Systems"]
+    core_platform --> knowledge_systems["Knowledge Systems"]
+    core_platform --> delivery_systems["Delivery Systems"]
+    core_platform --> scientific_systems["Scientific Systems"]
 
-    core_platform --> core["Core"]
     knowledge_systems --> canon["Canon"]
     delivery_systems --> atlas["Atlas"]
     scientific_systems --> proteomics["Proteomics"]
