@@ -29,30 +29,26 @@
     );
     const currentPath = navState.normalizePath(window.location.pathname);
 
-    for (const item of document.querySelectorAll(
-      "[data-bijux-detail-strip] .bijux-tabs__item"
-    )) {
+    if (!activeStrip) {
+      return;
+    }
+
+    const authoredActiveLink = activeStrip.querySelector(
+      "[data-bijux-detail-path][aria-current='page'], .bijux-tabs__item--active [data-bijux-detail-path]"
+    );
+
+    for (const item of activeStrip.querySelectorAll(".bijux-tabs__item")) {
       item.classList.remove("bijux-tabs__item--active");
     }
 
-    for (const link of document.querySelectorAll(
-      "[data-bijux-detail-strip] [data-bijux-detail-path]"
-    )) {
+    for (const link of activeStrip.querySelectorAll("[data-bijux-detail-path]")) {
       link.removeAttribute("aria-current");
-    }
-
-    if (!activeStrip) {
-      return;
     }
 
     const matchedLink = navState.bestMatchingLink(
       activeStrip,
       "data-bijux-detail-path",
       currentPath
-    );
-
-    const authoredActiveLink = activeStrip.querySelector(
-      "[data-bijux-detail-path][aria-current='page'], .bijux-tabs__item--active [data-bijux-detail-path]"
     );
 
     let activeLink = matchedLink;
@@ -64,6 +60,33 @@
         ),
         node: authoredActiveLink,
       };
+    }
+
+    if (!activeLink) {
+      const rootPath = navState.normalizePath(
+        activeStrip.getAttribute("data-bijux-detail-root-path") || "/"
+      );
+      const homeLink = activeStrip.querySelector(
+        `[data-bijux-detail-path="${rootPath}"]`
+      );
+      if (homeLink) {
+        activeLink = {
+          path: rootPath,
+          node: homeLink,
+        };
+      }
+    }
+
+    if (!activeLink) {
+      const firstLink = activeStrip.querySelector("[data-bijux-detail-path]");
+      if (firstLink) {
+        activeLink = {
+          path: navState.normalizePath(
+            firstLink.getAttribute("data-bijux-detail-path") || "/"
+          ),
+          node: firstLink,
+        };
+      }
     }
 
     if (activeLink) {
