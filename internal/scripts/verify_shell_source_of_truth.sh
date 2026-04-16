@@ -28,6 +28,15 @@ compare_if_present() {
 }
 
 compare_if_present "docs/assets/styles/extra.css" "assets/styles/extra.css"
+compare_if_present "docs/assets/styles/00-tokens.css" "assets/styles/00-tokens.css"
+compare_if_present "docs/assets/styles/01-theme.css" "assets/styles/01-theme.css"
+compare_if_present "docs/assets/styles/02-layout.css" "assets/styles/02-layout.css"
+compare_if_present "docs/assets/styles/03-header.css" "assets/styles/03-header.css"
+compare_if_present "docs/assets/styles/04-nav.css" "assets/styles/04-nav.css"
+compare_if_present "docs/assets/styles/05-content.css" "assets/styles/05-content.css"
+compare_if_present "docs/assets/styles/06-components.css" "assets/styles/06-components.css"
+compare_if_present "docs/assets/styles/07-utilities.css" "assets/styles/07-utilities.css"
+compare_if_present "docs/assets/styles/08-responsive.css" "assets/styles/08-responsive.css"
 compare_if_present "docs/assets/javascripts/external-links.js" "assets/javascripts/external-links.js"
 compare_if_present "docs/assets/javascripts/mermaid-init.js" "assets/javascripts/mermaid-init.js"
 compare_if_present "docs/assets/javascripts/navigation-sync.js" "assets/javascripts/navigation-sync.js"
