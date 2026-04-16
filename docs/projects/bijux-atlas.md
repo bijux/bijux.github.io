@@ -30,6 +30,21 @@ publishes a CLI, server, OpenAPI export surface, and maintainer control
 plane around governed genomics dataset delivery and immutable query
 artifacts.
 
+## System Map
+
+```mermaid
+flowchart TD
+    atlas["Bijux Atlas"] --> source["Source data"]
+    atlas --> contracts["Contracts"]
+    atlas --> artifacts["Artifacts"]
+    atlas --> access["Access surfaces"]
+
+    source --> delivery["Structured delivery"]
+    contracts --> delivery
+    artifacts --> delivery
+    access --> delivery
+```
+
 ## What This Repository Demonstrates Architecturally
 
 - immutable artifact posture for dataset and query outputs under change

@@ -19,6 +19,23 @@ Runtime governance, knowledge workflows, delivery surfaces, domain
 products, and learning programs each have their own home, but the same
 engineering language is visible across all of them.</div>
 
+## Platform Map
+
+```mermaid
+flowchart TD
+    platform["Platform"] --> context["Operating Context"]
+    platform --> map["System Map"]
+    platform --> matrix["Repository Matrix"]
+    platform --> qualities["Work Qualities"]
+    platform --> delivery["Delivery Surfaces"]
+
+    context --> why["Why"]
+    map --> how["How"]
+    matrix --> where["Where"]
+    qualities --> standards["Standards"]
+    delivery --> form["Public Form"]
+```
+
 ## What This Branch Demonstrates
 
 - boundary design that remains legible under repository growth

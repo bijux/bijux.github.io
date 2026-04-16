@@ -14,6 +14,19 @@ open directly from `bijux.io` today. The goal is to make the hub
 behave like a maintained documentation network, not a static landing
 page.
 
+## Surface Map
+
+```mermaid
+flowchart TD
+    surface["Public Surface"] --> docs["Documentation sites"]
+    surface --> source["Source repositories"]
+    surface --> projects["Project pages"]
+
+    docs --> orientation["Orientation"]
+    source --> verification["Verification"]
+    projects --> context["Context"]
+```
+
 ## Curated Public Destinations
 
 | Surface | Purpose | Audience | What to inspect first | What this surface proves |

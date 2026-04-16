@@ -19,23 +19,20 @@ implementation detail.
 ## Layered View
 
 ```mermaid
-flowchart TB
-    discipline["shared discipline<br/>contracts, release evidence, docs shell, operating rules"]
-    core["bijux-core<br/>runtime, cli, dag, artifacts, governance"]
-    canon["bijux-canon<br/>ingest, index, reasoning, orchestration, agents"]
-    atlas["bijux-atlas<br/>apis, datasets, reporting, delivery control plane"]
-    products["domain repositories<br/>proteomics and pollenomics"]
-    learning["learning programs<br/>masterclass programs and deep dives"]
+flowchart TD
+    system["Bijux System"] --> platform["Platform"]
+    system --> projects["Projects"]
+    system --> learning["Learning"]
 
-    discipline --> core
-    discipline --> canon
-    discipline --> atlas
-    core --> products
-    canon --> products
-    atlas --> products
-    core --> learning
-    canon --> learning
-    atlas --> learning
+    platform --> principles["Shared principles"]
+    platform --> structure["Navigation and structure"]
+
+    projects --> runtime["Runtime systems"]
+    projects --> knowledge["Knowledge systems"]
+    projects --> domain["Domain systems"]
+
+    learning --> programming["Programming"]
+    learning --> reproducibility["Reproducibility"]
 ```
 
 ## What Each Layer Owns

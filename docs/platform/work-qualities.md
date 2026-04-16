@@ -18,6 +18,21 @@ delivery ownership, operational clarity, domain adaptation, and
 technical material that remains explainable without being simplified out
 of shape.</div>
 
+## Qualities Map
+
+```mermaid
+flowchart TD
+    qualities["Work Qualities"] --> bounded["Bounded systems"]
+    qualities --> inspectable["Inspectable delivery"]
+    qualities --> pressure["Domain pressure"]
+    qualities --> depth["Explainable depth"]
+
+    bounded --> ownership["Clear ownership"]
+    inspectable --> outputs["Visible outputs"]
+    pressure --> adaptation["Adapted design"]
+    depth --> complexity["Legible complexity"]
+```
+
 ## Qualities That Repeat
 
 | Quality | What it looks like | Where to inspect first |

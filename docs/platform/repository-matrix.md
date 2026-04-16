@@ -13,6 +13,25 @@ This matrix is the shortest route to understanding how the public Bijux
 repositories differ by responsibility, inspection angle, and recurring
 work quality.
 
+## Matrix Map
+
+```mermaid
+flowchart LR
+    family["Repository Family"] --> core["Core"]
+    family --> canon["Canon"]
+    family --> atlas["Atlas"]
+    family --> proteomics["Proteomics"]
+    family --> pollenomics["Pollenomics"]
+    family --> masterclass["Masterclass"]
+
+    core --> runtime["Runtime and control"]
+    canon --> knowledge["Knowledge-system layers"]
+    atlas --> delivery["Data and delivery"]
+    proteomics --> scientific["Scientific product"]
+    pollenomics --> domain["Domain application"]
+    masterclass --> learning["Technical learning"]
+```
+
 ## What This Split Demonstrates
 
 - bounded responsibility that keeps ownership clear across the family

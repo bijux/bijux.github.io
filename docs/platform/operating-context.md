@@ -31,6 +31,21 @@ part of delivery, not a side artifact. Domain-specific work is
 presented with enough engineering structure to make the system legible
 to someone outside the project.
 
+## Context Map
+
+```mermaid
+flowchart LR
+    context["Operating Context"] --> long_lived["Long-lived systems"]
+    context --> science["Scientific work"]
+    context --> artifacts["Artifact-heavy work"]
+    context --> change["Change over time"]
+
+    long_lived --> authority["Clear authority"]
+    science --> evidence["Evidence"]
+    artifacts --> reproducibility["Reproducibility"]
+    change --> docs["Durable documentation"]
+```
+
 ## Contexts Where This Style Matters
 
 | Context | Why this approach helps |
