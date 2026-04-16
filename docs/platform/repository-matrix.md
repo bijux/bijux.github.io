@@ -77,9 +77,9 @@ graph LR
 
 ## Reading Rule
 
-Use the matrix to choose the right repository quickly. Use the
-repository pages and handbook sites when orientation needs to turn into
-closer inspection.
+The matrix helps readers choose the right repository quickly. Repository
+pages and handbook sites become the next step when orientation turns
+into closer inspection.
 
 The repository matrix is meant to show that the split across the Bijux
 family is deliberate, with each repository carrying a distinct
