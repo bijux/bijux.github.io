@@ -48,12 +48,12 @@ graph TD
 
 ## Why The Split Holds Up
 
-Readers do not need a page claiming sophistication directly. They can
-infer it when the split remains coherent across runtime, delivery,
-domain, and learning surfaces without collapsing into one vague
-repository or one oversized story. The map holds up when each layer
-has a stable job and the boundaries still make sense after readers open
-the repository pages.
+This page does not need to claim sophistication directly. That quality
+becomes visible when the split remains coherent across runtime,
+delivery, domain, and learning surfaces without collapsing into one
+vague repository or one oversized story. The map holds up when each
+layer has a stable job and the boundaries still make sense after
+readers open the repository pages.
 
 ## Why The Split Matters
 
