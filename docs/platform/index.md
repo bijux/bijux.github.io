@@ -13,7 +13,7 @@ The public Bijux surface is intentionally split by responsibility. This
 section explains why the repository family is structured the way it is
 and how that structure holds together in public.
 
-<div class="bijux-callout"><strong>Read the split before you read the count.</strong>
+<div class="bijux-callout"><strong>Consider the split before the count.</strong>
 The useful question here is whether the split remains coherent under pressure.
 Runtime governance, knowledge workflows, delivery surfaces, domain
 products, and learning programs each have their own home, but the same
@@ -74,7 +74,7 @@ graph TD
   <div class="bijux-panel"><h3>Products And Programs</h3><p>Proteomics, Pollenomics, and Masterclass show how the same system language survives domain products and technical education instead of remaining trapped in platform internals.</p></div>
 </div>
 
-## Start Here To Check
+## What To Check First
 
 - whether the repository split reflects real system boundaries
 - whether delivery posture is part of the architecture rather than an afterthought
