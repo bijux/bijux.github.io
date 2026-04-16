@@ -70,7 +70,7 @@ graph TD
 | state identity and experiment recovery | [Deep Dive DVC](https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-dvc/) and its focus on params, metrics, promotion discipline, and trustworthy recovery |
 | program design clarity | the family page in Masterclass, which routes by system pressure instead of generic topic grouping |
 
-## Best Entry Questions
+## When This Page Is Most Useful
 
 - you care about workflow systems, reproducibility, and scientific execution habits
 - you want to see engineering discipline carry into research tooling and publication boundaries
@@ -84,7 +84,7 @@ graph TD
 - ML workflows: parameter/metric handling patterns map directly to experiment governance
 - platform reliability: failure-mode-first workflow design supports stable operational behavior
 
-Reproducibility becomes durable only when workflow design starts from
-the real failure mode, not from tool preference. This branch focuses on
+Reproducibility becomes durable when workflow design starts from
+real failure modes rather than tool preference. This branch focuses on
 engineering judgment about state, artifacts, and change control so work
 remains inspectable, repeatable, and operationally reliable over time.
