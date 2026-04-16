@@ -71,9 +71,11 @@
   }
 
   function optionByMode(mode) {
+    const options = paletteOptions();
+
     if (mode === "auto") {
       return (
-        paletteOptions().find((option) => {
+        options.find((option) => {
           return (
             (option.getAttribute("data-md-color-media") || "") ===
             "(prefers-color-scheme)"
@@ -84,19 +86,19 @@
 
     if (mode === "dark") {
       return (
-        paletteOptions().find((option) => {
+        options.find((option) => {
           const media = option.getAttribute("data-md-color-media") || "";
           const scheme = option.getAttribute("data-md-color-scheme") || "";
-          return media.includes("dark") || scheme === "slate";
+          return media === "(prefers-color-scheme: dark)" || scheme === "slate";
         }) || null
       );
     }
 
     return (
-      paletteOptions().find((option) => {
+      options.find((option) => {
         const media = option.getAttribute("data-md-color-media") || "";
         const scheme = option.getAttribute("data-md-color-scheme") || "";
-        return media.includes("light") || scheme === "default";
+        return media === "(prefers-color-scheme: light)" || (media === "" && scheme === "default");
       }) || null
     );
   }
