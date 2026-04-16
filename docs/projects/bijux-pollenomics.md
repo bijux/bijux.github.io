@@ -13,6 +13,9 @@ last_reviewed: 2026-04-12
 surface for archaeology, eDNA, aDNA, and pollenomics context. It shows
 how structured engineering can support field-oriented, evidence-heavy
 domain work.
+The engineering challenge here is to make uncommon scientific context
+operationally clear without losing reproducibility, traceability, or
+system structure.
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-pollenomics/">Open published docs</a>
@@ -25,6 +28,13 @@ domain work.
 inspectable: tracked source data, rebuildable report bundles, a Nordic
 evidence atlas, and a documentation surface that explains where those
 artifacts come from.
+
+## What This Repository Demonstrates
+
+- domain modeling that translates archaeology-facing questions into inspectable system surfaces
+- evidence handling with tracked inputs, rebuildable outputs, and explicit publication routes
+- scientific constraints integrated without collapsing runtime and delivery boundaries
+- system clarity that remains readable for both domain and engineering reviewers
 
 ## What Lives Here
 

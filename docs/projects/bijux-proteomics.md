@@ -12,6 +12,9 @@ last_reviewed: 2026-04-12
 `bijux-proteomics` is the proteomics and discovery product surface in
 the Bijux repository family. It shows how the same platform and software
 discipline carries into scientific and laboratory-adjacent work.
+In plain language, this repository helps teams and scientists move from
+discovery workflows to governed software surfaces with clear contracts,
+runtime behavior, and evidence paths.
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-proteomics/">Open published docs</a>
@@ -24,6 +27,20 @@ discipline carries into scientific and laboratory-adjacent work.
 system rather than a single pipeline. Runtime execution, domain
 contracts, decision intelligence, evidence governance, and lab planning
 are kept as explicit package boundaries.
+
+## Why This Work Is Harder Than Generic Application Code
+
+- domain contracts must remain correct while scientific assumptions evolve
+- evidence handling and lab planning cannot be treated as optional side outputs
+- runtime behavior has to support reproducibility and review, not only convenience
+- package boundaries must stay coherent under both engineering and domain pressure
+
+## What This Repository Demonstrates Architecturally
+
+- evidence governance as a maintained system concern
+- runtime design that stays explicit across domain workflows
+- package boundaries that preserve responsibility and reviewability
+- domain contracts that can be inspected and evolved without hidden coupling
 
 ## What Lives Here
 
