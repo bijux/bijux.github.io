@@ -62,6 +62,7 @@ nav:
       - Applied Domains: platform/applied-domains.md
       - Operating Context: platform/operating-context.md
       - Documentation Network: platform/documentation-network.md
+      - Shell Architecture: platform/shell-architecture.md
       - Public Surface: platform/public-surface.md
   - Projects:
       - Overview: projects/index.md
