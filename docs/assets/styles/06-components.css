@@ -259,11 +259,52 @@
   text-transform: uppercase;
 }
 
-.bijux-footer-strip {
+.md-footer {
+  background: transparent;
+}
+
+.bijux-footer-nav {
   align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.36rem 0.62rem;
+  display: grid;
+  gap: 0.8rem;
+  grid-template-areas: "prev center next";
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  padding-block: 0.8rem;
+}
+
+.bijux-footer-nav .md-footer__link--prev {
+  grid-area: prev;
+  justify-self: start;
+}
+
+.bijux-footer-nav .md-footer__link--next {
+  grid-area: next;
+  justify-self: end;
+}
+
+.bijux-footer-center {
+  grid-area: center;
+  justify-self: center;
+}
+
+.bijux-footer-nav .md-footer__link {
+  background: color-mix(in srgb, var(--md-default-bg-color) 86%, transparent 14%);
+  border: 1px solid color-mix(in srgb, var(--bijux-border) 72%, transparent 28%);
+  border-radius: 0.95rem;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+[data-md-color-scheme="slate"] .bijux-footer-nav .md-footer__link {
+  background: rgba(2, 6, 23, 0.34);
+  border-color: rgba(45, 212, 191, 0.2);
+  box-shadow: 0 10px 24px rgba(2, 6, 23, 0.28);
+}
+
+.bijux-footer-strip {
+  display: grid;
+  gap: 0.3rem;
+  justify-items: center;
+  text-align: center;
 }
 
 .bijux-footer-strip__copyright {
@@ -271,13 +312,6 @@
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.01em;
-}
-
-.bijux-footer-strip__divider {
-  background: color-mix(in srgb, var(--bijux-border) 70%, transparent 30%);
-  border-radius: 999px;
-  height: 0.24rem;
-  width: 0.24rem;
 }
 
 .bijux-footer-strip__links {
@@ -326,6 +360,24 @@
   border-color: rgba(45, 212, 191, 0.42);
   color: #f2f8ff;
 }
+
+@media screen and (max-width: 76.2344em) {
+  .bijux-footer-nav {
+    grid-template-areas:
+      "center"
+      "prev"
+      "next";
+    grid-template-columns: 1fr;
+    padding-block: 0.65rem 0.75rem;
+  }
+
+  .bijux-footer-nav .md-footer__link--prev,
+  .bijux-footer-nav .md-footer__link--next,
+  .bijux-footer-center {
+    justify-self: stretch;
+  }
+}
+
 
 .bijux-tag-list {
   display: flex;
