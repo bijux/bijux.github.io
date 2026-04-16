@@ -3,15 +3,12 @@ window.mermaidConfig = {
   securityLevel: "loose",
 };
 
-document$.subscribe(() => {
-  if (typeof mermaid === "undefined") {
-    return;
-  }
+function activeMermaidTheme() {
+  const scheme = document.body?.getAttribute("data-md-color-scheme") || "default";
+  return scheme === "slate" ? "dark" : "default";
+}
 
-  mermaid.initialize(window.mermaidConfig);
-
-  // Normalize superfences output (<pre class="mermaid"><code>...</code></pre>)
-  // into <div class="mermaid">...</div> so Mermaid receives raw diagram text.
+function normalizeMermaidBlocks() {
   const preNodes = document.querySelectorAll("pre.mermaid");
   preNodes.forEach((pre) => {
     const code = pre.querySelector("code");
@@ -24,13 +21,46 @@ document$.subscribe(() => {
     div.textContent = code.textContent || "";
     pre.replaceWith(div);
   });
+}
 
+function prepareMermaidNodes() {
   const nodes = document.querySelectorAll("div.mermaid");
+  nodes.forEach((node) => {
+    const source = node.dataset.bijuxMermaidSource || node.textContent || "";
+    node.dataset.bijuxMermaidSource = source;
+    node.textContent = source;
+  });
+  return nodes;
+}
+
+function renderMermaidDiagrams() {
+  if (typeof mermaid === "undefined") {
+    return;
+  }
+
+  mermaid.initialize({
+    ...window.mermaidConfig,
+    theme: activeMermaidTheme(),
+  });
+
+  normalizeMermaidBlocks();
+  const nodes = prepareMermaidNodes();
   if (!nodes.length) {
     return;
   }
 
-  mermaid.run({
-    nodes,
+  mermaid.run({ nodes });
+}
+
+document$.subscribe(() => {
+  renderMermaidDiagrams();
+
+  if (window.__bijuxMermaidThemeBound === true) {
+    return;
+  }
+
+  window.__bijuxMermaidThemeBound = true;
+  window.addEventListener("bijux:theme-change", () => {
+    renderMermaidDiagrams();
   });
 });
