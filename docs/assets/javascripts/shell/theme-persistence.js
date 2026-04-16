@@ -196,6 +196,15 @@
       persistThemeChoice(themeKey, option);
     }
 
+    window.dispatchEvent(
+      new CustomEvent("bijux:theme-change", {
+        detail: {
+          mode: modeFromOption(option),
+          scheme: option.getAttribute("data-md-color-scheme") || "default",
+        },
+      })
+    );
+
     return true;
   }
 

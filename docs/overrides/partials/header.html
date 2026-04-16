@@ -95,15 +95,7 @@
       {% endif %}
       {% if config.theme.palette and not config.theme.palette is mapping %}
         <button class="md-header__button md-icon bijux-theme-toggle" type="button" data-bijux-theme-toggle hidden>
-          <span class="bijux-theme-toggle__icon bijux-theme-toggle__icon--auto" aria-hidden="true">
-            {% include ".icons/material/brightness-auto.svg" %}
-          </span>
-          <span class="bijux-theme-toggle__icon bijux-theme-toggle__icon--light" aria-hidden="true">
-            {% include ".icons/material/white-balance-sunny.svg" %}
-          </span>
-          <span class="bijux-theme-toggle__icon bijux-theme-toggle__icon--dark" aria-hidden="true">
-            {% include ".icons/material/moon-waning-crescent.svg" %}
-          </span>
+          {% include ".icons/material/theme-light-dark.svg" %}
         </button>
       {% endif %}
     </div>
