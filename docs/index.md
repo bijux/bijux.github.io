@@ -87,19 +87,19 @@ You can use [reading paths](reading-paths.md) and [project pages](projects/index
     <div class="bijux-showcase-card__eyebrow">for architecture-first readers</div>
     <h2>Start with the system split</h2>
     <p>You can begin with the system map, then Core and Canon, to review boundaries, runtime structure, and repository ownership.</p>
-    <p><a href="reading-paths.md">Open the reading paths</a></p>
+    <p><a href="reading-paths.md">See reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">for delivery-focused readers</div>
     <h2>Start with delivery surfaces</h2>
     <p>You can start with Delivery Surfaces, then Atlas, for service design, operational visibility, documentation quality, and published destinations.</p>
-    <p><a href="reading-paths.md">Open the reading paths</a></p>
+    <p><a href="reading-paths.md">See reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">for domain and teaching readers</div>
     <h2>Start where the work gets harder</h2>
     <p>You can open Applied Domains, then Proteomics, Pollenomics, and Learning, to see the same structure under scientific context and public teaching.</p>
-    <p><a href="reading-paths.md">Open the reading paths</a></p>
+    <p><a href="reading-paths.md">See reading paths</a></p>
   </article>
 </div>
 
@@ -138,7 +138,7 @@ graph TD
 | `bijux-pollenomics` | evidence mapping product system | Nordic atlas outputs, tracked data, and report publication |
 | `bijux-masterclass` | public learning surface | course books and long-form technical programs |
 
-## Reading Rule
+## Reading Approach
 
 This page offers a starting point based on your interest. From there,
 you can move into the owning repository and spend time with the actual

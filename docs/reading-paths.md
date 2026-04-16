@@ -55,7 +55,7 @@ context, the route tables below can help.
 - domain adaptation without losing engineering rigor
 - teaching and explanation quality grounded in real system work
 
-## Reading Rule
+## Reading Approach
 
 - you do not need to read everything
 - start with the branch that best matches your interest, then go deeper where the material keeps paying off
