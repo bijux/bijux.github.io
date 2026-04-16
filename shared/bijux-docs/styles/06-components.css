@@ -270,7 +270,7 @@
   display: grid;
   gap: 0.8rem;
   grid-template-areas: "prev center next";
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-columns: auto minmax(0, 1fr) auto;
   min-height: 5.15rem;
   padding-block: 0.7rem;
 }
@@ -281,6 +281,22 @@
 }
 
 .bijux-footer-nav .md-footer__link--next {
+  grid-area: next;
+  justify-self: end;
+}
+
+.bijux-footer-nav-spacer {
+  display: block;
+  height: 1px;
+  visibility: hidden;
+}
+
+.bijux-footer-nav-spacer--prev {
+  grid-area: prev;
+  justify-self: start;
+}
+
+.bijux-footer-nav-spacer--next {
   grid-area: next;
   justify-self: end;
 }
@@ -390,8 +406,13 @@
 
   .bijux-footer-nav .md-footer__link--prev,
   .bijux-footer-nav .md-footer__link--next,
-  .bijux-footer-center {
+  .bijux-footer-center,
+  .bijux-footer-nav-spacer {
     justify-self: stretch;
+  }
+
+  .bijux-footer-nav-spacer {
+    display: none;
   }
 }
 

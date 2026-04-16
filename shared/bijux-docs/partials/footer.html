@@ -12,6 +12,8 @@
             <div class="md-ellipsis">{{ page.previous_page.title }}</div>
           </div>
         </a>
+      {% else %}
+        <span class="bijux-footer-nav-spacer bijux-footer-nav-spacer--prev" aria-hidden="true"></span>
       {% endif %}
 
       <div class="bijux-footer-center">
@@ -29,6 +31,8 @@
             {% include ".icons/" ~ icon ~ ".svg" %}
           </div>
         </a>
+      {% else %}
+        <span class="bijux-footer-nav-spacer bijux-footer-nav-spacer--next" aria-hidden="true"></span>
       {% endif %}
     </nav>
   {% else %}
