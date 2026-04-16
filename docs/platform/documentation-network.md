@@ -18,6 +18,21 @@ The shared shell keeps navigation and reader expectations stable across
 repositories. That consistency is one way engineering quality becomes
 visible to readers.</div>
 
+## Network Map
+
+```mermaid
+flowchart TD
+    network["Documentation Network"] --> orientation["Shared orientation"]
+    network --> handbooks["Repository handbooks"]
+    network --> context["Project context"]
+    network --> paths["Reading paths"]
+
+    orientation --> global["Global structure"]
+    handbooks --> local["Local ownership"]
+    context --> interpretation["Public interpretation"]
+    paths --> entry["Different entry routes"]
+```
+
 ## Shared Navigation Contract
 
 - the hub strip moves between repositories

@@ -15,6 +15,29 @@ user expectations, and decision context are harder than generic
 infrastructure alone. This is where abstraction gets tested by real
 subject matter.
 
+## Domain Map
+
+```mermaid
+flowchart LR
+    domains["Applied Domains"] --> shared["Shared engineering discipline"]
+    domains --> pressure["Domain-specific pressure"]
+
+    shared --> boundaries["Boundaries"]
+    shared --> docs["Documentation"]
+    shared --> delivery["Delivery"]
+
+    pressure --> proteomics["Proteomics"]
+    pressure --> pollenomics["Pollenomics"]
+    pressure --> research["Research workflows"]
+
+    boundaries --> adapted["Adapted systems"]
+    docs --> adapted
+    delivery --> adapted
+    proteomics --> adapted
+    pollenomics --> adapted
+    research --> adapted
+```
+
 ## Domain Reach
 
 | Domain | What shows up here |

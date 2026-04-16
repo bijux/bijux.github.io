@@ -21,6 +21,21 @@ Delivery quality is part of the system design, not an afterthought.
 - documentation sites, package publishing, release flows, and contracts are reviewed as one system
 - operational quality is inspected through routines and public evidence, not summary language alone
 
+## Delivery Map
+
+```mermaid
+flowchart TD
+    delivery["Delivery Surfaces"] --> repos["Repositories"]
+    delivery --> docs["Documentation"]
+    delivery --> outputs["Published outputs"]
+    delivery --> ops["Operational interfaces"]
+
+    repos --> inspectable["Inspectable system"]
+    docs --> inspectable
+    outputs --> inspectable
+    ops --> inspectable
+```
+
 ## Where Delivery Shows Up
 
 | Surface | What to inspect | Why it is useful |

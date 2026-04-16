@@ -106,29 +106,25 @@ Use [reading paths](reading-paths.md) and [project pages](projects/index.md) to 
 ## Site Routes
 
 ```mermaid
-flowchart LR
-    hub["bijux.io hub"]
-    routes["start pages<br/>home, platform, projects, learning"]
-    platform["platform branch<br/>system structure and delivery"]
-    projects["project branch<br/>repository briefs"]
-    learning["learning branch<br/>program briefs"]
-    core["bijux-core"]
-    canon["bijux-canon"]
-    atlas["bijux-atlas"]
-    proteomics["bijux-proteomics"]
-    pollenomics["bijux-pollenomics"]
-    masterclass["bijux-masterclass"]
+flowchart TD
+    bijux["Bijux"] --> platform["Platform"]
+    bijux --> projects["Projects"]
+    bijux --> learning["Learning"]
+    bijux --> paths["Reading Paths"]
 
-    hub --> routes
-    routes --> platform
-    routes --> projects
-    routes --> learning
-    projects --> core
-    projects --> canon
-    projects --> atlas
-    projects --> proteomics
-    projects --> pollenomics
-    learning --> masterclass
+    platform --> platform_design["System design"]
+    platform --> platform_structure["Repository structure"]
+    platform --> platform_delivery["Delivery and documentation"]
+
+    projects --> core["Core"]
+    projects --> canon["Canon"]
+    projects --> atlas["Atlas"]
+    projects --> proteomics["Proteomics"]
+    projects --> pollenomics["Pollenomics"]
+    projects --> masterclass["Masterclass"]
+
+    learning --> python["Python Programming"]
+    learning --> reproducible["Reproducible Research"]
 ```
 
 ## Repository Family
