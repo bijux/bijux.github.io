@@ -259,6 +259,57 @@
   text-transform: uppercase;
 }
 
+.bijux-footer-card {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(15, 118, 110, 0.14), rgba(15, 118, 110, 0)),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.38));
+  border: 1px solid var(--bijux-border);
+  border-radius: 0.95rem;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.8rem 0.9rem;
+}
+
+.bijux-footer-card__headline {
+  color: var(--bijux-ink);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.015em;
+}
+
+.bijux-footer-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem 0.5rem;
+}
+
+.bijux-footer-card__links a {
+  border: 1px solid var(--bijux-border);
+  border-radius: 999px;
+  color: var(--md-typeset-a-color);
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 0.3rem 0.52rem;
+  text-decoration: none;
+  transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+
+.bijux-footer-card__links a:hover {
+  background: var(--bijux-detail-link-active-bg);
+  border-color: rgba(15, 118, 110, 0.26);
+  transform: translateY(-1px);
+}
+
+[data-md-color-scheme="slate"] .bijux-footer-card {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(45, 212, 191, 0.2), rgba(45, 212, 191, 0)),
+    linear-gradient(145deg, rgba(15, 23, 42, 0.74), rgba(15, 23, 42, 0.52));
+  border-color: rgba(45, 212, 191, 0.2);
+  box-shadow: 0 14px 30px rgba(2, 6, 23, 0.3);
+}
+
 .bijux-tag-list {
   display: flex;
   flex-wrap: wrap;
