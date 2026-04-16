@@ -73,9 +73,9 @@ be reviewed as connected but distinct responsibilities.
 
 ## One Path Through The Stack
 
-1. start at ingest and indexing contracts to see how system inputs are normalized
-2. follow reasoning and orchestration packages to see how decision flow stays explicit
-3. end at controlled runtime acceptance and replay surfaces to inspect verification behavior
+1. begin with ingest and indexing contracts to see how system inputs are normalized
+2. continue through reasoning and orchestration packages to follow explicit decision flow
+3. finish with controlled runtime acceptance and replay surfaces to inspect verification behavior
 
 ## Best Entry Questions
 
