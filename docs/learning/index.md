@@ -13,8 +13,8 @@ The public learning surface lives in `bijux-masterclass`. It keeps the
 same systems language teachable, sequenced, and reusable across
 long-form programs.
 
-These programs are not detached side content. They are another proof
-surface for how technical judgment is structured, taught, and reused
+These programs are integrated with the broader system work. They are
+another proof surface for how technical judgment is structured, taught, and reused
 without losing architectural rigor.
 
 <div class="bijux-callout"><strong>The learning branch is organized like the rest of the work.</strong>
