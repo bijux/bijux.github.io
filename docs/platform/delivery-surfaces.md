@@ -9,9 +9,9 @@ last_reviewed: 2026-04-12
 
 # Delivery Surfaces
 
-The public Bijux surface is meant to reward inspection. A strong reader
-should be able to move from a narrative page into concrete repositories,
-docs, workflows, contracts, and release surfaces without hitting a gap
+The public Bijux surface is meant to reward inspection. Readers should
+be able to move from a narrative page into concrete repositories, docs,
+workflows, contracts, and release surfaces without hitting a gap
 between presentation and implementation.
 Delivery quality is part of the system design, not an afterthought.
 
