@@ -3,7 +3,7 @@
 
   function runShellNavigationSync() {
     shell.detailTabs?.runDetailTabsSync();
-    shell.navReveal?.revealActiveNavigationTarget();
+    shell.navReveal?.revealAfterLayoutSettles?.();
     shell.navReveal?.bindMobileDrawerReveal();
   }
 

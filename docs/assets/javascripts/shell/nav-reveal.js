@@ -1,6 +1,28 @@
 (function () {
   const shell = (window.bijuxShell = window.bijuxShell || {});
 
+  function centerLinkInScrollableTabs(link) {
+    if (!link) {
+      return;
+    }
+
+    const list = link.closest(".bijux-tabs__list");
+    if (!list) {
+      link.scrollIntoView({ block: "nearest", inline: "center" });
+      return;
+    }
+
+    const listRect = list.getBoundingClientRect();
+    const linkRect = link.getBoundingClientRect();
+    const target =
+      list.scrollLeft + (linkRect.left - listRect.left) - listRect.width / 2 + linkRect.width / 2;
+
+    list.scrollTo({
+      left: Math.max(0, target),
+      behavior: "auto",
+    });
+  }
+
   function revealActiveNavigationTarget() {
     const activeHubLink = document.querySelector(
       ".bijux-hub-strip .bijux-tabs__item--active a"
@@ -15,10 +37,16 @@
       ".md-sidebar--primary .md-nav__link--active"
     );
 
-    activeHubLink?.scrollIntoView({ block: "nearest", inline: "center" });
-    activeSiteLink?.scrollIntoView({ block: "nearest", inline: "center" });
-    activeDetailLink?.scrollIntoView({ block: "nearest", inline: "center" });
+    centerLinkInScrollableTabs(activeHubLink);
+    centerLinkInScrollableTabs(activeSiteLink);
+    centerLinkInScrollableTabs(activeDetailLink);
     activeSidebarLink?.scrollIntoView({ block: "nearest", inline: "nearest" });
+  }
+
+  function revealAfterLayoutSettles() {
+    revealActiveNavigationTarget();
+    window.setTimeout(revealActiveNavigationTarget, 120);
+    window.setTimeout(revealActiveNavigationTarget, 320);
   }
 
   function revealMobileDrawerContext() {
@@ -67,6 +95,7 @@
 
   shell.navReveal = {
     revealActiveNavigationTarget,
+    revealAfterLayoutSettles,
     revealMobileDrawerContext,
     bindMobileDrawerReveal,
   };
