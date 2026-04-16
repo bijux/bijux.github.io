@@ -55,16 +55,16 @@ governance explicit instead of blending them into one opaque layer.
 - evidence, release, and repository control surfaces treated as first-class concerns
 - crate and package boundaries that keep execution, artifacts, and governance legible
 
-## Open Here First
+## Where To Begin
 
-| If you are looking for... | Open this part of Core |
+| If you are looking for... | Start with this part of Core |
 | --- | --- |
 | runtime authority | the CLI and DAG handbooks, plus the crate split across runtime, artifacts, and app layers |
 | repository discipline | release flows, evidence surfaces, and maintainer control-plane material |
 | product boundaries | the fact that `bijux-cli` and `bijux-dag` are separate products under one governance backbone |
 | traceability | public docs, tagged releases, and repository-owned operating rules that align with the code layout |
 
-## Best Entry Questions
+## When This Page Is Most Useful
 
 - the question is about CLI behavior, DAG execution, runtime control, or release discipline
 - you want a direct route into platform engineering structure
