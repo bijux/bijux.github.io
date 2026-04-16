@@ -270,7 +270,7 @@
   display: grid;
   gap: 0.8rem;
   grid-template-areas: "prev center next";
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   min-height: 5.15rem;
   padding-block: 0.7rem;
 }
@@ -305,6 +305,7 @@
   align-items: center;
   display: flex;
   grid-area: center;
+  justify-content: center;
   justify-self: center;
   min-height: 100%;
 }
