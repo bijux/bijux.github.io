@@ -15,8 +15,8 @@ about runtime authority, repository discipline, or the engineering
 machinery that should remain stable beneath dependent systems.
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="https://bijux.io/bijux-core/">Open published docs</a>
-<a class="md-button" href="https://github.com/bijux/bijux-core">Open GitHub repository</a>
+<a class="md-button md-button--primary" href="https://bijux.io/bijux-core/">View Published Docs</a>
+<a class="md-button" href="https://github.com/bijux/bijux-core">View GitHub Repository</a>
 </div>
 
 ## Repository Shape

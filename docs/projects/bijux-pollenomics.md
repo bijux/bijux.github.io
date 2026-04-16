@@ -18,8 +18,8 @@ operationally clear without losing reproducibility, traceability, or
 system structure.
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="https://bijux.io/bijux-pollenomics/">Open published docs</a>
-<a class="md-button" href="https://github.com/bijux/bijux-pollenomics">Open GitHub repository</a>
+<a class="md-button md-button--primary" href="https://bijux.io/bijux-pollenomics/">View Published Docs</a>
+<a class="md-button" href="https://github.com/bijux/bijux-pollenomics">View GitHub Repository</a>
 </div>
 
 ## Repository Shape

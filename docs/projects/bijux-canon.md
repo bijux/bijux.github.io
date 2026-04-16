@@ -17,8 +17,8 @@ In plain language, Canon is where knowledge-system work is turned into a
 maintained engineering stack instead of a single opaque AI layer.
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="https://bijux.io/bijux-canon/">Open published docs</a>
-<a class="md-button" href="https://github.com/bijux/bijux-canon">Open GitHub repository</a>
+<a class="md-button md-button--primary" href="https://bijux.io/bijux-canon/">View Published Docs</a>
+<a class="md-button" href="https://github.com/bijux/bijux-canon">View GitHub Repository</a>
 </div>
 
 ## Repository Shape

@@ -17,8 +17,8 @@ discovery workflows to governed software surfaces with clear contracts,
 runtime behavior, and evidence paths.
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="https://bijux.io/bijux-proteomics/">Open published docs</a>
-<a class="md-button" href="https://github.com/bijux/bijux-proteomics">Open GitHub repository</a>
+<a class="md-button md-button--primary" href="https://bijux.io/bijux-proteomics/">View Published Docs</a>
+<a class="md-button" href="https://github.com/bijux/bijux-proteomics">View GitHub Repository</a>
 </div>
 
 ## Repository Shape

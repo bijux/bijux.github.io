@@ -18,8 +18,8 @@ contracts, and publication surfaces visible as first-class engineering
 boundaries.
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="https://bijux.io/bijux-atlas/">Open published docs</a>
-<a class="md-button" href="https://github.com/bijux/bijux-atlas">Open GitHub repository</a>
+<a class="md-button md-button--primary" href="https://bijux.io/bijux-atlas/">View Published Docs</a>
+<a class="md-button" href="https://github.com/bijux/bijux-atlas">View GitHub Repository</a>
 </div>
 
 ## Repository Shape
