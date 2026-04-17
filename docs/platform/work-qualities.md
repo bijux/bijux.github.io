@@ -35,9 +35,13 @@ graph TD
 | Quality | Verification question | Evidence anchors |
 | --- | --- | --- |
 | Bounded ownership | Are responsibilities split cleanly so repository boundaries stay non-overlapping under change? | [System map](system-map.md), [Repository matrix](repository-matrix.md), [Bijux Core](../projects/bijux-core.md), [Bijux Canon](../projects/bijux-canon.md) |
-| Delivery discipline | Are documentation, release behavior, and publication routes visible as maintained engineering surfaces? | [Delivery surfaces](delivery-surfaces.md), [Public surface](public-surface.md), [Bijux Atlas](../projects/bijux-atlas.md) |
+| Delivery discipline and standards continuity | Are documentation, release behavior, publication routes, and shared standards kept aligned across repositories? | [Delivery surfaces](delivery-surfaces.md), [Public surface](public-surface.md), [Bijux Atlas](../projects/bijux-atlas.md) |
 | Domain pressure handling | Does the structure stay coherent when scientific workflows and evidence-heavy interpretation are required? | [Applied domains](applied-domains.md), [Bijux Proteomics](../projects/bijux-proteomics.md), [Bijux Pollenomics](../projects/bijux-pollenomics.md) |
 | Explainable depth | Can architecture and workflow decisions be taught with runnable materials instead of only summaries? | [Learning catalog](../learning/index.md), [Reproducible Research](../learning/reproducible-research.md), [Python Programming](../learning/python-programming.md) |
+
+Shared continuity is enforced through the standards layer in
+[Bijux standard layer](bijux-std.md), not only by local repository
+habits.
 
 ## Failure Signals When A Quality Is Missing
 
