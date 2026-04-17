@@ -74,6 +74,14 @@ graph LR
 | evidence-heavy outputs | high burden of proof for claims and interpretations | artifact lineage and bounded publication routes reduce ambiguity during review |
 | public documentation systems | readers must navigate across repositories without losing context | shared navigation with local ownership keeps orientation stable while preserving depth |
 
+## Pressure To Repository Shape
+
+| Pressure | Consequence | Repository shape |
+| --- | --- | --- |
+| long-lived maintenance across multiple repositories | ownership and change authority must remain explicit over time | responsibilities split across Platform, Projects, and Learning instead of one mixed repository |
+| evidence traceability requirements in scientific and data work | claims must be reproducible from source to published surface | runtime/evidence discipline in `bijux-core` and domain-specific evidence handling in project repositories |
+| cross-site public delivery continuity | readers need stable navigation and verification behavior across docs sites | shared standards and shell contracts in `bijux-std`, consumed by hub and repository docs |
+
 ## What Readers Should Expect
 
 | Pattern | What it means in practice |
