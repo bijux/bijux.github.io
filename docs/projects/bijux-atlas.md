@@ -54,14 +54,17 @@ publication contracts, and service operations.
 
 ```mermaid
 graph TD
-    atlas["Bijux Atlas"] --> ingest["Ingestion and preparation"]
-    atlas --> artifacts["Release artifacts"]
-    atlas --> query["API and query surface"]
-    atlas --> control["Docs and ops control plane"]
+    std["Shared docs shell (`bijux-std`)"] --> control["Docs and ops control plane"]
+    atlas["Bijux Atlas"] --> ingestion["Data ingestion and preparation"]
+    atlas --> contracts["Service contracts and OpenAPI surface"]
+    atlas --> api["API and query surface"]
+    atlas --> artifacts["Versioned release artifacts"]
+    atlas --> control
 
-    ingest --> publish["Published delivery surface"]
+    ingestion --> publish["Published Atlas delivery surface"]
+    contracts --> publish
+    api --> publish
     artifacts --> publish
-    query --> publish
     control --> publish
 ```
 
