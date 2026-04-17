@@ -35,6 +35,10 @@ invariants, purity and effects, runtime inspection and metaprogramming.
 That makes the teaching surface more revealing than a generic
 "Python course" label.
 
+- object-oriented track: teaches judgment about API boundaries, ownership, and invariants in long-lived class systems.
+- functional track: teaches judgment about separating pure transformations from effectful orchestration for predictable behavior.
+- metaprogramming track: teaches judgment about when runtime customization improves extensibility and when it adds hidden risk.
+
 ## Program Map
 
 ```mermaid
@@ -58,10 +62,10 @@ graph TD
 
 ## Why This Matters In Production Systems
 
-- API boundary decisions become clearer when abstraction models are explicit
-- plugin and extension models depend on honest composition and ownership rules
-- maintainability improves when OOP and FP tradeoffs are chosen deliberately, not stylistically
-- metaprogramming becomes safer when runtime behavior is inspected as a system concern
+- API design: explicit abstraction models reduce accidental coupling and make interface changes safer to review.
+- plugin systems: clear composition and ownership rules prevent extension points from becoming unbounded side effects.
+- maintainability: deliberate OOP and FP choices keep modules understandable as teams and requirements change.
+- runtime safety: inspected metaprogramming patterns make decorators, descriptors, and hooks traceable under failure conditions.
 
 ## Where To Begin
 
