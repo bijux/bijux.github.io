@@ -12,7 +12,7 @@ DOCS_PORT            ?= 8000
 SITE_URL             ?= https://bijux.io/
 DOCS_ENV             :=
 PYTHON_BIN           ?= $(shell command -v python3 2>/dev/null)
-TABLE_GUARD          ?= shared/internal/quality/markdown_table_guard.py
+TABLE_GUARD          ?= shared/bijux-docs-tooling/quality/markdown_table_guard.py
 
 ifeq ($(strip $(UV_BIN)),)
   ifeq ($(strip $(MKDOCS_BIN_CAND)),)
