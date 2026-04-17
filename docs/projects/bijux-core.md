@@ -12,7 +12,7 @@ last_reviewed: 2026-04-12
 `bijux-core` is the execution and governance backbone for the public
 Bijux system family. It is the primary starting point when the question is
 about runtime authority, repository discipline, or the engineering
-machinery that should remain stable beneath dependent systems.
+systems that should remain stable beneath dependent repositories.
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-core/">View Published Docs</a>
@@ -41,7 +41,7 @@ graph LR
 The split keeps command semantics, workflow semantics, and repository
 governance explicit instead of blending them into one opaque layer.
 
-## What This Repository Shows About My Engineering Approach
+## What This Repository Makes Visible
 
 - runtime truth: command behavior and execution authority are explicit, not implied
 - deterministic execution: DAG behavior is modeled as a stable contract surface
@@ -78,6 +78,6 @@ stable enough to support the higher layers around it.
 
 Bijux Core represents the layer where runtime truth, deterministic
 execution, and repository control must remain least ambiguous. Beyond
-the tools themselves, it demonstrates a discipline of explicit
-authority, clear workflow semantics, and structural rigor that keeps
-core behavior understandable under long-term change.
+the tools themselves, it keeps authority boundaries and workflow
+semantics explicit so core behavior stays understandable under
+long-term change.
