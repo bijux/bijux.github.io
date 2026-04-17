@@ -45,14 +45,23 @@ graph TD
 
 ## What Each Layer Owns
 
+### Conceptual Layers
+
 | Layer | What it owns | Why it stays separate |
 | --- | --- | --- |
-| Shared discipline | contracts, release evidence, documentation shell, navigation rules, and operating habits | the repositories are connected by repeatable engineering behavior rather than branding alone |
-| Core | command surfaces, runtime control, DAG execution, artifacts, and governance | execution authority and repository discipline stay visible instead of being scattered across scripts |
-| Canon | ingest, indexing, reasoning, orchestration, agents, and controlled runtime behavior | knowledge-system concerns are split into accountable parts instead of being merged into one opaque AI layer |
-| Atlas | APIs, datasets, service delivery, reporting, and docs-aware validation | data-service and delivery concerns are treated as maintained product surfaces |
-| Domain products | proteomics, pollenomics, evidence mapping, and field-oriented product framing | the platform posture survives subject-matter pressure and uncommon abstractions |
-| Learning | programs, deep dives, and reusable teaching structure | the same technical language becomes explainable and teachable without being diluted |
+| Platform | shared engineering rules, documentation shell, release discipline, and boundary vocabulary | keeps cross-repository behavior stable and inspectable |
+| Projects | runtime systems, knowledge systems, delivery interfaces, and domain products | keeps implementation ownership explicit and reviewable by repository |
+| Learning | course books, deep dives, capstones, and reusable technical explanation | keeps teaching and explanation rigorous without replacing repository ownership |
+
+### Repository Family Roles
+
+| Repository role | Primary ownership |
+| --- | --- |
+| Core | runtime authority and governance behavior |
+| Canon | knowledge-system orchestration and reasoning boundaries |
+| Atlas | delivery interfaces, service outputs, and reporting routes |
+| Proteomics and Pollenomics | domain-specific workflows and evidence-heavy product outputs |
+| Masterclass | learning programs and executable instructional artifacts |
 
 ## Why The Split Holds Up
 
