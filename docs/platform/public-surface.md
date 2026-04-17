@@ -101,14 +101,20 @@ graph LR
     std --> repos
 ```
 
-## How To Use This Page
+## Start Here
 
-- documentation links are a good starting point for a guided tour of a
-  repository
-- source links help when readers want to inspect structure, files, and
-  history directly
-- the hub helps when the question is clear but the owning repository is
-  not yet obvious
+Start with the hub and [System Map](system-map.md) before opening source
+repositories.
+
+| If your question is... | Open first | Then open |
+| --- | --- | --- |
+| where should I begin? | [bijux.github.io](https://github.com/bijux/bijux.github.io) | [System Map](system-map.md) |
+| which repository owns this concern? | [Projects index](../projects/index.md) | matching project page |
+| where are shared shell and standards owned? | [bijux-std](https://github.com/bijux/bijux-std) | [Shared Documentation Shell](shell-architecture.md) |
+| where can I inspect implementation details? | matching repository docs site | matching source repository |
+
+Use this page as an index: pick the surface type, then move to the
+owning destination.
 
 ## Stability Expectation
 
