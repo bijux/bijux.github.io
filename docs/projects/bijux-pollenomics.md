@@ -102,6 +102,10 @@ evidence and reproducibility rules.
 Pollenomics carries the same structural habits into a specialized domain
 that does not come with off-the-shelf engineering narratives.
 
+This repository explicitly tests Bijux platform ideas under evidence and
+interpretation pressure: bounded ownership, delivery discipline,
+traceable artifacts, and documentation-linked reasoning.
+
 Bijux Pollenomics shows how specialized domain work can be handled with
 the same architectural seriousness as any general platform system. Its
 importance is not only subject matter depth, but the effort to keep
