@@ -4,15 +4,18 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-12
+last_reviewed: 2026-04-17
 ---
 
 # Python Programming
 
-The Python programming program is the route into language depth through
-object-oriented, functional, and metaprogramming tracks. It teaches
-abstraction and software design without reducing them to framework
-recipes.
+The Python programming program helps people design maintainable software
+systems: clearer interfaces, safer extension points, and more deliberate
+tradeoffs between object-oriented, functional, and metaprogramming
+approaches.
+
+Its public docs surface follows the shared documentation shell and
+standards checks inherited from `bijux-std`.
 
 ## Audience, Level, And Assumptions
 
