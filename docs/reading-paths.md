@@ -11,6 +11,12 @@ last_reviewed: 2026-04-12
 
 This page helps you choose a short path that matches the part of the
 work you care about first.
+
+<div class="bijux-callout"><strong>New here?</strong> Start with
+<a href="platform/system-map.md">Platform -> System Map</a> if you care more
+about architecture, or start with <a href="projects/index.md">Projects</a> if
+you care more about repository outputs.</div>
+
 The map below summarizes the main route families at a glance.
 
 ```mermaid
@@ -52,7 +58,7 @@ tables below can help.
 | --- | --- |
 | 10 minutes | [Home](index.md) -> [Work qualities](platform/work-qualities.md) -> [Projects](projects/index.md) |
 | 20 minutes | [System map](platform/system-map.md) -> [Repository matrix](platform/repository-matrix.md) -> one project page that matches your interest |
-| 30 minutes | one platform route, one delivery route, and one domain or learning route to get a broader cross-section |
+| 30 minutes | [Platform](platform/index.md) -> [System map](platform/system-map.md) -> [Delivery surfaces](platform/delivery-surfaces.md) -> [Bijux Atlas](projects/bijux-atlas.md) -> [Applied domains](platform/applied-domains.md) |
 
 ## Question-Led Routes
 
@@ -79,5 +85,5 @@ tables below can help.
 The reading paths exist so different readers can inspect the same body
 of work from different starting points without losing coherence. That
 flexibility matters because strong technical systems should remain
-legible to students, specialists, and evaluators alike while preserving
+legible to students and specialists alike while preserving
 the same architectural signals across routes.
