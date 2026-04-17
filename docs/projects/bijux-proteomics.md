@@ -72,6 +72,19 @@ concerns explicit rather than hidden in ad hoc glue.
 - reproducibility and reviewability treated as part of the product, not a later cleanup step
 - public scientific software that still looks engineered rather than improvised
 
+## One Repository Flow
+
+```mermaid
+graph LR
+    input["Input"] --> workflow["Workflow execution"]
+    workflow --> evidence["Evidence capture"]
+    evidence --> output["Decision-ready output"]
+```
+
+This flow is the practical path in the repository: ingest scientific
+input, run controlled workflow logic, preserve evidence lineage, and
+publish outputs that can be reviewed and reused.
+
 ## Where To Begin
 
 | If you are looking for... | Start with this part of Proteomics |
@@ -86,16 +99,3 @@ concerns explicit rather than hidden in ad hoc glue.
 - the work is specifically about proteomics, discovery, or lab-facing workflows
 - you want to see how engineering structure adapts to scientific product work
 - you care whether domain software is treated with the same rigor as platform software
-
-## In The Larger Picture
-
-Proteomics keeps software structure visible while moving into domain
-systems where data, workflow, and subject-matter context all matter at
-the same time.
-
-Bijux Proteomics demonstrates how demanding scientific work benefits
-from explicit runtime logic, domain contracts, evidence governance, and
-decision-support structure instead of loosely connected tooling. It is a
-domain repository, but also a proof surface for applying rigorous
-engineering where correctness, interpretability, and long-lived clarity
-must coexist.
