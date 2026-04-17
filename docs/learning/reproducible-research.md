@@ -14,6 +14,11 @@ build systems, automation, and scientific execution habits. It presents
 engineering structure through practical research tooling without
 reducing the work to tool-specific recipes.
 
+In practical terms, this program addresses familiar failure points:
+artifact drift between runs, irreproducible results, unclear execution
+state, and broken promotion boundaries between local experiments and
+publishable outputs.
+
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-masterclass/reproducible-research/">View Family Docs</a>
 <a class="md-button" href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-make/">View Deep Dive Make</a>
@@ -28,6 +33,13 @@ judgment under workflow pressure: build-graph truth, orchestration and
 publish boundaries, dynamic workflow safety, state identity, experiment
 discipline, and reproducible execution. The programs are organized by
 failure mode and design pressure rather than by tool popularity.
+
+## For Researchers Coming From Notebooks Or Manual Workflows
+
+If your current workflow is mostly notebooks, scripts, and manual file
+copies, this program gives you a structured way to keep what works while
+removing hidden state. The goal is not to replace domain thinking; it
+is to make each result traceable, re-runnable, and safer to publish.
 
 ## Program Map
 
