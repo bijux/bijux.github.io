@@ -20,19 +20,20 @@ and shared documentation standards used across the family.
 The shared shell keeps orientation and explanation behavior stable across
 repositories while each repository keeps local ownership of its content.</div>
 
-## Network Map
+## Source Flow
 
 ```mermaid
 graph TD
-    network["Documentation Network"] --> orientation["Shared orientation"]
-    network --> handbooks["Repository handbooks"]
-    network --> context["Project context"]
-    network --> paths["Reading paths"]
+    source["bijux-std standards source"] --> sync["shared shell sync flow"]
+    sync --> hub["bijux.github.io hub"]
+    sync --> repos["repository documentation sites"]
+    sync --> learning["Masterclass documentation"]
 
-    orientation --> global["Global structure"]
-    handbooks --> local["Local ownership"]
-    context --> interpretation["Public interpretation"]
-    paths --> entry["Different entry routes"]
+    hub --> consume["consume shared shell + local content"]
+    repos --> consume
+    learning --> consume
+
+    consume --> publish["publish stable, coherent public docs surfaces"]
 ```
 
 ## Documentation Architecture Roles
