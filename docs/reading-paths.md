@@ -13,9 +13,9 @@ This page helps you choose a short path that matches the part of the
 work you care about first.
 
 <div class="bijux-callout"><strong>New here?</strong> Start with
-<a href="platform/system-map.md">Platform -> System Map</a> if you care more
-about architecture, or start with <a href="projects/index.md">Projects</a> if
-you care more about repository outputs.</div>
+<a href="index.md">Home</a> -> <a href="platform/index.md">Platform</a> ->
+<a href="platform/system-map.md">System Map</a>. This is the canonical first
+route for new readers.</div>
 
 The map below summarizes the main route families at a glance.
 
@@ -32,8 +32,7 @@ graph LR
     domains --> applied["Applied Domains"]
 ```
 
-If you want a more specific sequence for your time budget, the route
-tables below can help.
+Choose a route below by question or by time.
 
 ## By Time
 
