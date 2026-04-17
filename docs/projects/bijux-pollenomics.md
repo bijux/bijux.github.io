@@ -56,6 +56,13 @@ graph TD
 The goal is a domain system that remains reviewable even for readers
 outside the immediate subject area.
 
+## Concrete Outputs
+
+- atlas layers for regional evidence visualization
+- tracked data assets with explicit lineage
+- report bundles for reproducible publication routes
+- documentation context that explains interpretation assumptions and boundaries
+
 ## What This Repository Covers
 
 - domain modeling that translates archaeology-facing questions into inspectable system surfaces
@@ -69,13 +76,6 @@ outside the immediate subject area.
 - tracked data, checked-in publication artifacts, and explicit rebuild paths
 - technical architecture adapted to archaeology-facing and field-oriented context without losing clarity
 - honest scope boundaries around what exists today and what does not
-
-## Concrete Outputs
-
-- atlas layers for regional evidence visualization
-- tracked data assets with explicit lineage
-- report bundles for reproducible publication routes
-- documentation context that explains interpretation assumptions and boundaries
 
 ## Where To Begin
 
