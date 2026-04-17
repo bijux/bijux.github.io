@@ -81,8 +81,26 @@ graph TD
 
 ## Stability Expectation
 
-The links above should stay stable enough that the hub can be treated as
-an index, not a marketing page snapshot.
+The public surface should behave like a maintained index, not a
+point-in-time snapshot.
+
+### Meant To Stay Stable
+
+- top-level repository destinations and their public docs roots
+- cross-repository navigation routes from the hub
+- the role-level separation between platform, project, and learning surfaces
+
+### Expected To Evolve
+
+- page contents inside each repository docs site
+- internal package structure and implementation details in source repos
+- project-level summary wording as repository scope matures
+
+### Canonical Ownership
+
+- hub-level route ownership: `bijux.github.io`
+- repository docs and source ownership: each destination repository
+- shared shell and docs standards ownership: `bijux-std`
 
 The public surface is designed to make the work inspectable from
 multiple angles: documentation for orientation, repositories for
