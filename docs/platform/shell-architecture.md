@@ -1,46 +1,60 @@
+---
+title: Shell Architecture
+audience: mixed
+type: guide
+status: canonical
+owner: bijux-docs
+last_reviewed: 2026-04-17
+---
+
 # Shell Architecture
 
-The Bijux docs shell is centralized and shared.
+The shared shell exists to preserve navigation consistency and reduce
+cross-repository drift across Bijux documentation sites.
 
-Canonical source:
+The shell is the common navigation and explanation layer used across
+Bijux docs surfaces. It keeps the top navigation model, style behavior,
+and shell runtime rules aligned while allowing each repository to own
+its local technical content.
+
+## Purpose
+
+The shell architecture exists so readers can:
+
+- move between repository docs without relearning navigation
+- keep orientation when switching between platform, projects, and learning surfaces
+- trust that shared UI behavior is deliberate and versioned, not ad hoc per site
+
+## Ownership
+
+Canonical shell source lives under shared ownership:
 
 - `shared/bijux-docs/partials/*`
 - `shared/bijux-docs/styles/*`
 - `shared/bijux-docs/scripts/*`
 
-Generated mirrors:
+Generated mirrors in the local docs tree are synchronized outputs:
 
 - `docs/overrides/partials/*`
 - `docs/assets/styles/*`
 - `docs/assets/javascripts/shell/*`
 - `docs/assets/javascripts/navigation-sync.js`
 
-## Commands
+## What Stays Shared Vs Local
 
-- `make bijux-docs-sync` to synchronize docs shell files (`shared -> docs`)
-- `make bijux-docs-check` to validate docs shell contract and drift checks
-- `make docs-sanity` to run docs shell checks plus docs build
-- Backward-compatible aliases: `make shell-sync`, `make shell-check`
+### Shared
 
-## Project Contract
+- shell partial structure and top navigation behavior
+- shell styles and responsive behavior contract
+- shell runtime state and navigation JavaScript wiring
 
-Each consuming project is expected to provide shell config under
-`extra.bijux`:
+### Local
 
-```yaml
-extra:
-  bijux:
-    repository: <string>
-    hub_links:
-      - key: <string>
-        label: <string>
-        url: <absolute-url>
-    nav_mode: default
-    theme_key: bijux:theme
-```
+- repository-specific docs pages and handbook content
+- domain-specific vocabulary, examples, and technical depth
+- repository-owned docs IA below shared shell routes
 
-Notes:
+### Shared-Local Boundary
 
-- `theme_key` must remain shared (`bijux:theme`) for cross-project dark/light persistence.
-- `nav_mode` is currently `default` and reserved for controlled shell-level behavior changes.
-- Projects can customize labels and URLs, but should not fork docs shell partial structure or runtime logic.
+The shell controls movement and baseline behavior. Repository docs
+control local meaning and implementation detail.
