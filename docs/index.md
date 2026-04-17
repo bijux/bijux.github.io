@@ -95,15 +95,13 @@ graph TD
     standards --> std["bijux-std"]
 ```
 
-## How To Read This Site
+## Route Starters
 
 Use one of these route types based on your immediate goal:
 
 - Architecture route: start at [Platform overview](platform/index.md), then [System map](platform/system-map.md), then [bijux-core](projects/bijux-core.md) and [bijux-canon](projects/bijux-canon.md).
 - Delivery route: start at [Delivery surfaces](platform/delivery-surfaces.md), then [bijux-atlas](projects/bijux-atlas.md), then public docs and published endpoints.
 - Domain route: start at [Applied domains](platform/applied-domains.md), then [bijux-proteomics](projects/bijux-proteomics.md) and [bijux-pollenomics](projects/bijux-pollenomics.md).
-
-## Where To Start
 
 <div class="bijux-showcase-grid">
   <article class="bijux-showcase-card">
