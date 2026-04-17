@@ -9,6 +9,11 @@ last_reviewed: 2026-04-13
 
 # Operating Context
 
+This page explains why the repository family is split this way by
+starting from concrete operating pressures:
+reproducibility, evidence traceability, long-lived maintenance, and
+public delivery.
+
 This repository family brings together three related kinds of public
 work: platform engineering, applied project work, and technical
 education.
@@ -22,7 +27,8 @@ different question for the reader:
 
 This split is also the top-level public information architecture for
 Bijux. It is the main navigation model readers should use before
-opening any individual repository surface.
+opening any individual repository surface, and its cross-repository
+continuity is supported by shared standards owned in `bijux-std`.
 
 The work published here is shaped by environments where software has to
 stay inspectable under change. That includes service and data systems,
@@ -40,7 +46,9 @@ This is why the repositories tend to look the way they do.
 Responsibilities are separated at the repository level. Documentation is
 part of delivery, not a side artifact. Domain-specific work is
 presented with enough engineering structure to make the system legible
-to someone outside the project.
+to someone outside the project. Shared standards continuity from
+`bijux-std` keeps shell behavior and baseline checks aligned across the
+family.
 
 ## Context Map
 
