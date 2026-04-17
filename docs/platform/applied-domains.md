@@ -9,33 +9,29 @@ last_reviewed: 2026-04-12
 
 # Applied Domains
 
-The public Bijux surface is not only about platform mechanics. The same
-engineering discipline is carried into domains where the data model,
-user expectations, and decision context are harder than generic
-infrastructure alone. This is where abstraction gets tested by real
-subject matter.
+Applied domains show one engineering discipline under different domain
+pressures. Domain repositories vary by data semantics and interpretation
+needs, but they still inherit a shared documentation shell and standards
+layer from `bijux-std`.
 
 ## Domain Map
 
 ```mermaid
 graph LR
-    domains["Applied Domains"] --> shared["Shared engineering discipline"]
-    domains --> pressure["Domain-specific pressure"]
+    shared["Shared platform discipline"] --> boundaries["Ownership boundaries"]
+    shared --> shell["Shared docs shell and standards"]
+    shared --> evidence["Evidence and reproducibility rules"]
 
-    shared --> boundaries["Boundaries"]
-    shared --> docs["Documentation"]
-    shared --> delivery["Delivery"]
-
-    pressure --> proteomics["Proteomics"]
+    pressure["Domain-specific variation"] --> proteomics["Proteomics"]
     pressure --> pollenomics["Pollenomics"]
-    pressure --> research["Reproducible Research (Masterclass)"]
+    pressure --> learning["Learning workflows"]
 
-    boundaries --> adapted["Adapted systems"]
-    docs --> adapted
-    delivery --> adapted
-    proteomics --> adapted
-    pollenomics --> adapted
-    research --> adapted
+    boundaries --> outcomes["Domain-facing systems"]
+    shell --> outcomes
+    evidence --> outcomes
+    proteomics --> outcomes
+    pollenomics --> outcomes
+    learning --> outcomes
 ```
 
 ## Domain Reach
