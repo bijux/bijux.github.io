@@ -12,12 +12,6 @@ last_reviewed: 2026-04-12
 A delivery surface is any public, inspectable output through which the
 system is used, verified, or reviewed.
 
-The public Bijux surface is meant to reward inspection. Readers should
-be able to move from a narrative page into concrete repositories, docs,
-workflows, contracts, and release surfaces without hitting a gap
-between presentation and implementation.
-Delivery quality is part of the system design, not an afterthought.
-
 ## What Counts As Delivery In Bijux
 
 - public documentation that shows ownership, operating routes, and system boundaries
@@ -42,12 +36,12 @@ graph TD
 
 ## Delivery Classes
 
-| Class | What it includes | What to inspect first |
-| --- | --- | --- |
-| Documentation | repository handbooks, docs navigation, public explanatory routes | whether ownership, boundaries, and operating procedures are explicit |
-| Published software | packages, generated artifacts, and versioned release outputs | whether build and release paths are reproducible and reviewable |
-| Service interfaces | APIs, runtime interfaces, and user-facing data endpoints | whether interface contracts and behavior expectations are documented clearly |
-| Release and ops evidence | CI checks, validation routines, and promotion workflows | whether quality claims are backed by observable checks and traceable evidence |
+| Class | Ownership source | What it includes | What to inspect first |
+| --- | --- | --- | --- |
+| Documentation | shared standards in `bijux-std`, consumed by repository docs | repository handbooks, docs navigation, and public explanatory routes | whether ownership, boundaries, and operating procedures are explicit and consistent across sites |
+| Published software | repository-owned delivery responsibilities | packages, generated artifacts, and versioned release outputs | whether build and release paths are reproducible and reviewable |
+| Service interfaces | repository-owned service and runtime boundaries | APIs, runtime interfaces, and user-facing data endpoints | whether interface contracts and behavior expectations are documented clearly |
+| Release and ops evidence | repository checks aligned by shared quality standards | CI checks, validation routines, and promotion workflows | whether quality claims are backed by observable checks and traceable evidence |
 
 ## Why This Matters Beyond Ops
 
