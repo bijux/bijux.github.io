@@ -51,12 +51,13 @@ failure mode and design pressure rather than by tool popularity.
 | Snakemake | workflow orchestration | coordinates multi-step data workflows with explicit contracts and execution order |
 | DVC | state and version control | tracks experiment state, parameters, metrics, and promotion boundaries over time |
 
-## For Researchers Coming From Notebooks Or Manual Workflows
+## From Notebook Work To Controlled Outputs
 
-If your current workflow is mostly notebooks, scripts, and manual file
-copies, this program gives you a structured way to keep what works while
-removing hidden state. The goal is not to replace domain thinking; it
-is to make each result traceable, re-runnable, and safer to publish.
+```mermaid
+graph LR
+    notebook["Notebook/manual work"] --> workflow["Structured workflow"]
+    workflow --> controlled["Controlled artifacts"]
+```
 
 ## Program Map
 
@@ -99,7 +100,7 @@ graph TD
 | state identity and experiment recovery | [Deep Dive DVC](https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-dvc/) and its focus on params, metrics, promotion discipline, and trustworthy recovery |
 | program design clarity | the family page in Masterclass, which routes by system pressure instead of generic topic grouping |
 
-## Capstone Proof Surfaces
+## Capstone Outputs
 
 | Capstone | Direct proof surface | Engineering behavior demonstrated |
 | --- | --- | --- |
