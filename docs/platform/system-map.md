@@ -9,12 +9,20 @@ last_reviewed: 2026-04-12
 
 # System Map
 
+<div class="bijux-callout"><strong>Use this page when</strong> you want a fast orientation to how Platform, Projects, and Learning fit together before opening individual repositories.</div>
+
 The Bijux public surface is easier to understand as a layered system
 than as a list of repositories. The map helps because it shows where
 responsibility changes hands and where different kinds of engineering
 judgment are expected.
 This map is meant to make system responsibility legible before
 implementation detail.
+
+In plain terms: Platform defines the shared structure and rules, Projects
+apply that structure in runtime/knowledge/domain repositories, and
+Learning explains the same engineering methods through teachable
+programs. Together, these layers keep responsibilities clear while still
+forming one public system.
 
 ## Layered View
 
@@ -24,7 +32,7 @@ graph TD
     system --> projects["Projects"]
     system --> learning["Learning"]
 
-    platform --> principles["Shared principles"]
+    platform --> principles["Shared engineering rules and docs shell"]
     platform --> structure["Navigation and structure"]
 
     projects --> runtime["Runtime systems"]
