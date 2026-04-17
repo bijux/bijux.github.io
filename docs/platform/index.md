@@ -93,13 +93,6 @@ graph TD
   <div class="bijux-panel"><h3>Products And Programs</h3><p>Proteomics, Pollenomics, and Masterclass show how the same system language survives domain products and technical education instead of remaining trapped in platform internals.</p></div>
 </div>
 
-## What To Check First
-
-- whether the repository split reflects real system boundaries
-- whether delivery posture is part of the architecture rather than an afterthought
-- whether the same engineering standards survive domain and learning contexts
-- whether the public surface is concrete enough to justify deeper inspection
-
 ## System Reading Order
 
 | Read this first when you need to understand... | Open |
@@ -113,9 +106,3 @@ graph TD
 | the broader operating context behind the current repository family | [Operating context](operating-context.md) |
 | why the docs shell is shared instead of duplicated carelessly | [Documentation network](documentation-network.md) |
 | which public destinations exist today | [Public surface](public-surface.md) |
-
-The platform branch exists to explain the logic that holds the Bijux
-family together: why repository boundaries exist, what qualities they
-protect, and where evidence for those choices can be inspected. Its
-value is not only orientation, but a clear model of software design,
-delivery, and ownership that readers can evaluate directly.
