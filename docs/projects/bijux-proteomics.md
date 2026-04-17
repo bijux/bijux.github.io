@@ -39,17 +39,11 @@ This map summarizes the core technical surfaces in the repository.
 
 ```mermaid
 graph TD
-    proteomics["Bijux Proteomics"] --> runtime["Runtime execution"]
-    proteomics --> contracts["Domain contracts"]
-    proteomics --> governance["Evidence governance"]
-    proteomics --> decisions["Decision support"]
-    proteomics --> planning["Lab planning"]
-
-    runtime --> integrated["Integrated scientific system"]
-    contracts --> integrated
-    governance --> integrated
-    decisions --> integrated
-    planning --> integrated
+    discovery["Discovery workflows"] --> contracts["Domain contracts"]
+    contracts --> evidence["Evidence handling"]
+    evidence --> decisions["Decision outputs"]
+    decisions --> execution["Runtime execution"]
+    execution --> planning["Lab planning routes"]
 ```
 
 It reflects the repository's design choice to keep scientific workflow
