@@ -106,14 +106,26 @@ The normal flow is simple:
 
 ## What Readers Should Notice
 
-When the shared layer is working correctly:
+Readers should not need to think about `bijux-std` every time they move
+across Bijux.
 
-- navigation behavior stays coherent across Bijux docs sites
-- shell behavior remains predictable across repositories
-- repositories keep local ownership without fragmenting the public system
+That is the point.
 
-## Reading Rule
+If the shared layer is working well:
 
-Read this page when you need to understand why multiple Bijux
-repositories can stay structurally consistent without becoming one
-monolithic repository.
+- navigation stays coherent
+- shell behavior remains predictable
+- documentation presentation stays consistent
+- repositories remain locally owned without fragmenting the public system
+
+## Where To Go Next
+
+- [Documentation Network](documentation-network.md)
+- [Shell Architecture](shell-architecture.md)
+- [Repository Matrix](repository-matrix.md)
+
+## In One Sentence
+
+`bijux-std` is the shared standards layer that keeps the Bijux
+ecosystem consistent across documentation, automation, and CI-verifiable
+repository behavior.
