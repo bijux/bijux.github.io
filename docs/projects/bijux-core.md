@@ -14,6 +14,10 @@ Bijux system family. It is the primary starting point when the question is
 about runtime authority, repository discipline, or the engineering
 systems that should remain stable beneath dependent repositories.
 
+Core contains four concrete surfaces: CLI runtime, DAG execution
+substrate, governance and control-plane routes, and evidence/release
+rules.
+
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-core/">View Published Docs</a>
 <a class="md-button" href="https://github.com/bijux/bijux-core">View GitHub Repository</a>
@@ -31,11 +35,11 @@ This map summarizes the authority split that keeps Core legible.
 graph LR
     core["Bijux Core"] --> cli["CLI runtime"]
     core --> dag["DAG execution"]
-    core --> control["Repository control"]
+    core --> control["Governance, evidence, and release discipline"]
 
     cli --> command["Command behavior"]
     dag --> workflow["Workflow behavior"]
-    control --> governance["Workspace governance"]
+    control --> governance["Governance and release behavior"]
 ```
 
 The split keeps command semantics, workflow semantics, and repository
