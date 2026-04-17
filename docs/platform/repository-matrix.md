@@ -13,6 +13,9 @@ This matrix is the shortest route to understanding how the public Bijux
 repositories differ by responsibility, inspection angle, and recurring
 work quality.
 
+Repository separation here is a design tool for controlling ownership
+and change, not an organizational preference.
+
 ## Matrix Map
 
 ```mermaid
@@ -50,12 +53,12 @@ graph LR
 
 | Repository | Primary responsibility | What it owns publicly | Inspection angle | Start here |
 | --- | --- | --- | --- | --- |
-| `bijux-core` | execution backbone and repository governance | CLI surfaces, DAG runtime, artifacts, evidence, release rules | runtime authority and operational discipline | [Project page](../projects/bijux-core.md) |
-| `bijux-canon` | governed knowledge-system architecture | ingest, indexing, reasoning, orchestration, controlled runtime | AI and knowledge workflows split into accountable components | [Project page](../projects/bijux-canon.md) |
-| `bijux-atlas` | data and service delivery | APIs, datasets, reporting, docs-aware control-plane behavior | service architecture and public delivery posture | [Project page](../projects/bijux-atlas.md) |
-| `bijux-proteomics` | proteomics-oriented product system | domain workflows, discovery context, scientific product framing | bioinformatics software under real domain pressure | [Project page](../projects/bijux-proteomics.md) |
-| `bijux-pollenomics` | evidence mapping and site-selection product system | archaeology-facing narratives, evidence surfaces, domain framing | unusual domain adaptation without structural collapse | [Project page](../projects/bijux-pollenomics.md) |
-| `bijux-masterclass` | public technical education | sequenced programs, deep dives, reusable learning structure | technical clarity that remains rigorous enough to teach | [Learning catalog](../learning/index.md) |
+| `bijux-core` | runtime authority | CLI surfaces, DAG runtime, evidence artifacts, release rules | execution behavior and governance discipline | [Project page](../projects/bijux-core.md) |
+| `bijux-canon` | knowledge-system orchestration | ingest/index/reason/orchestrate package boundaries | governed knowledge workflows with explicit interfaces | [Project page](../projects/bijux-canon.md) |
+| `bijux-atlas` | public delivery interfaces | APIs, datasets, reporting, docs-aware operational routes | service delivery architecture and publication posture | [Project page](../projects/bijux-atlas.md) |
+| `bijux-proteomics` | proteomics product workflows | proteomics domain workflows and reproducible product routes | scientific software under laboratory and domain constraints | [Project page](../projects/bijux-proteomics.md) |
+| `bijux-pollenomics` | evidence-mapping product workflows | archaeology/eDNA/aDNA evidence surfaces and site-selection outputs | evidence-heavy domain modeling with reviewable outputs | [Project page](../projects/bijux-pollenomics.md) |
+| `bijux-masterclass` | technical learning programs | sequenced programs, deep dives, and runnable learning materials | engineering explanation tied to executable instruction | [Learning catalog](../learning/index.md) |
 
 ## How The Repositories Work Together
 
