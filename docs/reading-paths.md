@@ -50,5 +50,5 @@ Choose a route below by question or by time.
 | System structure | [Platform](platform/index.md) -> [System map](platform/system-map/index.md) -> [Repository matrix](platform/repository-matrix/index.md) |
 | Repository roles | [Projects](projects/index.md) -> [Bijux Core](projects/bijux-core.md) -> [Bijux Canon](projects/bijux-canon.md) -> [Bijux Atlas](projects/bijux-atlas.md) |
 | Domain work | [Applied domains](platform/applied-domains/index.md) -> [Bijux Proteomics](projects/bijux-proteomics.md) -> [Bijux Pollenomics](projects/bijux-pollenomics.md) |
-| Learning | [Learning catalog](learning/index.md) -> [Reproducible Research](learning/reproducible-research.md) -> [Python Programming](learning/python-programming.md) |
+| Learning | [Learning catalog](learning/index.md) -> [Reproducible Research](learning/reproducible-research/index.md) -> [Python Programming](learning/python-programming/index.md) |
 | Shared standards and docs shell | [Platform](platform/index.md) -> [Bijux standard layer](platform/bijux-std/index.md) -> [Shell Architecture](platform/shell-architecture/index.md) |

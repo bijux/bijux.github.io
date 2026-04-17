@@ -74,5 +74,5 @@ nav:
       - Bijux Pollenomics: projects/bijux-pollenomics.md
   - Learning:
       - Overview: learning/index.md
-      - Reproducible Research: learning/reproducible-research.md
-      - Python Programming: learning/python-programming.md
+      - Reproducible Research: learning/reproducible-research/index.md
+      - Python Programming: learning/python-programming/index.md

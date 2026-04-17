@@ -50,7 +50,7 @@ habits.
 | Bounded ownership | one repository starts absorbing runtime, delivery, and domain concerns in the same change stream | [Repository matrix](../repository-matrix/index.md), [System map](../system-map/index.md) |
 | Delivery discipline | docs promise routes or release behavior that cannot be matched to maintained automation and destinations | [Delivery surfaces](../delivery-surfaces/index.md), [Public surface](../public-surface/index.md) |
 | Domain pressure handling | scientific workflows are carried by one-off scripts with weak evidence or publication contracts | [Applied domains](../applied-domains/index.md), [Bijux Proteomics](../../projects/bijux-proteomics.md), [Bijux Pollenomics](../../projects/bijux-pollenomics.md) |
-| Explainable depth | teaching material becomes disconnected from runnable artifacts and repository trade-offs | [Learning catalog](../../learning/index.md), [Reproducible Research](../../learning/reproducible-research.md) |
+| Explainable depth | teaching material becomes disconnected from runnable artifacts and repository trade-offs | [Learning catalog](../../learning/index.md), [Reproducible Research](../../learning/reproducible-research/index.md) |
 
 ## Why These Qualities Recur
 
