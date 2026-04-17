@@ -20,12 +20,14 @@ and change, not an organizational preference.
 
 ```mermaid
 graph LR
+    std["bijux-std"]
     family["Repository Family"] --> core["Core"]
     family --> canon["Canon"]
     family --> atlas["Atlas"]
     family --> proteomics["Proteomics"]
     family --> pollenomics["Pollenomics"]
     family --> masterclass["Masterclass"]
+    family --> std
 
     core --> runtime["Runtime and control"]
     canon --> knowledge["Knowledge-system layers"]
@@ -33,6 +35,13 @@ graph LR
     proteomics --> scientific["Scientific product"]
     pollenomics --> domain["Domain application"]
     masterclass --> learning["Technical learning"]
+
+    std --> core
+    std --> canon
+    std --> atlas
+    std --> proteomics
+    std --> pollenomics
+    std --> masterclass
 ```
 
 ## How To Read This Matrix
@@ -65,6 +74,7 @@ graph LR
 
 | Layer | Repositories | Why the split stays useful |
 | --- | --- | --- |
+| standards source | `bijux-std` | shared standards, shell behavior, and quality checks stay canonical and reusable across the family |
 | backbone | `bijux-core` | execution, evidence, and governance stay visible instead of disappearing into scripts and convention |
 | knowledge and service architecture | `bijux-canon`, `bijux-atlas` | knowledge workflows and delivery surfaces can evolve independently without losing system coherence |
 | domain products | `bijux-proteomics`, `bijux-pollenomics` | domain systems inherit platform discipline instead of becoming isolated one-off projects |
