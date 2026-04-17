@@ -1,5 +1,5 @@
 ---
-title: Bijux Standard Layer
+title: Bijux Standard
 audience: mixed
 type: guide
 status: canonical
@@ -7,47 +7,55 @@ owner: bijux-docs
 last_reviewed: 2026-04-17
 ---
 
-# Bijux Standard Layer
+# Bijux Standard
 
 `bijux-std` is the shared standards repository for the Bijux system
 family.
 
-It defines the cross-repository standards layer that should stay
-aligned across Bijux repositories and public docs surfaces.
+It defines the parts of the ecosystem that are meant to stay aligned
+across multiple repositories and sites: the shared documentation shell,
+the shared Python-oriented make layer, and the shared compliance and
+sync checks used in CI.
+
+It is not a product repository.
+It is not a domain repository.
+It is not a learning-content repository.
+
+It is the shared standards layer that keeps the public system coherent.
 
 ## Why It Exists
 
-Bijux repositories are intentionally split by responsibility.
+The Bijux repositories are intentionally split by responsibility.
 
-That split remains coherent only if the shared layer is also explicit.
-Without a standards source, shared shell behavior, shared checks, and
-shared automation drift quietly over time.
+That split only stays clean if the shared layer is explicit.
 
-`bijux-std` exists to keep those shared expectations defined once and
-managed deliberately.
+Without a standards repository, shell behavior, make logic, and
+cross-repository checks drift quietly over time. `bijux-std` prevents
+that by giving the system one canonical place where shared standards
+are defined, synchronized, and verified.
 
 ## What It Owns
 
-`bijux-std` owns the parts of the ecosystem meant to remain shared
-across multiple repositories:
+`bijux-std` owns the cross-repository standards layer.
+
+That includes:
 
 - shared documentation shell assets
-- shared compliance and sync checks
 - shared Python-oriented make modules
+- shared compliance and update checks
 - canonical manifests used to verify shared directory integrity
 
 ## What It Does Not Own
 
-`bijux-std` does not own:
+`bijux-std` does **not** own:
 
-- runtime implementation from `bijux-core`
-- knowledge-system implementation from `bijux-canon`
+- runtime logic from `bijux-core`
+- knowledge-system architecture from `bijux-canon`
 - delivery products from `bijux-atlas`
-- domain implementation from `bijux-proteomics` and `bijux-pollenomics`
-- learning content from `bijux-masterclass`
+- domain software from `bijux-proteomics` or `bijux-pollenomics`
+- course content from `bijux-masterclass`
 
-It owns shared standards, not repository-specific product or domain
-logic.
+Those remain owned by the repositories that implement them.
 
 ## How It Fits The Architecture
 
