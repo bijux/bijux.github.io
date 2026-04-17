@@ -89,6 +89,7 @@ graph TD
   <div class="bijux-panel"><h3>Core</h3><p>The execution and governance backbone for command surfaces, DAG behavior, evidence, and repository discipline.</p></div>
   <div class="bijux-panel"><h3>Canon</h3><p>The governed knowledge-system stack for ingest, indexing, reasoning, orchestration, and controlled runtime behavior.</p></div>
   <div class="bijux-panel"><h3>Atlas</h3><p>The delivery and control-plane surface for APIs, datasets, docs-aware checks, and operational reporting.</p></div>
+  <div class="bijux-panel"><h3>Bijux Standard Layer</h3><p>The shared standards source for documentation shell continuity, cross-repository checks, and shared make behavior.</p></div>
   <div class="bijux-panel"><h3>Products And Programs</h3><p>Proteomics, Pollenomics, and Masterclass show how the same system language survives domain products and technical education instead of remaining trapped in platform internals.</p></div>
 </div>
 
