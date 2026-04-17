@@ -29,6 +29,13 @@ graph LR
 If you want a more specific sequence for your time budget, the route
 tables below can help.
 
+## The Four Route Families
+
+- Platform: system structure, boundaries, runtime behavior, and delivery logic.
+- Projects: repository-level outputs and responsibilities across the family.
+- Learning: technical programs that teach through real system artifacts.
+- Applied domains: domain pressure in scientific products and evidence-heavy workflows.
+
 ## By Reading Intent
 
 | If your goal is... | Read this sequence |
@@ -47,7 +54,16 @@ tables below can help.
 | 20 minutes | [System map](platform/system-map.md) -> [Repository matrix](platform/repository-matrix.md) -> one project page that matches your interest |
 | 30 minutes | one platform route, one delivery route, and one domain or learning route to get a broader cross-section |
 
-## What These Paths Are Designed To Show
+## Question-Led Routes
+
+| Question | Read this sequence |
+| --- | --- |
+| How is the system structured? | [Platform](platform/index.md) -> [System map](platform/system-map.md) -> [Repository matrix](platform/repository-matrix.md) -> [Bijux Core](projects/bijux-core.md) |
+| How is work delivered? | [Delivery surfaces](platform/delivery-surfaces.md) -> [Public surface](platform/public-surface.md) -> [Bijux Atlas](projects/bijux-atlas.md) -> [Projects](projects/index.md) |
+| How does the design survive domain pressure? | [Applied domains](platform/applied-domains.md) -> [Bijux Proteomics](projects/bijux-proteomics.md) -> [Bijux Pollenomics](projects/bijux-pollenomics.md) -> [Reproducible Research](learning/reproducible-research.md) |
+| How is teaching integrated? | [Learning catalog](learning/index.md) -> [Python Programming](learning/python-programming.md) -> [Reproducible Research](learning/reproducible-research.md) -> [Projects](projects/index.md) |
+
+## What These Routes Are Designed To Show
 
 - architecture and ownership boundaries that stay coherent under change
 - delivery and operational surfaces that can be inspected directly
