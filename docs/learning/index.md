@@ -17,6 +17,10 @@ These programs are integrated with the broader system work. They are
 another proof surface for how technical judgment is structured, taught, and reused
 without losing architectural rigor.
 
+Teaching is part of Bijux because the same engineering judgment is
+expressed not only in code, but also in durable explanation and
+executable learning material.
+
 <div class="bijux-callout"><strong>The learning branch is organized like the rest of the work.</strong>
 Programs are grouped by technical pressure, routed through stable entry
 pages, and tied to course books and capstones rather than treated as a
@@ -42,13 +46,13 @@ graph LR
 - conceptual compression without flattening design tradeoffs
 - systems teaching that stays attached to implementation pressure
 - documentation discipline that mirrors repository-level engineering standards
-- leadership-through-explanation: the same language works in design, delivery, and instruction
+- explanation as an engineering surface: the same language works in design, delivery, and instruction
 
 ## Why Masterclass Belongs In The Same System Family
 
 - it translates architecture, workflows, and system design into structured long-form programs
 - it keeps boundary discipline and systems reasoning visible in instruction, not only in repositories
-- it proves that technical communication here is an engineering capability, not a side activity
+- it treats technical communication as an engineering surface, not a side activity
 
 ## Program Families
 
