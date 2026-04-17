@@ -59,13 +59,12 @@ graph LR
 
 ## Contexts Where This Style Matters
 
-| Context | Why this approach helps |
-| --- | --- |
-| regulated-adjacent delivery and audit-sensitive work | explicit boundaries and inspectable artifacts reduce review ambiguity |
-| science and reproducible analysis workflows | evidence, traceability, and workflow truth remain visible under change |
-| long-lived CLI and automation surfaces | runtime authority is separated from delivery concerns, reducing accidental coupling |
-| knowledge workflows and retrieval-heavy systems | ingest, indexing, reasoning, and orchestration can evolve without role confusion |
-| artifact-heavy pipelines | immutable output posture and clear contracts improve reliability and recovery |
+| Context | Pressure | Why structure matters here |
+| --- | --- | --- |
+| long-lived codebases | continuous change across years of maintenance | explicit boundaries reduce accidental coupling and make ownership transitions safer |
+| scientific workflows | reproducibility and method transparency under revision | traceable workflows and clear contracts keep results reviewable over time |
+| evidence-heavy outputs | high burden of proof for claims and interpretations | artifact lineage and bounded publication routes reduce ambiguity during review |
+| public documentation systems | readers must navigate across repositories without losing context | shared navigation with local ownership keeps orientation stable while preserving depth |
 
 ## What Readers Should Expect
 
@@ -96,3 +95,6 @@ must absorb. The repository family is shaped around that reality, which
 is why bounded authority, reproducibility, and documentation discipline
 are treated as baseline engineering requirements rather than optional
 extras.
+
+After this page, a reader should know why the repository family is
+split this way before opening any individual repository.
