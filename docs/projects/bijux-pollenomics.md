@@ -4,25 +4,27 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-12
+last_reviewed: 2026-04-17
 ---
 
 # Bijux Pollenomics
 
-`bijux-pollenomics` is a system for evidence mapping, interpretation,
-and location-oriented research outputs in archaeology, eDNA, aDNA, and
-pollen evidence contexts.
+`bijux-pollenomics` helps researchers turn field evidence into maps and
+reports they can trace, review, and reuse.
 
-In plain terms, this repository brings together different evidence
-sources to help produce traceable maps and report outputs about where
-research attention should focus, while keeping methods and data lineage
-inspectable.
+It brings together archaeology, eDNA, aDNA, and pollen evidence so
+people can decide where research attention should focus while keeping
+methods and data lineage inspectable.
 
 It shows how structured engineering can support field-oriented,
 evidence-heavy domain work.
 The engineering challenge here is to make uncommon scientific context
 operationally clear without losing reproducibility, traceability, or
 system structure.
+
+The public docs surface and repository checks follow the shared
+documentation shell and standards checks used across the Bijux
+repository family.
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-pollenomics/">View Published Docs</a>
@@ -54,7 +56,7 @@ graph TD
 The goal is a domain system that remains reviewable even for readers
 outside the immediate subject area.
 
-## What This Repository Demonstrates
+## What This Repository Covers
 
 - domain modeling that translates archaeology-facing questions into inspectable system surfaces
 - evidence handling with tracked inputs, rebuildable outputs, and explicit publication routes
