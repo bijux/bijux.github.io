@@ -17,6 +17,8 @@ responsibility changes hands and where different kinds of engineering
 judgment are expected.
 This map is meant to make system responsibility legible before
 implementation detail.
+Shared standards are part of this system design, not only documentation
+detail.
 
 In plain terms: Platform defines the shared structure and rules, Projects
 apply that structure in runtime/knowledge/domain repositories, and
@@ -31,6 +33,7 @@ graph TD
     system["Bijux System"] --> platform["Platform"]
     system --> projects["Projects"]
     system --> learning["Learning"]
+    system --> standards["Standards"]
 
     platform --> principles["Shared engineering rules and docs shell"]
     platform --> structure["Navigation and structure"]
@@ -41,6 +44,11 @@ graph TD
 
     learning --> programming["Programming"]
     learning --> reproducibility["Reproducibility"]
+
+    standards --> std["bijux-std"]
+    std --> hub["bijux.github.io docs"]
+    std --> project_docs["project docs sites"]
+    std --> masterclass_docs["masterclass docs"]
 ```
 
 ## What Each Layer Owns
