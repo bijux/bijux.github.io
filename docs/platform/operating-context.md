@@ -20,6 +20,10 @@ different question for the reader:
 - **Projects** show how that structure is applied in domain-specific settings.
 - **Learning** explains methods, trade-offs, and workflow decisions that appear across both.
 
+This split is also the top-level public information architecture for
+Bijux. It is the main navigation model readers should use before
+opening any individual repository surface.
+
 The work published here is shaped by environments where software has to
 stay inspectable under change. That includes service and data systems,
 evidence-heavy workflows, and scientific or technical contexts where
@@ -80,7 +84,7 @@ graph LR
 - **Learning** helps connect recurring patterns, trade-offs, and
   workflows behind both
 
-## What A Technical Reviewer Should Be Able To Conclude
+## What This Page Should Make Clear
 
 - repository boundaries are intentional and operationally useful
 - documentation structure supports maintenance and cross-repository continuity
