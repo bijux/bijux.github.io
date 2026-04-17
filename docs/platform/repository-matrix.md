@@ -35,19 +35,19 @@ graph LR
     masterclass --> learning["Technical learning"]
 ```
 
-## What This Split Demonstrates
+## How To Read This Matrix
 
-- bounded responsibility that keeps ownership clear across the family
-- interface clarity between runtime, knowledge, delivery, domain, and learning surfaces
-- maintainability through repository-level separation instead of ad hoc modules
-- reviewability because each repository exposes a distinct inspection angle
+- read each row as a single ownership boundary, not as a feature list
+- use the primary responsibility column to decide the first repository to open
+- use the inspection angle column to decide what evidence to inspect next
 
-## Common Mistakes This Split Avoids
+## Why These Repositories Are Separate
 
-- monolithic ownership where unrelated concerns are forced into one codebase
-- documentation drift caused by unclear repository intent
-- policy and runtime semantics being mixed into the same layer
-- delivery concerns being hidden behind implementation details
+- `bijux-core` owns runtime authority so execution behavior and governance remain explicit
+- `bijux-canon` owns knowledge-system orchestration so ingest/index/reason/orchestrate concerns do not collapse into one layer
+- `bijux-atlas` owns public delivery interfaces so APIs, datasets, and reporting routes remain maintainable
+- `bijux-proteomics` and `bijux-pollenomics` own domain workflows so scientific pressure is handled without rewriting platform ownership
+- `bijux-masterclass` owns learning programs so explanation and teaching evolve without diluting repository implementation boundaries
 
 ## System Family At A Glance
 
