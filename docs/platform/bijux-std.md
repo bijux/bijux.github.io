@@ -66,38 +66,43 @@ graph TD
     std --> makes["shared make layer"]
 
     shell --> hub["bijux.github.io"]
-    shell --> projects["project docs sites"]
-    shell --> learning["bijux-masterclass docs"]
+    shell --> projectdocs["project docs sites"]
+    shell --> masterclass["bijux-masterclass"]
 
     checks --> hub
-    checks --> projects
-    checks --> learning
+    checks --> projectdocs
 
     makes --> repos["Python-oriented repositories"]
 ```
 
-`bijux-std` is a shared standards source, not a substitute for
-repository ownership.
+In plain language:
+
+- the repositories keep their own responsibilities
+- `bijux-std` keeps the shared layer consistent across them
+- the docs surfaces and CI checks stay aligned without collapsing
+  everything into one repository
 
 ## Shared Vs Local
 
 | Layer | Owned by |
 | --- | --- |
 | shared docs shell and compliance contract | `bijux-std` |
-| repository docs meaning and page content | consuming repository |
-| domain implementation and runtime logic | consuming repository |
+| repository docs meaning and page content | the consuming repository |
+| domain logic, runtime logic, and product behavior | the consuming repository |
+
+This separation matters.
+
+It gives Bijux continuity across sites and repositories without erasing
+local ownership.
 
 ## Consumption Model
 
-Consuming repositories vendor or sync the shared standards layer from
-`bijux-std`, then verify alignment in CI.
+The normal flow is simple:
 
-Typical flow:
-
-1. update canonical shared standards in `bijux-std`
-2. sync the shared layer into consuming repositories
-3. run checks to confirm local copies still match the standard
-4. fail CI when drift appears
+1. shared standards are updated in `bijux-std`
+2. consuming repositories synchronize the shared layer locally
+3. checks verify that local copies still match the standard
+4. each repository publishes its own docs and keeps ownership of its own content
 
 ## What Readers Should Notice
 
