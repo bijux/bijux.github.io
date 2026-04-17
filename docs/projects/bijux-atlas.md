@@ -46,15 +46,15 @@ artifacts.
 
 ```mermaid
 graph TD
-    atlas["Bijux Atlas"] --> source["Source data"]
-    atlas --> contracts["Contracts"]
-    atlas --> artifacts["Artifacts"]
-    atlas --> access["Access surfaces"]
+    atlas["Bijux Atlas"] --> ingest["Ingestion and preparation"]
+    atlas --> artifacts["Release artifacts"]
+    atlas --> query["API and query surface"]
+    atlas --> control["Docs and ops control plane"]
 
-    source --> delivery["Structured delivery"]
-    contracts --> delivery
-    artifacts --> delivery
-    access --> delivery
+    ingest --> publish["Published delivery surface"]
+    artifacts --> publish
+    query --> publish
+    control --> publish
 ```
 
 ## What This Repository Demonstrates Architecturally
