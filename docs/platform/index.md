@@ -39,18 +39,12 @@ graph TD
     delivery --> form["Public Form"]
 ```
 
-## What This Branch Demonstrates
+## Why This Branch Exists
 
-- boundary design that remains legible under repository growth
-- operating context awareness for evidence-heavy and scientific workloads
-- delivery reasoning that treats docs and release posture as architecture surfaces
-- system-level documentation that maps ownership before implementation detail
-
-## Platform Problems This Branch Solves
-
-- how to separate runtime authority, knowledge architecture, and delivery control without fragmentation
-- how to keep repository boundaries stable while still allowing domain-specific evolution
-- how to make public documentation useful for inspection, not only orientation
+- explain why runtime authority, knowledge architecture, delivery responsibilities, and domain work are split into separate repositories
+- keep repository boundaries stable while allowing domain-specific evolution
+- make public documentation useful for inspection and review, not only orientation
+- show where evidence for structure and delivery decisions can be checked directly
 
 ## Where To Inspect Evidence
 
