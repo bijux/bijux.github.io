@@ -29,11 +29,10 @@ reasoning, orchestration, and runtime control.
 
 ## Repository Shape
 
-`bijux-canon` avoids collapsing ingest, indexing, reasoning,
-orchestration, and policy into one blurred "AI platform" layer. The
-repository makes those concerns explicit through packages, contracts,
-compatibility surfaces, and runtime boundaries that readers can inspect
-directly.
+`bijux-canon` is built as explicit layers with accountable interfaces.
+Ingest, indexing, reasoning, orchestration, and runtime control are
+kept separate through packages, contracts, compatibility surfaces, and
+runtime boundaries that readers can inspect directly.
 This map shows the package layers as one governed knowledge system.
 
 ```mermaid
@@ -60,6 +59,14 @@ be reviewed as connected but distinct responsibilities.
 - compatibility work is visible as its own surface instead of hidden migration breakage
 - each package boundary creates a reviewable interface rather than a private internal convention
 - growth in one area does not force unrelated redesign in the rest of the system
+
+## What Each Layer Prevents
+
+- ingest: prevents raw upstream variability from leaking directly into downstream reasoning.
+- indexing: prevents retrieval behavior from depending on ad hoc input assumptions.
+- retrieval and reasoning: prevents query and decision logic from being mixed with storage and transport details.
+- orchestration: prevents execution flow and policy decisions from being hidden inside single-package internals.
+- runtime control: prevents acceptance, replay, and verification rules from becoming implicit and unreviewable.
 
 ## What Lives Here
 
