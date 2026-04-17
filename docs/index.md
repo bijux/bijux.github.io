@@ -103,31 +103,77 @@ Use one of these route types based on your immediate goal:
 - Delivery route: start at [Delivery surfaces](platform/delivery-surfaces/index.md), then [bijux-atlas](projects/bijux-atlas/index.md), then public docs and published endpoints.
 - Domain route: start at [Applied domains](platform/applied-domains/index.md), then [bijux-proteomics](projects/bijux-proteomics/index.md) and [bijux-pollenomics](projects/bijux-pollenomics/index.md).
 
+## Reading Paths
+
+This section helps you choose a short path that matches the part of the
+work you care about first.
+
+<div class="bijux-callout"><strong>New here?</strong> Start with
+<a href="index.md">Home</a> -> <a href="platform/index.md">Platform</a> ->
+<a href="platform/system-map/index.md">System Map</a>. This is the canonical first
+route for new readers.</div>
+
+The map below summarizes the main route families at a glance.
+
+```mermaid
+graph LR
+    paths["Reading Paths"] --> ideas["Learn the ideas"]
+    paths --> platform["Understand the platform"]
+    paths --> repositories["Inspect the repositories"]
+    paths --> domains["See domain applications"]
+
+    ideas --> learning["Learning"]
+    platform --> platform_branch["Platform"]
+    repositories --> projects["Projects"]
+    domains --> applied["Applied Domains"]
+```
+
+Choose a route below by question or by time.
+
+### By Time
+
+| If you have... | Read this route |
+| --- | --- |
+| 10 minutes | [Home](index.md) -> [Work qualities](platform/work-qualities/index.md) -> [Projects](projects/index.md) |
+| 20 minutes | [System map](platform/system-map/index.md) -> [Repository matrix](platform/repository-matrix/index.md) -> one project page that matches your interest |
+| 30 minutes | [Platform](platform/index.md) -> [System map](platform/system-map/index.md) -> [Delivery surfaces](platform/delivery-surfaces/index.md) -> [Bijux Atlas](projects/bijux-atlas/index.md) -> [Applied domains](platform/applied-domains/index.md) |
+
+### By Question
+
+| Question | Read this sequence |
+| --- | --- |
+| Big picture | [Home](index.md) -> [Platform](platform/index.md) -> [System map](platform/system-map/index.md) |
+| System structure | [Platform](platform/index.md) -> [System map](platform/system-map/index.md) -> [Repository matrix](platform/repository-matrix/index.md) |
+| Repository roles | [Projects](projects/index.md) -> [Bijux Core](projects/bijux-core/index.md) -> [Bijux Canon](projects/bijux-canon/index.md) -> [Bijux Atlas](projects/bijux-atlas/index.md) |
+| Domain work | [Applied domains](platform/applied-domains/index.md) -> [Bijux Proteomics](projects/bijux-proteomics/index.md) -> [Bijux Pollenomics](projects/bijux-pollenomics/index.md) |
+| Learning | [Learning catalog](learning/index.md) -> [Reproducible Research](learning/reproducible-research/index.md) -> [Python Programming](learning/python-programming/index.md) |
+| Shared standards and docs shell | [Platform](platform/index.md) -> [Bijux standard layer](platform/bijux-std/index.md) -> [Shell Architecture](platform/shell-architecture/index.md) |
+
 <div class="bijux-showcase-grid">
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">architecture route</div>
     <h2>Start with the system split</h2>
     <p>You can begin with the system map, then Core and Canon, to review boundaries, runtime structure, and repository ownership.</p>
-    <p><a href="reading-paths.md">See reading paths</a></p>
+    <p><a href="#reading-paths">See reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">delivery route</div>
     <h2>Start with delivery surfaces</h2>
     <p>You can start with Delivery Surfaces, then Atlas, for service design, operational visibility, documentation quality, and published destinations.</p>
-    <p><a href="reading-paths.md">See reading paths</a></p>
+    <p><a href="#reading-paths">See reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">domain route</div>
     <h2>Start where the work gets harder</h2>
     <p>You can open Applied Domains, then Proteomics, Pollenomics, and Learning, to see the same structure under scientific context and public teaching.</p>
-    <p><a href="reading-paths.md">See reading paths</a></p>
+    <p><a href="#reading-paths">See reading paths</a></p>
   </article>
 </div>
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="projects/">Browse the repositories</a>
 <a class="md-button" href="platform/">Read the platform branch</a>
-<a class="md-button" href="reading-paths/">Choose a reading path</a>
+<a class="md-button" href="#reading-paths">Choose a reading path</a>
 </div>
 
 ## Repository Family

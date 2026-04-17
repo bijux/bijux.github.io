@@ -81,6 +81,6 @@ graph LR
 
 ## Routes
 
-For route-first navigation, use [Reading Paths](../../reading-paths.md).
+For route-first navigation, use [Reading Paths](../../index.md#reading-paths).
 This matrix stays focused on repository ownership and responsibility
 boundaries.

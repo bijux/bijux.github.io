@@ -52,7 +52,6 @@ extra:
 nav:
   - Home:
       - Overview: index.md
-      - Reading Paths: reading-paths.md
   - Platform:
       - Overview: platform/index.md
       - Bijux Standard Layer: platform/bijux-std/index.md
