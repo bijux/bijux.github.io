@@ -81,15 +81,6 @@ graph TD
 | Masterclass | learning programs and executable instructional artifacts |
 | bijux-std | shared standards definition and distribution |
 
-## Why The Split Holds Up
-
-This page does not need to claim sophistication directly. That quality
-becomes visible when the split remains coherent across runtime,
-delivery, domain, and learning surfaces without collapsing into one
-vague repository or one oversized story. The map holds up when each
-layer has a stable job and the boundaries still make sense after
-readers open the repository pages.
-
 ## Why The Split Matters
 
 - easier review because each layer has a clear job and inspection route
@@ -106,13 +97,11 @@ readers open the repository pages.
 
 ## Where Responsibility Changes Hands
 
+- Standards -> docs sites: `bijux-std` updates shared shell/check behavior consumed by `bijux.github.io`, project docs sites, and masterclass docs.
 - Platform -> Core: shared boundary and release rules become executable runtime and governance behavior.
 - Core/Canon -> Atlas: internal runtime and knowledge capabilities become public delivery interfaces and reporting routes.
 - Platform/Projects -> Domain products: shared engineering rules are applied to specialized scientific workflows and evidence outputs.
 - Projects -> Learning: repository practices are translated into course books and capstones without changing source ownership.
 
-The system map exists to make the landscape legible before readers dive
-into local detail. It shows how platform guides, project repositories,
-and learning surfaces belong to one designed system where relationships
-are explicit, responsibilities are visible, and complexity is managed
-through structure rather than implication.
+The system map exists to make ownership and handoffs clear before
+reading repository-level detail.
