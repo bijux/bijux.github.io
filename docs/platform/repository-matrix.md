@@ -10,8 +10,7 @@ last_reviewed: 2026-04-12
 # Repository Matrix
 
 This matrix is the shortest route to understanding how the public Bijux
-repositories differ by responsibility, inspection angle, and recurring
-work quality.
+repositories differ by ownership responsibility and repository type.
 
 Repository separation here is a design tool for controlling ownership
 and change, not an organizational preference.
@@ -48,7 +47,7 @@ graph LR
 
 - read each row as a single ownership boundary, not as a feature list
 - use the primary responsibility column to decide the first repository to open
-- use the inspection angle column to decide what evidence to inspect next
+- use the shared standards column to see where behavior is inherited vs locally owned
 
 ## Why These Repositories Are Separate
 
@@ -85,15 +84,3 @@ graph LR
 For route-first navigation, use [Reading Paths](../reading-paths.md).
 This matrix stays focused on repository ownership and responsibility
 boundaries.
-
-## Reading Rule
-
-The matrix helps readers choose the right repository quickly. Repository
-pages and handbook sites become the next step when orientation turns
-into closer inspection.
-
-The repository matrix is meant to show that the split across the Bijux
-family is deliberate, with each repository carrying a distinct
-responsibility, delivery surface, and architectural role. Read together,
-the matrix makes clear that growth and evaluation happen against stable
-ownership boundaries rather than accidental overlap.
