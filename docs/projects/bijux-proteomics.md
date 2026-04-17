@@ -16,6 +16,11 @@ In plain language, this repository helps teams and scientists move from
 discovery workflows to governed software surfaces with clear contracts,
 runtime behavior, and evidence paths.
 
+For scientists and teams, this means turning experiment-driven work into
+repeatable software routes: run discovery workflows, track evidence,
+produce decision-ready outputs, and keep lab-facing planning steps
+traceable over time.
+
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-proteomics/">View Published Docs</a>
 <a class="md-button" href="https://github.com/bijux/bijux-proteomics">View GitHub Repository</a>
@@ -27,6 +32,9 @@ runtime behavior, and evidence paths.
 system rather than a single pipeline. Runtime execution, domain
 contracts, decision intelligence, evidence governance, and lab planning
 are kept as explicit package boundaries.
+Decision intelligence is exposed through the repository's intelligence
+surfaces, while lab planning is exposed through lab-oriented package
+surfaces and documented workflow routes.
 This map summarizes the core technical surfaces in the repository.
 
 ```mermaid
