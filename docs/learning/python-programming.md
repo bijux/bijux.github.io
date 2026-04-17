@@ -25,27 +25,16 @@ standards checks inherited from `bijux-std`.
 
 ## Family Shape
 
-This family shows depth in Python beyond framework familiarity. The
-tracks are organized around real design pressures: ownership and
-invariants, purity and effects, runtime inspection and metaprogramming.
-That makes the teaching surface more revealing than a generic
-"Python course" label.
+This family organizes Python learning by design pressure: object
+boundaries, functional composition, and runtime extensibility.
 
-- object-oriented track: teaches judgment about API boundaries, ownership, and invariants in long-lived class systems.
-- functional track: teaches judgment about separating pure transformations from effectful orchestration for predictable behavior.
-- metaprogramming track: teaches judgment about when runtime customization improves extensibility and when it adds hidden risk.
-
-## Program Map
+## Track Map
 
 ```mermaid
-graph TD
-    program["Python Programming"] --> oop["Object-oriented"]
-    program --> fp["Functional"]
-    program --> meta["Metaprogramming"]
-
-    oop --> interfaces["Interfaces and encapsulation"]
-    fp --> composition["Composition and transformations"]
-    meta --> extensibility["Runtime extensibility"]
+graph LR
+    program["Python Programming"] --> oop["Object-oriented: boundaries and invariants"]
+    program --> fp["Functional: composition and effects"]
+    program --> meta["Metaprogramming: runtime extensibility"]
 ```
 
 <div class="bijux-quicklinks">
@@ -85,13 +74,6 @@ graph TD
 | object-design judgment | [Python Object-Oriented Programming](https://bijux.io/bijux-masterclass/python-programming/python-object-oriented-programming/) and its focus on invariants, roles, persistence, and runtime pressure |
 | functional design maturity | [Python Functional Programming](https://bijux.io/bijux-masterclass/python-programming/python-functional-programming/) and its emphasis on purity, effects, async coordination, and composable systems |
 | runtime and framework honesty | [Python Metaprogramming](https://bijux.io/bijux-masterclass/python-programming/python-meta-programming/) and its focus on introspection, decorators, descriptors, metaclasses, and runtime hooks |
-
-## Best Entry Questions
-
-- you want to assess language depth rather than framework-specific experience
-- you care how software design tradeoffs are explained under real maintenance pressure
-- you want metaprogramming to be treated as engineering design pressure rather than as a bag of tricks
-- you want to inspect teaching material that still feels like engineering work
 
 ## What This Program Refuses To Do
 
