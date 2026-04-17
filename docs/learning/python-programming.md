@@ -14,6 +14,12 @@ object-oriented, functional, and metaprogramming tracks. It teaches
 abstraction and software design without reducing them to framework
 recipes.
 
+## Audience, Level, And Assumptions
+
+- audience: engineers, advanced learners, and working developers who want stronger design judgment in Python.
+- level: intermediate to advanced.
+- assumptions: comfort with core Python syntax, functions, classes, modules, and basic testing workflow.
+
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-masterclass/python-programming/">View Family Docs</a>
 <a class="md-button" href="https://bijux.io/bijux-masterclass/python-programming/python-object-oriented-programming/">View Python Object-Oriented Programming</a>
