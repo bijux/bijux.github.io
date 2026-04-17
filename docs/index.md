@@ -11,7 +11,7 @@ last_reviewed: 2026-04-12
 
 <section class="bijux-hero">
   <div class="bijux-hero__eyebrow">runtime systems, data delivery, scientific products, and technical education</div>
-  <h1 class="bijux-hero__title">Architecture, delivery, and domain work made inspectable.</h1>
+  <h1 class="bijux-hero__title">Bijux is a repository family with clear ownership boundaries.</h1>
   <p class="bijux-hero__lede"><code>bijux.io</code> is the documentation hub for the current Bijux repository family: execution and governance systems, knowledge and data services, applied bioinformatics products, and technical programs. It is arranged so readers can move from orientation into repository handbooks, published destinations, and source surfaces without losing ownership boundaries.</p>
   <div class="bijux-topic-row">
     <span class="bijux-topic-pill">platform architecture</span>
@@ -38,18 +38,14 @@ without merging responsibilities into a single opaque codebase.
 
 | Term | Meaning in this site |
 | --- | --- |
-| runtime governance | The execution rules, controls, and operational constraints that keep system behavior predictable. |
-| delivery surfaces | User-visible outputs such as docs, APIs, reports, and release pathways that must be engineered, not improvised. |
 | ownership boundaries | Explicit repository-level responsibilities that prevent hidden coupling and drift. |
-| inspectable | Structured so an external reader can open docs and source directly and verify how claims map to implementation. |
+| delivery surfaces | User-visible outputs such as docs, APIs, reports, and release pathways that must be engineered, not improvised. |
 
 ## Core Ideas In This System
 
-- Keep runtime behavior deterministic with explicit controls and reviewable execution paths.
-- Treat documentation, contracts, and release behavior as owned delivery outputs.
 - Separate repositories by operating responsibility so boundaries remain stable as systems grow.
-- Apply the same architecture language across platform, domain, and learning surfaces.
-- Keep explanation close to implementation so readers can verify design decisions directly.
+- Treat documentation, contracts, and release behavior as owned delivery outputs.
+- Keep the same engineering language across platform, domain, and learning surfaces.
 
 ## How It Is Organized
 
