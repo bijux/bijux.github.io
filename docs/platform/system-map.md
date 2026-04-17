@@ -51,6 +51,14 @@ graph TD
     std --> masterclass_docs["masterclass docs"]
 ```
 
+## Layer Summary
+
+- Platform: defines the system split, rules, and shared language.
+- Projects: implement runtime, knowledge, delivery, and domain responsibilities.
+- Learning: translates repository practice into teachable program routes.
+- Standards: keeps shared docs shell, checks, and automation aligned through `bijux-std`.
+- Public docs surfaces: consume the shared standards while keeping local content ownership.
+
 ## What Each Layer Owns
 
 ### Conceptual Layers
@@ -60,6 +68,7 @@ graph TD
 | Platform | shared engineering rules, documentation shell, release discipline, and boundary vocabulary | keeps cross-repository behavior stable and inspectable |
 | Projects | runtime systems, knowledge systems, delivery interfaces, and domain products | keeps implementation ownership explicit and reviewable by repository |
 | Learning | course books, deep dives, capstones, and reusable technical explanation | keeps teaching and explanation rigorous without replacing repository ownership |
+| Standards | shared docs shell, shared checks, and shared make behavior | keeps cross-repository continuity explicit and CI-verifiable |
 
 ### Repository Family Roles
 
@@ -70,6 +79,7 @@ graph TD
 | Atlas | delivery interfaces, service outputs, and reporting routes |
 | Proteomics and Pollenomics | domain-specific workflows and evidence-heavy product outputs |
 | Masterclass | learning programs and executable instructional artifacts |
+| bijux-std | shared standards definition and distribution |
 
 ## Why The Split Holds Up
 
