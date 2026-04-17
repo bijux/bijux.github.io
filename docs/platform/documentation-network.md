@@ -9,11 +9,14 @@ last_reviewed: 2026-04-12
 
 # Documentation Network
 
+This network helps readers move across repositories without losing
+orientation.
+
 The documentation network works only if every site behaves like part of
 the same system family. Readers should be able to jump between repos and
 keep the same mental model for where they are and what to do next.
 
-<div class="bijux-callout"><strong>Documentation here is part of the system's control surface.</strong>
+<div class="bijux-callout"><strong>Documentation here is part of the system's navigation and explanation surface.</strong>
 The shared shell keeps navigation and reader expectations stable across
 repositories. That consistency is one way engineering quality becomes
 visible to readers.</div>
