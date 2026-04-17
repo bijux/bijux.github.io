@@ -51,6 +51,8 @@ without merging responsibilities into a single opaque codebase.
 
 The site is organized around repository ownership, then around navigation paths
 for architecture, delivery, and domain-focused reading.
+Shared documentation shell behavior and cross-repository standards checks are
+centrally defined in [Bijux standard layer](platform/bijux-std.md).
 
 ### Reading Approach
 
@@ -73,6 +75,7 @@ graph TD
     bijux["Bijux"] --> platform["Platform"]
     bijux --> projects["Projects"]
     bijux --> learning["Learning"]
+    bijux --> standards["Standards"]
     bijux --> paths["Reading Paths"]
 
     platform --> platform_design["System design"]
@@ -88,6 +91,8 @@ graph TD
 
     learning --> python["Python Programming"]
     learning --> reproducible["Reproducible Research"]
+
+    standards --> std["bijux-std"]
 ```
 
 ## How To Read This Site
@@ -137,3 +142,4 @@ Use one of these route types based on your immediate goal:
 | `bijux-proteomics` | scientific product system | proteomics-oriented packages and runtime surfaces |
 | `bijux-pollenomics` | evidence mapping product system | Nordic atlas outputs, tracked data, and report publication |
 | `bijux-masterclass` | public learning surface | course books and long-form technical programs |
+| `bijux-std` | shared standards layer | shared docs shell, shared checks, and shared make modules |
