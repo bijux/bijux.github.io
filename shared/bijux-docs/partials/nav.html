@@ -60,6 +60,28 @@
   {% set bijux_expand_scoped_groups = true %}
 {% endif %}
 {% import "partials/nav-item.html" as item with context %}
+{% set hub_mobile_titles = ["Home", "Platform", "Projects", "Learning", "Reading Paths"] %}
+{% set mobile_sites_order = "2-sites" if is_bijux_hub_site else "1-sites" %}
+{% set mobile_sites_block %}
+  {% if hub_links %}
+    <section class="bijux-mobile-hub" aria-label="Bijux sites" data-bijux-mobile-order="{{ mobile_sites_order }}">
+      <div class="bijux-mobile-hub__label">Sites</div>
+      <ul class="bijux-mobile-hub__list">
+        {% for entry in hub_links %}
+          {% set item_class = "bijux-mobile-hub__item" %}
+          {% set current = "" %}
+          {% if entry.key == active_repository %}
+            {% set item_class = item_class ~ " bijux-mobile-hub__item--active" %}
+            {% set current = 'aria-current="page"' %}
+          {% endif %}
+          <li class="{{ item_class }}">
+            <a href="{{ entry.url }}" class="bijux-mobile-hub__link" {{ current }}>{{ entry.label }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+{% endset %}
 {% set bijux_primary_section_nav = false %}
 <nav class="{{ class }} bijux-nav bijux-nav--mobile" aria-label="{{ lang.t('nav') }}" data-bijux-nav-variant="mobile" data-bijux-mobile-tree-mode="{{ 'hub-simplified' if is_bijux_hub_site else 'default' }}" data-bijux-hub-site="{{ 'true' if is_bijux_hub_site else 'false' }}" data-md-level="0">
   <label class="md-nav__title bijux-nav__title" for="__drawer">
@@ -78,45 +100,92 @@
       {% include "partials/source.html" %}
     </div>
   {% endif %}
-  {% if hub_links %}
-    <section class="bijux-mobile-hub" aria-label="Bijux sites" data-bijux-mobile-order="1-sites">
-      <div class="bijux-mobile-hub__label">Sites</div>
-      <ul class="bijux-mobile-hub__list">
-        {% for entry in hub_links %}
-          {% set item_class = "bijux-mobile-hub__item" %}
-          {% set current = "" %}
-          {% if entry.key == active_repository %}
-            {% set item_class = item_class ~ " bijux-mobile-hub__item--active" %}
-            {% set current = 'aria-current="page"' %}
+  {% if is_bijux_hub_site %}
+    <section class="bijux-mobile-local" aria-label="Hub sections" data-bijux-mobile-order="1-tree">
+      <div class="bijux-mobile-local__label">Sections</div>
+      <ul class="md-nav__list" data-md-scrollfix>
+        {% set hub_seen_paths = namespace(values=[]) %}
+        {% for section_title in hub_mobile_titles %}
+          {% set section = namespace(item=None) %}
+          {% for nav_item in nav %}
+            {% if section.item is none and nav_item.title | lower == section_title | lower %}
+              {% set section.item = nav_item %}
+            {% endif %}
+          {% endfor %}
+          {% if section.item %}
+            {% set nav_path = (section.item.url | trim("/")) if section.item.url else "" %}
+            {% set _ = hub_seen_paths.values.append(nav_path) %}
+            {% set item_class = "md-nav__item" %}
+            {% set current = "" %}
+            {% if section.item.active %}
+              {% set item_class = item_class ~ " md-nav__item--active" %}
+              {% set current = 'aria-current="page"' %}
+            {% endif %}
+            <li class="{{ item_class }}">
+              <a href="{{ section.item.url | url }}" class="md-nav__link" {{ current }}>{{ section.item.title }}</a>
+              {% if section.item.active and section.item.children %}
+                {% set section_children = namespace(list=section.item.children) %}
+                {% set first_child = section.item.children[0] if section.item.children else none %}
+                {% set first_path = (first_child.url | trim("/")) if first_child and first_child.url else "" %}
+                {% set flatten_landing_wrapper = first_child and first_child.title in ["Home", "Overview"] and first_child.children and first_path == nav_path %}
+                {% if flatten_landing_wrapper %}
+                  {% set section_children.list = first_child.children %}
+                {% endif %}
+                {% set section_child_count = namespace(value=0) %}
+                {% for child in section_children.list %}
+                  {% set section_path = (section.item.url | trim("/")) if section.item.url else "" %}
+                  {% set child_path = (child.url | trim("/")) if child.url else "" %}
+                  {% if child_path != section_path %}
+                    {% set section_child_count.value = section_child_count.value + 1 %}
+                  {% endif %}
+                {% endfor %}
+                {% if section_child_count.value > 0 %}
+                  <nav class="md-nav" aria-label="{{ section.item.title }}">
+                    <ul class="md-nav__list">
+                      {% for child in section_children.list %}
+                        {% set section_path = (section.item.url | trim("/")) if section.item.url else "" %}
+                        {% set child_path = (child.url | trim("/")) if child.url else "" %}
+                        {% if child_path != section_path %}
+                          {% set child_item_class = "md-nav__item" %}
+                          {% set child_current = "" %}
+                          {% if child.active %}
+                            {% set child_item_class = child_item_class ~ " md-nav__item--active" %}
+                            {% set child_current = 'aria-current="page"' %}
+                          {% endif %}
+                          <li class="{{ child_item_class }}">
+                            <a href="{{ child.url | url }}" class="md-nav__link" {{ child_current }}>{{ child.title }}</a>
+                          </li>
+                        {% endif %}
+                      {% endfor %}
+                    </ul>
+                  </nav>
+                {% endif %}
+              {% endif %}
+            </li>
           {% endif %}
-          <li class="{{ item_class }}">
-            <a href="{{ entry.url }}" class="bijux-mobile-hub__link" {{ current }}>{{ entry.label }}</a>
-          </li>
+        {% endfor %}
+        {% for nav_item in nav %}
+          {% set nav_path = (nav_item.url | trim("/")) if nav_item.url else "" %}
+          {% if nav_path not in hub_seen_paths.values %}
+            {% set item_class = "md-nav__item" %}
+            {% set current = "" %}
+            {% if nav_item.active %}
+              {% set item_class = item_class ~ " md-nav__item--active" %}
+              {% set current = 'aria-current="page"' %}
+            {% endif %}
+            <li class="{{ item_class }}">
+              <a href="{{ nav_item.url | url }}" class="md-nav__link" {{ current }}>{{ nav_item.title }}</a>
+            </li>
+          {% endif %}
         {% endfor %}
       </ul>
     </section>
-  {% endif %}
-  <ul class="md-nav__list" data-md-scrollfix data-bijux-mobile-order="2-tree">
-    {% if is_bijux_hub_site %}
-      {% set hub_seen_paths = namespace(values=[]) %}
+    {{ mobile_sites_block }}
+  {% else %}
+    {{ mobile_sites_block }}
+    <ul class="md-nav__list" data-md-scrollfix data-bijux-mobile-order="2-tree">
+      {% set mobile_tree_items = namespace(values=[]) %}
       {% for nav_item in nav %}
-        {% set nav_path = (nav_item.url | trim("/")) if nav_item.url else "" %}
-        {% if nav_item.title != "Home" and nav_path not in hub_seen_paths.values %}
-          {% set _ = hub_seen_paths.values.append(nav_path) %}
-          {% set item_class = "md-nav__item" %}
-          {% set current = "" %}
-          {% if nav_item.active %}
-            {% set item_class = item_class ~ " md-nav__item--active" %}
-            {% set current = 'aria-current="page"' %}
-          {% endif %}
-          <li class="{{ item_class }}">
-            <a href="{{ nav_item.url | url }}" class="md-nav__link" {{ current }}>{{ nav_item.title }}</a>
-          </li>
-        {% endif %}
-      {% endfor %}
-    {% else %}
-      {% for nav_item in nav %}
-        {% set path = "__nav_mobile_" ~ loop.index %}
         {% set first_child = nav_item.children[0] if nav_item.children else none %}
         {% set nav_path = (nav_item.url | trim("/")) if nav_item.url else "" %}
         {% set first_path = (first_child.url | trim("/")) if first_child and first_child.url else "" %}
@@ -125,15 +194,31 @@
           {% for child in first_child.children %}
             {% set child_path = (child.url | trim("/")) if child.url else "" %}
             {% if child_path != nav_path %}
-              {{ item.render(child, path ~ "_flat_" ~ loop.index, 1) }}
+              {% set _ = mobile_tree_items.values.append(child) %}
             {% endif %}
           {% endfor %}
         {% else %}
-          {{ item.render(nav_item, path, 1) }}
+          {% set _ = mobile_tree_items.values.append(nav_item) %}
         {% endif %}
       {% endfor %}
-    {% endif %}
-  </ul>
+      {% if mobile_tree_items.values | length == 0 %}
+        {% for nav_item in nav %}
+          {% set nav_path = (nav_item.url | trim("/")) if nav_item.url else "" %}
+          {% if nav_item.children %}
+            {% for child in nav_item.children %}
+              {% set child_path = (child.url | trim("/")) if child.url else "" %}
+              {% if child_path != nav_path %}
+                {% set _ = mobile_tree_items.values.append(child) %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      {% for mobile_item in mobile_tree_items.values %}
+        {{ item.render(mobile_item, "__nav_mobile_" ~ loop.index, 1) }}
+      {% endfor %}
+    </ul>
+  {% endif %}
 </nav>
 {% set bijux_primary_section_nav = true %}
 {% if not is_bijux_hub_site %}

@@ -8,11 +8,15 @@
 {# SSOT cross-site links source. Phone rendering happens in nav.html drawer, not here. #}
 {% set hub_links = bijux.hub_links if bijux and bijux.hub_links else [] %}
 {% set active_repository = bijux.repository if bijux and bijux.repository else "" %}
+{% set repo_name = config.repo_name if config and config.repo_name else "" %}
 {% set nav_mode = bijux.nav_mode if bijux and bijux.nav_mode else "default" %}
 {% set theme_key = bijux.theme_key if bijux and bijux.theme_key else "bijux:theme" %}
 {% set current_page = page if page is defined else none %}
 {% set is_bijux_hub_site = repo_name == "bijux/bijux.github.io" or active_repository in ["bijux", "bijux.github.io"] %}
 {% set allow_flattened_detail_rows = is_bijux_hub_site %}
+{% set desktop_normal_row_scope = "desktop-normal" %}
+{% set compact_control_band = "normal-tablet" %}
+{% set drawer_control_label = "Open navigation drawer" %}
 {% import "partials/bijux-nav.html" as bijux_nav with context %}
 {% macro site_label(title) -%}
   {% if title == "Repository Handbook" -%}
@@ -40,7 +44,7 @@
     <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" title="{{ config.site_name | e }}" class="md-header__button md-logo" aria-label="{{ config.site_name }}" data-md-component="logo">
       {% include "partials/logo.html" %}
     </a>
-    <label class="md-header__button md-icon" for="__drawer" data-bijux-header-control="drawer-toggle">
+    <label class="md-header__button md-icon" for="__drawer" aria-controls="__drawer" aria-label="{{ drawer_control_label }}" title="{{ drawer_control_label }}" data-bijux-header-control="drawer-toggle" data-bijux-phone-compact="keep">
       {% set icon = config.theme.icon.menu or "material/menu" %}
       {% include ".icons/" ~ icon ~ ".svg" %}
     </label>
@@ -64,7 +68,7 @@
     </div>
     {% if hub_links %}
       {# Keep hub strip in header; responsive CSS controls visibility by viewport profile. #}
-      <nav class="bijux-hub-strip" aria-label="Bijux sites" data-bijux-row-scope="desktop-normal">
+      <nav class="bijux-hub-strip" aria-label="Bijux sites" data-bijux-row-scope="{{ desktop_normal_row_scope }}" data-bijux-phone-compact="hide">
         <ul class="bijux-tabs__list bijux-tabs__list--hub">
           {% for entry in hub_links %}
             {% set item_class = "bijux-tabs__item" %}
@@ -104,7 +108,7 @@
     </div>
   </nav>
   {# Header rows remain desktop/normal; phone navigation is owned by the drawer tree. #}
-  <nav class="md-tabs bijux-site-tabs" aria-label="{{ config.site_name }} navigation" data-bijux-nav-row="site" data-bijux-row-scope="desktop-normal" data-md-component="tabs">
+  <nav class="md-tabs bijux-site-tabs" aria-label="{{ config.site_name }} navigation" data-bijux-nav-row="site" data-bijux-row-scope="{{ desktop_normal_row_scope }}" data-bijux-phone-compact="hide" data-md-component="tabs">
     <div class="md-grid">
       <ul class="md-tabs__list bijux-tabs__list bijux-tabs__list--site">
         {% for nav_item in nav %}
@@ -124,11 +128,12 @@
     </div>
   </nav>
   {% for nav_item in nav %}
+    {% set detail_items = namespace(list=[]) %}
+    {% set detail_root_path = bijux_nav.first_page_path(nav_item) | trim %}
     {% if nav_item.children %}
       {% set promoted_home_wrapper = not allow_flattened_detail_rows and nav_item.children | length == 1 and nav_item.children[0].title == "Home" and nav_item.children[0].children %}
       {% set detail_source = nav_item.children[0].children if promoted_home_wrapper else nav_item.children %}
       {% set detail_root_path = bijux_nav.first_page_path(nav_item.children[0]) | trim if promoted_home_wrapper else bijux_nav.first_page_path(nav_item) | trim %}
-      {% set detail_items = namespace(list=[]) %}
       {% for child in detail_source %}
         {% set child_src_uri = child.file.src_uri if child.file else "" %}
         {% set child_is_index = child.is_index or child_src_uri.endswith('/index.md') or child_src_uri == 'index.md' %}
@@ -151,11 +156,11 @@
     {% endif %}
     {% if detail_items and detail_items.list and (detail_items.list | length > 1 or show_detail_home) %}
       {% set is_hidden = "" if nav_item.active else "hidden" %}
-      <nav class="bijux-detail-tabs" aria-label="{{ nav_item.title }} sections" data-bijux-nav-row="program" data-bijux-row-scope="desktop-normal" data-bijux-detail-strip data-bijux-detail-root-path="{{ bijux_nav.first_page_path(nav_item) | trim }}" {{ is_hidden }}>
+      <nav class="bijux-detail-tabs" aria-label="{{ nav_item.title }} sections" data-bijux-nav-row="program" data-bijux-row-scope="{{ desktop_normal_row_scope }}" data-bijux-phone-compact="hide" data-bijux-detail-strip data-bijux-detail-root-path="{{ bijux_nav.first_page_path(nav_item) | trim }}" {{ is_hidden }}>
         <div class="md-grid">
-          <div class="bijux-detail-select-wrap" data-bijux-compact-control="normal-tablet">
+          <div class="bijux-detail-select-wrap" data-bijux-compact-control="{{ compact_control_band }}">
             <label class="bijux-detail-select-label" for="bijux-detail-select-program-{{ loop.index }}">Section</label>
-            <select class="bijux-detail-select" id="bijux-detail-select-program-{{ loop.index }}" data-bijux-detail-select data-bijux-compact-control="normal-tablet">
+            <select class="bijux-detail-select" id="bijux-detail-select-program-{{ loop.index }}" data-bijux-detail-select data-bijux-compact-control="{{ compact_control_band }}">
               {% if show_detail_home %}
                 {% set option_selected = "selected" if nav_item.active and not detail_active.has_child_active else "" %}
                 <option value="{{ bijux_nav.first_page_url(nav_item) }}" data-bijux-detail-path="{{ bijux_nav.first_page_path(nav_item) | trim }}" {{ option_selected }}>
@@ -202,10 +207,12 @@
     {% endif %}
   {% endfor %}
   {% for nav_item in nav %}
+    {% set detail_source = nav_item.children if nav_item.children else [] %}
+    {% set promoted_home_wrapper = false %}
+    {% set program_index = loop.index %}
     {% if nav_item.children %}
       {% set promoted_home_wrapper = not allow_flattened_detail_rows and nav_item.children | length == 1 and nav_item.children[0].title == "Home" and nav_item.children[0].children %}
       {% set detail_source = nav_item.children[0].children if promoted_home_wrapper else nav_item.children %}
-      {% set program_index = loop.index %}
       {% for course_item in detail_source %}
         {% set course_detail_items = namespace(list=[]) %}
         {% if course_item.children %}
@@ -234,11 +241,11 @@
         {% if course_item.children and course_detail_items.list and (allow_flattened_detail_rows and course_detail_items.list | length > 1 or (not allow_flattened_detail_rows and course_detail_items.list | length > 0)) %}
           {% set course_active = course_item.active or (current_page and course_item.pages and current_page in course_item.pages) %}
           {% set is_hidden = "" if nav_item.active and course_active else "hidden" %}
-          <nav class="bijux-detail-tabs bijux-course-tabs" aria-label="{{ course_item.title }} course sections" data-bijux-nav-row="course" data-bijux-row-scope="desktop-normal" data-bijux-course-strip data-bijux-course-root-path="{{ bijux_nav.first_page_path(course_item) | trim }}" data-bijux-course-title="{{ course_item.title }}" {{ is_hidden }}>
+          <nav class="bijux-detail-tabs bijux-course-tabs" aria-label="{{ course_item.title }} course sections" data-bijux-nav-row="course" data-bijux-row-scope="{{ desktop_normal_row_scope }}" data-bijux-phone-compact="hide" data-bijux-course-strip data-bijux-course-root-path="{{ bijux_nav.first_page_path(course_item) | trim }}" data-bijux-course-title="{{ course_item.title }}" {{ is_hidden }}>
             <div class="md-grid">
-              <div class="bijux-detail-select-wrap" data-bijux-compact-control="normal-tablet">
+              <div class="bijux-detail-select-wrap" data-bijux-compact-control="{{ compact_control_band }}">
                 <label class="bijux-detail-select-label" for="bijux-detail-select-course-{{ program_index }}-{{ loop.index }}">Section</label>
-                <select class="bijux-detail-select" id="bijux-detail-select-course-{{ program_index }}-{{ loop.index }}" data-bijux-detail-select data-bijux-compact-control="normal-tablet">
+                <select class="bijux-detail-select" id="bijux-detail-select-course-{{ program_index }}-{{ loop.index }}" data-bijux-detail-select data-bijux-compact-control="{{ compact_control_band }}">
                   {% if show_course_home %}
                     {% set option_selected = "selected" if course_active and not course_active_item.has_child_active else "" %}
                     <option value="{{ bijux_nav.first_page_url(course_item) }}" data-bijux-course-path="{{ bijux_nav.first_page_path(course_item) | trim }}" {{ option_selected }}>
