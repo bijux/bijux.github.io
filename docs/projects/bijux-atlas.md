@@ -9,8 +9,8 @@ last_reviewed: 2026-04-12
 
 # Bijux Atlas
 
-Atlas is the Bijux delivery surface for immutable datasets, APIs,
-service contracts, and operated documentation.
+Bijux Atlas publishes and operates delivery-facing interfaces for
+datasets, APIs, service contracts, and operated documentation.
 
 `bijux-atlas` is the delivery and operational surface for services,
 datasets, APIs, and docs control-plane behavior. It is a direct route in
@@ -19,6 +19,10 @@ visibility.
 It exists to keep queryable delivery, immutable artifacts, service
 contracts, and publication surfaces visible as first-class engineering
 boundaries.
+
+Shared standards note: Atlas consumes shared docs shell behavior and
+cross-repository checks from `bijux-std`; Atlas owns its local
+service/data contracts and delivery operations.
 
 Concrete Atlas surfaces include:
 
@@ -41,6 +45,10 @@ rather than a loose data tool. The repository
 publishes a CLI, server, OpenAPI export surface, and maintainer control
 plane around governed genomics dataset delivery and immutable query
 artifacts.
+
+Inherited vs local ownership: navigation shell and baseline docs/check
+standards come from `bijux-std`, while Atlas owns API behavior, dataset
+publication contracts, and service operations.
 
 ## System Map
 
