@@ -1,5 +1,5 @@
 ---
-title: Shell Architecture
+title: Shared Documentation Shell
 audience: mixed
 type: guide
 status: canonical
@@ -7,10 +7,11 @@ owner: bijux-docs
 last_reviewed: 2026-04-17
 ---
 
-# Shell Architecture
+# Shared Documentation Shell
 
-The shared shell exists to preserve navigation consistency and reduce
-cross-repository drift across Bijux documentation sites.
+The shared documentation shell is canonically owned in `bijux-std`. It
+exists to preserve navigation consistency and reduce cross-repository
+drift across Bijux documentation sites.
 
 The shell is the common navigation and explanation layer used across
 Bijux docs surfaces. It keeps the top navigation model, style behavior,
