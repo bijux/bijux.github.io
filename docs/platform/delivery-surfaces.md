@@ -64,35 +64,27 @@ original implementation team.
 ## Main Routes
 
 <div class="bijux-panel-grid">
-  <div class="bijux-panel"><h3>Core</h3><p>Inspect the CLI, DAG, evidence, and release handbooks to see how repository-wide runtime and governance concerns are modeled explicitly rather than hidden in scripts and convention.</p></div>
-  <div class="bijux-panel"><h3>Canon</h3><p>Inspect the package split across ingest, indexing, reasoning, orchestration, and controlled runtime behavior to see how knowledge-system boundaries are expressed directly in the docs and repository structure.</p></div>
-  <div class="bijux-panel"><h3>Atlas</h3><p>Inspect the delivery and reporting surfaces to see how APIs, datasets, docs checks, and operational workflows are treated as maintained product surfaces instead of side utilities.</p></div>
+  <div class="bijux-panel"><h3>Core</h3><p>Inspect CLI, DAG, evidence, and release handbooks for runtime and governance delivery boundaries.</p></div>
+  <div class="bijux-panel"><h3>Canon</h3><p>Inspect ingest, indexing, reasoning, and orchestration package boundaries in docs and source layout.</p></div>
+  <div class="bijux-panel"><h3>Atlas</h3><p>Inspect APIs, datasets, docs checks, and operational routes as maintained product delivery surfaces.</p></div>
 </div>
 
 ## Where To Inspect
 
 ### Fast Checks
 
-- open one repository handbook and verify that ownership and operating boundaries are explicit
-- open [Public surface](public-surface.md) and confirm published destinations map to maintained repositories
+- open one repository handbook and verify ownership boundaries are explicit
+- open [Public surface](public-surface.md) and confirm destinations map to maintained repositories
 
 ### Medium Checks
 
-- inspect package and release workflow docs to confirm publication boundaries are documented
-- inspect contract or schema references to verify compatibility promises are explicit
+- inspect package and release workflow docs for clear publication boundaries
+- inspect contract or schema references for explicit compatibility promises
 
 ### Deep Checks
 
-- follow a release or validation path end to end and confirm checks are reproducible
-- compare docs claims against automation entry points to verify delivery behavior is not only narrative
-
-## What To Check
-
-What matters most is not any single badge, workflow, or diagram. It is
-the consistency between the public story and the public files. If a
-page claims systems thinking, the repositories should show bounded
-systems. If it claims delivery discipline, the docs and release
-surfaces should withstand basic scrutiny.
+- follow one release or validation path end to end and confirm reproducible checks
+- compare docs claims against automation entry points
 
 ## Fast Routes
 
@@ -108,9 +100,3 @@ surfaces should withstand basic scrutiny.
 - you want direct routes into the strongest delivery-oriented material
 - you care more about concrete surfaces than summary alone
 - you want to understand why the public docs are treated as part of delivery rather than an afterthought
-
-Delivery is where architecture stops being intention and becomes
-something others can inspect and rely on. Public docs, contracts,
-release behavior, and published artifacts are treated here as system
-components, because they are where boundary clarity and engineering
-rigor are tested under real use and real change.
