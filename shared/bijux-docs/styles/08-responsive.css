@@ -115,12 +115,17 @@
     min-width: 2.5rem;
     padding: 0.3rem;
     position: relative;
-    z-index: 4;
+    z-index: 5;
   }
 
   [data-bijux-phone-compact="true"] [data-bijux-header-title="primary"] {
     flex: 1 1 auto;
     min-width: 0;
+    pointer-events: none;
+  }
+
+  [data-bijux-phone-compact="true"] .md-header__ellipsis {
+    overflow: hidden;
   }
 
   [data-bijux-phone-compact="true"] [data-bijux-phone-compact="hide"] {
@@ -154,6 +159,7 @@
     display: block;
   }
 
+  .bijux-mobile-local,
   .bijux-mobile-hub,
   .bijux-mobile-context {
     display: block;
@@ -162,6 +168,10 @@
   .bijux-mobile-local,
   .bijux-mobile-hub {
     margin-block: 0.24rem 0.32rem;
+  }
+
+  .bijux-nav--mobile [data-bijux-mobile-order^="1-"] {
+    margin-top: 0.12rem;
   }
 
   .bijux-nav--mobile [data-bijux-mobile-order$="-sites"] {
@@ -179,13 +189,14 @@
   .bijux-mobile-hub__label {
     font-size: 0.58rem;
     letter-spacing: 0.07em;
+    line-height: 1.12;
     margin-bottom: 0.22rem;
   }
 
   .bijux-mobile-hub__list {
     display: grid;
-    gap: 0.32rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.3rem;
+    grid-template-columns: 1fr;
   }
 
   .bijux-mobile-hub__link {
@@ -251,6 +262,7 @@
 
   .md-sidebar--primary {
     inline-size: min(18.75rem, 90vw);
+    min-width: min(17.5rem, 88vw);
     max-width: 90vw;
     max-height: calc(100vh - var(--md-header-height));
     overflow-y: auto;
@@ -266,6 +278,12 @@
 
   .md-sidebar--primary .md-sidebar__inner {
     padding-top: 0.1rem;
+  }
+}
+
+@media screen and (min-width: 26em) and (max-width: 47.9375em) {
+  .bijux-mobile-hub__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -295,8 +313,10 @@
 [data-bijux-viewport="phone"] .md-sidebar--primary {
   display: block;
   inline-size: min(18.75rem, 90vw);
+  min-width: min(17.5rem, 88vw);
   max-width: 90vw;
   max-height: calc(100vh - var(--md-header-height));
+  -webkit-overflow-scrolling: touch;
   overflow-y: auto;
   scrollbar-gutter: stable;
 }
@@ -317,7 +337,18 @@
   }
 
   .bijux-hub-strip {
-    display: none;
+    display: block;
+  }
+
+  .bijux-hub-strip .bijux-tabs__list--hub {
+    gap: 0.24rem 0.3rem;
+    padding-block: 0.24rem;
+  }
+
+  .bijux-hub-strip .bijux-tabs__link--hub {
+    font-size: 0.66rem;
+    min-height: 2rem;
+    padding: 0.3rem 0.56rem;
   }
 
   .bijux-site-tabs,
@@ -408,6 +439,12 @@
 }
 
 [data-bijux-viewport="normal"] .md-sidebar--primary .bijux-nav--mobile {
+  display: none;
+}
+
+[data-bijux-viewport="normal"] .bijux-mobile-local,
+[data-bijux-viewport="normal"] .bijux-mobile-hub,
+[data-bijux-viewport="normal"] .bijux-mobile-context {
   display: none;
 }
 

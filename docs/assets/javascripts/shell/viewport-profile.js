@@ -7,15 +7,19 @@
   const PHONE_MAX_MEDIA = "(max-width: 47.9375em)";
   const NORMAL_MAX_MEDIA = "(max-width: 76.2344em)";
   const WIDE_MIN_MEDIA = "(min-width: 120em)";
+  const VIEWPORT_PROFILE_SOURCE = "shared/bijux-docs/scripts/viewport-profile.js";
+  const VIEWPORT_PROFILE_REVISION = "2026-04-17";
   const VIEWPORT_PROFILES = Object.freeze({
     PHONE: "phone",
     NORMAL: "normal",
     DESKTOP: "desktop",
     WIDE: "wide",
   });
-  const PHONE_MAX_EM = 47.9375;
-  const NORMAL_MAX_EM = 76.2344;
-  const WIDE_MIN_EM = 120;
+  const PROFILE_BOUNDARIES_EM = Object.freeze({
+    PHONE_MAX: 47.9375,
+    NORMAL_MAX: 76.2344,
+    WIDE_MIN: 120,
+  });
   const MEDIA_QUERY_BASE_FONT_PX = 16;
   const REFERENCE_WIDTHS = Object.freeze({
     phone390: 390,
@@ -23,6 +27,13 @@
     normal1024: 1024,
     desktop1280: 1280,
     wide1920: 1920,
+  });
+  const REFERENCE_PROFILE_EXPECTATIONS = Object.freeze({
+    390: VIEWPORT_PROFILES.PHONE,
+    768: VIEWPORT_PROFILES.NORMAL,
+    1024: VIEWPORT_PROFILES.NORMAL,
+    1280: VIEWPORT_PROFILES.DESKTOP,
+    1920: VIEWPORT_PROFILES.WIDE,
   });
 
   function mediaMatches(query) {
@@ -35,33 +46,85 @@
     return em * MEDIA_QUERY_BASE_FONT_PX;
   }
 
+  function normalizeViewportWidth(width) {
+    if (!Number.isFinite(width) || width <= 0) {
+      return Number.NaN;
+    }
+    return Math.round(width * 100) / 100;
+  }
+
   function currentViewportWidth() {
-    if (typeof document.documentElement?.clientWidth === "number" && document.documentElement.clientWidth > 0) {
-      return document.documentElement.clientWidth;
+    const documentWidth = normalizeViewportWidth(document.documentElement?.clientWidth);
+    const visualViewportWidth = normalizeViewportWidth(window.visualViewport?.width);
+    const innerWidth = normalizeViewportWidth(window.innerWidth);
+
+    if (Number.isFinite(documentWidth) && Number.isFinite(visualViewportWidth)) {
+      // On mobile browsers during URL-bar transitions, the two values can diverge briefly.
+      // Using the narrower width avoids classifying as a larger layout band too early.
+      return Math.min(documentWidth, visualViewportWidth);
     }
-    if (typeof window.innerWidth === "number") {
-      return window.innerWidth;
+
+    if (Number.isFinite(documentWidth)) {
+      return documentWidth;
     }
-    if (window.visualViewport && typeof window.visualViewport.width === "number") {
-      return window.visualViewport.width;
+
+    if (Number.isFinite(visualViewportWidth)) {
+      return visualViewportWidth;
     }
+
+    if (Number.isFinite(innerWidth)) {
+      return innerWidth;
+    }
+
     return Number.NaN;
   }
 
   function classifyViewportWidth(width) {
-    if (!Number.isFinite(width) || width <= 0) {
+    const normalizedWidth = normalizeViewportWidth(width);
+    if (!Number.isFinite(normalizedWidth)) {
       return VIEWPORT_PROFILES.DESKTOP;
     }
-    if (width <= toPixelsFromEm(PHONE_MAX_EM)) {
+    if (normalizedWidth <= toPixelsFromEm(PROFILE_BOUNDARIES_EM.PHONE_MAX)) {
       return VIEWPORT_PROFILES.PHONE;
     }
-    if (width >= toPixelsFromEm(WIDE_MIN_EM)) {
+    if (normalizedWidth >= toPixelsFromEm(PROFILE_BOUNDARIES_EM.WIDE_MIN)) {
       return VIEWPORT_PROFILES.WIDE;
     }
-    if (width <= toPixelsFromEm(NORMAL_MAX_EM)) {
+    if (normalizedWidth <= toPixelsFromEm(PROFILE_BOUNDARIES_EM.NORMAL_MAX)) {
       return VIEWPORT_PROFILES.NORMAL;
     }
     return VIEWPORT_PROFILES.DESKTOP;
+  }
+
+  function resolveReferenceProfiles() {
+    return {
+      390: classifyViewportWidth(REFERENCE_WIDTHS.phone390),
+      768: classifyViewportWidth(REFERENCE_WIDTHS.normal768),
+      1024: classifyViewportWidth(REFERENCE_WIDTHS.normal1024),
+      1280: classifyViewportWidth(REFERENCE_WIDTHS.desktop1280),
+      1920: classifyViewportWidth(REFERENCE_WIDTHS.wide1920),
+    };
+  }
+
+  function verifyReferenceContract() {
+    const actual = resolveReferenceProfiles();
+    const mismatches = Object.keys(REFERENCE_PROFILE_EXPECTATIONS).reduce((result, widthKey) => {
+      const expectedProfile = REFERENCE_PROFILE_EXPECTATIONS[widthKey];
+      const actualProfile = actual[widthKey];
+      if (actualProfile !== expectedProfile) {
+        result[widthKey] = {
+          expected: expectedProfile,
+          actual: actualProfile,
+        };
+      }
+      return result;
+    }, {});
+    return {
+      ok: Object.keys(mismatches).length === 0,
+      expected: { ...REFERENCE_PROFILE_EXPECTATIONS },
+      actual,
+      mismatches,
+    };
   }
 
   function resolveViewportProfile() {
@@ -92,6 +155,12 @@
     }
     if (target.getAttribute("data-bijux-viewport") !== profile) {
       target.setAttribute("data-bijux-viewport", profile);
+    }
+    if (target.getAttribute("data-bijux-viewport-source") !== VIEWPORT_PROFILE_SOURCE) {
+      target.setAttribute("data-bijux-viewport-source", VIEWPORT_PROFILE_SOURCE);
+    }
+    if (target.getAttribute("data-bijux-viewport-revision") !== VIEWPORT_PROFILE_REVISION) {
+      target.setAttribute("data-bijux-viewport-revision", VIEWPORT_PROFILE_REVISION);
     }
   }
 
@@ -125,6 +194,7 @@
     window.__bijuxViewportBound = true;
 
     let rafId = 0;
+    let settleTimerId = 0;
     const scheduleApply = () => {
       if (rafId !== 0) {
         return;
@@ -135,10 +205,41 @@
         applyViewportProfile();
       });
     };
+    const scheduleApplyAfterSettle = () => {
+      scheduleApply();
+      if (settleTimerId !== 0) {
+        window.clearTimeout(settleTimerId);
+      }
+      // Some phone browsers update final width a moment after orientation events.
+      settleTimerId = window.setTimeout(() => {
+        settleTimerId = 0;
+        scheduleApply();
+      }, 140);
+    };
+    const clearPendingUpdates = () => {
+      if (rafId !== 0) {
+        window.cancelAnimationFrame(rafId);
+        rafId = 0;
+      }
+      if (settleTimerId !== 0) {
+        window.clearTimeout(settleTimerId);
+        settleTimerId = 0;
+      }
+    };
 
     window.addEventListener("resize", scheduleApply, { passive: true });
-    window.addEventListener("orientationchange", scheduleApply, { passive: true });
-    window.addEventListener("pageshow", scheduleApply, { passive: true });
+    window.addEventListener("orientationchange", scheduleApplyAfterSettle, { passive: true });
+    window.addEventListener("pageshow", scheduleApplyAfterSettle, { passive: true });
+    window.addEventListener(
+      "visibilitychange",
+      () => {
+        if (document.visibilityState === "visible") {
+          scheduleApply();
+        }
+      },
+      { passive: true }
+    );
+    window.addEventListener("pagehide", clearPendingUpdates, { passive: true });
 
     if (window.visualViewport && typeof window.visualViewport.addEventListener === "function") {
       window.visualViewport.addEventListener("resize", scheduleApply, { passive: true });
@@ -159,6 +260,10 @@
   function init() {
     applyViewportProfile();
     bindViewportUpdates();
+    const verification = verifyReferenceContract();
+    if (!verification.ok && typeof console !== "undefined" && typeof console.warn === "function") {
+      console.warn("[bijux][viewport-profile] Reference width contract mismatch", verification);
+    }
   }
 
   function initWithFallback() {
@@ -184,25 +289,18 @@
       normalMax: NORMAL_MAX_MEDIA,
       wideMin: WIDE_MIN_MEDIA,
     },
-    verifyReferenceWidths: () => ({
-      390: classifyViewportWidth(REFERENCE_WIDTHS.phone390),
-      768: classifyViewportWidth(REFERENCE_WIDTHS.normal768),
-      1024: classifyViewportWidth(REFERENCE_WIDTHS.normal1024),
-      1280: classifyViewportWidth(REFERENCE_WIDTHS.desktop1280),
-      1920: classifyViewportWidth(REFERENCE_WIDTHS.wide1920),
-    }),
+    source: VIEWPORT_PROFILE_SOURCE,
+    revision: VIEWPORT_PROFILE_REVISION,
+    signature: `${VIEWPORT_PROFILE_SOURCE}@${VIEWPORT_PROFILE_REVISION}`,
+    verifyReferenceWidths: resolveReferenceProfiles,
+    verifyContract: verifyReferenceContract,
+    referenceExpectations: () => ({ ...REFERENCE_PROFILE_EXPECTATIONS }),
     describe: () => {
       const profile = resolveViewportProfile();
       return {
         profile,
         width: currentViewportWidth(),
-        references: {
-          390: classifyViewportWidth(REFERENCE_WIDTHS.phone390),
-          768: classifyViewportWidth(REFERENCE_WIDTHS.normal768),
-          1024: classifyViewportWidth(REFERENCE_WIDTHS.normal1024),
-          1280: classifyViewportWidth(REFERENCE_WIDTHS.desktop1280),
-          1920: classifyViewportWidth(REFERENCE_WIDTHS.wide1920),
-        },
+        references: resolveReferenceProfiles(),
         matches: {
           phone: profile === VIEWPORT_PROFILES.PHONE,
           normalBand: profile === VIEWPORT_PROFILES.NORMAL,
@@ -215,9 +313,9 @@
           wideMin: mediaMatches(WIDE_MIN_MEDIA),
         },
         thresholdsPx: {
-          phoneMax: toPixelsFromEm(PHONE_MAX_EM),
-          normalMax: toPixelsFromEm(NORMAL_MAX_EM),
-          wideMin: toPixelsFromEm(WIDE_MIN_EM),
+          phoneMax: toPixelsFromEm(PROFILE_BOUNDARIES_EM.PHONE_MAX),
+          normalMax: toPixelsFromEm(PROFILE_BOUNDARIES_EM.NORMAL_MAX),
+          wideMin: toPixelsFromEm(PROFILE_BOUNDARIES_EM.WIDE_MIN),
         },
       };
     },
