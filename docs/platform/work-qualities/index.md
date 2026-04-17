@@ -34,23 +34,23 @@ graph TD
 
 | Quality | Verification question | Evidence anchors |
 | --- | --- | --- |
-| Bounded ownership | Are responsibilities split cleanly so repository boundaries stay non-overlapping under change? | [Repository matrix](repository-matrix.md) |
-| Delivery discipline and standards continuity | Are documentation, release behavior, publication routes, and shared standards kept aligned across repositories? | [Delivery surfaces](delivery-surfaces.md) |
-| Domain pressure handling | Does the structure stay coherent when scientific workflows and evidence-heavy interpretation are required? | [Applied domains](applied-domains.md) |
-| Explainable depth | Can architecture and workflow decisions be taught with runnable materials instead of only summaries? | [Learning catalog](../learning/index.md) |
+| Bounded ownership | Are responsibilities split cleanly so repository boundaries stay non-overlapping under change? | [Repository matrix](../repository-matrix/index.md) |
+| Delivery discipline and standards continuity | Are documentation, release behavior, publication routes, and shared standards kept aligned across repositories? | [Delivery surfaces](../delivery-surfaces/index.md) |
+| Domain pressure handling | Does the structure stay coherent when scientific workflows and evidence-heavy interpretation are required? | [Applied domains](../applied-domains/index.md) |
+| Explainable depth | Can architecture and workflow decisions be taught with runnable materials instead of only summaries? | [Learning catalog](../../learning/index.md) |
 
 Shared continuity is enforced through the standards layer in
-[Bijux standard layer](bijux-std.md), not only by local repository
+[Bijux standard layer](../bijux-std/index.md), not only by local repository
 habits.
 
 ## Failure Signals When A Quality Is Missing
 
 | Quality | Concrete failure signal | Where to inspect the opposite |
 | --- | --- | --- |
-| Bounded ownership | one repository starts absorbing runtime, delivery, and domain concerns in the same change stream | [Repository matrix](repository-matrix.md), [System map](system-map.md) |
-| Delivery discipline | docs promise routes or release behavior that cannot be matched to maintained automation and destinations | [Delivery surfaces](delivery-surfaces.md), [Public surface](public-surface.md) |
-| Domain pressure handling | scientific workflows are carried by one-off scripts with weak evidence or publication contracts | [Applied domains](applied-domains.md), [Bijux Proteomics](../projects/bijux-proteomics.md), [Bijux Pollenomics](../projects/bijux-pollenomics.md) |
-| Explainable depth | teaching material becomes disconnected from runnable artifacts and repository trade-offs | [Learning catalog](../learning/index.md), [Reproducible Research](../learning/reproducible-research.md) |
+| Bounded ownership | one repository starts absorbing runtime, delivery, and domain concerns in the same change stream | [Repository matrix](../repository-matrix/index.md), [System map](../system-map/index.md) |
+| Delivery discipline | docs promise routes or release behavior that cannot be matched to maintained automation and destinations | [Delivery surfaces](../delivery-surfaces/index.md), [Public surface](../public-surface/index.md) |
+| Domain pressure handling | scientific workflows are carried by one-off scripts with weak evidence or publication contracts | [Applied domains](../applied-domains/index.md), [Bijux Proteomics](../../projects/bijux-proteomics.md), [Bijux Pollenomics](../../projects/bijux-pollenomics.md) |
+| Explainable depth | teaching material becomes disconnected from runnable artifacts and repository trade-offs | [Learning catalog](../../learning/index.md), [Reproducible Research](../../learning/reproducible-research.md) |
 
 ## Why These Qualities Recur
 

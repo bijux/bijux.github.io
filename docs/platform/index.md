@@ -69,10 +69,10 @@ graph TD
 
 ## Where To Inspect Evidence
 
-- repository ownership and split intent: [Repository matrix](repository-matrix.md)
-- layer boundaries and responsibility flow: [System map](system-map.md)
-- delivery and publication posture: [Delivery surfaces](delivery-surfaces.md)
-- recurring standards that remain stable across repositories: [Work qualities](work-qualities.md)
+- repository ownership and split intent: [Repository matrix](repository-matrix/index.md)
+- layer boundaries and responsibility flow: [System map](system-map/index.md)
+- delivery and publication posture: [Delivery surfaces](delivery-surfaces/index.md)
+- recurring standards that remain stable across repositories: [Work qualities](work-qualities/index.md)
 
 ## Principles
 
@@ -97,12 +97,12 @@ graph TD
 
 | Read this first when you need to understand... | Open |
 | --- | --- |
-| where shared standards are defined and verified across repositories | [Bijux standard layer](bijux-std.md) |
-| which qualities recur across the public work | [Work qualities](work-qualities.md) |
-| the layered structure of the whole public system family | [System map](system-map.md) |
-| the repository split at a glance | [Repository matrix](repository-matrix.md) |
-| where delivery work shows up most clearly across the repositories | [Delivery surfaces](delivery-surfaces.md) |
-| how the engineering extends into domain-heavy product work | [Applied domains](applied-domains.md) |
-| the broader operating context behind the current repository family | [Operating context](operating-context.md) |
-| why the docs shell is shared instead of duplicated carelessly | [Documentation network](documentation-network.md) |
-| which public destinations exist today | [Public surface](public-surface.md) |
+| where shared standards are defined and verified across repositories | [Bijux standard layer](bijux-std/index.md) |
+| which qualities recur across the public work | [Work qualities](work-qualities/index.md) |
+| the layered structure of the whole public system family | [System map](system-map/index.md) |
+| the repository split at a glance | [Repository matrix](repository-matrix/index.md) |
+| where delivery work shows up most clearly across the repositories | [Delivery surfaces](delivery-surfaces/index.md) |
+| how the engineering extends into domain-heavy product work | [Applied domains](applied-domains/index.md) |
+| the broader operating context behind the current repository family | [Operating context](operating-context/index.md) |
+| why the docs shell is shared instead of duplicated carelessly | [Documentation network](documentation-network/index.md) |
+| which public destinations exist today | [Public surface](public-surface/index.md) |

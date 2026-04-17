@@ -83,8 +83,8 @@ graph TD
 
 | Surface | Purpose | Use this when | What becomes visible here |
 | --- | --- | --- | --- |
-| [Projects index](../projects/index.md) | overview of repository roles in one place | you want a fast map before selecting a destination | repository family roles and cross-links |
-| [Bijux Core](../projects/bijux-core.md), [Bijux Canon](../projects/bijux-canon.md), [Bijux Atlas](../projects/bijux-atlas.md), [Bijux Proteomics](../projects/bijux-proteomics.md), [Bijux Pollenomics](../projects/bijux-pollenomics.md), [Learning index](../learning/index.md) | project-level summaries and route hints | you want role context before opening repo docs or source | role intent, key surfaces, and suggested entry routes |
+| [Projects index](../../projects/index.md) | overview of repository roles in one place | you want a fast map before selecting a destination | repository family roles and cross-links |
+| [Bijux Core](../../projects/bijux-core.md), [Bijux Canon](../../projects/bijux-canon.md), [Bijux Atlas](../../projects/bijux-atlas.md), [Bijux Proteomics](../../projects/bijux-proteomics.md), [Bijux Pollenomics](../../projects/bijux-pollenomics.md), [Learning index](../../learning/index.md) | project-level summaries and route hints | you want role context before opening repo docs or source | role intent, key surfaces, and suggested entry routes |
 
 ## What This Page Makes Visible
 
@@ -103,14 +103,14 @@ graph LR
 
 ## Start Here
 
-Start with the hub and [System Map](system-map.md) before opening source
+Start with the hub and [System Map](../system-map/index.md) before opening source
 repositories.
 
 | If your question is... | Open first | Then open |
 | --- | --- | --- |
-| where should I begin? | [bijux.github.io](https://github.com/bijux/bijux.github.io) | [System Map](system-map.md) |
-| which repository owns this concern? | [Projects index](../projects/index.md) | matching project page |
-| where are shared shell and standards owned? | [bijux-std](https://github.com/bijux/bijux-std) | [Shared Documentation Shell](shell-architecture.md) |
+| where should I begin? | [bijux.github.io](https://github.com/bijux/bijux.github.io) | [System Map](../system-map/index.md) |
+| which repository owns this concern? | [Projects index](../../projects/index.md) | matching project page |
+| where are shared shell and standards owned? | [bijux-std](https://github.com/bijux/bijux-std) | [Shared Documentation Shell](../shell-architecture/index.md) |
 | where can I inspect implementation details? | matching repository docs site | matching source repository |
 
 Use this page as an index: pick the surface type, then move to the

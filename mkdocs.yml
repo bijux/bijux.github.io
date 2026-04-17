@@ -55,16 +55,16 @@ nav:
       - Reading Paths: reading-paths.md
   - Platform:
       - Overview: platform/index.md
-      - Bijux Standard Layer: platform/bijux-std.md
-      - Work Qualities: platform/work-qualities.md
-      - System Map: platform/system-map.md
-      - Repository Matrix: platform/repository-matrix.md
-      - Delivery Surfaces: platform/delivery-surfaces.md
-      - Applied Domains: platform/applied-domains.md
-      - Operating Context: platform/operating-context.md
-      - Documentation Network: platform/documentation-network.md
-      - Shell Architecture: platform/shell-architecture.md
-      - Public Surface: platform/public-surface.md
+      - Bijux Standard Layer: platform/bijux-std/index.md
+      - Work Qualities: platform/work-qualities/index.md
+      - System Map: platform/system-map/index.md
+      - Repository Matrix: platform/repository-matrix/index.md
+      - Delivery Surfaces: platform/delivery-surfaces/index.md
+      - Applied Domains: platform/applied-domains/index.md
+      - Operating Context: platform/operating-context/index.md
+      - Documentation Network: platform/documentation-network/index.md
+      - Shell Architecture: platform/shell-architecture/index.md
+      - Public Surface: platform/public-surface/index.md
   - Projects:
       - Overview: projects/index.md
       - Bijux Core: projects/bijux-core.md

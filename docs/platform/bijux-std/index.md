@@ -120,9 +120,9 @@ If the shared layer is working well:
 
 ## Where To Go Next
 
-- [Documentation Network](documentation-network.md)
-- [Shell Architecture](shell-architecture.md)
-- [Repository Matrix](repository-matrix.md)
+- [Documentation Network](../documentation-network/index.md)
+- [Shell Architecture](../shell-architecture/index.md)
+- [Repository Matrix](../repository-matrix/index.md)
 
 ## In One Sentence
 

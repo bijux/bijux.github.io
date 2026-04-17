@@ -61,13 +61,13 @@ graph LR
 
 | Repository | Repository type | Primary responsibility | What it owns publicly | Consumes shared standards | Start here |
 | --- | --- | --- | --- | --- | --- |
-| `bijux-std` | standards source | own shared standards, documentation shell contracts, and cross-repository quality checks | shared contracts, quality gates, and documentation shell source used by the family | no; this repository is the standards source | [Repository page](bijux-std.md) |
-| `bijux-core` | platform runtime repository | own runtime authority and release discipline | CLI surfaces, DAG runtime, evidence artifacts, release rules | yes | [Project page](../projects/bijux-core.md) |
-| `bijux-canon` | governed knowledge repository | own knowledge-system orchestration boundaries | ingest/index/reason/orchestrate package boundaries | yes | [Project page](../projects/bijux-canon.md) |
-| `bijux-atlas` | delivery repository | own public delivery interfaces and contracts | APIs, datasets, reporting, docs-aware operational routes | yes | [Project page](../projects/bijux-atlas.md) |
-| `bijux-proteomics` | scientific application repository | own proteomics product workflows | proteomics domain workflows and reproducible product routes | yes | [Project page](../projects/bijux-proteomics.md) |
-| `bijux-pollenomics` | scientific application repository | own evidence-mapping product workflows | archaeology/eDNA/aDNA evidence surfaces and site-selection outputs | yes | [Project page](../projects/bijux-pollenomics.md) |
-| `bijux-masterclass` | learning and teaching repository | own structured technical learning programs | sequenced programs, deep dives, and runnable learning materials | yes | [Learning catalog](../learning/index.md) |
+| `bijux-std` | standards source | own shared standards, documentation shell contracts, and cross-repository quality checks | shared contracts, quality gates, and documentation shell source used by the family | no; this repository is the standards source | [Repository page](../bijux-std/index.md) |
+| `bijux-core` | platform runtime repository | own runtime authority and release discipline | CLI surfaces, DAG runtime, evidence artifacts, release rules | yes | [Project page](../../projects/bijux-core.md) |
+| `bijux-canon` | governed knowledge repository | own knowledge-system orchestration boundaries | ingest/index/reason/orchestrate package boundaries | yes | [Project page](../../projects/bijux-canon.md) |
+| `bijux-atlas` | delivery repository | own public delivery interfaces and contracts | APIs, datasets, reporting, docs-aware operational routes | yes | [Project page](../../projects/bijux-atlas.md) |
+| `bijux-proteomics` | scientific application repository | own proteomics product workflows | proteomics domain workflows and reproducible product routes | yes | [Project page](../../projects/bijux-proteomics.md) |
+| `bijux-pollenomics` | scientific application repository | own evidence-mapping product workflows | archaeology/eDNA/aDNA evidence surfaces and site-selection outputs | yes | [Project page](../../projects/bijux-pollenomics.md) |
+| `bijux-masterclass` | learning and teaching repository | own structured technical learning programs | sequenced programs, deep dives, and runnable learning materials | yes | [Learning catalog](../../learning/index.md) |
 
 ## How The Repositories Work Together
 
@@ -81,6 +81,6 @@ graph LR
 
 ## Routes
 
-For route-first navigation, use [Reading Paths](../reading-paths.md).
+For route-first navigation, use [Reading Paths](../../reading-paths.md).
 This matrix stays focused on repository ownership and responsibility
 boundaries.
