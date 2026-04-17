@@ -110,6 +110,23 @@
     </section>
   {% endif %}
 {%- endmacro %}
+{% macro mobile_tree_node(entry) -%}
+  {% if entry %}
+    {% set node_path = nav_entry_path(entry) | trim %}
+    {% set node_url = nav_entry_url(entry) | trim %}
+    {% if node_path and node_url %}
+      <li class="bijux-mobile-tree__node" data-bijux-node-path="{{ node_path }}" data-bijux-node-url="{{ node_url }}" data-bijux-node-title="{{ entry.title | e }}">
+        {% if entry.children and entry.children | length > 0 %}
+          <ul class="bijux-mobile-tree__children">
+            {% for child in entry.children %}
+              {{ mobile_tree_node(child) }}
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endif %}
+  {% endif %}
+{%- endmacro %}
 {% set mobile_sites_block %}
   {% if hub_links %}
     <section class="bijux-mobile-hub" aria-label="Bijux sites" data-bijux-mobile-order="{{ mobile_sites_order }}" data-bijux-mobile-kind="sites">
@@ -151,6 +168,26 @@
       {% include "partials/source.html" %}
     </div>
   {% endif %}
+  <section class="bijux-mobile-local bijux-mobile-dynamic" aria-label="Navigation" data-bijux-mobile-order="1-navigation" data-bijux-mobile-kind="navigation" data-bijux-mobile-dynamic hidden>
+    <div class="bijux-mobile-dynamic__header">
+      <button class="bijux-mobile-dynamic__control" type="button" data-bijux-mobile-nav-back aria-label="Go back in navigation" title="Go back" disabled>
+        <span aria-hidden="true">←</span>
+      </button>
+      <div class="bijux-mobile-local__label bijux-mobile-dynamic__label" data-bijux-mobile-nav-title>Navigation</div>
+      <button class="bijux-mobile-dynamic__control" type="button" data-bijux-mobile-nav-forward aria-label="Go forward in navigation" title="Go forward" disabled>
+        <span aria-hidden="true">→</span>
+      </button>
+    </div>
+    <ul class="md-nav__list" data-bijux-mobile-dynamic-list data-md-scrollfix></ul>
+  </section>
+  <nav class="bijux-mobile-tree-source" data-bijux-mobile-tree-source aria-hidden="true" hidden>
+    <ul class="bijux-mobile-tree__list">
+      {% for nav_item in nav %}
+        {{ mobile_tree_node(nav_item) }}
+      {% endfor %}
+    </ul>
+  </nav>
+  <div data-bijux-mobile-static>
   {% set top_directories = namespace(list=[]) %}
     {% set top_level_pages = namespace(list=[]) %}
     {% for nav_item in nav %}
@@ -348,6 +385,7 @@
     {% if first_local_row_key != "1-top-pages" %}
       {{ mobile_row("Pages", page_row_items.list, "4-pages", true, "pages") }}
     {% endif %}
+  </div>
   {{ mobile_sites_block }}
 </nav>
 {% set bijux_primary_section_nav = true %}

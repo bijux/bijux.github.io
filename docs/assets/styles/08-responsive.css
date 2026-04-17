@@ -222,6 +222,16 @@
     margin-bottom: 0.26rem;
   }
 
+  .bijux-mobile-dynamic__header {
+    column-gap: 0.34rem;
+    grid-template-columns: 1.72rem 1fr 1.72rem;
+  }
+
+  .bijux-mobile-dynamic__control {
+    height: 1.48rem;
+    width: 1.48rem;
+  }
+
   .bijux-mobile-hub__list {
     display: block;
     gap: 0;

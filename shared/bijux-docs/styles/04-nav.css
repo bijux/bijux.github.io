@@ -416,6 +416,53 @@
   display: none;
 }
 
+.bijux-mobile-dynamic__header {
+  align-items: center;
+  column-gap: 0.48rem;
+  display: grid;
+  grid-template-columns: 2rem 1fr 2rem;
+  margin-bottom: 0.08rem;
+}
+
+.bijux-mobile-dynamic__label {
+  justify-content: center;
+  margin: 0;
+  text-align: center;
+}
+
+.bijux-mobile-dynamic__control {
+  align-items: center;
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--bijux-border) 72%, transparent);
+  border-radius: 999px;
+  color: color-mix(in srgb, var(--bijux-ink) 84%, var(--bijux-muted));
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 0.8rem;
+  height: 1.62rem;
+  justify-content: center;
+  line-height: 1;
+  transition:
+    border-color 0.16s ease,
+    background-color 0.16s ease,
+    color 0.16s ease;
+  width: 1.62rem;
+}
+
+.bijux-mobile-dynamic__control:hover {
+  background: color-mix(in srgb, var(--md-default-bg-color) 92%, var(--bijux-panel));
+  border-color: color-mix(in srgb, var(--bijux-border) 56%, var(--bijux-detail-border));
+}
+
+.bijux-mobile-dynamic__control:disabled {
+  cursor: default;
+  opacity: 0.38;
+}
+
+.bijux-nav--mobile[data-bijux-mobile-dynamic-ready="true"] [data-bijux-mobile-static] {
+  display: none;
+}
+
 .bijux-mobile-local > .md-nav__list {
   display: block;
   list-style: none;
