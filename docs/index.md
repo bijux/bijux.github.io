@@ -27,6 +27,8 @@ last_reviewed: 2026-04-12
 Once you find the right branch, you can continue into the documentation
 and source surfaces that carry the implementation detail.</div>
 
+## What Bijux Is
+
 ## What This Work Demonstrates
 
 - architecture that stays legible under change instead of collapsing into ad hoc glue
@@ -43,28 +45,19 @@ and source surfaces that carry the implementation detail.</div>
 - architecture documentation, reviewability, and long-lived maintenance posture
 - technical education that codifies engineering judgment instead of summarizing tools
 
-## For Hiring Managers And Technical Reviewers
+## How It Is Organized
 
-You can use [reading paths](reading-paths.md) and [project pages](projects/index.md) to inspect:
+## Reading Approach
 
-- how ownership boundaries are defined and preserved
-- where delivery quality is made verifiable
-- how the same technical language survives runtime, delivery, domain, and teaching contexts
+This page offers a starting point based on your interest. From there,
+you can move into the owning repository and spend time with the actual
+surfaces that matter for your review.
 
-<div class="bijux-panel-grid">
-  <div class="bijux-panel"><h3>Boundaries That Hold</h3><p>Core, Canon, Atlas, and the domain repositories are separated by operating responsibility. Runtime control, knowledge workflows, delivery surfaces, and scientific products stay legible when opened side by side.</p></div>
-  <div class="bijux-panel"><h3>Public Surfaces You Can Open</h3><p>The hub routes into repository handbooks, published docs, and source repositories rather than screenshots or abstract summaries, so readers can inspect the material directly at their own pace.</p></div>
-  <div class="bijux-panel"><h3>Work Under Domain Pressure</h3><p>Proteomics, Pollenomics, and Masterclass keep the same engineering language under scientific and teaching pressure. The structure has to hold outside generic platform context.</p></div>
-  <div class="bijux-panel"><h3>Explanation Near Implementation</h3><p>Technical programs and course books stay close to the repositories. Explanation, implementation, and long-lived documentation reinforce one another instead of drifting apart.</p></div>
-</div>
-
-<div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="projects/">Browse the repositories</a>
-<a class="md-button" href="platform/">Read the platform branch</a>
-<a class="md-button" href="reading-paths/">Choose a reading path</a>
-</div>
-
-## What Lives Here
+Bijux is intended to be read as one coherent body of engineering work,
+not as isolated projects. Platform structure, repository boundaries,
+delivery surfaces, domain systems, and technical education are presented
+together so readers can inspect design discipline directly and evaluate
+the work by its architectural clarity rather than summary claims.
 
 | Start here for... | Open this first | What you will find |
 | --- | --- | --- |
@@ -73,12 +66,35 @@ You can use [reading paths](reading-paths.md) and [project pages](projects/index
 | how the work behaves under domain pressure | [Applied domains](platform/applied-domains.md) -> [Bijux Proteomics](projects/bijux-proteomics.md) -> [Bijux Pollenomics](projects/bijux-pollenomics.md) | scientific and evidence-heavy product systems |
 | how the technical style carries into teaching | [Learning catalog](learning/index.md) | course books and programs built around the same technical language |
 
-## Read This Site As
+```mermaid
+graph TD
+    bijux["Bijux"] --> platform["Platform"]
+    bijux --> projects["Projects"]
+    bijux --> learning["Learning"]
+    bijux --> paths["Reading Paths"]
 
-- a documentation network with clear repository ownership
-- architecture made visible through boundaries, not titles
-- delivery work expressed through docs, routes, and published destinations
-- the same engineering language carried into scientific and educational contexts
+    platform --> platform_design["System design"]
+    platform --> platform_structure["Repository structure"]
+    platform --> platform_delivery["Delivery and documentation"]
+
+    projects --> core["Core"]
+    projects --> canon["Canon"]
+    projects --> atlas["Atlas"]
+    projects --> proteomics["Proteomics"]
+    projects --> pollenomics["Pollenomics"]
+    projects --> masterclass["Masterclass"]
+
+    learning --> python["Python Programming"]
+    learning --> reproducible["Reproducible Research"]
+```
+
+## How To Read This Site
+
+Use one of these route types based on your immediate goal:
+
+- Architecture route: start at [Platform overview](platform/index.md), then [System map](platform/system-map.md), then [bijux-core](projects/bijux-core.md) and [bijux-canon](projects/bijux-canon.md).
+- Delivery route: start at [Delivery surfaces](platform/delivery-surfaces.md), then [bijux-atlas](projects/bijux-atlas.md), then public docs and published endpoints.
+- Domain route: start at [Applied domains](platform/applied-domains.md), then [bijux-proteomics](projects/bijux-proteomics.md) and [bijux-pollenomics](projects/bijux-pollenomics.md).
 
 ## Where To Start
 
@@ -103,29 +119,11 @@ You can use [reading paths](reading-paths.md) and [project pages](projects/index
   </article>
 </div>
 
-## Site Routes
-
-```mermaid
-graph TD
-    bijux["Bijux"] --> platform["Platform"]
-    bijux --> projects["Projects"]
-    bijux --> learning["Learning"]
-    bijux --> paths["Reading Paths"]
-
-    platform --> platform_design["System design"]
-    platform --> platform_structure["Repository structure"]
-    platform --> platform_delivery["Delivery and documentation"]
-
-    projects --> core["Core"]
-    projects --> canon["Canon"]
-    projects --> atlas["Atlas"]
-    projects --> proteomics["Proteomics"]
-    projects --> pollenomics["Pollenomics"]
-    projects --> masterclass["Masterclass"]
-
-    learning --> python["Python Programming"]
-    learning --> reproducible["Reproducible Research"]
-```
+<div class="bijux-quicklinks">
+<a class="md-button md-button--primary" href="projects/">Browse the repositories</a>
+<a class="md-button" href="platform/">Read the platform branch</a>
+<a class="md-button" href="reading-paths/">Choose a reading path</a>
+</div>
 
 ## Repository Family
 
@@ -137,15 +135,3 @@ graph TD
 | `bijux-proteomics` | scientific product system | proteomics-oriented packages and runtime surfaces |
 | `bijux-pollenomics` | evidence mapping product system | Nordic atlas outputs, tracked data, and report publication |
 | `bijux-masterclass` | public learning surface | course books and long-form technical programs |
-
-## Reading Approach
-
-This page offers a starting point based on your interest. From there,
-you can move into the owning repository and spend time with the actual
-surfaces that matter for your review.
-
-Bijux is intended to be read as one coherent body of engineering work,
-not as isolated projects. Platform structure, repository boundaries,
-delivery surfaces, domain systems, and technical education are presented
-together so readers can inspect design discipline directly and evaluate
-the work by its architectural clarity rather than summary claims.
