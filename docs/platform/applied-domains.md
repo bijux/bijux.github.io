@@ -59,12 +59,12 @@ losing architectural clarity.
 - reproducibility and evidence discipline as non-optional quality criteria
 - documentation aligned to system boundaries, not detached summaries
 
-## What Changes Under Domain Pressure
+## What Domain Pressure Changes
 
-- schema and vocabulary depth (scientific, evidence, or educational context)
-- traceability burden for data, interpretation, and review pathways
-- validation posture required by domain-specific failure modes
-- user interpretation surfaces where technical clarity must survive specialist context
+- schema complexity: domain entities, relationships, and constraints become deeper and less forgiving than generic data models.
+- evidence burden: claims must be tied to traceable inputs, transformations, and review paths.
+- interpretation burden: outputs must stay understandable to specialists who use them for real decisions.
+- publication burden: delivery surfaces must preserve context, caveats, and reproducibility in public-facing outputs.
 
 ## Domain-Driven Repositories
 
