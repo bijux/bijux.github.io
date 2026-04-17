@@ -80,12 +80,21 @@ graph TD
 | operational seriousness | ops, configs, reporting, and documentation validation behavior |
 | published entry points | the handbook structure and published docs site that route into concrete service surfaces |
 
+## How Atlas Differs From Core And Canon
+
+- Atlas owns public delivery interfaces and operated publication surfaces.
+- Core owns runtime authority and execution governance.
+- Canon owns knowledge-system orchestration and reasoning boundaries.
+
+Atlas is where users and integrators consume stable delivery contracts.
+Core and Canon are where runtime and knowledge internals are structured.
+
 ## Why This Matters Operationally
 
-- service consumers can inspect stable contracts before integration work starts
-- dataset publication and delivery behavior are governed instead of ad hoc
-- maintenance workflows remain explicit, reducing hidden operational risk
-- documentation and implementation move together, improving trust in public surfaces
+- stable queries: service consumers can rely on documented query and API behavior across releases
+- traceable releases: dataset and artifact publication history is inspectable instead of implicit
+- inspectable service behavior: docs, contracts, and operations expose how delivery works in practice
+- lower integration risk: maintenance workflows remain explicit so downstream systems can plan confidently
 
 ## When This Page Is Most Useful
 
