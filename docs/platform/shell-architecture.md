@@ -112,12 +112,17 @@ The shell uses a source-and-mirror sync model:
 3. run checks to verify the shell contract and detect drift
 4. run docs sanity checks before publishing
 
+## Source, Sync, And Checks
+
+- source of truth: shared shell files in `bijux-std`
+- sync flow: `make bijux-docs-sync` regenerates local shell mirrors from source
+- verification: `make bijux-docs-check` and `make docs-sanity` catch drift before publish
+
 ## Commands
 
 - `make bijux-docs-sync`: synchronize shell source into local docs mirrors (`shared -> docs`)
 - `make bijux-docs-check`: validate shell contract and drift checks
 - `make docs-sanity`: run shell checks and docs build validation together
-- backward-compatible aliases: `make shell-sync`, `make shell-check`
 
 ## What Breaks When Shell Drift Occurs
 
@@ -132,5 +137,6 @@ The shell uses a source-and-mirror sync model:
 - `docs-sanity` confirms shell and docs build behavior still align
 - sync-first workflow ensures mirrors are regenerated from canonical shared sources
 
-When shell drift is caught early, repositories keep local content freedom
-without fragmenting shared navigation and explanation behavior.
+For broader cross-repository standards beyond shell behavior, see
+`bijux-std` documentation; this page stays focused on shell behavior and
+consumer contract.
