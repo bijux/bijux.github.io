@@ -47,7 +47,9 @@ tables below can help.
 
 | Question | Read this sequence |
 | --- | --- |
-| How is the system structured? | [Platform](platform/index.md) -> [System map](platform/system-map.md) -> [Repository matrix](platform/repository-matrix.md) -> [Bijux Core](projects/bijux-core.md) |
-| How is work delivered? | [Delivery surfaces](platform/delivery-surfaces.md) -> [Public surface](platform/public-surface.md) -> [Bijux Atlas](projects/bijux-atlas.md) -> [Projects](projects/index.md) |
-| How does the design survive domain pressure? | [Applied domains](platform/applied-domains.md) -> [Bijux Proteomics](projects/bijux-proteomics.md) -> [Bijux Pollenomics](projects/bijux-pollenomics.md) -> [Reproducible Research](learning/reproducible-research.md) |
-| How is teaching integrated? | [Learning catalog](learning/index.md) -> [Python Programming](learning/python-programming.md) -> [Reproducible Research](learning/reproducible-research.md) -> [Projects](projects/index.md) |
+| Big picture | [Home](index.md) -> [Platform](platform/index.md) -> [System map](platform/system-map.md) |
+| System structure | [Platform](platform/index.md) -> [System map](platform/system-map.md) -> [Repository matrix](platform/repository-matrix.md) |
+| Repository roles | [Projects](projects/index.md) -> [Bijux Core](projects/bijux-core.md) -> [Bijux Canon](projects/bijux-canon.md) -> [Bijux Atlas](projects/bijux-atlas.md) |
+| Domain work | [Applied domains](platform/applied-domains.md) -> [Bijux Proteomics](projects/bijux-proteomics.md) -> [Bijux Pollenomics](projects/bijux-pollenomics.md) |
+| Learning | [Learning catalog](learning/index.md) -> [Reproducible Research](learning/reproducible-research.md) -> [Python Programming](learning/python-programming.md) |
+| Shared standards and docs shell | [Platform](platform/index.md) -> [Bijux standard layer](platform/bijux-std.md) -> [Shell Architecture](platform/shell-architecture.md) |
