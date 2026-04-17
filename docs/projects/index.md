@@ -37,7 +37,7 @@ graph TD
 It can serve as orientation before moving to the project pages for
 repository-specific detail and inspection routes.
 
-## Capability Clusters
+## Primary Responsibility Clusters
 
 | Capability cluster | Repositories |
 | --- | --- |
@@ -46,7 +46,9 @@ repository-specific detail and inspection routes.
 | public delivery interfaces and service publication | [Bijux Atlas](bijux-atlas.md) |
 | proteomics scientific product workflows | [Bijux Proteomics](bijux-proteomics.md) |
 | evidence-mapping product workflows | [Bijux Pollenomics](bijux-pollenomics.md) |
-| learning branch route (top-level, not a project repository) | [Learning catalog](../learning/index.md) |
+
+Learning is a top-level branch reference, not a peer project repository:
+[Learning catalog](../learning/index.md).
 
 <div class="bijux-showcase-grid">
   <article class="bijux-showcase-card">
@@ -116,9 +118,9 @@ repository-specific detail and inspection routes.
   </article>
 </div>
 
-## What Each Repository Demonstrates
+## Primary Responsibility By Repository
 
-| Repository | What it demonstrates |
+| Repository | What each repository covers |
 | --- | --- |
 | [Bijux Core](bijux-core.md) | runtime truth, deterministic execution, and control-plane separation in a stable backbone |
 | [Bijux Canon](bijux-canon.md) | governed knowledge-system decomposition with explicit package contracts and compatibility surfaces |
