@@ -7,41 +7,38 @@ owner: bijux-docs
 last_reviewed: 2026-04-12
 ---
 
-# Work Qualities
+# Recurring Engineering Qualities
 
 This page is the shortest route into the recurring qualities of the
 Bijux repositories and where those qualities become visible publicly.
 
 <div class="bijux-callout"><strong>The useful question is how the work is organized when it becomes public.</strong>
-Across the repositories, the same patterns recur: bounded systems,
-delivery ownership, operational clarity, domain adaptation, and
-technical material that remains explainable without being simplified out
-of shape.</div>
+Across the repositories, the same patterns recur: bounded ownership,
+delivery discipline, domain pressure handling, and explainable depth.</div>
 
 ## Qualities Map
 
 ```mermaid
 graph TD
-    qualities["Work Qualities"] --> bounded["Bounded systems"]
-    qualities --> inspectable["Inspectable delivery"]
+    qualities["Recurring Engineering Qualities"] --> bounded["Bounded ownership"]
+    qualities --> inspectable["Delivery discipline"]
     qualities --> pressure["Domain pressure"]
     qualities --> depth["Explainable depth"]
 
     bounded --> ownership["Clear ownership"]
-    inspectable --> outputs["Visible outputs"]
+    inspectable --> outputs["Visible delivery outputs"]
     pressure --> adaptation["Adapted design"]
     depth --> complexity["Legible complexity"]
 ```
 
-## Qualities That Repeat
+## Canonical Qualities
 
 | Quality | What it looks like | Where to inspect first |
 | --- | --- | --- |
-| Boundary judgment | systems split by responsibility instead of collapsing into a single vague platform | [System map](system-map.md), [Bijux Core](../projects/bijux-core.md), [Bijux Canon](../projects/bijux-canon.md) |
-| Delivery ownership | documentation, validation, release posture, and destination URLs treated as product surfaces | [Delivery surfaces](delivery-surfaces.md), [Bijux Atlas](../projects/bijux-atlas.md) |
-| Data and service architecture | APIs, datasets, ingest, indexing, runtime control, and documentation behavior separated into owned surfaces | [Platform overview](index.md), [Bijux Atlas](../projects/bijux-atlas.md), [Bijux Canon](../projects/bijux-canon.md) |
-| Domain adaptation | the same engineering posture surviving scientific and evidence-heavy contexts | [Applied domains](applied-domains.md), [Bijux Proteomics](../projects/bijux-proteomics.md), [Bijux Pollenomics](../projects/bijux-pollenomics.md) |
-| Technical communication | architecture and workflow depth translated into teaching without losing rigor | [Learning catalog](../learning/index.md), [Published Masterclass docs](https://bijux.io/bijux-masterclass/) |
+| Bounded ownership | systems split by responsibility instead of collapsing into a single vague platform | [System map](system-map.md), [Bijux Core](../projects/bijux-core.md), [Bijux Canon](../projects/bijux-canon.md) |
+| Delivery discipline | documentation, validation, release posture, and destination URLs treated as maintained product surfaces | [Delivery surfaces](delivery-surfaces.md), [Bijux Atlas](../projects/bijux-atlas.md), [Public surface](public-surface.md) |
+| Domain pressure handling | the same engineering posture surviving scientific and evidence-heavy constraints | [Applied domains](applied-domains.md), [Bijux Proteomics](../projects/bijux-proteomics.md), [Bijux Pollenomics](../projects/bijux-pollenomics.md) |
+| Explainable depth | architecture and workflow reasoning translated into teachable material without losing rigor | [Learning catalog](../learning/index.md), [Published Masterclass docs](https://bijux.io/bijux-masterclass/) |
 
 ## How To Verify These Qualities
 
@@ -89,7 +86,7 @@ standalone conclusion. The repositories and published documentation
 carry the depth.
 
 These qualities are intended to function as engineering standards rather
-than style preferences. Bounded systems, inspectable delivery, domain
-pressure, and explainable depth define the conditions under which
-software becomes easier to trust, review, and evolve across the full
-repository family.
+than style preferences. Bounded ownership, delivery discipline, domain
+pressure handling, and explainable depth define the conditions under
+which software becomes easier to trust, review, and evolve across the
+full repository family.
