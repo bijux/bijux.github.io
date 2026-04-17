@@ -9,6 +9,9 @@ last_reviewed: 2026-04-12
 
 # Bijux Atlas
 
+Atlas is the Bijux delivery surface for immutable datasets, APIs,
+service contracts, and operated documentation.
+
 `bijux-atlas` is the delivery and operational surface for services,
 datasets, APIs, and docs control-plane behavior. It is a direct route in
 the site for data delivery, service architecture, and operational
@@ -16,6 +19,15 @@ visibility.
 It exists to keep queryable delivery, immutable artifacts, service
 contracts, and publication surfaces visible as first-class engineering
 boundaries.
+
+Concrete Atlas surfaces include:
+
+- CLI
+- API
+- OpenAPI export
+- docs
+- release artifacts
+- control plane
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-atlas/">View Published Docs</a>
