@@ -37,20 +37,14 @@ repository family.
 inspectable: tracked source data, rebuildable report bundles, a Nordic
 evidence atlas, and a documentation surface that explains where those
 artifacts come from.
-This map shows how domain interpretation is grounded by evidence and
-public context.
+This flow shows how evidence is interpreted and turned into mapped and
+report outputs.
 
 ```mermaid
-graph TD
-    pollenomics["Bijux Pollenomics"] --> questions["Domain questions"]
-    pollenomics --> evidence["Evidence"]
-    pollenomics --> interpretation["Interpretation"]
-    pollenomics --> context["Public context"]
-
-    questions --> domain_work["Structured domain work"]
-    evidence --> domain_work
-    interpretation --> domain_work
-    context --> domain_work
+graph LR
+    evidence["Evidence"] --> interpretation["Interpretation"]
+    interpretation --> mapped_output["Mapped output (atlas layers)"]
+    interpretation --> report_output["Report output (report bundles)"]
 ```
 
 The goal is a domain system that remains reviewable even for readers
