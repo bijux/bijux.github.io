@@ -9,12 +9,15 @@ last_reviewed: 2026-04-12
 
 # Platform
 
+Platform is the branch that defines the shared structure and reasoning
+behind the Bijux repository family.
+
 The public Bijux surface is intentionally split by responsibility. This
 section explains why the repository family is structured the way it is
 and how that structure holds together in public.
 
-<div class="bijux-callout"><strong>Consider the split before the count.</strong>
-The useful question here is whether the split remains coherent under pressure.
+<div class="bijux-callout"><strong>Focus on responsibility before repository count.</strong>
+The key question is not how many repositories exist, but why responsibilities are split the way they are.
 Runtime governance, knowledge workflows, delivery surfaces, domain
 products, and learning programs each have their own home, but the same
 engineering language is visible across all of them.</div>
