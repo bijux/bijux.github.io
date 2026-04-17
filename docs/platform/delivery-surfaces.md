@@ -54,6 +54,8 @@ original implementation team.
 
 | Surface | What to inspect | Why it is useful |
 | --- | --- | --- |
+| Repository-owned delivery surfaces | [Bijux Atlas](../projects/bijux-atlas.md) APIs, dataset routes, and release-facing docs | shows where product delivery contracts are owned directly by a delivery repository |
+| Shared docs delivery continuity | `bijux.github.io` platform docs and [Masterclass](../learning/index.md) docs routes backed by shared shell standards | shows how documentation delivery stays consistent across separate sites while local content remains independent |
 | Contract discipline | repository docs, generated artifacts, schema surfaces, and explicit handbook ownership | serious systems make their interfaces and operating rules visible |
 | Release posture | release workflows, published docs, versioned repositories, and visible distribution surfaces | public work should show how it is built, checked, and published |
 | Operational thinking | runtime handbooks, validation commands, docs checks, and repository automation | delivery quality is easier to trust when routine checks are part of the workflow |
@@ -67,7 +69,7 @@ original implementation team.
   <div class="bijux-panel"><h3>Atlas</h3><p>Inspect the delivery and reporting surfaces to see how APIs, datasets, docs checks, and operational workflows are treated as maintained product surfaces instead of side utilities.</p></div>
 </div>
 
-## Proof Anchors To Inspect
+## Where To Inspect
 
 ### Fast Checks
 
