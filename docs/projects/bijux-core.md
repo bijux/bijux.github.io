@@ -58,19 +58,12 @@ boundaries. Keeping them distinct prevents execution behavior from being
 silently changed by policy concerns, and prevents policy controls from
 being hidden inside runtime code paths.
 
-## What This Repository Makes Visible
+## What Lives Here And Why
 
-- runtime truth: command behavior and execution authority are explicit, not implied
-- deterministic execution: DAG behavior is modeled as a stable contract surface
-- control-plane separation: governance and release rules are maintained without blurring runtime logic
-- documentation as ownership map: repository docs mirror the actual operational split
-
-## What Lives Here
-
-- two distinct products with shared governance: `bijux-cli` and `bijux-dag`
-- command and runtime thinking that is explicit rather than hidden in scripts
-- evidence, release, and repository control surfaces treated as first-class concerns
-- crate and package boundaries that keep execution, artifacts, and governance legible
+- `bijux-cli` and `bijux-dag` live here under one governance backbone so runtime behavior and release control stay aligned
+- command/runtime semantics and DAG execution semantics stay explicit instead of hidden in scripts
+- governance, evidence, and release surfaces stay visible as first-class repository ownership, not side notes
+- visible anchors include CLI command surfaces, DAG workflow routes, release evidence, and governance documentation
 
 ## Where To Begin
 
