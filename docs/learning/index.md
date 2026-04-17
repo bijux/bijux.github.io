@@ -4,22 +4,22 @@ audience: mixed
 type: index
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-12
+last_reviewed: 2026-04-17
 ---
 
 # Learning
 
-The public learning surface lives in `bijux-masterclass`. It keeps the
-same systems language teachable, sequenced, and reusable across
-long-form programs.
+The public learning surface lives in `bijux-masterclass`. It turns
+system engineering practice into sequenced programs people can study,
+run, and review.
 
-These programs are integrated with the broader system work. They are
-another proof surface for how technical judgment is structured, taught, and reused
-without losing architectural rigor.
+Masterclass uses the shared documentation shell and standards checks
+from `bijux-std` so public learning docs stay aligned with the wider
+repository family.
 
-Teaching is part of Bijux because the same engineering judgment is
-expressed not only in code, but also in durable explanation and
-executable learning material.
+The shared shell and standards layer are inherited across repositories,
+while the learning curriculum, pacing, and program content are owned by
+`bijux-masterclass`.
 
 <div class="bijux-callout"><strong>The learning branch is organized like the rest of the work.</strong>
 Programs are grouped by technical pressure, routed through stable entry
