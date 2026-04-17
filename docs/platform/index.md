@@ -26,18 +26,35 @@ engineering language is visible across all of them.</div>
 
 ```mermaid
 graph TD
-    platform["Platform"] --> context["Operating Context"]
-    platform --> map["System Map"]
-    platform --> matrix["Repository Matrix"]
-    platform --> qualities["Work Qualities"]
-    platform --> delivery["Delivery Surfaces"]
+    platform["Platform"] --> context["Context"]
+    platform --> structure["Structure"]
+    platform --> delivery["Delivery"]
+    platform --> docs["Shared Documentation"]
 
-    context --> why["Why"]
-    map --> how["How"]
-    matrix --> where["Where"]
-    qualities --> standards["Standards"]
-    delivery --> form["Public Form"]
+    context --> operating["Operating context"]
+    structure --> maps["System map and repository matrix"]
+    delivery --> surfaces["Delivery surfaces"]
+    docs --> network["Documentation network"]
 ```
+
+## Canonical Platform Axes
+
+- context: the operating reasons and constraints behind the repository family.
+- structure: how responsibilities are split and mapped across repositories.
+- delivery: how architecture becomes public through release and operational surfaces.
+- shared documentation: how readers keep orientation while moving across repositories.
+
+## What Belongs Here
+
+- the route between repositories
+- the principles that make the split coherent
+- the stable public surface that readers can navigate today
+
+## What Does Not Belong Here
+
+- package-level implementation details
+- repository-specific maintainer rules
+- course-level teaching detail that already lives in masterclass
 
 ## Why This Branch Exists
 
@@ -90,18 +107,6 @@ graph TD
 | the broader operating context behind the current repository family | [Operating context](operating-context.md) |
 | why the docs shell is shared instead of duplicated carelessly | [Documentation network](documentation-network.md) |
 | which public destinations exist today | [Public surface](public-surface.md) |
-
-## What Belongs Here
-
-- the route between repositories
-- the principles that make the split coherent
-- the stable public surface that readers can navigate today
-
-## What Does Not Belong Here
-
-- package-level implementation details
-- repository-specific maintainer rules
-- course-level teaching detail that already lives in masterclass
 
 The platform branch exists to explain the logic that holds the Bijux
 family together: why repository boundaries exist, what qualities they
