@@ -17,9 +17,12 @@ Each repository below reveals a different part of the same system
 family through a different responsibility.
 This map provides a quick structural view before diving into individual
 project pages.
+Projects remain separate in ownership but aligned through shared
+standards in `bijux-std`.
 
 ```mermaid
 graph TD
+    standards["Shared standards (`bijux-std`)"] --> projects["Projects"]
     projects["Projects"] --> core["Core"]
     projects --> canon["Canon"]
     projects --> atlas["Atlas"]
@@ -28,6 +31,7 @@ graph TD
     projects --> learning["Learning branch reference"]
 
     learning --> learning_index["Learning index (top-level branch)"]
+    standards --> learning_index
 ```
 
 It can serve as orientation before moving to the project pages for
