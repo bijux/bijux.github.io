@@ -50,6 +50,12 @@ governance explicit instead of blending them into one opaque layer.
 
 ## Runtime Authority Vs Governance Authority
 
+```mermaid
+graph LR
+    runtime["Runtime authority"] --> execute["command and DAG execution behavior"]
+    governance["Governance authority"] --> control["release, evidence, and policy controls"]
+```
+
 Runtime authority defines how commands and workflows execute: what can
 run, in what order, and with which execution semantics. Governance
 authority defines how those runtime surfaces are controlled over time:
@@ -57,6 +63,13 @@ release rules, evidence expectations, and repository-level policy
 boundaries. Keeping them distinct prevents execution behavior from being
 silently changed by policy concerns, and prevents policy controls from
 being hidden inside runtime code paths.
+
+## What Core Does Not Own
+
+Core does not own domain-specific scientific workflows, project-specific
+delivery interfaces, or shared cross-repository standards ownership.
+Those responsibilities belong to domain repositories, delivery
+repositories, and `bijux-std`.
 
 ## What Lives Here And Why
 
