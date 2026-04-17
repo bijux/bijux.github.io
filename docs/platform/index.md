@@ -42,7 +42,7 @@ graph TD
 - context: the operating reasons and constraints behind the repository family.
 - structure: how responsibilities are split and mapped across repositories.
 - delivery: how architecture becomes public through release and operational surfaces.
-- shared documentation: how readers keep orientation while moving across repositories.
+- shared standards and documentation: how readers keep orientation while moving across repositories.
 
 ## What Belongs Here
 
@@ -99,6 +99,7 @@ graph TD
 
 | Read this first when you need to understand... | Open |
 | --- | --- |
+| where shared standards are defined and verified across repositories | [Bijux standard layer](bijux-std.md) |
 | which qualities recur across the public work | [Work qualities](work-qualities.md) |
 | the layered structure of the whole public system family | [System map](system-map.md) |
 | the repository split at a glance | [Repository matrix](repository-matrix.md) |

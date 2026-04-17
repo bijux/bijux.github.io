@@ -55,6 +55,7 @@ nav:
       - Reading Paths: reading-paths.md
   - Platform:
       - Overview: platform/index.md
+      - Bijux Standard Layer: platform/bijux-std.md
       - Work Qualities: platform/work-qualities.md
       - System Map: platform/system-map.md
       - Repository Matrix: platform/repository-matrix.md
