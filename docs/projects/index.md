@@ -16,7 +16,7 @@ before deeper project pages.
 
 ```mermaid
 graph TD
-    standards["Shared standards (`bijux-std`)"] --> projects["Projects"]
+    standards["Shared standards (bijux-std)"] --> projects["Projects"]
     projects["Projects"] --> core["Core"]
     projects --> canon["Canon"]
     projects --> atlas["Atlas"]

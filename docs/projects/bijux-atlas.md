@@ -54,7 +54,7 @@ publication contracts, and service operations.
 
 ```mermaid
 graph TD
-    std["Shared docs shell (`bijux-std`)"] --> control["Docs and ops control plane"]
+    std["Shared docs shell (bijux-std)"] --> control["Docs and ops control plane"]
     atlas["Bijux Atlas"] --> ingestion["Data ingestion and preparation"]
     atlas --> contracts["Service contracts and OpenAPI surface"]
     atlas --> api["API and query surface"]
