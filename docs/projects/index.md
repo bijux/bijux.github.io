@@ -9,6 +9,9 @@ last_reviewed: 2026-04-12
 
 # Projects
 
+This is the fastest way to understand what each public Bijux repository
+is for.
+
 This section offers a concentrated cross-section of the work itself.
 Each repository below reveals a different part of the same system
 family through a different responsibility.
@@ -111,11 +114,11 @@ repository-specific detail and inspection routes.
 | [Bijux Proteomics](bijux-proteomics.md) | scientific product engineering with explicit evidence governance and domain contracts |
 | [Bijux Pollenomics](bijux-pollenomics.md) | uncommon domain adaptation that keeps reproducibility and engineering structure visible |
 
-## What A Reviewer Should Be Able To Conclude
+## What This Page Makes Clear
 
-- this is a coherent portfolio of system ownership, not disconnected experiments
+- this is a coherent set of repository ownership boundaries, not disconnected projects
 - each repository is responsible for a distinct layer in the broader architecture
-- architecture, delivery, domain pressure, and technical communication are all inspectable in public
+- architecture, delivery, domain pressure, and learning surfaces are inspectable in public
 
 ## Reading Guide
 
