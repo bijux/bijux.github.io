@@ -68,6 +68,13 @@ outside the immediate subject area.
 - technical architecture adapted to archaeology-facing and field-oriented context without losing clarity
 - honest scope boundaries around what exists today and what does not
 
+## Concrete Outputs
+
+- atlas layers for regional evidence visualization
+- tracked data assets with explicit lineage
+- report bundles for reproducible publication routes
+- documentation context that explains interpretation assumptions and boundaries
+
 ## Where To Begin
 
 | If you are looking for... | Start with this part of Pollenomics |
@@ -76,6 +83,13 @@ outside the immediate subject area.
 | uncommon domain modeling | the archaeology, eDNA, aDNA, and pollenomics framing in the docs and repository layout |
 | scope discipline | the explicit limits around current capabilities, source categories, and report outputs |
 | published entry points | the runtime handbook, data reference, and published Nordic atlas material |
+
+## How To Read This Page If You Are Not From The Domain
+
+Start with the outputs rather than domain terminology: open atlas
+layers, tracked data, and report bundles first, then read documentation
+context to understand how interpretation decisions are constrained by
+evidence and reproducibility rules.
 
 ## When This Page Is Most Useful
 
