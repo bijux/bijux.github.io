@@ -9,17 +9,16 @@ last_reviewed: 2026-04-12
 
 # Documentation Network
 
-This network helps readers move across repositories without losing
-orientation.
+This network exists so readers can move across Bijux repositories
+without losing orientation. It is documentation architecture, not only
+menu behavior.
 
-The documentation network works only if every site behaves like part of
-the same system family. Readers should be able to jump between repos and
-keep the same mental model for where they are and what to do next.
+`bijux-std` is the canonical source for the shared documentation shell
+and shared documentation standards used across the family.
 
-<div class="bijux-callout"><strong>Documentation here is part of the system's navigation and explanation surface.</strong>
-The shared shell keeps navigation and reader expectations stable across
-repositories. That consistency is one way engineering quality becomes
-visible to readers.</div>
+<div class="bijux-callout"><strong>Documentation is a shared communication layer.</strong>
+The shared shell keeps orientation and explanation behavior stable across
+repositories while each repository keeps local ownership of its content.</div>
 
 ## Network Map
 
@@ -36,19 +35,13 @@ graph TD
     paths --> entry["Different entry routes"]
 ```
 
-## Shared Navigation Contract
+## Documentation Architecture Roles
 
-Each navigation layer has a specific reader job:
-
-- hub strip: helps readers switch repositories without losing the ecosystem map
-- site tabs: helps readers move between major branches in the current repository handbook
-- detail strip: helps readers focus on the active branch context
-- left navigation: helps readers go deeper in one branch without seeing unrelated trees
-
-- the hub strip moves between repositories
-- the site tabs move between the major handbook branches in the current site
-- the detail strip narrows to the active branch within the current site
-- the left navigation stays scoped to the active branch instead of showing the whole tree at once
+| Role | Primary owner | What it does |
+| --- | --- | --- |
+| standards source | `bijux-std` | defines shared shell behavior, navigation contract, and checks used by docs consumers |
+| hub | `bijux.github.io` | provides cross-repository orientation and entry routes into repository and learning docs |
+| repository docs | each destination repository or site | owns local technical content, domain vocabulary, and implementation detail |
 
 ## Why Shared Chrome Exists
 
