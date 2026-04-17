@@ -97,9 +97,9 @@
     </li>
   {% endif %}
 {%- endmacro %}
-{% macro mobile_row(label, items, row_key, scrollfix=true) -%}
+{% macro mobile_row(label, items, row_key, scrollfix=true, row_kind="local") -%}
   {% if items and items | length > 0 %}
-    <section class="bijux-mobile-local" aria-label="{{ label }}" data-bijux-mobile-order="{{ row_key }}">
+    <section class="bijux-mobile-local" aria-label="{{ label }}" data-bijux-mobile-order="{{ row_key }}" data-bijux-mobile-kind="{{ row_kind }}">
       <div class="bijux-mobile-local__label">{{ label }}</div>
       <ul class="md-nav__list"{% if scrollfix %} data-md-scrollfix{% endif %}>
         {% set seen_paths = namespace(values=[]) %}
@@ -116,7 +116,7 @@
 {%- endmacro %}
 {% set mobile_sites_block %}
   {% if hub_links %}
-    <section class="bijux-mobile-hub" aria-label="Bijux sites" data-bijux-mobile-order="{{ mobile_sites_order }}">
+    <section class="bijux-mobile-hub" aria-label="Bijux sites" data-bijux-mobile-order="{{ mobile_sites_order }}" data-bijux-mobile-kind="sites">
       <div class="bijux-mobile-hub__label">Sites</div>
       <ul class="bijux-mobile-hub__list">
         {% for entry in hub_links %}
@@ -188,8 +188,8 @@
         {% endif %}
       {% endfor %}
     {% endif %}
-    {{ mobile_row("Sections", hub_sections.list, "1-sections") }}
-    {{ mobile_row("Pages", hub_section_pages.list, "2-pages") }}
+    {{ mobile_row("Sections", hub_sections.list, "1-sections", true, "sections") }}
+    {{ mobile_row("Pages", hub_section_pages.list, "2-pages", true, "pages") }}
     {{ mobile_sites_block }}
   {% else %}
     {% set top_directories = namespace(list=[]) %}
@@ -383,10 +383,10 @@
     {% set first_local_label = "Directories" if top_directories.list | length > 0 else "Pages" %}
     {% set first_local_row_key = "1-top-directories" if top_directories.list | length > 0 else "1-top-pages" %}
     {% set first_local_items = top_directories.list if top_directories.list | length > 0 else top_level_pages.list %}
-    {{ mobile_row(first_local_label, first_local_items, first_local_row_key) }}
-    {{ mobile_row("Subdirectories", second_level_dirs.list, "2-subdirectories") }}
-    {{ mobile_row("Nested Directories", third_level_dirs.list, "3-third-level-directories") }}
-    {{ mobile_row("Pages", page_row_items.list, "4-pages") }}
+    {{ mobile_row(first_local_label, first_local_items, first_local_row_key, true, "directories" if top_directories.list | length > 0 else "pages") }}
+    {{ mobile_row("Subdirectories", second_level_dirs.list, "2-subdirectories", true, "subdirectories") }}
+    {{ mobile_row("Nested Directories", third_level_dirs.list, "3-third-level-directories", true, "nested-directories") }}
+    {{ mobile_row("Pages", page_row_items.list, "4-pages", true, "pages") }}
     {{ mobile_sites_block }}
   {% endif %}
 </nav>
