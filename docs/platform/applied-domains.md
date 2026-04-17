@@ -71,20 +71,23 @@ losing architectural clarity.
 <div class="bijux-panel-grid">
   <div class="bijux-panel"><h3>Bijux Proteomics</h3><p>A domain product surface for proteomics and discovery work, where engineering structure has to remain clear while serving laboratory and scientific context.</p></div>
   <div class="bijux-panel"><h3>Bijux Pollenomics</h3><p>An evidence-mapping and site-selection surface where technical architecture supports archaeology, eDNA, aDNA, and pollenomics narratives without collapsing into generic geodata language.</p></div>
-  <div class="bijux-panel"><h3>Bijux Masterclass</h3><p>A learning surface where systems discipline is turned into technical programs that still respect architecture, workflow rigor, and operational detail.</p></div>
+  <div class="bijux-panel"><h3>Reproducible Research</h3><p>A learning workflow surface where methods, artifacts, and review steps are taught and executed with explicit reproducibility constraints.</p></div>
 </div>
+
+## Domain Pressure Comparison
+
+| Surface | How pressure shows up |
+| --- | --- |
+| Proteomics | higher schema complexity for biological entities, stronger evidence lineage requirements, and high error cost in interpretation decisions |
+| Pollenomics | heavier interpretation burden across archaeology, eDNA, aDNA, and regional narratives, plus publication pressure for evidence-backed reports |
+| Learning (Reproducible Research) | explicit pacing and proof requirements so learners can run workflows, inspect artifacts, and validate reproducibility claims |
 
 ## Questions Worth Asking
 
 - whether the platform posture survives real scientific vocabulary and decision context
-- whether uncommon domain models are handled through structure instead of jargon
-- whether engineering clarity still holds when the audience shifts from builders to researchers and learners
-
-## Concrete Domain Pressures To Inspect
-
-- schema pressure: where domain semantics force stronger model boundaries
-- evidence pressure: where claims require traceable inputs and artifact lineage
-- scientific reviewability: where reproducibility and interpretation must remain inspectable
+- whether specialized scientific data is modeled with explicit structure instead of implicit assumptions
+- whether interpretation requirements are documented clearly enough for researchers and reviewers
+- whether error consequences are handled through validation, traceability, and reviewable publication outputs
 
 ## Reading Rule
 
@@ -93,7 +96,6 @@ domain repositories then show how that posture survives outside a purely
 generic platform setting.
 
 Applied domains matter here because they force engineering decisions to
-answer to evidence constraints, domain semantics, and consequences of
-error. What carries across those contexts is disciplined system design:
-clear boundaries, honest scope, and inspectable outputs that remain
-useful even when the subject matter is specialized.
+answer to evidence constraints, specialized data semantics, and real
+error consequences. What carries across those contexts is disciplined
+system design: clear boundaries, honest scope, and inspectable outputs.
