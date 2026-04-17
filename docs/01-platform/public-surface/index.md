@@ -83,8 +83,8 @@ graph TD
 
 | Surface | Purpose | Use this when | What becomes visible here |
 | --- | --- | --- | --- |
-| [Projects index](../../projects/index.md) | overview of repository roles in one place | you want a fast map before selecting a destination | repository family roles and cross-links |
-| [Bijux Core](../../projects/bijux-core/index.md), [Bijux Canon](../../projects/bijux-canon/index.md), [Bijux Atlas](../../projects/bijux-atlas/index.md), [Bijux Proteomics](../../projects/bijux-proteomics/index.md), [Bijux Pollenomics](../../projects/bijux-pollenomics/index.md), [Learning index](../../learning/index.md) | project-level summaries and route hints | you want role context before opening repo docs or source | role intent, key surfaces, and suggested entry routes |
+| [Projects index](../../02-projects/index.md) | overview of repository roles in one place | you want a fast map before selecting a destination | repository family roles and cross-links |
+| [Bijux Core](../../02-projects/bijux-core/index.md), [Bijux Canon](../../02-projects/bijux-canon/index.md), [Bijux Atlas](../../02-projects/bijux-atlas/index.md), [Bijux Proteomics](../../02-projects/bijux-proteomics/index.md), [Bijux Pollenomics](../../02-projects/bijux-pollenomics/index.md), [Learning index](../../03-learning/index.md) | project-level summaries and route hints | you want role context before opening repo docs or source | role intent, key surfaces, and suggested entry routes |
 
 ## What This Page Makes Visible
 
@@ -109,7 +109,7 @@ repositories.
 | If your question is... | Open first | Then open |
 | --- | --- | --- |
 | where should I begin? | [bijux.github.io](https://github.com/bijux/bijux.github.io) | [System Map](../system-map/index.md) |
-| which repository owns this concern? | [Projects index](../../projects/index.md) | matching project page |
+| which repository owns this concern? | [Projects index](../../02-projects/index.md) | matching project page |
 | where are shared shell and standards owned? | [bijux-std](https://github.com/bijux/bijux-std) | [Shared Documentation Shell](../shell-architecture/index.md) |
 | where can I inspect implementation details? | matching repository docs site | matching source repository |
 
