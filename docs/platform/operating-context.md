@@ -25,6 +25,13 @@ stay inspectable under change. That includes service and data systems,
 evidence-heavy workflows, and scientific or technical contexts where
 reproducibility, clear boundaries, and explicit contracts matter.
 
+Four concrete context types shape this design:
+
+- long-lived codebases
+- scientific workflows
+- evidence-heavy outputs
+- public documentation systems
+
 This is why the repositories tend to look the way they do.
 Responsibilities are separated at the repository level. Documentation is
 part of delivery, not a side artifact. Domain-specific work is
@@ -35,10 +42,10 @@ to someone outside the project.
 
 ```mermaid
 graph LR
-    context["Operating Context"] --> long_lived["Long-lived systems"]
-    context --> science["Scientific work"]
-    context --> artifacts["Artifact-heavy work"]
-    context --> change["Change over time"]
+    context["Operating Context"] --> long_lived["Long-lived codebases"]
+    context --> science["Scientific workflows"]
+    context --> artifacts["Evidence-heavy outputs"]
+    context --> change["Public documentation systems"]
 
     long_lived --> authority["Clear authority"]
     science --> evidence["Evidence"]
