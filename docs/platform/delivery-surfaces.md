@@ -75,10 +75,20 @@ original implementation team.
 
 ## Proof Anchors To Inspect
 
-- docs sites and repository handbooks as operational interfaces
-- package and release workflows as governed publication boundaries
-- contract and schema surfaces as explicit compatibility commitments
-- automation and checks as routine reliability behavior
+### Fast Checks
+
+- open one repository handbook and verify that ownership and operating boundaries are explicit
+- open [Public surface](public-surface.md) and confirm published destinations map to maintained repositories
+
+### Medium Checks
+
+- inspect package and release workflow docs to confirm publication boundaries are documented
+- inspect contract or schema references to verify compatibility promises are explicit
+
+### Deep Checks
+
+- follow a release or validation path end to end and confirm checks are reproducible
+- compare docs claims against automation entry points to verify delivery behavior is not only narrative
 
 ## What To Check
 
