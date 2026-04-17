@@ -96,12 +96,20 @@ graph TD
 | state identity and experiment recovery | [Deep Dive DVC](https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-dvc/) and its focus on params, metrics, promotion discipline, and trustworthy recovery |
 | program design clarity | the family page in Masterclass, which routes by system pressure instead of generic topic grouping |
 
+## Capstone Proof Surfaces
+
+| Capstone | Direct proof surface | Engineering behavior demonstrated |
+| --- | --- | --- |
+| Deep Dive Make capstone | [Capstone docs](https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-make/capstone/docs/) | truthful build graphs, deterministic rebuild behavior, and publication-safe build contracts |
+| Deep Dive Snakemake capstone | [Capstone docs](https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-snakemake/capstone/docs/) | workflow contract integrity, explicit file interfaces, and reviewable execution paths |
+| Deep Dive DVC capstone | [Capstone docs](https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-dvc/capstone/docs/) | parameter and metric traceability, experiment recovery, and promotion-boundary discipline |
+
 ## When This Page Is Most Useful
 
 - you care about workflow systems, reproducibility, and scientific execution habits
 - you want to see engineering discipline carry into research tooling and publication boundaries
 - you want to understand when DVC is the right model for experiment state, recovery, and promotion boundaries
-- you want to inspect teaching material that is anchored to executable capstones
+- you want to inspect teaching material that is anchored to executable capstones with explicit proof routes
 
 ## Why This Matters Outside Research
 
