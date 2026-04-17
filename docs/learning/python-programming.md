@@ -82,11 +82,19 @@ graph TD
 - you want metaprogramming to be treated as engineering design pressure rather than as a bag of tricks
 - you want to inspect teaching material that still feels like engineering work
 
+## What This Program Refuses To Do
+
+- not syntax-first: syntax is used as a tool, not as the endpoint.
+- not framework-first: frameworks are discussed through design tradeoffs, not treated as the curriculum core.
+- not interview-trick-first: examples are chosen for long-lived system judgment, not puzzle-style novelty.
+
 ## How This Thinking Appears In Bijux Repositories
 
-- `bijux-core`: command/runtime boundaries and extension surfaces are shaped by abstraction discipline
-- `bijux-canon`: package splits reflect explicit ownership and composition choices
-- `bijux-atlas`: delivery and reporting layers emphasize interface clarity over hidden coupling
+| Repository | Concept carried from this program | Visible example |
+| --- | --- | --- |
+| `bijux-core` | abstraction boundaries and runtime extensibility discipline | CLI/runtime split, DAG components, and evidence-oriented command surfaces |
+| `bijux-canon` | ownership and composition decisions in package design | ingest, indexing, reasoning, and runtime packages kept as explicit responsibility slices |
+| `bijux-atlas` | API and delivery-interface clarity | API/reporting surfaces documented as stable delivery contracts instead of hidden internal coupling |
 
 This program treats Python as a way to study how software structure is
 formed by design choices around objects, functions, and metaprogramming.
