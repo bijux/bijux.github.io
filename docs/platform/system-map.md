@@ -86,11 +86,12 @@ readers open the repository pages.
 - do the domain systems inherit the platform posture without being forced into generic abstractions
 - can a reader move across layers and still keep a consistent mental model
 
-## Open This Page When
+## Where Responsibility Changes Hands
 
-- you want the shortest explanation of how the repository family fits together
-- you need to decide whether to open Core, Canon, Atlas, or a domain product first
-- you want to understand the repository family as an engineering system, not a list of projects
+- Platform -> Core: shared boundary and release rules become executable runtime and governance behavior.
+- Core/Canon -> Atlas: internal runtime and knowledge capabilities become public delivery interfaces and reporting routes.
+- Platform/Projects -> Domain products: shared engineering rules are applied to specialized scientific workflows and evidence outputs.
+- Projects -> Learning: repository practices are translated into course books and capstones without changing source ownership.
 
 The system map exists to make the landscape legible before readers dive
 into local detail. It shows how platform guides, project repositories,
