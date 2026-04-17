@@ -9,17 +9,21 @@ last_reviewed: 2026-04-12
 
 # Delivery Surfaces
 
+A delivery surface is any public, inspectable output through which the
+system is used, verified, or reviewed.
+
 The public Bijux surface is meant to reward inspection. Readers should
 be able to move from a narrative page into concrete repositories, docs,
 workflows, contracts, and release surfaces without hitting a gap
 between presentation and implementation.
 Delivery quality is part of the system design, not an afterthought.
 
-## What This Page Demonstrates
+## What Counts As Delivery In Bijux
 
-- delivery surfaces are treated as first-class architecture interfaces
-- documentation sites, package publishing, release flows, and contracts are reviewed as one system
-- operational quality is inspected through routines and public evidence, not summary language alone
+- public documentation that shows ownership, operating routes, and system boundaries
+- published software and artifacts that can be traced back to explicit build and release routines
+- service and runtime interfaces that are reviewable outside local developer context
+- release and operational evidence that shows how quality checks are run, not only claimed
 
 ## Delivery Map
 
