@@ -9,10 +9,17 @@ last_reviewed: 2026-04-12
 
 # Bijux Pollenomics
 
-`bijux-pollenomics` is the evidence mapping and site selection product
-surface for archaeology, eDNA, aDNA, and pollenomics context. It shows
-how structured engineering can support field-oriented, evidence-heavy
-domain work.
+`bijux-pollenomics` is a system for evidence mapping, interpretation,
+and location-oriented research outputs in archaeology, eDNA, aDNA, and
+pollen evidence contexts.
+
+In plain terms, this repository brings together different evidence
+sources to help produce traceable maps and report outputs about where
+research attention should focus, while keeping methods and data lineage
+inspectable.
+
+It shows how structured engineering can support field-oriented,
+evidence-heavy domain work.
 The engineering challenge here is to make uncommon scientific context
 operationally clear without losing reproducibility, traceability, or
 system structure.
