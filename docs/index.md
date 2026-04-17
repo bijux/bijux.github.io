@@ -51,27 +51,19 @@ without merging responsibilities into a single opaque codebase.
 - Apply the same architecture language across platform, domain, and learning surfaces.
 - Keep explanation close to implementation so readers can verify design decisions directly.
 
-## Representative Engineering Themes
-
-- platform systems and runtime control-plane design
-- governed knowledge and data-service architecture
-- scientific software delivery under evidence and traceability pressure
-- architecture documentation, reviewability, and long-lived maintenance posture
-- technical education that codifies engineering judgment instead of summarizing tools
-
 ## How It Is Organized
 
-## Reading Approach
+The site is organized around repository ownership, then around navigation paths
+for architecture, delivery, and domain-focused reading.
+
+### Reading Approach
 
 This page offers a starting point based on your interest. From there,
 you can move into the owning repository and spend time with the actual
 surfaces that matter for your review.
 
-Bijux is intended to be read as one coherent body of engineering work,
-not as isolated projects. Platform structure, repository boundaries,
-delivery surfaces, domain systems, and technical education are presented
-together so readers can inspect design discipline directly and evaluate
-the work by its architectural clarity rather than summary claims.
+Read the platform and repository split first, then choose a route by review
+goal so implementation evidence stays connected to system intent.
 
 | Start here for... | Open this first | What you will find |
 | --- | --- | --- |
@@ -114,19 +106,19 @@ Use one of these route types based on your immediate goal:
 
 <div class="bijux-showcase-grid">
   <article class="bijux-showcase-card">
-    <div class="bijux-showcase-card__eyebrow">for architecture-first readers</div>
+    <div class="bijux-showcase-card__eyebrow">architecture route</div>
     <h2>Start with the system split</h2>
     <p>You can begin with the system map, then Core and Canon, to review boundaries, runtime structure, and repository ownership.</p>
     <p><a href="reading-paths.md">See reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
-    <div class="bijux-showcase-card__eyebrow">for delivery-focused readers</div>
+    <div class="bijux-showcase-card__eyebrow">delivery route</div>
     <h2>Start with delivery surfaces</h2>
     <p>You can start with Delivery Surfaces, then Atlas, for service design, operational visibility, documentation quality, and published destinations.</p>
     <p><a href="reading-paths.md">See reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
-    <div class="bijux-showcase-card__eyebrow">for domain and teaching readers</div>
+    <div class="bijux-showcase-card__eyebrow">domain route</div>
     <h2>Start where the work gets harder</h2>
     <p>You can open Applied Domains, then Proteomics, Pollenomics, and Learning, to see the same structure under scientific context and public teaching.</p>
     <p><a href="reading-paths.md">See reading paths</a></p>
