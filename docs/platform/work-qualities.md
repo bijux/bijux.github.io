@@ -34,10 +34,10 @@ graph TD
 
 | Quality | Verification question | Evidence anchors |
 | --- | --- | --- |
-| Bounded ownership | Are responsibilities split cleanly so repository boundaries stay non-overlapping under change? | [System map](system-map.md), [Repository matrix](repository-matrix.md), [Bijux Core](../projects/bijux-core.md), [Bijux Canon](../projects/bijux-canon.md) |
-| Delivery discipline and standards continuity | Are documentation, release behavior, publication routes, and shared standards kept aligned across repositories? | [Delivery surfaces](delivery-surfaces.md), [Public surface](public-surface.md), [Bijux Atlas](../projects/bijux-atlas.md) |
-| Domain pressure handling | Does the structure stay coherent when scientific workflows and evidence-heavy interpretation are required? | [Applied domains](applied-domains.md), [Bijux Proteomics](../projects/bijux-proteomics.md), [Bijux Pollenomics](../projects/bijux-pollenomics.md) |
-| Explainable depth | Can architecture and workflow decisions be taught with runnable materials instead of only summaries? | [Learning catalog](../learning/index.md), [Reproducible Research](../learning/reproducible-research.md), [Python Programming](../learning/python-programming.md) |
+| Bounded ownership | Are responsibilities split cleanly so repository boundaries stay non-overlapping under change? | [Repository matrix](repository-matrix.md) |
+| Delivery discipline and standards continuity | Are documentation, release behavior, publication routes, and shared standards kept aligned across repositories? | [Delivery surfaces](delivery-surfaces.md) |
+| Domain pressure handling | Does the structure stay coherent when scientific workflows and evidence-heavy interpretation are required? | [Applied domains](applied-domains.md) |
+| Explainable depth | Can architecture and workflow decisions be taught with runnable materials instead of only summaries? | [Learning catalog](../learning/index.md) |
 
 Shared continuity is enforced through the standards layer in
 [Bijux standard layer](bijux-std.md), not only by local repository
@@ -60,16 +60,6 @@ habits.
   <div class="bijux-panel"><h3>Domain Pressure Handling</h3><p>Infrastructure alone is not enough. Technical judgment is easier to inspect when it survives proteomics, pollenomics, evidence mapping, and scientific workflow constraints.</p></div>
   <div class="bijux-panel"><h3>Explainable Depth</h3><p>Engineers who can teach architecture, workflow discipline, and programming design usually understand the systems well enough to build and evolve them cleanly.</p></div>
 </div>
-
-## Short Reading Routes
-
-| If you want to start with... | Read this route |
-| --- | --- |
-| platform and software architecture | [System map](system-map.md) -> [Bijux Core](../projects/bijux-core.md) -> [Bijux Canon](../projects/bijux-canon.md) |
-| delivery posture and public surfaces | [Delivery surfaces](delivery-surfaces.md) -> [Bijux Atlas](../projects/bijux-atlas.md) -> [Public surface](public-surface.md) |
-| data-service and knowledge-system design | [Platform overview](index.md) -> [Bijux Atlas](../projects/bijux-atlas.md) -> [Bijux Canon](../projects/bijux-canon.md) |
-| bioinformatics and domain-heavy engineering | [Applied domains](applied-domains.md) -> [Bijux Proteomics](../projects/bijux-proteomics.md) -> [Bijux Pollenomics](../projects/bijux-pollenomics.md) |
-| technical clarity and education | [Learning catalog](../learning/index.md) -> [Reproducible Research](../learning/reproducible-research.md) -> [Python Programming](../learning/python-programming.md) |
 
 ## Reading Rule
 
