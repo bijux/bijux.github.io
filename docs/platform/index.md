@@ -11,6 +11,8 @@ last_reviewed: 2026-04-12
 
 Platform is the branch that defines the shared structure and reasoning
 behind the Bijux repository family.
+It explains why repositories are split this way and how they stay
+aligned through shared standards.
 
 The public Bijux surface is intentionally split by responsibility. This
 section explains why the repository family is structured the way it is
@@ -30,11 +32,13 @@ graph TD
     platform --> structure["Structure"]
     platform --> delivery["Delivery"]
     platform --> docs["Shared Documentation"]
+    platform --> standards["Standards"]
 
     context --> operating["Operating context"]
     structure --> maps["System map and repository matrix"]
     delivery --> surfaces["Delivery surfaces"]
     docs --> network["Documentation network"]
+    standards --> std["Bijux standard layer"]
 ```
 
 ## Canonical Platform Axes
