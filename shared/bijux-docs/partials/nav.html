@@ -60,8 +60,38 @@
   {% set bijux_expand_scoped_groups = true %}
 {% endif %}
 {% import "partials/nav-item.html" as item with context %}
-{% set hub_mobile_titles = ["Home", "Platform", "Projects", "Learning", "Reading Paths"] %}
-{% set mobile_sites_order = "2-sites" if is_bijux_hub_site else "1-sites" %}
+{% set hub_mobile_titles = ["Home", "Platform", "Projects", "Learning"] %}
+{% set mobile_sites_order = "3-sites" if is_bijux_hub_site else "5-sites" %}
+{% macro mobile_row_item(entry) -%}
+  {% if entry and entry.url %}
+    {% set item_class = "md-nav__item" %}
+    {% set current = "" %}
+    {% if entry.active %}
+      {% set item_class = item_class ~ " md-nav__item--active" %}
+      {% set current = 'aria-current="page"' %}
+    {% endif %}
+    <li class="{{ item_class }}">
+      <a href="{{ entry.url | url }}" class="md-nav__link" {{ current }}>{{ entry.title }}</a>
+    </li>
+  {% endif %}
+{%- endmacro %}
+{% macro mobile_row(label, items, row_key, scrollfix=true) -%}
+  {% if items and items | length > 0 %}
+    <section class="bijux-mobile-local" aria-label="{{ label }}" data-bijux-mobile-order="{{ row_key }}">
+      <div class="bijux-mobile-local__label">{{ label }}</div>
+      <ul class="md-nav__list"{% if scrollfix %} data-md-scrollfix{% endif %}>
+        {% set seen_paths = namespace(values=[]) %}
+        {% for entry in items %}
+          {% set entry_path = (entry.url | trim("/")) if entry and entry.url else "" %}
+          {% if entry_path and entry_path not in seen_paths.values %}
+            {% set _ = seen_paths.values.append(entry_path) %}
+            {{ mobile_row_item(entry) }}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+{%- endmacro %}
 {% set mobile_sites_block %}
   {% if hub_links %}
     <section class="bijux-mobile-hub" aria-label="Bijux sites" data-bijux-mobile-order="{{ mobile_sites_order }}">
@@ -180,44 +210,129 @@
         {% endfor %}
       </ul>
     </section>
-    {{ mobile_sites_block }}
-  {% else %}
-    {{ mobile_sites_block }}
-    <ul class="md-nav__list" data-md-scrollfix data-bijux-mobile-order="2-tree">
-      {% set mobile_tree_items = namespace(values=[]) %}
-      {% for nav_item in nav %}
-        {% set first_child = nav_item.children[0] if nav_item.children else none %}
-        {% set nav_path = (nav_item.url | trim("/")) if nav_item.url else "" %}
-        {% set first_path = (first_child.url | trim("/")) if first_child and first_child.url else "" %}
-        {% set flatten_wrapper_home = first_child and first_child.title == "Home" and first_child.children and first_path == nav_path %}
-        {% if flatten_wrapper_home %}
-          {% for child in first_child.children %}
-            {% set child_path = (child.url | trim("/")) if child.url else "" %}
-            {% if child_path != nav_path %}
-              {% set _ = mobile_tree_items.values.append(child) %}
-            {% endif %}
-          {% endfor %}
-        {% else %}
-          {% set _ = mobile_tree_items.values.append(nav_item) %}
-        {% endif %}
-      {% endfor %}
-      {% if mobile_tree_items.values | length == 0 %}
-        {% for nav_item in nav %}
-          {% set nav_path = (nav_item.url | trim("/")) if nav_item.url else "" %}
-          {% if nav_item.children %}
-            {% for child in nav_item.children %}
-              {% set child_path = (child.url | trim("/")) if child.url else "" %}
-              {% if child_path != nav_path %}
-                {% set _ = mobile_tree_items.values.append(child) %}
-              {% endif %}
-            {% endfor %}
+    {% set hub_home_highlights = namespace(list=[]) %}
+    {% for nav_item in nav %}
+      {% if nav_item.title == "Home" and nav_item.children %}
+        {% for child in nav_item.children %}
+          {% if not child.children and child.title in ["Overview", "Reading Paths"] %}
+            {% set _ = hub_home_highlights.list.append(child) %}
           {% endif %}
         {% endfor %}
       {% endif %}
-      {% for mobile_item in mobile_tree_items.values %}
-        {{ item.render(mobile_item, "__nav_mobile_" ~ loop.index, 1) }}
+    {% endfor %}
+    {{ mobile_row("Pages", hub_home_highlights.list, "2-pages") }}
+    {{ mobile_sites_block }}
+  {% else %}
+    {% set top_directories = namespace(list=[]) %}
+    {% set top_level_pages = namespace(list=[]) %}
+    {% for nav_item in nav %}
+      {% set nav_path = (nav_item.url | trim("/")) if nav_item.url else "" %}
+      {% set first_child = nav_item.children[0] if nav_item.children else none %}
+      {% set first_path = (first_child.url | trim("/")) if first_child and first_child.url else "" %}
+      {% set flatten_wrapper_home = first_child and first_child.title in ["Home", "Overview"] and first_child.children and first_path == nav_path %}
+      {% if flatten_wrapper_home %}
+        {% for child in first_child.children %}
+          {% set child_path = (child.url | trim("/")) if child.url else "" %}
+          {% if child_path != nav_path %}
+            {% set _ = top_directories.list.append(child) %}
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        {% set _ = top_directories.list.append(nav_item) %}
+      {% endif %}
+    {% endfor %}
+    {% set active_top = namespace(item=top_directories.list[0] if top_directories.list else none) %}
+    {% for entry in top_directories.list %}
+      {% if entry.active %}
+        {% set active_top.item = entry %}
+      {% endif %}
+    {% endfor %}
+    {% set second_level_dirs = namespace(list=[]) %}
+    {% set second_level_pages = namespace(list=[]) %}
+    {% set second_source = namespace(list=[]) %}
+    {% if active_top.item and active_top.item.children %}
+      {% set active_top_path = (active_top.item.url | trim("/")) if active_top.item.url else "" %}
+      {% set top_first_child = active_top.item.children[0] if active_top.item.children else none %}
+      {% set top_first_path = (top_first_child.url | trim("/")) if top_first_child and top_first_child.url else "" %}
+      {% set flatten_top_wrapper = top_first_child and top_first_child.title in ["Home", "Overview"] and top_first_child.children and top_first_path == active_top_path %}
+      {% set second_source.list = top_first_child.children if flatten_top_wrapper else active_top.item.children %}
+      {% for child in second_source.list %}
+        {% set child_path = (child.url | trim("/")) if child.url else "" %}
+        {% if child_path != active_top_path %}
+          {% if child.children %}
+            {% set _ = second_level_dirs.list.append(child) %}
+          {% else %}
+            {% set _ = second_level_pages.list.append(child) %}
+          {% endif %}
+        {% endif %}
       {% endfor %}
-    </ul>
+    {% endif %}
+    {% set active_second = namespace(item=second_level_dirs.list[0] if second_level_dirs.list else none) %}
+    {% for entry in second_level_dirs.list %}
+      {% if entry.active %}
+        {% set active_second.item = entry %}
+      {% endif %}
+    {% endfor %}
+    {% set third_level_dirs = namespace(list=[]) %}
+    {% set third_level_pages = namespace(list=[]) %}
+    {% set third_source = namespace(list=[]) %}
+    {% if active_second.item and active_second.item.children %}
+      {% set active_second_path = (active_second.item.url | trim("/")) if active_second.item.url else "" %}
+      {% set second_first_child = active_second.item.children[0] if active_second.item.children else none %}
+      {% set second_first_path = (second_first_child.url | trim("/")) if second_first_child and second_first_child.url else "" %}
+      {% set flatten_second_wrapper = second_first_child and second_first_child.title in ["Home", "Overview"] and second_first_child.children and second_first_path == active_second_path %}
+      {% set third_source.list = second_first_child.children if flatten_second_wrapper else active_second.item.children %}
+      {% for child in third_source.list %}
+        {% set child_path = (child.url | trim("/")) if child.url else "" %}
+        {% if child_path != active_second_path %}
+          {% if child.children %}
+            {% set _ = third_level_dirs.list.append(child) %}
+          {% else %}
+            {% set _ = third_level_pages.list.append(child) %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% set active_third = namespace(item=third_level_dirs.list[0] if third_level_dirs.list else none) %}
+    {% for entry in third_level_dirs.list %}
+      {% if entry.active %}
+        {% set active_third.item = entry %}
+      {% endif %}
+    {% endfor %}
+    {% set fourth_level_pages = namespace(list=[]) %}
+    {% if active_third.item and active_third.item.children %}
+      {% set active_third_path = (active_third.item.url | trim("/")) if active_third.item.url else "" %}
+      {% set third_first_child = active_third.item.children[0] if active_third.item.children else none %}
+      {% set third_first_path = (third_first_child.url | trim("/")) if third_first_child and third_first_child.url else "" %}
+      {% set flatten_third_wrapper = third_first_child and third_first_child.title in ["Home", "Overview"] and third_first_child.children and third_first_path == active_third_path %}
+      {% set fourth_source = third_first_child.children if flatten_third_wrapper else active_third.item.children %}
+      {% for child in fourth_source %}
+        {% set child_path = (child.url | trim("/")) if child.url else "" %}
+        {% if not child.children and child_path != active_third_path %}
+          {% set _ = fourth_level_pages.list.append(child) %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% for entry in top_directories.list %}
+      {% if not entry.children %}
+        {% set _ = top_level_pages.list.append(entry) %}
+      {% endif %}
+    {% endfor %}
+    {% set page_row_items = namespace(list=[]) %}
+    {% if fourth_level_pages.list | length > 0 %}
+      {% set page_row_items.list = fourth_level_pages.list %}
+    {% elif third_level_pages.list | length > 0 %}
+      {% set page_row_items.list = third_level_pages.list %}
+    {% elif second_level_pages.list | length > 0 %}
+      {% set page_row_items.list = second_level_pages.list %}
+    {% elif top_level_pages.list | length > 0 %}
+      {% set page_row_items.list = top_level_pages.list %}
+    {% endif %}
+    {{ mobile_row("Top Directories", top_directories.list, "1-top-directories") }}
+    {{ mobile_row("Subdirectories", second_level_dirs.list, "2-subdirectories") }}
+    {{ mobile_row("Third-Level Directories", third_level_dirs.list, "3-third-level-directories") }}
+    {{ mobile_row("Pages", page_row_items.list, "4-pages") }}
+    {{ mobile_sites_block }}
   {% endif %}
 </nav>
 {% set bijux_primary_section_nav = true %}

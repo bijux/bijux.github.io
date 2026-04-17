@@ -16,27 +16,42 @@
   const PHONE_MAX_EM = 47.9375;
   const NORMAL_MAX_EM = 76.2344;
   const WIDE_MIN_EM = 120;
+  const MEDIA_QUERY_BASE_FONT_PX = 16;
+  const REFERENCE_WIDTHS = Object.freeze({
+    phone390: 390,
+    normal768: 768,
+    normal1024: 1024,
+    desktop1280: 1280,
+    wide1920: 1920,
+  });
 
   function mediaMatches(query) {
     return typeof window.matchMedia === "function" && window.matchMedia(query).matches;
   }
 
   function toPixelsFromEm(em) {
-    const rootFontSize = Number.parseFloat(window.getComputedStyle(document.documentElement).fontSize || "16");
-    return em * (Number.isFinite(rootFontSize) ? rootFontSize : 16);
+    // Media-query em units map to the browser's initial font size (16px in our shell assumptions),
+    // not the potentially customized runtime <html> computed font-size.
+    return em * MEDIA_QUERY_BASE_FONT_PX;
   }
 
   function currentViewportWidth() {
-    if (window.visualViewport && typeof window.visualViewport.width === "number") {
-      return window.visualViewport.width;
+    if (typeof document.documentElement?.clientWidth === "number" && document.documentElement.clientWidth > 0) {
+      return document.documentElement.clientWidth;
     }
     if (typeof window.innerWidth === "number") {
       return window.innerWidth;
     }
-    return document.documentElement.clientWidth;
+    if (window.visualViewport && typeof window.visualViewport.width === "number") {
+      return window.visualViewport.width;
+    }
+    return Number.NaN;
   }
 
   function classifyViewportWidth(width) {
+    if (!Number.isFinite(width) || width <= 0) {
+      return VIEWPORT_PROFILES.DESKTOP;
+    }
     if (width <= toPixelsFromEm(PHONE_MAX_EM)) {
       return VIEWPORT_PROFILES.PHONE;
     }
@@ -82,11 +97,21 @@
 
   function applyViewportProfile() {
     const profile = resolveViewportProfile();
+    const previousProfile = currentProfile;
+    const width = currentViewportWidth();
     // Keep both targets in sync because CSS and JS hooks read from each in different contexts.
     writeViewportAttribute(document.documentElement, profile);
     writeViewportAttribute(document.body, profile);
     if (profile !== currentProfile) {
-      window.dispatchEvent(new CustomEvent("bijux:viewport-change", { detail: { profile } }));
+      window.dispatchEvent(
+        new CustomEvent("bijux:viewport-change", {
+          detail: {
+            profile,
+            previousProfile,
+            width,
+          },
+        })
+      );
       currentProfile = profile;
     }
     return profile;
@@ -118,11 +143,36 @@
     if (window.visualViewport && typeof window.visualViewport.addEventListener === "function") {
       window.visualViewport.addEventListener("resize", scheduleApply, { passive: true });
     }
+
+    if (typeof window.matchMedia === "function") {
+      [PHONE_MAX_MEDIA, NORMAL_MAX_MEDIA, WIDE_MIN_MEDIA].forEach((query) => {
+        const mediaQuery = window.matchMedia(query);
+        if (mediaQuery && typeof mediaQuery.addEventListener === "function") {
+          mediaQuery.addEventListener("change", scheduleApply);
+        } else if (mediaQuery && typeof mediaQuery.addListener === "function") {
+          mediaQuery.addListener(scheduleApply);
+        }
+      });
+    }
   }
 
   function init() {
     applyViewportProfile();
     bindViewportUpdates();
+  }
+
+  function initWithFallback() {
+    if (typeof document$ !== "undefined" && document$ && typeof document$.subscribe === "function") {
+      document$.subscribe(init);
+      return;
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init, { once: true });
+      return;
+    }
+
+    init();
   }
 
   window.bijuxViewportProfile = {
@@ -134,11 +184,25 @@
       normalMax: NORMAL_MAX_MEDIA,
       wideMin: WIDE_MIN_MEDIA,
     },
+    verifyReferenceWidths: () => ({
+      390: classifyViewportWidth(REFERENCE_WIDTHS.phone390),
+      768: classifyViewportWidth(REFERENCE_WIDTHS.normal768),
+      1024: classifyViewportWidth(REFERENCE_WIDTHS.normal1024),
+      1280: classifyViewportWidth(REFERENCE_WIDTHS.desktop1280),
+      1920: classifyViewportWidth(REFERENCE_WIDTHS.wide1920),
+    }),
     describe: () => {
       const profile = resolveViewportProfile();
       return {
         profile,
         width: currentViewportWidth(),
+        references: {
+          390: classifyViewportWidth(REFERENCE_WIDTHS.phone390),
+          768: classifyViewportWidth(REFERENCE_WIDTHS.normal768),
+          1024: classifyViewportWidth(REFERENCE_WIDTHS.normal1024),
+          1280: classifyViewportWidth(REFERENCE_WIDTHS.desktop1280),
+          1920: classifyViewportWidth(REFERENCE_WIDTHS.wide1920),
+        },
         matches: {
           phone: profile === VIEWPORT_PROFILES.PHONE,
           normalBand: profile === VIEWPORT_PROFILES.NORMAL,
@@ -150,9 +214,14 @@
           normalMax: mediaMatches(NORMAL_MAX_MEDIA),
           wideMin: mediaMatches(WIDE_MIN_MEDIA),
         },
+        thresholdsPx: {
+          phoneMax: toPixelsFromEm(PHONE_MAX_EM),
+          normalMax: toPixelsFromEm(NORMAL_MAX_EM),
+          wideMin: toPixelsFromEm(WIDE_MIN_EM),
+        },
       };
     },
   };
 
-  document$.subscribe(init);
+  initWithFallback();
 })();
