@@ -58,3 +58,40 @@ Generated mirrors in the local docs tree are synchronized outputs:
 
 The shell controls movement and baseline behavior. Repository docs
 control local meaning and implementation detail.
+
+## Project Contract (`extra.bijux`)
+
+Each consuming project is expected to define shell config in `mkdocs.yml`:
+
+```yaml
+extra:
+  bijux:
+    repository: <string>
+    hub_links:
+      - key: <string>
+        label: <string>
+        url: <absolute-url>
+    nav_mode: default
+    theme_key: bijux:theme
+```
+
+Field-by-field behavior:
+
+- `repository`: active repository key used for hub-highlight state in shared navigation.
+- `hub_links`: cross-repository top-strip link set; each entry drives label and target URL shown in shell chrome.
+- `nav_mode`: shell navigation mode selector; `default` is the canonical mode for current shared behavior.
+- `theme_key`: shared browser storage key used by theme persistence so dark/light preference carries across Bijux sites.
+
+## Allowed Customization Vs Forbidden Forks
+
+### Allowed Customization
+
+- repository label and hub link labels/URLs in `extra.bijux`
+- repository-local documentation content and information architecture below shared shell strips
+- repository-local page styling only when it does not fork shared shell contract behavior
+
+### Forbidden Forks
+
+- changing shared shell partial structure in local mirrors
+- replacing shared shell runtime logic with project-specific behavior
+- changing shared theme persistence contract (`theme_key`) in a way that breaks cross-site continuity
