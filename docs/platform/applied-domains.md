@@ -28,7 +28,7 @@ graph LR
 
     pressure --> proteomics["Proteomics"]
     pressure --> pollenomics["Pollenomics"]
-    pressure --> research["Research workflows"]
+    pressure --> research["Reproducible Research (Masterclass)"]
 
     boundaries --> adapted["Adapted systems"]
     docs --> adapted
@@ -42,10 +42,9 @@ graph LR
 
 | Domain | What shows up here |
 | --- | --- |
-| Platform engineering | runtime control, repository governance, documentation systems, and operationally inspectable structures |
-| Data service architecture | delivery surfaces, API and dataset thinking, repository-level reporting, and bounded service responsibilities |
-| Bioinformatics and scientific computing | products shaped around proteomics, pollenomics, evidence mapping, and scientific workflows rather than abstract examples |
-| Technical education | the ability to translate deep technical systems into reusable learning programs without flattening the underlying rigor |
+| Proteomics | scientific product surfaces where laboratory context and evidence constraints shape package and runtime decisions |
+| Pollenomics | evidence-mapping outputs where archaeology, eDNA, aDNA, and regional interpretation needs shape model and publication choices |
+| Reproducible research workflows | learning-linked workflow systems where artifact lineage and re-runnability are part of the deliverable |
 
 ## Why This Branch Is Here
 
