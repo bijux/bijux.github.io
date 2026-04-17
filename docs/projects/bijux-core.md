@@ -9,14 +9,17 @@ last_reviewed: 2026-04-12
 
 # Bijux Core
 
-`bijux-core` is the execution and governance backbone for the public
-Bijux system family. It is the primary starting point when the question is
-about runtime authority, repository discipline, or the engineering
-systems that should remain stable beneath dependent repositories.
+`bijux-core` runs the CLI and DAG runtime backbone for the Bijux
+repository family and owns the governance and release rules that keep
+that backbone stable over time.
 
 Core contains four concrete surfaces: CLI runtime, DAG execution
 substrate, governance and control-plane routes, and evidence/release
 rules.
+
+Relation to shared standards: Core consumes shared docs shell and
+cross-repository checks from `bijux-std`, but does not define those
+standards.
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-core/">View Published Docs</a>
