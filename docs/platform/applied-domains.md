@@ -65,7 +65,7 @@ losing architectural clarity.
 <div class="bijux-panel-grid">
   <div class="bijux-panel"><h3>Bijux Proteomics</h3><p>A domain product surface for proteomics and discovery work, where engineering structure has to remain clear while serving laboratory and scientific context.</p></div>
   <div class="bijux-panel"><h3>Bijux Pollenomics</h3><p>An evidence-mapping and site-selection surface where technical architecture supports archaeology, eDNA, aDNA, and pollenomics narratives without collapsing into generic geodata language.</p></div>
-  <div class="bijux-panel"><h3>Reproducible Research</h3><p>A learning workflow surface where methods, artifacts, and review steps are taught and executed with explicit reproducibility constraints.</p></div>
+  <div class="bijux-panel"><h3>Reproducible Research (Masterclass)</h3><p>A learning workflow surface where methods, artifacts, and review steps are taught and executed under the same reproducibility discipline used in repository work.</p></div>
 </div>
 
 ## Domain Pressure Comparison
@@ -76,20 +76,8 @@ losing architectural clarity.
 | Pollenomics | heavier interpretation burden across archaeology, eDNA, aDNA, and regional narratives, plus publication pressure for evidence-backed reports |
 | Learning (Reproducible Research) | explicit pacing and proof requirements so learners can run workflows, inspect artifacts, and validate reproducibility claims |
 
-## Questions Worth Asking
-
-- whether the platform posture survives real scientific vocabulary and decision context
-- whether specialized scientific data is modeled with explicit structure instead of implicit assumptions
-- whether interpretation requirements are documented clearly enough for researchers and reviewers
-- whether error consequences are handled through validation, traceability, and reviewable publication outputs
-
 ## Reading Rule
 
-The platform pages help readers understand the engineering posture. The
-domain repositories then show how that posture survives outside a purely
-generic platform setting.
-
-Applied domains matter here because they force engineering decisions to
-answer to evidence constraints, specialized data semantics, and real
-error consequences. What carries across those contexts is disciplined
-system design: clear boundaries, honest scope, and inspectable outputs.
+Read platform pages first for shared rules, then read domain repositories
+to see how those rules survive evidence pressure, interpretation burden,
+and publication constraints in real subject matter.
