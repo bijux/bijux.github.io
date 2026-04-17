@@ -78,6 +78,12 @@ outputs against expected behavior and constraints.
 - a documentation structure that matches the same editorial discipline as the repository docs
 - another route into how the repository family explains its own systems
 
+## How Learning Differs From Repository Docs
+
+- audience: learning pages guide learners through concepts and execution steps; repository docs guide contributors and operators through system surfaces.
+- pacing: learning pages are sequenced and cumulative; repository docs are reference-first and task-oriented.
+- proof surface: learning pages prove understanding through course books, capstones, and runnable exercises; repository docs prove behavior through system docs, code paths, and release artifacts.
+
 ## Fast Routes
 
 | If you want to inspect... | Good starting point |
