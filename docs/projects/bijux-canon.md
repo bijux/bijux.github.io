@@ -86,9 +86,11 @@ be reviewed as connected but distinct responsibilities.
 
 ## One Path Through The Stack
 
-1. begin with ingest and indexing contracts to see how system inputs are normalized
-2. continue through reasoning and orchestration packages to follow explicit decision flow
-3. finish with controlled runtime acceptance and replay surfaces to inspect verification behavior
+1. input: start with ingest to see how incoming data is accepted and normalized.
+2. structure: continue to indexing to see how knowledge is organized for stable retrieval.
+3. reasoning: inspect retrieval and reasoning surfaces to see how queries and decisions are produced.
+4. orchestration: follow orchestration layers to see how multi-step reasoning flow is coordinated.
+5. controlled runtime: finish at runtime control and replay surfaces to verify acceptance and execution behavior.
 
 ## When This Page Is Most Useful
 
