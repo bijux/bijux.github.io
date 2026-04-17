@@ -7,8 +7,6 @@ on:
     paths:
       - ".github/workflows/**"
       - "CNAME"
-      - ".gitignore"
-      - "index.html"
       - "Makefile"
       - "configs/**"
       - "docs/**"
@@ -66,41 +64,6 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
-
-      - name: Verify Pages settings
-        uses: actions/github-script@v8
-        with:
-          script: |
-            const owner = context.repo.owner;
-            const repo = context.repo.repo;
-            const expectedBuildType = "workflow";
-            const expectedDomain = "bijux.io";
-            try {
-              const { data } = await github.request("GET /repos/{owner}/{repo}/pages", { owner, repo });
-              const warnings = [];
-
-              if (data.build_type !== expectedBuildType) {
-                warnings.push(`Pages build_type expected '${expectedBuildType}', received '${data.build_type}'.`);
-              }
-
-              if (data.cname !== expectedDomain) {
-                warnings.push(`Pages custom domain expected '${expectedDomain}', received '${data.cname}'.`);
-              }
-
-              if (warnings.length) {
-                for (const warning of warnings) {
-                  core.warning(warning);
-                }
-              } else {
-                core.info("Pages settings match expected values.");
-              }
-            } catch (error) {
-              if (error.status === 403 || error.status === 404) {
-                core.warning(`Unable to read Pages settings (${error.status}); skipping validation.`);
-                return;
-              }
-              throw error;
-            }
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
