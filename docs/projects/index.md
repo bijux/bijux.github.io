@@ -48,7 +48,9 @@ repository-specific detail and inspection routes.
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">runtime and governance backbone</div>
     <h2>Bijux Core</h2>
-    <p>Covers command surfaces, DAG execution, evidence handling, release discipline, and the repository backbone that dependent systems can stand on.</p>
+    <p>What it is: the runtime authority repository for CLI and DAG execution.</p>
+    <p>Why it exists: to keep execution behavior and governance boundaries explicit.</p>
+    <p>Where to inspect first: [Bijux Core project page](bijux-core/).</p>
     <div class="bijux-tag-list">
       <span class="bijux-tag">cli</span>
       <span class="bijux-tag">runtime</span>
@@ -59,7 +61,9 @@ repository-specific detail and inspection routes.
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">governed knowledge system</div>
     <h2>Bijux Canon</h2>
-    <p>Covers how ingest, index, reasoning, orchestration, compatibility, and controlled runtime behavior are split into clear package boundaries.</p>
+    <p>What it is: the knowledge-system orchestration repository.</p>
+    <p>Why it exists: to separate ingest, indexing, reasoning, orchestration, and runtime control into accountable interfaces.</p>
+    <p>Where to inspect first: [Bijux Canon project page](bijux-canon/).</p>
     <div class="bijux-tag-list">
       <span class="bijux-tag">ingest</span>
       <span class="bijux-tag">reasoning</span>
@@ -70,7 +74,9 @@ repository-specific detail and inspection routes.
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">data and service delivery</div>
     <h2>Bijux Atlas</h2>
-    <p>Covers API, dataset, and docs-aware control-plane work, where delivery and operational visibility are treated as product concerns.</p>
+    <p>What it is: the public delivery-interface repository for APIs, datasets, and publication routes.</p>
+    <p>Why it exists: to keep service delivery behavior inspectable and operated as a product surface.</p>
+    <p>Where to inspect first: [Bijux Atlas project page](bijux-atlas/).</p>
     <div class="bijux-tag-list">
       <span class="bijux-tag">api</span>
       <span class="bijux-tag">datasets</span>
@@ -81,7 +87,9 @@ repository-specific detail and inspection routes.
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">applied scientific products</div>
     <h2>Bijux Proteomics</h2>
-    <p>Covers how a disciplined software posture carries into discovery and proteomics-oriented product work.</p>
+    <p>What it is: the proteomics scientific product repository.</p>
+    <p>Why it exists: to apply platform discipline to evidence-heavy discovery workflows.</p>
+    <p>Where to inspect first: [Bijux Proteomics project page](bijux-proteomics/).</p>
     <div class="bijux-tag-list">
       <span class="bijux-tag">proteomics</span>
       <span class="bijux-tag">product</span>
@@ -92,7 +100,9 @@ repository-specific detail and inspection routes.
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">evidence and site selection</div>
     <h2>Bijux Pollenomics</h2>
-    <p>Covers evidence mapping, archaeology-facing narratives, and domain-specific reasoning surfaces supported by structured engineering.</p>
+    <p>What it is: the evidence-mapping scientific product repository.</p>
+    <p>Why it exists: to keep archaeology/eDNA/aDNA interpretation outputs traceable and reproducible.</p>
+    <p>Where to inspect first: [Bijux Pollenomics project page](bijux-pollenomics/).</p>
     <div class="bijux-tag-list">
       <span class="bijux-tag">pollenomics</span>
       <span class="bijux-tag">evidence mapping</span>
