@@ -61,10 +61,12 @@ be reviewed as connected but distinct responsibilities.
 
 ## Why The Package Split Is Intentional
 
-- ingest, indexing, reasoning, orchestration, and runtime acceptance change at different speeds
-- compatibility work is visible as its own surface instead of hidden migration breakage
-- each package boundary creates a reviewable interface rather than a private internal convention
-- growth in one area does not force unrelated redesign in the rest of the system
+| Split reason | Why it matters |
+| --- | --- |
+| layers change at different speeds | ingest, indexing, reasoning, orchestration, and runtime can evolve without forcing synchronized rewrites |
+| compatibility is explicit | compat surfaces stay visible instead of hidden migration breakage |
+| boundaries are reviewable | each package edge is a public interface, not only an internal convention |
+| growth stays bounded | changes in one layer do not force unrelated redesign in others |
 
 ## What Each Layer Prevents
 
@@ -92,11 +94,17 @@ be reviewed as connected but distinct responsibilities.
 
 ## One Path Through The Stack
 
-1. input: start with ingest to see how incoming data is accepted and normalized.
-2. structure: continue to indexing to see how knowledge is organized for stable retrieval.
-3. reasoning: inspect retrieval and reasoning surfaces to see how queries and decisions are produced.
-4. orchestration: follow orchestration layers to see how multi-step reasoning flow is coordinated.
-5. controlled runtime: finish at runtime control and replay surfaces to verify acceptance and execution behavior.
+```mermaid
+graph LR
+    input["1. Input"] --> structure["2. Structure"]
+    structure --> reasoning["3. Reasoning"]
+    reasoning --> orchestration["4. Orchestration"]
+    orchestration --> runtime["5. Controlled runtime"]
+```
+
+Follow this flow to inspect the stack in order: ingest input,
+index structure, reasoning behavior, orchestration control, then runtime
+acceptance/replay surfaces.
 
 ## When This Page Is Most Useful
 
