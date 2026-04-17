@@ -84,12 +84,9 @@ graph LR
 
 ## What Readers Should Expect
 
-| Pattern | What it means in practice |
-| --- | --- |
-| clear repository boundaries | repositories are split by responsibility so system edges stay visible |
-| documentation as part of delivery | the public docs are part of the surface readers use, not just internal notes |
-| domain work with visible structure | applied and scientific work is presented in a way that keeps the system readable |
-| learning material tied to real practice | teaching content explains working methods and decisions instead of generic tutorials |
+- clear repository boundaries with explicit ownership
+- documentation treated as delivery, not a side artifact
+- domain and learning work that keeps engineering structure visible
 
 ## How To Read The Repository Family
 
@@ -105,12 +102,9 @@ graph LR
 - documentation structure supports maintenance and cross-repository continuity
 - domain pressure does not collapse the architecture model into ad hoc changes
 
-Operating context matters because software quality is defined by the
-change pressure, evidence burden, and long-lived responsibility a system
-must absorb. The repository family is shaped around that reality, which
-is why bounded authority, reproducibility, and documentation discipline
-are treated as baseline engineering requirements rather than optional
-extras.
+Operating context matters because software quality is defined by change
+pressure, evidence burden, and long-lived responsibility. The repository
+family is shaped around that reality.
 
 After this page, a reader should know why the repository family is
 split this way before opening any individual repository.
