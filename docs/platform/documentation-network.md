@@ -38,6 +38,13 @@ graph TD
 
 ## Shared Navigation Contract
 
+Each navigation layer has a specific reader job:
+
+- hub strip: helps readers switch repositories without losing the ecosystem map
+- site tabs: helps readers move between major branches in the current repository handbook
+- detail strip: helps readers focus on the active branch context
+- left navigation: helps readers go deeper in one branch without seeing unrelated trees
+
 - the hub strip moves between repositories
 - the site tabs move between the major handbook branches in the current site
 - the detail strip narrows to the active branch within the current site
