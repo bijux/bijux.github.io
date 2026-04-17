@@ -23,13 +23,6 @@ standards checks inherited from `bijux-std`.
 - level: intermediate to advanced.
 - assumptions: comfort with core Python syntax, functions, classes, modules, and basic testing workflow.
 
-<div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="https://bijux.io/bijux-masterclass/python-programming/">View Family Docs</a>
-<a class="md-button" href="https://bijux.io/bijux-masterclass/python-programming/python-object-oriented-programming/">View Python Object-Oriented Programming</a>
-<a class="md-button" href="https://bijux.io/bijux-masterclass/python-programming/python-functional-programming/">View Python Functional Programming</a>
-<a class="md-button" href="https://bijux.io/bijux-masterclass/python-programming/python-meta-programming/">View Python Metaprogramming</a>
-</div>
-
 ## Family Shape
 
 This family shows depth in Python beyond framework familiarity. The
@@ -54,6 +47,21 @@ graph TD
     fp --> composition["Composition and transformations"]
     meta --> extensibility["Runtime extensibility"]
 ```
+
+<div class="bijux-quicklinks">
+<a class="md-button md-button--primary" href="https://bijux.io/bijux-masterclass/python-programming/">View Family Docs</a>
+<a class="md-button" href="https://bijux.io/bijux-masterclass/python-programming/python-object-oriented-programming/">View Python Object-Oriented Programming</a>
+<a class="md-button" href="https://bijux.io/bijux-masterclass/python-programming/python-functional-programming/">View Python Functional Programming</a>
+<a class="md-button" href="https://bijux.io/bijux-masterclass/python-programming/python-meta-programming/">View Python Metaprogramming</a>
+</div>
+
+## How This Thinking Appears In Bijux Repositories
+
+| Repository | Concept carried from this program | Visible example |
+| --- | --- | --- |
+| `bijux-core` | abstraction boundaries and runtime extensibility discipline | CLI/runtime split, DAG components, and evidence-oriented command surfaces |
+| `bijux-canon` | ownership and composition decisions in package design | ingest, indexing, reasoning, and runtime packages kept as explicit responsibility slices |
+| `bijux-atlas` | API and delivery-interface clarity | API/reporting surfaces documented as stable delivery contracts instead of hidden internal coupling |
 
 ## What Lives Here
 
@@ -91,15 +99,5 @@ graph TD
 - not framework-first: frameworks are discussed through design tradeoffs, not treated as the curriculum core.
 - not interview-trick-first: examples are chosen for long-lived system judgment, not puzzle-style novelty.
 
-## How This Thinking Appears In Bijux Repositories
-
-| Repository | Concept carried from this program | Visible example |
-| --- | --- | --- |
-| `bijux-core` | abstraction boundaries and runtime extensibility discipline | CLI/runtime split, DAG components, and evidence-oriented command surfaces |
-| `bijux-canon` | ownership and composition decisions in package design | ingest, indexing, reasoning, and runtime packages kept as explicit responsibility slices |
-| `bijux-atlas` | API and delivery-interface clarity | API/reporting surfaces documented as stable delivery contracts instead of hidden internal coupling |
-
-This program treats Python as a way to study how software structure is
-formed by design choices around objects, functions, and metaprogramming.
-The value is not syntax coverage alone, but stronger judgment about
-abstraction, extensibility, and maintainability in long-lived systems.
+This program uses Python to teach design judgment for long-lived
+systems: abstraction, extensibility, and maintainability under change.
