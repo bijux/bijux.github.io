@@ -32,11 +32,11 @@ graph TD
 
 | Capability cluster | Repositories |
 | --- | --- |
-| runtime authority and execution governance | [Bijux Core](bijux-core.md) |
-| knowledge-system orchestration and reasoning boundaries | [Bijux Canon](bijux-canon.md) |
-| public delivery interfaces and service publication | [Bijux Atlas](bijux-atlas.md) |
-| proteomics scientific product workflows | [Bijux Proteomics](bijux-proteomics.md) |
-| evidence-mapping product workflows | [Bijux Pollenomics](bijux-pollenomics.md) |
+| runtime authority and execution governance | [Bijux Core](bijux-core/index.md) |
+| knowledge-system orchestration and reasoning boundaries | [Bijux Canon](bijux-canon/index.md) |
+| public delivery interfaces and service publication | [Bijux Atlas](bijux-atlas/index.md) |
+| proteomics scientific product workflows | [Bijux Proteomics](bijux-proteomics/index.md) |
+| evidence-mapping product workflows | [Bijux Pollenomics](bijux-pollenomics/index.md) |
 
 Learning is a top-level branch reference, not a peer project repository:
 [Learning catalog](../learning/index.md).
@@ -83,11 +83,11 @@ Learning is a top-level branch reference, not a peer project repository:
 
 | Repository | What each repository covers |
 | --- | --- |
-| [Bijux Core](bijux-core.md) | runtime truth, deterministic execution, and control-plane separation in a stable backbone |
-| [Bijux Canon](bijux-canon.md) | governed knowledge-system decomposition with explicit package contracts and compatibility surfaces |
-| [Bijux Atlas](bijux-atlas.md) | data-service delivery treated as operated product architecture with immutable artifact posture |
-| [Bijux Proteomics](bijux-proteomics.md) | scientific product engineering with explicit evidence governance and domain contracts |
-| [Bijux Pollenomics](bijux-pollenomics.md) | uncommon domain adaptation that keeps reproducibility and engineering structure visible |
+| [Bijux Core](bijux-core/index.md) | runtime truth, deterministic execution, and control-plane separation in a stable backbone |
+| [Bijux Canon](bijux-canon/index.md) | governed knowledge-system decomposition with explicit package contracts and compatibility surfaces |
+| [Bijux Atlas](bijux-atlas/index.md) | data-service delivery treated as operated product architecture with immutable artifact posture |
+| [Bijux Proteomics](bijux-proteomics/index.md) | scientific product engineering with explicit evidence governance and domain contracts |
+| [Bijux Pollenomics](bijux-pollenomics/index.md) | uncommon domain adaptation that keeps reproducibility and engineering structure visible |
 
 ## What This Page Makes Clear
 
@@ -99,11 +99,11 @@ Learning is a top-level branch reference, not a peer project repository:
 
 | If you care most about... | Start here |
 | --- | --- |
-| platform and runtime engineering | [Bijux Core](bijux-core.md) |
-| governed AI and knowledge systems | [Bijux Canon](bijux-canon.md) |
-| data delivery and service architecture | [Bijux Atlas](bijux-atlas.md) |
-| bioinformatics and scientific product work | [Bijux Proteomics](bijux-proteomics.md) |
-| evidence mapping and field-oriented domain systems | [Bijux Pollenomics](bijux-pollenomics.md) |
+| platform and runtime engineering | [Bijux Core](bijux-core/index.md) |
+| governed AI and knowledge systems | [Bijux Canon](bijux-canon/index.md) |
+| data delivery and service architecture | [Bijux Atlas](bijux-atlas/index.md) |
+| bioinformatics and scientific product work | [Bijux Proteomics](bijux-proteomics/index.md) |
+| evidence mapping and field-oriented domain systems | [Bijux Pollenomics](bijux-pollenomics/index.md) |
 | teaching and engineering communication | [Learning catalog](../learning/index.md) |
 
 ## Reading Rule

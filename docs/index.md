@@ -66,8 +66,8 @@ goal so implementation evidence stays connected to system intent.
 | Start here for... | Open this first | What you will find |
 | --- | --- | --- |
 | how the repositories fit together | [Platform overview](platform/index.md) -> [System map](platform/system-map/index.md) | the split across runtime, knowledge, delivery, and domain work |
-| how delivery shows up publicly | [Delivery surfaces](platform/delivery-surfaces/index.md) -> [Bijux Atlas](projects/bijux-atlas.md) | documentation, published destinations, and operated service surfaces |
-| how the work behaves under domain pressure | [Applied domains](platform/applied-domains/index.md) -> [Bijux Proteomics](projects/bijux-proteomics.md) -> [Bijux Pollenomics](projects/bijux-pollenomics.md) | scientific and evidence-heavy product systems |
+| how delivery shows up publicly | [Delivery surfaces](platform/delivery-surfaces/index.md) -> [Bijux Atlas](projects/bijux-atlas/index.md) | documentation, published destinations, and operated service surfaces |
+| how the work behaves under domain pressure | [Applied domains](platform/applied-domains/index.md) -> [Bijux Proteomics](projects/bijux-proteomics/index.md) -> [Bijux Pollenomics](projects/bijux-pollenomics/index.md) | scientific and evidence-heavy product systems |
 | how the technical style carries into teaching | [Learning catalog](learning/index.md) | course books and programs built around the same technical language |
 
 ```mermaid
@@ -99,9 +99,9 @@ graph TD
 
 Use one of these route types based on your immediate goal:
 
-- Architecture route: start at [Platform overview](platform/index.md), then [System map](platform/system-map/index.md), then [bijux-core](projects/bijux-core.md) and [bijux-canon](projects/bijux-canon.md).
-- Delivery route: start at [Delivery surfaces](platform/delivery-surfaces/index.md), then [bijux-atlas](projects/bijux-atlas.md), then public docs and published endpoints.
-- Domain route: start at [Applied domains](platform/applied-domains/index.md), then [bijux-proteomics](projects/bijux-proteomics.md) and [bijux-pollenomics](projects/bijux-pollenomics.md).
+- Architecture route: start at [Platform overview](platform/index.md), then [System map](platform/system-map/index.md), then [bijux-core](projects/bijux-core/index.md) and [bijux-canon](projects/bijux-canon/index.md).
+- Delivery route: start at [Delivery surfaces](platform/delivery-surfaces/index.md), then [bijux-atlas](projects/bijux-atlas/index.md), then public docs and published endpoints.
+- Domain route: start at [Applied domains](platform/applied-domains/index.md), then [bijux-proteomics](projects/bijux-proteomics/index.md) and [bijux-pollenomics](projects/bijux-pollenomics/index.md).
 
 <div class="bijux-showcase-grid">
   <article class="bijux-showcase-card">

@@ -40,7 +40,7 @@ Choose a route below by question or by time.
 | --- | --- |
 | 10 minutes | [Home](index.md) -> [Work qualities](platform/work-qualities/index.md) -> [Projects](projects/index.md) |
 | 20 minutes | [System map](platform/system-map/index.md) -> [Repository matrix](platform/repository-matrix/index.md) -> one project page that matches your interest |
-| 30 minutes | [Platform](platform/index.md) -> [System map](platform/system-map/index.md) -> [Delivery surfaces](platform/delivery-surfaces/index.md) -> [Bijux Atlas](projects/bijux-atlas.md) -> [Applied domains](platform/applied-domains/index.md) |
+| 30 minutes | [Platform](platform/index.md) -> [System map](platform/system-map/index.md) -> [Delivery surfaces](platform/delivery-surfaces/index.md) -> [Bijux Atlas](projects/bijux-atlas/index.md) -> [Applied domains](platform/applied-domains/index.md) |
 
 ## By Question
 
@@ -48,7 +48,7 @@ Choose a route below by question or by time.
 | --- | --- |
 | Big picture | [Home](index.md) -> [Platform](platform/index.md) -> [System map](platform/system-map/index.md) |
 | System structure | [Platform](platform/index.md) -> [System map](platform/system-map/index.md) -> [Repository matrix](platform/repository-matrix/index.md) |
-| Repository roles | [Projects](projects/index.md) -> [Bijux Core](projects/bijux-core.md) -> [Bijux Canon](projects/bijux-canon.md) -> [Bijux Atlas](projects/bijux-atlas.md) |
-| Domain work | [Applied domains](platform/applied-domains/index.md) -> [Bijux Proteomics](projects/bijux-proteomics.md) -> [Bijux Pollenomics](projects/bijux-pollenomics.md) |
+| Repository roles | [Projects](projects/index.md) -> [Bijux Core](projects/bijux-core/index.md) -> [Bijux Canon](projects/bijux-canon/index.md) -> [Bijux Atlas](projects/bijux-atlas/index.md) |
+| Domain work | [Applied domains](platform/applied-domains/index.md) -> [Bijux Proteomics](projects/bijux-proteomics/index.md) -> [Bijux Pollenomics](projects/bijux-pollenomics/index.md) |
 | Learning | [Learning catalog](learning/index.md) -> [Reproducible Research](learning/reproducible-research/index.md) -> [Python Programming](learning/python-programming/index.md) |
 | Shared standards and docs shell | [Platform](platform/index.md) -> [Bijux standard layer](platform/bijux-std/index.md) -> [Shell Architecture](platform/shell-architecture/index.md) |

@@ -84,7 +84,7 @@ graph TD
 | Surface | Purpose | Use this when | What becomes visible here |
 | --- | --- | --- | --- |
 | [Projects index](../../projects/index.md) | overview of repository roles in one place | you want a fast map before selecting a destination | repository family roles and cross-links |
-| [Bijux Core](../../projects/bijux-core.md), [Bijux Canon](../../projects/bijux-canon.md), [Bijux Atlas](../../projects/bijux-atlas.md), [Bijux Proteomics](../../projects/bijux-proteomics.md), [Bijux Pollenomics](../../projects/bijux-pollenomics.md), [Learning index](../../learning/index.md) | project-level summaries and route hints | you want role context before opening repo docs or source | role intent, key surfaces, and suggested entry routes |
+| [Bijux Core](../../projects/bijux-core/index.md), [Bijux Canon](../../projects/bijux-canon/index.md), [Bijux Atlas](../../projects/bijux-atlas/index.md), [Bijux Proteomics](../../projects/bijux-proteomics/index.md), [Bijux Pollenomics](../../projects/bijux-pollenomics/index.md), [Learning index](../../learning/index.md) | project-level summaries and route hints | you want role context before opening repo docs or source | role intent, key surfaces, and suggested entry routes |
 
 ## What This Page Makes Visible
 

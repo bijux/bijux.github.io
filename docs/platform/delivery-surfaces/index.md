@@ -54,7 +54,7 @@ original implementation team.
 
 | Surface | What to inspect | Why it is useful |
 | --- | --- | --- |
-| Repository-owned delivery surfaces | [Bijux Atlas](../../projects/bijux-atlas.md) APIs, dataset routes, and release-facing docs | shows where product delivery contracts are owned directly by a delivery repository |
+| Repository-owned delivery surfaces | [Bijux Atlas](../../projects/bijux-atlas/index.md) APIs, dataset routes, and release-facing docs | shows where product delivery contracts are owned directly by a delivery repository |
 | Shared docs delivery continuity | `bijux.github.io` platform docs and [Masterclass](../../learning/index.md) docs routes backed by shared shell standards | shows how documentation delivery stays consistent across separate sites while local content remains independent |
 | Contract discipline | repository docs, generated artifacts, schema surfaces, and explicit handbook ownership | serious systems make their interfaces and operating rules visible |
 | Release posture | release workflows, published docs, versioned repositories, and visible distribution surfaces | public work should show how it is built, checked, and published |
@@ -90,9 +90,9 @@ original implementation team.
 
 | If you want to start with... | Open |
 | --- | --- |
-| public delivery and service posture | [Bijux Atlas](../../projects/bijux-atlas.md) |
-| runtime governance and repository discipline | [Bijux Core](../../projects/bijux-core.md) |
-| governed knowledge-system delivery | [Bijux Canon](../../projects/bijux-canon.md) |
+| public delivery and service posture | [Bijux Atlas](../../projects/bijux-atlas/index.md) |
+| runtime governance and repository discipline | [Bijux Core](../../projects/bijux-core/index.md) |
+| governed knowledge-system delivery | [Bijux Canon](../../projects/bijux-canon/index.md) |
 | stable published destinations | [Public surface](../public-surface/index.md) |
 
 ## Open This Page When
