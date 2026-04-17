@@ -40,13 +40,11 @@ graph LR
     research --> control["Workflow control and artifact trust"]
 ```
 
-## What This Branch Demonstrates
+## What This Branch Covers
 
-- decomposition of complex technical material into durable learning paths
-- conceptual compression without flattening design tradeoffs
-- systems teaching that stays attached to implementation pressure
-- documentation discipline that mirrors repository-level engineering standards
-- explanation as an engineering surface: the same language works in design, delivery, and instruction
+- program structure for two long-form learning routes: Python and reproducible research
+- course design that stays connected to runnable artifacts and reviewable outputs
+- documentation flow that aligns with repository-level standards and publishing discipline
 
 ## Why Masterclass Belongs In The Same System Family
 
