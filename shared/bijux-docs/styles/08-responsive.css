@@ -299,6 +299,21 @@
     scrollbar-gutter: stable;
   }
 
+  /*
+   * Keep the phone drawer fully off-canvas when closed.
+   * Material's default closed offset is fixed-width and can leave a visible
+   * sliver after we widen the phone drawer.
+   */
+  #__drawer:not(:checked) ~ .md-container .md-sidebar--primary,
+  #__drawer:not(:checked) ~ .md-main .md-sidebar--primary {
+    left: calc(-1 * min(18.75rem, 90vw));
+  }
+
+  #__drawer:checked ~ .md-container .md-sidebar--primary,
+  #__drawer:checked ~ .md-main .md-sidebar--primary {
+    left: 0;
+  }
+
   .md-sidebar--primary .md-sidebar__scrollwrap,
   .md-sidebar--primary .md-sidebar__inner {
     -webkit-overflow-scrolling: touch;
@@ -348,6 +363,16 @@
   -webkit-overflow-scrolling: touch;
   overflow-y: auto;
   scrollbar-gutter: stable;
+}
+
+[data-bijux-viewport="phone"] #__drawer:not(:checked) ~ .md-container .md-sidebar--primary,
+[data-bijux-viewport="phone"] #__drawer:not(:checked) ~ .md-main .md-sidebar--primary {
+  left: calc(-1 * min(18.75rem, 90vw));
+}
+
+[data-bijux-viewport="phone"] #__drawer:checked ~ .md-container .md-sidebar--primary,
+[data-bijux-viewport="phone"] #__drawer:checked ~ .md-main .md-sidebar--primary {
+  left: 0;
 }
 
 @media screen and (min-width: 48em) and (max-width: 76.2344em) {
