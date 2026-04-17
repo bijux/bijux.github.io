@@ -69,14 +69,11 @@ graph LR
 | domain products | `bijux-proteomics`, `bijux-pollenomics` | domain systems inherit platform discipline instead of becoming isolated one-off projects |
 | learning surface | `bijux-masterclass` | the same engineering language becomes teachable, reusable, and public-facing |
 
-## Quick Routes
+## Routes
 
-| If you are starting from... | Open these repositories first |
-| --- | --- |
-| platform engineering and runtime design | `bijux-core` -> `bijux-canon` |
-| data services and public delivery | `bijux-atlas` -> `bijux-canon` |
-| bioinformatics and scientific software | `bijux-proteomics` -> `bijux-pollenomics` |
-| technical communication and teaching | `bijux-masterclass` -> `bijux-core` |
+For route-first navigation, use [Reading Paths](../reading-paths.md).
+This matrix stays focused on repository ownership and responsibility
+boundaries.
 
 ## Reading Rule
 
