@@ -49,12 +49,18 @@ graph TD
 It reflects the repository's design choice to keep scientific workflow
 concerns explicit rather than hidden in ad hoc glue.
 
-## How This Work Differs From Generic Application Code
+## Why Scientific Product Systems Require Different Structure
 
 - domain contracts need to remain correct while scientific assumptions evolve
 - evidence handling and lab planning are treated as core outputs rather than optional side results
 - runtime behavior supports reproducibility and review, not only convenience
 - package boundaries stay coherent under both engineering and domain pressure
+
+In a conventional CRUD/application frame, correctness is often centered
+on transaction and UI behavior. In scientific workflow software, design
+must also carry evidence burden and traceability: how outputs were
+produced, which assumptions changed, and whether decisions can be
+replayed and reviewed under evolving data.
 
 ## What This Repository Demonstrates Architecturally
 
