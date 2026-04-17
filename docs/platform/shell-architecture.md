@@ -95,3 +95,35 @@ Field-by-field behavior:
 - changing shared shell partial structure in local mirrors
 - replacing shared shell runtime logic with project-specific behavior
 - changing shared theme persistence contract (`theme_key`) in a way that breaks cross-site continuity
+
+## Sync Model
+
+The shell uses a source-and-mirror sync model:
+
+1. edit only canonical shell files in `shared/bijux-docs/*`
+2. run sync to update generated local mirrors under `docs/*`
+3. run checks to verify the shell contract and detect drift
+4. run docs sanity checks before publishing
+
+## Commands
+
+- `make bijux-docs-sync`: synchronize shell source into local docs mirrors (`shared -> docs`)
+- `make bijux-docs-check`: validate shell contract and drift checks
+- `make docs-sanity`: run shell checks and docs build validation together
+- backward-compatible aliases: `make shell-sync`, `make shell-check`
+
+## What Breaks When Shell Drift Occurs
+
+- navigation mismatch: hub or tab behavior diverges across repository docs sites
+- visual inconsistency: shared styles and responsive assumptions no longer match shell expectations
+- runtime mismatch: navigation state logic or theme persistence behaves differently by repository
+- orientation loss: readers can no longer move across sites with a consistent mental model
+
+## How Checks Prevent Drift
+
+- `bijux-docs-check` verifies shell contract assumptions and shared file integrity
+- `docs-sanity` confirms shell and docs build behavior still align
+- sync-first workflow ensures mirrors are regenerated from canonical shared sources
+
+When shell drift is caught early, repositories keep local content freedom
+without fragmenting shared navigation and explanation behavior.
