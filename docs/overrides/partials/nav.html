@@ -52,17 +52,13 @@
     {% set scoped.visible = false %}
   {% endif %}
 {% endif %}
-{% if is_bijux_hub_site %}
-  {% set scoped.visible = false %}
-{% endif %}
 {% set bijux_expand_scoped_groups = false %}
 {% if scoped.visible and current_page and current_page.title == "Overview" %}
   {% set bijux_expand_scoped_groups = true %}
 {% endif %}
 {% import "partials/nav-item.html" as item with context %}
 {% import "partials/bijux-nav.html" as bijux_nav with context %}
-{% set hub_mobile_titles = ["Home", "Platform", "Projects", "Learning"] %}
-{% set mobile_sites_order = "3-sites" if is_bijux_hub_site else "5-sites" %}
+{% set mobile_sites_order = "5-sites" %}
 {% macro nav_entry_url(entry) -%}
   {% if entry %}
     {% set resolved = bijux_nav.first_page_url(entry) | trim %}
@@ -138,7 +134,7 @@
 {# Phone drawer model contract:
    - Hub: Sections -> Pages -> Sites
    - Project repos: Directories rows -> Pages fallback -> Sites #}
-<nav class="{{ class }} bijux-nav bijux-nav--mobile" aria-label="{{ lang.t('nav') }}" data-bijux-nav-variant="mobile" data-bijux-mobile-tree-mode="{{ 'hub-simplified' if is_bijux_hub_site else 'default' }}" data-bijux-hub-site="{{ 'true' if is_bijux_hub_site else 'false' }}" data-md-level="0">
+<nav class="{{ class }} bijux-nav bijux-nav--mobile" aria-label="{{ lang.t('nav') }}" data-bijux-nav-variant="mobile" data-bijux-mobile-tree-mode="default" data-bijux-hub-site="{{ 'true' if is_bijux_hub_site else 'false' }}" data-md-level="0">
   <label class="md-nav__title bijux-nav__title" for="__drawer">
     <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" title="{{ config.site_name | e }}" class="md-nav__button md-logo" aria-label="{{ config.site_name }}" data-md-component="logo">
       {% include "partials/logo.html" %}
@@ -155,44 +151,7 @@
       {% include "partials/source.html" %}
     </div>
   {% endif %}
-  {% if is_bijux_hub_site %}
-    {% set hub_sections = namespace(list=[]) %}
-    {% for section_title in hub_mobile_titles %}
-      {% set section = namespace(item=None) %}
-      {% for nav_item in nav %}
-        {% if section.item is none and nav_item.title | lower == section_title | lower %}
-          {% set section.item = nav_item %}
-        {% endif %}
-      {% endfor %}
-      {% if section.item %}
-        {% set _ = hub_sections.list.append(section.item) %}
-      {% endif %}
-    {% endfor %}
-    {% set active_hub_section = namespace(item=hub_sections.list[0] if hub_sections.list else none) %}
-    {% for section_item in hub_sections.list %}
-      {% if section_item.active %}
-        {% set active_hub_section.item = section_item %}
-      {% endif %}
-    {% endfor %}
-    {% set hub_section_pages = namespace(list=[]) %}
-    {% if active_hub_section.item and active_hub_section.item.children %}
-      {% set active_hub_path = nav_entry_path(active_hub_section.item) | trim %}
-      {% set hub_first_child = active_hub_section.item.children[0] if active_hub_section.item.children else none %}
-      {% set hub_first_path = nav_entry_path(hub_first_child) | trim %}
-      {% set flatten_hub_wrapper = hub_first_child and hub_first_child.children and hub_first_path == active_hub_path %}
-      {% set hub_child_source = hub_first_child.children if flatten_hub_wrapper else active_hub_section.item.children %}
-      {% for child in hub_child_source %}
-        {% set child_path = nav_entry_path(child) | trim %}
-        {% if child_path != active_hub_path %}
-          {% set _ = hub_section_pages.list.append(child) %}
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-    {{ mobile_row("Sections", hub_sections.list, "1-sections", true, "sections") }}
-    {{ mobile_row("Pages", hub_section_pages.list, "2-pages", true, "pages") }}
-    {{ mobile_sites_block }}
-  {% else %}
-    {% set top_directories = namespace(list=[]) %}
+  {% set top_directories = namespace(list=[]) %}
     {% set top_level_pages = namespace(list=[]) %}
     {% for nav_item in nav %}
       {% set nav_path = (nav_item.url | trim("/")) if nav_item.url else "" %}
@@ -403,11 +362,9 @@
     {% if first_local_row_key != "1-top-pages" %}
       {{ mobile_row("Pages", page_row_items.list, "4-pages", true, "pages") }}
     {% endif %}
-    {{ mobile_sites_block }}
-  {% endif %}
+  {{ mobile_sites_block }}
 </nav>
 {% set bijux_primary_section_nav = true %}
-{% if not is_bijux_hub_site %}
 <nav class="{{ class }} bijux-nav bijux-nav--scoped" aria-label="{{ lang.t('nav') }}" data-bijux-nav-empty="{{ 'false' if scoped.visible else 'true' }}" data-bijux-nav-variant="scoped" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" title="{{ config.site_name | e }}" class="md-nav__button md-logo" aria-label="{{ config.site_name }}" data-md-component="logo">
@@ -429,4 +386,3 @@
     {% endif %}
   </ul>
 </nav>
-{% endif %}
