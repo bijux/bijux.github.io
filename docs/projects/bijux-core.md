@@ -45,6 +45,16 @@ graph LR
 The split keeps command semantics, workflow semantics, and repository
 governance explicit instead of blending them into one opaque layer.
 
+## Runtime Authority Vs Governance Authority
+
+Runtime authority defines how commands and workflows execute: what can
+run, in what order, and with which execution semantics. Governance
+authority defines how those runtime surfaces are controlled over time:
+release rules, evidence expectations, and repository-level policy
+boundaries. Keeping them distinct prevents execution behavior from being
+silently changed by policy concerns, and prevents policy controls from
+being hidden inside runtime code paths.
+
 ## What This Repository Makes Visible
 
 - runtime truth: command behavior and execution authority are explicit, not implied
