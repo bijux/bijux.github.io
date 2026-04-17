@@ -83,6 +83,13 @@ be reviewed as connected but distinct responsibilities.
 - compatibility handled openly through dedicated package surfaces rather than hidden breaking changes
 - release and documentation discipline aligned with the repository layout
 
+## Canon Does Not Own
+
+Canon does not own runtime backbone authority, domain-specific scientific
+product workflows, or cross-repository standards ownership. Those
+responsibilities belong to `bijux-core`, domain repositories, and
+`bijux-std`.
+
 ## Where To Begin
 
 | If you are looking for... | Start with this part of Canon |
@@ -114,12 +121,6 @@ acceptance/replay surfaces.
 
 ## In The Larger Picture
 
-Canon keeps AI and knowledge workflows split into maintained parts
-instead of collapsing them into one vague layer. The package boundaries
-stay visible all the way out to the public docs.
-
-Bijux Canon is organized around the idea that knowledge systems stay
-durable only when ingest, indexing, reasoning, orchestration, and
-runtime responsibilities are separated with intention. Its value is not
-the package count alone, but the layered governance model that keeps the
-system extensible, inspectable, and coherent as it evolves.
+Canon keeps knowledge workflows split into maintained parts instead of
+collapsing them into one vague layer. The package boundaries stay
+visible all the way out to public docs.
