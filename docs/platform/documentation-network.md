@@ -57,6 +57,12 @@ becomes an island. With a shared shell, the root site is a real starting
 point and every handbook feels like part of the same documentation
 product.
 
+## What Stays Shared Vs What Stays Local
+
+- shared: top-level navigation patterns, shell structure, and orientation routes that let readers move across repositories consistently.
+- local: repository-specific docs content, domain vocabulary, and implementation detail owned by the destination handbook.
+- shared and local together: shared chrome provides stable movement; local ownership provides technical depth without flattening repository boundaries.
+
 ## Why This Matters
 
 - it reduces documentation drift across related repositories
@@ -64,6 +70,15 @@ product.
 - it shortens onboarding by keeping route patterns predictable
 - it speeds review because repository intent and destination paths are explicit
 - it supports operational continuity when repository surfaces evolve
+
+## Example Reader Walkthrough
+
+One reliable route is:
+
+1. start at [Home](../index.md) to orient around the repository family.
+2. open a destination from [Projects](../projects/index.md), such as [Bijux Atlas](../projects/bijux-atlas.md).
+3. move into the repository docs branch using the same site navigation structure.
+4. return to the platform branch through [Platform](index.md) to continue system-level reading.
 
 ## Reader Path
 
