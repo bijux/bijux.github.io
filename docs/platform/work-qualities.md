@@ -9,12 +9,11 @@ last_reviewed: 2026-04-12
 
 # Recurring Engineering Qualities
 
-This page is the shortest route into the recurring qualities of the
-Bijux repositories and where those qualities become visible publicly.
+Recurring engineering patterns across Bijux repositories.
 
-<div class="bijux-callout"><strong>The useful question is how the work is organized when it becomes public.</strong>
-Across the repositories, the same patterns recur: bounded ownership,
-delivery discipline, domain pressure handling, and explainable depth.</div>
+This page is the shortest route into the recurring patterns that shape
+repository ownership, delivery behavior, domain adaptation, and
+learning continuity.
 
 ## Qualities Map
 
