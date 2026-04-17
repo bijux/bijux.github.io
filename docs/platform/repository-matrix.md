@@ -61,7 +61,7 @@ graph LR
 
 | Repository | Repository type | Primary responsibility | What it owns publicly | Consumes shared standards | Start here |
 | --- | --- | --- | --- | --- | --- |
-| `bijux-std` | standards source | own shared standards, documentation shell contracts, and cross-repository quality checks | shared contracts, quality gates, and documentation shell source used by the family | no; this repository is the standards source | [Repository page](../projects/bijux-std.md) |
+| `bijux-std` | standards source | own shared standards, documentation shell contracts, and cross-repository quality checks | shared contracts, quality gates, and documentation shell source used by the family | no; this repository is the standards source | [Repository page](bijux-std.md) |
 | `bijux-core` | platform runtime repository | own runtime authority and release discipline | CLI surfaces, DAG runtime, evidence artifacts, release rules | yes | [Project page](../projects/bijux-core.md) |
 | `bijux-canon` | governed knowledge repository | own knowledge-system orchestration boundaries | ingest/index/reason/orchestrate package boundaries | yes | [Project page](../projects/bijux-canon.md) |
 | `bijux-atlas` | delivery repository | own public delivery interfaces and contracts | APIs, datasets, reporting, docs-aware operational routes | yes | [Project page](../projects/bijux-atlas.md) |
