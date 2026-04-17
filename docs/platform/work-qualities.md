@@ -33,22 +33,12 @@ graph TD
 
 ## Canonical Qualities
 
-| Quality | What it looks like | Where to inspect first |
+| Quality | Verification question | Evidence anchors |
 | --- | --- | --- |
-| Bounded ownership | systems split by responsibility instead of collapsing into a single vague platform | [System map](system-map.md), [Bijux Core](../projects/bijux-core.md), [Bijux Canon](../projects/bijux-canon.md) |
-| Delivery discipline | documentation, validation, release posture, and destination URLs treated as maintained product surfaces | [Delivery surfaces](delivery-surfaces.md), [Bijux Atlas](../projects/bijux-atlas.md), [Public surface](public-surface.md) |
-| Domain pressure handling | the same engineering posture surviving scientific and evidence-heavy constraints | [Applied domains](applied-domains.md), [Bijux Proteomics](../projects/bijux-proteomics.md), [Bijux Pollenomics](../projects/bijux-pollenomics.md) |
-| Explainable depth | architecture and workflow reasoning translated into teachable material without losing rigor | [Learning catalog](../learning/index.md), [Published Masterclass docs](https://bijux.io/bijux-masterclass/) |
-
-## How To Verify These Qualities
-
-| Quality | Verification signal |
-| --- | --- |
-| Boundary judgment | repository scopes remain stable and non-overlapping in docs and source structure |
-| Delivery ownership | release behavior, docs validation, and publication routes are visible and maintained |
-| Data and service architecture | APIs, datasets, and control-plane behavior are separated into clear operational surfaces |
-| Domain adaptation | domain repositories preserve system structure under scientific and evidence-heavy constraints |
-| Technical communication | learning material explains real repository trade-offs instead of detached tutorial examples |
+| Bounded ownership | Are responsibilities split cleanly so repository boundaries stay non-overlapping under change? | [System map](system-map.md), [Repository matrix](repository-matrix.md), [Bijux Core](../projects/bijux-core.md), [Bijux Canon](../projects/bijux-canon.md) |
+| Delivery discipline | Are documentation, release behavior, and publication routes visible as maintained engineering surfaces? | [Delivery surfaces](delivery-surfaces.md), [Public surface](public-surface.md), [Bijux Atlas](../projects/bijux-atlas.md) |
+| Domain pressure handling | Does the structure stay coherent when scientific workflows and evidence-heavy interpretation are required? | [Applied domains](applied-domains.md), [Bijux Proteomics](../projects/bijux-proteomics.md), [Bijux Pollenomics](../projects/bijux-pollenomics.md) |
+| Explainable depth | Can architecture and workflow decisions be taught with runnable materials instead of only summaries? | [Learning catalog](../learning/index.md), [Reproducible Research](../learning/reproducible-research.md), [Python Programming](../learning/python-programming.md) |
 
 ## Failure Signals When A Quality Is Missing
 
