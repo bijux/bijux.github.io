@@ -41,6 +41,12 @@ Generated mirrors in the local docs tree are synchronized outputs:
 - `docs/assets/javascripts/shell/*`
 - `docs/assets/javascripts/navigation-sync.js`
 
+Current consumers include:
+
+- `bijux.github.io`
+- project documentation sites that consume the shared shell contract
+- Masterclass documentation surfaces
+
 ## What Stays Shared Vs Local
 
 ### Shared
@@ -76,12 +82,12 @@ extra:
     theme_key: bijux:theme
 ```
 
-Field-by-field behavior:
+Field summary:
 
-- `repository`: active repository key used for hub-highlight state in shared navigation.
-- `hub_links`: cross-repository top-strip link set; each entry drives label and target URL shown in shell chrome.
-- `nav_mode`: shell navigation mode selector; `default` is the canonical mode for current shared behavior.
-- `theme_key`: shared browser storage key used by theme persistence so dark/light preference carries across Bijux sites.
+- `repository`: active repository key for shared navigation state.
+- `hub_links`: shared top-strip link set.
+- `nav_mode`: shell mode selector (`default` is canonical).
+- `theme_key`: shared browser-storage key for cross-site theme persistence.
 
 ## Allowed Customization Vs Forbidden Forks
 
