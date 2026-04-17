@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-12
+last_reviewed: 2026-04-17
 ---
 
 # Reproducible Research
@@ -18,6 +18,9 @@ In practical terms, this program addresses familiar failure points:
 artifact drift between runs, irreproducible results, unclear execution
 state, and broken promotion boundaries between local experiments and
 publishable outputs.
+
+The public docs surface for this program follows the shared
+documentation shell and standards checks inherited from `bijux-std`.
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-masterclass/reproducible-research/">View Family Docs</a>
@@ -74,7 +77,7 @@ graph TD
 - capstone-backed programs where the claims stay attached to executable capstones
 - the ability to teach system models instead of memorizing command syntax
 
-## Engineering Judgment Demonstrated Here
+## What This Program Teaches
 
 - state identity design for experiments and reproducible artifact lineage
 - workflow truth: choosing orchestration models that match failure and change pressure
