@@ -34,6 +34,14 @@ publish boundaries, dynamic workflow safety, state identity, experiment
 discipline, and reproducible execution. The programs are organized by
 failure mode and design pressure rather than by tool popularity.
 
+## Why Make, Snakemake, And DVC Belong Together
+
+| Tool | Core responsibility | Why it belongs in the same family |
+| --- | --- | --- |
+| Make | build truth | verifies dependency and rebuild correctness at the build-graph level |
+| Snakemake | workflow orchestration | coordinates multi-step data workflows with explicit contracts and execution order |
+| DVC | state and version control | tracks experiment state, parameters, metrics, and promotion boundaries over time |
+
 ## For Researchers Coming From Notebooks Or Manual Workflows
 
 If your current workflow is mostly notebooks, scripts, and manual file
@@ -72,6 +80,12 @@ graph TD
 - workflow truth: choosing orchestration models that match failure and change pressure
 - publication boundaries that separate build, review, and release responsibilities
 - recovery posture after drift, parameter churn, or runtime evolution
+
+## Concrete Failure Modes Covered
+
+- stale artifacts: outputs appear current but were built from outdated upstream inputs.
+- parameter drift: model or analysis parameters change without a comparable, traceable baseline.
+- workflow graph mismatch: declared dependencies do not match real execution needs, causing partial or incorrect rebuilds.
 
 ## Where To Begin
 
