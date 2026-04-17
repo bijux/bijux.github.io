@@ -65,12 +65,11 @@ graph TD
     control --> publish
 ```
 
-## What This Repository Demonstrates Architecturally
+## What Atlas Owns
 
-- immutable artifact posture for dataset and query outputs under change
-- queryable delivery interfaces with explicit API and contract surfaces
-- control-plane separation between runtime serving and maintainer operations
-- publication boundaries where docs, release behavior, and contracts remain aligned
+- delivery contracts for APIs, datasets, and query behavior
+- publication and release surfaces for immutable artifacts
+- control-plane operations that keep docs, contracts, and service behavior aligned
 
 ## What Lives Here
 
