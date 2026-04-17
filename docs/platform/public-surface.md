@@ -14,16 +14,26 @@ open directly from `bijux.io` today. The goal is to make the hub
 behave like a maintained documentation network, not a static landing
 page.
 
+Some public surfaces are browsed destinations (where readers navigate
+content), while others are ownership sources (where shared standards and
+contracts are defined).
+
 ## Surface Map
 
 ```mermaid
 graph TD
-    surface["Public Surface"] --> docs["Documentation sites"]
+    surface["Public Surface"] --> hub["Hub"]
+    surface --> standards["Standards source"]
+    surface --> docs["Repository docs"]
     surface --> source["Source repositories"]
-    surface --> projects["Project pages"]
+    surface --> delivery["Delivery endpoints"]
+    surface --> projects["Project overview pages"]
 
-    docs --> orientation["Orientation"]
+    hub --> orientation["Orientation"]
+    standards --> contracts["Shared contract ownership"]
+    docs --> handbooks["Docs navigation and boundaries"]
     source --> verification["Verification"]
+    delivery --> operated["Operated interfaces"]
     projects --> context["Context"]
 ```
 
@@ -34,6 +44,12 @@ graph TD
 | Surface | Purpose | Use this when | What becomes visible here |
 | --- | --- | --- | --- |
 | [bijux.github.io](https://github.com/bijux/bijux.github.io) | shared documentation hub and cross-repository shell | you need orientation before choosing an owning repository | `docs/` structure, shell assets, and navigation contracts |
+
+### Standards
+
+| Surface | Purpose | Use this when | What becomes visible here |
+| --- | --- | --- | --- |
+| [bijux-std](https://github.com/bijux/bijux-std) | canonical source for shared documentation shell and shared checks | you need ownership source for cross-repository standards and shell behavior | shared docs shell contracts, sync/check tooling, and cross-repository standards boundaries |
 
 ### Repository Docs
 
@@ -56,6 +72,12 @@ graph TD
 | [bijux-proteomics source](https://github.com/bijux/bijux-proteomics) | source of proteomics-oriented system implementation | you need workflow details, package boundaries, and reproducibility mechanics | scientific system behavior under domain constraints |
 | [bijux-pollenomics source](https://github.com/bijux/bijux-pollenomics) | source of evidence-mapping system implementation | you need data and reporting structure behind published outputs | domain modeling and evidence handling in repository form |
 | [bijux-masterclass source](https://github.com/bijux/bijux-masterclass) | source of learning programs and executable course materials | you need course-book and capstone implementation details | explanation linked to runnable learning artifacts |
+
+### Delivery Endpoints
+
+| Surface | Purpose | Use this when | What becomes visible here |
+| --- | --- | --- | --- |
+| [Bijux Atlas docs](https://bijux.io/bijux-atlas/) and [Bijux Atlas source](https://github.com/bijux/bijux-atlas) | entry points for API, dataset, and reporting delivery behavior | you need delivery-facing interfaces and their implementation context together | how published service/data outputs map to owned contracts and repository implementation |
 
 ### Project Overview Pages
 
