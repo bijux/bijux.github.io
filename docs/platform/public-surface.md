@@ -92,6 +92,15 @@ graph TD
 - each destination has a distinct role in runtime, knowledge, delivery, domain, or learning layers
 - the public surface supports both high-level routing and deeper technical inspection
 
+## Ownership Map
+
+```mermaid
+graph LR
+    hub["bijux.github.io hub"] <--> repos["Repository docs and source surfaces"]
+    std["bijux-std standards source"] --> hub
+    std --> repos
+```
+
 ## How To Use This Page
 
 - documentation links are a good starting point for a guided tour of a
@@ -110,6 +119,7 @@ point-in-time snapshot.
 
 - top-level repository destinations and their public docs roots
 - cross-repository navigation routes from the hub
+- shared docs shell continuity and navigation behavior across documentation sites
 - the role-level separation between platform, project, and learning surfaces
 
 ### Expected To Evolve
