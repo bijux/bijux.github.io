@@ -29,6 +29,12 @@ documentation shell and standards checks inherited from `bijux-std`.
 <a class="md-button" href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-dvc/">View Deep Dive DVC</a>
 </div>
 
+## Concrete Failure Modes Covered
+
+- stale artifacts: outputs appear current but were built from outdated upstream inputs.
+- parameter drift: model or analysis parameters change without a comparable, traceable baseline.
+- workflow graph mismatch: declared dependencies do not match real execution needs, causing partial or incorrect rebuilds.
+
 ## Family Shape
 
 This family is not just about research tooling. It is about engineering
@@ -83,12 +89,6 @@ graph TD
 - workflow truth: choosing orchestration models that match failure and change pressure
 - publication boundaries that separate build, review, and release responsibilities
 - recovery posture after drift, parameter churn, or runtime evolution
-
-## Concrete Failure Modes Covered
-
-- stale artifacts: outputs appear current but were built from outdated upstream inputs.
-- parameter drift: model or analysis parameters change without a comparable, traceable baseline.
-- workflow graph mismatch: declared dependencies do not match real execution needs, causing partial or incorrect rebuilds.
 
 ## Where To Begin
 
