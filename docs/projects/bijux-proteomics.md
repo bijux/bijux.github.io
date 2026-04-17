@@ -9,17 +9,17 @@ last_reviewed: 2026-04-12
 
 # Bijux Proteomics
 
-`bijux-proteomics` is the proteomics and discovery product surface in
-the Bijux repository family. It shows how the same platform and software
-discipline carries into scientific and laboratory-adjacent work.
-In plain language, this repository helps teams and scientists move from
-discovery workflows to governed software surfaces with clear contracts,
-runtime behavior, and evidence paths.
+`bijux-proteomics` helps scientists and teams run proteomics discovery
+workflows as structured software with explicit contracts, runtime
+behavior, and evidence handling.
 
 For scientists and teams, this means turning experiment-driven work into
 repeatable software routes: run discovery workflows, track evidence,
 produce decision-ready outputs, and keep lab-facing planning steps
 traceable over time.
+
+Shared standards note: Proteomics docs and checks follow shared shell
+and quality standards inherited from `bijux-std`.
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-proteomics/">View Published Docs</a>
