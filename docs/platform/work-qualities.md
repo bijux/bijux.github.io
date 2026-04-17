@@ -42,20 +42,19 @@ graph TD
 
 ## Failure Signals When A Quality Is Missing
 
-| Quality | Failure signal |
-| --- | --- |
-| Boundary judgment | one repository absorbs unrelated concerns and interface intent becomes unclear |
-| Delivery ownership | docs and release behavior drift away from repository reality |
-| Data and service architecture | runtime, delivery, and policy responsibilities become entangled |
-| Domain adaptation | domain-specific work relies on one-off scripts and weak contracts |
-| Technical communication | explanation becomes abstract and cannot be traced back to working systems |
+| Quality | Concrete failure signal | Where to inspect the opposite |
+| --- | --- | --- |
+| Bounded ownership | one repository starts absorbing runtime, delivery, and domain concerns in the same change stream | [Repository matrix](repository-matrix.md), [System map](system-map.md) |
+| Delivery discipline | docs promise routes or release behavior that cannot be matched to maintained automation and destinations | [Delivery surfaces](delivery-surfaces.md), [Public surface](public-surface.md) |
+| Domain pressure handling | scientific workflows are carried by one-off scripts with weak evidence or publication contracts | [Applied domains](applied-domains.md), [Bijux Proteomics](../projects/bijux-proteomics.md), [Bijux Pollenomics](../projects/bijux-pollenomics.md) |
+| Explainable depth | teaching material becomes disconnected from runnable artifacts and repository trade-offs | [Learning catalog](../learning/index.md), [Reproducible Research](../learning/reproducible-research.md) |
 
 ## Why These Qualities Recur
 
 <div class="bijux-panel-grid">
-  <div class="bijux-panel"><h3>Bounded Systems</h3><p>Clear repository boundaries are costly to maintain unless they reflect real ownership. They are one of the fastest ways to distinguish systems thinking from namespace inflation.</p></div>
-  <div class="bijux-panel"><h3>Inspectable Delivery</h3><p>A strong public surface routes into maintained documentation, published endpoints, automation, and operating rules. Delivery should be visible before anyone asks for private context.</p></div>
-  <div class="bijux-panel"><h3>Domain Pressure</h3><p>Infrastructure alone is not enough. Technical judgment is easier to inspect when it survives proteomics, pollenomics, evidence mapping, and scientific workflow constraints.</p></div>
+  <div class="bijux-panel"><h3>Bounded Ownership</h3><p>Clear repository boundaries are costly to maintain unless they reflect real ownership. They are one of the fastest ways to distinguish systems thinking from namespace inflation.</p></div>
+  <div class="bijux-panel"><h3>Delivery Discipline</h3><p>A strong public surface routes into maintained documentation, published endpoints, automation, and operating rules. Delivery should be visible before anyone asks for private context.</p></div>
+  <div class="bijux-panel"><h3>Domain Pressure Handling</h3><p>Infrastructure alone is not enough. Technical judgment is easier to inspect when it survives proteomics, pollenomics, evidence mapping, and scientific workflow constraints.</p></div>
   <div class="bijux-panel"><h3>Explainable Depth</h3><p>Engineers who can teach architecture, workflow discipline, and programming design usually understand the systems well enough to build and evolve them cleanly.</p></div>
 </div>
 
