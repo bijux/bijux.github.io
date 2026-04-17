@@ -9,12 +9,18 @@ last_reviewed: 2026-04-12
 
 # Bijux Canon
 
+Canon is the repository where Bijux turns raw knowledge inputs into
+indexed, reasoned, and runtime-controlled outputs through explicit
+engineering layers.
+
 `bijux-canon` is the governed knowledge-system stack for deterministic
 ingest, retrieval, reasoning, orchestration, and controlled runtime
 acceptance. It is a clear route into system decomposition around AI and
 knowledge workflows.
-In plain language, Canon is where knowledge-system work is turned into a
-maintained engineering stack instead of a single opaque AI layer.
+
+Here, "governed knowledge-system stack" means five linked surfaces with
+distinct responsibilities: ingestion, indexing, retrieval and
+reasoning, orchestration, and runtime control.
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-canon/">View Published Docs</a>
