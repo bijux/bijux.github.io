@@ -27,17 +27,42 @@ graph TD
     projects --> context["Context"]
 ```
 
-## Curated Public Destinations
+## Curated Public Destinations By Surface Type
 
-| Surface | Purpose | What to inspect first | What becomes visible here |
+### Hub
+
+| Surface | Purpose | Use this when | What becomes visible here |
 | --- | --- | --- | --- |
-| [bijux.github.io](https://github.com/bijux/bijux.github.io) | shared documentation hub and cross-repository shell | `docs/` structure, shell assets, navigation contracts | docs are treated as a maintained system surface, not a static landing page |
-| [bijux-core docs](https://bijux.io/bijux-core/) and [source](https://github.com/bijux/bijux-core) | runtime backbone and repository governance | CLI and DAG surfaces, governance docs, release rules | execution authority and repository discipline are explicit |
-| [bijux-canon docs](https://bijux.io/bijux-canon/) and [source](https://github.com/bijux/bijux-canon) | governed knowledge-system architecture | ingest/index/reason/orchestrate split and package boundaries | knowledge workflows are decomposed into accountable interfaces |
-| [bijux-atlas docs](https://bijux.io/bijux-atlas/) and [source](https://github.com/bijux/bijux-atlas) | data and service delivery surfaces | API contracts, dataset publication, operational checks | delivery is treated as product architecture, not post-processing |
-| [bijux-proteomics docs](https://bijux.io/bijux-proteomics/) and [source](https://github.com/bijux/bijux-proteomics) | proteomics-oriented scientific system delivery | domain workflows with reproducibility and boundary clarity | domain-heavy constraints can be handled without architecture drift |
-| [bijux-pollenomics docs](https://bijux.io/bijux-pollenomics/) and [source](https://github.com/bijux/bijux-pollenomics) | evidence mapping and site-selection system design | evidence surfaces, domain framing, operational structure | specialized domain pressure can still preserve system rigor |
-| [bijux-masterclass docs](https://bijux.io/bijux-masterclass/) and [source](https://github.com/bijux/bijux-masterclass) | technical education programs tied to real system practice | program sequence and deep-dive structure | architectural depth can be translated into reusable instruction |
+| [bijux.github.io](https://github.com/bijux/bijux.github.io) | shared documentation hub and cross-repository shell | you need orientation before choosing an owning repository | `docs/` structure, shell assets, and navigation contracts |
+
+### Repository Docs
+
+| Surface | Purpose | Use this when | What becomes visible here |
+| --- | --- | --- | --- |
+| [bijux-core docs](https://bijux.io/bijux-core/) | runtime backbone and repository governance | you want runtime and governance routes with handbook context | CLI and DAG surfaces, governance docs, and release rules |
+| [bijux-canon docs](https://bijux.io/bijux-canon/) | governed knowledge-system architecture | you want ingest/index/reason/orchestrate pathways with documented boundaries | knowledge workflows decomposed into accountable interfaces |
+| [bijux-atlas docs](https://bijux.io/bijux-atlas/) | data and service delivery surfaces | you want API, dataset, and reporting delivery context | delivery treated as maintained product architecture |
+| [bijux-proteomics docs](https://bijux.io/bijux-proteomics/) | proteomics-oriented scientific system delivery | you want to inspect scientific workflows with reproducibility constraints | domain pressure handled without architecture drift |
+| [bijux-pollenomics docs](https://bijux.io/bijux-pollenomics/) | evidence mapping and site-selection system design | you want evidence-heavy outputs with explicit operational structure | specialized domain pressure with bounded system design |
+| [bijux-masterclass docs](https://bijux.io/bijux-masterclass/) | technical education programs tied to real system practice | you want course-level technical routes and deep-dive programs | architecture thinking translated into reusable instruction |
+
+### Source Repositories
+
+| Surface | Purpose | Use this when | What becomes visible here |
+| --- | --- | --- | --- |
+| [bijux-core source](https://github.com/bijux/bijux-core) | source of runtime and governance implementation | you need file-level structure and history for core runtime decisions | package boundaries, command surfaces, and evolution over time |
+| [bijux-canon source](https://github.com/bijux/bijux-canon) | source of governed knowledge-system implementation | you need package-level ownership and change history for Canon layers | ingest/index/reason/orchestrate ownership in code |
+| [bijux-atlas source](https://github.com/bijux/bijux-atlas) | source of delivery and control-plane implementation | you need operational and delivery mechanics beyond docs summaries | API/dataset/reporting structure with automation entry points |
+| [bijux-proteomics source](https://github.com/bijux/bijux-proteomics) | source of proteomics-oriented system implementation | you need workflow details, package boundaries, and reproducibility mechanics | scientific system behavior under domain constraints |
+| [bijux-pollenomics source](https://github.com/bijux/bijux-pollenomics) | source of evidence-mapping system implementation | you need data and reporting structure behind published outputs | domain modeling and evidence handling in repository form |
+| [bijux-masterclass source](https://github.com/bijux/bijux-masterclass) | source of learning programs and executable course materials | you need course-book and capstone implementation details | explanation linked to runnable learning artifacts |
+
+### Project Overview Pages
+
+| Surface | Purpose | Use this when | What becomes visible here |
+| --- | --- | --- | --- |
+| [Projects index](../projects/index.md) | overview of repository roles in one place | you want a fast map before selecting a destination | repository family roles and cross-links |
+| [Bijux Core](../projects/bijux-core.md), [Bijux Canon](../projects/bijux-canon.md), [Bijux Atlas](../projects/bijux-atlas.md), [Bijux Proteomics](../projects/bijux-proteomics.md), [Bijux Pollenomics](../projects/bijux-pollenomics.md), [Learning index](../learning/index.md) | project-level summaries and route hints | you want role context before opening repo docs or source | role intent, key surfaces, and suggested entry routes |
 
 ## What This Page Makes Visible
 
