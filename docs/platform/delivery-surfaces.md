@@ -40,6 +40,22 @@ graph TD
     ops --> inspectable
 ```
 
+## Delivery Classes
+
+| Class | What it includes | What to inspect first |
+| --- | --- | --- |
+| Documentation | repository handbooks, docs navigation, public explanatory routes | whether ownership, boundaries, and operating procedures are explicit |
+| Published software | packages, generated artifacts, and versioned release outputs | whether build and release paths are reproducible and reviewable |
+| Service interfaces | APIs, runtime interfaces, and user-facing data endpoints | whether interface contracts and behavior expectations are documented clearly |
+| Release and ops evidence | CI checks, validation routines, and promotion workflows | whether quality claims are backed by observable checks and traceable evidence |
+
+## Why This Matters Beyond Ops
+
+Delivery is how architecture becomes visible in public. Even if you are
+reviewing design rather than operations, delivery surfaces show whether
+the stated architecture can be used, verified, and trusted outside the
+original implementation team.
+
 ## Where Delivery Shows Up
 
 | Surface | What to inspect | Why it is useful |
