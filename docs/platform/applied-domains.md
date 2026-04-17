@@ -34,13 +34,13 @@ graph LR
     learning --> outcomes
 ```
 
-## Domain Reach
+## Domain Pressure Surfaces
 
-| Domain | What shows up here |
+| Domain surface | Applied pressure |
 | --- | --- |
-| Proteomics | scientific product surfaces where laboratory context and evidence constraints shape package and runtime decisions |
-| Pollenomics | evidence-mapping outputs where archaeology, eDNA, aDNA, and regional interpretation needs shape model and publication choices |
-| Reproducible research workflows | learning-linked workflow systems where artifact lineage and re-runnability are part of the deliverable |
+| Proteomics | schema depth and evidence lineage requirements from laboratory workflows shape package boundaries, validation, and publication paths |
+| Pollenomics | interpretation complexity across archaeology, eDNA, aDNA, and regional context shapes model design and output structure |
+| Learning workflows (Masterclass reproducible research) | reproducibility pressure appears as teachable workflow behavior where reruns, artifact lineage, and review steps are part of the deliverable |
 
 ## Why This Branch Is Here
 
@@ -53,14 +53,12 @@ losing architectural clarity.
 - bounded ownership instead of monolithic responsibility
 - inspectable interfaces and explicit operational contracts
 - reproducibility and evidence discipline as non-optional quality criteria
-- documentation aligned to system boundaries, not detached summaries
 
 ## What Domain Pressure Changes
 
-- schema complexity: domain entities, relationships, and constraints become deeper and less forgiving than generic data models.
-- evidence burden: claims must be tied to traceable inputs, transformations, and review paths.
-- interpretation burden: outputs must stay understandable to specialists who use them for real decisions.
-- publication burden: delivery surfaces must preserve context, caveats, and reproducibility in public-facing outputs.
+- schema complexity: domain entities, relationships, and constraints become deeper than generic data models.
+- interpretation burden: outputs must remain understandable to specialists making real decisions.
+- publication burden: delivery surfaces must preserve context, caveats, and reproducibility in public outputs.
 
 ## Domain-Driven Repositories
 
