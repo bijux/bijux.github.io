@@ -56,10 +56,20 @@ graph LR
 
 ## Program Families
 
-| Program | Focus | Destination |
-| --- | --- | --- |
-| Reproducible Research | workflow systems, automation discipline, build truth, and scientific execution habits | [Program docs](https://bijux.io/bijux-masterclass/reproducible-research/) |
-| Python Programming | language depth, runtime judgment, software design tradeoffs, and long-form programming instruction | [Program docs](https://bijux.io/bijux-masterclass/python-programming/) |
+| Program | Who it is for | What it teaches | What artifact proves it | Destination |
+| --- | --- | --- | --- | --- |
+| Reproducible Research | engineers and researchers who need reliable scientific workflows | workflow systems, automation discipline, build truth, and scientific execution habits | capstone workflow outputs that can be re-run and reviewed | [Program docs](https://bijux.io/bijux-masterclass/reproducible-research/) |
+| Python Programming | learners advancing from syntax fluency to design judgment | language depth, runtime judgment, software design tradeoffs, and long-form programming instruction | capstone implementations and runnable exercises that show design decisions in code | [Program docs](https://bijux.io/bijux-masterclass/python-programming/) |
+
+## Example Learning Artifact Chain
+
+One concrete pattern in this branch is:
+
+course book -> capstone -> runnable artifact -> reviewable output
+
+For example, a learner follows a course chapter, implements the linked
+capstone workflow, runs the resulting artifact, and reviews produced
+outputs against expected behavior and constraints.
 
 ## What You Will Find Here
 
