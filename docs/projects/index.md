@@ -20,17 +20,14 @@ project pages.
 
 ```mermaid
 graph TD
-    projects["Projects"] --> core_platform["Core Platform"]
-    projects --> learning_systems["Learning Systems"]
-    core_platform --> knowledge_systems["Knowledge Systems"]
-    core_platform --> delivery_systems["Delivery Systems"]
-    core_platform --> scientific_systems["Scientific Systems"]
+    projects["Projects"] --> core["Core"]
+    projects --> canon["Canon"]
+    projects --> atlas["Atlas"]
+    projects --> proteomics["Proteomics"]
+    projects --> pollenomics["Pollenomics"]
+    projects --> learning["Learning branch reference"]
 
-    knowledge_systems --> canon["Canon"]
-    delivery_systems --> atlas["Atlas"]
-    scientific_systems --> proteomics["Proteomics"]
-    scientific_systems --> pollenomics["Pollenomics"]
-    learning_systems --> masterclass["Masterclass"]
+    learning --> learning_index["Learning index (top-level branch)"]
 ```
 
 It can serve as orientation before moving to the project pages for
@@ -40,11 +37,12 @@ repository-specific detail and inspection routes.
 
 | Capability cluster | Repositories |
 | --- | --- |
-| core runtime and platform backbone | [Bijux Core](bijux-core.md) |
-| governed knowledge and data-system architecture | [Bijux Canon](bijux-canon.md) |
-| delivery and data-service product surfaces | [Bijux Atlas](bijux-atlas.md) |
-| scientific systems under domain pressure | [Bijux Proteomics](bijux-proteomics.md), [Bijux Pollenomics](bijux-pollenomics.md) |
-| technical education systems | [Learning catalog](../learning/index.md) and published `bijux-masterclass` programs |
+| runtime authority and execution governance | [Bijux Core](bijux-core.md) |
+| knowledge-system orchestration and reasoning boundaries | [Bijux Canon](bijux-canon.md) |
+| public delivery interfaces and service publication | [Bijux Atlas](bijux-atlas.md) |
+| proteomics scientific product workflows | [Bijux Proteomics](bijux-proteomics.md) |
+| evidence-mapping product workflows | [Bijux Pollenomics](bijux-pollenomics.md) |
+| learning branch route (top-level, not a project repository) | [Learning catalog](../learning/index.md) |
 
 <div class="bijux-showcase-grid">
   <article class="bijux-showcase-card">
