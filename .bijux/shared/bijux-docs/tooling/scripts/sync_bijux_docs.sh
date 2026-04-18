@@ -22,12 +22,12 @@ for required in \
   "${shared_root}/scripts/mermaid-init.js" \
   "${shared_root}/scripts/nav-sync.js"; do
   if [[ ! -f "${required}" ]]; then
-    echo "ERROR: missing shared bijux docs file ${required}" >&2
+    echo "ERROR: missing .bijux/shared Bijux docs file ${required}" >&2
     exit 1
   fi
 done
 
-# shared -> docs
+# .bijux/shared -> docs
 sync_file "${shared_root}/partials/header.html" "${repo_root}/docs/overrides/partials/header.html"
 sync_file "${shared_root}/partials/footer.html" "${repo_root}/docs/overrides/partials/footer.html"
 sync_file "${shared_root}/partials/footer-profile-links.html" "${repo_root}/docs/overrides/partials/footer-profile-links.html"
@@ -45,4 +45,4 @@ done
 sync_file "${shared_root}/scripts/nav-sync.js" "${repo_root}/docs/assets/javascripts/navigation-sync.js"
 sync_file "${shared_root}/scripts/mermaid-init.js" "${repo_root}/docs/assets/javascripts/mermaid-init.js"
 
-echo "Bijux docs synchronized: shared -> docs"
+echo "Bijux docs synchronized: .bijux/shared -> docs"

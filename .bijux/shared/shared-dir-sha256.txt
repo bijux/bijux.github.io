@@ -1,4 +1,4 @@
-b7db91c574fc9e3e1e8a9b1b2466c8923646a280afd1b5bc392c9986f5b6a448 .bijux/shared/bijux-docs
+c0b2105068835e1ca84768bcb22ca6f38fc6cccbd24c516b8dd1fbaa6b46109b .bijux/shared/bijux-docs
 02a76d62b0f81e1733de22013798916b8e804981f1eb89cd882b6f09bb14388b .bijux/shared/bijux-makes-py
 0615896d3196a96c163c08f1235aa28c25ce92ad29db27092c46c20a716c059f .bijux/shared/bijux-checks
 1593c35c3e1146a2206544fd8c2369ae3a3dd2557e34e18fc6b34b2692cd5f36 .bijux/shared/bijux-gh

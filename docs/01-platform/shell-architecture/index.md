@@ -30,9 +30,9 @@ The shell architecture exists so readers can:
 
 Canonical shell source lives under shared ownership:
 
-- `shared/bijux-docs/partials/*`
-- `shared/bijux-docs/styles/*`
-- `shared/bijux-docs/scripts/*`
+- `.bijux/shared/bijux-docs/partials/*`
+- `.bijux/shared/bijux-docs/styles/*`
+- `.bijux/shared/bijux-docs/scripts/*`
 
 Generated mirrors in the local docs tree are synchronized outputs:
 
@@ -107,7 +107,7 @@ Field summary:
 
 The shell uses a source-and-mirror sync model:
 
-1. edit only canonical shell files in `shared/bijux-docs/*`
+1. edit only canonical shell files in `.bijux/shared/bijux-docs/*`
 2. run sync to update generated local mirrors under `docs/*`
 3. run checks to verify the shell contract and detect drift
 4. run docs sanity checks before publishing
@@ -120,7 +120,7 @@ The shell uses a source-and-mirror sync model:
 
 ## Commands
 
-- `make bijux-docs-sync`: synchronize shell source into local docs mirrors (`shared -> docs`)
+- `make bijux-docs-sync`: synchronize shell source into local docs mirrors (`.bijux/shared -> docs`)
 - `make bijux-docs-check`: validate shell contract and drift checks
 - `make docs-sanity`: run shell checks and docs build validation together
 
