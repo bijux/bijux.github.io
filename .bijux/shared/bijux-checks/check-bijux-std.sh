@@ -33,6 +33,12 @@ resolve_local_rel() {
 
 verify_no_legacy_root_shared_dirs() {
   if [[ -d "${repo_root}/.bijux/shared" && "$(basename "${repo_root}")" != "bijux-std" ]]; then
+    if [[ -d "${repo_root}/shared" ]]; then
+      echo "ERROR: legacy root shared directory present: shared/" >&2
+      echo "Hint: remove root shared and keep only .bijux/shared/*" >&2
+      exit 1
+    fi
+
     local has_legacy=0
     while IFS= read -r remote_dir_rel; do
       if [[ "${remote_dir_rel}" == shared/* && -d "${repo_root}/${remote_dir_rel}" ]]; then

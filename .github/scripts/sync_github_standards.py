@@ -99,9 +99,14 @@ def copy_repo_files(target_repo: str, repo_config: dict[str, Any], manifest: dic
         if path.exists():
             path.unlink()
 
-    legacy_shared_path = repo_dir / "shared/bijux-gh"
-    if legacy_shared_path.exists():
-        shutil.rmtree(legacy_shared_path)
+    if (repo_dir / ".bijux/shared").exists():
+        for legacy_name in ("bijux-docs", "bijux-makes-py", "bijux-checks", "bijux-gh"):
+            legacy_shared_path = repo_dir / "shared" / legacy_name
+            if legacy_shared_path.exists():
+                shutil.rmtree(legacy_shared_path)
+        legacy_shared_root = repo_dir / "shared"
+        if legacy_shared_root.exists() and not any(legacy_shared_root.iterdir()):
+            legacy_shared_root.rmdir()
 
 
 def sync_repo_files(target_repo: str, manifest: dict[str, Any]) -> None:

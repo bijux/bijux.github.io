@@ -250,6 +250,15 @@ for remote_dir_rel in "${update_dirs[@]}"; do
   fi
 done
 
+if [[ -d "${repo_root}/.bijux/shared" && "$(basename "${repo_root}")" != "bijux-std" ]]; then
+  if [[ -d "${repo_root}/shared" ]]; then
+    if [[ -z "$(find "${repo_root}/shared" -mindepth 1 -print -quit 2>/dev/null)" ]]; then
+      rmdir "${repo_root}/shared"
+      echo "→ removed legacy shared/"
+    fi
+  fi
+fi
+
 if (( ${#skipped_dirs[@]} > 0 )); then
   for dir_rel in "${skipped_dirs[@]}"; do
     echo "→ kept local ${dir_rel}"
