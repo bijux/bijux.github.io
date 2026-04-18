@@ -12,3 +12,5 @@ __pycache__/
 /search/
 /sitemap.xml
 /sitemap.xml.gz
+
+artifacts/bijux-docs/
