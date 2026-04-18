@@ -9,6 +9,7 @@ ROOT = Path.cwd()
 MANIFEST_PATH = ROOT / ".github/standards/repo-config.manifest.json"
 
 BASE_PROTECTED_PATHS = {
+    ".github/CODEOWNERS",
     ".github/ISSUE_TEMPLATE/bug-report.yml",
     ".github/ISSUE_TEMPLATE/config.yml",
     ".github/ISSUE_TEMPLATE/feature-request.yml",

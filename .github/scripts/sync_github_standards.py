@@ -24,6 +24,7 @@ DEFAULT_REPOS = [
 ]
 
 BASE_FILE_MAPPINGS: list[tuple[str, str]] = [
+    (".github/CODEOWNERS", ".github/CODEOWNERS"),
     (".github/ISSUE_TEMPLATE/bug-report.yml", ".github/ISSUE_TEMPLATE/bug-report.yml"),
     (".github/ISSUE_TEMPLATE/config.yml", ".github/ISSUE_TEMPLATE/config.yml"),
     (".github/ISSUE_TEMPLATE/feature-request.yml", ".github/ISSUE_TEMPLATE/feature-request.yml"),
