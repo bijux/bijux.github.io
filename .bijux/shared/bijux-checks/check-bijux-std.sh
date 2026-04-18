@@ -131,7 +131,7 @@ verify_dir_against_manifests() {
   expected_sha="${remote_expected}"
   if [[ "${local_expected}" != "${remote_expected}" ]]; then
     if [[ "${require_remote_match}" == "1" ]]; then
-      echo "ERROR: local manifest drift for ${dir_rel}" >&2
+      echo "ERROR: local manifest drift for ${local_dir_rel}" >&2
       echo "Local manifest:  ${local_expected}" >&2
       echo "Remote manifest: ${remote_expected}" >&2
       exit 1
