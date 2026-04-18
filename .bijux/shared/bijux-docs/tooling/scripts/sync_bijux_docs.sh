@@ -2,7 +2,14 @@
 set -euo pipefail
 
 repo_root="$(git rev-parse --show-toplevel)"
-shared_root="${repo_root}/.bijux/shared/bijux-docs"
+if [[ -d "${repo_root}/shared/bijux-docs" ]]; then
+  shared_root="${repo_root}/shared/bijux-docs"
+elif [[ -d "${repo_root}/.bijux/shared/bijux-docs" ]]; then
+  shared_root="${repo_root}/.bijux/shared/bijux-docs"
+else
+  echo "ERROR: missing shared bijux docs directory (expected shared/bijux-docs or .bijux/shared/bijux-docs)" >&2
+  exit 1
+fi
 
 sync_file() {
   local src="$1"
@@ -20,14 +27,19 @@ for required in \
   "${shared_root}/partials/bijux-nav.html" \
   "${shared_root}/styles/extra.css" \
   "${shared_root}/scripts/mermaid-init.js" \
-  "${shared_root}/scripts/nav-sync.js"; do
+  "${shared_root}/scripts/nav-sync.js" \
+  "${shared_root}/assets/bijux_icon.png" \
+  "${shared_root}/assets/bijux_logo_hq.png" \
+  "${shared_root}/assets/site-icons/favicon.ico" \
+  "${shared_root}/assets/site-icons/apple-touch-icon.png" \
+  "${shared_root}/assets/site-icons/apple-touch-icon-precomposed.png"; do
   if [[ ! -f "${required}" ]]; then
-    echo "ERROR: missing .bijux/shared Bijux docs file ${required}" >&2
+    echo "ERROR: missing shared bijux docs file ${required}" >&2
     exit 1
   fi
 done
 
-# .bijux/shared -> docs
+# shared -> docs
 sync_file "${shared_root}/partials/header.html" "${repo_root}/docs/overrides/partials/header.html"
 sync_file "${shared_root}/partials/footer.html" "${repo_root}/docs/overrides/partials/footer.html"
 sync_file "${shared_root}/partials/footer-profile-links.html" "${repo_root}/docs/overrides/partials/footer-profile-links.html"
@@ -44,5 +56,10 @@ for script in bootstrap.js detail-tabs.js nav-reveal.js nav-state.js theme-persi
 done
 sync_file "${shared_root}/scripts/nav-sync.js" "${repo_root}/docs/assets/javascripts/navigation-sync.js"
 sync_file "${shared_root}/scripts/mermaid-init.js" "${repo_root}/docs/assets/javascripts/mermaid-init.js"
+sync_file "${shared_root}/assets/bijux_icon.png" "${repo_root}/docs/assets/bijux_icon.png"
+sync_file "${shared_root}/assets/bijux_logo_hq.png" "${repo_root}/docs/assets/bijux_logo_hq.png"
+sync_file "${shared_root}/assets/site-icons/favicon.ico" "${repo_root}/docs/assets/site-icons/favicon.ico"
+sync_file "${shared_root}/assets/site-icons/apple-touch-icon.png" "${repo_root}/docs/assets/site-icons/apple-touch-icon.png"
+sync_file "${shared_root}/assets/site-icons/apple-touch-icon-precomposed.png" "${repo_root}/docs/assets/site-icons/apple-touch-icon-precomposed.png"
 
-echo "Bijux docs synchronized: .bijux/shared -> docs"
+echo "Bijux docs synchronized: shared -> docs"
