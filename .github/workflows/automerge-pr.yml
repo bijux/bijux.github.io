@@ -1,4 +1,4 @@
-name: auto-enable-pr-automerge
+name: automerge-pr
 
 on:
   pull_request_target:
