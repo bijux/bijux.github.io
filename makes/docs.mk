@@ -13,6 +13,8 @@ SITE_URL             ?= https://bijux.io/
 DOCS_ENV             :=
 PYTHON_BIN           ?= $(shell command -v python3 2>/dev/null)
 TABLE_GUARD          ?= .bijux/shared/bijux-docs/tooling/quality/markdown_table_guard.py
+SITE_ICONS_DIR       ?= docs/assets/site-icons
+ROOT_COMPAT_ICONS    ?= favicon.ico apple-touch-icon.png apple-touch-icon-precomposed.png
 
 ifeq ($(strip $(UV_BIN)),)
   ifeq ($(strip $(MKDOCS_BIN_CAND)),)
@@ -24,7 +26,7 @@ else
   DOCS_RUN = XDG_CACHE_HOME="$(DOCS_CACHE_DIR)" UV_PROJECT_ENVIRONMENT="$(DOCS_VENV_DIR)" $(DOCS_ENV) "$(UV_BIN)" run --with-requirements "$(DOCS_REQUIREMENTS)" mkdocs
 endif
 
-.PHONY: docs docs-clean docs-require docs-serve docs-sanity
+.PHONY: docs docs-clean docs-require docs-serve docs-sanity docs-sync-root-icons
 
 ##@ Documentation
 docs-require: ## Verify the documentation build inputs are present
@@ -36,11 +38,20 @@ docs-require: ## Verify the documentation build inputs are present
 	@test -f "$(BIJUX_DOCS_SYNC_SCRIPT)" || (echo "ERROR: missing $(BIJUX_DOCS_SYNC_SCRIPT)" && exit 1)
 	@test -f "$(BIJUX_DOCS_SOT_GUARD)" || (echo "ERROR: missing $(BIJUX_DOCS_SOT_GUARD)" && exit 1)
 	@test -f "$(BIJUX_DOCS_CONTRACT_GUARD)" || (echo "ERROR: missing $(BIJUX_DOCS_CONTRACT_GUARD)" && exit 1)
+	@for icon in $(ROOT_COMPAT_ICONS); do \
+		test -f "$(SITE_ICONS_DIR)/$$icon" || (echo "ERROR: missing $(SITE_ICONS_DIR)/$$icon" && exit 1); \
+	done
+
+docs-sync-root-icons: ## Copy compatibility favicon and Apple touch icons to site root
+	@for icon in $(ROOT_COMPAT_ICONS); do \
+		cp "$(DOCS_SITE_DIR)/assets/site-icons/$$icon" "$(DOCS_SITE_DIR)/$$icon"; \
+	done
 
 docs: docs-clean docs-require bijux-docs-sync ## Build documentation into artifacts/docs/site
 	@echo "Building documentation"
 	@mkdir -p "$(DOCS_CACHE_DIR)" "$(DOCS_VENV_DIR)"
 	@SITE_URL="$(SITE_URL)" $(DOCS_RUN) build --strict --config-file "$(MKDOCS_CFG)" --site-dir "$(DOCS_SITE_DIR)"
+	@$(MAKE) docs-sync-root-icons
 	@if test -f CNAME; then cp CNAME "$(DOCS_SITE_DIR)/CNAME"; fi
 	@echo "Documentation build complete"
 
