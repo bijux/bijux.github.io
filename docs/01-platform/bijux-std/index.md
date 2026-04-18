@@ -104,6 +104,11 @@ The normal flow is simple:
 3. checks verify that local copies still match the standard
 4. each repository publishes its own docs and keeps ownership of its own content
 
+Operational commands in consuming repositories:
+
+- `make bijux-std-update`
+- `make bijux-std-checks`
+
 ## What Readers Should Notice
 
 Readers should not need to think about `bijux-std` every time they move
