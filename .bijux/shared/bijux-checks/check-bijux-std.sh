@@ -24,13 +24,34 @@ read_directories() {
 
 resolve_local_rel() {
   local rel="$1"
-  if [[ "${rel}" == shared/* && -d "${repo_root}/.bijux/shared" ]]; then
-    if [[ ! -d "${repo_root}/${rel}" ]]; then
-      printf '.bijux/%s\n' "${rel}"
-      return
-    fi
+  if [[ "${rel}" == shared/* && -d "${repo_root}/.bijux/shared" && "$(basename "${repo_root}")" != "bijux-std" ]]; then
+    printf '.bijux/%s\n' "${rel}"
+    return
   fi
   printf '%s\n' "${rel}"
+}
+
+verify_no_legacy_root_shared_dirs() {
+  if [[ -d "${repo_root}/.bijux/shared" && "$(basename "${repo_root}")" != "bijux-std" ]]; then
+    if [[ -d "${repo_root}/shared" ]]; then
+      echo "ERROR: legacy root shared directory present: shared/" >&2
+      echo "Hint: remove root shared and keep only .bijux/shared/*" >&2
+      exit 1
+    fi
+
+    local has_legacy=0
+    while IFS= read -r remote_dir_rel; do
+      if [[ "${remote_dir_rel}" == shared/* && -d "${repo_root}/${remote_dir_rel}" ]]; then
+        echo "ERROR: legacy root managed directory present: ${remote_dir_rel}" >&2
+        has_legacy=1
+      fi
+    done < <(read_directories)
+
+    if [[ "${has_legacy}" == "1" ]]; then
+      echo "Hint: remove root shared managed directories and keep only .bijux/shared/*" >&2
+      exit 1
+    fi
+  fi
 }
 
 manifest_rel="$(read_scalar manifest)"
@@ -110,7 +131,7 @@ verify_dir_against_manifests() {
   expected_sha="${remote_expected}"
   if [[ "${local_expected}" != "${remote_expected}" ]]; then
     if [[ "${require_remote_match}" == "1" ]]; then
-      echo "ERROR: local manifest drift for ${dir_rel}" >&2
+      echo "ERROR: local manifest drift for ${local_dir_rel}" >&2
       echo "Local manifest:  ${local_expected}" >&2
       echo "Remote manifest: ${remote_expected}" >&2
       exit 1
@@ -232,6 +253,7 @@ while IFS= read -r dir_rel; do
   verify_dir_against_manifests "${dir_rel}" "${tmp_manifest}"
 done < <(read_directories)
 
+verify_no_legacy_root_shared_dirs
 verify_canonical_mermaid_init
 verify_homepage_sidebar_collapse_contract
 

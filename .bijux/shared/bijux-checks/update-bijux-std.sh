@@ -24,11 +24,9 @@ read_directories() {
 
 resolve_local_rel() {
   local rel="$1"
-  if [[ "${rel}" == shared/* && -d "${repo_root}/.bijux/shared" ]]; then
-    if [[ ! -d "${repo_root}/${rel}" ]]; then
-      printf '.bijux/%s\n' "${rel}"
-      return
-    fi
+  if [[ "${rel}" == shared/* && -d "${repo_root}/.bijux/shared" && "$(basename "${repo_root}")" != "bijux-std" ]]; then
+    printf '.bijux/%s\n' "${rel}"
+    return
   fi
   printf '%s\n' "${rel}"
 }
@@ -245,7 +243,21 @@ for remote_dir_rel in "${update_dirs[@]}"; do
 
   dir_sha="$(directory_tree_sha256 "${dst}")"
   set_manifest_sha_for_dir "${manifest_path}" "${remote_dir_rel}" "${dir_sha}"
+
+  if [[ "${local_dir_rel}" != "${remote_dir_rel}" && -d "${repo_root}/${remote_dir_rel}" ]]; then
+    rm -rf "${repo_root:?}/${remote_dir_rel}"
+    echo "→ removed legacy ${remote_dir_rel}"
+  fi
 done
+
+if [[ -d "${repo_root}/.bijux/shared" && "$(basename "${repo_root}")" != "bijux-std" ]]; then
+  if [[ -d "${repo_root}/shared" ]]; then
+    if [[ -z "$(find "${repo_root}/shared" -mindepth 1 -print -quit 2>/dev/null)" ]]; then
+      rmdir "${repo_root}/shared"
+      echo "→ removed legacy shared/"
+    fi
+  fi
+fi
 
 if (( ${#skipped_dirs[@]} > 0 )); then
   for dir_rel in "${skipped_dirs[@]}"; do
