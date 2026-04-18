@@ -2,7 +2,7 @@
 set -euo pipefail
 
 repo_root="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
-config_path="${BIJUX_STD_CONFIG:-${repo_root}/shared/bijux-checks/bijux-std-checks.yml}"
+config_path="${BIJUX_STD_CONFIG:-${repo_root}/.bijux/shared/bijux-checks/bijux-std-checks.yml}"
 
 if [[ ! -f "${config_path}" ]]; then
   echo "ERROR: missing config ${config_path}" >&2
@@ -19,9 +19,23 @@ read_directories() {
 }
 
 manifest_rel="$(read_scalar manifest)"
+remote_manifest_rel="$(read_scalar '  remote_manifest')"
 git_url_default="$(read_scalar '  git_url')"
 default_ref="$(read_scalar '  default_ref')"
 tag_pattern_default="$(read_scalar '  tag_pattern')"
+
+if [[ -z "${remote_manifest_rel}" ]]; then
+  remote_manifest_rel="${manifest_rel}"
+fi
+
+local_to_remote_rel() {
+  local path_rel="$1"
+  if [[ "${path_rel}" == .bijux/* ]]; then
+    echo "${path_rel#.bijux/}"
+    return
+  fi
+  echo "${path_rel}"
+}
 
 std_git_url="${BIJUX_STD_GIT_URL:-${git_url_default}}"
 update_channel="${BIJUX_STD_UPDATE_CHANNEL:-branch}"
@@ -73,7 +87,8 @@ if ! clone_from_ref "${resolved_ref}"; then
 fi
 
 while IFS= read -r dir_rel; do
-  src="${tmp_dir}/bijux-std/${dir_rel}"
+  remote_dir_rel="$(local_to_remote_rel "${dir_rel}")"
+  src="${tmp_dir}/bijux-std/${remote_dir_rel}"
   dst="${repo_root}/${dir_rel}"
   if [[ ! -d "${src}" ]]; then
     echo "ERROR: missing source directory in bijux-std: ${dir_rel}" >&2
@@ -85,7 +100,7 @@ while IFS= read -r dir_rel; do
   echo "→ updated ${dir_rel}"
 done < <(read_directories)
 
-cp "${tmp_dir}/bijux-std/${manifest_rel}" "${repo_root}/${manifest_rel}"
+cp "${tmp_dir}/bijux-std/$(local_to_remote_rel "${remote_manifest_rel}")" "${repo_root}/${manifest_rel}"
 echo "→ updated ${manifest_rel}"
 
 echo "✔ bijux-std shared directories updated from ${std_git_url}@${resolved_ref}"
