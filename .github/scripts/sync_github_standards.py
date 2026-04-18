@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
 import subprocess
 import time
 from pathlib import Path
@@ -82,7 +83,7 @@ def copy_repo_files(target_repo: str, repo_config: dict[str, Any], manifest: dic
     for workflow in inventory_entries(manifest):
         workflow_id = workflow["id"]
         source_relative = workflow["source"]
-        shared_destination = source_relative
+        shared_destination = f".bijux/{source_relative}"
         runtime_destination = workflow["consumer_runtime"]
 
         copy_file_mapping(source_relative, shared_destination, target_repo)
@@ -97,6 +98,10 @@ def copy_repo_files(target_repo: str, repo_config: dict[str, Any], manifest: dic
         path = repo_dir / runtime_path
         if path.exists():
             path.unlink()
+
+    legacy_shared_path = repo_dir / "shared/bijux-gh"
+    if legacy_shared_path.exists():
+        shutil.rmtree(legacy_shared_path)
 
 
 def sync_repo_files(target_repo: str, manifest: dict[str, Any]) -> None:
@@ -118,6 +123,15 @@ def write_std_pin(repo_name: str, std_sha: str) -> None:
 def has_changes(repo_name: str) -> bool:
     status = run(["git", "status", "--short"], cwd=ROOT / repo_name)
     return bool(status)
+
+
+def stage_managed_paths(repo_dir: Path) -> None:
+    paths: list[str] = [".github"]
+    if (repo_dir / ".bijux/shared").exists():
+        paths.append(".bijux/shared")
+    if (repo_dir / "shared").exists():
+        paths.append("shared")
+    run(["git", "add", *paths], cwd=repo_dir)
 
 
 def ensure_branch(repo_dir: Path, branch_name: str) -> None:
@@ -224,7 +238,7 @@ def main() -> None:
         if args.create_branch:
             ensure_branch(repo_dir, branch_name)
 
-        run(["git", "add", ".github", "shared"], cwd=repo_dir)
+        stage_managed_paths(repo_dir)
         run(["git", "commit", "-m", args.commit_message], cwd=repo_dir)
 
         pr_info = create_pr(repo_dir, args, branch_name)

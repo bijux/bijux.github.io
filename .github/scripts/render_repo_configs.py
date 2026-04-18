@@ -8,17 +8,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[3]
-CURRENT_REPO = Path(__file__).resolve().parents[2].name
-
-
-def default_manifest_path() -> Path:
-    local_manifest = ROOT / CURRENT_REPO / ".github/standards/repo-config.manifest.json"
-    if local_manifest.exists():
-        return local_manifest
-    return ROOT / "bijux-std/.github/standards/repo-config.manifest.json"
-
-
-MANIFEST_PATH = default_manifest_path()
+MANIFEST_PATH = ROOT / "bijux-std/.github/standards/repo-config.manifest.json"
 
 
 def yaml_scalar(value: Any) -> str:
