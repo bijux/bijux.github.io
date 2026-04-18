@@ -1552,7 +1552,8 @@
       "release_env": [],
       "workflow_allowlist": [
         "deploy-docs",
-        "github-policy"
+        "github-policy",
+        "release-github"
       ]
     }
   ]
