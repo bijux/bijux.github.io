@@ -14,9 +14,13 @@ is for. Projects remain separate in ownership but aligned through shared
 standards in `bijux-std`, so this page gives a quick structural view
 before deeper project pages.
 
+Use this page after the Platform branch. It answers a narrower question:
+which repository should you open next if you care about runtime,
+knowledge systems, delivery interfaces, or domain-heavy product work.
+
 ```mermaid
 graph TD
-    standards["Shared standards (bijux-std)"] --> projects["Projects"]
+    foundations["Foundations"] --> projects["Projects"]
     projects["Projects"] --> core["Core"]
     projects --> canon["Canon"]
     projects --> atlas["Atlas"]
@@ -25,7 +29,10 @@ graph TD
     projects --> learning["Learning branch reference"]
 
     learning --> learning_index["Learning index (top-level branch)"]
-    standards --> learning_index
+    foundations --> learning_index
+    foundations --> iac["bijux-iac"]
+    foundations --> std["bijux-std"]
+    foundations --> hub["bijux.github.io"]
 ```
 
 ## Primary Responsibility Clusters
@@ -40,6 +47,12 @@ graph TD
 
 Learning is a top-level branch reference, not a peer project repository:
 [Learning catalog](../03-learning/index.md).
+
+The foundations that support all of these are:
+
+- `bijux-iac` for GitHub governance as code
+- `bijux-std` for shared standards
+- `bijux.github.io` for public route design
 
 <div class="bijux-showcase-grid">
   <article class="bijux-showcase-card">
@@ -81,18 +94,19 @@ Learning is a top-level branch reference, not a peer project repository:
 
 ## Primary Responsibility By Repository
 
-| Repository | What each repository covers |
-| --- | --- |
-| [Bijux Core](bijux-core/index.md) | runtime truth, deterministic execution, and control-plane separation in a stable backbone |
-| [Bijux Canon](bijux-canon/index.md) | governed knowledge-system decomposition with explicit package contracts and compatibility surfaces |
-| [Bijux Atlas](bijux-atlas/index.md) | data-service delivery treated as operated product architecture with immutable artifact posture |
-| [Bijux Proteomics](bijux-proteomics/index.md) | scientific product engineering with explicit evidence governance and domain contracts |
-| [Bijux Pollenomics](bijux-pollenomics/index.md) | uncommon domain adaptation that keeps reproducibility and engineering structure visible |
+| Repository | Primary job | What you can inspect quickly |
+| --- | --- | --- |
+| [Bijux Core](bijux-core/index.md) | runtime authority and execution governance | CLI/DAG split, evidence routes, release discipline |
+| [Bijux Canon](bijux-canon/index.md) | governed knowledge-system decomposition | ingest/index/reason/orchestrate/runtime layer split |
+| [Bijux Atlas](bijux-atlas/index.md) | data-service delivery and operated publication | API, datasets, OpenAPI, reporting, control plane |
+| [Bijux Proteomics](bijux-proteomics/index.md) | proteomics scientific product engineering | workflow contracts, evidence posture, lab-facing outputs |
+| [Bijux Pollenomics](bijux-pollenomics/index.md) | evidence-mapping scientific product engineering | mapped outputs, report bundles, reproducible evidence handling |
 
 ## What This Page Makes Clear
 
 - this is a coherent set of repository ownership boundaries, not disconnected projects
-- each repository is responsible for a distinct layer in the broader architecture
+- each project repository exposes a different kind of technical surface
+- the foundation layer stays separate from the project layer on purpose
 - architecture, delivery, domain pressure, and learning surfaces are inspectable in public
 
 ## Reading Guide
