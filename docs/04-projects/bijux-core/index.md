@@ -10,8 +10,8 @@ last_reviewed: 2026-04-12
 # Bijux Core
 
 `bijux-core` runs the CLI and DAG runtime backbone for the Bijux
-repository family. It also owns the governance and release rules that
-keep that backbone stable over time.
+repository family. It also carries the governance and release rules
+that keep that backbone stable over time.
 
 Canon, Atlas, Telecom, Genomics, Proteomics, and Pollenomics all
 benefit from the same shared runtime layer rather than each carrying
@@ -39,16 +39,13 @@ standards.
 repository owns the command runtime and DAG execution backbone that
 other repositories depend on, while keeping governance, evidence, and
 release discipline in the same public surface.
-This map summarizes the authority split inside Core.
+This map summarizes the main flow inside Core.
 
 ```mermaid
 graph LR
-    inputs["commands and workflow definitions"] --> cli["CLI runtime"]
-    inputs --> dag["DAG execution"]
-    cli --> outputs["runtime behavior and artifacts"]
-    dag --> outputs
-    outputs --> evidence["evidence and release rules"]
-    evidence --> governance["governance and promotion decisions"]
+    input["commands and workflows"] --> runtime["CLI and DAG runtime"]
+    runtime --> evidence["evidence and releases"]
+    evidence --> governance["governance decisions"]
 ```
 
 The split keeps command semantics, workflow semantics, and repository
@@ -62,13 +59,12 @@ governance separate instead of blending them into one opaque layer.
 | release and evidence language | shows that governance is part of the repository surface, not an afterthought |
 | published docs and source layout | shows that runtime authority is documented in public |
 
-## Runtime Authority Vs Governance Authority
+## Runtime And Governance
 
 ```mermaid
 graph LR
-    runtime["Runtime authority"] --> execute["how commands and DAGs execute"]
-    execute --> evidence["what evidence execution produces"]
-    evidence --> governance["how releases and controls are decided"]
+    runtime["runtime behavior"] --> evidence["evidence"]
+    evidence --> governance["governance"]
 ```
 
 Runtime authority defines how commands and workflows execute: what can
