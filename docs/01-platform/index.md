@@ -11,14 +11,12 @@ last_reviewed: 2026-04-28
 
 Platform explains how the Bijux repository family is held together.
 
-This section shows where governance is owned, where shared standards
-are owned, where the documentation hub fits, and how the shared runtime
-backbone, delivery repositories, domain repositories, and learning
-repositories sit on top of those layers.
+This branch shows how the repository family is held together: the
+shared foundations underneath it, the shared runtime backbone in the
+middle, and the project and learning surfaces built on top.
 
-It is the orientation branch for the family, not the full documentation
-home for `bijux-iac` or `bijux-std`. Those now have their own top-level
-branches because they carry more public weight than a subpage can hold.
+It introduces the family shape without replacing the deeper `bijux-iac`
+and `bijux-std` branches.
 
 <div class="bijux-callout"><strong>Focus on responsibility before repository count.</strong>
 The key question is not how many repositories exist, but why responsibilities are split the way they are.
@@ -45,7 +43,7 @@ graph TD
 - the quickest explanation of why the split exists
 - the best next page for the question you want to answer
 
-## Where To Inspect Evidence
+## Where To Continue
 
 - GitHub governance ownership: [Bijux Infrastructure-as-Code](../02-bijux-iac/index.md)
 - shared shell and cross-repository standards: [Bijux standard layer](../03-bijux-std/index.md)
@@ -65,7 +63,7 @@ graph TD
   <div class="bijux-panel"><h3>Products And Programs</h3><p>Canon, Atlas, Proteomics, Pollenomics, Telecom, Genomics, and Masterclass consume these shared layers while owning their own knowledge, delivery, domain, or learning work.</p></div>
 </div>
 
-## Branch Reading Order
+## Reading Order
 
 | Read this first when you need to understand... | Open |
 | --- | --- |
