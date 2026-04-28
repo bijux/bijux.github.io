@@ -43,7 +43,7 @@ publish boundaries, dynamic workflow safety, state identity, experiment
 discipline, and reproducible execution. The programs are organized by
 failure mode and design pressure rather than by tool popularity.
 
-## What You Can Verify Quickly
+## What Appears Across The Program
 
 | Surface | Why it matters |
 | --- | --- |
@@ -56,7 +56,7 @@ failure mode and design pressure rather than by tool popularity.
 | Tool | Core responsibility | Why it belongs in the same family |
 | --- | --- | --- |
 | Make | build truth | verifies dependency and rebuild correctness at the build-graph level |
-| Snakemake | workflow orchestration | coordinates multi-step data workflows with explicit contracts and execution order |
+| Snakemake | workflow orchestration | coordinates multi-step data workflows with clear contracts and execution order |
 | DVC | state and version control | tracks experiment state, parameters, metrics, and promotion boundaries over time |
 
 ## From Notebook Work To Controlled Outputs
@@ -88,7 +88,7 @@ graph TD
 
 - workflow and automation thinking arranged as a teachable system
 - comfort with build, workflow, and reproducibility tooling used in real technical and scientific environments
-- explicit treatment of data identity, parameters, metrics, experiments, and recovery as engineering concerns
+- data identity, parameters, metrics, experiments, and recovery treated as engineering concerns
 - capstone-backed programs where the claims stay attached to executable capstones
 - the ability to teach system models instead of memorizing command syntax
 
@@ -113,7 +113,7 @@ graph TD
 | Capstone | Direct proof surface | Engineering behavior demonstrated |
 | --- | --- | --- |
 | Deep Dive Make capstone | [Capstone docs](https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-make/capstone/docs/) | truthful build graphs, deterministic rebuild behavior, and publication-safe build contracts |
-| Deep Dive Snakemake capstone | [Capstone docs](https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-snakemake/capstone/docs/) | workflow contract integrity, explicit file interfaces, and reviewable execution paths |
+| Deep Dive Snakemake capstone | [Capstone docs](https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-snakemake/capstone/docs/) | workflow contract integrity, clear file interfaces, and reviewable execution paths |
 | Deep Dive DVC capstone | [Capstone docs](https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-dvc/capstone/docs/) | parameter and metric traceability, experiment recovery, and promotion-boundary discipline |
 
 ## When This Page Is Most Useful
@@ -121,11 +121,11 @@ graph TD
 - you care about workflow systems, reproducibility, and scientific execution habits
 - you want to see engineering discipline carry into research tooling and publication boundaries
 - you want to understand when DVC is the right model for experiment state, recovery, and promotion boundaries
-- you want to inspect teaching material that is anchored to executable capstones with explicit proof routes
+- you want to inspect teaching material anchored to executable capstones with direct proof routes
 
 ## Why This Matters Outside Research
 
-- CI/CD: deterministic workflows and explicit build boundaries reduce release ambiguity
+- CI/CD: deterministic workflows and clear build boundaries reduce release ambiguity
 - data pipelines: state and artifact discipline improve traceability under evolving inputs
 - ML workflows: parameter/metric handling patterns map directly to experiment governance
 - platform reliability: failure-mode-first workflow design supports stable operational behavior
