@@ -1,5 +1,5 @@
 ---
-title: Bijux Standard
+title: Bijux Standards
 audience: mixed
 type: guide
 status: canonical
@@ -7,25 +7,22 @@ owner: bijux-docs
 last_reviewed: 2026-04-17
 ---
 
-# Bijux Standard
+# Bijux Standards
 
 `bijux-std` is the shared standards repository for the Bijux system
 family.
 
-It defines the parts of the ecosystem that are meant to stay aligned
-across multiple repositories and sites: the shared documentation shell,
-the shared Python-oriented make layer, and the shared compliance and
-sync checks used in CI.
+It keeps the parts of the family that should stay aligned in one place:
+the shared documentation shell, the shared Python-oriented make layer,
+and the shared checks that verify them.
 
-It is the shared standards layer that keeps the public system coherent.
-
-This branch explains how repeated repository behavior becomes shared
-infrastructure instead of staying trapped as local convention.
+This branch shows how repeated repository behavior becomes a durable
+standard instead of staying trapped as local convention.
 
 ## Why It Matters
 
-Without a visible standards layer, readers can see the repositories but
-not the mechanism that keeps them coherent.
+Without a visible standards layer, the repositories are easy to see but
+harder to understand as one family.
 
 `bijux-std` makes that mechanism clear:
 
@@ -44,11 +41,10 @@ not the mechanism that keeps them coherent.
 
 ## Why It Exists
 
-The Bijux repositories are split by responsibility. That split only
-holds if the shared layer has a clear home. Without a standards
-repository, shell behavior, make logic, and cross-repository checks
-drift over time. `bijux-std` keeps those shared parts defined,
-synchronized, and verified in one place.
+The repositories are split by responsibility. That split only holds if
+the shared layer has a clear home. Without one, shell behavior, make
+logic, and cross-repository checks drift over time. `bijux-std` keeps
+those shared parts defined, synchronized, and verified in one place.
 
 ## What It Owns
 
@@ -89,7 +85,7 @@ graph LR
     std --> makes["shared make layer"]
 ```
 
-In plain language:
+In practice:
 
 - the repositories keep their own responsibilities
 - `bijux-std` keeps the shared layer consistent across them
@@ -134,7 +130,7 @@ Read the full [Promotion Model](promotion-model/index.md).
 This separation gives Bijux continuity across sites and repositories
 without erasing local ownership.
 
-## Consumption Model
+## How Repositories Use It
 
 The normal flow is simple:
 
@@ -148,22 +144,7 @@ Operational commands in consuming repositories:
 - `make bijux-std-update`
 - `make bijux-std-checks`
 
-## What It Changes Across The System
-
-If the shared layer is working well:
-
-- navigation stays coherent
-- shell behavior remains predictable
-- documentation presentation stays consistent
-- repositories remain locally owned without fragmenting the public system
-
 ## Where To Go Next
 
 - [Documentation Network](../01-platform/documentation-network/index.md)
 - [System Map](../01-platform/system-map/index.md)
-
-## In One Sentence
-
-`bijux-std` is the shared standards layer that keeps the Bijux
-ecosystem consistent across documentation, automation, and CI-verifiable
-repository behavior.

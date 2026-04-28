@@ -23,8 +23,8 @@ not another product repository.
 
 ## Why It Matters
 
-Strong repository architecture is hard to trust if the merge rules,
-required checks, and protection model only exist as invisible admin
+Strong repository architecture is harder to trust when merge rules,
+required checks, and protection models only exist as invisible admin
 settings.
 
 `bijux-iac` brings those controls into view:
@@ -71,7 +71,7 @@ When `bijux-iac` is doing its job well:
 - repositories inherit the same merge discipline instead of drifting apart
 - shared foundations stay governed by the same rules as consuming repositories
 - rollout decisions become visible and reversible
-- platform standards can be enforced without pretending governance is part of app code
+- platform standards can be enforced without pretending governance is part of product code
 
 ## How It Fits
 

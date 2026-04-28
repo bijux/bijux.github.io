@@ -40,9 +40,8 @@ graph LR
 
 ## Why This Matters
 
-This model keeps `bijux-std` from becoming a dumping ground. Shared
-standards are strongest when they come from repeated use, not from early
-theory.
+This model keeps `bijux-std` honest. Shared standards are strongest
+when they come from repeated use, not from early theory.
 
 ## Continue Reading
 
