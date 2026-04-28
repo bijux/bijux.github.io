@@ -23,9 +23,9 @@ last_reviewed: 2026-04-12
   </div>
 </section>
 
-<div class="bijux-callout"><strong>This hub helps you locate the owning repository first.</strong>
-Once you find the right branch, you can continue into the documentation
-and source surfaces that carry the implementation detail.</div>
+<div class="bijux-callout"><strong>This hub helps you find the right part of the family first.</strong>
+From there, the project pages, docs sites, and repositories carry the
+detail.</div>
 
 ## What Bijux Is
 
@@ -97,66 +97,13 @@ your interest.
 
 ```mermaid
 graph TD
-    subgraph shared["Shared foundations"]
-        iac["bijux-iac<br/>GitHub control plane"]
-        std["bijux-std<br/>shared standards"]
-    end
-
-    hub["bijux.github.io<br/>documentation hub"]
-
-    subgraph backbone["Shared project backbone"]
-        core["bijux-core<br/>runtime backbone"]
-    end
-
-    subgraph systems["Project repositories"]
-        canon["bijux-canon<br/>knowledge system"]
-        atlas["bijux-atlas<br/>delivery interfaces"]
-        telecom["bijux-telecom<br/>service and telecom systems"]
-        genomics["bijux-genomics<br/>rust-based genomics systems"]
-    end
-
-    subgraph domains["Applied Domain Repositories"]
-        proteomics["bijux-proteomics<br/>scientific product system"]
-        pollenomics["bijux-pollenomics<br/>evidence mapping system"]
-    end
-
-    subgraph learning["Learning"]
-        masterclass["bijux-masterclass"]
-        python["Python Programming"]
-        reproducible["Reproducible Research"]
-    end
-
-    iac --> core
-    iac --> canon
-    iac --> atlas
-    iac --> proteomics
-    iac --> pollenomics
-    std --> core
-    std --> canon
-    std --> atlas
-    std --> telecom
-    std --> genomics
-    std --> proteomics
-    std --> pollenomics
-    hub --> core
-    hub --> canon
-    hub --> atlas
-    hub --> telecom
-    hub --> genomics
-    hub --> proteomics
-    hub --> pollenomics
-    core --> atlas
-    core --> canon
-    core --> telecom
-    core --> genomics
-    canon --> atlas
-    core --> proteomics
-    core --> pollenomics
-    std --> masterclass
-    iac --> masterclass
-    hub --> masterclass
-    masterclass --> python
-    masterclass --> reproducible
+    foundations["Shared foundations<br/>bijux-iac + bijux-std"] --> hub["Documentation hub<br/>bijux.github.io"]
+    foundations --> core["Shared runtime backbone<br/>bijux-core"]
+    foundations --> canon["Knowledge system<br/>bijux-canon"]
+    core --> projects["Project systems<br/>atlas, telecom, genomics, proteomics, pollenomics"]
+    canon --> projects
+    hub --> projects
+    projects --> learning["Learning programs<br/>bijux-masterclass"]
 ```
 
 ## Reading Paths
@@ -180,7 +127,7 @@ graph LR
     split --> teaching["Transferable engineering practice"]
 
     architecture --> platform["Platform"]
-    architecture --> matrix["System map and repository matrix"]
+    architecture --> map["System map"]
 
     delivery --> surfaces["Delivery surfaces"]
     delivery --> atlas["Bijux Atlas"]
