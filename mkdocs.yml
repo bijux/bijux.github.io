@@ -54,6 +54,7 @@ nav:
       - Overview: index.md
   - Platform:
       - Overview: 01-platform/index.md
+      - Bijux Infrastructure-as-Code: 01-platform/bijux-iac/index.md
       - Bijux Standard Layer: 01-platform/bijux-std/index.md
       - Work Qualities: 01-platform/work-qualities/index.md
       - System Map: 01-platform/system-map/index.md
