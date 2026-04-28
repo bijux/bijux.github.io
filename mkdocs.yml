@@ -66,6 +66,7 @@ nav:
   - 02 Bijux Infrastructure-as-Code:
       - Overview: 02-bijux-iac/index.md
       - Governance Model: 02-bijux-iac/governance-model/index.md
+      - Repository Coverage: 02-bijux-iac/repository-coverage/index.md
   - 03 Bijux Standards:
       - Overview: 03-bijux-std/index.md
   - 04 Projects:

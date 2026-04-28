@@ -104,6 +104,7 @@ surfaces over time.
 ## Read This Next
 
 - [Governance Model](governance-model/index.md)
+- [Repository Coverage](repository-coverage/index.md)
 
 ## Where To Go Next
 
