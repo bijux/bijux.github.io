@@ -19,6 +19,8 @@ and change, not an organizational preference.
 
 ```mermaid
 graph LR
+    iac["bijux-iac"]
+    hub["bijux.github.io"]
     std["bijux-std"]
     family["Repository Family"] --> core["Core"]
     family --> canon["Canon"]
@@ -26,8 +28,12 @@ graph LR
     family --> proteomics["Proteomics"]
     family --> pollenomics["Pollenomics"]
     family --> masterclass["Masterclass"]
+    family --> iac
+    family --> hub
     family --> std
 
+    iac --> governance["GitHub governance"]
+    hub --> orientation["Public orientation"]
     core --> runtime["Runtime and control"]
     canon --> knowledge["Knowledge-system layers"]
     atlas --> delivery["Data and delivery"]
@@ -51,6 +57,8 @@ graph LR
 
 ## Why These Repositories Are Separate
 
+- `bijux-iac` owns live GitHub governance so repository policy is applied from code instead of settings drift
+- `bijux.github.io` owns the public route into the family so orientation is a maintained surface rather than a side effect
 - `bijux-core` owns runtime authority so execution behavior and governance remain explicit
 - `bijux-canon` owns knowledge-system orchestration so ingest/index/reason/orchestrate concerns do not collapse into one layer
 - `bijux-atlas` owns public delivery interfaces so APIs, datasets, and reporting routes remain maintainable
@@ -61,6 +69,8 @@ graph LR
 
 | Repository | Repository type | Primary responsibility | What it owns publicly | Consumes shared standards | Start here |
 | --- | --- | --- | --- | --- | --- |
+| `bijux-iac` | control-plane repository | own GitHub governance and repository policy as code | Terraform-managed GitHub controls and repo governance inventory | yes | [Platform page](../bijux-iac/index.md) |
+| `bijux.github.io` | public hub repository | own cross-repository orientation and route design | the main Bijux hub, navigation, and public entry paths | yes | [Home](../../index.md) |
 | `bijux-std` | standards source | own shared standards, documentation shell contracts, and cross-repository quality checks | shared contracts, quality gates, and documentation shell source used by the family | no; this repository is the standards source | [Repository page](../bijux-std/index.md) |
 | `bijux-core` | platform runtime repository | own runtime authority and release discipline | CLI surfaces, DAG runtime, evidence artifacts, release rules | yes | [Project page](../../02-projects/bijux-core/index.md) |
 | `bijux-canon` | governed knowledge repository | own knowledge-system orchestration boundaries | ingest/index/reason/orchestrate package boundaries | yes | [Project page](../../02-projects/bijux-canon/index.md) |
@@ -73,7 +83,7 @@ graph LR
 
 | Layer | Repositories | Why the split stays useful |
 | --- | --- | --- |
-| standards source | `bijux-std` | shared standards, shell behavior, and quality checks stay canonical and reusable across the family |
+| foundations | `bijux-iac`, `bijux-std`, `bijux.github.io` | governance, standards, and public entry routes stay visible as separate responsibilities |
 | backbone | `bijux-core` | execution, evidence, and governance stay visible instead of disappearing into scripts and convention |
 | knowledge and service architecture | `bijux-canon`, `bijux-atlas` | knowledge workflows and delivery surfaces can evolve independently without losing system coherence |
 | domain products | `bijux-proteomics`, `bijux-pollenomics` | domain systems inherit platform discipline instead of becoming isolated one-off projects |
