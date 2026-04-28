@@ -33,9 +33,9 @@ graph TD
     system["Bijux System"] --> platform["Platform"]
     system --> projects["Projects"]
     system --> learning["Learning"]
-    system --> standards["Standards"]
+    system --> foundations["Foundations"]
 
-    platform --> principles["Shared engineering rules and docs shell"]
+    platform --> principles["Shared engineering rules"]
     platform --> structure["Navigation and structure"]
 
     projects --> runtime["Runtime systems"]
@@ -45,10 +45,13 @@ graph TD
     learning --> programming["Programming"]
     learning --> reproducibility["Reproducibility"]
 
-    standards --> std["bijux-std"]
-    std --> hub["bijux.github.io docs"]
-    std --> project_docs["project docs sites"]
-    std --> masterclass_docs["masterclass docs"]
+    foundations --> iac["bijux-iac"]
+    foundations --> std["bijux-std"]
+    foundations --> hub["bijux.github.io"]
+
+    iac --> governance["GitHub control plane"]
+    std --> project_docs["shared shell and standards"]
+    hub --> orientation["public route design"]
 ```
 
 ## Layer Summary
@@ -56,8 +59,7 @@ graph TD
 - Platform: defines the system split, rules, and shared language.
 - Projects: implement runtime, knowledge, delivery, and domain responsibilities.
 - Learning: translates repository practice into teachable program routes.
-- Standards: keeps shared docs shell, checks, and automation aligned through `bijux-std`.
-- Public docs surfaces: consume the shared standards while keeping local content ownership.
+- Foundations: keep the control plane, standards layer, and public hub explicit instead of implicit.
 
 ## What Each Layer Owns
 
@@ -65,21 +67,23 @@ graph TD
 
 | Layer | What it owns | Why it stays separate |
 | --- | --- | --- |
-| Platform | shared engineering rules, documentation shell, release discipline, and boundary vocabulary | keeps cross-repository behavior stable and inspectable |
+| Platform | shared engineering rules, release discipline, and boundary vocabulary | keeps cross-repository behavior stable and inspectable |
 | Projects | runtime systems, knowledge systems, delivery interfaces, and domain products | keeps implementation ownership explicit and reviewable by repository |
 | Learning | course books, deep dives, capstones, and reusable technical explanation | keeps teaching and explanation rigorous without replacing repository ownership |
-| Standards | shared docs shell, shared checks, and shared make behavior | keeps cross-repository continuity explicit and CI-verifiable |
+| Foundations | GitHub governance, shared standards, and the public hub | keeps the family operable and legible before any single product repo is opened |
 
 ### Repository Family Roles
 
 | Repository role | Primary ownership |
 | --- | --- |
+| bijux-iac | GitHub control-plane governance |
+| bijux.github.io | public orientation and hub navigation |
+| bijux-std | shared standards definition and distribution |
 | Core | runtime authority and governance behavior |
 | Canon | knowledge-system orchestration and reasoning boundaries |
 | Atlas | delivery interfaces, service outputs, and reporting routes |
 | Proteomics and Pollenomics | domain-specific workflows and evidence-heavy product outputs |
 | Masterclass | learning programs and executable instructional artifacts |
-| bijux-std | shared standards definition and distribution |
 
 ## Why The Split Matters
 
@@ -97,7 +101,7 @@ graph TD
 
 ## Where Responsibility Changes Hands
 
-- Standards -> docs sites: `bijux-std` updates shared shell/check behavior consumed by `bijux.github.io`, project docs sites, and masterclass docs.
+- Foundations -> repos: `bijux-iac` governs repository behavior, `bijux-std` governs shared repo content, and `bijux.github.io` governs the public route into the family.
 - Platform -> Core: shared boundary and release rules become executable runtime and governance behavior.
 - Core/Canon -> Atlas: internal runtime and knowledge capabilities become public delivery interfaces and reporting routes.
 - Platform/Projects -> Domain products: shared engineering rules are applied to specialized scientific workflows and evidence outputs.
