@@ -9,12 +9,12 @@ last_reviewed: 2026-04-17
 
 # Bijux Pollenomics
 
-`bijux-pollenomics` helps researchers turn field evidence into maps and
-reports they can trace, review, and reuse.
+`bijux-pollenomics` turns field evidence into maps and reports that can
+be traced, reviewed, and rebuilt.
 
 It brings together archaeology, eDNA, aDNA, and pollen evidence so
-people can decide where research attention should focus while keeping
-methods and data lineage inspectable.
+researchers can decide where attention should focus without losing
+track of methods, lineage, and interpretation boundaries.
 
 It shows how structured engineering can support field-oriented,
 evidence-heavy domain work.
@@ -34,9 +34,9 @@ repository family.
 ## Repository Shape
 
 `bijux-pollenomics` takes an unusual domain and makes the outputs
-inspectable: tracked source data, rebuildable report bundles, a Nordic
-evidence atlas, and a documentation surface that explains where those
-artifacts come from.
+concrete: tracked source data, rebuildable report bundles, a Nordic
+evidence atlas, and documentation that explains where those artifacts
+come from.
 This flow shows how evidence is interpreted and turned into mapped and
 report outputs.
 
@@ -53,21 +53,21 @@ outside the immediate subject area.
 ## Concrete Outputs
 
 - atlas layers for regional evidence visualization
-- tracked data assets with explicit lineage
+- tracked data assets with named lineage
 - report bundles for reproducible publication routes
 - documentation context that explains interpretation assumptions and boundaries
 
 ## What This Repository Covers
 
-- domain modeling that translates archaeology-facing questions into inspectable system surfaces
-- evidence handling with tracked inputs, rebuildable outputs, and explicit publication routes
+- domain modeling that translates archaeology-facing questions into durable system surfaces
+- evidence handling with tracked inputs, rebuildable outputs, and clear publication routes
 - scientific constraints integrated without collapsing runtime and delivery boundaries
 - system clarity that remains readable for both domain and engineering reviewers
 
 ## What Lives Here
 
 - evidence mapping framed as a reproducible product surface, not a one-off analysis notebook
-- tracked data, checked-in publication artifacts, and explicit rebuild paths
+- tracked data, checked-in publication artifacts, and rebuild paths
 - technical architecture adapted to archaeology-facing and field-oriented context without losing clarity
 - honest scope boundaries around what exists today and what does not
 
@@ -77,7 +77,7 @@ outside the immediate subject area.
 | --- | --- |
 | reproducible publication | tracked `data/` and `docs/report/` outputs, plus the atlas and country bundles |
 | uncommon domain modeling | the archaeology, eDNA, aDNA, and pollenomics framing in the docs and repository layout |
-| scope discipline | the explicit limits around current capabilities, source categories, and report outputs |
+| scope discipline | the clear limits around current capabilities, source categories, and report outputs |
 | published entry points | the runtime handbook, data reference, and published Nordic atlas material |
 
 ## How To Read This Page If You Are Not From The Domain
@@ -98,7 +98,7 @@ evidence and reproducibility rules.
 Pollenomics carries the same structural habits into a specialized domain
 that does not come with off-the-shelf engineering narratives.
 
-This repository explicitly tests Bijux platform ideas under evidence and
+This repository tests Bijux platform ideas under evidence and
 interpretation pressure: bounded ownership, delivery discipline,
 traceable artifacts, and documentation-linked reasoning.
 

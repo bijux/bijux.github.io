@@ -9,14 +9,14 @@ last_reviewed: 2026-04-12
 
 # Bijux Proteomics
 
-`bijux-proteomics` helps scientists and teams run proteomics discovery
-workflows as structured software with explicit contracts, runtime
-behavior, and evidence handling.
+`bijux-proteomics` turns proteomics discovery work into a maintained
+software system with named workflow contracts, runtime behavior, and
+evidence handling.
 
-For scientists and teams, this means turning experiment-driven work into
-repeatable software routes: run discovery workflows, track evidence,
-produce decision-ready outputs, and keep lab-facing planning steps
-traceable over time.
+For scientists and teams, this means experiment-driven work can be run
+through repeatable software routes: execute discovery workflows, track
+evidence, produce decision-ready outputs, and keep lab-facing planning
+steps traceable over time.
 
 Shared standards note: Proteomics docs and checks follow shared shell
 and quality standards inherited from `bijux-std`.
@@ -28,13 +28,13 @@ and quality standards inherited from `bijux-std`.
 
 ## Repository Shape
 
-`bijux-proteomics` treats protein discovery as a governed software
-system rather than a single pipeline. Runtime execution, domain
-contracts, decision intelligence, evidence governance, and lab planning
-are kept as explicit package boundaries.
-Decision intelligence is exposed through the repository's intelligence
-surfaces, while lab planning is exposed through lab-oriented package
-surfaces and documented workflow routes.
+`bijux-proteomics` treats protein discovery as a software system rather
+than a single pipeline. Runtime execution, domain contracts, decision
+intelligence, evidence governance, and lab planning are kept as named
+package boundaries with separate responsibilities.
+Decision logic is exposed through the repository's intelligence
+surfaces, while lab planning is exposed through lab-oriented packages
+and documented workflow routes.
 This map summarizes the core technical surfaces in the repository.
 
 ```mermaid
@@ -46,14 +46,14 @@ graph TD
     execution --> planning["Lab planning routes"]
 ```
 
-It reflects the repository's design choice to keep scientific workflow
-concerns explicit rather than hidden in ad hoc glue.
+It reflects a design choice to keep scientific workflow concerns in
+reviewable packages instead of burying them in ad hoc glue.
 
 ## Why Scientific Product Systems Require Different Structure
 
 | Concern | Scientific product structure |
 | --- | --- |
-| domain contracts | remain explicit while scientific assumptions evolve |
+| domain contracts | stay reviewable while scientific assumptions evolve |
 | evidence handling | treated as a core output, not a side result |
 | runtime behavior | optimized for reproducibility and review, not only convenience |
 | package boundaries | kept coherent under engineering and domain pressure |
@@ -61,9 +61,9 @@ concerns explicit rather than hidden in ad hoc glue.
 ## What This Repository Covers
 
 - evidence governance as a maintained system concern
-- runtime design that stays explicit across domain workflows
+- runtime design that stays legible across domain workflows
 - package boundaries that preserve responsibility and reviewability
-- domain contracts that can be inspected and evolved without hidden coupling
+- domain contracts that can evolve without hidden coupling
 
 ## What Lives Here
 
@@ -91,7 +91,7 @@ publish outputs that can be reviewed and reused.
 | --- | --- |
 | domain decomposition | the split across runtime, foundation, core, intelligence, knowledge, and lab packages |
 | governed product behavior | the repository’s emphasis on contracts, release discipline, and package-owned responsibilities |
-| scientific workflow maturity | the fact that lab planning and evidence resolution are explicit parts of the system model |
+| scientific workflow maturity | the fact that lab planning and evidence resolution are first-class parts of the system model |
 | published entry points | the package handbooks and release surfaces for the six published packages |
 
 ## When This Page Is Most Useful
