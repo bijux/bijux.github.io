@@ -9,17 +9,17 @@ last_reviewed: 2026-04-12
 
 # Delivery Surfaces
 
-A delivery surface is any public, inspectable output through which the
-system is used, verified, or reviewed.
+A delivery surface is any public output through which the system is
+used, checked, or reviewed.
 
-In Bijux, delivery includes more than published software. It also
-includes the control plane, the documentation routes, the interfaces,
-and the evidence that shows how those interfaces are maintained.
+In Bijux, delivery includes more than published software. It includes
+the control plane, the documentation routes, the interfaces, and the
+evidence that shows how they are maintained.
 
 ## What Counts As Delivery In Bijux
 
 - public documentation that shows ownership, operating routes, and system boundaries
-- published software and artifacts that can be traced back to explicit build and release routines
+- published software and artifacts that can be traced back to build and release routines
 - service and runtime interfaces that are reviewable outside local developer context
 - release and operational evidence that shows how quality checks are run, not only claimed
 
@@ -41,8 +41,8 @@ graph LR
 
 | Class | Ownership source | What it includes | What to inspect first |
 | --- | --- | --- | --- |
-| Governance | `bijux-iac` and repository-owned workflow policy | branch protection, required checks, merge discipline, and controlled release paths | whether repository policy is applied from code and whether merge gates are named explicitly |
-| Documentation | shared standards in `bijux-std`, consumed by repository docs | repository handbooks, docs navigation, and public explanatory routes | whether ownership, boundaries, and operating procedures are explicit and consistent across sites |
+| Governance | `bijux-iac` and repository-owned workflow policy | branch protection, required checks, merge discipline, and controlled release paths | whether repository policy is applied from code and whether merge gates are named clearly |
+| Documentation | shared standards in `bijux-std`, consumed by repository docs | repository handbooks, docs navigation, and public explanatory routes | whether ownership, boundaries, and operating procedures are consistent across sites |
 | Published software | repository-owned delivery responsibilities | packages, generated artifacts, and versioned release outputs | whether build and release paths are reproducible and reviewable |
 | Service interfaces | repository-owned service and runtime boundaries | APIs, runtime interfaces, and user-facing data endpoints | whether interface contracts and behavior expectations are documented clearly |
 | Release and ops evidence | repository checks aligned by shared quality standards | CI checks, validation routines, and promotion workflows | whether quality claims are backed by observable checks and traceable evidence |
@@ -60,7 +60,7 @@ trusted outside the original implementation team.
 | --- | --- | --- |
 | Repository-owned delivery surfaces | [Bijux Atlas](../../02-projects/bijux-atlas/index.md) APIs, dataset routes, and release-facing docs | shows where product delivery contracts are owned directly by a delivery repository |
 | Shared docs delivery continuity | `bijux.github.io` platform docs and [Masterclass](../../03-learning/index.md) docs routes backed by shared shell standards | shows how documentation delivery stays consistent across separate sites while local content remains independent |
-| Contract discipline | repository docs, generated artifacts, schema surfaces, and explicit handbook ownership | serious systems make their interfaces and operating rules visible |
+| Contract discipline | repository docs, generated artifacts, schema surfaces, and handbook ownership | serious systems make their interfaces and operating rules visible |
 | Release posture | release workflows, published docs, versioned repositories, and visible distribution surfaces | public work should show how it is built, checked, and published |
 | Operational thinking | runtime handbooks, validation commands, docs checks, and repository automation | delivery quality is easier to trust when routine checks are part of the workflow |
 | Information design | shared docs chrome, stable navigation, scoped handbooks, and repository-specific documentation systems | documentation quality is part of delivery quality, not a separate editorial concern |
@@ -78,13 +78,13 @@ trusted outside the original implementation team.
 
 ### Fast Checks
 
-- open one repository handbook and verify ownership boundaries are explicit
+- open one repository handbook and verify ownership boundaries
 - open [Public surface](../public-surface/index.md) and confirm destinations map to maintained repositories
 
 ### Medium Checks
 
 - inspect package and release workflow docs for clear publication boundaries
-- inspect contract or schema references for explicit compatibility promises
+- inspect contract or schema references for compatibility promises
 
 ### Deep Checks
 
