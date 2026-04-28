@@ -21,6 +21,8 @@ and reasoning, orchestration, and runtime control.
 
 Shared standards note: Canon docs and checks align with the shared
 documentation shell and shared quality standards owned in `bijux-std`.
+Canon also consumes the shared runtime backbone from `bijux-core` while
+owning its own knowledge-system behavior.
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-canon/">View Published Docs</a>
