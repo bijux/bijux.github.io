@@ -14,8 +14,8 @@ does. Projects stay separate in ownership but aligned through shared
 standards in `bijux-std`, so this page gives a structural view before
 deeper project pages.
 
-Use this page after the Platform branch. It answers a narrower
-question: which repository should you open next?
+Use this page after Platform when you want the fastest sense of where
+each repository belongs.
 
 If your question is still about governance or shared standards, open
 [Bijux Infrastructure-as-Code](../02-bijux-iac/index.md) or
@@ -80,9 +80,9 @@ The shared runtime backbone for the project family is:
 
 - `bijux-core` for CLI, DAG, evidence, and release discipline reused across projects
 
-The public route into the family is:
+The public hub for the family is:
 
-- `bijux.github.io` for orientation and documentation routing
+- `bijux.github.io` for documentation and movement across the family
 
 <div class="bijux-showcase-grid">
   <article class="bijux-showcase-card">
@@ -132,7 +132,7 @@ The public route into the family is:
 | [Bijux Proteomics](bijux-proteomics/index.md) | proteomics scientific product engineering | workflow contracts, evidence posture, lab-facing outputs |
 | [Bijux Pollenomics](bijux-pollenomics/index.md) | evidence-mapping scientific product engineering | mapped outputs, report bundles, reproducible evidence handling |
 
-## What This Page Makes Clear
+## What This Page Shows
 
 - this is a coherent set of repository ownership boundaries, not disconnected projects
 - `bijux-core` is a shared project backbone rather than just one more peer project
@@ -155,5 +155,5 @@ The public route into the family is:
 
 ## Reading Rule
 
-Use the cards for quick orientation, then open project pages for
-repository-owned details and inspection routes.
+Use the cards for quick orientation, then open the project pages for
+the repository-owned details.
