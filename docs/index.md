@@ -12,7 +12,7 @@ last_reviewed: 2026-04-12
 <section class="bijux-hero">
   <div class="bijux-hero__eyebrow">platform systems, delivery interfaces, scientific software, and technical programs</div>
   <h1 class="bijux-hero__title">Bijux is a public system family built as distinct repositories with visible control points.</h1>
-  <p class="bijux-hero__lede"><code>bijux.io</code> is the hub for the current Bijux repository family. It is arranged so a reader can move from system orientation into the exact repository that owns the runtime backbone, the control plane, the shared standards layer, the delivery interfaces, the domain products, or the learning programs.</p>
+  <p class="bijux-hero__lede"><code>bijux.io</code> is the hub for the current Bijux repository family. It routes readers from system orientation into the exact repository that owns runtime, governance, standards, delivery, domain work, or learning.</p>
   <div class="bijux-topic-row">
     <span class="bijux-topic-pill">platform architecture</span>
     <span class="bijux-topic-pill">control-plane design</span>
@@ -32,21 +32,20 @@ and source surfaces that carry the implementation detail.</div>
 Bijux is a repository family for platform engineering, data and service
 delivery, scientific software, and technical education.
 
-The important point is not just that the work is public. The important point is
-that the public surface keeps ownership visible:
+The public surface is organized so ownership stays legible:
 
 - one repository owns the live GitHub control plane
 - one repository owns the shared standards layer
 - one repository owns the hub
 - other repositories own runtime, knowledge, delivery, domain, and learning work
 
-That makes the system easier to inspect because responsibility changes hands in
-named places instead of disappearing behind one monorepo or one presentation
-site.
+That makes the system easier to inspect because responsibility changes
+hands in named places instead of disappearing behind one monorepo or
+one presentation site.
 
 | Term | Meaning in this site |
 | --- | --- |
-| ownership boundaries | Explicit repository-level responsibilities that prevent hidden coupling and drift. |
+| ownership boundaries | Repository-level responsibilities that prevent hidden coupling and drift. |
 | delivery surfaces | User-visible outputs such as docs, APIs, reports, and release pathways that must be engineered, not improvised. |
 
 ## At A Glance
