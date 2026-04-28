@@ -59,7 +59,6 @@ nav:
       - Repository Matrix: 01-platform/repository-matrix/index.md
       - Delivery Surfaces: 01-platform/delivery-surfaces/index.md
       - Applied Domains: 01-platform/applied-domains/index.md
-      - Operating Context: 01-platform/operating-context/index.md
       - Documentation Network: 01-platform/documentation-network/index.md
       - Shell Architecture: 01-platform/shell-architecture/index.md
       - Public Surface: 01-platform/public-surface/index.md
