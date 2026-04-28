@@ -61,6 +61,9 @@ That includes:
 - shared compliance and update checks
 - canonical manifests used to verify shared directory integrity
 
+Read [Shared Surfaces](shared-surfaces/index.md) for the public view of
+what those exports look like across the family.
+
 The rule behind that ownership is simple: something becomes part of
 `bijux-std` after it is already being used in a similar and stable way
 across repositories.
