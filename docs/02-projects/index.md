@@ -20,19 +20,33 @@ knowledge systems, delivery interfaces, or domain-heavy product work.
 
 ```mermaid
 graph TD
-    foundations["Foundations"] --> projects["Projects"]
-    projects["Projects"] --> core["Core"]
-    projects --> canon["Canon"]
-    projects --> atlas["Atlas"]
-    projects --> proteomics["Proteomics"]
-    projects --> pollenomics["Pollenomics"]
-    projects --> learning["Learning branch reference"]
+    subgraph foundations["Foundations"]
+        iac["bijux-iac"]
+        std["bijux-std"]
+        hub["bijux.github.io"]
+    end
 
-    learning --> learning_index["Learning index (top-level branch)"]
-    foundations --> learning_index
-    foundations --> iac["bijux-iac"]
-    foundations --> std["bijux-std"]
-    foundations --> hub["bijux.github.io"]
+    subgraph projects["Projects"]
+        core["Core<br/>runtime backbone"]
+        canon["Canon<br/>knowledge system"]
+        atlas["Atlas<br/>delivery interfaces"]
+        proteomics["Proteomics<br/>scientific workflows"]
+        pollenomics["Pollenomics<br/>evidence mapping"]
+    end
+
+    subgraph learning["Learning reference"]
+        learning_index["Learning catalog"]
+    end
+
+    iac --> core
+    std --> core
+    hub --> core
+    core --> canon
+    core --> atlas
+    core --> proteomics
+    core --> pollenomics
+    canon --> atlas
+    hub --> learning_index
 ```
 
 ## Primary Responsibility Clusters
@@ -59,21 +73,21 @@ The foundations that support all of these are:
     <div class="bijux-showcase-card__eyebrow">runtime and governance backbone</div>
     <h2>Bijux Core</h2>
     <p>What it is: the runtime authority repository for CLI and DAG execution.</p>
-    <p>Why it exists: to keep execution behavior and governance boundaries explicit.</p>
+    <p>Why it exists: to keep execution behavior and governance boundaries stable under long-term change.</p>
     <p><a href="bijux-core/index.md">Open Bijux Core</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">governed knowledge system</div>
     <h2>Bijux Canon</h2>
     <p>What it is: the knowledge-system orchestration repository.</p>
-    <p>Why it exists: to separate ingest, indexing, reasoning, orchestration, and runtime control into accountable interfaces.</p>
+    <p>Why it exists: to separate ingest, indexing, reasoning, orchestration, and runtime control into durable interfaces.</p>
     <p><a href="bijux-canon/index.md">Open Bijux Canon</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">data and service delivery</div>
     <h2>Bijux Atlas</h2>
     <p>What it is: the public delivery-interface repository for APIs, datasets, and publication routes.</p>
-    <p>Why it exists: to keep service delivery behavior inspectable and operated as a product surface.</p>
+    <p>Why it exists: to keep service delivery behavior operated as a maintained product surface.</p>
     <p><a href="bijux-atlas/index.md">Open Bijux Atlas</a></p>
   </article>
   <article class="bijux-showcase-card">
