@@ -21,21 +21,21 @@ This branch explains the part of the Bijux system that acts on
 repositories from the outside. It is the control plane for the family,
 not another product repository.
 
-## Why It Matters In Public
+## Why It Matters
 
 Strong repository architecture is hard to trust if the merge rules,
 required checks, and protection model only exist as invisible admin
 settings.
 
-`bijux-iac` makes those controls inspectable:
+`bijux-iac` brings those controls into view:
 
 - repository governance is declared in source
 - control-plane changes follow the same review path as the repositories they govern
 - `main` protection, required checks, and policy rollout stop being private context
 
-## What A Reader Can Infer Quickly
+## What You See Quickly
 
-| If you inspect... | You can infer... |
+| If you open... | What becomes clear |
 | --- | --- |
 | repository inventory and policy surfaces | governance is being treated as an owned system, not as scattered settings |
 | Terraform-managed GitHub controls | the family is designed to scale without losing review discipline |
