@@ -12,10 +12,6 @@ last_reviewed: 2026-04-12
 `bijux-canon` is the repository that turns incoming knowledge sources
 into structured, queryable, and runtime-controlled system behavior.
 
-Canon is the repository where Bijux turns raw knowledge inputs into
-indexed, reasoned, and runtime-controlled outputs through explicit
-engineering layers.
-
 `bijux-canon` is the governed knowledge-system stack for deterministic
 ingest, retrieval, reasoning, orchestration, and controlled runtime
 acceptance. It is a clear route into system decomposition around AI and
@@ -58,6 +54,14 @@ graph TD
 
 Each layer stays explicit so inputs, reasoning, and runtime behavior can
 be reviewed as connected but distinct responsibilities.
+
+## What You Can Verify Quickly
+
+| Surface | Why it matters |
+| --- | --- |
+| package split | shows that ingest, index, reason, orchestrate, and runtime are not collapsed into one layer |
+| compat surfaces | shows that migration and naming changes are handled in public |
+| runtime-control language | shows that knowledge-system behavior is reviewed with the same discipline as execution systems |
 
 ## Why The Package Split Is Intentional
 

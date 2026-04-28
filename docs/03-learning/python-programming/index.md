@@ -28,6 +28,14 @@ standards checks inherited from `bijux-std`.
 This family organizes Python learning by design pressure: object
 boundaries, functional composition, and runtime extensibility.
 
+## What You Can Verify Quickly
+
+| Surface | Why it matters |
+| --- | --- |
+| three-track split | shows the program is organized around design pressure, not random topic accumulation |
+| links into Masterclass destinations | shows the material is published as maintained documentation, not a loose note set |
+| repository examples in Core, Canon, and Atlas | shows that the teaching vocabulary maps back to real system design decisions |
+
 ## Track Map
 
 ```mermaid
