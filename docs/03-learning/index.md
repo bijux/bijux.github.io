@@ -15,7 +15,8 @@ The learning branch lives in `bijux-masterclass`, where system
 engineering practice is taught through sequenced programs. It belongs in
 the same repository family because it turns architecture and workflow
 judgment into reusable instruction while leaving shared shell behavior
-in `bijux-std` and learning curriculum in Masterclass.
+in `bijux-std`, GitHub governance in `bijux-iac`, and learning
+curriculum in Masterclass.
 
 The learning surface is not separate from the rest of the repository
 family. It is where runtime judgment, workflow discipline, and design
@@ -50,3 +51,9 @@ graph LR
 | reproducible-research capstones | workflow thinking is grounded in executable artifact discipline |
 | python-programming program structure | language teaching is being used to explain long-lived software design, not just syntax |
 | the relationship to `bijux-masterclass` | the learning surface is treated as a repository-owned product, not detached notes |
+
+## Shared Layers Around Masterclass
+
+- `bijux-masterclass` consumes shared shell behavior and baseline checks from `bijux-std`
+- `bijux-masterclass` is governed in GitHub through `bijux-iac`
+- `bijux.github.io` routes readers into the learning material, but does not own the learning content or the shared shell
