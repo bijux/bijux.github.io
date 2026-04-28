@@ -9,18 +9,13 @@ last_reviewed: 2026-04-12
 
 # Bijux Proteomics
 
-`bijux-proteomics` turns proteomics discovery work into a maintained
-software system with named workflow contracts, runtime behavior, and
-evidence handling.
+`bijux-proteomics` turns proteomics discovery into a maintained
+software surface with named workflow contracts, repeatable runtime
+behavior, and evidence lineage.
 
-For scientists and teams, this means discovery work can move through
-repeatable software routes: execute workflows, track evidence, produce
-decision-ready outputs, and keep lab-facing planning traceable.
-
-Shared standards note: Proteomics docs and checks follow shared shell
-and quality standards inherited from `bijux-std`.
-Proteomics also builds on the shared CLI and runtime layer from
-`bijux-core` while owning its own scientific workflows.
+It follows the shared shell and quality standards from `bijux-std` and
+builds on the common CLI and runtime layer from `bijux-core`, while
+keeping scientific workflow ownership in the repository itself.
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-proteomics/">View Published Docs</a>
@@ -30,25 +25,20 @@ Proteomics also builds on the shared CLI and runtime layer from
 ## Repository Shape
 
 `bijux-proteomics` treats protein discovery as a software system rather
-than a single pipeline. Runtime execution, domain contracts, decision
-intelligence, evidence governance, and lab planning are kept as named
-package boundaries with separate responsibilities.
-Decision logic is exposed through the repository's intelligence
-surfaces, while lab planning is exposed through lab-oriented packages
-and documented routes.
-This map summarizes the core technical surfaces in the repository.
+than a single pipeline. Runtime execution, domain contracts, evidence
+governance, decision logic, and lab planning stay in named package
+boundaries so scientific change does not blur responsibility.
+This map summarizes the core flow in the repository.
 
 ```mermaid
-graph TD
-    discovery["Discovery workflows"] --> contracts["Domain contracts"]
-    contracts --> evidence["Evidence handling"]
-    evidence --> decisions["Decision outputs"]
-    decisions --> execution["Runtime execution"]
-    execution --> planning["Lab planning routes"]
+graph LR
+    input["discovery workflows"] --> contracts["domain contracts"]
+    contracts --> evidence["evidence handling"]
+    evidence --> output["decision-ready outputs"]
 ```
 
-It reflects a design choice to keep scientific workflow concerns in
-reviewable packages instead of burying them in ad hoc glue.
+The repository keeps scientific workflow concerns in reviewable
+packages instead of burying them in ad hoc glue.
 
 ## Why Scientific Product Systems Require Different Structure
 
@@ -71,7 +61,7 @@ reviewable packages instead of burying them in ad hoc glue.
 - a contract-first package family for scientific product work
 - domain models, decision logic, evidence handling, and lab planning kept separate
 - reproducibility and reviewability treated as part of the product, not a later cleanup step
-- public scientific software that still looks engineered rather than improvised
+- public scientific software with clear package ownership
 
 ## One Repository Flow
 
@@ -82,9 +72,9 @@ graph LR
     evidence --> output["Decision-ready output"]
 ```
 
-This is the practical path in the repository: ingest input, run
-workflow logic, preserve evidence lineage, and publish outputs that can
-be reviewed and reused.
+This is the practical path in the repository: ingest input, run the
+workflow, preserve evidence lineage, and publish outputs that can be
+reviewed and reused.
 
 ## Where To Begin
 

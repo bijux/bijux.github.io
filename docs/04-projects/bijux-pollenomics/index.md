@@ -13,18 +13,12 @@ last_reviewed: 2026-04-17
 be traced, reviewed, and rebuilt.
 
 It brings together archaeology, eDNA, aDNA, and pollen evidence so
-researchers can decide where attention should focus without losing
-track of methods, lineage, and interpretation boundaries.
+interpretation stays connected to source material, lineage, and
+publication routes.
 
-It shows how structured engineering can support field-oriented,
-evidence-heavy domain work without losing reproducibility, traceability,
-or system structure.
-
-The public docs surface and repository checks follow the shared
-documentation shell and standards checks used across the Bijux
-repository family.
-Pollenomics also builds on the shared CLI and runtime layer from
-`bijux-core` while keeping interpretation and publication logic in the
+It follows the shared documentation shell and standards checks from
+`bijux-std` and builds on the common CLI and runtime layer from
+`bijux-core`, while keeping interpretation and publication logic in the
 domain repository.
 
 <div class="bijux-quicklinks">
@@ -38,8 +32,7 @@ domain repository.
 concrete: tracked source data, rebuildable report bundles, a Nordic
 evidence atlas, and documentation that explains where those artifacts
 come from.
-This flow shows how evidence is interpreted and turned into mapped and
-report outputs.
+This flow shows how evidence turns into mapped and report outputs.
 
 ```mermaid
 graph LR
@@ -48,8 +41,8 @@ graph LR
     interpretation --> report_output["Report output (report bundles)"]
 ```
 
-The goal is a domain system that remains readable even for readers
-outside the immediate subject area.
+The goal is a domain system that remains readable even outside the
+immediate subject area.
 
 ## Concrete Outputs
 
@@ -67,7 +60,7 @@ outside the immediate subject area.
 
 ## What Lives Here
 
-- evidence mapping framed as a reproducible product surface, not a one-off analysis notebook
+- evidence mapping framed as a reproducible product surface, not a one-off notebook
 - tracked data, checked-in publication artifacts, and rebuild paths
 - technical architecture adapted to archaeology-facing and field-oriented context without losing clarity
 - honest scope boundaries around what exists today and what does not
@@ -97,14 +90,9 @@ evidence and reproducibility rules.
 
 ## In The Larger Picture
 
-Pollenomics carries the same structural habits into a specialized domain
-that does not come with off-the-shelf engineering narratives.
+Pollenomics carries the same structural habits into a specialized
+domain where methods, evidence, and interpretation all need to stay
+visible at once.
 
-This repository tests Bijux platform ideas under evidence and
-interpretation pressure: bounded ownership, delivery discipline,
-traceable artifacts, and documentation-linked reasoning.
-
-Bijux Pollenomics shows how specialized domain work can be handled with
-the same architectural seriousness as any general platform system. It
-keeps evidence, interpretation, and public understanding organized
-through disciplined software structure.
+It keeps evidence, interpretation, and publication organized through
+disciplined software structure rather than one-off research handling.
