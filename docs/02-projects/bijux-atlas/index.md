@@ -40,10 +40,9 @@ Concrete Atlas surfaces include:
 ## Repository Shape
 
 `bijux-atlas` presents data-service work as an operated product surface
-rather than a loose data tool. The repository
-publishes a CLI, server, OpenAPI export surface, and maintainer control
-plane around governed genomics dataset delivery and immutable query
-artifacts.
+rather than a loose data tool. The repository publishes a CLI, server,
+OpenAPI export surface, and maintainer control plane around genomics
+dataset delivery and immutable query artifacts.
 
 Inherited vs local ownership: navigation shell and baseline docs/check
 standards come from `bijux-std`, while Atlas owns API behavior, dataset
@@ -53,18 +52,12 @@ publication contracts, and service operations.
 
 ```mermaid
 graph TD
-    std["Shared docs shell (bijux-std)"] --> control["Docs and ops control plane"]
-    atlas["Bijux Atlas"] --> ingestion["Data ingestion and preparation"]
-    atlas --> contracts["Service contracts and OpenAPI surface"]
-    atlas --> api["API and query surface"]
-    atlas --> artifacts["Versioned release artifacts"]
-    atlas --> control
-
-    ingestion --> publish["Published Atlas delivery surface"]
-    contracts --> publish
-    api --> publish
-    artifacts --> publish
-    control --> publish
+    ingest["data ingestion and preparation"] --> contracts["service contracts and OpenAPI"]
+    contracts --> api["API and query surface"]
+    api --> artifacts["versioned artifacts and dataset outputs"]
+    artifacts --> publish["published Atlas delivery surface"]
+    control["docs and maintainer control plane"] --> publish
+    std["shared docs shell from bijux-std"] --> control
 ```
 
 ## What Atlas Owns
@@ -86,7 +79,7 @@ graph TD
 - API and dataset delivery treated as first-class product interfaces
 - immutable artifact thinking instead of ad hoc mutable dataset handling
 - docs-aware validation, operational reporting, and control-plane behavior as part of delivery
-- explicit runtime surfaces: CLI, server, OpenAPI export, and maintainer tooling
+- runtime surfaces that stay separate: CLI, server, OpenAPI export, and maintainer tooling
 
 ## Where To Begin
 
@@ -109,9 +102,9 @@ Core and Canon are where runtime and knowledge internals are structured.
 ## Why This Matters Operationally
 
 - stable queries: service consumers can rely on documented query and API behavior across releases
-- traceable releases: dataset and artifact publication history is inspectable instead of implicit
-- inspectable service behavior: docs, contracts, and operations expose how delivery works in practice
-- lower integration risk: maintenance workflows remain explicit so downstream systems can plan confidently
+- traceable releases: dataset and artifact publication history stays visible instead of implied
+- service behavior in public: docs, contracts, and operations expose how delivery works in practice
+- lower integration risk: maintenance workflows stay documented so downstream systems can plan confidently
 
 ## When This Page Is Most Useful
 
