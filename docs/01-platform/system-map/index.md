@@ -9,7 +9,7 @@ last_reviewed: 2026-04-12
 
 # System Map
 
-<div class="bijux-callout"><strong>Bijux reads more clearly as a layered system than as a list of repositories.</strong> Platform, Projects, Learning, and the foundation layer each carry a different kind of responsibility.</div>
+<div class="bijux-callout"><strong>Bijux reads more clearly as a layered system than as a list of repositories.</strong> Shared governance and shared standards sit underneath the repository family, `bijux-core` acts as the project backbone, and the documentation hub routes readers across the whole system.</div>
 
 The Bijux public surface is easier to understand as a layered system
 than as a list of repositories. The map shows where responsibility
@@ -17,31 +17,32 @@ changes hands and where different kinds of engineering judgment are
 expected. Shared standards are part of that system design, not only a
 documentation detail.
 
-In plain terms: Platform defines the shared structure and rules, Projects
-apply that structure in runtime/knowledge/domain repositories, and
-Learning explains the same engineering methods through teachable
-programs. Together, these layers keep responsibilities clear while still
-forming one public system.
+In plain terms: `bijux-iac` governs GitHub, `bijux-std` keeps shared
+behavior aligned, `bijux-core` provides common runtime value across the
+project family, and the hub helps readers move between those layers.
+Projects and learning repositories consume those shared pieces while
+owning their own implementation work.
 
 ## Layered View
 
 ```mermaid
 graph TD
-    subgraph foundations["Foundations"]
+    subgraph foundations["Shared foundations"]
         iac["bijux-iac<br/>governance as code"]
         std["bijux-std<br/>shared standards"]
-        hub["bijux.github.io<br/>route design"]
     end
 
-    subgraph platform["Platform"]
-        maps["System map and repository matrix"]
-        qualities["Work qualities and operating context"]
+    hub["bijux.github.io<br/>documentation hub"]
+
+    subgraph backbone["Shared project backbone"]
+        core["bijux-core<br/>runtime authority"]
     end
 
     subgraph projects["Projects"]
-        core["Core<br/>runtime authority"]
         canon["Canon<br/>knowledge system"]
         atlas["Atlas<br/>delivery interfaces"]
+        telecom["Telecom<br/>service and telecom systems"]
+        genomics["Genomics<br/>rust-based genomics systems"]
         domains["Proteomics and Pollenomics<br/>applied domains"]
     end
 
@@ -53,29 +54,37 @@ graph TD
     iac --> core
     iac --> canon
     iac --> atlas
+    iac --> telecom
+    iac --> genomics
     iac --> domains
-    std --> hub
+    iac --> masterclass
     std --> core
     std --> canon
     std --> atlas
+    std --> telecom
+    std --> genomics
     std --> domains
-    hub --> maps
-    maps --> core
-    maps --> canon
-    maps --> atlas
-    maps --> domains
-    qualities --> programs
+    std --> masterclass
+    hub --> canon
+    hub --> atlas
+    hub --> telecom
+    hub --> genomics
+    hub --> domains
+    hub --> masterclass
+    core --> canon
     core --> atlas
+    core --> telecom
+    core --> genomics
     core --> domains
-    canon --> atlas
     masterclass --> programs
 ```
 
 ## Layer Summary
 
-- Foundations: keep governance, shared standards, and public orientation stable.
-- Platform: explains the split and the rules that make the family coherent.
-- Projects: carry runtime, knowledge, delivery, and domain ownership.
+- Shared foundations: keep governance and shared standards stable across the family.
+- Hub: routes readers across repositories, but consumes its shell and checks from `bijux-std`.
+- Shared project backbone: provides common runtime value across the project family.
+- Projects: carry knowledge, delivery, telecom, genomics, and domain ownership.
 - Learning: turns the same engineering language into programs and capstones.
 
 ## What Each Layer Owns
@@ -84,21 +93,23 @@ graph TD
 
 | Layer | What it owns | Why it stays separate |
 | --- | --- | --- |
-| Platform | shared engineering rules, release discipline, and boundary vocabulary | keeps cross-repository behavior stable and inspectable |
-| Projects | runtime systems, knowledge systems, delivery interfaces, and domain products | keeps implementation ownership explicit and reviewable by repository |
+| Shared foundations | GitHub governance and shared standards | keeps policy and shared behavior aligned before project-specific work begins |
+| Hub | public orientation and documentation routing | lets readers move across the family without confusing routing with standards ownership |
+| Shared project backbone | runtime authority, CLI surfaces, DAG behavior, evidence, and release discipline | gives multiple repositories common execution behavior without collapsing them into one codebase |
+| Projects | knowledge systems, delivery interfaces, telecom services, genomics systems, and domain products | keeps implementation ownership explicit and reviewable by repository |
 | Learning | course books, deep dives, capstones, and reusable technical explanation | keeps teaching and explanation rigorous without replacing repository ownership |
-| Foundations | GitHub governance, shared standards, and the public hub | keeps the family operable and legible before any single product repo is opened |
 
 ### Repository Family Roles
 
 | Repository role | Primary ownership |
 | --- | --- |
 | bijux-iac | GitHub control-plane governance |
-| bijux.github.io | public orientation and hub navigation |
 | bijux-std | shared standards definition and distribution |
+| bijux.github.io | public orientation and hub navigation |
 | Core | runtime authority and governance behavior |
 | Canon | knowledge-system orchestration and reasoning boundaries |
 | Atlas | delivery interfaces, service outputs, and reporting routes |
+| Telecom and Genomics | service systems that consume the shared runtime and standards layers |
 | Proteomics and Pollenomics | domain-specific workflows and evidence-heavy product outputs |
 | Masterclass | learning programs and executable instructional artifacts |
 
@@ -118,10 +129,9 @@ graph TD
 
 ## Where Responsibility Changes Hands
 
-- Foundations -> repos: `bijux-iac` governs repository behavior, `bijux-std` governs shared repo content, and `bijux.github.io` governs the public route into the family.
-- Platform -> Core: shared boundary and release rules become executable runtime and governance behavior.
-- Core/Canon -> Atlas: internal runtime and knowledge capabilities become public delivery interfaces and reporting routes.
-- Platform/Projects -> Domain products: shared engineering rules are applied to specialized scientific workflows and evidence outputs.
+- Shared foundations -> repos: `bijux-iac` governs repository behavior and `bijux-std` governs shared repo content.
+- Hub -> readers: `bijux.github.io` routes readers into the family, but does not own the shared shell behavior it presents.
+- Core -> projects: shared CLI, DAG, evidence, and release discipline become reusable runtime value across Canon, Atlas, Telecom, Genomics, Proteomics, and Pollenomics.
 - Projects -> Learning: repository practices are translated into course books and capstones without changing source ownership.
 
 Ownership and handoffs should already be clear before repository-level
