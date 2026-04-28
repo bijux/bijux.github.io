@@ -105,14 +105,6 @@ The public hub for the family is:
 | [Bijux Proteomics](bijux-proteomics/index.md) | proteomics scientific product engineering | workflow contracts, evidence posture, lab-facing outputs |
 | [Bijux Pollenomics](bijux-pollenomics/index.md) | evidence-mapping scientific product engineering | mapped outputs, report bundles, reproducible evidence handling |
 
-## What This Page Shows
-
-- this is a coherent set of repository ownership boundaries, not disconnected projects
-- `bijux-core` is a shared project backbone rather than just one more peer project
-- each project repository exposes a different kind of technical surface
-- the shared foundations stay separate from both the hub and the project layer on purpose
-- architecture, delivery, domain pressure, and learning surfaces are visible in public
-
 ## Reading Guide
 
 | If you care most about... | Start here |
@@ -129,4 +121,4 @@ The public hub for the family is:
 ## Reading Rule
 
 Use the cards for quick orientation, then open the project pages for
-the repository-owned details.
+repository-owned details.

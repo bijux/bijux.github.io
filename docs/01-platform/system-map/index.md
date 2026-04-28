@@ -9,20 +9,12 @@ last_reviewed: 2026-04-28
 
 # System Map
 
-<div class="bijux-callout"><strong>Bijux reads more clearly as a layered system than as a list of repositories.</strong> Shared governance and shared standards sit underneath the repository family, `bijux-core` acts as the project backbone, and the documentation hub routes readers across the whole system.</div>
+<div class="bijux-callout"><strong>Bijux reads more clearly as a layered system than as a list of repositories.</strong> Shared governance and shared standards sit underneath the family, `bijux-core` acts as the project backbone, and the documentation hub keeps the whole surface readable.</div>
 
 Bijux is split this way because the work has to stay clear under real
 pressure: long-lived maintenance, reproducibility, public delivery, and
-evidence-heavy domain work. The simplest way to understand that shape
-is to start with the layers and then move into the repositories.
-
-In plain terms:
-
-- `bijux-iac` governs GitHub
-- `bijux-std` keeps shared behavior aligned
-- `bijux-core` provides common runtime value across the project family
-- `bijux.github.io` helps readers move between those layers
-- projects and learning repositories consume those shared pieces while owning their own work
+evidence-heavy domain work. The easiest way to understand that shape is
+to start with the layers and then move into the repositories.
 
 ## Layered View
 
@@ -43,8 +35,8 @@ graph TD
 - public delivery needs clear routes, release discipline, and visible contracts
 - learning works better when it grows from the same systems instead of detached notes
 
-That is why governance, standards, runtime, projects, and learning are
-separate layers instead of one mixed repository surface.
+That is why governance, standards, runtime, projects, and learning stay
+separate instead of collapsing into one mixed repository surface.
 
 ## What Each Layer Owns
 

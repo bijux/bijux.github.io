@@ -11,16 +11,16 @@ last_reviewed: 2026-04-28
 
 Platform explains how the Bijux repository family is held together.
 
-This branch shows how the repository family is held together: the
-shared foundations underneath it, the shared runtime backbone in the
-middle, and the project and learning surfaces built on top.
+This branch shows the shared foundations underneath it, the runtime
+backbone in the middle, and the project and learning surfaces built on
+top.
 
 It introduces the family shape without replacing the deeper `bijux-iac`
 and `bijux-std` branches.
 
 <div class="bijux-callout"><strong>Start with responsibility before repository count.</strong>
-The important question is why each part of the family has its own home,
-yet still reads as one system.</div>
+The key question is why each part of the family has its own home, yet
+still reads as one system.</div>
 
 ## Platform Map
 
