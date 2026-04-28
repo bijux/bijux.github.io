@@ -12,7 +12,7 @@ last_reviewed: 2026-04-12
 <section class="bijux-hero">
   <div class="bijux-hero__eyebrow">platform systems, delivery interfaces, scientific software, and technical programs</div>
   <h1 class="bijux-hero__title">Bijux is a public system family built as distinct repositories with visible control points.</h1>
-  <p class="bijux-hero__lede"><code>bijux.io</code> is the hub for the current Bijux repository family. It routes readers from system orientation into the exact repository that owns runtime, governance, standards, delivery, domain work, or learning.</p>
+  <p class="bijux-hero__lede"><code>bijux.io</code> is the hub for the current Bijux repository family. It routes readers from system orientation into the exact repository that owns platform structure, GitHub governance, shared standards, runtime, delivery, domain work, or learning.</p>
   <div class="bijux-topic-row">
     <span class="bijux-topic-pill">platform architecture</span>
     <span class="bijux-topic-pill">control-plane design</span>
@@ -34,6 +34,7 @@ delivery, scientific software, and technical education.
 
 The public surface is organized so ownership stays legible:
 
+- one branch explains the platform structure of the family
 - one repository owns the live GitHub control plane
 - one repository owns the shared standards layer
 - one repository owns the public documentation hub
@@ -90,7 +91,9 @@ matches the question you want to answer.
 
 | Start here for... | Open this first | What you will find |
 | --- | --- | --- |
-| how the repositories fit together | [Platform overview](01-platform/index.md) -> [System map](01-platform/system-map/index.md) | the split across runtime, knowledge, delivery, and domain work |
+| how the repositories fit together | [Platform overview](01-platform/index.md) -> [System map](01-platform/system-map/index.md) | the split across shared foundations, runtime, knowledge, delivery, and domain work |
+| how GitHub governance is applied across the family | [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) | the live control plane, governed repositories, and review model |
+| how shared behavior stays aligned across repositories | [Bijux standard layer](03-bijux-std/index.md) | shared docs shell, shared make behavior, and standards promotion |
 | how delivery shows up publicly | [Delivery surfaces](01-platform/delivery-surfaces/index.md) -> [Bijux Atlas](04-projects/bijux-atlas/index.md) | documentation, published destinations, and operated service surfaces |
 | how the work behaves under domain pressure | [Applied domains](01-platform/applied-domains/index.md) -> [Bijux Proteomics](04-projects/bijux-proteomics/index.md) -> [Bijux Pollenomics](04-projects/bijux-pollenomics/index.md) | scientific and evidence-heavy product systems |
 | how the technical style carries into teaching | [Learning catalog](05-learning/index.md) | course books and programs built around the same technical language |
@@ -166,8 +169,8 @@ work you care about first.
 
 <div class="bijux-callout"><strong>New here?</strong> Start with
 <a href="index.md">Home</a> -> <a href="01-platform/index.md">Platform</a> ->
-<a href="01-platform/system-map/index.md">System Map</a>. This is the canonical first
-route for new readers.</div>
+<a href="02-bijux-iac/index.md">Bijux Infrastructure-as-Code</a> ->
+<a href="03-bijux-std/index.md">Bijux Standards</a>. This is the shortest route into the shared foundations.</div>
 
 The map below summarizes the main route families at a glance.
 
@@ -199,7 +202,8 @@ Choose a route below by intent or by time.
 | If you want to inspect... | Start here | Then continue into |
 | --- | --- | --- |
 | system design and repository split | [Platform overview](01-platform/index.md) | [System map](01-platform/system-map/index.md), [Repository matrix](01-platform/repository-matrix/index.md) |
-| control plane and shared standards | [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) | [Bijux standard layer](03-bijux-std/index.md), [Shell Architecture](01-platform/shell-architecture/index.md) |
+| control plane design and repository governance | [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) | [Platform overview](01-platform/index.md), [Repository matrix](01-platform/repository-matrix/index.md) |
+| shared standards and cross-repository continuity | [Bijux standard layer](03-bijux-std/index.md) | [Shell Architecture](01-platform/shell-architecture/index.md), [Documentation Network](01-platform/documentation-network/index.md) |
 | delivery and service interfaces | [Delivery surfaces](01-platform/delivery-surfaces/index.md) | [Bijux Atlas](04-projects/bijux-atlas/index.md) |
 | domain-heavy product work | [Applied domains](01-platform/applied-domains/index.md) | [Bijux Proteomics](04-projects/bijux-proteomics/index.md), [Bijux Pollenomics](04-projects/bijux-pollenomics/index.md) |
 | technical teaching built from the same system language | [Learning catalog](05-learning/index.md) | [Reproducible Research](05-learning/reproducible-research/index.md), [Python Programming](05-learning/python-programming/index.md) |
@@ -208,9 +212,9 @@ Choose a route below by intent or by time.
 
 | If you have... | Read this route |
 | --- | --- |
-| 10 minutes | [Home](index.md) -> [Work qualities](01-platform/work-qualities/index.md) -> [Projects](04-projects/index.md) |
-| 20 minutes | [System map](01-platform/system-map/index.md) -> [Repository matrix](01-platform/repository-matrix/index.md) -> one project page that matches your interest |
-| 30 minutes | [Platform](01-platform/index.md) -> [System map](01-platform/system-map/index.md) -> [Delivery surfaces](01-platform/delivery-surfaces/index.md) -> [Bijux Atlas](04-projects/bijux-atlas/index.md) -> [Applied domains](01-platform/applied-domains/index.md) |
+| 10 minutes | [Home](index.md) -> [Platform](01-platform/index.md) -> [Projects](04-projects/index.md) |
+| 20 minutes | [Platform](01-platform/index.md) -> [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) -> [Bijux standard layer](03-bijux-std/index.md) |
+| 30 minutes | [Platform](01-platform/index.md) -> [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) -> [Bijux standard layer](03-bijux-std/index.md) -> [Bijux Core](04-projects/bijux-core/index.md) -> [Bijux Atlas](04-projects/bijux-atlas/index.md) |
 
 <div class="bijux-showcase-grid">
   <article class="bijux-showcase-card">
@@ -236,6 +240,8 @@ Choose a route below by intent or by time.
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="04-projects/">Browse the repositories</a>
 <a class="md-button" href="01-platform/">Read the platform branch</a>
+<a class="md-button" href="02-bijux-iac/">Open the control plane</a>
+<a class="md-button" href="03-bijux-std/">Open the standards layer</a>
 <a class="md-button" href="#reading-paths">Choose a reading path</a>
 </div>
 
