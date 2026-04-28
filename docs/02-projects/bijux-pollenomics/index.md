@@ -17,10 +17,8 @@ researchers can decide where attention should focus without losing
 track of methods, lineage, and interpretation boundaries.
 
 It shows how structured engineering can support field-oriented,
-evidence-heavy domain work.
-The engineering challenge here is to make uncommon scientific context
-operationally clear without losing reproducibility, traceability, or
-system structure.
+evidence-heavy domain work without losing reproducibility, traceability,
+or system structure.
 
 The public docs surface and repository checks follow the shared
 documentation shell and standards checks used across the Bijux
@@ -47,7 +45,7 @@ graph LR
     interpretation --> report_output["Report output (report bundles)"]
 ```
 
-The goal is a domain system that remains reviewable even for readers
+The goal is a domain system that remains readable even for readers
 outside the immediate subject area.
 
 ## Concrete Outputs
@@ -103,7 +101,6 @@ interpretation pressure: bounded ownership, delivery discipline,
 traceable artifacts, and documentation-linked reasoning.
 
 Bijux Pollenomics shows how specialized domain work can be handled with
-the same architectural seriousness as any general platform system. Its
-importance is not only subject matter depth, but the effort to keep
-evidence, interpretation, and public understanding organized through
-disciplined software structure.
+the same architectural seriousness as any general platform system. It
+keeps evidence, interpretation, and public understanding organized
+through disciplined software structure.

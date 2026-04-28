@@ -13,10 +13,9 @@ last_reviewed: 2026-04-12
 software system with named workflow contracts, runtime behavior, and
 evidence handling.
 
-For scientists and teams, this means experiment-driven work can be run
-through repeatable software routes: execute discovery workflows, track
-evidence, produce decision-ready outputs, and keep lab-facing planning
-steps traceable over time.
+For scientists and teams, this means discovery work can move through
+repeatable software routes: execute workflows, track evidence, produce
+decision-ready outputs, and keep lab-facing planning traceable.
 
 Shared standards note: Proteomics docs and checks follow shared shell
 and quality standards inherited from `bijux-std`.
@@ -34,7 +33,7 @@ intelligence, evidence governance, and lab planning are kept as named
 package boundaries with separate responsibilities.
 Decision logic is exposed through the repository's intelligence
 surfaces, while lab planning is exposed through lab-oriented packages
-and documented workflow routes.
+and documented routes.
 This map summarizes the core technical surfaces in the repository.
 
 ```mermaid
@@ -81,9 +80,9 @@ graph LR
     evidence --> output["Decision-ready output"]
 ```
 
-This flow is the practical path in the repository: ingest scientific
-input, run controlled workflow logic, preserve evidence lineage, and
-publish outputs that can be reviewed and reused.
+This is the practical path in the repository: ingest input, run
+workflow logic, preserve evidence lineage, and publish outputs that can
+be reviewed and reused.
 
 ## Where To Begin
 
