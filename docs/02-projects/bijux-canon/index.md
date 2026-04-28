@@ -31,28 +31,22 @@ documentation shell and shared quality standards owned in `bijux-std`.
 
 ## Repository Shape
 
-`bijux-canon` is built as explicit layers with accountable interfaces.
+`bijux-canon` is built as separate layers with accountable interfaces.
 Ingest, indexing, reasoning, orchestration, and runtime control are
 kept separate through packages, contracts, compatibility surfaces, and
-runtime boundaries that readers can inspect directly.
-This map shows the package layers as one governed knowledge system.
+runtime boundaries.
+This map shows how knowledge moves through the stack.
 
 ```mermaid
-graph TD
-    canon["Bijux Canon"] --> ingest["Ingest"]
-    canon --> index["Index"]
-    canon --> reasoning["Reasoning"]
-    canon --> orchestration["Orchestration"]
-    canon --> runtime["Runtime"]
-
-    ingest --> system["Governed knowledge system"]
-    index --> system
-    reasoning --> system
-    orchestration --> system
-    runtime --> system
+graph LR
+    sources["source material"] --> ingest["ingest"]
+    ingest --> index["index"]
+    index --> reasoning["retrieve and reason"]
+    reasoning --> orchestration["orchestrate decisions"]
+    orchestration --> runtime["controlled runtime acceptance"]
 ```
 
-Each layer stays explicit so inputs, reasoning, and runtime behavior can
+Each layer stays separate so inputs, reasoning, and runtime behavior can
 be reviewed as connected but distinct responsibilities.
 
 ## What You Can Verify Quickly
@@ -107,10 +101,10 @@ responsibilities belong to `bijux-core`, domain repositories, and
 
 ```mermaid
 graph LR
-    input["1. Input"] --> structure["2. Structure"]
-    structure --> reasoning["3. Reasoning"]
-    reasoning --> orchestration["4. Orchestration"]
-    orchestration --> runtime["5. Controlled runtime"]
+    input["1. source input"] --> structure["2. structured index"]
+    structure --> reasoning["3. retrieval and reasoning"]
+    reasoning --> orchestration["4. orchestration"]
+    orchestration --> runtime["5. accepted runtime behavior"]
 ```
 
 Follow this flow to inspect the stack in order: ingest input,
