@@ -9,10 +9,8 @@ last_reviewed: 2026-04-12
 
 # Recurring Engineering Qualities
 
-Recurring engineering patterns across Bijux repositories.
-
-This page is the shortest route into the recurring patterns that shape
-repository ownership, delivery behavior, domain adaptation, and
+Recurring engineering patterns across Bijux repositories. These are the
+habits that recur across ownership, delivery, domain adaptation, and
 learning continuity.
 
 ## Qualities Map
@@ -61,14 +59,10 @@ habits.
   <div class="bijux-panel"><h3>Explainable Depth</h3><p>Engineers who can teach architecture, workflow discipline, and programming design usually understand the systems well enough to build and evolve them cleanly.</p></div>
 </div>
 
-## Reading Rule
+## Why They Recur
 
-This page works best as a routing layer for inspection rather than a
-standalone conclusion. The repositories and published documentation
-carry the depth.
-
-These qualities are intended to function as engineering standards rather
-than style preferences. Bounded ownership, delivery discipline, domain
-pressure handling, and explainable depth define the conditions under
-which software becomes easier to trust, review, and evolve across the
-full repository family.
+These qualities function as engineering standards rather than style
+preferences. Bounded ownership, delivery discipline, domain pressure
+handling, and explainable depth are the conditions under which software
+becomes easier to trust, review, and evolve across the full repository
+family.
