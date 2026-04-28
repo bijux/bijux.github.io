@@ -9,20 +9,17 @@ last_reviewed: 2026-04-12
 
 # Platform
 
-Platform is the branch that explains how the Bijux repository family is
-held together in public.
+Platform explains how the Bijux repository family is held together.
 
-The public surface is intentionally split by responsibility. This
-section explains where live governance is owned, where shared standards
-are owned, where public orientation is owned, and how the product,
-runtime, domain, and learning repositories sit on top of that
-foundation.
+This section shows where governance is owned, where shared standards
+are owned, where orientation is owned, and how runtime, delivery,
+domain, and learning repositories sit on top of that foundation.
 
 <div class="bijux-callout"><strong>Focus on responsibility before repository count.</strong>
 The key question is not how many repositories exist, but why responsibilities are split the way they are.
-Runtime governance, knowledge workflows, delivery surfaces, domain
-products, and learning programs each have their own home, but the same
-engineering language is visible across all of them.</div>
+Runtime governance, knowledge workflows, delivery, domain products, and
+learning programs each have their own home, but they still read as one
+system.</div>
 
 ## Platform Map
 
@@ -54,7 +51,7 @@ graph TD
 
 - the route between repositories
 - the principles that make the split coherent
-- the stable public surface that readers can navigate today
+- the stable route that readers can navigate today
 
 ## What Does Not Belong Here
 
@@ -67,7 +64,7 @@ graph TD
 - show the control-plane, standards, and hub layers before readers dive into implementation repositories
 - explain why runtime authority, knowledge architecture, delivery responsibilities, and domain work are split into separate repositories
 - keep repository boundaries stable while allowing domain-specific evolution
-- make public documentation useful for inspection and review, not only orientation
+- make documentation useful for inspection and review, not only orientation
 - show where evidence for structure and delivery decisions can be checked directly
 
 ## Where To Inspect Evidence
@@ -97,7 +94,7 @@ graph TD
   <div class="bijux-panel"><h3>Canon</h3><p>The governed knowledge-system stack for ingest, indexing, reasoning, orchestration, and controlled runtime behavior.</p></div>
   <div class="bijux-panel"><h3>Atlas</h3><p>The delivery and control-plane surface for APIs, datasets, docs-aware checks, and operational reporting.</p></div>
   <div class="bijux-panel"><h3>Bijux Standard Layer</h3><p>The shared standards source for documentation shell continuity, cross-repository checks, and shared make behavior.</p></div>
-  <div class="bijux-panel"><h3>Products And Programs</h3><p>Proteomics, Pollenomics, and Masterclass show how the same system language survives domain products and technical education instead of remaining trapped in platform internals.</p></div>
+  <div class="bijux-panel"><h3>Products And Programs</h3><p>Proteomics, Pollenomics, and Masterclass show the same architectural discipline under domain work and technical education.</p></div>
 </div>
 
 ## System Reading Order
