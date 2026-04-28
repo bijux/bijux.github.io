@@ -17,22 +17,15 @@ across multiple repositories and sites: the shared documentation shell,
 the shared Python-oriented make layer, and the shared compliance and
 sync checks used in CI.
 
-It is not a product repository.
-It is not a domain repository.
-It is not a learning-content repository.
-
 It is the shared standards layer that keeps the public system coherent.
 
 ## Why It Exists
 
-The Bijux repositories are intentionally split by responsibility.
-
-That split only stays clean if the shared layer is explicit.
-
-Without a standards repository, shell behavior, make logic, and
-cross-repository checks drift quietly over time. `bijux-std` prevents
-that by giving the system one canonical place where shared standards
-are defined, synchronized, and verified.
+The Bijux repositories are split by responsibility. That split only
+holds if the shared layer has a clear home. Without a standards
+repository, shell behavior, make logic, and cross-repository checks
+drift over time. `bijux-std` keeps those shared parts defined,
+synchronized, and verified in one place.
 
 ## What It Owns
 
@@ -90,10 +83,8 @@ In plain language:
 | repository docs meaning and page content | the consuming repository |
 | domain logic, runtime logic, and product behavior | the consuming repository |
 
-This separation matters.
-
-It gives Bijux continuity across sites and repositories without erasing
-local ownership.
+This separation gives Bijux continuity across sites and repositories
+without erasing local ownership.
 
 ## Consumption Model
 
@@ -109,12 +100,7 @@ Operational commands in consuming repositories:
 - `make bijux-std-update`
 - `make bijux-std-checks`
 
-## What Readers Should Notice
-
-Readers should not need to think about `bijux-std` every time they move
-across Bijux.
-
-That is the point.
+## What It Changes Across The System
 
 If the shared layer is working well:
 
