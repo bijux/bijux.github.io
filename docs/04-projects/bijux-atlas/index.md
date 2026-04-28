@@ -41,7 +41,7 @@ Concrete Atlas surfaces include:
 
 `bijux-atlas` presents data-service work as an operated product surface
 rather than a loose data tool. The repository publishes a CLI, server,
-OpenAPI export surface, and maintainer control plane around genomics
+OpenAPI export surface, and operating control plane around genomics
 dataset delivery and immutable query artifacts.
 
 Inherited vs local ownership: navigation shell and baseline docs/check
@@ -76,13 +76,13 @@ graph LR
 - API and dataset delivery treated as first-class product interfaces
 - immutable artifact thinking instead of ad hoc mutable dataset handling
 - docs-aware validation, operational reporting, and control-plane behavior as part of delivery
-- runtime surfaces that stay separate: CLI, server, OpenAPI export, and maintainer tooling
+- runtime surfaces that stay separate: CLI, server, OpenAPI export, and operating tooling
 
 ## Where To Begin
 
 | If you are looking for... | Start with this part of Atlas |
 | --- | --- |
-| service architecture | the split between CLI, server, OpenAPI export, and maintainer control plane |
+| service architecture | the split between CLI, server, OpenAPI export, and operating control plane |
 | data delivery posture | immutable dataset and artifact language in the docs and README |
 | operational seriousness | ops, configs, reporting, and documentation validation behavior |
 | published entry points | the handbook structure and published docs site that route into concrete service surfaces |

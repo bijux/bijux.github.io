@@ -95,7 +95,7 @@ repositories, and `bijux-std`.
 | --- | --- |
 | runtime authority | the CLI and DAG handbooks, plus the crate split across runtime, artifacts, and app layers |
 | shared project backbone | how one runtime layer supports Canon, Atlas, Telecom, Genomics, Proteomics, and Pollenomics without flattening their ownership |
-| repository discipline | release flows, evidence surfaces, and maintainer control-plane material |
+| repository discipline | release flows, evidence surfaces, and operating control-plane material |
 | product boundaries | the fact that `bijux-cli` and `bijux-dag` are separate products under one governance backbone |
 | traceability | public docs, tagged releases, and repository-owned operating rules that align with the code layout |
 

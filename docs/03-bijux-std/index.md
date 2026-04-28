@@ -16,8 +16,8 @@ It keeps the parts of the family that should stay aligned in one place:
 the shared documentation shell, the shared Python-oriented make layer,
 and the shared checks that verify them.
 
-This branch shows how repeated repository behavior becomes a durable
-standard instead of staying trapped as local convention.
+It shows how repeated repository behavior becomes a durable standard
+instead of staying trapped as local convention.
 
 ## Why It Matters
 

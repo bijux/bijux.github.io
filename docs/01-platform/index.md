@@ -11,7 +11,7 @@ last_reviewed: 2026-04-28
 
 Platform explains how the Bijux repository family is held together.
 
-This branch shows the shared foundations underneath it, the runtime
+It shows the shared foundations underneath the family, the runtime
 backbone in the middle, and the project and learning surfaces built on
 top.
 

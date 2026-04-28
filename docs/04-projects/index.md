@@ -13,8 +13,8 @@ This is the fastest way to understand what each public Bijux repository
 does. The projects stay separate in ownership, but they still share a
 common runtime language and a common standards layer.
 
-Use this page after Platform when you want the fastest sense of where
-each repository belongs.
+Open this after Platform when you want the fastest sense of where each
+repository belongs.
 
 If your question is still about governance or shared standards, open
 [Bijux Infrastructure-as-Code](../02-bijux-iac/index.md) or
