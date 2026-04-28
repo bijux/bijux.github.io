@@ -16,6 +16,10 @@ are owned, where the documentation hub fits, and how the shared runtime
 backbone, delivery repositories, domain repositories, and learning
 repositories sit on top of those layers.
 
+It is the orientation branch for the family, not the full documentation
+home for `bijux-iac` or `bijux-std`. Those now have their own top-level
+branches because they carry more public weight than a subpage can hold.
+
 <div class="bijux-callout"><strong>Focus on responsibility before repository count.</strong>
 The key question is not how many repositories exist, but why responsibilities are split the way they are.
 Runtime governance, shared standards, shared runtime, delivery, domain
@@ -61,12 +65,14 @@ graph TD
 - the route between repositories
 - the principles that make the split coherent
 - the stable route that readers can navigate today
+- the shortest explanation of how the other four branches fit together
 
 ## What Does Not Belong Here
 
 - package-level implementation details
 - repository-specific maintainer rules
 - course-level teaching detail that already lives in masterclass
+- the full public explanation of `bijux-iac` or `bijux-std`
 
 ## Why This Branch Exists
 
@@ -106,17 +112,17 @@ graph TD
   <div class="bijux-panel"><h3>Products And Programs</h3><p>Canon, Atlas, Proteomics, Pollenomics, Telecom, Genomics, and Masterclass consume these shared layers while owning their own knowledge, delivery, domain, or learning work.</p></div>
 </div>
 
-## System Reading Order
+## Branch Reading Order
 
 | Read this first when you need to understand... | Open |
 | --- | --- |
+| the layered structure of the whole public system family | [System map](system-map/index.md) |
 | where live GitHub governance is owned and enforced | [Bijux Infrastructure-as-Code](../02-bijux-iac/index.md) |
 | where shared standards are defined and verified across repositories | [Bijux standard layer](../03-bijux-std/index.md) |
-| which qualities recur across the public work | [Work qualities](work-qualities/index.md) |
-| the layered structure of the whole public system family | [System map](system-map/index.md) |
 | the repository split at a glance | [Repository matrix](repository-matrix/index.md) |
 | where delivery work shows up most clearly across the repositories | [Delivery surfaces](delivery-surfaces/index.md) |
 | how the engineering extends into domain-heavy product work | [Applied domains](applied-domains/index.md) |
+| which qualities recur across the public work | [Work qualities](work-qualities/index.md) |
 | the broader operating context behind the current repository family | [Operating context](operating-context/index.md) |
 | why the docs shell is shared instead of duplicated carelessly | [Documentation network](documentation-network/index.md) |
 | which public destinations exist today | [Public surface](public-surface/index.md) |
