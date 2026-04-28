@@ -33,19 +33,18 @@ standards.
 
 `bijux-core` is where runtime and governance stop being abstract. The
 repository owns the command runtime and DAG execution backbone that
-dependent systems depend on, while keeping governance, evidence, and
-release discipline visible in the same public surface.
+other repositories depend on, while keeping governance, evidence, and
+release discipline in the same public surface.
 This map summarizes the authority split that keeps Core legible.
 
 ```mermaid
 graph LR
-    core["Bijux Core"] --> cli["CLI runtime"]
-    core --> dag["DAG execution"]
-    core --> control["Governance, evidence, and release discipline"]
-
-    cli --> command["Command behavior"]
-    dag --> workflow["Workflow behavior"]
-    control --> governance["Governance and release behavior"]
+    inputs["commands and workflow definitions"] --> cli["CLI runtime"]
+    inputs --> dag["DAG execution"]
+    cli --> outputs["runtime behavior and artifacts"]
+    dag --> outputs
+    outputs --> evidence["evidence and release rules"]
+    evidence --> governance["governance and promotion decisions"]
 ```
 
 The split keeps command semantics, workflow semantics, and repository
@@ -63,8 +62,9 @@ governance explicit instead of blending them into one opaque layer.
 
 ```mermaid
 graph LR
-    runtime["Runtime authority"] --> execute["command and DAG execution behavior"]
-    governance["Governance authority"] --> control["release, evidence, and policy controls"]
+    runtime["Runtime authority"] --> execute["how commands and DAGs execute"]
+    execute --> evidence["what evidence execution produces"]
+    evidence --> governance["how releases and controls are decided"]
 ```
 
 Runtime authority defines how commands and workflows execute: what can
@@ -85,7 +85,7 @@ repositories, and `bijux-std`.
 ## What Lives Here And Why
 
 - `bijux-cli` and `bijux-dag` live here under one governance backbone so runtime behavior and release control stay aligned
-- command/runtime semantics and DAG execution semantics stay explicit instead of hidden in scripts
+- command/runtime semantics and DAG execution semantics stay visible instead of hidden in scripts
 - governance, evidence, and release surfaces stay visible as first-class repository ownership, not side notes
 - visible anchors include CLI command surfaces, DAG workflow routes, release evidence, and governance documentation
 
