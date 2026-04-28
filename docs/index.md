@@ -68,11 +68,15 @@ site.
 
 ## How It Is Organized
 
-The site is organized around repository ownership, then around navigation paths
-for architecture, delivery, and domain-focused reading.
-Shared documentation shell behavior and cross-repository standards checks are
-defined in [Bijux standard layer](01-platform/bijux-std/index.md), while live
-GitHub policy is owned in [Bijux Infrastructure-as-Code](01-platform/bijux-iac/index.md).
+The site is organized around repository ownership first, then around
+reading routes. Foundations sit at the bottom, product repositories sit
+above them, and learning turns the same engineering language into
+reusable programs.
+
+Shared documentation shell behavior and cross-repository standards
+checks are defined in [Bijux standard layer](01-platform/bijux-std/index.md),
+while live GitHub policy is owned in
+[Bijux Infrastructure-as-Code](01-platform/bijux-iac/index.md).
 
 ### Reading Approach
 
@@ -92,27 +96,50 @@ goal so implementation evidence stays connected to system intent.
 
 ```mermaid
 graph TD
-    bijux["Bijux"] --> platform["Platform"]
-    bijux --> projects["Projects"]
-    bijux --> learning["Learning"]
-    bijux --> standards["Standards"]
-    bijux --> paths["Reading Paths"]
+    subgraph foundations["Foundations"]
+        iac["bijux-iac<br/>GitHub control plane"]
+        std["bijux-std<br/>shared standards"]
+        hub["bijux.github.io<br/>public hub"]
+    end
 
-    platform --> platform_design["System design"]
-    platform --> platform_structure["Repository structure"]
-    platform --> platform_delivery["Delivery and documentation"]
+    subgraph systems["System Repositories"]
+        core["bijux-core<br/>runtime backbone"]
+        canon["bijux-canon<br/>knowledge system"]
+        atlas["bijux-atlas<br/>delivery interfaces"]
+    end
 
-    projects --> core["Core"]
-    projects --> canon["Canon"]
-    projects --> atlas["Atlas"]
-    projects --> proteomics["Proteomics"]
-    projects --> pollenomics["Pollenomics"]
-    projects --> masterclass["Masterclass"]
+    subgraph domains["Applied Domain Repositories"]
+        proteomics["bijux-proteomics<br/>scientific product system"]
+        pollenomics["bijux-pollenomics<br/>evidence mapping system"]
+    end
 
-    learning --> python["Python Programming"]
-    learning --> reproducible["Reproducible Research"]
+    subgraph learning["Learning"]
+        masterclass["bijux-masterclass"]
+        python["Python Programming"]
+        reproducible["Reproducible Research"]
+    end
 
-    standards --> std["bijux-std"]
+    iac --> core
+    iac --> canon
+    iac --> atlas
+    iac --> proteomics
+    iac --> pollenomics
+    std --> core
+    std --> canon
+    std --> atlas
+    std --> proteomics
+    std --> pollenomics
+    hub --> core
+    hub --> canon
+    hub --> atlas
+    hub --> proteomics
+    hub --> pollenomics
+    core --> atlas
+    canon --> atlas
+    core --> proteomics
+    core --> pollenomics
+    masterclass --> python
+    masterclass --> reproducible
 ```
 
 ## Reading Paths
