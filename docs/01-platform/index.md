@@ -123,6 +123,6 @@ graph TD
 | where delivery work shows up most clearly across the repositories | [Delivery surfaces](delivery-surfaces/index.md) |
 | how the engineering extends into domain-heavy product work | [Applied domains](applied-domains/index.md) |
 | which qualities recur across the public work | [Work qualities](work-qualities/index.md) |
-| the broader operating context behind the current repository family | [Operating context](operating-context/index.md) |
+| why the repository family is split this way in the first place | [System map](system-map/index.md) |
 | why the docs shell is shared instead of duplicated carelessly | [Documentation network](documentation-network/index.md) |
 | which public destinations exist today | [Public surface](public-surface/index.md) |
