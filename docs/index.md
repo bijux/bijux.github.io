@@ -79,12 +79,11 @@ while live GitHub policy is owned in
 
 ### Reading Approach
 
-This page offers a starting point based on your interest. From there,
-you can move into the owning repository and spend time with the actual
-surfaces that matter for your review.
+This page offers a starting point by review goal. From there, move into
+the owning repository and the surfaces that matter.
 
-Read the platform and repository split first, then choose a route by review
-goal so implementation evidence stays connected to system intent.
+Read the platform and repository split first, then choose a route that
+matches the question you want to answer.
 
 | Start here for... | Open this first | What you will find |
 | --- | --- | --- |
@@ -198,19 +197,19 @@ Choose a route below by intent or by time.
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">architecture route</div>
     <h2>Start with the system split</h2>
-    <p>Open Platform and the System Map first, then Core and Canon, if you want to understand how runtime, knowledge, and governance are separated.</p>
+    <p>Open Platform and the System Map first, then Core and Canon, to see how runtime, knowledge, and governance divide cleanly.</p>
     <p><a href="#reading-paths">See reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">delivery route</div>
     <h2>Start with delivery surfaces</h2>
-    <p>Open Delivery Surfaces and then Atlas if you want the fastest route into service contracts, APIs, datasets, and operated publication.</p>
+    <p>Open Delivery Surfaces and then Atlas for the fastest route into service contracts, APIs, datasets, and publication.</p>
     <p><a href="#reading-paths">See reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">domain route</div>
     <h2>Start where the work gets harder</h2>
-    <p>Open Applied Domains, then Proteomics and Pollenomics, to see the same engineering posture under scientific constraints and evidence pressure.</p>
+    <p>Open Applied Domains, then Proteomics and Pollenomics, to see the same engineering posture under scientific constraints.</p>
     <p><a href="#reading-paths">See reading paths</a></p>
   </article>
 </div>
@@ -226,7 +225,7 @@ Choose a route below by intent or by time.
 | Repository | Role in the system family | Public entry point |
 | --- | --- | --- |
 | `bijux-core` | execution and governance backbone | CLI, DAG, evidence, and release surfaces |
-| `bijux-canon` | governed knowledge-system stack | ingest, indexing, reasoning, orchestration, and controlled runtime behavior |
+| `bijux-canon` | knowledge-system stack | ingest, indexing, reasoning, orchestration, and controlled runtime behavior |
 | `bijux-atlas` | data and service delivery surface | APIs, datasets, reporting, and docs-aware operations |
 | `bijux-proteomics` | scientific product system | proteomics-oriented packages and runtime surfaces |
 | `bijux-pollenomics` | evidence mapping product system | Nordic atlas outputs, tracked data, and report publication |
