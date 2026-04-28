@@ -26,16 +26,15 @@ and the evidence that shows how those interfaces are maintained.
 ## Delivery Map
 
 ```mermaid
-graph TD
-    delivery["Delivery Surfaces"] --> governance["Governance"]
-    delivery --> docs["Documentation"]
-    delivery --> outputs["Published outputs"]
-    delivery --> interfaces["Operational interfaces"]
-
-    governance --> inspectable["Inspectable system"]
-    docs --> inspectable
-    outputs --> inspectable
-    interfaces --> inspectable
+graph LR
+    governance["Governance and merge controls"] --> build["Build, validation, and release routines"]
+    standards["Shared docs and quality standards"] --> build
+    build --> docs["Documentation surfaces"]
+    build --> interfaces["Interfaces and contracts"]
+    build --> artifacts["Artifacts, packages, and datasets"]
+    docs --> reader["Public reader or integrator"]
+    interfaces --> reader
+    artifacts --> reader
 ```
 
 ## Delivery Classes
@@ -50,10 +49,10 @@ graph TD
 
 ## Why This Matters Beyond Ops
 
-Delivery is how architecture becomes visible in public. Even if you are
-reviewing design rather than operations, delivery surfaces show whether
-the stated architecture can be used, verified, and trusted outside the
-original implementation team.
+Delivery is where architecture stops being a claim and becomes a public
+surface. Even if you are reviewing design rather than operations, this
+page shows whether the stated structure can be used, checked, and
+trusted outside the original implementation team.
 
 ## Where Delivery Shows Up
 
