@@ -18,11 +18,15 @@ Some public surfaces are browsed destinations (where readers navigate
 content), while others are ownership sources (where shared standards and
 contracts are defined).
 
+The useful question is not only what can be opened, but what each
+destination proves.
+
 ## Surface Map
 
 ```mermaid
 graph TD
     surface["Public Surface"] --> hub["Hub"]
+    surface --> governance["Governance source"]
     surface --> standards["Standards source"]
     surface --> docs["Repository docs"]
     surface --> source["Source repositories"]
@@ -30,6 +34,7 @@ graph TD
     surface --> projects["Project overview pages"]
 
     hub --> orientation["Orientation"]
+    governance --> policy["Control-plane ownership"]
     standards --> contracts["Shared contract ownership"]
     docs --> handbooks["Docs navigation and boundaries"]
     source --> verification["Verification"]
@@ -50,6 +55,12 @@ graph TD
 | Surface | Purpose | Use this when | What becomes visible here |
 | --- | --- | --- | --- |
 | [bijux-std](https://github.com/bijux/bijux-std) | canonical source for shared documentation shell and shared checks | you need ownership source for cross-repository standards and shell behavior | shared docs shell contracts, sync/check tooling, and cross-repository standards boundaries |
+
+### Governance Source
+
+| Surface | Purpose | Use this when | What becomes visible here |
+| --- | --- | --- | --- |
+| [bijux-iac](https://github.com/bijux/bijux-iac) | canonical source for GitHub control-plane governance | you need to inspect branch protection, required checks, and repository governance ownership | Terraform-managed GitHub controls and repository governance inventory |
 
 ### Repository Docs
 
@@ -96,7 +107,8 @@ graph TD
 
 ```mermaid
 graph LR
-    hub["bijux.github.io hub"] <--> repos["Repository docs and source surfaces"]
+    iac["bijux-iac control plane"] --> repos["Repository docs and source surfaces"]
+    hub["bijux.github.io hub"] <--> repos
     std["bijux-std standards source"] --> hub
     std --> repos
 ```
@@ -109,6 +121,7 @@ repositories.
 | If your question is... | Open first | Then open |
 | --- | --- | --- |
 | where should I begin? | [bijux.github.io](https://github.com/bijux/bijux.github.io) | [System Map](../system-map/index.md) |
+| where is repository governance owned? | [bijux-iac](https://github.com/bijux/bijux-iac) | [Bijux Infrastructure-as-Code](../bijux-iac/index.md) |
 | which repository owns this concern? | [Projects index](../../02-projects/index.md) | matching project page |
 | where are shared shell and standards owned? | [bijux-std](https://github.com/bijux/bijux-std) | [Shared Documentation Shell](../shell-architecture/index.md) |
 | where can I inspect implementation details? | matching repository docs site | matching source repository |
@@ -137,6 +150,7 @@ point-in-time snapshot.
 ### Canonical Ownership
 
 - hub-level route ownership: `bijux.github.io`
+- GitHub governance ownership: `bijux-iac`
 - repository docs and source ownership: each destination repository
 - shared shell and docs standards ownership: `bijux-std`
 
