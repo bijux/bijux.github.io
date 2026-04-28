@@ -10,9 +10,8 @@ last_reviewed: 2026-04-12
 # Projects
 
 This is the fastest way to understand what each public Bijux repository
-does. Projects stay separate in ownership but aligned through shared
-standards in `bijux-std`, so this page gives a structural view before
-deeper project pages.
+does. The projects stay separate in ownership, but they still share a
+common runtime language and a common standards layer.
 
 Use this page after Platform when you want the fastest sense of where
 each repository belongs.
@@ -25,37 +24,11 @@ knowledge, or domain work takes over.
 
 ```mermaid
 graph TD
-    subgraph foundations["Shared foundations"]
-        iac["bijux-iac"]
-        std["bijux-std"]
-    end
-
-    hub["bijux.github.io<br/>documentation hub"]
-    core["bijux-core<br/>shared runtime backbone"]
-
-    subgraph projects["Projects"]
-        canon["Canon<br/>knowledge system"]
-        atlas["Atlas<br/>delivery interfaces"]
-        telecom["Telecom<br/>service systems"]
-        genomics["Genomics<br/>rust genomics systems"]
-        proteomics["Proteomics<br/>scientific workflows"]
-        pollenomics["Pollenomics<br/>evidence mapping"]
-    end
-
-    learning_index["Learning catalog"]
-
-    iac --> core
-    std --> core
-    std --> hub
-    iac --> learning_index
-    std --> learning_index
-    hub --> learning_index
-    core --> canon
-    core --> atlas
-    core --> telecom
-    core --> genomics
-    core --> proteomics
-    core --> pollenomics
+    foundations["Shared foundations<br/>bijux-iac + bijux-std"] --> core["Shared runtime backbone<br/>bijux-core"]
+    core --> canon["Canon"]
+    core --> atlas["Atlas"]
+    core --> domains["Proteomics + Pollenomics"]
+    core --> systems["Telecom + Genomics"]
 ```
 
 ## Primary Responsibility Clusters
