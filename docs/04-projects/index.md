@@ -17,6 +17,12 @@ deeper project pages.
 Use this page after the Platform branch. It answers a narrower
 question: which repository should you open next?
 
+If your question is still about governance or shared standards, open
+[Bijux Infrastructure-as-Code](../02-bijux-iac/index.md) or
+[Bijux Standards](../03-bijux-std/index.md) first. Projects begin where
+those two shared layers stop and repository-owned runtime, delivery,
+knowledge, or domain work takes over.
+
 ```mermaid
 graph TD
     subgraph foundations["Shared foundations"]
@@ -67,8 +73,8 @@ Learning is a top-level branch reference, not a peer project repository:
 
 The foundations that support all of these are:
 
-- `bijux-iac` for GitHub governance as code
-- `bijux-std` for shared standards
+- [`bijux-iac`](../02-bijux-iac/index.md) for GitHub governance as code
+- [`bijux-std`](../03-bijux-std/index.md) for shared standards
 
 The shared runtime backbone for the project family is:
 
@@ -138,6 +144,8 @@ The public route into the family is:
 
 | If you care most about... | Start here |
 | --- | --- |
+| shared governance and repo-wide review controls | [Bijux Infrastructure-as-Code](../02-bijux-iac/index.md) |
+| shared standards and cross-repository continuity | [Bijux Standards](../03-bijux-std/index.md) |
 | platform and runtime engineering | [Bijux Core](bijux-core/index.md) |
 | governed AI and knowledge systems | [Bijux Canon](bijux-canon/index.md) |
 | data delivery and service architecture | [Bijux Atlas](bijux-atlas/index.md) |

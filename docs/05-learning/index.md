@@ -23,6 +23,13 @@ family. It is where runtime judgment, workflow discipline, and design
 tradeoffs become teachable without turning into generic motivation
 content.
 
+Learning is easiest to read after the shared foundations are clear:
+
+- [Platform](../01-platform/index.md) explains the family shape
+- [Bijux Infrastructure-as-Code](../02-bijux-iac/index.md) explains the control plane
+- [Bijux Standards](../03-bijux-std/index.md) explains the shared repository layer
+- `bijux-masterclass` turns that same language into teachable programs
+
 ## Learning Map
 
 ```mermaid
@@ -54,6 +61,6 @@ graph LR
 
 ## Shared Layers Around Masterclass
 
-- `bijux-masterclass` consumes shared shell behavior and baseline checks from `bijux-std`
-- `bijux-masterclass` is governed in GitHub through `bijux-iac`
+- `bijux-masterclass` consumes shared shell behavior and baseline checks from [bijux-std](../03-bijux-std/index.md)
+- `bijux-masterclass` is governed in GitHub through [bijux-iac](../02-bijux-iac/index.md)
 - `bijux.github.io` routes readers into the learning material, but does not own the learning content or the shared shell
