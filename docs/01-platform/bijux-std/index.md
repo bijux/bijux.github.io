@@ -38,6 +38,10 @@ That includes:
 - shared compliance and update checks
 - canonical manifests used to verify shared directory integrity
 
+The rule behind that ownership is simple: something becomes part of
+`bijux-std` after it is already being used in a similar and stable way
+across repositories.
+
 ## What It Does Not Own
 
 `bijux-std` does **not** own:
@@ -74,6 +78,22 @@ In plain language:
 - `bijux-std` keeps the shared layer consistent across them
 - the docs surfaces and CI checks stay aligned without collapsing
   everything into one repository
+
+## Promotion Model
+
+Shared behavior is promoted into `bijux-std` after the pattern is
+already visible across repositories.
+
+Today that is most mature in the Python-oriented group:
+
+- shared make behavior already exists across repositories such as `bijux-canon`, `bijux-proteomics`, and `bijux-pollenomics`
+- documentation shell behavior and baseline checks are already shared across the public family
+
+For the Rust-oriented repositories, the same rule still applies:
+
+- common gates and make behavior should emerge across the Rust repositories first
+- once those patterns are stable and clearly shared, they can be promoted into `bijux-std`
+- the goal is consistency from real usage, not premature standardization
 
 ## Shared Vs Local
 
