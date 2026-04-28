@@ -47,35 +47,35 @@ Learning is a top-level branch reference, not a peer project repository:
     <h2>Bijux Core</h2>
     <p>What it is: the runtime authority repository for CLI and DAG execution.</p>
     <p>Why it exists: to keep execution behavior and governance boundaries explicit.</p>
-    <p><a href="bijux-core.md">Open Bijux Core</a></p>
+    <p><a href="bijux-core/index.md">Open Bijux Core</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">governed knowledge system</div>
     <h2>Bijux Canon</h2>
     <p>What it is: the knowledge-system orchestration repository.</p>
     <p>Why it exists: to separate ingest, indexing, reasoning, orchestration, and runtime control into accountable interfaces.</p>
-    <p><a href="bijux-canon.md">Open Bijux Canon</a></p>
+    <p><a href="bijux-canon/index.md">Open Bijux Canon</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">data and service delivery</div>
     <h2>Bijux Atlas</h2>
     <p>What it is: the public delivery-interface repository for APIs, datasets, and publication routes.</p>
     <p>Why it exists: to keep service delivery behavior inspectable and operated as a product surface.</p>
-    <p><a href="bijux-atlas.md">Open Bijux Atlas</a></p>
+    <p><a href="bijux-atlas/index.md">Open Bijux Atlas</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">applied scientific products</div>
     <h2>Bijux Proteomics</h2>
     <p>What it is: the proteomics scientific product repository.</p>
     <p>Why it exists: to apply platform discipline to evidence-heavy discovery workflows.</p>
-    <p><a href="bijux-proteomics.md">Open Bijux Proteomics</a></p>
+    <p><a href="bijux-proteomics/index.md">Open Bijux Proteomics</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">evidence and site selection</div>
     <h2>Bijux Pollenomics</h2>
     <p>What it is: the evidence-mapping scientific product repository.</p>
     <p>Why it exists: to keep archaeology/eDNA/aDNA interpretation outputs traceable and reproducible.</p>
-    <p><a href="bijux-pollenomics.md">Open Bijux Pollenomics</a></p>
+    <p><a href="bijux-pollenomics/index.md">Open Bijux Pollenomics</a></p>
   </article>
 </div>
 
