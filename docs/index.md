@@ -12,7 +12,7 @@ last_reviewed: 2026-04-12
 <section class="bijux-hero">
   <div class="bijux-hero__eyebrow">platform systems, delivery interfaces, scientific software, and technical programs</div>
   <h1 class="bijux-hero__title">Bijux is a public system family built as distinct repositories with visible control points.</h1>
-  <p class="bijux-hero__lede"><code>bijux.io</code> is the hub for the current Bijux repository family. It routes readers from system orientation into the exact repository that owns platform structure, GitHub governance, shared standards, runtime, delivery, domain work, or learning.</p>
+  <p class="bijux-hero__lede"><code>bijux.io</code> is the public hub for the current Bijux repository family. It introduces the shared foundations, the project backbone, the domain systems, and the learning programs in one connected surface.</p>
   <div class="bijux-topic-row">
     <span class="bijux-topic-pill">platform architecture</span>
     <span class="bijux-topic-pill">control-plane design</span>
@@ -41,9 +41,9 @@ The public surface is organized so ownership stays legible:
 - one repository owns the shared runtime backbone used across projects
 - other repositories own knowledge, delivery, domain, and learning work
 
-That makes the system easier to inspect because responsibility changes
-hands in named places instead of disappearing behind one monorepo or
-one presentation site.
+That keeps the system legible because responsibility changes hands in
+named places instead of disappearing behind one monorepo or one
+presentation site.
 
 | Term | Meaning in this site |
 | --- | --- |
@@ -83,20 +83,17 @@ while live GitHub policy is owned in
 
 ### Reading Approach
 
-This page offers a starting point by review goal. From there, move into
-the owning repository and the surfaces that matter.
-
-Read the platform and repository split first, then choose a route that
-matches the question you want to answer.
+Start with the family shape, then continue into the branch that matches
+your interest.
 
 | Start here for... | Open this first | What you will find |
 | --- | --- | --- |
 | how the repositories fit together | [Platform overview](01-platform/index.md) -> [System map](01-platform/system-map/index.md) | the split across shared foundations, runtime, knowledge, delivery, and domain work |
-| how GitHub governance is applied across the family | [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) | the live control plane, governed repositories, and review model |
+| how GitHub governance is applied across the family | [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) | the live control plane and the review model behind the repositories |
 | how shared behavior stays aligned across repositories | [Bijux standard layer](03-bijux-std/index.md) | shared docs shell, shared make behavior, and standards promotion |
-| how delivery shows up publicly | [Delivery surfaces](01-platform/delivery-surfaces/index.md) -> [Bijux Atlas](04-projects/bijux-atlas/index.md) | documentation, published destinations, and operated service surfaces |
+| how delivery appears in public | [Delivery surfaces](01-platform/delivery-surfaces/index.md) -> [Bijux Atlas](04-projects/bijux-atlas/index.md) | documentation, published destinations, and operated service surfaces |
 | how the work behaves under domain pressure | [Applied domains](01-platform/applied-domains/index.md) -> [Bijux Proteomics](04-projects/bijux-proteomics/index.md) -> [Bijux Pollenomics](04-projects/bijux-pollenomics/index.md) | scientific and evidence-heavy product systems |
-| how the technical style carries into teaching | [Learning catalog](05-learning/index.md) | course books and programs built around the same technical language |
+| how the same technical style carries into teaching | [Learning catalog](05-learning/index.md) | course books and programs built around the same technical language |
 
 ```mermaid
 graph TD
@@ -164,8 +161,8 @@ graph TD
 
 ## Reading Paths
 
-This section helps you choose a short path that matches the part of the
-work you care about first.
+This section offers a short first pass through the part of the work you
+care about most.
 
 <div class="bijux-callout"><strong>New here?</strong> Start with
 <a href="index.md">Home</a> -> <a href="01-platform/index.md">Platform</a> ->
