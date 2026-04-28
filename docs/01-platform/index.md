@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-12
+last_reviewed: 2026-04-28
 ---
 
 # Platform
@@ -30,75 +30,28 @@ still read as one system.</div>
 
 ```mermaid
 graph TD
-    context["Operating context"] --> principles["Platform principles"]
-    principles --> control["Shared governance<br/>bijux-iac"]
-    principles --> standards["Shared standards<br/>bijux-std"]
-    principles --> hub["Documentation hub<br/>bijux.github.io"]
-
-    control --> core["Shared runtime backbone<br/>bijux-core"]
-    standards --> core
-    standards --> hub
-    hub --> readers["Public reading routes"]
-
-    core --> projects["Project repositories"]
-    control --> projects
-    standards --> projects
-
-    projects --> delivery["Delivery and public interfaces"]
-    projects --> domains["Applied domain systems"]
-    standards --> learning["Learning programs"]
-    control --> learning
-    hub --> learning
+    foundations["Shared foundations<br/>bijux-iac + bijux-std"] --> hub["Documentation hub<br/>bijux.github.io"]
+    foundations --> core["Shared runtime backbone<br/>bijux-core"]
+    foundations --> projects["Project repositories"]
+    hub --> projects
+    core --> projects
+    projects --> learning["Learning programs<br/>bijux-masterclass"]
 ```
 
-## Canonical Platform Axes
-
-- context: the operating reasons and constraints behind the repository family
-- control plane: how GitHub governance is applied as code
-- shared standards: how shell behavior and quality checks stay aligned
-- documentation hub: how readers move through the system without losing ownership
-- shared runtime: how common execution behavior stays aligned across projects
-- delivery: how architecture becomes visible through release and public interfaces
-
-## What Belongs Here
+## What This Branch Covers
 
 - the route between repositories
-- the principles that make the split coherent
-- the stable route that readers can navigate today
-- the shortest explanation of how the other four branches fit together
-
-## What Does Not Belong Here
-
-- package-level implementation details
-- repository-specific maintainer rules
-- course-level teaching detail that already lives in masterclass
-- the full public explanation of `bijux-iac` or `bijux-std`
-
-## Why This Branch Exists
-
-- show the control-plane, standards, hub, and shared runtime layers before readers dive into implementation repositories
-- explain why runtime authority, knowledge architecture, delivery responsibilities, and domain work are split into separate repositories
-- keep repository boundaries stable while allowing domain-specific evolution
-- make documentation useful for inspection and review, not only orientation
-- show where evidence for structure and delivery decisions can be checked directly
+- the shared layers that sit underneath the family
+- the quickest explanation of why the split exists
+- the best next page for the question you want to answer
 
 ## Where To Inspect Evidence
 
 - GitHub governance ownership: [Bijux Infrastructure-as-Code](../02-bijux-iac/index.md)
 - shared shell and cross-repository standards: [Bijux standard layer](../03-bijux-std/index.md)
 - repository ownership and split intent: [System map](system-map/index.md)
-- layer boundaries and responsibility flow: [System map](system-map/index.md)
 - delivery and publication posture: [Delivery surfaces](delivery-surfaces/index.md)
 - recurring standards that remain stable across repositories: [Work qualities](work-qualities/index.md)
-
-## Principles
-
-| Principle | What it changes in public |
-| --- | --- |
-| boundaries before breadth | clear ownership is easier to inspect than a vague super-repository |
-| delivery as part of design | documentation, release posture, and public routes should reinforce the architecture rather than decorate it |
-| domain pressure belongs in the system | the engineering posture should survive scientific and evidence-heavy contexts, not stop at generic tooling |
-| explainability matters | systems that can be taught, sequenced, and documented clearly are usually better understood and easier to operate |
 
 ## System Shape
 
@@ -119,10 +72,7 @@ graph TD
 | the layered structure of the whole public system family | [System map](system-map/index.md) |
 | where live GitHub governance is owned and enforced | [Bijux Infrastructure-as-Code](../02-bijux-iac/index.md) |
 | where shared standards are defined and verified across repositories | [Bijux standard layer](../03-bijux-std/index.md) |
-| the repository split at a glance | [System map](system-map/index.md) |
 | where delivery work shows up most clearly across the repositories | [Delivery surfaces](delivery-surfaces/index.md) |
 | how the engineering extends into domain-heavy product work | [Applied domains](applied-domains/index.md) |
 | which qualities recur across the public work | [Work qualities](work-qualities/index.md) |
-| why the repository family is split this way in the first place | [System map](system-map/index.md) |
 | why the docs shell is shared instead of duplicated carelessly | [Documentation network](documentation-network/index.md) |
-| which public destinations matter most today | [Delivery surfaces](delivery-surfaces/index.md) |

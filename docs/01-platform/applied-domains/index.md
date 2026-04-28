@@ -4,34 +4,21 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-12
+last_reviewed: 2026-04-28
 ---
 
 # Applied Domains
 
-Applied domains show one engineering discipline under different domain
-pressures. Domain repositories vary by data semantics and interpretation
-needs, but they still inherit a shared documentation shell and standards
-layer from `bijux-std`.
+Applied domains show how the same engineering posture behaves when the
+data, evidence burden, and interpretation pressure get harder.
 
 ## Domain Map
 
 ```mermaid
 graph LR
-    shared["Shared platform discipline"] --> boundaries["Ownership boundaries"]
-    shared --> shell["Shared docs shell and standards"]
-    shared --> evidence["Evidence and reproducibility rules"]
-
-    pressure["Domain-specific variation"] --> proteomics["Proteomics"]
-    pressure --> pollenomics["Pollenomics"]
-    pressure --> learning["Learning workflows"]
-
-    boundaries --> outcomes["Domain-facing systems"]
-    shell --> outcomes
-    evidence --> outcomes
-    proteomics --> outcomes
-    pollenomics --> outcomes
-    learning --> outcomes
+    foundations["Shared platform discipline"] --> proteomics["Proteomics"]
+    foundations --> pollenomics["Pollenomics"]
+    foundations --> learning["Reproducible Research"]
 ```
 
 ## Domain Pressure Surfaces
@@ -48,13 +35,13 @@ The point is not breadth alone. The point is that the work moves
 between infrastructure, data systems, scientific products, and teaching
 without losing architectural clarity.
 
-## What Remains Invariant Across Domains
+## What Stays The Same
 
 - bounded ownership instead of monolithic responsibility
 - interfaces and operational contracts that stay visible
 - reproducibility and evidence discipline as non-optional quality criteria
 
-## What Domain Pressure Changes
+## What Gets Harder
 
 - schema complexity: domain entities, relationships, and constraints become deeper than generic data models.
 - interpretation burden: outputs must remain understandable to specialists making real decisions.
@@ -68,7 +55,7 @@ without losing architectural clarity.
   <div class="bijux-panel"><h3>Reproducible Research (Masterclass)</h3><p>A learning workflow surface where methods, artifacts, and review steps are taught and executed under the same reproducibility discipline used in repository work.</p></div>
 </div>
 
-## Domain Pressure Comparison
+## Pressure Comparison
 
 | Surface | How pressure shows up |
 | --- | --- |

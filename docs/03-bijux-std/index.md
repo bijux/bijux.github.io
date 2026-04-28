@@ -169,7 +169,6 @@ If the shared layer is working well:
 ## Where To Go Next
 
 - [Documentation Network](../01-platform/documentation-network/index.md)
-- [Shell Architecture](../01-platform/shell-architecture/index.md)
 - [System Map](../01-platform/system-map/index.md)
 
 ## In One Sentence
