@@ -125,4 +125,4 @@ graph TD
 | which qualities recur across the public work | [Work qualities](work-qualities/index.md) |
 | why the repository family is split this way in the first place | [System map](system-map/index.md) |
 | why the docs shell is shared instead of duplicated carelessly | [Documentation network](documentation-network/index.md) |
-| which public destinations exist today | [Public surface](public-surface/index.md) |
+| which public destinations matter most today | [Delivery surfaces](delivery-surfaces/index.md) |

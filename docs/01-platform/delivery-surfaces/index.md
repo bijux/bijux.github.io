@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-12
+last_reviewed: 2026-04-28
 ---
 
 # Delivery Surfaces
@@ -65,6 +65,19 @@ trusted outside the original implementation team.
 | Operational thinking | runtime handbooks, validation commands, docs checks, and repository automation | delivery quality is easier to trust when routine checks are part of the workflow |
 | Information design | shared docs chrome, stable navigation, scoped handbooks, and repository-specific documentation systems | documentation quality is part of delivery quality, not a separate editorial concern |
 
+## Public Destinations
+
+These are the main places where delivery becomes visible to a reader.
+
+| If you want to open... | Start here | What it gives you |
+| --- | --- | --- |
+| the hub and route layer | [bijux.github.io](https://github.com/bijux/bijux.github.io) | the public entry point into the family |
+| governance and merge controls | [bijux-iac](https://github.com/bijux/bijux-iac) | the control plane behind repository delivery rules |
+| shared shell and checks | [bijux-std](https://github.com/bijux/bijux-std) | the shared standards behind docs and baseline repo behavior |
+| delivery-heavy repository docs | [Bijux Atlas docs](https://bijux.io/bijux-atlas/) | APIs, datasets, reports, and operated delivery routes |
+| project context before repo docs or source | [Projects](../../04-projects/index.md) | repository roles and route hints |
+| implementation detail behind a public surface | the matching GitHub repository | source, history, contracts, and automation |
+
 ## Main Routes
 
 <div class="bijux-panel-grid">
@@ -79,7 +92,7 @@ trusted outside the original implementation team.
 ### Fast Checks
 
 - open one repository handbook and verify ownership boundaries
-- open [Public surface](../public-surface/index.md) and confirm destinations map to maintained repositories
+- open one public destination and one matching source repository, then confirm they describe the same owned surface
 
 ### Medium Checks
 
@@ -99,7 +112,7 @@ trusted outside the original implementation team.
 | public delivery and service posture | [Bijux Atlas](../../04-projects/bijux-atlas/index.md) |
 | runtime governance and repository discipline | [Bijux Core](../../04-projects/bijux-core/index.md) |
 | governed knowledge-system delivery | [Bijux Canon](../../04-projects/bijux-canon/index.md) |
-| stable published destinations | [Public surface](../public-surface/index.md) |
+| stable published destinations | [Delivery surfaces](index.md) |
 
 ## Open This Page When
 

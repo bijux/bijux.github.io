@@ -46,7 +46,7 @@ habits.
 | Quality | Concrete failure signal | Where to inspect the opposite |
 | --- | --- | --- |
 | Bounded ownership | one repository starts absorbing runtime, delivery, and domain concerns in the same change stream | [System map](../system-map/index.md) |
-| Delivery discipline | docs promise routes or release behavior that cannot be matched to maintained automation and destinations | [Delivery surfaces](../delivery-surfaces/index.md), [Public surface](../public-surface/index.md) |
+| Delivery discipline | docs promise routes or release behavior that cannot be matched to maintained automation and destinations | [Delivery surfaces](../delivery-surfaces/index.md) |
 | Domain pressure handling | scientific workflows are carried by one-off scripts with weak evidence or publication contracts | [Applied domains](../applied-domains/index.md), [Bijux Proteomics](../../04-projects/bijux-proteomics/index.md), [Bijux Pollenomics](../../04-projects/bijux-pollenomics/index.md) |
 | Explainable depth | teaching material becomes disconnected from runnable artifacts and repository trade-offs | [Learning catalog](../../05-learning/index.md), [Reproducible Research](../../05-learning/reproducible-research/index.md) |
 

@@ -60,7 +60,6 @@ nav:
       - Applied Domains: 01-platform/applied-domains/index.md
       - Documentation Network: 01-platform/documentation-network/index.md
       - Shell Architecture: 01-platform/shell-architecture/index.md
-      - Public Surface: 01-platform/public-surface/index.md
   - 02 Bijux Infrastructure-as-Code:
       - Overview: 02-bijux-iac/index.md
       - Governance Model: 02-bijux-iac/governance-model/index.md
