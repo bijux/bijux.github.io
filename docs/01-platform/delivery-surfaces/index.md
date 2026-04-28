@@ -10,11 +10,11 @@ last_reviewed: 2026-04-28
 # Delivery Surfaces
 
 A delivery surface is any public output through which the system is
-used, checked, or reviewed.
+used, understood, or trusted.
 
 In Bijux, delivery includes more than published software. It includes
-the control plane, the documentation routes, the interfaces, and the
-evidence that shows how they are maintained.
+the control plane, the documentation layer, the interfaces, and the
+evidence that keeps them dependable over time.
 
 ## What Counts As Delivery In Bijux
 
@@ -39,13 +39,13 @@ graph LR
 
 ## Delivery Classes
 
-| Class | Ownership source | What it includes | What to inspect first |
+| Class | Ownership source | What it includes | What it makes clear |
 | --- | --- | --- | --- |
-| Governance | `bijux-iac` and repository-owned workflow policy | branch protection, required checks, merge discipline, and controlled release paths | whether repository policy is applied from code and whether merge gates are named clearly |
-| Documentation | shared standards in `bijux-std`, consumed by repository docs | repository handbooks, docs navigation, and public explanatory routes | whether ownership, boundaries, and operating procedures are consistent across sites |
-| Published software | repository-owned delivery responsibilities | packages, generated artifacts, and versioned release outputs | whether build and release paths are reproducible and reviewable |
-| Service interfaces | repository-owned service and runtime boundaries | APIs, runtime interfaces, and user-facing data endpoints | whether interface contracts and behavior expectations are documented clearly |
-| Release and ops evidence | repository checks aligned by shared quality standards | CI checks, validation routines, and promotion workflows | whether quality claims are backed by observable checks and traceable evidence |
+| Governance | `bijux-iac` and repository-owned workflow policy | branch protection, required checks, merge discipline, and controlled release paths | that repository policy is deliberate and reviewable |
+| Documentation | shared standards in `bijux-std`, consumed by repository docs | repository handbooks, docs navigation, and public explanatory routes | that movement across sites stays coherent |
+| Published software | repository-owned delivery responsibilities | packages, generated artifacts, and versioned release outputs | that build and release paths are stable enough to publish |
+| Service interfaces | repository-owned service and runtime boundaries | APIs, runtime interfaces, and user-facing data endpoints | that interface behavior is treated as a maintained surface |
+| Release and ops evidence | repository checks aligned by shared quality standards | CI checks, validation routines, and promotion workflows | that quality claims are backed by visible routine work |
 
 ## Why This Matters Beyond Ops
 
@@ -116,6 +116,6 @@ These are the main places where delivery becomes visible to a reader.
 
 ## Open This Page When
 
-- you want direct routes into the strongest delivery-oriented material
-- you care more about concrete surfaces than summary alone
-- you want to understand why the public docs are treated as part of delivery rather than an afterthought
+- you want the clearest route into the strongest delivery-oriented material
+- you care more about concrete surfaces than abstract summary
+- you want to see why public docs are treated as part of delivery rather than decoration
