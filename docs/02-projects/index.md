@@ -10,13 +10,12 @@ last_reviewed: 2026-04-12
 # Projects
 
 This is the fastest way to understand what each public Bijux repository
-is for. Projects remain separate in ownership but aligned through shared
-standards in `bijux-std`, so this page gives a quick structural view
-before deeper project pages.
+does. Projects stay separate in ownership but aligned through shared
+standards in `bijux-std`, so this page gives a structural view before
+deeper project pages.
 
-Use this page after the Platform branch. It answers a narrower question:
-which repository should you open next if you care about runtime,
-knowledge systems, delivery interfaces, or domain-heavy product work.
+Use this page after the Platform branch. It answers a narrower
+question: which repository should you open next?
 
 ```mermaid
 graph TD
@@ -72,36 +71,36 @@ The foundations that support all of these are:
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">runtime and governance backbone</div>
     <h2>Bijux Core</h2>
-    <p>What it is: the runtime authority repository for CLI and DAG execution.</p>
-    <p>Why it exists: to keep execution behavior and governance boundaries stable under long-term change.</p>
+    <p>The runtime authority repository for CLI and DAG execution.</p>
+    <p>It keeps execution behavior and governance boundaries stable under long-term change.</p>
     <p><a href="bijux-core/index.md">Open Bijux Core</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">governed knowledge system</div>
     <h2>Bijux Canon</h2>
-    <p>What it is: the knowledge-system orchestration repository.</p>
-    <p>Why it exists: to separate ingest, indexing, reasoning, orchestration, and runtime control into durable interfaces.</p>
+    <p>The knowledge-system orchestration repository.</p>
+    <p>It separates ingest, indexing, reasoning, orchestration, and runtime control into durable interfaces.</p>
     <p><a href="bijux-canon/index.md">Open Bijux Canon</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">data and service delivery</div>
     <h2>Bijux Atlas</h2>
-    <p>What it is: the public delivery-interface repository for APIs, datasets, and publication routes.</p>
-    <p>Why it exists: to keep service delivery behavior operated as a maintained product surface.</p>
+    <p>The public delivery-interface repository for APIs, datasets, and publication routes.</p>
+    <p>It treats service delivery as a maintained product surface.</p>
     <p><a href="bijux-atlas/index.md">Open Bijux Atlas</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">applied scientific products</div>
     <h2>Bijux Proteomics</h2>
-    <p>What it is: the proteomics scientific product repository.</p>
-    <p>Why it exists: to apply platform discipline to evidence-heavy discovery workflows.</p>
+    <p>The proteomics scientific product repository.</p>
+    <p>It applies platform discipline to evidence-heavy discovery workflows.</p>
     <p><a href="bijux-proteomics/index.md">Open Bijux Proteomics</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">evidence and site selection</div>
     <h2>Bijux Pollenomics</h2>
-    <p>What it is: the evidence-mapping scientific product repository.</p>
-    <p>Why it exists: to keep archaeology/eDNA/aDNA interpretation outputs traceable and reproducible.</p>
+    <p>The evidence-mapping scientific product repository.</p>
+    <p>It keeps archaeology/eDNA/aDNA interpretation outputs traceable and reproducible.</p>
     <p><a href="bijux-pollenomics/index.md">Open Bijux Pollenomics</a></p>
   </article>
 </div>
@@ -121,7 +120,7 @@ The foundations that support all of these are:
 - this is a coherent set of repository ownership boundaries, not disconnected projects
 - each project repository exposes a different kind of technical surface
 - the foundation layer stays separate from the project layer on purpose
-- architecture, delivery, domain pressure, and learning surfaces are inspectable in public
+- architecture, delivery, domain pressure, and learning surfaces are visible in public
 
 ## Reading Guide
 
