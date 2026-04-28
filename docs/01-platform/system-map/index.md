@@ -9,16 +9,13 @@ last_reviewed: 2026-04-12
 
 # System Map
 
-<div class="bijux-callout"><strong>Use this page when</strong> you want a fast orientation to how Platform, Projects, and Learning fit together before opening individual repositories.</div>
+<div class="bijux-callout"><strong>Bijux reads more clearly as a layered system than as a list of repositories.</strong> Platform, Projects, Learning, and the foundation layer each carry a different kind of responsibility.</div>
 
 The Bijux public surface is easier to understand as a layered system
-than as a list of repositories. The map helps because it shows where
-responsibility changes hands and where different kinds of engineering
-judgment are expected.
-This map is meant to make system responsibility legible before
-implementation detail.
-Shared standards are part of this system design, not only documentation
-detail.
+than as a list of repositories. The map shows where responsibility
+changes hands and where different kinds of engineering judgment are
+expected. Shared standards are part of that system design, not only a
+documentation detail.
 
 In plain terms: Platform defines the shared structure and rules, Projects
 apply that structure in runtime/knowledge/domain repositories, and
@@ -127,5 +124,5 @@ graph TD
 - Platform/Projects -> Domain products: shared engineering rules are applied to specialized scientific workflows and evidence outputs.
 - Projects -> Learning: repository practices are translated into course books and capstones without changing source ownership.
 
-The system map exists to make ownership and handoffs clear before
-reading repository-level detail.
+Ownership and handoffs should already be clear before repository-level
+detail begins.
