@@ -28,6 +28,14 @@ standards checks inherited from `bijux-std`.
 This family organizes Python learning by design pressure: object
 boundaries, functional composition, and runtime extensibility.
 
+## What Appears Across The Program
+
+| Surface | Why it matters |
+| --- | --- |
+| three-track split | shows the program is organized around design pressure, not random topic accumulation |
+| links into Masterclass destinations | shows the material is published as maintained documentation, not a loose note set |
+| repository examples in Core, Canon, and Atlas | shows that the teaching vocabulary maps back to real system design decisions |
+
 ## Track Map
 
 ```mermaid
@@ -55,9 +63,9 @@ graph LR
 ## What Lives Here
 
 - language-level thinking that goes deeper than framework familiarity
-- the ability to explain design tradeoffs, abstractions, and programming styles clearly
+- design tradeoffs, abstractions, and programming styles treated as first-class engineering decisions
 - capstone-backed learning paths for object design, functional design, and runtime judgment
-- explicit treatment of decorators, descriptors, metaclasses, and runtime customization as first-class design topics
+- decorators, descriptors, metaclasses, and runtime customization treated as first-class design topics
 - a teaching surface that stays technical rather than introductory
 
 ## Why This Matters In Production Systems
@@ -75,7 +83,7 @@ graph LR
 | functional design maturity | [Python Functional Programming](https://bijux.io/bijux-masterclass/python-programming/python-functional-programming/) and its emphasis on purity, effects, async coordination, and composable systems |
 | runtime and framework honesty | [Python Metaprogramming](https://bijux.io/bijux-masterclass/python-programming/python-meta-programming/) and its focus on introspection, decorators, descriptors, metaclasses, and runtime hooks |
 
-## What This Program Refuses To Do
+## What This Program Does Not Do
 
 - not syntax-first: syntax is used as a tool, not as the endpoint.
 - not framework-first: frameworks are discussed through design tradeoffs, not treated as the curriculum core.

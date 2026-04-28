@@ -10,12 +10,12 @@ last_reviewed: 2026-04-12
 # Bijux
 
 <section class="bijux-hero">
-  <div class="bijux-hero__eyebrow">runtime systems, data delivery, scientific products, and technical education</div>
-  <h1 class="bijux-hero__title">Bijux is a repository family with clear ownership boundaries.</h1>
-  <p class="bijux-hero__lede"><code>bijux.io</code> is the documentation hub for the current Bijux repository family: execution and governance systems, knowledge and data services, applied bioinformatics products, and technical programs. It is arranged so readers can move from orientation into repository handbooks, published destinations, and source surfaces without losing ownership boundaries.</p>
+  <div class="bijux-hero__eyebrow">platform systems, delivery interfaces, scientific software, and technical programs</div>
+  <h1 class="bijux-hero__title">Bijux is a repository family for governed platform, data, and scientific systems.</h1>
+  <p class="bijux-hero__lede"><code>bijux.io</code> is the public hub for that family. It connects the shared foundations, the runtime backbone, the project systems, and the learning programs in one readable surface.</p>
   <div class="bijux-topic-row">
     <span class="bijux-topic-pill">platform architecture</span>
-    <span class="bijux-topic-pill">runtime governance</span>
+    <span class="bijux-topic-pill">control-plane design</span>
     <span class="bijux-topic-pill">data-service design</span>
     <span class="bijux-topic-pill">bioinformatics software</span>
     <span class="bijux-topic-pill">documentation as delivery</span>
@@ -23,156 +23,152 @@ last_reviewed: 2026-04-12
   </div>
 </section>
 
-<div class="bijux-callout"><strong>This hub helps you locate the owning repository first.</strong>
-Once you find the right branch, you can continue into the documentation
-and source surfaces that carry the implementation detail.</div>
+<div class="bijux-callout"><strong>Start with the foundations, then follow the branch that matches your question.</strong>
+The rest of the site stays organized around that same split.</div>
 
 ## What Bijux Is
 
-Bijux is a repository family for runtime systems, governed knowledge/data
-systems, scientific software, and technical learning surfaces, organized around
-clear boundaries and inspectable delivery.
+Bijux is a repository family for platform engineering, data and service
+delivery, scientific software, and technical education.
 
-It is designed so architecture, delivery, and domain work can evolve together
-without merging responsibilities into a single opaque codebase.
+It stays readable because ownership changes hands in named places:
 
-| Term | Meaning in this site |
-| --- | --- |
-| ownership boundaries | Explicit repository-level responsibilities that prevent hidden coupling and drift. |
-| delivery surfaces | User-visible outputs such as docs, APIs, reports, and release pathways that must be engineered, not improvised. |
+- one branch explains the platform structure of the family
+- one repository owns the live GitHub control plane
+- one repository owns the shared standards layer
+- one repository owns the public documentation hub
+- one repository owns the shared runtime backbone used across projects
+- other repositories own knowledge, delivery, domain, and learning work
 
-## Core Ideas In This System
+## At A Glance
+
+| Layer | Owned in | What becomes visible |
+| --- | --- | --- |
+| control plane | [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) | GitHub governance applied as code |
+| shared standards | [Bijux standard layer](03-bijux-std/index.md) | shared docs shell, shared checks, shared repo contracts |
+| documentation hub | [Platform overview](01-platform/index.md) and this site | cross-repository orientation and route design |
+| shared runtime backbone | [Bijux Core](04-projects/bijux-core/index.md) | CLI, DAG, evidence, and release discipline used across projects |
+| project systems | [Projects](04-projects/index.md) | knowledge, APIs, datasets, packages, and domain systems |
+| learning surface | [Learning catalog](05-learning/index.md) | technical programs built from the same engineering language |
+
+## Core Ideas
 
 - Separate repositories by operating responsibility so boundaries remain stable as systems grow.
 - Treat documentation, contracts, and release behavior as owned delivery outputs.
+- Make the control plane, standards layer, hub, and project layers visible as different kinds of work.
 - Keep the same engineering language across platform, domain, and learning surfaces.
 
 ## How It Is Organized
 
-The site is organized around repository ownership, then around navigation paths
-for architecture, delivery, and domain-focused reading.
-Shared documentation shell behavior and cross-repository standards checks are
-centrally defined in [Bijux standard layer](01-platform/bijux-std/index.md).
+The site starts from repository ownership, then opens into reading
+routes. Shared documentation shell behavior and cross-repository
+standards checks live in
+[Bijux Standards](03-bijux-std/index.md), while live GitHub policy is
+owned in
+[Bijux Infrastructure-as-Code](02-bijux-iac/index.md).
 
 ### Reading Approach
 
-This page offers a starting point based on your interest. From there,
-you can move into the owning repository and spend time with the actual
-surfaces that matter for your review.
-
-Read the platform and repository split first, then choose a route by review
-goal so implementation evidence stays connected to system intent.
+Start with the family shape, then continue into the branch that matches
+your interest.
 
 | Start here for... | Open this first | What you will find |
 | --- | --- | --- |
-| how the repositories fit together | [Platform overview](01-platform/index.md) -> [System map](01-platform/system-map/index.md) | the split across runtime, knowledge, delivery, and domain work |
-| how delivery shows up publicly | [Delivery surfaces](01-platform/delivery-surfaces/index.md) -> [Bijux Atlas](02-projects/bijux-atlas/index.md) | documentation, published destinations, and operated service surfaces |
-| how the work behaves under domain pressure | [Applied domains](01-platform/applied-domains/index.md) -> [Bijux Proteomics](02-projects/bijux-proteomics/index.md) -> [Bijux Pollenomics](02-projects/bijux-pollenomics/index.md) | scientific and evidence-heavy product systems |
-| how the technical style carries into teaching | [Learning catalog](03-learning/index.md) | course books and programs built around the same technical language |
+| how the repositories fit together | [Platform overview](01-platform/index.md) -> [System map](01-platform/system-map/index.md) | the split across shared foundations, runtime, knowledge, delivery, and domain work |
+| how GitHub governance is applied across the family | [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) | the live control plane and the review model behind the repositories |
+| how shared behavior stays aligned across repositories | [Bijux standard layer](03-bijux-std/index.md) | shared docs shell, shared make behavior, and standards promotion |
+| how delivery appears in public | [Delivery surfaces](01-platform/delivery-surfaces/index.md) -> [Bijux Atlas](04-projects/bijux-atlas/index.md) | documentation, published destinations, and operated service surfaces |
+| how the work behaves under domain pressure | [Applied domains](01-platform/applied-domains/index.md) -> [Bijux Proteomics](04-projects/bijux-proteomics/index.md) -> [Bijux Pollenomics](04-projects/bijux-pollenomics/index.md) | scientific and evidence-heavy product systems |
+| how the same technical style carries into teaching | [Learning catalog](05-learning/index.md) | course books and programs built around the same technical language |
 
 ```mermaid
 graph TD
-    bijux["Bijux"] --> platform["Platform"]
-    bijux --> projects["Projects"]
-    bijux --> learning["Learning"]
-    bijux --> standards["Standards"]
-    bijux --> paths["Reading Paths"]
-
-    platform --> platform_design["System design"]
-    platform --> platform_structure["Repository structure"]
-    platform --> platform_delivery["Delivery and documentation"]
-
-    projects --> core["Core"]
-    projects --> canon["Canon"]
-    projects --> atlas["Atlas"]
-    projects --> proteomics["Proteomics"]
-    projects --> pollenomics["Pollenomics"]
-    projects --> masterclass["Masterclass"]
-
-    learning --> python["Python Programming"]
-    learning --> reproducible["Reproducible Research"]
-
-    standards --> std["bijux-std"]
+    foundations["Shared foundations<br/>bijux-iac + bijux-std"] --> hub["Documentation hub<br/>bijux.github.io"]
+    foundations --> core["Shared runtime backbone<br/>bijux-core"]
+    foundations --> canon["Knowledge system<br/>bijux-canon"]
+    core --> projects["Project systems<br/>atlas, telecom, genomics, proteomics, pollenomics"]
+    canon --> projects
+    hub --> projects
+    projects --> learning["Learning programs<br/>bijux-masterclass"]
 ```
-
-## Route Starters
-
-Use one of these route types based on your immediate goal:
-
-- Architecture route: start at [Platform overview](01-platform/index.md), then [System map](01-platform/system-map/index.md), then [bijux-core](02-projects/bijux-core/index.md) and [bijux-canon](02-projects/bijux-canon/index.md).
-- Delivery route: start at [Delivery surfaces](01-platform/delivery-surfaces/index.md), then [bijux-atlas](02-projects/bijux-atlas/index.md), then public docs and published endpoints.
-- Domain route: start at [Applied domains](01-platform/applied-domains/index.md), then [bijux-proteomics](02-projects/bijux-proteomics/index.md) and [bijux-pollenomics](02-projects/bijux-pollenomics/index.md).
 
 ## Reading Paths
 
-This section helps you choose a short path that matches the part of the
-work you care about first.
-
 <div class="bijux-callout"><strong>New here?</strong> Start with
 <a href="index.md">Home</a> -> <a href="01-platform/index.md">Platform</a> ->
-<a href="01-platform/system-map/index.md">System Map</a>. This is the canonical first
-route for new readers.</div>
+<a href="02-bijux-iac/index.md">Bijux Infrastructure-as-Code</a> ->
+<a href="03-bijux-std/index.md">Bijux Standards</a>. This is the shortest route into the shared foundations.</div>
 
 The map below summarizes the main route families at a glance.
 
 ```mermaid
 graph LR
-    paths["Reading Paths"] --> ideas["Learn the ideas"]
-    paths --> platform["Understand the platform"]
-    paths --> repositories["Inspect the repositories"]
-    paths --> domains["See domain applications"]
+    entry["Reader starts here"] --> split{"What do you want first?"}
+    split --> architecture["System architecture"]
+    split --> delivery["Delivery and service behavior"]
+    split --> domain["Scientific and evidence-heavy systems"]
+    split --> teaching["Transferable engineering practice"]
 
-    ideas --> learning["Learning"]
-    platform --> platform_branch["Platform"]
-    repositories --> projects["Projects"]
-    domains --> applied["Applied Domains"]
+    architecture --> platform["Platform"]
+    architecture --> map["System map"]
+
+    delivery --> surfaces["Delivery surfaces"]
+    delivery --> atlas["Bijux Atlas"]
+
+    domain --> applied["Applied domains"]
+    domain --> scientific["Proteomics and Pollenomics"]
+
+    teaching --> learning["Learning"]
+    teaching --> programs["Masterclass programs"]
 ```
 
-Choose a route below by question or by time.
+Choose a route below by intent or by time.
+
+### By Intent
+
+| If you want to inspect... | Start here | Then continue into |
+| --- | --- | --- |
+| system design and repository split | [Platform overview](01-platform/index.md) | [System map](01-platform/system-map/index.md) |
+| control plane design and repository governance | [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) | [Platform overview](01-platform/index.md), [System map](01-platform/system-map/index.md) |
+| shared standards and cross-repository continuity | [Bijux standard layer](03-bijux-std/index.md) | [Documentation Network](01-platform/documentation-network/index.md) |
+| delivery and service interfaces | [Delivery surfaces](01-platform/delivery-surfaces/index.md) | [Bijux Atlas](04-projects/bijux-atlas/index.md) |
+| domain-heavy product work | [Applied domains](01-platform/applied-domains/index.md) | [Bijux Proteomics](04-projects/bijux-proteomics/index.md), [Bijux Pollenomics](04-projects/bijux-pollenomics/index.md) |
+| technical teaching built from the same system language | [Learning catalog](05-learning/index.md) | [Reproducible Research](05-learning/reproducible-research/index.md), [Python Programming](05-learning/python-programming/index.md) |
 
 ### By Time
 
 | If you have... | Read this route |
 | --- | --- |
-| 10 minutes | [Home](index.md) -> [Work qualities](01-platform/work-qualities/index.md) -> [Projects](02-projects/index.md) |
-| 20 minutes | [System map](01-platform/system-map/index.md) -> [Repository matrix](01-platform/repository-matrix/index.md) -> one project page that matches your interest |
-| 30 minutes | [Platform](01-platform/index.md) -> [System map](01-platform/system-map/index.md) -> [Delivery surfaces](01-platform/delivery-surfaces/index.md) -> [Bijux Atlas](02-projects/bijux-atlas/index.md) -> [Applied domains](01-platform/applied-domains/index.md) |
-
-### By Question
-
-| Question | Read this sequence |
-| --- | --- |
-| Big picture | [Home](index.md) -> [Platform](01-platform/index.md) -> [System map](01-platform/system-map/index.md) |
-| System structure | [Platform](01-platform/index.md) -> [System map](01-platform/system-map/index.md) -> [Repository matrix](01-platform/repository-matrix/index.md) |
-| Repository roles | [Projects](02-projects/index.md) -> [Bijux Core](02-projects/bijux-core/index.md) -> [Bijux Canon](02-projects/bijux-canon/index.md) -> [Bijux Atlas](02-projects/bijux-atlas/index.md) |
-| Domain work | [Applied domains](01-platform/applied-domains/index.md) -> [Bijux Proteomics](02-projects/bijux-proteomics/index.md) -> [Bijux Pollenomics](02-projects/bijux-pollenomics/index.md) |
-| Learning | [Learning catalog](03-learning/index.md) -> [Reproducible Research](03-learning/reproducible-research/index.md) -> [Python Programming](03-learning/python-programming/index.md) |
-| Shared standards and docs shell | [Platform](01-platform/index.md) -> [Bijux standard layer](01-platform/bijux-std/index.md) -> [Shell Architecture](01-platform/shell-architecture/index.md) |
+| 10 minutes | [Home](index.md) -> [Platform](01-platform/index.md) -> [Projects](04-projects/index.md) |
+| 20 minutes | [Platform](01-platform/index.md) -> [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) -> [Bijux standard layer](03-bijux-std/index.md) |
+| 30 minutes | [Platform](01-platform/index.md) -> [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) -> [Bijux standard layer](03-bijux-std/index.md) -> [Bijux Core](04-projects/bijux-core/index.md) -> [Bijux Atlas](04-projects/bijux-atlas/index.md) |
 
 <div class="bijux-showcase-grid">
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">architecture route</div>
     <h2>Start with the system split</h2>
-    <p>You can begin with the system map, then Core and Canon, to review boundaries, runtime structure, and repository ownership.</p>
+    <p>Open Platform and the System Map first, then Core and Canon, to see how runtime, knowledge, and governance divide cleanly.</p>
     <p><a href="#reading-paths">See reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">delivery route</div>
     <h2>Start with delivery surfaces</h2>
-    <p>You can start with Delivery Surfaces, then Atlas, for service design, operational visibility, documentation quality, and published destinations.</p>
+    <p>Open Delivery Surfaces and then Atlas for the fastest route into service contracts, APIs, datasets, and publication.</p>
     <p><a href="#reading-paths">See reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">domain route</div>
     <h2>Start where the work gets harder</h2>
-    <p>You can open Applied Domains, then Proteomics, Pollenomics, and Learning, to see the same structure under scientific context and public teaching.</p>
+    <p>Open Applied Domains, then Proteomics and Pollenomics, to see the same engineering posture under scientific constraints.</p>
     <p><a href="#reading-paths">See reading paths</a></p>
   </article>
 </div>
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="02-projects/">Browse the repositories</a>
+<a class="md-button md-button--primary" href="04-projects/">Browse the repositories</a>
 <a class="md-button" href="01-platform/">Read the platform branch</a>
+<a class="md-button" href="02-bijux-iac/">Open the control plane</a>
+<a class="md-button" href="03-bijux-std/">Open the standards layer</a>
 <a class="md-button" href="#reading-paths">Choose a reading path</a>
 </div>
 
@@ -181,7 +177,7 @@ Choose a route below by question or by time.
 | Repository | Role in the system family | Public entry point |
 | --- | --- | --- |
 | `bijux-core` | execution and governance backbone | CLI, DAG, evidence, and release surfaces |
-| `bijux-canon` | governed knowledge-system stack | ingest, indexing, reasoning, orchestration, and controlled runtime behavior |
+| `bijux-canon` | knowledge-system stack | ingest, indexing, reasoning, orchestration, and controlled runtime behavior |
 | `bijux-atlas` | data and service delivery surface | APIs, datasets, reporting, and docs-aware operations |
 | `bijux-proteomics` | scientific product system | proteomics-oriented packages and runtime surfaces |
 | `bijux-pollenomics` | evidence mapping product system | Nordic atlas outputs, tracked data, and report publication |

@@ -10,19 +10,18 @@ last_reviewed: 2026-04-12
 # Bijux Atlas
 
 Bijux Atlas publishes and operates delivery-facing interfaces for
-datasets, APIs, service contracts, and operated documentation.
+datasets, APIs, service contracts, and documentation.
 
 `bijux-atlas` is the delivery and operational surface for services,
-datasets, APIs, and docs control-plane behavior. It is a direct route in
-the site for data delivery, service architecture, and operational
-visibility.
-It exists to keep queryable delivery, immutable artifacts, service
-contracts, and publication surfaces visible as first-class engineering
-boundaries.
+datasets, APIs, and docs control-plane behavior. It keeps queryable
+delivery, immutable artifacts, service contracts, and publication
+surfaces as first-class engineering boundaries.
 
 Shared standards note: Atlas consumes shared docs shell behavior and
 cross-repository checks from `bijux-std`; Atlas owns its local
 service/data contracts and delivery operations.
+Atlas also consumes the shared runtime and governance backbone from
+`bijux-core` while owning its own delivery contracts.
 
 Concrete Atlas surfaces include:
 
@@ -41,10 +40,9 @@ Concrete Atlas surfaces include:
 ## Repository Shape
 
 `bijux-atlas` presents data-service work as an operated product surface
-rather than a loose data tool. The repository
-publishes a CLI, server, OpenAPI export surface, and maintainer control
-plane around governed genomics dataset delivery and immutable query
-artifacts.
+rather than a loose data tool. The repository publishes a CLI, server,
+OpenAPI export surface, and operating control plane around genomics
+dataset delivery and immutable query artifacts.
 
 Inherited vs local ownership: navigation shell and baseline docs/check
 standards come from `bijux-std`, while Atlas owns API behavior, dataset
@@ -53,19 +51,10 @@ publication contracts, and service operations.
 ## System Map
 
 ```mermaid
-graph TD
-    std["Shared docs shell (bijux-std)"] --> control["Docs and ops control plane"]
-    atlas["Bijux Atlas"] --> ingestion["Data ingestion and preparation"]
-    atlas --> contracts["Service contracts and OpenAPI surface"]
-    atlas --> api["API and query surface"]
-    atlas --> artifacts["Versioned release artifacts"]
-    atlas --> control
-
-    ingestion --> publish["Published Atlas delivery surface"]
-    contracts --> publish
-    api --> publish
-    artifacts --> publish
-    control --> publish
+graph LR
+    contracts["contracts and OpenAPI"] --> api["API surface"]
+    api --> artifacts["artifacts and datasets"]
+    artifacts --> publish["published Atlas surface"]
 ```
 
 ## What Atlas Owns
@@ -74,18 +63,26 @@ graph TD
 - publication and release surfaces for immutable artifacts
 - control-plane operations that keep docs, contracts, and service behavior aligned
 
+## What You Can Verify Quickly
+
+| Surface | Why it matters |
+| --- | --- |
+| API and OpenAPI surfaces | shows that delivery contracts are documented |
+| release artifacts and dataset posture | shows that publication is treated as an owned surface |
+| docs-aware operational routes | shows that operations and documentation move together instead of drifting apart |
+
 ## What Lives Here
 
 - API and dataset delivery treated as first-class product interfaces
 - immutable artifact thinking instead of ad hoc mutable dataset handling
 - docs-aware validation, operational reporting, and control-plane behavior as part of delivery
-- explicit runtime surfaces: CLI, server, OpenAPI export, and maintainer tooling
+- runtime surfaces that stay separate: CLI, server, OpenAPI export, and operating tooling
 
 ## Where To Begin
 
 | If you are looking for... | Start with this part of Atlas |
 | --- | --- |
-| service architecture | the split between CLI, server, OpenAPI export, and maintainer control plane |
+| service architecture | the split between CLI, server, OpenAPI export, and operating control plane |
 | data delivery posture | immutable dataset and artifact language in the docs and README |
 | operational seriousness | ops, configs, reporting, and documentation validation behavior |
 | published entry points | the handbook structure and published docs site that route into concrete service surfaces |
@@ -93,7 +90,7 @@ graph TD
 ## How Atlas Differs From Core And Canon
 
 - Atlas owns public delivery interfaces and operated publication surfaces.
-- Core owns runtime authority and execution governance.
+- Core owns runtime authority and execution governance that Atlas builds on.
 - Canon owns knowledge-system orchestration and reasoning boundaries.
 
 Atlas is where users and integrators consume stable delivery contracts.
@@ -102,9 +99,9 @@ Core and Canon are where runtime and knowledge internals are structured.
 ## Why This Matters Operationally
 
 - stable queries: service consumers can rely on documented query and API behavior across releases
-- traceable releases: dataset and artifact publication history is inspectable instead of implicit
-- inspectable service behavior: docs, contracts, and operations expose how delivery works in practice
-- lower integration risk: maintenance workflows remain explicit so downstream systems can plan confidently
+- traceable releases: dataset and artifact publication history stays visible instead of implied
+- service behavior in public: docs, contracts, and operations show how delivery works in practice
+- lower integration risk: maintenance workflows stay documented so downstream systems can plan confidently
 
 ## When This Page Is Most Useful
 
@@ -114,12 +111,11 @@ Core and Canon are where runtime and knowledge internals are structured.
 
 ## In The Larger Picture
 
-Atlas keeps delivery work out in the open as something that is
-published, validated, and operated rather than described abstractly.
+Atlas keeps delivery work in the open as something that is published,
+validated, and operated rather than described abstractly.
 
 Bijux Atlas should be read as a delivery-facing system where contracts,
-artifacts, and public access must align cleanly enough to stay
-inspectable and useful over time. Within the broader family, it shows
-that publication and data delivery are architectural concerns, requiring
-the same boundary discipline and operational rigor as any core runtime
-surface.
+artifacts, and public access must align cleanly over time. Within the
+broader family, it shows that publication and data delivery are
+architectural concerns, requiring the same boundary discipline and
+operational rigor as any core runtime surface.

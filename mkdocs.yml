@@ -54,24 +54,27 @@ nav:
       - Overview: index.md
   - Platform:
       - Overview: 01-platform/index.md
-      - Bijux Standard Layer: 01-platform/bijux-std/index.md
       - Work Qualities: 01-platform/work-qualities/index.md
       - System Map: 01-platform/system-map/index.md
-      - Repository Matrix: 01-platform/repository-matrix/index.md
       - Delivery Surfaces: 01-platform/delivery-surfaces/index.md
       - Applied Domains: 01-platform/applied-domains/index.md
-      - Operating Context: 01-platform/operating-context/index.md
       - Documentation Network: 01-platform/documentation-network/index.md
-      - Shell Architecture: 01-platform/shell-architecture/index.md
-      - Public Surface: 01-platform/public-surface/index.md
+  - Bijux Infrastructure-as-Code:
+      - Overview: 02-bijux-iac/index.md
+      - Governance Model: 02-bijux-iac/governance-model/index.md
+      - Repository Coverage: 02-bijux-iac/repository-coverage/index.md
+  - Bijux Standards:
+      - Overview: 03-bijux-std/index.md
+      - Promotion Model: 03-bijux-std/promotion-model/index.md
+      - Shared Surfaces: 03-bijux-std/shared-surfaces/index.md
   - Projects:
-      - Overview: 02-projects/index.md
-      - Bijux Core: 02-projects/bijux-core/index.md
-      - Bijux Canon: 02-projects/bijux-canon/index.md
-      - Bijux Atlas: 02-projects/bijux-atlas/index.md
-      - Bijux Proteomics: 02-projects/bijux-proteomics/index.md
-      - Bijux Pollenomics: 02-projects/bijux-pollenomics/index.md
+      - Overview: 04-projects/index.md
+      - Bijux Core: 04-projects/bijux-core/index.md
+      - Bijux Canon: 04-projects/bijux-canon/index.md
+      - Bijux Atlas: 04-projects/bijux-atlas/index.md
+      - Bijux Proteomics: 04-projects/bijux-proteomics/index.md
+      - Bijux Pollenomics: 04-projects/bijux-pollenomics/index.md
   - Learning:
-      - Overview: 03-learning/index.md
-      - Reproducible Research: 03-learning/reproducible-research/index.md
-      - Python Programming: 03-learning/python-programming/index.md
+      - Overview: 05-learning/index.md
+      - Reproducible Research: 05-learning/reproducible-research/index.md
+      - Python Programming: 05-learning/python-programming/index.md

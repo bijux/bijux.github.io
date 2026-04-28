@@ -117,3 +117,8 @@ boundaries.
 
 That is why this repo should stay focused on the hub itself: site structure,
 navigation, public framing, and published documentation delivery.
+
+## License
+
+This repository is licensed under the MIT License. Copyright 2026 Bijan
+Mousavi <bijan@bijux.io>. See [`LICENSE`](LICENSE).
