@@ -9,16 +9,17 @@ last_reviewed: 2026-04-28
 
 # Documentation Network
 
-The documentation network lets readers move across Bijux repositories
-without losing orientation. It is part of the architecture, but the
-shared shell it relies on is owned upstream in `bijux-std`.
+The documentation network lets people move across Bijux repositories
+without losing context. It is part of the architecture, but the shared
+shell it relies on is owned upstream in `bijux-std`.
 
-`bijux-std` is the canonical source for the shared documentation shell
-and shared documentation standards used across the family.
+`bijux-std` is the source for the shared documentation shell and the
+shared standards used across the family.
 
 <div class="bijux-callout"><strong>Documentation is a shared communication layer.</strong>
-The shared shell keeps orientation and explanation behavior stable across
-repositories while each repository keeps local ownership of its content.</div>
+The shared shell keeps movement and presentation steady across
+repositories while each repository keeps local control of its own
+content.</div>
 
 ## Source Flow
 
@@ -79,9 +80,9 @@ another should feel familiar even though the content is owned locally.
 ## What It Gives The Reader
 
 - it reduces documentation drift across related repositories
-- it preserves ownership boundaries while keeping navigation coherent
-- it shortens onboarding by keeping route patterns predictable
-- it supports operational continuity when repository surfaces evolve
+- it keeps navigation coherent without flattening local content
+- it makes new sections feel familiar more quickly
+- it helps the family evolve without turning every site into a separate design problem
 
 ## Example Reading Route
 
