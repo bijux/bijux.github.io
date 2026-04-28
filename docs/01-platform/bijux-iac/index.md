@@ -27,6 +27,7 @@ That includes:
 - required status checks
 - repository governance inventory
 - Terraform-managed GitHub policy surfaces
+- the GitHub control plane applied across the Bijux repository family
 
 ## What It Does Not Own
 
@@ -37,24 +38,27 @@ The split is direct:
 
 - `bijux-iac` owns live GitHub control-plane policy
 - `bijux-std` owns shared repository content
+- `bijux-iac` still consumes shared standards from `bijux-std` like the other repositories
 
 ## How It Fits
 
 ```mermaid
 graph TD
     iac["bijux-iac"] --> github["live GitHub policy"]
-    std["bijux-std"] --> repos["shared repo content"]
+    std["bijux-std"] --> iacrepo["shared standards consumed by bijux-iac"]
+    std --> repos["shared repo content"]
     hub["bijux.github.io"] --> readers["public orientation"]
 
     github --> repos
-    std --> repos
+    github --> iacrepo
+    std --> hub
     repos --> hub
 ```
 
 In practice:
 
-- `bijux-iac` decides how repositories are governed
-- `bijux-std` decides which shared files stay aligned
+- `bijux-iac` decides how repositories are governed in GitHub
+- `bijux-std` decides which shared files and shared checks stay aligned
 - each repository still owns its own product, runtime, domain, or learning work
 
 ## Current Scope
