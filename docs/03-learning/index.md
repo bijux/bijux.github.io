@@ -9,7 +9,7 @@ last_reviewed: 2026-04-17
 
 # Learning
 
-## What This Branch Covers
+## Learning In The Repository Family
 
 The learning branch lives in `bijux-masterclass`, where system
 engineering practice is taught through sequenced programs. It belongs in
@@ -17,10 +17,10 @@ the same repository family because it turns architecture and workflow
 judgment into reusable instruction while leaving shared shell behavior
 in `bijux-std` and learning curriculum in Masterclass.
 
-This matters because the learning surface is not separate from the rest
-of the repository family. It is where runtime judgment, workflow
-discipline, and design tradeoffs become teachable without turning into
-generic motivation content.
+The learning surface is not separate from the rest of the repository
+family. It is where runtime judgment, workflow discipline, and design
+tradeoffs become teachable without turning into generic motivation
+content.
 
 ## Learning Map
 
