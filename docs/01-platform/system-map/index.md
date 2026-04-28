@@ -30,36 +30,56 @@ forming one public system.
 
 ```mermaid
 graph TD
-    system["Bijux System"] --> platform["Platform"]
-    system --> projects["Projects"]
-    system --> learning["Learning"]
-    system --> foundations["Foundations"]
+    subgraph foundations["Foundations"]
+        iac["bijux-iac<br/>governance as code"]
+        std["bijux-std<br/>shared standards"]
+        hub["bijux.github.io<br/>route design"]
+    end
 
-    platform --> principles["Shared engineering rules"]
-    platform --> structure["Navigation and structure"]
+    subgraph platform["Platform"]
+        maps["System map and repository matrix"]
+        qualities["Work qualities and operating context"]
+    end
 
-    projects --> runtime["Runtime systems"]
-    projects --> knowledge["Knowledge systems"]
-    projects --> domain["Domain systems"]
+    subgraph projects["Projects"]
+        core["Core<br/>runtime authority"]
+        canon["Canon<br/>knowledge system"]
+        atlas["Atlas<br/>delivery interfaces"]
+        domains["Proteomics and Pollenomics<br/>applied domains"]
+    end
 
-    learning --> programming["Programming"]
-    learning --> reproducibility["Reproducibility"]
+    subgraph learning["Learning"]
+        masterclass["Masterclass"]
+        programs["Python Programming and Reproducible Research"]
+    end
 
-    foundations --> iac["bijux-iac"]
-    foundations --> std["bijux-std"]
-    foundations --> hub["bijux.github.io"]
-
-    iac --> governance["GitHub control plane"]
-    std --> project_docs["shared shell and standards"]
-    hub --> orientation["public route design"]
+    iac --> core
+    iac --> canon
+    iac --> atlas
+    iac --> domains
+    std --> hub
+    std --> core
+    std --> canon
+    std --> atlas
+    std --> domains
+    hub --> maps
+    maps --> core
+    maps --> canon
+    maps --> atlas
+    maps --> domains
+    qualities --> programs
+    core --> atlas
+    core --> domains
+    canon --> atlas
+    masterclass --> programs
 ```
 
 ## Layer Summary
 
-- Platform: defines the system split, rules, and shared language.
-- Projects: implement runtime, knowledge, delivery, and domain responsibilities.
-- Learning: translates repository practice into teachable program routes.
-- Foundations: keep the control plane, standards layer, and public hub explicit instead of implicit.
+- Foundations: keep governance, shared standards, and public orientation stable.
+- Platform: explains the split and the rules that make the family coherent.
+- Projects: carry runtime, knowledge, delivery, and domain ownership.
+- Learning: turns the same engineering language into programs and capstones.
 
 ## What Each Layer Owns
 
