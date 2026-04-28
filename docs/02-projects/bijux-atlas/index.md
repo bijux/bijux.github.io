@@ -22,6 +22,8 @@ and publication surfaces as first-class engineering boundaries.
 Shared standards note: Atlas consumes shared docs shell behavior and
 cross-repository checks from `bijux-std`; Atlas owns its local
 service/data contracts and delivery operations.
+Atlas also consumes the shared runtime and governance backbone from
+`bijux-core` while owning its own delivery contracts.
 
 Concrete Atlas surfaces include:
 
@@ -93,7 +95,7 @@ graph TD
 ## How Atlas Differs From Core And Canon
 
 - Atlas owns public delivery interfaces and operated publication surfaces.
-- Core owns runtime authority and execution governance.
+- Core owns runtime authority and execution governance that Atlas builds on.
 - Canon owns knowledge-system orchestration and reasoning boundaries.
 
 Atlas is where users and integrators consume stable delivery contracts.

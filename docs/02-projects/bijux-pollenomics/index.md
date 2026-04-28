@@ -23,6 +23,9 @@ or system structure.
 The public docs surface and repository checks follow the shared
 documentation shell and standards checks used across the Bijux
 repository family.
+Pollenomics also builds on the shared CLI and runtime layer from
+`bijux-core` while keeping interpretation and publication logic in the
+domain repository.
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-pollenomics/">View Published Docs</a>
@@ -73,6 +76,7 @@ outside the immediate subject area.
 
 | If you are looking for... | Start with this part of Pollenomics |
 | --- | --- |
+| shared runtime consumption | how pollenomics uses the common CLI/runtime layer while keeping interpretation and publication local |
 | reproducible publication | tracked `data/` and `docs/report/` outputs, plus the atlas and country bundles |
 | uncommon domain modeling | the archaeology, eDNA, aDNA, and pollenomics framing in the docs and repository layout |
 | scope discipline | the clear limits around current capabilities, source categories, and report outputs |

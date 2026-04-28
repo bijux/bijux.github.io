@@ -19,6 +19,8 @@ decision-ready outputs, and keep lab-facing planning traceable.
 
 Shared standards note: Proteomics docs and checks follow shared shell
 and quality standards inherited from `bijux-std`.
+Proteomics also builds on the shared CLI and runtime layer from
+`bijux-core` while owning its own scientific workflows.
 
 <div class="bijux-quicklinks">
 <a class="md-button md-button--primary" href="https://bijux.io/bijux-proteomics/">View Published Docs</a>
@@ -88,6 +90,7 @@ be reviewed and reused.
 
 | If you are looking for... | Start with this part of Proteomics |
 | --- | --- |
+| shared runtime consumption | how proteomics uses the common CLI/runtime layer while keeping domain ownership local |
 | domain decomposition | the split across runtime, foundation, core, intelligence, knowledge, and lab packages |
 | governed product behavior | the repository’s emphasis on contracts, release discipline, and package-owned responsibilities |
 | scientific workflow maturity | the fact that lab planning and evidence resolution are first-class parts of the system model |
