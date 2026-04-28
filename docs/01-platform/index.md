@@ -12,31 +12,39 @@ last_reviewed: 2026-04-12
 Platform explains how the Bijux repository family is held together.
 
 This section shows where governance is owned, where shared standards
-are owned, where orientation is owned, and how runtime, delivery,
-domain, and learning repositories sit on top of that foundation.
+are owned, where the documentation hub fits, and how the shared runtime
+backbone, delivery repositories, domain repositories, and learning
+repositories sit on top of those layers.
 
 <div class="bijux-callout"><strong>Focus on responsibility before repository count.</strong>
 The key question is not how many repositories exist, but why responsibilities are split the way they are.
-Runtime governance, knowledge workflows, delivery, domain products, and
-learning programs each have their own home, but they still read as one
-system.</div>
+Runtime governance, shared standards, shared runtime, delivery, domain
+products, and learning programs each have their own home, but they
+still read as one system.</div>
 
 ## Platform Map
 
 ```mermaid
 graph TD
     context["Operating context"] --> principles["Platform principles"]
-    principles --> control["Control plane<br/>bijux-iac"]
+    principles --> control["Shared governance<br/>bijux-iac"]
     principles --> standards["Shared standards<br/>bijux-std"]
-    principles --> hub["Public hub<br/>bijux.github.io"]
+    principles --> hub["Documentation hub<br/>bijux.github.io"]
 
-    control --> runtime["Runtime and knowledge repos"]
-    standards --> runtime
-    hub --> runtime
+    control --> core["Shared runtime backbone<br/>bijux-core"]
+    standards --> core
+    standards --> hub
+    hub --> readers["Public reading routes"]
 
-    runtime --> delivery["Delivery and public interfaces"]
-    runtime --> domains["Applied domain systems"]
-    runtime --> learning["Learning programs"]
+    core --> projects["Project repositories"]
+    control --> projects
+    standards --> projects
+
+    projects --> delivery["Delivery and public interfaces"]
+    projects --> domains["Applied domain systems"]
+    standards --> learning["Learning programs"]
+    control --> learning
+    hub --> learning
 ```
 
 ## Canonical Platform Axes
@@ -44,7 +52,8 @@ graph TD
 - context: the operating reasons and constraints behind the repository family
 - control plane: how GitHub governance is applied as code
 - shared standards: how shell behavior and quality checks stay aligned
-- public hub: how readers move through the system without losing ownership
+- documentation hub: how readers move through the system without losing ownership
+- shared runtime: how common execution behavior stays aligned across projects
 - delivery: how architecture becomes visible through release and public interfaces
 
 ## What Belongs Here
@@ -61,7 +70,7 @@ graph TD
 
 ## Why This Branch Exists
 
-- show the control-plane, standards, and hub layers before readers dive into implementation repositories
+- show the control-plane, standards, hub, and shared runtime layers before readers dive into implementation repositories
 - explain why runtime authority, knowledge architecture, delivery responsibilities, and domain work are split into separate repositories
 - keep repository boundaries stable while allowing domain-specific evolution
 - make documentation useful for inspection and review, not only orientation
@@ -89,12 +98,12 @@ graph TD
 
 <div class="bijux-panel-grid">
   <div class="bijux-panel"><h3>Control Plane</h3><p>`bijux-iac` keeps GitHub governance visible as code instead of leaving it buried in repository settings.</p></div>
-  <div class="bijux-panel"><h3>Hub</h3><p>`bijux.github.io` owns the public route design so readers can move through the repository family without losing responsibility boundaries.</p></div>
-  <div class="bijux-panel"><h3>Core</h3><p>The execution and governance backbone for command surfaces, DAG behavior, evidence, and repository discipline.</p></div>
+  <div class="bijux-panel"><h3>Hub</h3><p>`bijux.github.io` is the public route layer: it helps readers move through the repository family, but it is not the source of shared shell behavior.</p></div>
+  <div class="bijux-panel"><h3>Core</h3><p>`bijux-core` is the shared runtime backbone for command surfaces, DAG behavior, evidence, and repository discipline used across the project family.</p></div>
   <div class="bijux-panel"><h3>Canon</h3><p>The governed knowledge-system stack for ingest, indexing, reasoning, orchestration, and controlled runtime behavior.</p></div>
   <div class="bijux-panel"><h3>Atlas</h3><p>The delivery and control-plane surface for APIs, datasets, docs-aware checks, and operational reporting.</p></div>
-  <div class="bijux-panel"><h3>Bijux Standard Layer</h3><p>The shared standards source for documentation shell continuity, cross-repository checks, and shared make behavior.</p></div>
-  <div class="bijux-panel"><h3>Products And Programs</h3><p>Proteomics, Pollenomics, and Masterclass show the same architectural discipline under domain work and technical education.</p></div>
+  <div class="bijux-panel"><h3>Bijux Standard Layer</h3><p>`bijux-std` is the shared standards source for documentation shell continuity, cross-repository checks, and promoted shared make behavior.</p></div>
+  <div class="bijux-panel"><h3>Products And Programs</h3><p>Canon, Atlas, Proteomics, Pollenomics, Telecom, Genomics, and Masterclass consume these shared layers while owning their own knowledge, delivery, domain, or learning work.</p></div>
 </div>
 
 ## System Reading Order
