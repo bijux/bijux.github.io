@@ -4,104 +4,86 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-12
+last_reviewed: 2026-04-28
 ---
 
 # System Map
 
-<div class="bijux-callout"><strong>Use this page when</strong> you want a fast orientation to how Platform, Projects, and Learning fit together before opening individual repositories.</div>
+<div class="bijux-callout"><strong>Bijux reads more clearly as a layered system than as a list of repositories.</strong> Shared governance and shared standards sit underneath the family, `bijux-core` acts as the project backbone, and the documentation hub keeps the whole surface readable.</div>
 
-The Bijux public surface is easier to understand as a layered system
-than as a list of repositories. The map helps because it shows where
-responsibility changes hands and where different kinds of engineering
-judgment are expected.
-This map is meant to make system responsibility legible before
-implementation detail.
-Shared standards are part of this system design, not only documentation
-detail.
-
-In plain terms: Platform defines the shared structure and rules, Projects
-apply that structure in runtime/knowledge/domain repositories, and
-Learning explains the same engineering methods through teachable
-programs. Together, these layers keep responsibilities clear while still
-forming one public system.
+Bijux is split this way because the work has to stay clear under real
+pressure: long-lived maintenance, reproducibility, public delivery, and
+evidence-heavy domain work. The easiest way to understand that shape is
+to start with the layers and then move into the repositories.
 
 ## Layered View
 
 ```mermaid
 graph TD
-    system["Bijux System"] --> platform["Platform"]
-    system --> projects["Projects"]
-    system --> learning["Learning"]
-    system --> standards["Standards"]
-
-    platform --> principles["Shared engineering rules and docs shell"]
-    platform --> structure["Navigation and structure"]
-
-    projects --> runtime["Runtime systems"]
-    projects --> knowledge["Knowledge systems"]
-    projects --> domain["Domain systems"]
-
-    learning --> programming["Programming"]
-    learning --> reproducibility["Reproducibility"]
-
-    standards --> std["bijux-std"]
-    std --> hub["bijux.github.io docs"]
-    std --> project_docs["project docs sites"]
-    std --> masterclass_docs["masterclass docs"]
+    foundations["Shared foundations<br/>bijux-iac + bijux-std"] --> hub["Documentation hub<br/>bijux.github.io"]
+    foundations --> core["Shared runtime backbone<br/>bijux-core"]
+    core --> projects["Project repositories"]
+    foundations --> projects
+    hub --> projects
+    projects --> learning["Learning programs<br/>bijux-masterclass"]
 ```
 
-## Layer Summary
+## Why The Family Is Split This Way
 
-- Platform: defines the system split, rules, and shared language.
-- Projects: implement runtime, knowledge, delivery, and domain responsibilities.
-- Learning: translates repository practice into teachable program routes.
-- Standards: keeps shared docs shell, checks, and automation aligned through `bijux-std`.
-- Public docs surfaces: consume the shared standards while keeping local content ownership.
+- long-lived repositories need stable ownership boundaries
+- scientific and evidence-heavy work needs reproducibility and traceability
+- public delivery needs clear routes, release discipline, and visible contracts
+- learning works better when it grows from the same systems instead of detached notes
+
+That is why governance, standards, runtime, projects, and learning stay
+separate instead of collapsing into one mixed repository surface.
 
 ## What Each Layer Owns
 
-### Conceptual Layers
-
 | Layer | What it owns | Why it stays separate |
 | --- | --- | --- |
-| Platform | shared engineering rules, documentation shell, release discipline, and boundary vocabulary | keeps cross-repository behavior stable and inspectable |
-| Projects | runtime systems, knowledge systems, delivery interfaces, and domain products | keeps implementation ownership explicit and reviewable by repository |
-| Learning | course books, deep dives, capstones, and reusable technical explanation | keeps teaching and explanation rigorous without replacing repository ownership |
-| Standards | shared docs shell, shared checks, and shared make behavior | keeps cross-repository continuity explicit and CI-verifiable |
+| Shared foundations | GitHub governance and shared standards | keeps policy and shared behavior aligned before project-specific work begins |
+| Hub | public orientation and documentation routing | keeps movement across the family clear without turning the hub into the source of the standards |
+| Shared project backbone | runtime authority, CLI surfaces, DAG behavior, evidence, and release discipline | gives multiple repositories common execution behavior without forcing them into one codebase |
+| Projects | knowledge systems, delivery interfaces, telecom services, genomics systems, and domain products | keeps implementation responsibility clear and local |
+| Learning | course books, deep dives, capstones, and reusable technical explanation | turns the same engineering language into teachable material |
 
-### Repository Family Roles
+## Repository Roles At A Glance
 
-| Repository role | Primary ownership |
+| Repository | Main job | Best first read |
+| --- | --- | --- |
+| `bijux-iac` | GitHub control-plane governance | [Bijux Infrastructure-as-Code](../../02-bijux-iac/index.md) |
+| `bijux-std` | shared standards and shell continuity | [Bijux Standards](../../03-bijux-std/index.md) |
+| `bijux.github.io` | public orientation and route design | [Home](../../index.md) |
+| `bijux-core` | shared runtime backbone | [Bijux Core](../../04-projects/bijux-core/index.md) |
+| `bijux-canon` | knowledge-system orchestration | [Bijux Canon](../../04-projects/bijux-canon/index.md) |
+| `bijux-atlas` | delivery interfaces and published surfaces | [Bijux Atlas](../../04-projects/bijux-atlas/index.md) |
+| `bijux-telecom` and `bijux-genomics` | service and Rust domain systems built on shared layers | [Projects](../../04-projects/index.md) |
+| `bijux-proteomics` and `bijux-pollenomics` | domain-heavy scientific product work | [Applied domains](../applied-domains/index.md) |
+| `bijux-masterclass` | learning programs and capstones | [Learning](../../05-learning/index.md) |
+
+## Where Pressure Shows Up
+
+| Pressure | What it changes |
 | --- | --- |
-| Core | runtime authority and governance behavior |
-| Canon | knowledge-system orchestration and reasoning boundaries |
-| Atlas | delivery interfaces, service outputs, and reporting routes |
-| Proteomics and Pollenomics | domain-specific workflows and evidence-heavy product outputs |
-| Masterclass | learning programs and executable instructional artifacts |
-| bijux-std | shared standards definition and distribution |
+| long-lived maintenance | repository ownership and change authority must stay explicit |
+| scientific workflows | reproducibility and evidence lineage must remain visible |
+| public delivery | docs, APIs, releases, and datasets must behave like maintained surfaces |
+| cross-site documentation | navigation continuity has to stay shared while content stays local |
 
-## Why The Split Matters
+## How To Read The Map
 
-- easier review because each layer has a clear job and inspection route
-- easier evolution because changes stay local to the owning layer
-- less accidental coupling between runtime, delivery, and domain concerns
-- clearer operational truth when responsibilities are explicit in public
+1. start with the shared foundations
+2. move to `bijux-core` for the shared runtime story
+3. move to the project repositories for delivery, knowledge, service, or domain work
+4. move to Masterclass for the program layer
 
-## Boundary Questions To Ask
+## What To Open Next
 
-- does each repository own a distinct problem instead of a renamed slice of the same problem
-- does the delivery surface stay separate from the runtime and knowledge internals
-- do the domain systems inherit the platform posture without being forced into generic abstractions
-- can a reader move across layers and still keep a consistent mental model
-
-## Where Responsibility Changes Hands
-
-- Standards -> docs sites: `bijux-std` updates shared shell/check behavior consumed by `bijux.github.io`, project docs sites, and masterclass docs.
-- Platform -> Core: shared boundary and release rules become executable runtime and governance behavior.
-- Core/Canon -> Atlas: internal runtime and knowledge capabilities become public delivery interfaces and reporting routes.
-- Platform/Projects -> Domain products: shared engineering rules are applied to specialized scientific workflows and evidence outputs.
-- Projects -> Learning: repository practices are translated into course books and capstones without changing source ownership.
-
-The system map exists to make ownership and handoffs clear before
-reading repository-level detail.
+| If you want to inspect... | Open |
+| --- | --- |
+| the project split at a glance | [this system map](index.md) |
+| public delivery and operated outputs | [Delivery surfaces](../delivery-surfaces/index.md) |
+| shared docs behavior across sites | [Documentation network](../documentation-network/index.md) |
+| domain-heavy work under scientific pressure | [Applied domains](../applied-domains/index.md) |
+| recurring engineering habits across the family | [Work qualities](../work-qualities/index.md) |
