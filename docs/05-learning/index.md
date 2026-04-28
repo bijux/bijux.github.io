@@ -20,8 +20,7 @@ curriculum in Masterclass.
 
 The learning surface is not separate from the rest of the repository
 family. It is where runtime judgment, workflow discipline, and design
-tradeoffs become teachable without turning into generic motivation
-content.
+tradeoffs become teachable without turning into generic motivation.
 
 Learning is easiest to read after the shared foundations are clear:
 
@@ -51,9 +50,9 @@ graph LR
 | Reproducible Research | engineers and researchers who need reliable scientific workflows | workflow systems, automation discipline, build truth, and scientific execution habits | capstone workflow outputs that can be re-run and reviewed | [Program docs](https://bijux.io/bijux-masterclass/reproducible-research/) |
 | Python Programming | learners advancing from syntax fluency to design judgment | language depth, runtime judgment, software design tradeoffs, and long-form programming instruction | capstone implementations and runnable exercises that show design decisions in code | [Program docs](https://bijux.io/bijux-masterclass/python-programming/) |
 
-## What You Can Verify Quickly
+## What You See Quickly
 
-| If you inspect... | You can infer... |
+| If you open... | What becomes clear |
 | --- | --- |
 | reproducible-research capstones | workflow thinking is grounded in executable artifact discipline |
 | python-programming program structure | language teaching is being used to explain long-lived software design, not just syntax |
