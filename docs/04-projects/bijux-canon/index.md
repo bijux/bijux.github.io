@@ -101,10 +101,10 @@ responsibilities belong to `bijux-core`, domain repositories, and
 
 ```mermaid
 graph LR
-    input["1. source input"] --> structure["2. structured index"]
-    structure --> reasoning["3. retrieval and reasoning"]
-    reasoning --> orchestration["4. orchestration"]
-    orchestration --> runtime["5. accepted runtime behavior"]
+    input["source input"] --> structure["structured index"]
+    structure --> reasoning["retrieval and reasoning"]
+    reasoning --> orchestration["orchestration"]
+    orchestration --> runtime["accepted runtime behavior"]
 ```
 
 Follow this flow to inspect the stack in order: ingest input,
