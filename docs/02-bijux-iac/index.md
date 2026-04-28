@@ -76,16 +76,10 @@ When `bijux-iac` is doing its job well:
 ## How It Fits
 
 ```mermaid
-graph TD
-    iac["bijux-iac"] --> github["live GitHub policy"]
-    std["bijux-std"] --> iacrepo["shared standards consumed by bijux-iac"]
-    std --> repos["shared repo content"]
-    hub["bijux.github.io"] --> readers["public orientation"]
-
-    github --> repos
-    github --> iacrepo
-    std --> hub
-    repos --> hub
+graph LR
+    iac["bijux-iac"] --> policy["GitHub policy"]
+    policy --> repos["repository family"]
+    std["bijux-std"] --> iacrepo["shared standards for bijux-iac"]
 ```
 
 In practice:
