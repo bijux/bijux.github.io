@@ -10,14 +10,14 @@ last_reviewed: 2026-04-12
 # Bijux Atlas
 
 Bijux Atlas publishes and operates delivery-facing interfaces for
-datasets, APIs, service contracts, and operated documentation.
+datasets, APIs, service contracts, and documentation.
 
 `bijux-atlas` is the delivery and operational surface for services,
-datasets, APIs, and docs control-plane behavior. It is a direct route in
-the site for data delivery, service architecture, and operational
+datasets, APIs, and docs control-plane behavior. It is the direct route
+in the site for data delivery, service architecture, and operational
 visibility.
-It keeps queryable delivery, immutable artifacts, service contracts, and
-publication surfaces visible as first-class engineering boundaries.
+It keeps queryable delivery, immutable artifacts, service contracts,
+and publication surfaces as first-class engineering boundaries.
 
 Shared standards note: Atlas consumes shared docs shell behavior and
 cross-repository checks from `bijux-std`; Atlas owns its local
@@ -70,7 +70,7 @@ graph TD
 
 | Surface | Why it matters |
 | --- | --- |
-| API and OpenAPI surfaces | shows that delivery contracts are explicit and documented |
+| API and OpenAPI surfaces | shows that delivery contracts are documented |
 | release artifacts and dataset posture | shows that publication is treated as an owned surface |
 | docs-aware operational routes | shows that operations and documentation move together instead of drifting apart |
 
@@ -103,7 +103,7 @@ Core and Canon are where runtime and knowledge internals are structured.
 
 - stable queries: service consumers can rely on documented query and API behavior across releases
 - traceable releases: dataset and artifact publication history stays visible instead of implied
-- service behavior in public: docs, contracts, and operations expose how delivery works in practice
+- service behavior in public: docs, contracts, and operations show how delivery works in practice
 - lower integration risk: maintenance workflows stay documented so downstream systems can plan confidently
 
 ## When This Page Is Most Useful
@@ -114,12 +114,11 @@ Core and Canon are where runtime and knowledge internals are structured.
 
 ## In The Larger Picture
 
-Atlas keeps delivery work out in the open as something that is
-published, validated, and operated rather than described abstractly.
+Atlas keeps delivery work in the open as something that is published,
+validated, and operated rather than described abstractly.
 
 Bijux Atlas should be read as a delivery-facing system where contracts,
-artifacts, and public access must align cleanly enough to stay
-inspectable and useful over time. Within the broader family, it shows
-that publication and data delivery are architectural concerns, requiring
-the same boundary discipline and operational rigor as any core runtime
-surface.
+artifacts, and public access must align cleanly over time. Within the
+broader family, it shows that publication and data delivery are
+architectural concerns, requiring the same boundary discipline and
+operational rigor as any core runtime surface.
