@@ -22,21 +22,21 @@ It is the shared standards layer that keeps the public system coherent.
 This branch explains how repeated repository behavior becomes shared
 infrastructure instead of staying trapped as local convention.
 
-## Why It Matters In Public
+## Why It Matters
 
 Without a visible standards layer, readers can see the repositories but
 not the mechanism that keeps them coherent.
 
-`bijux-std` makes that mechanism inspectable:
+`bijux-std` makes that mechanism clear:
 
 - shared presentation has a named source
 - repeated workflow behavior has a reviewable home
 - cross-repository checks stop being folklore
 - standardization follows real usage instead of abstract policy
 
-## What A Reader Can Infer Quickly
+## What You See Quickly
 
-| If you inspect... | You can infer... |
+| If you open... | What becomes clear |
 | --- | --- |
 | shared shell assets and manifests | continuity across sites is engineered deliberately |
 | shared make behavior and checks | repository quality is being treated as a repeatable system |
