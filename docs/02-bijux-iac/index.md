@@ -17,9 +17,9 @@ repository family.
 Here that means GitHub administration is declared, reviewed, and
 applied in code instead of being left to hidden settings pages.
 
-This branch explains the part of the Bijux system that acts on
-repositories from the outside. It is the control plane for the family,
-not another product repository.
+It explains the part of the Bijux system that acts on repositories from
+the outside. It is the control plane for the family, not another
+product repository.
 
 ## Why It Matters
 
