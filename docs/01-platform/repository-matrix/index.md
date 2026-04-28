@@ -19,34 +19,36 @@ and change, not an organizational preference.
 
 ```mermaid
 graph LR
-    iac["bijux-iac"]
-    hub["bijux.github.io"]
-    std["bijux-std"]
-    family["Repository Family"] --> core["Core"]
-    family --> canon["Canon"]
-    family --> atlas["Atlas"]
-    family --> proteomics["Proteomics"]
-    family --> pollenomics["Pollenomics"]
-    family --> masterclass["Masterclass"]
-    family --> iac
-    family --> hub
-    family --> std
+    iac["bijux-iac"] --> governance["GitHub governance"]
+    std["bijux-std"] --> standards["Shared standards"]
+    hub["bijux.github.io"] --> orientation["Public orientation"]
+    core["bijux-core"] --> runtime["Shared runtime and control"]
 
-    iac --> governance["GitHub governance"]
-    hub --> orientation["Public orientation"]
-    core --> runtime["Runtime and control"]
-    canon --> knowledge["Knowledge-system layers"]
-    atlas --> delivery["Data and delivery"]
-    proteomics --> scientific["Scientific product"]
-    pollenomics --> domain["Domain application"]
-    masterclass --> learning["Technical learning"]
+    governance --> core
+    governance --> canon["Canon"]
+    governance --> atlas["Atlas"]
+    governance --> telecom["Telecom"]
+    governance --> genomics["Genomics"]
+    governance --> proteomics["Proteomics"]
+    governance --> pollenomics["Pollenomics"]
+    governance --> masterclass["Masterclass"]
 
-    std --> core
-    std --> canon
-    std --> atlas
-    std --> proteomics
-    std --> pollenomics
-    std --> masterclass
+    standards --> hub
+    standards --> core
+    standards --> canon
+    standards --> atlas
+    standards --> telecom
+    standards --> genomics
+    standards --> proteomics
+    standards --> pollenomics
+    standards --> masterclass
+
+    runtime --> canon
+    runtime --> atlas
+    runtime --> telecom
+    runtime --> genomics
+    runtime --> proteomics
+    runtime --> pollenomics
 ```
 
 ## How To Read This Matrix
@@ -59,9 +61,11 @@ graph LR
 
 - `bijux-iac` owns live GitHub governance so repository policy is applied from code instead of settings drift
 - `bijux.github.io` owns the public route into the family so orientation is a maintained surface rather than a side effect
+- `bijux-std` owns the shared layer so shell behavior, checks, and promoted shared make behavior stay aligned across repositories
 - `bijux-core` owns runtime authority so execution behavior and governance remain explicit
 - `bijux-canon` owns knowledge-system orchestration so ingest/index/reason/orchestrate concerns do not collapse into one layer
 - `bijux-atlas` owns public delivery interfaces so APIs, datasets, and reporting routes remain maintainable
+- `bijux-telecom` and `bijux-genomics` consume the same shared runtime and governance layers while keeping their own service and genomics ownership
 - `bijux-proteomics` and `bijux-pollenomics` own domain workflows so scientific pressure is handled without rewriting platform ownership
 - `bijux-masterclass` owns learning programs so explanation and teaching evolve without diluting repository implementation boundaries
 
@@ -75,6 +79,8 @@ graph LR
 | `bijux-core` | platform runtime repository | own runtime authority and release discipline | CLI surfaces, DAG runtime, evidence artifacts, release rules | yes | [Project page](../../02-projects/bijux-core/index.md) |
 | `bijux-canon` | governed knowledge repository | own knowledge-system orchestration boundaries | ingest/index/reason/orchestrate package boundaries | yes | [Project page](../../02-projects/bijux-canon/index.md) |
 | `bijux-atlas` | delivery repository | own public delivery interfaces and contracts | APIs, datasets, reporting, docs-aware operational routes | yes | [Project page](../../02-projects/bijux-atlas/index.md) |
+| `bijux-telecom` | service repository | own telecom-oriented service and delivery behavior | telecom system surfaces built on shared governance, standards, and runtime layers | yes | [System map](../system-map/index.md) |
+| `bijux-genomics` | rust genomics repository | own genomics-oriented rust systems and contracts | genomics domain, pipelines, policies, and rust implementation surfaces | yes | [System map](../system-map/index.md) |
 | `bijux-proteomics` | scientific application repository | own proteomics product workflows | proteomics domain workflows and reproducible product routes | yes | [Project page](../../02-projects/bijux-proteomics/index.md) |
 | `bijux-pollenomics` | scientific application repository | own evidence-mapping product workflows | archaeology/eDNA/aDNA evidence surfaces and site-selection outputs | yes | [Project page](../../02-projects/bijux-pollenomics/index.md) |
 | `bijux-masterclass` | learning and teaching repository | own structured technical learning programs | sequenced programs, deep dives, and runnable learning materials | yes | [Learning catalog](../../03-learning/index.md) |
@@ -83,9 +89,10 @@ graph LR
 
 | Layer | Repositories | Why the split stays useful |
 | --- | --- | --- |
-| foundations | `bijux-iac`, `bijux-std`, `bijux.github.io` | governance, standards, and public entry routes stay visible as separate responsibilities |
+| shared foundations | `bijux-iac`, `bijux-std` | governance and standards stay aligned across every repository before project-specific work begins |
+| hub | `bijux.github.io` | public entry routes stay maintainable without turning the hub into the source of shared shell behavior |
 | backbone | `bijux-core` | execution, evidence, and governance stay visible instead of disappearing into scripts and convention |
-| knowledge and service architecture | `bijux-canon`, `bijux-atlas` | knowledge workflows and delivery surfaces can evolve independently without losing system coherence |
+| knowledge and service architecture | `bijux-canon`, `bijux-atlas`, `bijux-telecom`, `bijux-genomics` | knowledge workflows, service systems, and rust-based domains can evolve independently while consuming common layers |
 | domain products | `bijux-proteomics`, `bijux-pollenomics` | domain systems inherit platform discipline instead of becoming isolated one-off projects |
 | learning surface | `bijux-masterclass` | the same engineering language becomes teachable, reusable, and public-facing |
 
