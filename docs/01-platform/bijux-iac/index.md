@@ -14,9 +14,8 @@ repository family.
 
 `iac` stands for `Infrastructure-as-Code`.
 
-Here that means GitHub administration is declared in code, reviewed in
-code, and applied from code instead of being left to hidden settings
-pages.
+Here that means GitHub administration is declared, reviewed, and
+applied in code instead of being left to hidden settings pages.
 
 ## What It Owns
 
@@ -31,12 +30,10 @@ That includes:
 
 ## What It Does Not Own
 
-`bijux-iac` does not own the files that repositories sync into
-themselves.
+`bijux-iac` does not own the files that repositories synchronize into
+themselves. Those belong to `bijux-std`.
 
-Those belong to `bijux-std`.
-
-The split is simple:
+The split is direct:
 
 - `bijux-iac` owns live GitHub control-plane policy
 - `bijux-std` owns shared repository content
@@ -63,18 +60,9 @@ In practice:
 ## Current Scope
 
 Right now `bijux-iac` starts with `main` branch protection for the
-public Bijux repositories.
-
-That scope is intentionally narrow. It establishes the control plane
-first, then expands into more GitHub governance surfaces over time.
-
-## Why This Page Matters
-
-Without `bijux-iac`, the public story is incomplete.
-
-Readers can see the repositories and the shared standards layer, but
-they cannot see where the live control plane is owned. This page closes
-that gap.
+public Bijux repositories. The scope is intentionally narrow: establish
+the control plane first, then expand into more GitHub governance
+surfaces over time.
 
 ## Where To Go Next
 
