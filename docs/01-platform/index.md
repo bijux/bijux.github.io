@@ -86,7 +86,7 @@ graph TD
 
 - GitHub governance ownership: [Bijux Infrastructure-as-Code](../02-bijux-iac/index.md)
 - shared shell and cross-repository standards: [Bijux standard layer](../03-bijux-std/index.md)
-- repository ownership and split intent: [Repository matrix](repository-matrix/index.md)
+- repository ownership and split intent: [System map](system-map/index.md)
 - layer boundaries and responsibility flow: [System map](system-map/index.md)
 - delivery and publication posture: [Delivery surfaces](delivery-surfaces/index.md)
 - recurring standards that remain stable across repositories: [Work qualities](work-qualities/index.md)
@@ -119,7 +119,7 @@ graph TD
 | the layered structure of the whole public system family | [System map](system-map/index.md) |
 | where live GitHub governance is owned and enforced | [Bijux Infrastructure-as-Code](../02-bijux-iac/index.md) |
 | where shared standards are defined and verified across repositories | [Bijux standard layer](../03-bijux-std/index.md) |
-| the repository split at a glance | [Repository matrix](repository-matrix/index.md) |
+| the repository split at a glance | [System map](system-map/index.md) |
 | where delivery work shows up most clearly across the repositories | [Delivery surfaces](delivery-surfaces/index.md) |
 | how the engineering extends into domain-heavy product work | [Applied domains](applied-domains/index.md) |
 | which qualities recur across the public work | [Work qualities](work-qualities/index.md) |

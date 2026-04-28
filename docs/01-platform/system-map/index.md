@@ -57,6 +57,20 @@ separate layers instead of one mixed repository surface.
 | Projects | knowledge systems, delivery interfaces, telecom services, genomics systems, and domain products | keeps implementation ownership explicit and reviewable by repository |
 | Learning | course books, deep dives, capstones, and reusable technical explanation | keeps teaching and explanation rigorous without replacing repository ownership |
 
+## Repository Roles At A Glance
+
+| Repository | Main job | Best first read |
+| --- | --- | --- |
+| `bijux-iac` | GitHub control-plane governance | [Bijux Infrastructure-as-Code](../../02-bijux-iac/index.md) |
+| `bijux-std` | shared standards and shell continuity | [Bijux Standards](../../03-bijux-std/index.md) |
+| `bijux.github.io` | public orientation and route design | [Home](../../index.md) |
+| `bijux-core` | shared runtime backbone | [Bijux Core](../../04-projects/bijux-core/index.md) |
+| `bijux-canon` | knowledge-system orchestration | [Bijux Canon](../../04-projects/bijux-canon/index.md) |
+| `bijux-atlas` | delivery interfaces and published surfaces | [Bijux Atlas](../../04-projects/bijux-atlas/index.md) |
+| `bijux-telecom` and `bijux-genomics` | service and Rust domain systems built on shared layers | [Projects](../../04-projects/index.md) |
+| `bijux-proteomics` and `bijux-pollenomics` | domain-heavy scientific product work | [Applied domains](../applied-domains/index.md) |
+| `bijux-masterclass` | learning programs and capstones | [Learning](../../05-learning/index.md) |
+
 ## Where Pressure Shows Up
 
 | Pressure | What it changes |
@@ -77,7 +91,7 @@ separate layers instead of one mixed repository surface.
 
 | If you want to inspect... | Open |
 | --- | --- |
-| the project split at a glance | [Repository matrix](../repository-matrix/index.md) |
+| the project split at a glance | [this system map](index.md) |
 | public delivery and operated outputs | [Delivery surfaces](../delivery-surfaces/index.md) |
 | shared docs behavior across sites | [Documentation network](../documentation-network/index.md) |
 | domain-heavy work under scientific pressure | [Applied domains](../applied-domains/index.md) |
