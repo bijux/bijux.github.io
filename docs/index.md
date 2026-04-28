@@ -115,14 +115,6 @@ graph TD
     standards --> std["bijux-std"]
 ```
 
-## Route Starters
-
-Use one of these route types based on your immediate goal:
-
-- Architecture route: start at [Platform overview](01-platform/index.md), then [System map](01-platform/system-map/index.md), then [bijux-core](02-projects/bijux-core/index.md) and [bijux-canon](02-projects/bijux-canon/index.md).
-- Delivery route: start at [Delivery surfaces](01-platform/delivery-surfaces/index.md), then [bijux-atlas](02-projects/bijux-atlas/index.md), then public docs and published endpoints.
-- Domain route: start at [Applied domains](01-platform/applied-domains/index.md), then [bijux-proteomics](02-projects/bijux-proteomics/index.md) and [bijux-pollenomics](02-projects/bijux-pollenomics/index.md).
-
 ## Reading Paths
 
 This section helps you choose a short path that matches the part of the
@@ -148,7 +140,17 @@ graph LR
     domains --> applied["Applied Domains"]
 ```
 
-Choose a route below by question or by time.
+Choose a route below by intent or by time.
+
+### By Intent
+
+| If you want to inspect... | Start here | Then continue into |
+| --- | --- | --- |
+| system design and repository split | [Platform overview](01-platform/index.md) | [System map](01-platform/system-map/index.md), [Repository matrix](01-platform/repository-matrix/index.md) |
+| control plane and shared standards | [Bijux Infrastructure-as-Code](01-platform/bijux-iac/index.md) | [Bijux standard layer](01-platform/bijux-std/index.md), [Shell Architecture](01-platform/shell-architecture/index.md) |
+| delivery and service interfaces | [Delivery surfaces](01-platform/delivery-surfaces/index.md) | [Bijux Atlas](02-projects/bijux-atlas/index.md) |
+| domain-heavy product work | [Applied domains](01-platform/applied-domains/index.md) | [Bijux Proteomics](02-projects/bijux-proteomics/index.md), [Bijux Pollenomics](02-projects/bijux-pollenomics/index.md) |
+| technical teaching built from the same system language | [Learning catalog](03-learning/index.md) | [Reproducible Research](03-learning/reproducible-research/index.md), [Python Programming](03-learning/python-programming/index.md) |
 
 ### By Time
 
@@ -157,17 +159,6 @@ Choose a route below by question or by time.
 | 10 minutes | [Home](index.md) -> [Work qualities](01-platform/work-qualities/index.md) -> [Projects](02-projects/index.md) |
 | 20 minutes | [System map](01-platform/system-map/index.md) -> [Repository matrix](01-platform/repository-matrix/index.md) -> one project page that matches your interest |
 | 30 minutes | [Platform](01-platform/index.md) -> [System map](01-platform/system-map/index.md) -> [Delivery surfaces](01-platform/delivery-surfaces/index.md) -> [Bijux Atlas](02-projects/bijux-atlas/index.md) -> [Applied domains](01-platform/applied-domains/index.md) |
-
-### By Question
-
-| Question | Read this sequence |
-| --- | --- |
-| Big picture | [Home](index.md) -> [Platform](01-platform/index.md) -> [System map](01-platform/system-map/index.md) |
-| System structure | [Platform](01-platform/index.md) -> [System map](01-platform/system-map/index.md) -> [Repository matrix](01-platform/repository-matrix/index.md) |
-| Repository roles | [Projects](02-projects/index.md) -> [Bijux Core](02-projects/bijux-core/index.md) -> [Bijux Canon](02-projects/bijux-canon/index.md) -> [Bijux Atlas](02-projects/bijux-atlas/index.md) |
-| Domain work | [Applied domains](01-platform/applied-domains/index.md) -> [Bijux Proteomics](02-projects/bijux-proteomics/index.md) -> [Bijux Pollenomics](02-projects/bijux-pollenomics/index.md) |
-| Learning | [Learning catalog](03-learning/index.md) -> [Reproducible Research](03-learning/reproducible-research/index.md) -> [Python Programming](03-learning/python-programming/index.md) |
-| Shared standards and docs shell | [Platform](01-platform/index.md) -> [Bijux standard layer](01-platform/bijux-std/index.md) -> [Shell Architecture](01-platform/shell-architecture/index.md) |
 
 <div class="bijux-showcase-grid">
   <article class="bijux-showcase-card">
