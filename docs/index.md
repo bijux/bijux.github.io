@@ -156,15 +156,23 @@ The map below summarizes the main route families at a glance.
 
 ```mermaid
 graph LR
-    paths["Reading Paths"] --> ideas["Learn the ideas"]
-    paths --> platform["Understand the platform"]
-    paths --> repositories["Inspect the repositories"]
-    paths --> domains["See domain applications"]
+    entry["Reader starts here"] --> split{"What do you want first?"}
+    split --> architecture["System architecture"]
+    split --> delivery["Delivery and service behavior"]
+    split --> domain["Scientific and evidence-heavy systems"]
+    split --> teaching["Transferable engineering practice"]
 
-    ideas --> learning["Learning"]
-    platform --> platform_branch["Platform"]
-    repositories --> projects["Projects"]
-    domains --> applied["Applied Domains"]
+    architecture --> platform["Platform"]
+    architecture --> matrix["System map and repository matrix"]
+
+    delivery --> surfaces["Delivery surfaces"]
+    delivery --> atlas["Bijux Atlas"]
+
+    domain --> applied["Applied domains"]
+    domain --> scientific["Proteomics and Pollenomics"]
+
+    teaching --> learning["Learning"]
+    teaching --> programs["Masterclass programs"]
 ```
 
 Choose a route below by intent or by time.
@@ -191,19 +199,19 @@ Choose a route below by intent or by time.
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">architecture route</div>
     <h2>Start with the system split</h2>
-    <p>You can begin with the system map, then Core and Canon, to review boundaries, runtime structure, and repository ownership.</p>
+    <p>Open Platform and the System Map first, then Core and Canon, if you want to understand how runtime, knowledge, and governance are separated.</p>
     <p><a href="#reading-paths">See reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">delivery route</div>
     <h2>Start with delivery surfaces</h2>
-    <p>You can start with Delivery Surfaces, then Atlas, for service design, operational visibility, documentation quality, and published destinations.</p>
+    <p>Open Delivery Surfaces and then Atlas if you want the fastest route into service contracts, APIs, datasets, and operated publication.</p>
     <p><a href="#reading-paths">See reading paths</a></p>
   </article>
   <article class="bijux-showcase-card">
     <div class="bijux-showcase-card__eyebrow">domain route</div>
     <h2>Start where the work gets harder</h2>
-    <p>You can open Applied Domains, then Proteomics, Pollenomics, and Learning, to see the same structure under scientific context and public teaching.</p>
+    <p>Open Applied Domains, then Proteomics and Pollenomics, to see the same engineering posture under scientific constraints and evidence pressure.</p>
     <p><a href="#reading-paths">See reading paths</a></p>
   </article>
 </div>
