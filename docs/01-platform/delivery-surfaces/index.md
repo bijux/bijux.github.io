@@ -12,6 +12,10 @@ last_reviewed: 2026-04-12
 A delivery surface is any public, inspectable output through which the
 system is used, verified, or reviewed.
 
+In Bijux, delivery includes more than published software. It also
+includes the control plane, the documentation routes, the interfaces,
+and the evidence that shows how those interfaces are maintained.
+
 ## What Counts As Delivery In Bijux
 
 - public documentation that shows ownership, operating routes, and system boundaries
@@ -23,21 +27,22 @@ system is used, verified, or reviewed.
 
 ```mermaid
 graph TD
-    delivery["Delivery Surfaces"] --> repos["Repositories"]
+    delivery["Delivery Surfaces"] --> governance["Governance"]
     delivery --> docs["Documentation"]
     delivery --> outputs["Published outputs"]
-    delivery --> ops["Operational interfaces"]
+    delivery --> interfaces["Operational interfaces"]
 
-    repos --> inspectable["Inspectable system"]
+    governance --> inspectable["Inspectable system"]
     docs --> inspectable
     outputs --> inspectable
-    ops --> inspectable
+    interfaces --> inspectable
 ```
 
 ## Delivery Classes
 
 | Class | Ownership source | What it includes | What to inspect first |
 | --- | --- | --- | --- |
+| Governance | `bijux-iac` and repository-owned workflow policy | branch protection, required checks, merge discipline, and controlled release paths | whether repository policy is applied from code and whether merge gates are named explicitly |
 | Documentation | shared standards in `bijux-std`, consumed by repository docs | repository handbooks, docs navigation, and public explanatory routes | whether ownership, boundaries, and operating procedures are explicit and consistent across sites |
 | Published software | repository-owned delivery responsibilities | packages, generated artifacts, and versioned release outputs | whether build and release paths are reproducible and reviewable |
 | Service interfaces | repository-owned service and runtime boundaries | APIs, runtime interfaces, and user-facing data endpoints | whether interface contracts and behavior expectations are documented clearly |
@@ -64,6 +69,7 @@ original implementation team.
 ## Main Routes
 
 <div class="bijux-panel-grid">
+  <div class="bijux-panel"><h3>Governance</h3><p>Inspect `bijux-iac` and repository workflow policy when you want proof that merge controls and quality gates are part of delivery.</p></div>
   <div class="bijux-panel"><h3>Core</h3><p>Inspect CLI, DAG, evidence, and release handbooks for runtime and governance delivery boundaries.</p></div>
   <div class="bijux-panel"><h3>Canon</h3><p>Inspect ingest, indexing, reasoning, and orchestration package boundaries in docs and source layout.</p></div>
   <div class="bijux-panel"><h3>Atlas</h3><p>Inspect APIs, datasets, docs checks, and operational routes as maintained product delivery surfaces.</p></div>
@@ -90,6 +96,7 @@ original implementation team.
 
 | If you want to start with... | Open |
 | --- | --- |
+| governance and merge discipline | [Bijux Infrastructure-as-Code](../bijux-iac/index.md) |
 | public delivery and service posture | [Bijux Atlas](../../02-projects/bijux-atlas/index.md) |
 | runtime governance and repository discipline | [Bijux Core](../../02-projects/bijux-core/index.md) |
 | governed knowledge-system delivery | [Bijux Canon](../../02-projects/bijux-canon/index.md) |
