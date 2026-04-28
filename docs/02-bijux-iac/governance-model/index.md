@@ -38,11 +38,10 @@ graph LR
 - undocumented exceptions that only make sense to the current maintainer
 - governance logic hidden inside application repositories
 
-## Why This Changes The Reading Experience
+## Why It Matters In Practice
 
-When this model is visible, the repositories feel designed rather than
-merely maintained. The rule has a home, changes have a path, and the
-governed surfaces stay easier to trust over time.
+When this model is visible, the rule has a home, changes have a path,
+and the governed surfaces stay easier to trust over time.
 
 ## Continue Reading
 
