@@ -62,4 +62,4 @@ In practice:
 
 - [Governance Model](../governance-model/index.md)
 - [Bijux Standards](../../03-bijux-std/index.md)
-- [Repository Matrix](../../01-platform/repository-matrix/index.md)
+- [System Map](../../01-platform/system-map/index.md)

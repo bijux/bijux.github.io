@@ -170,7 +170,7 @@ If the shared layer is working well:
 
 - [Documentation Network](../01-platform/documentation-network/index.md)
 - [Shell Architecture](../01-platform/shell-architecture/index.md)
-- [Repository Matrix](../01-platform/repository-matrix/index.md)
+- [System Map](../01-platform/system-map/index.md)
 
 ## In One Sentence
 

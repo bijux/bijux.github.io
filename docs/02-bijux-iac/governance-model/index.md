@@ -47,5 +47,5 @@ see where the rule lives, how it changes, and where it applies.
 ## Continue Reading
 
 - [Bijux Infrastructure-as-Code](../index.md)
-- [Repository Matrix](../../01-platform/repository-matrix/index.md)
+- [System Map](../../01-platform/system-map/index.md)
 - [Bijux Standards](../../03-bijux-std/index.md)

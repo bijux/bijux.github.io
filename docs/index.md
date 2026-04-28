@@ -201,8 +201,8 @@ Choose a route below by intent or by time.
 
 | If you want to inspect... | Start here | Then continue into |
 | --- | --- | --- |
-| system design and repository split | [Platform overview](01-platform/index.md) | [System map](01-platform/system-map/index.md), [Repository matrix](01-platform/repository-matrix/index.md) |
-| control plane design and repository governance | [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) | [Platform overview](01-platform/index.md), [Repository matrix](01-platform/repository-matrix/index.md) |
+| system design and repository split | [Platform overview](01-platform/index.md) | [System map](01-platform/system-map/index.md) |
+| control plane design and repository governance | [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) | [Platform overview](01-platform/index.md), [System map](01-platform/system-map/index.md) |
 | shared standards and cross-repository continuity | [Bijux standard layer](03-bijux-std/index.md) | [Shell Architecture](01-platform/shell-architecture/index.md), [Documentation Network](01-platform/documentation-network/index.md) |
 | delivery and service interfaces | [Delivery surfaces](01-platform/delivery-surfaces/index.md) | [Bijux Atlas](04-projects/bijux-atlas/index.md) |
 | domain-heavy product work | [Applied domains](01-platform/applied-domains/index.md) | [Bijux Proteomics](04-projects/bijux-proteomics/index.md), [Bijux Pollenomics](04-projects/bijux-pollenomics/index.md) |

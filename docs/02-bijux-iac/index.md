@@ -109,5 +109,5 @@ surfaces over time.
 ## Where To Go Next
 
 - [Platform overview](../01-platform/index.md)
-- [Repository matrix](../01-platform/repository-matrix/index.md)
+- [System map](../01-platform/system-map/index.md)
 - [Bijux standard layer](../03-bijux-std/index.md)

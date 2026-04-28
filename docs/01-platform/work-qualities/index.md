@@ -32,7 +32,7 @@ graph TD
 
 | Quality | Verification question | Evidence anchors |
 | --- | --- | --- |
-| Bounded ownership | Are responsibilities split cleanly so repository boundaries stay non-overlapping under change? | [Repository matrix](../repository-matrix/index.md) |
+| Bounded ownership | Are responsibilities split cleanly so repository boundaries stay non-overlapping under change? | [System map](../system-map/index.md) |
 | Delivery discipline and standards continuity | Are documentation, release behavior, publication routes, and shared standards kept aligned across repositories? | [Delivery surfaces](../delivery-surfaces/index.md) |
 | Domain pressure handling | Does the structure stay coherent when scientific workflows and evidence-heavy interpretation are required? | [Applied domains](../applied-domains/index.md) |
 | Explainable depth | Can architecture and workflow decisions be taught with runnable materials instead of only summaries? | [Learning catalog](../../05-learning/index.md) |
@@ -45,7 +45,7 @@ habits.
 
 | Quality | Concrete failure signal | Where to inspect the opposite |
 | --- | --- | --- |
-| Bounded ownership | one repository starts absorbing runtime, delivery, and domain concerns in the same change stream | [Repository matrix](../repository-matrix/index.md), [System map](../system-map/index.md) |
+| Bounded ownership | one repository starts absorbing runtime, delivery, and domain concerns in the same change stream | [System map](../system-map/index.md) |
 | Delivery discipline | docs promise routes or release behavior that cannot be matched to maintained automation and destinations | [Delivery surfaces](../delivery-surfaces/index.md), [Public surface](../public-surface/index.md) |
 | Domain pressure handling | scientific workflows are carried by one-off scripts with weak evidence or publication contracts | [Applied domains](../applied-domains/index.md), [Bijux Proteomics](../../04-projects/bijux-proteomics/index.md), [Bijux Pollenomics](../../04-projects/bijux-pollenomics/index.md) |
 | Explainable depth | teaching material becomes disconnected from runnable artifacts and repository trade-offs | [Learning catalog](../../05-learning/index.md), [Reproducible Research](../../05-learning/reproducible-research/index.md) |
