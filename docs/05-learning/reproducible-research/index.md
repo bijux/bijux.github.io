@@ -131,6 +131,6 @@ graph TD
 - platform reliability: failure-mode-first workflow design supports stable operational behavior
 
 Reproducibility becomes durable when workflow design starts from
-real failure modes rather than tool preference. This branch focuses on
+real failure modes rather than tool preference. The material focuses on
 engineering judgment about state, artifacts, and change control so work
 remains inspectable, repeatable, and operationally reliable over time.
