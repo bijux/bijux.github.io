@@ -36,8 +36,9 @@ The public surface is organized so ownership stays legible:
 
 - one repository owns the live GitHub control plane
 - one repository owns the shared standards layer
-- one repository owns the hub
-- other repositories own runtime, knowledge, delivery, domain, and learning work
+- one repository owns the public documentation hub
+- one repository owns the shared runtime backbone used across projects
+- other repositories own knowledge, delivery, domain, and learning work
 
 That makes the system easier to inspect because responsibility changes
 hands in named places instead of disappearing behind one monorepo or
@@ -54,22 +55,24 @@ one presentation site.
 | --- | --- | --- |
 | control plane | [Bijux Infrastructure-as-Code](01-platform/bijux-iac/index.md) | GitHub governance applied as code |
 | shared standards | [Bijux standard layer](01-platform/bijux-std/index.md) | shared docs shell, shared checks, shared repo contracts |
-| public hub | [Platform overview](01-platform/index.md) and this site | cross-repository orientation and route design |
-| runtime and services | [Projects](02-projects/index.md) | runtime behavior, APIs, datasets, packages, and domain systems |
+| documentation hub | [Platform overview](01-platform/index.md) and this site | cross-repository orientation and route design |
+| shared runtime backbone | [Bijux Core](02-projects/bijux-core/index.md) | CLI, DAG, evidence, and release discipline used across projects |
+| project systems | [Projects](02-projects/index.md) | knowledge, APIs, datasets, packages, and domain systems |
 | learning surface | [Learning catalog](03-learning/index.md) | technical programs built from the same engineering language |
 
 ## Core Ideas In This System
 
 - Separate repositories by operating responsibility so boundaries remain stable as systems grow.
 - Treat documentation, contracts, and release behavior as owned delivery outputs.
-- Make the control plane, standards layer, and product layers visible as different kinds of work.
+- Make the control plane, standards layer, hub, and project layers visible as different kinds of work.
 - Keep the same engineering language across platform, domain, and learning surfaces.
 
 ## How It Is Organized
 
 The site is organized around repository ownership first, then around
-reading routes. Foundations sit at the bottom, product repositories sit
-above them, and learning turns the same engineering language into
+reading routes. The shared foundations sit at the bottom, the hub
+routes into the family, `bijux-core` provides the shared runtime
+backbone, and learning turns the same engineering language into
 reusable programs.
 
 Shared documentation shell behavior and cross-repository standards
@@ -94,16 +97,22 @@ matches the question you want to answer.
 
 ```mermaid
 graph TD
-    subgraph foundations["Foundations"]
+    subgraph shared["Shared foundations"]
         iac["bijux-iac<br/>GitHub control plane"]
         std["bijux-std<br/>shared standards"]
-        hub["bijux.github.io<br/>public hub"]
     end
 
-    subgraph systems["System Repositories"]
+    hub["bijux.github.io<br/>documentation hub"]
+
+    subgraph backbone["Shared project backbone"]
         core["bijux-core<br/>runtime backbone"]
+    end
+
+    subgraph systems["Project repositories"]
         canon["bijux-canon<br/>knowledge system"]
         atlas["bijux-atlas<br/>delivery interfaces"]
+        telecom["bijux-telecom<br/>service and telecom systems"]
+        genomics["bijux-genomics<br/>rust-based genomics systems"]
     end
 
     subgraph domains["Applied Domain Repositories"]
@@ -125,17 +134,27 @@ graph TD
     std --> core
     std --> canon
     std --> atlas
+    std --> telecom
+    std --> genomics
     std --> proteomics
     std --> pollenomics
     hub --> core
     hub --> canon
     hub --> atlas
+    hub --> telecom
+    hub --> genomics
     hub --> proteomics
     hub --> pollenomics
     core --> atlas
+    core --> canon
+    core --> telecom
+    core --> genomics
     canon --> atlas
     core --> proteomics
     core --> pollenomics
+    std --> masterclass
+    iac --> masterclass
+    hub --> masterclass
     masterclass --> python
     masterclass --> reproducible
 ```
