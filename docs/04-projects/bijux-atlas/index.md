@@ -13,11 +13,9 @@ Bijux Atlas publishes and operates delivery-facing interfaces for
 datasets, APIs, service contracts, and documentation.
 
 `bijux-atlas` is the delivery and operational surface for services,
-datasets, APIs, and docs control-plane behavior. It is the direct route
-in the site for data delivery, service architecture, and operational
-visibility.
-It keeps queryable delivery, immutable artifacts, service contracts,
-and publication surfaces as first-class engineering boundaries.
+datasets, APIs, and docs control-plane behavior. It keeps queryable
+delivery, immutable artifacts, service contracts, and publication
+surfaces as first-class engineering boundaries.
 
 Shared standards note: Atlas consumes shared docs shell behavior and
 cross-repository checks from `bijux-std`; Atlas owns its local
@@ -53,13 +51,10 @@ publication contracts, and service operations.
 ## System Map
 
 ```mermaid
-graph TD
-    ingest["data ingestion and preparation"] --> contracts["service contracts and OpenAPI"]
-    contracts --> api["API and query surface"]
-    api --> artifacts["versioned artifacts and dataset outputs"]
-    artifacts --> publish["published Atlas delivery surface"]
-    control["docs and maintainer control plane"] --> publish
-    std["shared docs shell from bijux-std"] --> control
+graph LR
+    contracts["contracts and OpenAPI"] --> api["API surface"]
+    api --> artifacts["artifacts and datasets"]
+    artifacts --> publish["published Atlas surface"]
 ```
 
 ## What Atlas Owns
