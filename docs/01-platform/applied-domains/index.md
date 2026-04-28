@@ -10,7 +10,7 @@ last_reviewed: 2026-04-28
 # Applied Domains
 
 Applied domains show how the same engineering posture behaves when the
-data, evidence burden, and interpretation pressure get harder.
+subject matter gets more demanding.
 
 ## Domain Map
 
@@ -21,9 +21,9 @@ graph LR
     foundations --> learning["Reproducible Research"]
 ```
 
-## Domain Pressure Surfaces
+## Domain Surfaces
 
-| Domain surface | Applied pressure |
+| Domain surface | What makes it demanding |
 | --- | --- |
 | Proteomics | schema depth and evidence lineage requirements from laboratory workflows shape package boundaries, validation, and publication paths |
 | Pollenomics | interpretation complexity across archaeology, eDNA, aDNA, and regional context shapes model design and output structure |
@@ -31,9 +31,9 @@ graph LR
 
 ## Why These Domains Matter
 
-The point is not breadth alone. The point is that the work moves
-between infrastructure, data systems, scientific products, and teaching
-without losing architectural clarity.
+The value here is not breadth by itself. The value is that the work
+moves between infrastructure, data systems, scientific products, and
+teaching without losing structural clarity.
 
 ## What Stays The Same
 
@@ -43,9 +43,9 @@ without losing architectural clarity.
 
 ## What Gets Harder
 
-- schema complexity: domain entities, relationships, and constraints become deeper than generic data models.
-- interpretation burden: outputs must remain understandable to specialists making real decisions.
-- publication burden: delivery surfaces must preserve context, caveats, and reproducibility in public outputs.
+- schema complexity: domain entities, relationships, and constraints become deeper than generic data models
+- interpretation burden: outputs must remain understandable to specialists making real decisions
+- publication burden: delivery surfaces must preserve context, caveats, and reproducibility in public outputs
 
 ## Domain-Driven Repositories
 
@@ -61,7 +61,7 @@ without losing architectural clarity.
 | --- | --- |
 | Proteomics | higher schema complexity for biological entities, stronger evidence lineage requirements, and high error cost in interpretation decisions |
 | Pollenomics | heavier interpretation burden across archaeology, eDNA, aDNA, and regional narratives, plus publication pressure for evidence-backed reports |
-| Learning (Reproducible Research) | pacing and proof requirements so learners can run workflows, inspect artifacts, and validate reproducibility claims |
+| Learning (Reproducible Research) | pacing and proof requirements so learners can run workflows, follow the artifacts, and validate reproducibility claims |
 
 ## Reading Route
 
