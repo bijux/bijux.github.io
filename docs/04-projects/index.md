@@ -63,7 +63,7 @@ graph TD
 | evidence-mapping product workflows | [Bijux Pollenomics](bijux-pollenomics/index.md) |
 
 Learning is a top-level branch reference, not a peer project repository:
-[Learning catalog](../03-learning/index.md).
+[Learning catalog](../05-learning/index.md).
 
 The foundations that support all of these are:
 
@@ -143,7 +143,7 @@ The public route into the family is:
 | data delivery and service architecture | [Bijux Atlas](bijux-atlas/index.md) |
 | bioinformatics and scientific product work | [Bijux Proteomics](bijux-proteomics/index.md) |
 | evidence mapping and field-oriented domain systems | [Bijux Pollenomics](bijux-pollenomics/index.md) |
-| teaching and engineering communication | [Learning catalog](../03-learning/index.md) |
+| teaching and engineering communication | [Learning catalog](../05-learning/index.md) |
 
 ## Reading Rule
 

@@ -53,12 +53,12 @@ one presentation site.
 
 | Layer | Owned in | What becomes visible |
 | --- | --- | --- |
-| control plane | [Bijux Infrastructure-as-Code](01-platform/bijux-iac/index.md) | GitHub governance applied as code |
-| shared standards | [Bijux standard layer](01-platform/bijux-std/index.md) | shared docs shell, shared checks, shared repo contracts |
+| control plane | [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) | GitHub governance applied as code |
+| shared standards | [Bijux standard layer](03-bijux-std/index.md) | shared docs shell, shared checks, shared repo contracts |
 | documentation hub | [Platform overview](01-platform/index.md) and this site | cross-repository orientation and route design |
-| shared runtime backbone | [Bijux Core](02-projects/bijux-core/index.md) | CLI, DAG, evidence, and release discipline used across projects |
-| project systems | [Projects](02-projects/index.md) | knowledge, APIs, datasets, packages, and domain systems |
-| learning surface | [Learning catalog](03-learning/index.md) | technical programs built from the same engineering language |
+| shared runtime backbone | [Bijux Core](04-projects/bijux-core/index.md) | CLI, DAG, evidence, and release discipline used across projects |
+| project systems | [Projects](04-projects/index.md) | knowledge, APIs, datasets, packages, and domain systems |
+| learning surface | [Learning catalog](05-learning/index.md) | technical programs built from the same engineering language |
 
 ## Core Ideas In This System
 
@@ -76,9 +76,9 @@ backbone, and learning turns the same engineering language into
 reusable programs.
 
 Shared documentation shell behavior and cross-repository standards
-checks are defined in [Bijux standard layer](01-platform/bijux-std/index.md),
+checks are defined in [Bijux standard layer](03-bijux-std/index.md),
 while live GitHub policy is owned in
-[Bijux Infrastructure-as-Code](01-platform/bijux-iac/index.md).
+[Bijux Infrastructure-as-Code](02-bijux-iac/index.md).
 
 ### Reading Approach
 
@@ -91,9 +91,9 @@ matches the question you want to answer.
 | Start here for... | Open this first | What you will find |
 | --- | --- | --- |
 | how the repositories fit together | [Platform overview](01-platform/index.md) -> [System map](01-platform/system-map/index.md) | the split across runtime, knowledge, delivery, and domain work |
-| how delivery shows up publicly | [Delivery surfaces](01-platform/delivery-surfaces/index.md) -> [Bijux Atlas](02-projects/bijux-atlas/index.md) | documentation, published destinations, and operated service surfaces |
-| how the work behaves under domain pressure | [Applied domains](01-platform/applied-domains/index.md) -> [Bijux Proteomics](02-projects/bijux-proteomics/index.md) -> [Bijux Pollenomics](02-projects/bijux-pollenomics/index.md) | scientific and evidence-heavy product systems |
-| how the technical style carries into teaching | [Learning catalog](03-learning/index.md) | course books and programs built around the same technical language |
+| how delivery shows up publicly | [Delivery surfaces](01-platform/delivery-surfaces/index.md) -> [Bijux Atlas](04-projects/bijux-atlas/index.md) | documentation, published destinations, and operated service surfaces |
+| how the work behaves under domain pressure | [Applied domains](01-platform/applied-domains/index.md) -> [Bijux Proteomics](04-projects/bijux-proteomics/index.md) -> [Bijux Pollenomics](04-projects/bijux-pollenomics/index.md) | scientific and evidence-heavy product systems |
+| how the technical style carries into teaching | [Learning catalog](05-learning/index.md) | course books and programs built around the same technical language |
 
 ```mermaid
 graph TD
@@ -199,18 +199,18 @@ Choose a route below by intent or by time.
 | If you want to inspect... | Start here | Then continue into |
 | --- | --- | --- |
 | system design and repository split | [Platform overview](01-platform/index.md) | [System map](01-platform/system-map/index.md), [Repository matrix](01-platform/repository-matrix/index.md) |
-| control plane and shared standards | [Bijux Infrastructure-as-Code](01-platform/bijux-iac/index.md) | [Bijux standard layer](01-platform/bijux-std/index.md), [Shell Architecture](01-platform/shell-architecture/index.md) |
-| delivery and service interfaces | [Delivery surfaces](01-platform/delivery-surfaces/index.md) | [Bijux Atlas](02-projects/bijux-atlas/index.md) |
-| domain-heavy product work | [Applied domains](01-platform/applied-domains/index.md) | [Bijux Proteomics](02-projects/bijux-proteomics/index.md), [Bijux Pollenomics](02-projects/bijux-pollenomics/index.md) |
-| technical teaching built from the same system language | [Learning catalog](03-learning/index.md) | [Reproducible Research](03-learning/reproducible-research/index.md), [Python Programming](03-learning/python-programming/index.md) |
+| control plane and shared standards | [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) | [Bijux standard layer](03-bijux-std/index.md), [Shell Architecture](01-platform/shell-architecture/index.md) |
+| delivery and service interfaces | [Delivery surfaces](01-platform/delivery-surfaces/index.md) | [Bijux Atlas](04-projects/bijux-atlas/index.md) |
+| domain-heavy product work | [Applied domains](01-platform/applied-domains/index.md) | [Bijux Proteomics](04-projects/bijux-proteomics/index.md), [Bijux Pollenomics](04-projects/bijux-pollenomics/index.md) |
+| technical teaching built from the same system language | [Learning catalog](05-learning/index.md) | [Reproducible Research](05-learning/reproducible-research/index.md), [Python Programming](05-learning/python-programming/index.md) |
 
 ### By Time
 
 | If you have... | Read this route |
 | --- | --- |
-| 10 minutes | [Home](index.md) -> [Work qualities](01-platform/work-qualities/index.md) -> [Projects](02-projects/index.md) |
+| 10 minutes | [Home](index.md) -> [Work qualities](01-platform/work-qualities/index.md) -> [Projects](04-projects/index.md) |
 | 20 minutes | [System map](01-platform/system-map/index.md) -> [Repository matrix](01-platform/repository-matrix/index.md) -> one project page that matches your interest |
-| 30 minutes | [Platform](01-platform/index.md) -> [System map](01-platform/system-map/index.md) -> [Delivery surfaces](01-platform/delivery-surfaces/index.md) -> [Bijux Atlas](02-projects/bijux-atlas/index.md) -> [Applied domains](01-platform/applied-domains/index.md) |
+| 30 minutes | [Platform](01-platform/index.md) -> [System map](01-platform/system-map/index.md) -> [Delivery surfaces](01-platform/delivery-surfaces/index.md) -> [Bijux Atlas](04-projects/bijux-atlas/index.md) -> [Applied domains](01-platform/applied-domains/index.md) |
 
 <div class="bijux-showcase-grid">
   <article class="bijux-showcase-card">
@@ -234,7 +234,7 @@ Choose a route below by intent or by time.
 </div>
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="02-projects/">Browse the repositories</a>
+<a class="md-button md-button--primary" href="04-projects/">Browse the repositories</a>
 <a class="md-button" href="01-platform/">Read the platform branch</a>
 <a class="md-button" href="#reading-paths">Choose a reading path</a>
 </div>

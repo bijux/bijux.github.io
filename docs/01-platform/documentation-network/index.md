@@ -60,7 +60,7 @@ graph TD
 ## Example Reading Route
 
 1. start at [Home](../../index.md) for orientation.
-2. open [Projects](../../02-projects/index.md) and choose a repository page such as [Bijux Atlas](../../02-projects/bijux-atlas/index.md).
+2. open [Projects](../../04-projects/index.md) and choose a repository page such as [Bijux Atlas](../../04-projects/bijux-atlas/index.md).
 3. move into the destination docs site; shared shell behavior stays familiar while content becomes local.
 4. return through [Platform](../index.md) when you need system-level context.
 

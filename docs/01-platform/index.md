@@ -78,8 +78,8 @@ graph TD
 
 ## Where To Inspect Evidence
 
-- GitHub governance ownership: [Bijux Infrastructure-as-Code](bijux-iac/index.md)
-- shared shell and cross-repository standards: [Bijux standard layer](bijux-std/index.md)
+- GitHub governance ownership: [Bijux Infrastructure-as-Code](../02-bijux-iac/index.md)
+- shared shell and cross-repository standards: [Bijux standard layer](../03-bijux-std/index.md)
 - repository ownership and split intent: [Repository matrix](repository-matrix/index.md)
 - layer boundaries and responsibility flow: [System map](system-map/index.md)
 - delivery and publication posture: [Delivery surfaces](delivery-surfaces/index.md)
@@ -110,8 +110,8 @@ graph TD
 
 | Read this first when you need to understand... | Open |
 | --- | --- |
-| where live GitHub governance is owned and enforced | [Bijux Infrastructure-as-Code](bijux-iac/index.md) |
-| where shared standards are defined and verified across repositories | [Bijux standard layer](bijux-std/index.md) |
+| where live GitHub governance is owned and enforced | [Bijux Infrastructure-as-Code](../02-bijux-iac/index.md) |
+| where shared standards are defined and verified across repositories | [Bijux standard layer](../03-bijux-std/index.md) |
 | which qualities recur across the public work | [Work qualities](work-qualities/index.md) |
 | the layered structure of the whole public system family | [System map](system-map/index.md) |
 | the repository split at a glance | [Repository matrix](repository-matrix/index.md) |

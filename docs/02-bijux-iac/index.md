@@ -70,6 +70,6 @@ surfaces over time.
 
 ## Where To Go Next
 
-- [Platform overview](../index.md)
-- [Repository matrix](../repository-matrix/index.md)
-- [Bijux standard layer](../bijux-std/index.md)
+- [Platform overview](../01-platform/index.md)
+- [Repository matrix](../01-platform/repository-matrix/index.md)
+- [Bijux standard layer](../03-bijux-std/index.md)
