@@ -58,8 +58,8 @@ trusted outside the original implementation team.
 
 | Surface | What to inspect | Why it is useful |
 | --- | --- | --- |
-| Repository-owned delivery surfaces | [Bijux Atlas](../../02-projects/bijux-atlas/index.md) APIs, dataset routes, and release-facing docs | shows where product delivery contracts are owned directly by a delivery repository |
-| Shared docs delivery continuity | `bijux.github.io` platform docs and [Masterclass](../../03-learning/index.md) docs routes backed by shared shell standards | shows how documentation delivery stays consistent across separate sites while local content remains independent |
+| Repository-owned delivery surfaces | [Bijux Atlas](../../04-projects/bijux-atlas/index.md) APIs, dataset routes, and release-facing docs | shows where product delivery contracts are owned directly by a delivery repository |
+| Shared docs delivery continuity | `bijux.github.io` platform docs and [Masterclass](../../05-learning/index.md) docs routes backed by shared shell standards | shows how documentation delivery stays consistent across separate sites while local content remains independent |
 | Contract discipline | repository docs, generated artifacts, schema surfaces, and handbook ownership | serious systems make their interfaces and operating rules visible |
 | Release posture | release workflows, published docs, versioned repositories, and visible distribution surfaces | public work should show how it is built, checked, and published |
 | Operational thinking | runtime handbooks, validation commands, docs checks, and repository automation | delivery quality is easier to trust when routine checks are part of the workflow |
@@ -95,10 +95,10 @@ trusted outside the original implementation team.
 
 | If you want to start with... | Open |
 | --- | --- |
-| governance and merge discipline | [Bijux Infrastructure-as-Code](../bijux-iac/index.md) |
-| public delivery and service posture | [Bijux Atlas](../../02-projects/bijux-atlas/index.md) |
-| runtime governance and repository discipline | [Bijux Core](../../02-projects/bijux-core/index.md) |
-| governed knowledge-system delivery | [Bijux Canon](../../02-projects/bijux-canon/index.md) |
+| governance and merge discipline | [Bijux Infrastructure-as-Code](../../02-bijux-iac/index.md) |
+| public delivery and service posture | [Bijux Atlas](../../04-projects/bijux-atlas/index.md) |
+| runtime governance and repository discipline | [Bijux Core](../../04-projects/bijux-core/index.md) |
+| governed knowledge-system delivery | [Bijux Canon](../../04-projects/bijux-canon/index.md) |
 | stable published destinations | [Public surface](../public-surface/index.md) |
 
 ## Open This Page When
