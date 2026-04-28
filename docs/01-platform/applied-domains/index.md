@@ -42,16 +42,16 @@ graph LR
 | Pollenomics | interpretation complexity across archaeology, eDNA, aDNA, and regional context shapes model design and output structure |
 | Learning workflows (Masterclass reproducible research) | reproducibility pressure appears as teachable workflow behavior where reruns, artifact lineage, and review steps are part of the deliverable |
 
-## Why This Branch Is Here
+## Why These Domains Matter
 
-Breadth alone is not useful. The important point is that the work moves between
-infrastructure, data systems, scientific products, and teaching without
-losing architectural clarity.
+The point is not breadth alone. The point is that the work moves
+between infrastructure, data systems, scientific products, and teaching
+without losing architectural clarity.
 
 ## What Remains Invariant Across Domains
 
 - bounded ownership instead of monolithic responsibility
-- inspectable interfaces and explicit operational contracts
+- interfaces and operational contracts that stay visible
 - reproducibility and evidence discipline as non-optional quality criteria
 
 ## What Domain Pressure Changes
@@ -74,10 +74,10 @@ losing architectural clarity.
 | --- | --- |
 | Proteomics | higher schema complexity for biological entities, stronger evidence lineage requirements, and high error cost in interpretation decisions |
 | Pollenomics | heavier interpretation burden across archaeology, eDNA, aDNA, and regional narratives, plus publication pressure for evidence-backed reports |
-| Learning (Reproducible Research) | explicit pacing and proof requirements so learners can run workflows, inspect artifacts, and validate reproducibility claims |
+| Learning (Reproducible Research) | pacing and proof requirements so learners can run workflows, inspect artifacts, and validate reproducibility claims |
 
-## Reading Rule
+## Reading Route
 
-Read platform pages first for shared rules, then read domain repositories
-to see how those rules survive evidence pressure, interpretation burden,
-and publication constraints in real subject matter.
+Read the platform pages first for shared rules, then move into the
+domain repositories to see how those rules hold under evidence
+pressure, interpretation burden, and publication constraints.
