@@ -19,33 +19,37 @@ question: which repository should you open next?
 
 ```mermaid
 graph TD
-    subgraph foundations["Foundations"]
+    subgraph foundations["Shared foundations"]
         iac["bijux-iac"]
         std["bijux-std"]
-        hub["bijux.github.io"]
     end
 
+    hub["bijux.github.io<br/>documentation hub"]
+    core["bijux-core<br/>shared runtime backbone"]
+
     subgraph projects["Projects"]
-        core["Core<br/>runtime backbone"]
         canon["Canon<br/>knowledge system"]
         atlas["Atlas<br/>delivery interfaces"]
+        telecom["Telecom<br/>service systems"]
+        genomics["Genomics<br/>rust genomics systems"]
         proteomics["Proteomics<br/>scientific workflows"]
         pollenomics["Pollenomics<br/>evidence mapping"]
     end
 
-    subgraph learning["Learning reference"]
-        learning_index["Learning catalog"]
-    end
+    learning_index["Learning catalog"]
 
     iac --> core
     std --> core
-    hub --> core
+    std --> hub
+    iac --> learning_index
+    std --> learning_index
+    hub --> learning_index
     core --> canon
     core --> atlas
+    core --> telecom
+    core --> genomics
     core --> proteomics
     core --> pollenomics
-    canon --> atlas
-    hub --> learning_index
 ```
 
 ## Primary Responsibility Clusters
@@ -65,7 +69,14 @@ The foundations that support all of these are:
 
 - `bijux-iac` for GitHub governance as code
 - `bijux-std` for shared standards
-- `bijux.github.io` for public route design
+
+The shared runtime backbone for the project family is:
+
+- `bijux-core` for CLI, DAG, evidence, and release discipline reused across projects
+
+The public route into the family is:
+
+- `bijux.github.io` for orientation and documentation routing
 
 <div class="bijux-showcase-grid">
   <article class="bijux-showcase-card">
@@ -118,8 +129,9 @@ The foundations that support all of these are:
 ## What This Page Makes Clear
 
 - this is a coherent set of repository ownership boundaries, not disconnected projects
+- `bijux-core` is a shared project backbone rather than just one more peer project
 - each project repository exposes a different kind of technical surface
-- the foundation layer stays separate from the project layer on purpose
+- the shared foundations stay separate from both the hub and the project layer on purpose
 - architecture, delivery, domain pressure, and learning surfaces are visible in public
 
 ## Reading Guide
