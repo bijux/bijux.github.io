@@ -9,10 +9,9 @@ last_reviewed: 2026-04-13
 
 # Operating Context
 
-This page explains why the repository family is split this way by
-starting from concrete operating pressures:
-reproducibility, evidence traceability, long-lived maintenance, and
-public delivery.
+The repository family is split this way because of concrete operating
+pressures: reproducibility, evidence traceability, long-lived
+maintenance, and public delivery.
 
 This repository family brings together three related kinds of public
 work: platform engineering, applied project work, and technical
@@ -25,10 +24,9 @@ different question for the reader:
 - **Projects** show how that structure is applied in domain-specific settings.
 - **Learning** explains methods, trade-offs, and workflow decisions that appear across both.
 
-This split is also the top-level public information architecture for
-Bijux. It is the main navigation model readers should use before
-opening any individual repository surface, and its cross-repository
-continuity is supported by shared standards owned in `bijux-std`.
+This split also shapes the public information architecture for Bijux.
+Its cross-repository continuity is supported by shared standards owned
+in `bijux-std`.
 
 The work published here is shaped by environments where software has to
 stay inspectable under change. That includes service and data systems,
@@ -42,13 +40,12 @@ Four concrete context types shape this design:
 - evidence-heavy outputs
 - public documentation systems
 
-This is why the repositories tend to look the way they do.
-Responsibilities are separated at the repository level. Documentation is
-part of delivery, not a side artifact. Domain-specific work is
-presented with enough engineering structure to make the system legible
-to someone outside the project. Shared standards continuity from
-`bijux-std` keeps shell behavior and baseline checks aligned across the
-family.
+This is why the repositories look the way they do. Responsibilities are
+separated at the repository level. Documentation is part of delivery,
+not a side artifact. Domain-specific work is presented with enough
+engineering structure to stay legible outside the project. Shared
+standards continuity from `bijux-std` keeps shell behavior and baseline
+checks aligned across the family.
 
 ## Context Map
 
@@ -96,7 +93,7 @@ graph LR
 - **Learning** helps connect recurring patterns, trade-offs, and
   workflows behind both
 
-## What This Page Should Make Clear
+## What This Context Makes Clear
 
 - repository boundaries are intentional and operationally useful
 - documentation structure supports maintenance and cross-repository continuity
@@ -106,5 +103,5 @@ Operating context matters because software quality is defined by change
 pressure, evidence burden, and long-lived responsibility. The repository
 family is shaped around that reality.
 
-After this page, a reader should know why the repository family is
+After this context, a reader should know why the repository family is
 split this way before opening any individual repository.
