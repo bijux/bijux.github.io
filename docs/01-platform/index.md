@@ -28,28 +28,27 @@ engineering language is visible across all of them.</div>
 
 ```mermaid
 graph TD
-    platform["Platform"] --> context["Context"]
-    platform --> structure["Structure"]
-    platform --> delivery["Delivery"]
-    platform --> control["Control plane"]
-    platform --> docs["Hub and shared documentation"]
-    platform --> standards["Standards"]
+    context["Operating context"] --> principles["Platform principles"]
+    principles --> control["Control plane<br/>bijux-iac"]
+    principles --> standards["Shared standards<br/>bijux-std"]
+    principles --> hub["Public hub<br/>bijux.github.io"]
 
-    context --> operating["Operating context"]
-    structure --> maps["System map and repository matrix"]
-    delivery --> surfaces["Delivery surfaces"]
-    control --> iac["Bijux Infrastructure-as-Code"]
-    docs --> hub["bijux.github.io and documentation network"]
-    standards --> std["Bijux standard layer"]
+    control --> runtime["Runtime and knowledge repos"]
+    standards --> runtime
+    hub --> runtime
+
+    runtime --> delivery["Delivery and public interfaces"]
+    runtime --> domains["Applied domain systems"]
+    runtime --> learning["Learning programs"]
 ```
 
 ## Canonical Platform Axes
 
-- context: the operating reasons and constraints behind the repository family.
-- structure: how responsibilities are split and mapped across repositories.
-- delivery: how architecture becomes public through release and operational surfaces.
-- control plane: how GitHub governance is applied as code.
-- shared standards and documentation: how readers keep orientation while moving across repositories.
+- context: the operating reasons and constraints behind the repository family
+- control plane: how GitHub governance is applied as code
+- shared standards: how shell behavior and quality checks stay aligned
+- public hub: how readers move through the system without losing ownership
+- delivery: how architecture becomes visible through release and public interfaces
 
 ## What Belongs Here
 
