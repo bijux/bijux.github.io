@@ -10,8 +10,8 @@ last_reviewed: 2026-04-12
 # Public Surface
 
 The public Bijux surface is the set of destinations readers can open
-directly from `bijux.io`. The hub is meant to behave like a maintained
-documentation network, not a static landing page.
+directly from `bijux.io`. The hub is a maintained route layer, not the
+source of the shared shell behavior it presents.
 
 Some surfaces are destinations, while others are ownership sources.
 
@@ -44,7 +44,7 @@ graph TD
 
 | Surface | Purpose | Use this when | What becomes visible here |
 | --- | --- | --- | --- |
-| [bijux.github.io](https://github.com/bijux/bijux.github.io) | shared documentation hub and cross-repository shell | you need orientation before choosing an owning repository | `docs/` structure, shell assets, and navigation contracts |
+| [bijux.github.io](https://github.com/bijux/bijux.github.io) | shared documentation hub and cross-repository route layer | you need orientation before choosing an owning repository | navigation routes, hub structure, and public entry paths |
 
 ### Standards
 
