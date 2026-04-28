@@ -9,8 +9,8 @@ last_reviewed: 2026-04-12
 
 # Documentation Network
 
-This network exists so readers can move across Bijux repositories
-without losing orientation. It is documentation architecture, not only
+The documentation network lets readers move across Bijux repositories
+without losing orientation. It is part of the architecture, not only
 menu behavior.
 
 `bijux-std` is the canonical source for the shared documentation shell
@@ -50,21 +50,21 @@ graph TD
 - local: repository-specific docs content, domain vocabulary, and implementation detail owned by the destination handbook.
 - shared and local together: shared chrome provides stable movement; local ownership provides technical depth without flattening repository boundaries.
 
-## Reader Benefit
+## What It Gives The Reader
 
 - it reduces documentation drift across related repositories
 - it preserves ownership boundaries while keeping navigation coherent
 - it shortens onboarding by keeping route patterns predictable
 - it supports operational continuity when repository surfaces evolve
 
-## Example Reader Walkthrough
+## Example Reading Route
 
 1. start at [Home](../../index.md) for orientation.
 2. open [Projects](../../02-projects/index.md) and choose a repository page such as [Bijux Atlas](../../02-projects/bijux-atlas/index.md).
 3. move into the destination docs site; shared shell behavior stays familiar while content becomes local.
 4. return through [Platform](../index.md) when you need system-level context.
 
-## Maintenance Rule
+## Stability Rule
 
 If the hub describes a repository, the destination should preserve the
 same shared shell behavior and stable public URL structure.
