@@ -10,8 +10,8 @@ last_reviewed: 2026-04-12
 # Documentation Network
 
 The documentation network lets readers move across Bijux repositories
-without losing orientation. It is part of the architecture, not only
-menu behavior.
+without losing orientation. It is part of the architecture, but the
+shared shell it relies on is owned upstream in `bijux-std`.
 
 `bijux-std` is the canonical source for the shared documentation shell
 and shared documentation standards used across the family.
