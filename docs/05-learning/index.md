@@ -14,9 +14,8 @@ last_reviewed: 2026-04-17
 The learning branch lives in `bijux-masterclass`, where system
 engineering practice is taught through sequenced programs. It belongs in
 the same repository family because it turns architecture and workflow
-judgment into reusable instruction while leaving shared shell behavior
-in `bijux-std`, GitHub governance in `bijux-iac`, and learning
-curriculum in Masterclass.
+judgment into reusable instruction without separating them from the
+systems they come from.
 
 The learning surface is not separate from the rest of the repository
 family. It is where runtime judgment, workflow discipline, and design
@@ -33,14 +32,8 @@ Learning is easiest to read after the shared foundations are clear:
 
 ```mermaid
 graph LR
-    learning["Learning"] --> models["Programming models"]
-    learning --> workflows["Reproducible workflows"]
-
-    models --> python["Python Programming"]
-    workflows --> research["Reproducible Research"]
-
-    python --> abstraction["Abstraction and design choices"]
-    research --> control["Workflow control and artifact trust"]
+    masterclass["bijux-masterclass"] --> python["Python Programming"]
+    masterclass --> research["Reproducible Research"]
 ```
 
 ## Program Families
