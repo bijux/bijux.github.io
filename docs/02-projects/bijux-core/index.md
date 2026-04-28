@@ -13,9 +13,12 @@ last_reviewed: 2026-04-12
 repository family and owns the governance and release rules that keep
 that backbone stable over time.
 
-Core contains four concrete surfaces: CLI runtime, DAG execution
-substrate, governance and control-plane routes, and evidence/release
-rules.
+Core exposes four concrete surfaces:
+
+- CLI runtime
+- DAG execution
+- governance and control routes
+- evidence and release rules
 
 Relation to shared standards: Core consumes shared docs shell and
 cross-repository checks from `bijux-std`, but does not define those
@@ -47,6 +50,14 @@ graph LR
 
 The split keeps command semantics, workflow semantics, and repository
 governance explicit instead of blending them into one opaque layer.
+
+## What You Can Verify Quickly
+
+| Surface | Why it matters |
+| --- | --- |
+| CLI and DAG split | shows that command behavior and workflow behavior are separate responsibilities |
+| release and evidence language | shows that governance is part of the repository surface, not an afterthought |
+| published docs and source layout | shows that runtime authority is documented and inspectable in public |
 
 ## Runtime Authority Vs Governance Authority
 

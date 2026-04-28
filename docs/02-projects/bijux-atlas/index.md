@@ -16,9 +16,8 @@ datasets, APIs, service contracts, and operated documentation.
 datasets, APIs, and docs control-plane behavior. It is a direct route in
 the site for data delivery, service architecture, and operational
 visibility.
-It exists to keep queryable delivery, immutable artifacts, service
-contracts, and publication surfaces visible as first-class engineering
-boundaries.
+It keeps queryable delivery, immutable artifacts, service contracts, and
+publication surfaces visible as first-class engineering boundaries.
 
 Shared standards note: Atlas consumes shared docs shell behavior and
 cross-repository checks from `bijux-std`; Atlas owns its local
@@ -73,6 +72,14 @@ graph TD
 - delivery contracts for APIs, datasets, and query behavior
 - publication and release surfaces for immutable artifacts
 - control-plane operations that keep docs, contracts, and service behavior aligned
+
+## What You Can Verify Quickly
+
+| Surface | Why it matters |
+| --- | --- |
+| API and OpenAPI surfaces | shows that delivery contracts are explicit and documented |
+| release artifacts and dataset posture | shows that publication is treated as an owned surface |
+| docs-aware operational routes | shows that operations and documentation move together instead of drifting apart |
 
 ## What Lives Here
 

@@ -43,6 +43,14 @@ publish boundaries, dynamic workflow safety, state identity, experiment
 discipline, and reproducible execution. The programs are organized by
 failure mode and design pressure rather than by tool popularity.
 
+## What You Can Verify Quickly
+
+| Surface | Why it matters |
+| --- | --- |
+| Make, Snakemake, and DVC kept in one family | shows that workflow truth, orchestration, and state identity are treated as one systems problem |
+| capstone outputs | shows that the claims stay attached to runnable proof surfaces |
+| failure-mode framing | shows that the teaching starts from operational risk rather than tool fandom |
+
 ## Why Make, Snakemake, And DVC Belong Together
 
 | Tool | Core responsibility | Why it belongs in the same family |
