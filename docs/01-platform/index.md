@@ -18,11 +18,9 @@ middle, and the project and learning surfaces built on top.
 It introduces the family shape without replacing the deeper `bijux-iac`
 and `bijux-std` branches.
 
-<div class="bijux-callout"><strong>Focus on responsibility before repository count.</strong>
-The key question is not how many repositories exist, but why responsibilities are split the way they are.
-Runtime governance, shared standards, shared runtime, delivery, domain
-products, and learning programs each have their own home, but they
-still read as one system.</div>
+<div class="bijux-callout"><strong>Start with responsibility before repository count.</strong>
+The important question is why each part of the family has its own home,
+yet still reads as one system.</div>
 
 ## Platform Map
 
@@ -38,9 +36,8 @@ graph TD
 
 ## What This Branch Covers
 
-- the route between repositories
-- the shared layers that sit underneath the family
-- the quickest explanation of why the split exists
+- the shared layers underneath the family
+- the route from foundations to projects and learning
 - the best next page for the question you want to answer
 
 ## Where To Continue

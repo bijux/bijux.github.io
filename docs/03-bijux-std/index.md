@@ -83,19 +83,10 @@ Those remain owned by the repositories that implement them.
 ## How It Fits The Architecture
 
 ```mermaid
-graph TD
+graph LR
     std["bijux-std"] --> shell["shared docs shell"]
     std --> checks["shared checks"]
     std --> makes["shared make layer"]
-
-    shell --> hub["bijux.github.io"]
-    shell --> projectdocs["project docs sites"]
-    shell --> masterclass["bijux-masterclass"]
-
-    checks --> hub
-    checks --> projectdocs
-
-    makes --> repos["Python-oriented repositories"]
 ```
 
 In plain language:
