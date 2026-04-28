@@ -101,6 +101,10 @@ public Bijux repositories. The scope is intentionally narrow: establish
 the control plane first, then expand into more GitHub governance
 surfaces over time.
 
+## Read This Next
+
+- [Governance Model](governance-model/index.md)
+
 ## Where To Go Next
 
 - [Platform overview](../01-platform/index.md)
