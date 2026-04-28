@@ -25,21 +25,20 @@ destination proves.
 
 ```mermaid
 graph TD
-    surface["Public Surface"] --> hub["Hub"]
-    surface --> governance["Governance source"]
-    surface --> standards["Standards source"]
-    surface --> docs["Repository docs"]
-    surface --> source["Source repositories"]
-    surface --> delivery["Delivery endpoints"]
-    surface --> projects["Project overview pages"]
+    hub["bijux.github.io<br/>reader entry point"] --> routes["route selection"]
+    routes --> platform["Platform pages"]
+    routes --> projects["Project pages"]
+    routes --> learning["Learning pages"]
 
-    hub --> orientation["Orientation"]
-    governance --> policy["Control-plane ownership"]
-    standards --> contracts["Shared contract ownership"]
-    docs --> handbooks["Docs navigation and boundaries"]
-    source --> verification["Verification"]
-    delivery --> operated["Operated interfaces"]
-    projects --> context["Context"]
+    platform --> iac["bijux-iac<br/>governance source"]
+    platform --> std["bijux-std<br/>standards source"]
+
+    projects --> repo_docs["Repository docs sites"]
+    projects --> repo_source["Repository source"]
+    learning --> masterclass["bijux-masterclass docs and source"]
+
+    repo_docs --> delivery["APIs, datasets, reports, handbooks"]
+    repo_source --> verification["code, history, contracts, automation"]
 ```
 
 ## Curated Public Destinations By Surface Type
@@ -107,10 +106,12 @@ graph TD
 
 ```mermaid
 graph LR
-    iac["bijux-iac control plane"] --> repos["Repository docs and source surfaces"]
-    hub["bijux.github.io hub"] <--> repos
-    std["bijux-std standards source"] --> hub
-    std --> repos
+    iac["bijux-iac"] --> policy["GitHub policy and merge controls"]
+    std["bijux-std"] --> shell["shared shell and cross-repo checks"]
+    hub["bijux.github.io"] --> routes["public route design"]
+    routes --> repos["repository docs and source"]
+    shell --> repos
+    policy --> repos
 ```
 
 ## Start Here
