@@ -38,11 +38,11 @@ graph LR
 - undocumented exceptions that only make sense to the current maintainer
 - governance logic hidden inside application repositories
 
-## Public Signal
+## Why This Changes The Reading Experience
 
-When this model is visible, readers do not need private explanation to
-understand that governance is treated as real system design. They can
-see where the rule lives, how it changes, and where it applies.
+When this model is visible, the repositories feel designed rather than
+merely maintained. The rule has a home, changes have a path, and the
+governed surfaces stay easier to trust over time.
 
 ## Continue Reading
 
