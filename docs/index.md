@@ -10,12 +10,12 @@ last_reviewed: 2026-04-12
 # Bijux
 
 <section class="bijux-hero">
-  <div class="bijux-hero__eyebrow">runtime systems, data delivery, scientific products, and technical education</div>
-  <h1 class="bijux-hero__title">Bijux is a repository family with clear ownership boundaries.</h1>
-  <p class="bijux-hero__lede"><code>bijux.io</code> is the documentation hub for the current Bijux repository family: execution and governance systems, knowledge and data services, applied bioinformatics products, and technical programs. It is arranged so readers can move from orientation into repository handbooks, published destinations, and source surfaces without losing ownership boundaries.</p>
+  <div class="bijux-hero__eyebrow">platform systems, delivery interfaces, scientific software, and technical programs</div>
+  <h1 class="bijux-hero__title">Bijux is a public system family built as distinct repositories with visible control points.</h1>
+  <p class="bijux-hero__lede"><code>bijux.io</code> is the hub for the current Bijux repository family. It is arranged so a reader can move from system orientation into the exact repository that owns the runtime backbone, the control plane, the shared standards layer, the delivery interfaces, the domain products, or the learning programs.</p>
   <div class="bijux-topic-row">
     <span class="bijux-topic-pill">platform architecture</span>
-    <span class="bijux-topic-pill">runtime governance</span>
+    <span class="bijux-topic-pill">control-plane design</span>
     <span class="bijux-topic-pill">data-service design</span>
     <span class="bijux-topic-pill">bioinformatics software</span>
     <span class="bijux-topic-pill">documentation as delivery</span>
@@ -29,22 +29,41 @@ and source surfaces that carry the implementation detail.</div>
 
 ## What Bijux Is
 
-Bijux is a repository family for runtime systems, governed knowledge/data
-systems, scientific software, and technical learning surfaces, organized around
-clear boundaries and inspectable delivery.
+Bijux is a repository family for platform engineering, data and service
+delivery, scientific software, and technical education.
 
-It is designed so architecture, delivery, and domain work can evolve together
-without merging responsibilities into a single opaque codebase.
+The important point is not just that the work is public. The important point is
+that the public surface keeps ownership visible:
+
+- one repository owns the live GitHub control plane
+- one repository owns the shared standards layer
+- one repository owns the hub
+- other repositories own runtime, knowledge, delivery, domain, and learning work
+
+That makes the system easier to inspect because responsibility changes hands in
+named places instead of disappearing behind one monorepo or one presentation
+site.
 
 | Term | Meaning in this site |
 | --- | --- |
 | ownership boundaries | Explicit repository-level responsibilities that prevent hidden coupling and drift. |
 | delivery surfaces | User-visible outputs such as docs, APIs, reports, and release pathways that must be engineered, not improvised. |
 
+## At A Glance
+
+| Layer | Owned in | What becomes visible |
+| --- | --- | --- |
+| control plane | [Bijux Infrastructure-as-Code](01-platform/bijux-iac/index.md) | GitHub governance applied as code |
+| shared standards | [Bijux standard layer](01-platform/bijux-std/index.md) | shared docs shell, shared checks, shared repo contracts |
+| public hub | [Platform overview](01-platform/index.md) and this site | cross-repository orientation and route design |
+| runtime and services | [Projects](02-projects/index.md) | runtime behavior, APIs, datasets, packages, and domain systems |
+| learning surface | [Learning catalog](03-learning/index.md) | technical programs built from the same engineering language |
+
 ## Core Ideas In This System
 
 - Separate repositories by operating responsibility so boundaries remain stable as systems grow.
 - Treat documentation, contracts, and release behavior as owned delivery outputs.
+- Make the control plane, standards layer, and product layers visible as different kinds of work.
 - Keep the same engineering language across platform, domain, and learning surfaces.
 
 ## How It Is Organized
@@ -52,7 +71,8 @@ without merging responsibilities into a single opaque codebase.
 The site is organized around repository ownership, then around navigation paths
 for architecture, delivery, and domain-focused reading.
 Shared documentation shell behavior and cross-repository standards checks are
-centrally defined in [Bijux standard layer](01-platform/bijux-std/index.md).
+defined in [Bijux standard layer](01-platform/bijux-std/index.md), while live
+GitHub policy is owned in [Bijux Infrastructure-as-Code](01-platform/bijux-iac/index.md).
 
 ### Reading Approach
 
