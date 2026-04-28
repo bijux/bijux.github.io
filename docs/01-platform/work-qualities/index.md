@@ -10,7 +10,7 @@ last_reviewed: 2026-04-28
 # Recurring Engineering Qualities
 
 These are the recurring qualities that make the Bijux repository family
-read as one serious system instead of a loose set of unrelated repos.
+read as one connected system instead of a loose set of unrelated repos.
 
 ## Qualities Map
 
@@ -31,7 +31,7 @@ graph TD
 | Domain pressure handling | Does the structure stay coherent when scientific workflows and evidence-heavy interpretation are required? | [Applied domains](../applied-domains/index.md) |
 | Explainable depth | Can architecture and workflow decisions be taught with runnable materials instead of only summaries? | [Learning catalog](../../05-learning/index.md) |
 
-Shared continuity is enforced through the standards layer in
+Shared continuity comes through the standards layer in
 [Bijux standard layer](../../03-bijux-std/index.md), not only by local repository
 habits.
 
@@ -47,10 +47,10 @@ habits.
 ## Why These Qualities Matter
 
 <div class="bijux-panel-grid">
-  <div class="bijux-panel"><h3>Bounded Ownership</h3><p>Clear repository boundaries are costly to maintain unless they reflect real ownership. They are one of the fastest ways to distinguish systems thinking from namespace inflation.</p></div>
-  <div class="bijux-panel"><h3>Delivery Discipline</h3><p>A strong public surface routes into maintained documentation, published endpoints, automation, and operating rules. Delivery should be visible before anyone asks for private context.</p></div>
-  <div class="bijux-panel"><h3>Domain Pressure Handling</h3><p>Infrastructure alone is not enough. Technical judgment is easier to inspect when it survives proteomics, pollenomics, evidence mapping, and scientific workflow constraints.</p></div>
-  <div class="bijux-panel"><h3>Explainable Depth</h3><p>Engineers who can teach architecture, workflow discipline, and programming design usually understand the systems well enough to build and evolve them cleanly.</p></div>
+  <div class="bijux-panel"><h3>Bounded Ownership</h3><p>Clear repository boundaries only matter when they reflect real work. Here they keep responsibilities visible and changes easier to follow.</p></div>
+  <div class="bijux-panel"><h3>Delivery Discipline</h3><p>Documentation, published endpoints, automation, and operating rules belong to the work itself. They are part of the system, not commentary around it.</p></div>
+  <div class="bijux-panel"><h3>Domain Pressure Handling</h3><p>Infrastructure is only the beginning. The stronger test is whether the same discipline still holds under scientific and evidence-heavy conditions.</p></div>
+  <div class="bijux-panel"><h3>Explainable Depth</h3><p>Complex systems become easier to trust when they can also be explained, sequenced, and taught without losing precision.</p></div>
 </div>
 
 ## Why They Recur
