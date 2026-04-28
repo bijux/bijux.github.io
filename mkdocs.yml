@@ -69,6 +69,7 @@ nav:
       - Repository Coverage: 02-bijux-iac/repository-coverage/index.md
   - 03 Bijux Standards:
       - Overview: 03-bijux-std/index.md
+      - Promotion Model: 03-bijux-std/promotion-model/index.md
   - 04 Projects:
       - Overview: 04-projects/index.md
       - Bijux Core: 04-projects/bijux-core/index.md

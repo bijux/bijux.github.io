@@ -127,6 +127,8 @@ For the Rust-oriented repositories, the same rule still applies:
 - once those patterns are stable and clearly shared, they can be promoted into `bijux-std`
 - the goal is consistency from real usage, not premature standardization
 
+Read the full [Promotion Model](promotion-model/index.md).
+
 ## Shared Vs Local
 
 | Layer | Owned by |
