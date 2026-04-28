@@ -9,14 +9,14 @@ last_reviewed: 2026-04-12
 
 # Platform
 
-Platform is the branch that defines the shared structure and reasoning
-behind the Bijux repository family.
-It explains why repositories are split this way and how they stay
-aligned through shared standards.
+Platform is the branch that explains how the Bijux repository family is
+held together in public.
 
-The public Bijux surface is intentionally split by responsibility. This
-section explains why the repository family is structured the way it is
-and how that structure holds together in public.
+The public surface is intentionally split by responsibility. This
+section explains where live governance is owned, where shared standards
+are owned, where public orientation is owned, and how the product,
+runtime, domain, and learning repositories sit on top of that
+foundation.
 
 <div class="bijux-callout"><strong>Focus on responsibility before repository count.</strong>
 The key question is not how many repositories exist, but why responsibilities are split the way they are.
@@ -31,13 +31,15 @@ graph TD
     platform["Platform"] --> context["Context"]
     platform --> structure["Structure"]
     platform --> delivery["Delivery"]
-    platform --> docs["Shared Documentation"]
+    platform --> control["Control plane"]
+    platform --> docs["Hub and shared documentation"]
     platform --> standards["Standards"]
 
     context --> operating["Operating context"]
     structure --> maps["System map and repository matrix"]
     delivery --> surfaces["Delivery surfaces"]
-    docs --> network["Documentation network"]
+    control --> iac["Bijux Infrastructure-as-Code"]
+    docs --> hub["bijux.github.io and documentation network"]
     standards --> std["Bijux standard layer"]
 ```
 
@@ -46,6 +48,7 @@ graph TD
 - context: the operating reasons and constraints behind the repository family.
 - structure: how responsibilities are split and mapped across repositories.
 - delivery: how architecture becomes public through release and operational surfaces.
+- control plane: how GitHub governance is applied as code.
 - shared standards and documentation: how readers keep orientation while moving across repositories.
 
 ## What Belongs Here
@@ -62,6 +65,7 @@ graph TD
 
 ## Why This Branch Exists
 
+- show the control-plane, standards, and hub layers before readers dive into implementation repositories
 - explain why runtime authority, knowledge architecture, delivery responsibilities, and domain work are split into separate repositories
 - keep repository boundaries stable while allowing domain-specific evolution
 - make public documentation useful for inspection and review, not only orientation
@@ -69,6 +73,8 @@ graph TD
 
 ## Where To Inspect Evidence
 
+- GitHub governance ownership: [Bijux Infrastructure-as-Code](bijux-iac/index.md)
+- shared shell and cross-repository standards: [Bijux standard layer](bijux-std/index.md)
 - repository ownership and split intent: [Repository matrix](repository-matrix/index.md)
 - layer boundaries and responsibility flow: [System map](system-map/index.md)
 - delivery and publication posture: [Delivery surfaces](delivery-surfaces/index.md)
@@ -86,6 +92,8 @@ graph TD
 ## System Shape
 
 <div class="bijux-panel-grid">
+  <div class="bijux-panel"><h3>Control Plane</h3><p>`bijux-iac` keeps GitHub governance visible as code instead of leaving it buried in repository settings.</p></div>
+  <div class="bijux-panel"><h3>Hub</h3><p>`bijux.github.io` owns the public route design so readers can move through the repository family without losing responsibility boundaries.</p></div>
   <div class="bijux-panel"><h3>Core</h3><p>The execution and governance backbone for command surfaces, DAG behavior, evidence, and repository discipline.</p></div>
   <div class="bijux-panel"><h3>Canon</h3><p>The governed knowledge-system stack for ingest, indexing, reasoning, orchestration, and controlled runtime behavior.</p></div>
   <div class="bijux-panel"><h3>Atlas</h3><p>The delivery and control-plane surface for APIs, datasets, docs-aware checks, and operational reporting.</p></div>
@@ -97,6 +105,7 @@ graph TD
 
 | Read this first when you need to understand... | Open |
 | --- | --- |
+| where live GitHub governance is owned and enforced | [Bijux Infrastructure-as-Code](bijux-iac/index.md) |
 | where shared standards are defined and verified across repositories | [Bijux standard layer](bijux-std/index.md) |
 | which qualities recur across the public work | [Work qualities](work-qualities/index.md) |
 | the layered structure of the whole public system family | [System map](system-map/index.md) |
