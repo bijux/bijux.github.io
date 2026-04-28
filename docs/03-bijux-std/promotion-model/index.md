@@ -47,5 +47,5 @@ theory.
 ## Continue Reading
 
 - [Bijux Standards](../index.md)
-- [Shell Architecture](../../01-platform/shell-architecture/index.md)
+- [Documentation Network](../../01-platform/documentation-network/index.md)
 - [Repository Coverage](../../02-bijux-iac/repository-coverage/index.md)

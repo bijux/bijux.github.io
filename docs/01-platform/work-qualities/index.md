@@ -4,28 +4,22 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-12
+last_reviewed: 2026-04-28
 ---
 
 # Recurring Engineering Qualities
 
-Recurring engineering patterns across Bijux repositories. These are the
-habits that recur across ownership, delivery, domain adaptation, and
-learning continuity.
+These are the recurring qualities that make the Bijux repository family
+read as one serious system instead of a loose set of unrelated repos.
 
 ## Qualities Map
 
 ```mermaid
 graph TD
-    qualities["Recurring Engineering Qualities"] --> bounded["Bounded ownership"]
-    qualities --> inspectable["Delivery discipline"]
-    qualities --> pressure["Domain pressure"]
-    qualities --> depth["Explainable depth"]
-
-    bounded --> ownership["Clear ownership"]
-    inspectable --> outputs["Visible delivery outputs"]
-    pressure --> adaptation["Adapted design"]
-    depth --> complexity["Legible complexity"]
+    bounded["Bounded ownership"] --> trust["Trust"]
+    delivery["Delivery discipline"] --> trust
+    pressure["Domain pressure handling"] --> trust
+    depth["Explainable depth"] --> trust
 ```
 
 ## Canonical Qualities
@@ -50,7 +44,7 @@ habits.
 | Domain pressure handling | scientific workflows are carried by one-off scripts with weak evidence or publication contracts | [Applied domains](../applied-domains/index.md), [Bijux Proteomics](../../04-projects/bijux-proteomics/index.md), [Bijux Pollenomics](../../04-projects/bijux-pollenomics/index.md) |
 | Explainable depth | teaching material becomes disconnected from runnable artifacts and repository trade-offs | [Learning catalog](../../05-learning/index.md), [Reproducible Research](../../05-learning/reproducible-research/index.md) |
 
-## Why These Qualities Recur
+## Why These Qualities Matter
 
 <div class="bijux-panel-grid">
   <div class="bijux-panel"><h3>Bounded Ownership</h3><p>Clear repository boundaries are costly to maintain unless they reflect real ownership. They are one of the fastest ways to distinguish systems thinking from namespace inflation.</p></div>
