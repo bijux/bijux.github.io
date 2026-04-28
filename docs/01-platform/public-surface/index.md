@@ -9,17 +9,14 @@ last_reviewed: 2026-04-12
 
 # Public Surface
 
-The public Bijux surface is the set of destinations that readers can
-open directly from `bijux.io` today. The goal is to make the hub
-behave like a maintained documentation network, not a static landing
-page.
+The public Bijux surface is the set of destinations readers can open
+directly from `bijux.io`. The hub is meant to behave like a maintained
+documentation network, not a static landing page.
 
-Some public surfaces are browsed destinations (where readers navigate
-content), while others are ownership sources (where shared standards and
-contracts are defined).
+Some surfaces are destinations, while others are ownership sources.
 
-The useful question is not only what can be opened, but what each
-destination proves.
+The question is not only what can be opened, but what each destination
+proves.
 
 ## Surface Map
 
@@ -66,10 +63,10 @@ graph TD
 | Surface | Purpose | Use this when | What becomes visible here |
 | --- | --- | --- | --- |
 | [bijux-core docs](https://bijux.io/bijux-core/) | runtime backbone and repository governance | you want runtime and governance routes with handbook context | CLI and DAG surfaces, governance docs, and release rules |
-| [bijux-canon docs](https://bijux.io/bijux-canon/) | governed knowledge-system architecture | you want ingest/index/reason/orchestrate pathways with documented boundaries | knowledge workflows decomposed into accountable interfaces |
-| [bijux-atlas docs](https://bijux.io/bijux-atlas/) | data and service delivery surfaces | you want API, dataset, and reporting delivery context | delivery treated as maintained product architecture |
+| [bijux-canon docs](https://bijux.io/bijux-canon/) | knowledge-system architecture | you want ingest/index/reason/orchestrate pathways with documented boundaries | knowledge workflows decomposed into accountable interfaces |
+| [bijux-atlas docs](https://bijux.io/bijux-atlas/) | data and service delivery | you want API, dataset, and reporting delivery context | delivery treated as maintained product architecture |
 | [bijux-proteomics docs](https://bijux.io/bijux-proteomics/) | proteomics-oriented scientific system delivery | you want to inspect scientific workflows with reproducibility constraints | domain pressure handled without architecture drift |
-| [bijux-pollenomics docs](https://bijux.io/bijux-pollenomics/) | evidence mapping and site-selection system design | you want evidence-heavy outputs with explicit operational structure | specialized domain pressure with bounded system design |
+| [bijux-pollenomics docs](https://bijux.io/bijux-pollenomics/) | evidence mapping and site-selection system design | you want evidence-heavy outputs with clear operational structure | specialized domain pressure with bounded system design |
 | [bijux-masterclass docs](https://bijux.io/bijux-masterclass/) | technical education programs tied to real system practice | you want course-level technical routes and deep-dive programs | architecture thinking translated into reusable instruction |
 
 ### Source Repositories
@@ -77,7 +74,7 @@ graph TD
 | Surface | Purpose | Use this when | What becomes visible here |
 | --- | --- | --- | --- |
 | [bijux-core source](https://github.com/bijux/bijux-core) | source of runtime and governance implementation | you need file-level structure and history for core runtime decisions | package boundaries, command surfaces, and evolution over time |
-| [bijux-canon source](https://github.com/bijux/bijux-canon) | source of governed knowledge-system implementation | you need package-level ownership and change history for Canon layers | ingest/index/reason/orchestrate ownership in code |
+| [bijux-canon source](https://github.com/bijux/bijux-canon) | source of knowledge-system implementation | you need package-level ownership and change history for Canon layers | ingest/index/reason/orchestrate ownership in code |
 | [bijux-atlas source](https://github.com/bijux/bijux-atlas) | source of delivery and control-plane implementation | you need operational and delivery mechanics beyond docs summaries | API/dataset/reporting structure with automation entry points |
 | [bijux-proteomics source](https://github.com/bijux/bijux-proteomics) | source of proteomics-oriented system implementation | you need workflow details, package boundaries, and reproducibility mechanics | scientific system behavior under domain constraints |
 | [bijux-pollenomics source](https://github.com/bijux/bijux-pollenomics) | source of evidence-mapping system implementation | you need data and reporting structure behind published outputs | domain modeling and evidence handling in repository form |
@@ -100,7 +97,7 @@ graph TD
 
 - the repository family is coherent rather than a random list of projects
 - each destination has a distinct role in runtime, knowledge, delivery, domain, or learning layers
-- the public surface supports both high-level routing and deeper technical inspection
+- the public surface supports both routing and deeper technical inspection
 
 ## Ownership Map
 
@@ -155,6 +152,6 @@ point-in-time snapshot.
 - repository docs and source ownership: each destination repository
 - shared shell and docs standards ownership: `bijux-std`
 
-The public surface is designed to make the work inspectable from
-multiple angles: documentation for orientation, repositories for
-verification, and project pages for context.
+The public surface is built to support three moves: documentation for
+orientation, repositories for verification, and project pages for
+context.
