@@ -46,6 +46,23 @@ ALLOWED_CONTROL_PATHS = {
     "shared/shared-dir-sha256.txt",
 }
 
+APPROVED_PROTECTED_BUNDLES = (
+    {
+        ".github/workflows/github-policy.yml",
+        ".bijux/shared/bijux-gh/workflows/github-policy.yml",
+    },
+)
+
+
+def has_approved_bundle(changed: set[str], protected_changed: list[str]) -> bool:
+    protected = set(protected_changed)
+    if not protected:
+        return False
+    for bundle in APPROVED_PROTECTED_BUNDLES:
+        if bundle.issubset(changed) and protected.issubset(bundle):
+            return True
+    return False
+
 
 def load_manifest() -> dict:
     if not MANIFEST_PATH.exists():
@@ -93,6 +110,9 @@ def main() -> int:
 
     controls_changed = sorted(path for path in changed if path in ALLOWED_CONTROL_PATHS)
     if controls_changed:
+        return 0
+
+    if has_approved_bundle(changed, protected_changed):
         return 0
 
     print("Protected .github files changed without approved generator/sync controls:")
