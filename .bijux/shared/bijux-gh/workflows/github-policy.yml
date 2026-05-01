@@ -44,8 +44,9 @@ jobs:
             fi
           else
             before_sha="${{ github.event.before }}"
-            if [[ -n "${before_sha}" && "${before_sha}" != "0000000000000000000000000000000000000000" ]]; then
-              git diff --name-only "${before_sha}...${GITHUB_SHA}" > /tmp/changed-files.txt
+            if [[ -n "${before_sha}" && "${before_sha}" != "0000000000000000000000000000000000000000" ]] \
+              && git rev-parse --verify --quiet "${before_sha}^{commit}" >/dev/null; then
+              git diff --name-only "${before_sha}" "${GITHUB_SHA}" > /tmp/changed-files.txt
             else
               git diff-tree --no-commit-id --name-only -r "${GITHUB_SHA}" > /tmp/changed-files.txt
             fi
