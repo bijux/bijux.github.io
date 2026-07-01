@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import os
+import shlex
 import subprocess
 from pathlib import Path
 from typing import Any
@@ -140,12 +141,15 @@ def parse_release_env(path: Path) -> list[dict]:
             entries.append({"key": key, "type": "bool", "value": value == "true"})
             continue
 
-        if value.startswith("'") and value.endswith("'") and len(value) >= 2:
-            inner = value[1:-1]
+        if value[:1] in {"'", '"'} and value[-1:] == value[:1] and len(value) >= 2:
+            try:
+                [inner] = shlex.split(value, posix=True)
+            except (ValueError, SyntaxError):
+                inner = value
             try:
                 parsed_json = json.loads(inner)
             except json.JSONDecodeError:
-                entries.append({"key": key, "type": "string", "value": value})
+                entries.append({"key": key, "type": "string", "value": inner})
             else:
                 entries.append({"key": key, "type": "json", "value": parsed_json})
             continue
