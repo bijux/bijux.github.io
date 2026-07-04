@@ -141,11 +141,8 @@ def parse_release_env(path: Path) -> list[dict]:
             entries.append({"key": key, "type": "bool", "value": value == "true"})
             continue
 
-        if value[:1] in {"'", '"'} and value[-1:] == value[:1] and len(value) >= 2:
-            try:
-                [inner] = shlex.split(value, posix=True)
-            except (ValueError, SyntaxError):
-                inner = value
+        if value.startswith("'") and value.endswith("'") and len(value) >= 2:
+            inner = value[1:-1]
             try:
                 parsed_json = json.loads(inner)
             except json.JSONDecodeError:
@@ -154,7 +151,14 @@ def parse_release_env(path: Path) -> list[dict]:
                 entries.append({"key": key, "type": "json", "value": parsed_json})
             continue
 
-        entries.append({"key": key, "type": "string", "value": value})
+        try:
+            shell_parts = shlex.split(value, posix=True)
+        except ValueError:
+            parsed_value = value
+        else:
+            parsed_value = " ".join(shell_parts) if len(shell_parts) > 1 else (shell_parts[0] if shell_parts else "")
+
+        entries.append({"key": key, "type": "string", "value": parsed_value})
 
     return entries
 
