@@ -540,7 +540,7 @@
             "open-pull-requests-limit": 10,
             "labels": [
               "dependencies",
-              "github_actions"
+              "github"
             ]
           },
           {
@@ -1096,7 +1096,7 @@
             "open-pull-requests-limit": 10,
             "labels": [
               "dependencies",
-              "github_actions"
+              "github"
             ]
           },
           {
@@ -1376,7 +1376,7 @@
             "open-pull-requests-limit": 10,
             "labels": [
               "dependencies",
-              "github_actions"
+              "github"
             ]
           },
           {
@@ -1921,7 +1921,7 @@
             "open-pull-requests-limit": 10,
             "labels": [
               "dependencies",
-              "github_actions"
+              "github"
             ]
           },
           {
@@ -2054,8 +2054,7 @@
               "package_slug": "bijux-phylogenetics"
             },
             {
-              "package_slug": "phylogenetic",
-              "publish_auth": "token"
+              "package_slug": "phylogenetic"
             }
           ]
         },
@@ -2084,7 +2083,7 @@
             "open-pull-requests-limit": 10,
             "labels": [
               "dependencies",
-              "github_actions"
+              "github"
             ]
           },
           {
@@ -2576,8 +2575,7 @@
               "package_slug": "bijux-pollenomics"
             },
             {
-              "package_slug": "pollenomics",
-              "publish_auth": "token"
+              "package_slug": "pollenomics"
             }
           ]
         },
@@ -2606,7 +2604,7 @@
             "open-pull-requests-limit": 10,
             "labels": [
               "dependencies",
-              "github_actions"
+              "github"
             ]
           },
           {
@@ -3155,7 +3153,7 @@
             "open-pull-requests-limit": 10,
             "labels": [
               "dependencies",
-              "github_actions"
+              "github"
             ]
           },
           {
@@ -3700,7 +3698,7 @@
             "open-pull-requests-limit": 10,
             "labels": [
               "dependencies",
-              "github_actions"
+              "github"
             ]
           }
         ]
@@ -3747,7 +3745,7 @@
             "open-pull-requests-limit": 10,
             "labels": [
               "dependencies",
-              "github_actions"
+              "github"
             ]
           },
           {
@@ -3940,7 +3938,7 @@
             "open-pull-requests-limit": 10,
             "labels": [
               "dependencies",
-              "github_actions"
+              "github"
             ]
           },
           {
