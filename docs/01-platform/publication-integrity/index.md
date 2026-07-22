@@ -42,6 +42,34 @@ through the `github-pages` environment.
 | deployment identity | GitHub Pages OIDC with `pages: write` and `id-token: write` | publication uses the Pages deployment path rather than a long-lived repository deployment credential |
 | concurrency | one deployment group per Git reference with cancellation | an obsolete in-progress build does not race a newer revision on the same reference |
 
+## Preserve Publication Identity End To End
+
+The public domain does not expose every internal identifier in one response.
+Review therefore joins the source, build, artifact, deployment, and observed
+route records rather than treating a successful URL fetch as the entire proof.
+
+```mermaid
+flowchart LR
+    revision["Accepted source revision"] --> run["Workflow run"]
+    run --> build["Strict build result"]
+    build --> artifact["Pages artifact"]
+    artifact --> deployment["Pages deployment"]
+    deployment --> route["Observed bijux.io route"]
+```
+
+| Identity | What it establishes | Evidence gap if missing |
+| --- | --- | --- |
+| source revision | exact hub content and managed snapshot selected | public bytes cannot be tied to reviewed source |
+| workflow run | automation definition and execution that handled the revision | build and deployment steps are unattributed |
+| site directory and artifact | concrete bundle offered to Pages | a local build may be mistaken for a deployed bundle |
+| deployment | Pages environment accepted a named artifact | upload success may be mistaken for publication |
+| observed route and time | the domain served a response during a bounded observation | deployment state may be mistaken for continuous reachability |
+
+The source link helps a reader inspect authorship, but it is not a
+cryptographic statement that the open browser tab contains that revision.
+Conversely, matching visible prose does not identify the complete bundle,
+shared shell, or deployment that served it.
+
 ## Shared And Local Ownership
 
 The rendered site combines two sources with different owners.
@@ -132,6 +160,53 @@ Publication success has a precise scope.
 
 These boundaries matter because a green deployment should never be presented
 as evidence broader than the checks that produced it.
+
+## Correct Or Withdraw A Publication
+
+Publication recovery uses the same governed source-to-artifact path as normal
+delivery. A maintainer corrects the owning source or selects a known-good
+revision, rebuilds the complete site, deploys the resulting Pages artifact,
+and verifies the affected public route.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Reviewed
+    Reviewed --> Built: strict build succeeds
+    Built --> Deployed: Pages accepts artifact
+    Deployed --> Observed: bounded route check
+    Observed --> Superseded: newer accepted deployment
+    Observed --> Withdrawn: unsafe or unsupported content removed
+    Observed --> Corrected: owning source and descendants rebuilt
+    Corrected --> Observed: replacement verified
+```
+
+Supersession is not deletion of history. The previous source revision and run
+remain part of the audit trail even when the public domain serves newer bytes.
+A correction should identify the affected claim and owner; rebuilding an
+unchanged page only to make it look newer is not evidence repair.
+
+The workflow cancels obsolete in-progress executions for the same Git
+reference. That reduces a deployment race, but it is not an automatic content
+rollback, a cache purge guarantee, or an external availability monitor. A
+known-good site is restored by selecting reviewed source and redeploying it
+through the governed path.
+
+## Interpret Public Staleness Carefully
+
+Several states can look like “the site is stale”:
+
+- the accepted source has not yet produced a successful deployment;
+- Pages accepted an artifact but the custom domain is not serving it at the
+  observation time;
+- a browser or intermediary retains older content;
+- the hub is current but the destination repository changed its contract or
+  route;
+- the page renders current text while an embedded operational or scientific
+  claim has exceeded its evidence window.
+
+Diagnose these states at their owning boundary. Re-running deployment cannot
+repair an outdated product claim, and editing prose cannot repair domain or
+Pages availability.
 
 ## Reader Verification
 

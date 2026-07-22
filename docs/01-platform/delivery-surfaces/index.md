@@ -52,6 +52,28 @@ Each transition has an owner:
   surface's stated boundary;
 - maintainers reconcile observed behavior with the next reviewed change.
 
+## Name The Delivery State
+
+“Published” is not a sufficient lifecycle vocabulary. Consumers need to know
+whether an object is merely built, accepted by a destination, currently
+offered, superseded, deprecated, corrected, or withdrawn.
+
+| State | Meaning | Evidence expected |
+| --- | --- | --- |
+| candidate | owned source and contract selected for evaluation | source identity and intended destination |
+| verified | class-specific checks passed for the candidate | named checks, results, omissions, and verifier identity |
+| published | a destination accepted an exact object | registry, catalog, release, deployment, or manifest record |
+| available | a bounded observation retrieved or exercised the object | destination, time, object identity, and response or execution evidence |
+| deprecated | owner still offers the object with a replacement or end-of-support posture | deprecation contract, migration route, and dates or triggers |
+| superseded | a newer authoritative object replaces it for current use | predecessor/successor relation and compatibility or correction note |
+| withdrawn | owner no longer offers or endorses the object | withdrawal reason, affected scope, and retained audit identity |
+
+Availability is an observation, not an eternal property. A package registry
+record and an API health result both concern delivery, but only the API result
+needs a topology and observation window. A scientific report can remain
+downloadable after its claim becomes stale; the availability and evidence
+states must remain separate.
+
 ## Authority Does Not Follow Distribution
 
 Publishing an object does not transfer authority over its meaning.
@@ -129,6 +151,36 @@ answers a bounded question:
 Evidence should also state what was *not* exercised. A local fixture is not a
 production topology; a schema is not a completed drill; a generated OpenAPI
 document is not proof that every route is live.
+
+## Correction, Revocation, And Consumer Impact
+
+Delivery owners must be able to stop propagating an object without erasing the
+identity needed to find affected consumers.
+
+```mermaid
+flowchart LR
+    finding["Defect, risk, or changed evidence"] --> classify["Classify affected object and claim"]
+    classify --> contain["Hold, deprecate, or withdraw"]
+    contain --> correct["Correct at owning source"]
+    correct --> republish["Verify and publish replacement"]
+    republish --> notify["Expose predecessor, successor,<br/>impact, and migration"]
+```
+
+The action depends on the delivery class:
+
+| Class | Safe lifecycle action |
+| --- | --- |
+| package | deprecate or withdraw according to registry capability; publish a corrected version without reusing immutable version identity |
+| service | deny or constrain affected operations, roll back an identified release, then verify the effective route and data state |
+| dataset | supersede or withdraw the catalog identity while preserving provenance and the correction relation |
+| scientific report | mark the affected claim and evidence state, retain the prior record, and publish a bounded correction |
+| documentation | correct the owning source, rebuild the complete bundle, deploy it, and verify the affected route |
+| learning program | revise the contract and expected evidence while preserving what earlier completion records actually demonstrated |
+
+Silent replacement is unsafe whenever consumers may already have acted on the
+old identity. A correction record should state affected scope, old and new
+identities, reason, compatibility or scientific consequence, and any action a
+consumer must take.
 
 ## From Publication To Operation
 
