@@ -73,6 +73,56 @@ No single fingerprint proves that two workflow runs are equivalent.
 This separation prevents “same DAG” from being used as a shortcut for “same
 run” or “same result.”
 
+## Read A Run As A State Machine
+
+A workflow is not simply running or successful. Planning, attempts, artifact
+verification, and finalization create distinct evidence states.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Declared
+    Declared --> Rejected: graph or policy invalid
+    Declared --> Planned: canonical plan accepted
+    Planned --> Executing: backend starts attempts
+    Executing --> Partial: interruption or node failure
+    Executing --> Completed: required nodes terminal
+    Partial --> Resumed: governed continuation
+    Resumed --> Executing
+    Completed --> Finalized: indexes and evidence close
+    Finalized --> Verified: retained bundle passes checks
+```
+
+| State | Strongest justified claim | Evidence still required for the next state |
+| --- | --- | --- |
+| declared | authored graph exists | canonical validation and policy decision |
+| planned | executable structure and identities resolved | backend attempt evidence |
+| partial | some attempts and artifacts exist | terminal node population, continuation decision, and completeness checks |
+| completed | required work reached terminal states | finalized manifests, indexes, lineage, and integrity |
+| finalized | the run bundle is closed for review | independent bundle verification or comparison |
+| verified | retained evidence satisfies the selected verification contract | domain acceptance, if the workflow supports a scientific or business claim |
+
+A process exit cannot skip finalization. Partial artifacts remain useful for
+diagnosis, but they do not become outputs of a completed run until the owning
+indexes and terminal-state rules accept them.
+
+## Explain Retry, Resume, Cache, And Replay Separately
+
+These mechanisms all avoid repeating some work, but their trust contracts are
+different.
+
+| Mechanism | Reuses | Required identity and decision |
+| --- | --- | --- |
+| retry | the same node intent after an unsuccessful attempt | attempt ordering, retry policy, prior failure, and new terminal state |
+| resume | retained state from an incomplete run | source run, eligible node population, continuation policy, and preserved history |
+| cache | a previously completed node result | exact cache key, producer fingerprint, payload integrity, and cache decision reason |
+| replay | retained evidence or declared execution under a comparison contract | source bundle, replay mode, protected source evidence, compared fields, and verdict |
+
+A retry must not erase the failed attempt. Resume must not present old work as
+newly executed. A cache hit is not proof that two whole workflows are
+equivalent. Replay “match” means only that the registered comparison fields
+agree; environment, external effects, or domain meaning remain separate unless
+the replay contract names them.
+
 ## Runtime Layers
 
 | Layer | Responsibility |
@@ -135,6 +185,27 @@ silently widen the current product.
 | a cache hit is safe to reuse | exact cache identity plus retained payload verification |
 | a replay matches | the documented replay comparison fields plus separately inspected environment and artifact evidence |
 | a backend is isolated | the backend-specific enforcement matrix, selected controls, and unprotected surfaces |
+
+## Diagnose A Surprising Output
+
+Work backward from the output digest and producer identity to the node attempt,
+execution fingerprint, lowered plan, and authored graph. Then inspect cache or
+resume decisions and the declared environment before rerunning. This order
+distinguishes an unexpected byte sequence from an unexpected producer,
+execution path, input, or graph interpretation.
+
+```mermaid
+flowchart RL
+    output["Output digest"] --> producer["Producer node + attempt"]
+    producer --> execution["Execution fingerprint"]
+    execution --> plan["Planner fingerprint"]
+    plan --> graph["Graph fingerprint"]
+    producer --> reuse["Cache, resume, or retry decision"]
+    execution --> environment["Declared environment + backend"]
+```
+
+Do not start by comparing rendered summaries. They intentionally omit parts of
+the evidence bundle and cannot establish lineage or reuse eligibility.
 
 ## Core's Boundary In The Family
 

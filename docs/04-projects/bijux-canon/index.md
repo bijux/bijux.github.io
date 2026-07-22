@@ -73,6 +73,32 @@ Canon narrows every claim to the retained evidence.
 Missing evidence produces a narrower result or an explicit refusal. It is not
 reconstructed from a plausible final answer.
 
+## Preserve Evidence At Every Handoff
+
+Composition is trustworthy only when adapters retain the identity and decision
+records owned by both sides of a boundary. Passing text or vectors alone loses
+the information needed to explain a later claim.
+
+| Handoff | Producer must retain | Consumer must add |
+| --- | --- | --- |
+| source → ingest | source bytes, locator, media or schema identity, retrieval context | effective preparation configuration, normalized identities, transformations, and rejections |
+| ingest → index | chunks or records, content hashes, parentage, and preparation observations | backend capability, index identity, execution request, ranking, provenance, and cost |
+| index → reason | query, ranked evidence identities, scores, backend and index identity | selected spans, claim relationship, checks, contradiction or refusal state, and reasoning trace |
+| reason → agent | bounded claims, evidence links, verification state, and limitations | ordered calls, role decisions, convergence, termination, and complete lifecycle trace |
+| agent → runtime | definition, calls, artifacts, trace, and terminal decision | tenant and authority checks, immutable plan, policy verdict, storage identity, finalization, and replay envelope |
+
+```mermaid
+flowchart LR
+    producer["Producer record<br/>identity + decision"] --> adapter["Explicit adapter<br/>schema + mapping"]
+    adapter --> consumer["Consumer record<br/>new decision + parentage"]
+    adapter -. "loss, coercion, or refusal" .-> failure["Typed handoff evidence"]
+```
+
+An adapter owns more than serialization. It must state how source identities,
+missing fields, scores, ordering, tenancy, and failure semantics map across the
+boundary. An end-to-end demo that does not retain those mappings cannot prove
+cross-package evidence custody.
+
 ## Start With The Owning Package
 
 Canon packages are independent distributions, not installation tiers.
@@ -107,6 +133,37 @@ This proves that the declaration, authority, data identity, dependency order,
 entropy policy, replay envelope, and environment fingerprint resolve into a
 reviewable plan. It does not prove step execution, trace finalization, storage,
 or live cross-package composition.
+
+## Run Acceptance Is A Separate Decision
+
+Producing an answer or trace does not authorize the runtime to retain or
+promote a run. Acceptance joins execution evidence with authority, tenancy,
+policy, verification, and replay posture.
+
+```mermaid
+flowchart LR
+    plan["Immutable plan"] --> execute["Observed execution"]
+    execute --> trace["Finalized trace"]
+    trace --> verify["Verification results"]
+    authority["Tenant + authority"] --> arbitrate["Policy arbitration"]
+    verify --> arbitrate
+    policy["Policy fingerprint"] --> arbitrate
+    arbitrate --> verdict{"acceptability"}
+    verdict -->|acceptable| retain["Durable governed run"]
+    verdict -->|warnings| qualify["Retained with explicit warnings"]
+    verdict -->|unacceptable| refuse["Refusal and evidence"]
+```
+
+The runtime artifact record separates metadata and parentage from payload
+storage; consumers must verify retrieved payload bytes against their recorded
+content hashes. Trace finalization closes ordered execution evidence. Amending
+events or decisions after that boundary creates a different record rather than
+repairing the finalized trace in place.
+
+Replay acceptability also has limits. A permissive difference policy can allow
+declared event or artifact differences, but it cannot turn a structurally
+non-certifiable trace into acceptable evidence or erase blocking plan, tenant,
+environment, dataset, policy, or replay-envelope differences.
 
 ## Composition Status
 
@@ -152,6 +209,24 @@ producer.
   those fields were not compared.
 - HTTP schema presence does not prove that a route is implemented, authorized,
   or suitable for public exposure.
+
+## Diagnose A Knowledge Disagreement
+
+Work backward from the disputed claim through its support references, content
+hashes, retrieved population, query, index and backend identities, prepared
+chunks, and source record. Then inspect the reasoning and agent decisions that
+selected or rejected evidence.
+
+This separates four failures that often look alike in a final answer:
+
+- the relevant source never entered the admitted corpus;
+- ingest changed or rejected the relevant material;
+- retrieval did not select it under the named request and backend;
+- reasoning or orchestration misused evidence that was available.
+
+Changing a prompt cannot repair absent source custody. Rebuilding an index
+cannot repair an unsupported reasoning rule. The correction belongs at the
+first boundary whose retained record diverges from the intended contract.
 
 ## Canon's Boundary In The Family
 
