@@ -97,6 +97,38 @@ unpublished follow-up work is not an adoption point. If old and new consumer
 shapes must coexist, that coexistence needs an explicit contract and removal
 condition rather than a generator that guesses which shape a repository uses.
 
+## Qualify Fleet Rollout By Consumer Class
+
+One successful consumer cannot represent every contract shape. A documentation
+site, Python product, Rust workspace, control plane, and scientific repository
+exercise different capabilities, extension points, permissions, and product
+gates.
+
+```mermaid
+flowchart LR
+    accepted["Accepted standards revision"] --> classify["Affected capabilities<br/>and consumer classes"]
+    classify --> representative["Representative consumer adoption"]
+    representative --> learn{"Contract and product evidence pass?"}
+    learn -->|yes| expand["Reviewed fleet adoption"]
+    learn -->|no| hold["Hold affected class<br/>and correct ownership"]
+    expand --> report["Per-consumer pins,<br/>results, holds, and exceptions"]
+    hold --> report
+```
+
+| Change surface | Representative difference to exercise |
+| --- | --- |
+| documentation shell | navigation depth, direct entry, diagrams, themes, responsive behavior, and local content extensions |
+| Python Make contract | environment resolution, package layout, API checks, generated references, and product gate composition |
+| Rust Make contract | workspace structure, feature sets, nextest behavior, pinned-source gates, and artifact paths |
+| GitHub workflow or policy | event, permission, context name, environment, concurrency, and repository classification |
+| capability or manifest shape | selection, exclusion, obsolete-path removal, rendering, and checksum regeneration |
+
+Representative adoption is an early warning boundary, not an authority to
+merge changes into other consumers. Every repository still reviews its managed
+diff and runs the checks required for its product. Fleet rollout is complete
+only when per-consumer state makes adopted, held, excepted, and drifted members
+distinguishable.
+
 ## Deprecation And Withdrawal
 
 Deprecation is a compatibility window, not a synonym for deletion. A useful

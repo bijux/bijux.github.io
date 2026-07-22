@@ -127,6 +127,49 @@ None of these records is replaceable by “current standards” or a moving bran
 name. The exact commit identifies source; capabilities identify intent;
 digests identify content; consumer gates identify local acceptance.
 
+## Establish Source Trust Before Content Equality
+
+A commit SHA and matching directory digest establish identity and byte
+equality. They do not by themselves establish that the source was accepted by
+the intended repository authority or remained trustworthy after discovery of
+a compromised dependency or workflow.
+
+| Trust question | Evidence to retain |
+| --- | --- |
+| which source was intended? | canonical repository identity, immutable commit, and selected capability set |
+| was the source accepted through its governed path? | review and required-check context for the standards revision |
+| do the retrieved bytes match? | canonical package manifest, directory digests, and generated-file checksums |
+| did the consumer accept those bytes? | managed diff, standards checks, product gates, and consumer revision |
+| was the source later withdrawn? | security or correctness finding, affected commit range, replacement identity, and consumer impact record |
+
+Resolving the right hash from an untrusted origin is not source validation.
+Likewise, fetching from the expected origin does not remove the need to verify
+content. The adoption record needs both relationships.
+
+## Recover From A Defective Accepted Standard
+
+An accepted standards revision can later prove unsafe or incorrect. Correcting
+the canonical source is necessary, but consumer exposure remains a separate
+fleet question.
+
+```mermaid
+flowchart LR
+    finding["Defect or compromise finding"] --> affected["Affected standards commits,<br/>packages, and interfaces"]
+    affected --> consumers["Consumers by selected pin<br/>and capability"]
+    finding --> correction["Accepted canonical correction"]
+    consumers --> contain["Hold update, constrain use,<br/>or restore supported pin"]
+    correction --> adopt["Consumer-specific adoption<br/>and requalification"]
+    contain --> close["Exposure and residual risk record"]
+    adopt --> close
+```
+
+The impact record should distinguish consumers that selected the affected
+revision, consumers that executed the defective path, and consumers whose
+products or releases depended on its output. Pin equality is exposure
+evidence, not proof that the defective behavior ran. Conversely, moving the
+pin forward does not repair releases, governance decisions, or generated
+artifacts already produced under the affected contract.
+
 ## Standards Failure Semantics
 
 ```mermaid

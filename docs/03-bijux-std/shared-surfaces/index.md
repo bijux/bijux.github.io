@@ -150,6 +150,39 @@ required check can block admission, and a new manifest default can alter every
 rendered consumer. Conversely, a large internal rewrite can remain compatible
 when all observable contracts and evidence stay stable.
 
+## Compose Extensions Without Shadow Authority
+
+Consumer extensions should add product meaning at named extension points. They
+must not silently override a shared target, workflow context, generated path,
+environment variable, or artifact contract while continuing to claim the
+canonical behavior.
+
+| Collision surface | Safe composition evidence | Shadow-authority failure |
+| --- | --- | --- |
+| Make target | local target has a distinct name or documented prerequisite relationship | consumer redefines a shared target with different effects |
+| workflow check | product context has stable ownership and does not impersonate a managed policy context | two workflows can report the same required name with different semantics |
+| generated path | manifest owns the managed path and local output uses an explicitly local path | handwritten content competes with renderer output |
+| environment input | namespace, default, validation, secrecy, and precedence are declared | local variable changes shared behavior through an undocumented ambient value |
+| artifact or report | producer, schema, path, retention, and consumer are identifiable | local output overwrites a shared report with a different meaning |
+| documentation hook | shared interaction remains intact and local behavior is independently labeled and tested | page script depends on private shell structure or changes global navigation semantics |
+
+Composition checks should exercise both capabilities together and also verify
+removal. After a local extension is disabled, the canonical behavior should
+remain; after a managed interface is withdrawn, no local alias should continue
+to present the obsolete authority under a familiar name.
+
+## Keep Execution Environments Inside The Claim
+
+Shared commands run in developer workstations, CI runners, and sometimes
+restricted or offline contexts. Identical target names do not guarantee
+identical evidence when tools, network access, filesystem permissions, clocks,
+or platform architecture differ.
+
+The result should retain the relevant environment and dependency identities,
+whether the command used vendored or remote inputs, and which outputs were
+compared. A contract may deliberately support only a bounded environment; that
+limit is preferable to a portability claim inferred from one runner image.
+
 ## Removal Boundary
 
 Removing a managed interface requires coordinated source and consumer work.
