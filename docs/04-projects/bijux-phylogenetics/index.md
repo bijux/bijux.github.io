@@ -62,6 +62,53 @@ Evidence does not transfer between neighboring claims. Support for one
 phylogenetic comparative model cannot be used to imply that another model,
 dataset, lineage, or biological mechanism has been validated.
 
+## Read Evidence From Claim To Observation
+
+Begin with the statement being evaluated, not the most favorable table or
+figure. A reviewable chain moves from the claim contract down to its complete
+observation population and back up through the registered aggregation rule.
+
+```mermaid
+flowchart TB
+    statement["Intended statement"] --> claim["Claim identifier<br/>scope + dependencies"]
+    claim --> population["Required observation population<br/>identities + eligibility"]
+    population --> outputs["Primary outputs<br/>native + reference"]
+    outputs --> checks["Registered checks<br/>normalization + tolerance"]
+    checks --> verdict["Claim verdict<br/>limitations + freshness"]
+    verdict --> citation["Citable bounded statement"]
+```
+
+| Record | Establishes | Does not establish |
+| --- | --- | --- |
+| bundle manifest | study and bundle identity, claim roster, summary state, and limitations | that every registered claim has the same verdict |
+| claim record | exact statement, scope, dependencies, and aggregation contract | the availability of required primary outputs |
+| input manifest | source and derived analytical object identity | suitability of an input merely because it is present |
+| result inventory and ledger | primary outputs, observation identities, missing rows, exclusions, and failures | a favorable claim verdict without its registered rule |
+| checks and verdict | comparison mode, tolerance, denominator, outcome, and limitations | transfer of support to a neighboring claim |
+| freshness index | whether governed dependencies still match the reviewed state | scientific correctness by itself |
+
+A missing required observation remains in the denominator. Excluding it is a
+scientific decision that needs an eligibility rule, not a way to make the
+remaining rows appear complete.
+
+## Keep Verdict Levels Separate
+
+Evidence is summarized at several levels, and a favorable lower-level status
+must not be lifted upward without the owning aggregation rule:
+
+```mermaid
+flowchart LR
+    observation["Observation status"] --> claim["Claim verdict"]
+    claim --> bundle["Bundle summary"]
+    bundle --> study["Study interpretation"]
+    study --> repository["Repository coverage"]
+```
+
+An exact observation can coexist with a claim that is `not_comparable` because
+another required observation is absent. A matched claim can coexist with a
+mixed bundle. Repository coverage reports how much governed evidence exists;
+it is not a package-wide scientific-validation score.
+
 ## Runtime And External Tools
 
 The runtime preserves who owns the computation. Native methods and named

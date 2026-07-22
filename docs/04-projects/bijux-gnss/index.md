@@ -74,6 +74,50 @@ tests. They are not live-sky evidence and do not establish real-world
 positioning accuracy. Recorded data adds realism, but still requires source,
 redistribution, receiver, antenna, timing, and environment context.
 
+### Read the run as joined identities
+
+A run directory is useful only when its records can answer which data,
+configuration, implementation, and reference population produced each result.
+
+| Identity | What to retain | Question it answers |
+| --- | --- | --- |
+| capture | registry key or explicit file, format, sample rate, center frequency, timing, and source provenance | what signal population entered the workflow? |
+| configuration | receiver and navigation settings plus their stable hash | which search space, thresholds, and models governed execution? |
+| implementation | package version, repository revision and dirty state, enabled features, and machine context | which executable behavior produced the artifacts? |
+| stage | acquisition candidate, channel or epoch identity, terminal state, and diagnostics | where did evidence advance, degrade, or stop? |
+| reference | truth or external-reference identity, alignment rule, and eligible epochs | what comparison population supports the reported error? |
+| artifact | versioned envelope, checksum, inventory role, and manifest link | which bytes belong to this run and how should they be decoded? |
+
+The manifest joins these identities; it does not turn them into scientific
+truth. Machine context can explain a changed run, while reference alignment
+and the owning scientific budget decide whether the difference is acceptable.
+
+## Preserve The Stage Denominator
+
+GNSS workflows reduce populations as they advance: samples yield acquisition
+candidates, accepted candidates yield tracked channels, observations yield
+eligible epochs, and integrity criteria admit or reject solutions. Reporting
+only the final survivors makes a result impossible to audit.
+
+```mermaid
+flowchart LR
+    samples["Admitted samples"] --> candidates["Acquisition candidates"]
+    candidates --> channels["Tracked channels"]
+    channels --> epochs["Observation epochs"]
+    epochs --> solutions["Candidate solutions"]
+    solutions --> accepted["Integrity-accepted results"]
+    candidates -. "rejection + reason" .-> evidence["Stage evidence ledger"]
+    channels -. "loss + reason" .-> evidence
+    epochs -. "exclusion + reason" .-> evidence
+    solutions -. "refusal + reason" .-> evidence
+```
+
+For each transition, retain the input population, accepted population,
+excluded or failed members, and governing rule. An accuracy statistic over
+accepted epochs cannot stand in for acquisition sensitivity, tracking
+continuity, availability, or integrity performance; each claim has a different
+denominator.
+
 ## Failure Semantics
 
 A GNSS workflow can produce a complete evidence record without producing a
