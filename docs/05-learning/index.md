@@ -88,6 +88,40 @@ The packet is not a surveillance record or a score by volume. It exists so a
 reviewer can distinguish correct reasoning from accidental success and so the
 learner can revisit the decision after the system changes.
 
+## Assess The Decision, Not The Activity Trail
+
+Assessment is credible only when the exercise, evidence, and conclusion refer
+to the same capability. A command log can establish that an action occurred;
+it cannot establish why the learner chose it or whether the choice transfers
+to a changed system.
+
+| Assessment claim | Required observation | Common invalid shortcut |
+| --- | --- | --- |
+| understands the model | predicts behavior and explains the owning boundary | scores vocabulary recall as design understanding |
+| can implement the contract | changes the system while preserving stated invariants | accepts output equality without inspecting the boundary |
+| can diagnose failure | localizes an injected fault from retained evidence | awards credit for eventually reaching a passing state |
+| can operate and recover | restores service or state while preserving identity and recording consequences | tests only the clean path |
+| can transfer judgment | solves a materially changed case and defends tradeoffs | repeats the reference capstone with renamed inputs |
+
+Comparable assessment also needs a declared rubric, the same evidence burden
+for equivalent claims, and an escalation route for ambiguous cases. Reviewer
+agreement should be checked on representative submissions; a precise-looking
+score is not trustworthy when different reviewers apply the boundary
+differently.
+
+## Minimize Learning Evidence
+
+Retain only the evidence needed to support the stated learning claim. Secrets,
+unrelated repository history, ambient machine data, private source material,
+and continuous behavioral telemetry do not belong in a learning packet merely
+because they are easy to collect.
+
+The packet should identify its purpose, audience, retention boundary, and
+deletion or export route. When a capstone contains sensitive or licensed data,
+publish a governed fixture or redacted manifest that preserves the assessed
+contract without exposing the source. Evidence minimization is part of the
+engineering exercise: a trustworthy review route does not require surveillance.
+
 ## What The Programs Share
 
 | Principle | How it appears |

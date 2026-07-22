@@ -94,6 +94,52 @@ outputs does not exercise reconstruction. A clean rebuild does not prove that
 a remote backup is usable. Reproducing one metric does not establish identity
 for the full experiment state.
 
+## Reconstruct Away From The Authoring Environment
+
+A local rerun can accidentally inherit credentials, caches, untracked files,
+shell configuration, mounted data, mutable service responses, or manually
+installed tools. Independent reconstruction changes the custody boundary so
+those dependencies become observable.
+
+```mermaid
+flowchart LR
+    package["Declared source, data,<br/>parameters, and environment"] --> clean["Clean reconstruction boundary"]
+    clean --> retrieve["Resolve governed external dependencies"]
+    retrieve --> execute["Execute declared graph"]
+    execute --> compare["Compare artifacts and evidence"]
+    compare --> gaps["Record drift, omissions,<br/>and irreducible dependencies"]
+```
+
+The reconstruction record names the starting revision, data and dependency
+identities, unavailable inputs, credential class, network assumptions,
+commands, outputs, comparison rule, and elapsed observation window. It must not
+copy author credentials or private caches merely to make the demonstration
+pass.
+
+External services require special care. A locator proves where a request was
+sent, not which response was received. Retain a permitted response artifact or
+content digest, request semantics, retrieval time, provider version where
+available, and the policy for a response that can no longer be obtained.
+
+## Recover The Evidence Chain, Not Only The Product
+
+Disaster recovery is incomplete when the published file returns but its source
+identity, exclusion ledger, execution record, verification result, or promotion
+decision does not. Recovery drills should sample the entire claim path.
+
+| Recovered surface | Failure still hidden if omitted |
+| --- | --- |
+| source and data identity | restored output cannot be tied to the population used |
+| graph and environment | future reconstruction depends on operator memory |
+| logs and negative evidence | partial failures and exclusions disappear from review |
+| comparison and verification | restored bytes are assumed correct without a named rule |
+| promotion and withdrawal record | readers cannot tell which state was authoritative or superseded |
+
+Use a separately controlled recovery destination, verify identities before
+promotion, and record recovery-point and recovery-time observations for the
+drill. Those observations qualify the tested scenario; they are not universal
+guarantees for every dataset size, provider outage, or corruption mode.
+
 ## Capstone Evidence Packet
 
 Each reproducibility capstone should leave a reviewer with the dependency or

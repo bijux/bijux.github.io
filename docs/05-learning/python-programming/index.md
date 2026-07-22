@@ -163,6 +163,48 @@ the right value but destroys its signature, a registry that works only in one
 import order, or a descriptor that changes behavior under inheritance has not
 preserved its public contract.
 
+## Make Hidden Behavior Debuggable
+
+Python mechanisms differ in where behavior becomes visible. A useful design
+leaves enough evidence to reconstruct the path without requiring a maintainer
+to guess which hook ran.
+
+```mermaid
+flowchart LR
+    request["Observed request or call"] --> owner["Owning object or function"]
+    owner --> mechanism["Explicit composition or runtime hook"]
+    mechanism --> effect["Effect and resource boundary"]
+    effect --> result["Result or typed failure"]
+    result --> trace["Attributable diagnostic evidence"]
+```
+
+| Mechanism | Diagnostic question the capstone must answer |
+| --- | --- |
+| aggregate or stateful object | which transition was attempted, from which state, and which invariant refused it? |
+| lazy or async pipeline | which stage materialized work, owned cancellation, bounded concurrency, or released the resource? |
+| decorator | which wrapper ran, which callable it wrapped, and whether sync, async, exceptions, and metadata stayed transparent? |
+| descriptor | whether lookup occurred through the class or instance, where storage lives, and which inheritance rule applied? |
+| registry or plugin | which provider registered, from which provenance, in what order, and why another provider was refused? |
+| class-creation hook | which namespace changed at definition time and how generated behavior appears to inspection tools? |
+
+Logging every internal event is not the objective. The objective is a stable
+attribution path that exposes ownership, failure, and effect boundaries without
+leaking secrets or coupling consumers to implementation detail.
+
+## Prove A Mechanism Migration
+
+A strong transfer exercise replaces one mechanism while preserving the public
+contract: inheritance with composition, a global registry with explicit
+injection, a metaclass with a class hook, or an effectful pipeline with pure
+transforms plus an adapter.
+
+The evidence compares accepted behavior, rejected behavior, signatures and
+serialized shapes, failure attribution, resource use, and the removal of the
+old authority path. Running both implementations indefinitely is not the goal.
+The learner must show that one owner remains for each rule and that consumers
+can migrate without relying on import order, hidden mutation, or duplicated
+state.
+
 ## Cross-Track Transfer Exercise
 
 The strongest family-level evidence asks the learner to solve one system
