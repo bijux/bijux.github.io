@@ -53,6 +53,34 @@ scientific truth of a returned dataset.
 | data and science | dataset identity, lineage, and interpretation | immutable identifiers, provenance, curation records, validation, and qualified claims | freedom from source bias or universal scientific validity |
 | documentation publication | reviewed content and Pages artifact | strict build, local assets, pinned actions, least-privilege deployment, and OIDC | private content access control or continuous external-link availability |
 
+## Follow A Control From Threat To Evidence
+
+A trustworthy control claim joins six records. Missing one makes the boundary
+ambiguous even when the implementation exists.
+
+```mermaid
+flowchart LR
+    threat["Threat and protected asset"] --> policy["Control policy"]
+    policy --> enforcement["Enforcement point"]
+    enforcement --> exercise["Positive and negative exercise"]
+    exercise --> telemetry["Decision and audit evidence"]
+    telemetry --> response["Owner and failure response"]
+```
+
+| Record | Required question |
+| --- | --- |
+| threat | what actor, action, and consequence is in scope? |
+| policy | which identities and operations are allowed, denied, or conditional? |
+| enforcement | which component makes the decision, and can callers bypass it? |
+| exercise | were both authorized and unauthorized paths tested for the named topology? |
+| telemetry | can an operator attribute the decision without exposing secrets? |
+| response | who rotates, revokes, isolates, restores, or corrects the control after failure? |
+
+Configuration presence establishes only the policy record. Effective-state
+inspection and negative-path evidence are needed to show enforcement. Audit
+telemetry should record enough identity and decision context for investigation
+without copying credentials or sensitive payloads into logs.
+
 ## Repository And Supply-Chain Controls
 
 The repository layer protects how source and automation change:
@@ -117,6 +145,42 @@ The API and dataset boundaries must remain separate. Authorization to retrieve
 an object does not establish its provenance. A correct dataset fingerprint
 does not authorize a caller. Service availability does not prove that a
 scientific interpretation is sound.
+
+### Treat identity, authorization, and data provenance separately
+
+These checks often meet at one request but answer independent questions:
+
+- authentication establishes a caller or workload identity under a named
+  trust mechanism;
+- authorization decides whether that identity may perform an operation on a
+  resource in the current context;
+- dataset resolution selects the authoritative data generation;
+- provenance explains where that data came from and how it was produced;
+- scientific review determines which interpretation the evidence can support.
+
+Passing one boundary cannot repair another. An authenticated caller can still
+be unauthorized. An authorized response can still select stale data. A
+correctly fingerprinted dataset can still have incomplete scientific support.
+
+## Security Failure And Recovery
+
+Security recovery is not complete when traffic resumes. The response must
+preserve the evidence needed to determine scope while removing compromised or
+overpowered authority.
+
+```mermaid
+flowchart LR
+    detect["Detect and attribute"] --> contain["Contain the boundary"]
+    contain --> revoke["Revoke or rotate authority"]
+    revoke --> recover["Restore known-good identity and state"]
+    recover --> verify["Exercise denied and allowed paths"]
+    verify --> reconcile["Reconcile evidence, impact, and policy"]
+```
+
+The owning surface decides whether containment means disabling a workflow,
+withdrawing a release, isolating a service, revoking a credential, or refusing
+a dataset or publication. Incident closure needs the resulting effective
+state, not only the intended remediation.
 
 ## Public Documentation Boundary
 
