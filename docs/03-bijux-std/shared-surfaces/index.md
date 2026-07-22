@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Shared Surfaces
@@ -149,6 +149,26 @@ An additive file is not necessarily an additive interface change: a new
 required check can block admission, and a new manifest default can alter every
 rendered consumer. Conversely, a large internal rewrite can remain compatible
 when all observable contracts and evidence stay stable.
+
+## Preserve Failure As A Machine Contract
+
+Automation must distinguish a contract refusal from an implementation failure
+and from incomplete evidence. Collapsing every condition into either success or
+a generic nonzero result forces downstream policy to guess whether retry,
+correction, or containment is safe.
+
+| Outcome class | Meaning to preserve | Unsafe interpretation |
+| --- | --- | --- |
+| accepted | declared contract and required evidence passed | every consumer product is correct |
+| refused | input, capability, layout, or policy is unsupported or invalid | transient infrastructure failure worth blind retry |
+| failed | the implementation could not complete its owned operation | consumer input is necessarily wrong |
+| incomplete | required source or evidence was unavailable or indeterminate | a weaker check may substitute silently |
+| held by consumer | shared contract passed but repository-owned gates did not | canonical standard is invalid for all consumers |
+
+The concrete encoding may be an exit code, report field, workflow conclusion,
+or artifact state, but it must be documented and tested at the consuming
+boundary. Logs may add diagnosis; they must not be the only place where a
+policy-relevant outcome can be recovered.
 
 ## Compose Extensions Without Shadow Authority
 

@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Standards Adoption Model
@@ -73,6 +73,28 @@ by the contract for the affected interface and by consumer evidence at adoption.
 When the change is behavior-changing or structural, the standards change should
 name the affected capability and consumer obligation so a repository can decide
 whether to adopt, hold, or prepare a local product change.
+
+## Evolve Parseable Contracts Deliberately
+
+A machine-consumed manifest or report needs separate reader and writer
+compatibility. Accepting a new producer does not prove that existing consumers
+can parse its output, and accepting an old artifact does not prove that a new
+consumer interprets every field the same way.
+
+| Evolution question | Evidence required |
+| --- | --- |
+| how is the contract identified? | explicit schema or format identity tied to producer behavior |
+| which fields are required? | validation that rejects absence instead of inventing meaning |
+| how are unknown fields handled? | declared preserve, ignore, warn, or reject behavior |
+| did a default change semantics? | before-and-after fixtures and consumer decision-path checks |
+| can old and new forms coexist? | reader/writer compatibility matrix and bounded coexistence window |
+| how is withdrawal detected? | obsolete-form inventory, consumer migration evidence, and refusal test |
+
+Dual reading or dual writing is a migration contract, not a permanent excuse
+for ambiguity. It needs one canonical meaning, an owner, telemetry or inventory
+that shows remaining use, and an exit condition. A parser that silently guesses
+the format from available fields makes corrupted and unsupported inputs look
+compatible.
 
 ## Consumer Adoption
 

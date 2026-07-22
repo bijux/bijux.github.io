@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Bijux Standards
@@ -126,6 +126,27 @@ these relationships:
 None of these records is replaceable by “current standards” or a moving branch
 name. The exact commit identifies source; capabilities identify intent;
 digests identify content; consumer gates identify local acceptance.
+
+## Treat Automation Outputs As Public Interfaces
+
+Shared infrastructure is consumed by people, workflows, Make composition, and
+policy automation. A target or script can preserve its filename while breaking
+consumers through a changed invocation, context name, exit status, output path,
+or report meaning.
+
+| Machine contract | Stable questions |
+| --- | --- |
+| command invocation | which arguments, environment inputs, defaults, and working directory are accepted? |
+| exit behavior | which conditions pass, refuse, fail internally, or leave evidence incomplete? |
+| workflow context | which event and implementation may report the required check name? |
+| generated path | who owns the path, when is it replaced, and how is obsolete output detected? |
+| report payload | which schema identity, field semantics, ordering rules, and producer revision apply? |
+| artifact custody | where is output written, retained, and consumed without becoming a second source of truth? |
+
+Human-readable output is diagnostic unless its parseable contract is declared.
+Consumers should not scrape incidental log wording to make admission or release
+decisions. If automation needs a field, status, or artifact, that surface
+belongs in the compatibility review and withdrawal path.
 
 ## Establish Source Trust Before Content Equality
 
