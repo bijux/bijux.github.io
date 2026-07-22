@@ -160,6 +160,27 @@ stages and should not reuse one favorable score as universal approval. When no
 candidate model reproduces a consequential feature, the result can remain
 computationally valid while the scientific claim is narrowed or refused.
 
+## Interpret Support On Its Own Scale
+
+Bootstrap proportions, posterior probabilities, likelihood comparisons,
+information criteria, and concordance measures answer different questions
+under different resampling, prior, model, and population assumptions. Their
+numerical values are not interchangeable confidence scores.
+
+| Support evidence | Interpretation boundary to retain |
+| --- | --- |
+| bootstrap or resampling support | resampling unit, replicate generation, estimator, search behavior, failures, and summary rule |
+| posterior probability | prior, likelihood, tree and parameter space, chain behavior, convergence, and model adequacy |
+| likelihood-ratio evidence | nested-model conditions, boundary behavior, reference distribution, and multiplicity |
+| information criterion | candidate model set, parameter count convention, sample unit, and relative—not absolute—fit |
+| concordance or quartet measure | eligible genes, sites, taxa, missingness, conflict, and estimation uncertainty |
+
+Calibration asks how often similarly supported statements are borne out under
+a defensible truth or simulation process; repeatability asks whether the same
+procedure returns the same support. Neither alone establishes biological
+truth. A threshold should be justified for the decision it governs and tested
+for sensitivity rather than inherited from an unrelated evidence class.
+
 ## Account For Analytical Search
 
 A reported phylogenetic result may be selected from many traits, taxon sets,

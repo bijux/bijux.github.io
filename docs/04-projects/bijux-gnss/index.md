@@ -194,6 +194,28 @@ and refused cases. When prerequisites are missing or inconsistent, the honest
 result is unavailable integrity—not a reassuring number inferred from the
 position solution.
 
+## Calibrate Uncertainty Against Independent Error
+
+A covariance, confidence region, protection level, or quality indicator is a
+forecast of uncertainty under declared assumptions. It should be evaluated
+against independently referenced error over the complete eligible population,
+not accepted because its units and shape look plausible.
+
+| Calibration view | Question it answers |
+| --- | --- |
+| empirical coverage | how often does the declared region contain reference truth for eligible epochs? |
+| conditional coverage | does coverage change with geometry, signal state, environment, constellation, motion, or solution mode? |
+| sharpness | are regions informative rather than conservatively unbounded? |
+| tail behavior | which rare errors exceed the bound, and were alarms or refusals produced? |
+| temporal dependence | do long runs of miscoverage hide behind an acceptable aggregate rate? |
+| unavailable population | which epochs could not produce a valid uncertainty statement and why? |
+
+Calibration thresholds, tuning, and evaluation populations must remain
+separate. Reusing one capture to tune inflation and then report coverage can
+make the uncertainty look self-confirming. A calibrated result is bounded to
+the tested receiver, reference, scenario, and threat assumptions; it does not
+establish integrity for unexercised faults.
+
 ## Separate Anomaly Detection From Attribution
 
 Unexpected power, correlation, navigation data, clock behavior, residuals, or

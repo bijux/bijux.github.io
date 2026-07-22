@@ -277,6 +277,28 @@ or limit, eligible negative population, and uncertainty. Map styling and counts
 should distinguish non-detection, missing evidence, and excluded evidence so
 visual emptiness does not become a biological conclusion.
 
+## Expose The Sampling Process Behind Map Density
+
+Dense occurrence maps can reflect collection access, research priorities,
+preservation, publication, database coverage, and digitization effort as much
+as biological prevalence. Record density is therefore an observation-process
+result before it is an ecological pattern.
+
+| Sampling pressure | Evidence needed for interpretation |
+| --- | --- |
+| spatial access | surveyed areas, accessibility constraints, site-selection rule, and unsampled regions |
+| temporal coverage | collection periods, effort changes, chronology precision, and publication lag |
+| source inclusion | searched sources, languages, repositories, unavailable material, and deduplication |
+| preservation and recovery | material context, assay or identification opportunity, failures, and detection limits |
+| taxonomic attention | identification resolution, synonym policy, specialist review, and grouped records |
+| public disclosure | withheld sensitive sites, aggregation, licensing limits, and reconstructability risk |
+
+Effort correction is itself a model and must expose its denominator,
+covariates, assumptions, residual bias, and sensitivity. Normalizing by the
+number of available records cannot recover unrecorded sampling opportunity.
+Publish raw governed counts alongside any effort-adjusted surface so readers
+can distinguish observed evidence from modeled prevalence.
+
 ## Current Product Boundary
 
 The implemented runtime is an atlas builder and evidence-publication system.
