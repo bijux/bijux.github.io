@@ -8,6 +8,20 @@ The public content begins at [`docs/index.md`](docs/index.md). This README
 describes how the repository is built and maintained; it is not part of the
 published reader handbook.
 
+## Reader And Maintainer Boundaries
+
+The repository has two documentation audiences with different needs:
+
+| Surface | Reader | Purpose |
+| --- | --- | --- |
+| [`docs/`](docs) | public readers, product users, researchers, and integrators | explain the repository family, route readers to owning products, and bound public claims |
+| [`README.md`](README.md) | contributors and maintainers of this hub | explain ownership, source classes, build behavior, verification, and publication custody |
+
+Public pages must not narrate editorial intent, repository maintenance, or
+automation-control process. A reader should encounter the system, evidence, and
+limitations directly. Maintainer instructions belong here or in the owning
+repository's dedicated operations documentation.
+
 ## Responsibility
 
 | Surface | Owner | This repository's relationship |
@@ -67,6 +81,25 @@ and validate the resulting managed diff.
 | [`.github/`](.github) | repository policy, deployment trigger, and managed workflow consumers |
 | [`artifacts/`](artifacts) | generated sites, environments, caches, reports, and local run output |
 
+## Public Information Architecture
+
+The hub answers a bounded set of cross-repository questions:
+
+| Reader question | Owning hub route |
+| --- | --- |
+| which repository owns this authority? | Platform and System Map |
+| how does an output move from source to a user? | Delivery Surfaces |
+| what evidence qualifies a delivered system? | Operational Assurance |
+| where is a security control enforced? | Security Model |
+| what does the root publication path prove? | Publication Integrity |
+| which product or scientific repository should I open? | Projects |
+| which executable learning program matches this pressure? | Learning |
+
+The hub should stop at the point where a destination repository becomes
+authoritative. It may compare ownership and evidence classes; it must not fork
+package contracts, operational procedures, live capability matrices, or
+scientific conclusions into a second handbook.
+
 ## Build The Site
 
 The documentation toolchain versions are pinned in
@@ -119,6 +152,47 @@ make bijux-std-checks
 `bijux-std-checks` validates managed packages against their configured
 canonical source. Neither command replaces review of hub-owned content or
 destination accuracy.
+
+## Review A Hub Claim
+
+Before accepting a new or materially changed public claim:
+
+1. identify the repository that owns the behavior or evidence;
+2. inspect its current README, public handbook, and relevant contract or
+   limitation page;
+3. describe only the boundary supported by those sources;
+4. link readers to the owning route instead of duplicating the handbook;
+5. build the complete hub in strict mode so navigation and local references are
+   validated together;
+6. inspect the rendered route when diagrams, tables, or cross-site journeys
+   materially changed.
+
+For time-sensitive capability summaries, include a review date and retain the
+owning destination as authority. A project page should say when a route is
+planned, simulated, internal, bounded, or unavailable instead of filling the
+gap with architectural intent.
+
+## Operational And Security Ownership
+
+This repository owns a static public documentation deployment, not the
+operations of every destination it describes.
+
+- the strict build establishes that the configured site can be rendered from
+  the selected source revision;
+- the Pages artifact and deployment establish the root site's publication
+  identity;
+- pinned Actions, least-privilege Pages permissions, and OIDC constrain the
+  deployment path;
+- bundled Mermaid and presentation assets reduce runtime dependency on
+  third-party CDNs;
+- destination availability, API authorization, runtime isolation, dataset
+  correction, and scientific acceptance remain with the owning repositories.
+
+Do not turn a successful site deployment into a broader product-readiness or
+security claim. The public [Operational Assurance](docs/01-platform/operational-assurance/index.md),
+[Security Model](docs/01-platform/security-model/index.md), and
+[Publication Integrity](docs/01-platform/publication-integrity/index.md) pages
+state those boundaries for readers.
 
 ## Publication Path
 
