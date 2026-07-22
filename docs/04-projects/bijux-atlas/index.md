@@ -168,6 +168,53 @@ them. An executed load test cannot prove that its deployment passed the
 documented admission policy unless that admission result is joined to the same
 service identity.
 
+## Define Capacity As An Operating Envelope
+
+Atlas capacity is not the largest offered request rate observed before a run
+ended. It is the lowest repeatable boundary at which the named traffic mix
+finishes with correct responses, declared latency and error budgets, bounded
+resource use, and controlled overload behavior.
+
+| Dimension | Record with the result | Why it changes the conclusion |
+| --- | --- | --- |
+| dataset | tuple, catalog generation, size and shape | query cost and working set change with data |
+| traffic | route mix, query pack, offered rate, concurrency, duration | a cheap-route result cannot qualify heavy queries |
+| cache | cold or warm state, occupancy, invalidation rule, hit and miss behavior | caching can move load away from the serving store |
+| service | software, profile, resources, replicas, placement, autoscaling policy | capacity belongs to a deployed configuration |
+| dependencies | store, Redis, catalog, network and credential condition | a downstream bottleneck can resemble application saturation |
+| generator | location, resources, clock and achieved offer | a saturated client can cap the observed throughput |
+| terminal outcomes | correct completion, deliberate rejection, timeout, failure | accepted or offered work is not completed throughput |
+
+```mermaid
+flowchart LR
+    offer["Offered workload"] --> admit["Admission and policy"]
+    admit --> execute["Cache, store, and query work"]
+    execute --> terminal{"Terminal outcome"}
+    terminal -->|contract-correct| capacity["Completed throughput"]
+    terminal -->|deliberate shedding| protected["Controlled overload"]
+    terminal -->|incorrect or unknown| reject["Invalid capacity evidence"]
+```
+
+Autoscaling does not erase this accounting. Scheduling delay, readiness lag,
+cache warming, redistribution, and post-scale stabilization are part of the
+observed envelope. More replicas can amplify store, connection, or cache-miss
+pressure; replica count alone is not evidence of added usable capacity.
+
+## Keep Cache Acceleration Subordinate To Authority
+
+A cached response is acceptable only when it can be attributed to the intended
+dataset generation and cache policy. Under a store outage or cached-only
+profile, the service may deliberately serve verified retained content and
+refuse uncached work. A fast response with stale, partial, cross-dataset, or
+unverifiable content is an integrity failure, not graceful degradation.
+
+Dataset correction therefore crosses more than the serving store. Promotion or
+withdrawal changes the authoritative catalog relationship; caches, endpoint
+membership, and observations derived from the superseded generation must be
+invalidated or explicitly bounded. Recovery evidence should demonstrate both
+that the authoritative generation is selected and that stale cache state no
+longer produces an ordinary success.
+
 ## Current Qualification Boundaries
 
 The operations handbook keeps important gaps public:

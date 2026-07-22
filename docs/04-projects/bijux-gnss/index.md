@@ -118,6 +118,62 @@ accepted epochs cannot stand in for acquisition sensitivity, tracking
 continuity, availability, or integrity performance; each claim has a different
 denominator.
 
+## Build A Reference Hierarchy
+
+GNSS outputs can be compared with several kinds of evidence, and they do not
+support the same claim.
+
+| Reference class | Useful for | Required context |
+| --- | --- | --- |
+| mathematical invariant or published formula | units, transforms, code properties, and model behavior | convention, domain, numerical budget, and edge cases |
+| independent implementation | algorithm agreement and regression detection | implementation independence, configuration, and known shared assumptions |
+| broadcast or precise product | orbit, clock, correction, and interpolation behavior | source, product family, epoch coverage, frame, time system, and validity interval |
+| surveyed station or injected truth | positioning error and convergence under a named scenario | truth provenance, antenna or injection model, environment, and eligible epochs |
+| live-sky capture | receiver behavior under observed conditions | equipment, location, interference, timing, and external reference evidence |
+
+Synthetic truth is strong evidence for the injected fault or deterministic
+signal model and weak evidence for unmodeled propagation, hardware, and
+environment behavior. Live-sky data supplies realism but does not supply truth
+by itself. Agreement with a second implementation is also insufficient when
+both implementations share the same convention error or input product.
+
+## Align Time, Frame, And Population Before Error
+
+An error statistic is meaningful only after solution and reference records are
+joined under an explicit alignment rule. GNSS week or day rollover, leap
+seconds, constellation time systems, interpolation windows, coordinate frames,
+antenna reference points, and epoch tolerances can all turn numerically close
+records into a scientifically invalid comparison.
+
+```mermaid
+flowchart LR
+    solution["Solution epochs"] --> normalize["Resolve time system,<br/>frame, units, and identity"]
+    reference["Reference epochs"] --> normalize
+    normalize --> align["Apply declared alignment rule"]
+    align --> eligible["Eligible paired epochs"]
+    align --> excluded["Unpaired or invalid epochs<br/>with reasons"]
+    eligible --> metrics["Error, convergence,<br/>availability, integrity"]
+```
+
+The evidence must retain the unpaired and invalid population as well as the
+aligned population. “At least one epoch aligned” proves that a comparison can
+begin; it does not prove that coverage is representative or that position
+error is acceptable.
+
+## Separate Accuracy From Integrity
+
+Accuracy asks how close accepted estimates are to reference truth. Integrity
+asks whether the system bounds risk and refuses or alarms when its stated
+hypotheses no longer support a trustworthy result. A small observed error does
+not prove a protection level, and a protection level is not meaningful without
+its threat model, probability assumptions, exclusions, thresholds, geometry,
+and unavailable-state behavior.
+
+Integrity evidence should include accepted, degraded, fault-excluded, alarmed,
+and refused cases. When prerequisites are missing or inconsistent, the honest
+result is unavailable integrity—not a reassuring number inferred from the
+position solution.
+
 ## Failure Semantics
 
 A GNSS workflow can produce a complete evidence record without producing a
