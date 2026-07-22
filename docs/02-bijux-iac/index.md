@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Bijux Infrastructure-as-Code
@@ -151,6 +151,28 @@ flowchart LR
 
 None of these records substitutes for another. In particular, a plan cannot
 prove the later write, and a successful apply step cannot prove final equality.
+
+## Treat A Remote Write As A State Transition
+
+The control plane writes to a service that other authorized actors can also
+change. Every mutation should therefore be reviewed as a transition from an
+observed precondition to an intended state, followed by a fresh effective-state
+observation.
+
+| Transition field | Question it answers |
+| --- | --- |
+| accepted declaration | which source authorized the intended state? |
+| observed precondition | which live settings and rulesets informed the plan? |
+| elapsed window | how long could live state diverge between observation and write? |
+| attempted operation | which repository, control, and requested value were sent? |
+| remote response | what did the API acknowledge, reject, rate-limit, or leave uncertain? |
+| post-write audit | which state is actually active after all attempted operations? |
+
+Serialization removes competing control-plane runs; it does not prevent a
+manual administrator, platform behavior, or stale observation from changing
+the precondition. When the remote interface cannot enforce a conditional
+write, a narrow observation-to-write window and complete audit bound the risk
+but do not create atomicity.
 
 ## Security Boundary
 

@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Repository Coverage
@@ -206,6 +206,27 @@ Review must account for live rulesets and settings, automation credentials,
 repository-specific extensions, public catalog routes, and any standards
 consumer relationship. The final claim should distinguish a repository that
 is no longer family-governed from one that no longer exists.
+
+## Preserve Custody Across Rename Or Transfer
+
+A rename changes a locator; a transfer changes administrative authority. Both
+can leave the old and new identities simultaneously reachable, redirected, or
+partly governed. The coverage record should preserve continuity without
+pretending that the transition is atomic across GitHub, automation, packages,
+and public documentation.
+
+| Custody evidence | Required distinction |
+| --- | --- |
+| durable repository identity | same underlying repository versus a newly created replacement at a familiar name |
+| former and current owner/name | compatibility redirect versus active administrative authority |
+| credential target set | authority removed from the former target and deliberately granted to the current target |
+| rulesets and settings | controls observed at both identities during the transition window |
+| workflows and required contexts | checks still report under the names required by the protected path |
+| packages, sites, and references | delivery aliases, canonical destinations, and deprecation or withdrawal state |
+
+Closure requires an observation of residual authority at the former identity,
+not only a successful audit of the new one. If an old name can later be reused,
+consumers must not treat the name alone as continuity evidence.
 
 ## Coverage Change Matrix
 

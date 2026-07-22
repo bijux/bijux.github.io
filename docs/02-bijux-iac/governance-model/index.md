@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Governance Model
@@ -146,6 +146,27 @@ Retrying without classifying the failure can conceal a mixed state. A retry is
 safe only after the operator knows which declaration remains authoritative,
 why the previous execution failed, and whether prerequisites such as required
 status contexts are actually available.
+
+## Resolve Indeterminate Remote Outcomes Before Retrying
+
+A timeout or interrupted runner does not prove that GitHub rejected a write.
+The request may have failed before admission, completed without delivering its
+response, or applied only part of a sequence. Blind retry can therefore turn
+an observation failure into additional mutation.
+
+| Observed outcome | Safe next evidence |
+| --- | --- |
+| explicit validation or authorization rejection | correct the declared input or authority; no state change should be inferred |
+| explicit rate limit or service-unavailable response | preserve retry guidance, wait within policy, then re-observe live state before planning |
+| connection loss before response | classify the write as indeterminate and read the affected control |
+| runner cancellation during a write sequence | inventory every operation that could have started and audit the complete affected family |
+| acknowledged write followed by audit mismatch | retain the request and response, stop further mutation, and reconcile declared versus effective state |
+
+Backoff protects the remote service but is not a correctness strategy. A retry
+is justified only after effective state shows that repeating the operation is
+still required and the accepted declaration remains authoritative. Logs must
+identify the operation without retaining administration credentials or
+sensitive response material.
 
 ## Drift And Reconciliation
 
