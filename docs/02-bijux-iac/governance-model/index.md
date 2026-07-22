@@ -107,6 +107,46 @@ The governance path rejects rather than silently normalizes:
 The correct response is to reconcile source or live state. Weakening the
 validator would destroy the evidence that the control plane exists to provide.
 
+## Partial Apply Recovery
+
+Repository settings and Terraform-managed rulesets cross separate APIs. A
+serialized workflow prevents competing writers, but it cannot turn those APIs
+into one transaction. Recovery begins by observing the effective state rather
+than assuming that every earlier step rolled back when a later step failed.
+
+```mermaid
+flowchart TD
+    failure["Apply or audit failure"] --> freeze["Keep governance writes serialized"]
+    freeze --> inspect["Identify accepted revision,<br/>completed writes, and live state"]
+    inspect --> declared{"Is the accepted declaration still correct?"}
+    declared -->|yes| forward["Correct cause and reapply declaration"]
+    declared -->|no| revert["Accept a reviewed declaration<br/>for the intended prior posture"]
+    forward --> audit["Run full live audit"]
+    revert --> audit
+    audit --> equal{"All modeled fields equal?"}
+    equal -->|no| inspect
+    equal -->|yes| close["Close with revision-bound equality evidence"]
+```
+
+The choice is between two governed declarations, not between “forward” and an
+unrecorded administrator edit. Forward correction is appropriate when the
+accepted policy remains the intended policy. Restoring a prior posture first
+requires that posture to be represented by a reviewed source revision. A
+manual intervention may be necessary to recover access, but it creates drift
+until the declaration and full audit agree again.
+
+| Failure point | State that may already have changed | Recovery evidence |
+| --- | --- | --- |
+| before import or plan | none from this execution | corrected import or validation result |
+| during settings writes | a subset of repository settings | live settings comparison across the declared family |
+| during Terraform apply | settings and a subset of rulesets | imported rulesets plus full settings and ruleset audit |
+| during post-apply audit | writes may be complete; equality is unknown | successful rerun of the complete live audit |
+
+Retrying without classifying the failure can conceal a mixed state. A retry is
+safe only after the operator knows which declaration remains authoritative,
+why the previous execution failed, and whether prerequisites such as required
+status contexts are actually available.
+
 ## Drift And Reconciliation
 
 ```mermaid
@@ -129,6 +169,20 @@ different APIs. The apply workflow serializes writers and audits afterward,
 but it does not claim one cross-API transaction or automatic rollback. If a
 later write fails after earlier settings changed, the failed workflow and live
 audit boundary require explicit reconciliation.
+
+## Reconciliation Closure
+
+A governance incident is not closed when the corrective workflow merely
+finishes. Closure requires a complete live audit against an identified
+accepted revision and an explanation of the original mismatch. If recovery
+changed the intended policy, the replacement declaration and its review are
+part of the evidence chain.
+
+The audit observation is time-bounded. A later administrator action can create
+new drift, so the closure statement should say when the state was observed and
+which modeled surfaces were compared. Unmodeled organization controls, secret
+access, product check behavior, and historical continuity remain outside that
+claim.
 
 ## Credential Boundary
 

@@ -118,6 +118,40 @@ resources into ephemeral runner state for each execution. This avoids a
 separate state store, but makes successful import mandatory: the workflow
 stops rather than attempting a write against unowned state.
 
+## Change-Set Identity
+
+A governance change is reviewable only when its scope can be named before it
+writes. The accepted source revision anchors that identity. Its inventory diff,
+rendered targets, imported live state, and Terraform plan answer four distinct
+questions:
+
+| Evidence | Question answered |
+| --- | --- |
+| accepted inventory revision | which declaration authorized the change? |
+| repository and field diff | which members and modeled controls can move? |
+| imported live resources | what state did planning observe? |
+| Terraform plan and settings inputs | what writes were expected? |
+| post-apply audit | which declared controls are active after the write? |
+
+The plan is therefore a blast-radius document, not merely a green check. A
+family-wide default change and a one-repository extension may use the same
+workflow, but they do not carry the same operational risk. Review should call
+out the affected repositories, shared fields, repository-specific fields, and
+any newly introduced required context. A required context must be available on
+the protected path before governance makes it mandatory.
+
+```mermaid
+flowchart LR
+    revision["Accepted inventory revision"] --> scope["Repository and field scope"]
+    scope --> observed["Imported live state"]
+    observed --> proposed["Planned writes"]
+    proposed --> effective["Post-apply live audit"]
+    effective --> claim["Bounded governance claim"]
+```
+
+None of these records substitutes for another. In particular, a plan cannot
+prove the later write, and a successful apply step cannot prove final equality.
+
 ## Security Boundary
 
 Read-only validation and planning use narrower permissions than live
@@ -141,6 +175,12 @@ active GitHub settings.
 The control plane governs GitHub repository admission and settings. It does not
 establish the correctness, availability, or scientific validity of a product
 delivered from those repositories.
+
+When an apply fails, its evidence remains useful even though it cannot support
+an active-governance claim. The accepted revision, completed write steps,
+failed step, and live audit delimit the state that must be reconciled. The
+closure evidence is a later audit at a named revision—not the absence of a new
+workflow error.
 
 ## Governance Claim Ladder
 

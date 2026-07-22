@@ -131,6 +131,50 @@ This prevents a new repository from appearing in the public catalog while
 remaining outside governance, or a retired name from surviving in policy after
 its replacement is active.
 
+## Membership Lifecycle
+
+Family membership changes alter the target set of a high-impact credential and
+must be treated as control-plane changes in their own right.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Proposed
+    Proposed --> Declared: identity, stack, delivery, and checks validated
+    Declared --> Governed: settings and rulesets applied and audited
+    Governed --> Changed: responsibility, delivery, or required checks change
+    Changed --> Governed: revised declaration audited
+    Governed --> RetirementDeclared: removal or transfer accepted
+    RetirementDeclared --> Retired: residual targets and public routes reconciled
+```
+
+For onboarding, the repository must exist under the expected owner, its stable
+identity and classification must be declared, and every required context must
+be capable of reporting on its default-branch path. Only then can the rendered
+target set be applied and audited. Publishing documentation or a package is a
+separate delivery transition; governance coverage does not manufacture those
+surfaces.
+
+For retirement or transfer, deleting the inventory row is not sufficient.
+Review must account for live rulesets and settings, automation credentials,
+repository-specific extensions, public catalog routes, and any standards
+consumer relationship. The final claim should distinguish a repository that
+is no longer family-governed from one that no longer exists.
+
+## Coverage Change Matrix
+
+| Change | Principal risk | Evidence before apply | Evidence after apply |
+| --- | --- | --- | --- |
+| add a repository | unprotected admission or unavailable required context | identity, ownership, context availability, rendered target | live settings and ruleset equality |
+| publish a delivery surface | catalog overstates an unavailable destination | live destination and declared delivery change | route and delivery-state verification |
+| add a required context | merges become blocked by a check that cannot report | workflow trigger and stable context name | ruleset equality and observed protected-path run |
+| rename or transfer | old identity remains governed while the new one is omitted | explicit source and destination ownership plan | old and new live targets reconciled |
+| retire a repository | credentials, routes, or policy survive unintentionally | dependency and residual-control inventory | absence or deliberate retention of every modeled target |
+
+The matrix bounds what “complete” means for the membership change. Product
+data migration, package deprecation, archival retention, and domain-specific
+continuity remain responsibilities of their owning repositories and must not be
+inferred from a successful governance audit.
+
 Continue with [Governance Model](../governance-model/index.md) for how this
 inventory becomes live policy or [System Map](../../01-platform/system-map/index.md)
 for product and standards dependencies.
