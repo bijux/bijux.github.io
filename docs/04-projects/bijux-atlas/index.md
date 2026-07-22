@@ -4,118 +4,158 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-12
+last_reviewed: 2026-07-22
 ---
 
 # Bijux Atlas
 
-Bijux Atlas publishes and operates delivery-facing interfaces for
-datasets, APIs, service contracts, and documentation.
+Bijux Atlas is a Rust platform for turning governed GFF3 and FASTA inputs into
+immutable genomic dataset releases, queryable APIs, and reviewable operational
+evidence.
 
-`bijux-atlas` is the delivery and operational surface for services,
-datasets, APIs, and docs control-plane behavior. It keeps queryable
-delivery, immutable artifacts, service contracts, and publication
-surfaces as first-class engineering boundaries.
-
-Shared standards note: Atlas consumes shared docs shell behavior and
-cross-repository checks from `bijux-std`; Atlas owns its local
-service/data contracts and delivery operations.
-Atlas also consumes the shared runtime and governance backbone from
-`bijux-core` while owning its own delivery contracts.
-
-Concrete Atlas surfaces include:
-
-- CLI
-- API
-- OpenAPI export
-- docs
-- release artifacts
-- control plane
+Atlas separates dataset construction, publication, serving, and operational
+qualification. That separation lets a reader determine which inputs produced a
+dataset, which bytes were published, which identity answered a query, and what
+evidence supports operating the service.
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="https://bijux.io/bijux-atlas/">View Published Docs</a>
-<a class="md-button" href="https://github.com/bijux/bijux-atlas">View GitHub Repository</a>
+<a class="md-button md-button--primary" href="https://bijux.io/bijux-atlas/bijux-atlas/">Read the product handbook</a>
+<a class="md-button" href="https://bijux.io/bijux-atlas/bijux-atlas-ops/">Read the operations handbook</a>
+<a class="md-button" href="https://github.com/bijux/bijux-atlas">Inspect the repository</a>
 </div>
 
-## Repository Shape
+## Follow A Dataset To A Query
 
-`bijux-atlas` presents data-service work as an operated product surface
-rather than a loose data tool. The repository publishes a CLI, server,
-OpenAPI export surface, and operating control plane around genomics
-dataset delivery and immutable query artifacts.
-
-Inherited vs local ownership: navigation shell and baseline docs/check
-standards come from `bijux-std`, while Atlas owns API behavior, dataset
-publication contracts, and service operations.
-
-## System Map
+The tuple `release/species/assembly` is the logical identity carried from
+publication into catalog discovery and query provenance. Source, build, and
+artifact fingerprints bind that tuple to exact inputs, policy, and bytes.
 
 ```mermaid
-graph LR
-    contracts["contracts and OpenAPI"] --> api["API surface"]
-    api --> artifacts["artifacts and datasets"]
-    artifacts --> publish["published Atlas surface"]
+flowchart LR
+    source["GFF3 + FASTA + policy"] --> candidate["Ingest candidate"]
+    candidate --> verify["Validation and deep verification"]
+    verify --> store["Immutable serving store"]
+    store --> catalog["Promoted catalog identity"]
+    catalog --> server["Server-side resolution"]
+    server --> query["CLI or HTTP result"]
 ```
 
-## What Atlas Owns
+| Boundary | What it establishes | What does not establish it |
+| --- | --- | --- |
+| build | a candidate exists for governed source and policy inputs | output files alone |
+| verify | structure, integrity, and selected deep checks pass | zero exit from ingest alone |
+| publish | immutable artifacts exist in the serving store | files left in a build directory |
+| promote | the catalog names that published dataset generation | payload availability without catalog authority |
+| resolve | the server opened the selected catalog and artifacts | client-supplied labels alone |
+| query | an interface returned a result with dataset and software provenance | readiness at one moment |
 
-- delivery contracts for APIs, datasets, and query behavior
-- publication and release surfaces for immutable artifacts
-- control-plane operations that keep docs, contracts, and service behavior aligned
+A later success cannot repair a skipped earlier authority transfer.
 
-## What You Can Verify Quickly
+## Product Boundaries
 
-| Surface | Why it matters |
+Atlas owns distinct packages for genomic identity, ingest, store publication,
+query semantics, runtime ports, server composition, wire contracts, operator
+commands, and reusable operational models. The CLI and server are composition
+roots; no central “runtime service” silently owns every action.
+
+Eleven public crates carry these boundaries through crates.io, docs.rs, GitHub
+releases, and GHCR artifacts. Repository-only development tooling validates the
+workspace and prepares releases without becoming a public runtime dependency.
+
+## Operations Are A Product Capability
+
+Atlas operations cover more than deployment manifests:
+
+```mermaid
+flowchart LR
+    identity["Runtime and dataset identity"] --> deploy["Render, admit, deploy"]
+    deploy --> secure["Authorize and isolate"]
+    secure --> observe["Metrics, logs, traces"]
+    observe --> stress["Load, churn, and faults"]
+    stress --> recover["Rollback and restore"]
+    recover --> decide{"Promote, hold,<br/>or withdraw"}
+```
+
+### Stack authority
+
+The serving store and catalog are authoritative for dataset availability and
+identity. Redis-backed dataset and response caches accelerate reads; they do
+not become an alternate source of truth. Local Redis and MinIO composition is a
+development fixture, not evidence of durable production persistence.
+
+### Deployment and security
+
+Deployment profiles pass through render and admission contracts before
+rollout. Security spans caller authentication, route authorization, workload
+identity, network policy, secrets handling, and dependency credentials. A
+ready pod proves traffic eligibility, not that every administrative route is
+classified or every production exception is justified.
+
+### Observation and incident response
+
+Health, readiness, metrics, logs, traces, dashboards, and evidence reports have
+different owners. Incident handling separates mitigation from evidence
+custody, so restoring service does not erase the identities and observations
+needed for diagnosis.
+
+### Load and resilience
+
+Load scenarios name workload, target, rate, duration, thresholds, and evidence
+destination. Failure experiments additionally need an explicit blast radius
+and abort condition. A checked-in scenario proves the experiment is defined;
+only an executed, identity-bound result supports a performance or resilience
+claim.
+
+### Recovery and distribution
+
+Dataset pointer rollback, release reconstruction, consumer verification, and
+distribution-channel evidence are separate concerns. A reversible pointer is
+not a complete backup system, and a tarred OCI bundle is not proof of a
+runnable container image.
+
+## Current Qualification Boundaries
+
+The operations handbook keeps important gaps public:
+
+- the production profile is represented in the deployment matrix, but no
+  complete production lifecycle scenario is checked in;
+- specialized production overlays still contain fixture identities and cannot
+  prove a real deployed release;
+- administrative-route classification does not yet cover every route exposed
+  by the OpenAPI surface;
+- rollout-under-load and rollback-under-load registrations point to runners
+  that are not present, while the existing load script does not control a
+  rollout;
+- the repository defines backup and reconstruction contracts but does not
+  provide a production backup schedule, retention policy, restore runner, or
+  completed restore result.
+
+These limits narrow the evidence. They do not erase the implemented dataset,
+API, or operational contracts.
+
+## Match Evidence To The Claim
+
+| Claim | Evidence that can support it | Insufficient substitute |
+| --- | --- | --- |
+| a dataset is publishable | validation, deep verification, manifest, and hashes | successful ingest |
+| a dataset is discoverable | publication record and promoted catalog entry | files in a directory |
+| an interface is compatible | owning contract and compatibility evidence | one successful request |
+| a deployment is admissible | rendered identity, admission result, and effective-state checks | schema-valid values |
+| a performance budget holds | governed workload, baseline, measurements, and thresholds | scenario definition |
+| recovery works | executed restore with coherent dataset and catalog state | rollback documentation |
+| a release is distributable | artifacts, checksums, provenance, and consumer verification | internally consistent untrusted files |
+
+Atlas establishes provenance and system behavior for accepted inputs. It does
+not establish the biological correctness of upstream genomic source data.
+
+## Reader Routes
+
+| Question | Destination |
 | --- | --- |
-| API and OpenAPI surfaces | shows that delivery contracts are documented |
-| release artifacts and dataset posture | shows that publication is treated as an owned surface |
-| docs-aware operational routes | shows that operations and documentation move together instead of drifting apart |
-
-## What Lives Here
-
-- API and dataset delivery treated as first-class product interfaces
-- immutable artifact thinking instead of ad hoc mutable dataset handling
-- docs-aware validation, operational reporting, and control-plane behavior as part of delivery
-- runtime surfaces that stay separate: CLI, server, OpenAPI export, and operating tooling
-
-## Where To Begin
-
-| If you are looking for... | Start with this part of Atlas |
-| --- | --- |
-| service architecture | the split between CLI, server, OpenAPI export, and operating control plane |
-| data delivery posture | immutable dataset and artifact language in the docs and README |
-| operational seriousness | ops, configs, reporting, and documentation validation behavior |
-| published entry points | the handbook structure and published docs site that route into concrete service surfaces |
-
-## How Atlas Differs From Core And Canon
-
-- Atlas owns public delivery interfaces and operated publication surfaces.
-- Core owns runtime authority and execution governance that Atlas builds on.
-- Canon owns knowledge-system orchestration and reasoning boundaries.
-
-Atlas is where users and integrators consume stable delivery contracts.
-Core and Canon are where runtime and knowledge internals are structured.
-
-## Why This Matters Operationally
-
-- stable queries: service consumers can rely on documented query and API behavior across releases
-- traceable releases: dataset and artifact publication history stays visible instead of implied
-- service behavior in public: docs, contracts, and operations show how delivery works in practice
-- lower integration risk: maintenance workflows stay documented so downstream systems can plan confidently
-
-## When This Page Is Most Useful
-
-- the question is about API delivery, dataset publishing, or service behavior
-- you are tracing docs UX checks, ops validation, or operational evidence
-- you want a concrete public route into data-service engineering
-
-## In The Larger Picture
-
-Atlas keeps delivery work in the open as something that is published,
-validated, and operated rather than described abstractly.
-
-Bijux Atlas should be read as a delivery-facing system where contracts,
-artifacts, and public access must align cleanly over time. Within the
-broader family, it shows that publication and data delivery are
-architectural concerns, requiring the same boundary discipline and
-operational rigor as any core runtime surface.
+| build, publish, discover, and query a dataset | [Product handbook](https://bijux.io/bijux-atlas/bijux-atlas/) |
+| integrate CLI, HTTP, OpenAPI, or Rust interfaces | [Interfaces](https://bijux.io/bijux-atlas/bijux-atlas/interfaces/) |
+| understand dependency authority and caching | [Stack operations](https://bijux.io/bijux-atlas/bijux-atlas-ops/stack/cache-and-store-operations/) |
+| inspect security and production qualification | [Security operations](https://bijux.io/bijux-atlas/bijux-atlas-ops/kubernetes/security-operations/) |
+| inspect load, faults, and rollout evidence | [Load operations](https://bijux.io/bijux-atlas/bijux-atlas-ops/load/) |
+| inspect incident evidence and recovery | [Incident response](https://bijux.io/bijux-atlas/bijux-atlas-ops/observability/incident-response/) |
+| inspect backup and reconstruction boundaries | [Backup and recovery](https://bijux.io/bijux-atlas/bijux-atlas-ops/release/backup-and-recovery/) |
