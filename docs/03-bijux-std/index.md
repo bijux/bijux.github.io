@@ -109,6 +109,45 @@ Contract checks also verify layout, capability selection, pinned actions,
 source-of-truth relationships, generated-file parity, and reports. A checksum
 proves exact content alignment, not product correctness.
 
+## What A Consumer Records
+
+A standards adoption is reconstructable only when the consumer retains all of
+these relationships:
+
+| Record | Question it answers |
+| --- | --- |
+| accepted `bijux-std` commit | which canonical source revision was selected? |
+| declared capability set | which coherent package groups were requested? |
+| vendored package directories | which bytes are available without runtime network access? |
+| shared-directory digest manifest | do vendored packages match the accepted source? |
+| managed-file checksum manifest | do rendered GitHub and standards-derived files match their governed outputs? |
+| consumer checks and product gates | does the selected contract work in this repository? |
+
+None of these records is replaceable by “current standards” or a moving branch
+name. The exact commit identifies source; capabilities identify intent;
+digests identify content; consumer gates identify local acceptance.
+
+## Standards Failure Semantics
+
+```mermaid
+flowchart TD
+    select["Select accepted commit and capabilities"] --> resolve{"Can source and manifest resolve?"}
+    resolve -->|no| refuse["Refuse update"]
+    resolve -->|yes| stage["Stage managed packages"]
+    stage --> digest{"Do canonical digests match?"}
+    digest -->|no| refuse
+    digest -->|yes| render["Render managed consumer files"]
+    render --> verify{"Do layout, checksums, and contracts match?"}
+    verify -->|no| refuse
+    verify -->|yes| product["Run consumer-owned gates"]
+    product -->|fail| hold["Hold adoption in consumer"]
+    product -->|pass| adopt["Accept consumer revision"]
+```
+
+An upstream standard may be valid while one consumer holds adoption because of
+a product compatibility failure. That is useful isolation, not family drift,
+provided the consumer does not claim to have adopted bytes it rejected.
+
 ## Shared Does Not Mean Universal
 
 A behavior belongs in `bijux-std` when multiple repositories should consume

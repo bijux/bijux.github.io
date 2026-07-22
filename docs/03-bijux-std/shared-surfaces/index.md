@@ -100,6 +100,23 @@ A second root-level shared tree is not an alternate source. Layout validation
 rejects that ambiguity because two candidate authorities would make updates
 and audits unreliable.
 
+## Build-Time And Runtime Boundaries
+
+Shared packages are vendored repository infrastructure. They do not create a
+runtime control service.
+
+| Surface | When it acts | Network dependency after checkout |
+| --- | --- | --- |
+| Make contracts | local or CI command execution | none for vendored behavior; individual product commands may use networks |
+| standards checks | local or CI validation | canonical comparison may resolve the pinned source; local digest checks use vendored bytes |
+| GitHub workflows | GitHub Actions event execution | Actions and declared external services only |
+| documentation shell | build time and browser render time | shell, Mermaid, and visual assets are local to the published site |
+| capability update | explicit consumer refresh | requires access to the accepted `bijux-std` source revision |
+
+The absence of a central runtime dependency is deliberate. A consumer can
+build and inspect its selected standards snapshot without fetching presentation
+code or Make logic from `bijux.io`.
+
 ## Verification Matrix
 
 | Surface | Identity check | Contract check | Product check |
@@ -111,6 +128,22 @@ and audits unreliable.
 
 Each column matters. Identity without a contract only proves matching bytes;
 a contract without product checks cannot establish local correctness.
+
+## Failure Ownership
+
+| Failure | Correct owner |
+| --- | --- |
+| canonical package digest is wrong | `bijux-std` package source and manifest |
+| consumer vendored bytes differ from the selected source | consumer adoption change |
+| generated GitHub file differs from its manifest output | canonical generator or manifest, then consumer refresh |
+| shared target semantics are incorrect everywhere | owning shared Make package |
+| shared target is correct but one product needs more gates | consumer-owned extension |
+| documentation shell behavior fails across sites | `bijux-docs` canonical source |
+| one site's content or navigation is wrong | destination repository |
+| live branch protection differs from declared governance | `bijux-iac` reconciliation path |
+
+The owner is selected by the failed invariant, not by the repository where the
+symptom was first observed.
 
 ## Extension Boundary
 

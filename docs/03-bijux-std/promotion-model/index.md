@@ -96,6 +96,45 @@ Temporary local exceptions weaken reproducibility because the consumer no
 longer matches the standard it claims to use. They need a narrow scope, an
 owner, and a removal or upstream path.
 
+## Exception Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> LocalExtension
+    LocalExtension --> DurableLocal: expresses product meaning
+    LocalExtension --> UpstreamCandidate: invariant is shared unchanged
+    UpstreamCandidate --> Canonical: accepted with contract and tests
+    Canonical --> ConsumerAdoption: exact revision selected
+    ConsumerAdoption --> Verified: standards and product gates pass
+    ConsumerAdoption --> Held: compatibility evidence fails
+    Held --> Verified: consumer adapts and revalidates
+    Held --> LocalException: urgent bounded deviation is explicitly owned
+    LocalException --> Canonical: durable fix accepted upstream
+    LocalException --> Removed: exception no longer needed
+```
+
+A local exception must never become a second silent source of truth. Its
+record should identify the exact managed surface, why local ownership is
+temporarily necessary, what evidence bounds the deviation, and which event
+removes or upstreams it.
+
+## Adoption Is Independently Reversible
+
+Consumer adoption changes a pinned revision and a managed snapshot. If the new
+standard is incompatible, the consumer can retain or restore its last accepted
+pin while the upstream standard remains valid for other repositories.
+
+Reversal must preserve identity:
+
+- restore an exact previously accepted commit, not a remembered branch state;
+- regenerate the selected capabilities from that source;
+- recompute managed checksums rather than copying old files selectively;
+- rerun standards and product gates;
+- retain the failed adoption evidence for diagnosis.
+
+This is a repository-level rollback of shared inputs. It does not roll back
+product data, releases, or live GitHub administration.
+
 ## Evidence Boundary
 
 Upstream acceptance proves the shared package against the standards contract.
