@@ -129,6 +129,40 @@ code or Make logic from `bijux.io`.
 Each column matters. Identity without a contract only proves matching bytes;
 a contract without product checks cannot establish local correctness.
 
+## Compatibility Surface
+
+Compatibility attaches to observable interfaces, not to package names alone.
+A package can retain its directory name while breaking a consumer through a
+changed target, workflow event, manifest field, generated path, or browser
+contract.
+
+| Interface | Compatibility question | Evidence boundary |
+| --- | --- | --- |
+| Make target | do invocation, prerequisites, outputs, and failure behavior retain their contract? | shared contract tests plus consumer command composition |
+| typed manifest | can the selected schema be parsed and rendered without guessing defaults? | schema or validator and renderer parity |
+| generated GitHub file | do event triggers, permissions, context names, and managed paths remain deliberate? | manifest output, policy checks, and consumer workflow validation |
+| documentation shell | do navigation hooks, assets, responsive behavior, and build integration remain valid? | shell contracts, strict consumer build, and relevant visual checks |
+| capability | does selection still resolve one coherent package set and remove excluded packages? | capability, layout, and digest validation |
+| report or artifact | do path, format, and meaning remain usable by the consumer that reads it? | producer contract and downstream parser or policy gate |
+
+An additive file is not necessarily an additive interface change: a new
+required check can block admission, and a new manifest default can alter every
+rendered consumer. Conversely, a large internal rewrite can remain compatible
+when all observable contracts and evidence stay stable.
+
+## Removal Boundary
+
+Removing a managed interface requires coordinated source and consumer work.
+The canonical change owns contract withdrawal, generator and manifest changes,
+digest updates, and detection of obsolete managed output. Each consumer owns
+the adoption diff, removal of product references, and local verification.
+
+Obsolete files must not survive as untracked alternatives to the new managed
+surface. Layout and checksum checks should make residual authority visible.
+The standards source can prove that the withdrawn interface is absent from its
+packages; only consumer adoption evidence can prove that a particular
+repository no longer carries or calls it.
+
 ## Failure Ownership
 
 | Failure | Correct owner |

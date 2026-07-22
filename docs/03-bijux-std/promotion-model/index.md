@@ -54,6 +54,26 @@ Standards CI validates the source, contract tests, reports, pinned actions,
 generated configuration, and repository policy. The merged commit becomes the
 immutable source identity available to consumers.
 
+## Compatibility Classification
+
+The managed diff must be interpreted as an interface change, not just as a set
+of files. Review classifies which consumer assumptions may move:
+
+| Change class | Examples | Required adoption evidence |
+| --- | --- | --- |
+| content-preserving | comment, documentation, or equivalent generated formatting | identity checks and affected contract checks |
+| additive | new optional target, manifest field, or capability behavior | default behavior remains valid; opt-in path is tested |
+| behavior-changing | target semantics, workflow trigger, default, or validation rule changes | affected consumers run contract and product gates against the new behavior |
+| structural | managed path, package boundary, capability membership, or manifest shape changes | old layout is removed deliberately and new layout and digests resolve |
+| withdrawing | target, field, output, or extension point is removed | all known consumers have migrated or explicitly retain a supported prior pin |
+
+The commit identity tells consumers exactly which implementation they selected;
+it does not make every change backward compatible. Compatibility is established
+by the contract for the affected interface and by consumer evidence at adoption.
+When the change is behavior-changing or structural, the standards change should
+name the affected capability and consumer obligation so a repository can decide
+whether to adopt, hold, or prepare a local product change.
+
 ## Consumer Adoption
 
 ```mermaid
@@ -70,6 +90,39 @@ The consumer records the exact upstream commit, reviews the managed diff,
 recomputes its checksum manifest, and runs both standards and product checks.
 An accepted standard can therefore be valid upstream yet unsuitable for one
 consumer until a compatibility issue is resolved.
+
+For a multi-commit migration, consumers should select only accepted commits
+that each represent a coherent contract. A temporary source state that needs
+unpublished follow-up work is not an adoption point. If old and new consumer
+shapes must coexist, that coexistence needs an explicit contract and removal
+condition rather than a generator that guesses which shape a repository uses.
+
+## Deprecation And Withdrawal
+
+Deprecation is a compatibility window, not a synonym for deletion. A useful
+deprecation identifies:
+
+- the interface being superseded and its owning package;
+- the replacement and any consumer-side preparation;
+- how use of the old interface can be detected;
+- the evidence required before withdrawal;
+- the last accepted source revision that retains the old contract when known.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Supported
+    Supported --> Deprecated: replacement and detection exist
+    Deprecated --> Migrating: consumers adopt compatible replacement
+    Migrating --> ReadyToWithdraw: known consumers provide migration evidence
+    ReadyToWithdraw --> Withdrawn: old interface removed and contracts updated
+    Deprecated --> Supported: replacement is rejected
+```
+
+Withdrawal is safe only when known consumers no longer depend on the old
+interface or when remaining consumers deliberately stay on a prior supported
+pin with their limitation recorded. Silently changing a shared target's
+meaning under the same interface is not deprecation; it is an unclassified
+behavior change.
 
 ## Generated Content
 

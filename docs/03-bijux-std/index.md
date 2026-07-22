@@ -148,6 +148,40 @@ An upstream standard may be valid while one consumer holds adoption because of
 a product compatibility failure. That is useful isolation, not family drift,
 provided the consumer does not claim to have adopted bytes it rejected.
 
+## Consumer Fleet State
+
+There is no single mutable “family version” of the standards. Each repository
+selects an immutable source commit, so the fleet can legitimately contain
+several accepted revisions while adoption proceeds.
+
+| Consumer state | Meaning | Evidence |
+| --- | --- | --- |
+| current for its declared pin | vendored bytes and generated files match the selected commit | source SHA, capabilities, digests, and consumer checks |
+| adoption proposed | a newer accepted commit is under consumer review | managed diff and pending standards and product gates |
+| adoption held | the proposed snapshot failed a consumer-owned compatibility gate | failed gate, affected interface, and retained prior pin |
+| explicit exception | a bounded local deviation has a named owner and exit condition | exact surface, rationale, validation, and removal or upstream path |
+| drifted | committed managed content does not match the claimed source relationship | checksum, layout, renderer, or source comparison failure |
+
+“Current” is meaningful only relative to a repository's declared pin. It must
+not be inferred from the newest `bijux-std` commit, and “older” does not by
+itself mean drift. A consumer becomes drifted when its recorded identity and
+its managed bytes disagree, or when an undeclared local fork replaces the
+selected contract.
+
+```mermaid
+flowchart LR
+    accepted["Accepted standards commits"] --> a["Consumer A<br/>adopted newer pin"]
+    accepted --> b["Consumer B<br/>reviewing adoption"]
+    accepted --> c["Consumer C<br/>holding prior pin"]
+    a --> evidence["Per-consumer identity and gates"]
+    b --> evidence
+    c --> evidence
+```
+
+Fleet reporting should therefore list consumer, selected commit, capabilities,
+verification result, and any held adoption or exception. A count of repositories
+on the newest commit is useful progress information, not compatibility proof.
+
 ## Shared Does Not Mean Universal
 
 A behavior belongs in `bijux-std` when multiple repositories should consume
