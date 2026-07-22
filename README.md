@@ -296,6 +296,46 @@ procedure was copied into the hub as a substitute for fixing its canonical
 owner. Record skipped or unavailable verification with the exact affected
 claim rather than treating it as an implicit pass.
 
+## Verify Publication From A Reader Boundary
+
+A green Pages deployment confirms platform acceptance of an artifact. It does
+not confirm that every public path serves the intended revision. Verify a
+release through named content markers and keep each observation attached to
+the cache or routing boundary that produced it.
+
+| Boundary | Verification evidence | Failure meaning |
+| --- | --- | --- |
+| built bundle | source revision, bundle identity, expected route, and page-specific marker | the intended content was or was not composed locally |
+| Pages deployment | workflow run, artifact, environment, and deployment identity | GitHub did or did not accept the selected bundle |
+| custom domain | resolved URL, response time and status, certificate context, and expected marker | the domain served a response, which may still be old or misrouted |
+| direct-entry route | clean request to a changed deep link with its own marker | root navigation may work while the changed page does not |
+| intermediary and browser | cache context, age or validator metadata when visible, and observed marker | a reader can receive a different generation from the origin observation |
+| search discovery | indexed route, title, excerpt, and observation time | discovery can lag or preserve withdrawn wording after publication converges |
+
+Use markers specific enough to distinguish the intended revision from the
+previous one; a shared header or HTTP `200` is insufficient. Compare the site
+entrance, every materially changed direct-entry route, and any old route whose
+redirect, withdrawal, or correction is part of the release.
+
+```mermaid
+flowchart LR
+    revision["Accepted source revision"] --> bundle["Bundle + route markers"]
+    bundle --> deployment["Pages artifact + deployment"]
+    deployment --> origin["Custom-domain response"]
+    origin --> edge["Intermediary cache"]
+    edge --> browser["Reader context"]
+    browser --> decision{"Expected marker visible?"}
+    decision -->|yes| record["Record bounded convergence"]
+    decision -->|no| classify["Classify build, routing, or cache boundary"]
+```
+
+Do not force convergence by publishing unrelated edits or repeatedly
+redeploying an unidentified artifact. Preserve the intended and observed
+identities, determine which boundary is stale, and verify the correction from
+a fresh reader context. Search-engine refresh is externally scheduled, so
+record stale discovery separately from site availability and use an explicit
+correction or removal route when the indexed text is harmful.
+
 ## Operational And Security Ownership
 
 This repository owns a static public documentation deployment, not the

@@ -4,7 +4,7 @@ audience: mixed
 type: index
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Bijux
@@ -191,6 +191,38 @@ Evidence reuse also inherits corrections. When an owning surface marks a
 dataset generation withdrawn, a claim stale, a product member superseded, or a
 governance audit drifted, downstream statements should be re-evaluated against
 the replacement identity rather than silently retaining the earlier status.
+
+## Carry Evidence Into Your Own Work
+
+Downloading a file or copying a result creates a new custody boundary. Record
+what entered your work before renaming, transforming, or combining it so a
+later correction can be matched to the exact object you used.
+
+| Consumption record | Why it matters |
+| --- | --- |
+| canonical owner and public route | preserves authority when a copied file loses its surrounding page |
+| immutable artifact, dataset, claim, or source identity | distinguishes the consumed object from a later object at the same locator |
+| retrieval time, resolved route, and integrity result | identifies the observed delivery state and detects incomplete or substituted bytes |
+| population, profile, method, or request | preserves the conditions under which the result was produced |
+| exclusions, limitations, and decision state | prevents a bounded result from becoming an unconditional downstream claim |
+| license, access, and redistribution boundary | keeps technical reuse from silently exceeding permitted use |
+| correction or withdrawal route | makes replacement and impact review possible after consumption |
+
+Keep the original identity alongside derived outputs, and record the
+transformation from consumed input to new result. If a source permits access
+but not redistribution, retain a lawful reconstruction record or digest rather
+than republishing restricted bytes. A digest can establish identity; it does
+not grant access, reproduce the source, or transfer its license.
+
+```mermaid
+flowchart LR
+    owner["Owning evidence surface"] --> acquire["Acquire + verify identity"]
+    acquire --> derive["Transform with recorded inputs"]
+    derive --> cite["Publish bounded result + citation"]
+    owner --> notice["Correction or withdrawal"]
+    notice --> match["Match consumed identity"]
+    match --> derive
+```
 
 ## Investigate A Disputed Output
 
