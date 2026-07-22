@@ -40,6 +40,28 @@ recognizable route from source to delivered output.
 | Which product should I inspect? | [Projects](04-projects/index.md) | the question, inputs, outputs, and proof surface for each project |
 | Where is the engineering taught? | [Learning](05-learning/index.md) | programs grounded in runnable workflows and design judgment |
 
+## Reach The Same Meaning Through More Than One Path
+
+Public evidence should remain interpretable when a reader enters from search,
+uses a keyboard or assistive technology, zooms or reflows the page, cannot load
+a destination, or is not authorized to inspect a restricted source.
+
+| If you encounter | What should remain available | How to interpret the boundary |
+| --- | --- | --- |
+| a Mermaid diagram | nearby prose or a table naming the important owners, sequence, states, or conclusion | the diagram aids orientation; it is not the only evidence record |
+| a colored status, badge, or icon | a textual state with scope, evidence, and consequence | color is not an additional approval level |
+| an unavailable destination | canonical owner, route purpose, and source repository where public | temporary availability does not transfer authority to the hub |
+| restricted evidence | stable governed identity, reason for restriction, public projection, and interpretive limitation | unavailable source bytes do not authorize a stronger public inference |
+| a wide table or dense technical page | semantic headings, labels, and a reading order that survives zoom and narrow viewports | visual layout must not redefine the evidence hierarchy |
+| an unfamiliar status token | the owning page's definition and explicit non-claims | do not replace a precise bounded state with a friendlier general word |
+
+When an access problem blocks a consequential claim, retain the public URL,
+page or control, time, access context, expected route, and observed barrier.
+Do not include credentials, private data, restricted coordinates, or sensitive
+payloads in a public report. An accessibility failure can hide a limitation or
+recovery action just as effectively as a broken link, so it belongs in the
+trust boundary rather than being treated as presentation polish.
+
 ## Start From The Boundary You Need To Trust
 
 ```mermaid

@@ -153,6 +153,36 @@ make bijux-std-checks
 canonical source. Neither command replaces review of hub-owned content or
 destination accuracy.
 
+## Verify Accessible Reader Paths
+
+A strict build establishes document structure and route resolution; it does
+not establish that a reader can operate the rendered site or recover the same
+meaning without visual-only cues. Material changes to navigation, diagrams,
+status, tables, or interaction need a proportionate rendered review.
+
+| Changed surface | Reader paths to inspect | Acceptance evidence |
+| --- | --- | --- |
+| global header, drawer, tabs, or footer | keyboard traversal, visible focus, escape and dismissal, direct entry, narrow viewport, and persisted theme | controls remain reachable, labeled, ordered, and reversible without pointer-only behavior |
+| Mermaid diagram | source semantics, rendered text, nearby prose or table, zoom, theme contrast, and non-diagram reading path | the relationship and conclusion remain available when the visual is not understood or rendered |
+| status, warning, or limitation | text label, heading order, contrast, link purpose, and placement near the affected claim | state and consequence do not depend on color, icon, or hover |
+| wide table or evidence matrix | semantic headers, reading order, reflow or controlled scrolling, and equivalent context outside compact labels | rows and ownership remain understandable at high zoom and narrow width |
+| cross-site route | descriptive link text, focus behavior, destination identity, authority transition, and return path | direct and hub-mediated entry expose the same owner and purpose |
+| correction or withdrawal | keyboard and non-visual discovery, old-to-new identity relation, and reader action | affected readers can find the changed status without reconstructing visual history |
+
+The review should record the routes, viewport or zoom context, input method,
+theme, relevant assistive interpretation, observed result, and remaining
+limitation. One screenshot is not interaction evidence, and automated markup
+checks do not replace representative keyboard and reading-order review.
+
+### Keep accessibility evidence safe
+
+Use repository-owned fixtures or public pages for demonstrations. Reports must
+not capture browser credentials, private extensions, unrelated desktop
+content, personal account details, restricted scientific material, or secret
+values. When a defect involves sensitive content, preserve the minimum
+restricted evidence needed for remediation and publish only the bounded
+correction.
+
 ## Review A Hub Claim
 
 Before accepting a new or materially changed public claim:
