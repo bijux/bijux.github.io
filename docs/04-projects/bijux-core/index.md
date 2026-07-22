@@ -123,6 +123,48 @@ equivalent. Replay “match” means only that the registered comparison fields
 agree; environment, external effects, or domain meaning remain separate unless
 the replay contract names them.
 
+## Keep External Effects Outside Reproducibility Claims
+
+A run can reproduce its retained files while an external side effect differs.
+Messages, remote API mutations, database writes, notifications, and actions in
+an operator-controlled system have identities and commit semantics outside the
+run directory.
+
+| Effect question | Evidence required | Unsafe inference |
+| --- | --- | --- |
+| was the effect declared? | authored effect contract and policy decision | declaration proves the process obeyed it |
+| was an attempt made? | node attempt, request identity, target, and timing | attempt proves the remote system committed it |
+| was it accepted remotely? | remote receipt, transaction, object, or idempotency identity | acceptance proves downstream business completion |
+| may a retry repeat it? | operation-specific idempotency or deduplication contract | identical node inputs make repetition harmless |
+| did resume inherit it? | source attempt state and explicit continuation decision | missing local output means no external effect occurred |
+| can replay reproduce it? | replay mode and a deliberately controlled effect adapter | matching retained evidence recreates remote history |
+
+```mermaid
+flowchart LR
+    intent["Declared node intent"] --> local["Local attempt evidence"]
+    local --> remote["External system decision"]
+    remote --> receipt["Remote identity or receipt"]
+    receipt --> reconcile["Run-to-effect reconciliation"]
+    local -. "timeout or interruption" .-> unknown["Effect state unknown"]
+    unknown --> reconcile
+```
+
+An interrupted call may have committed remotely before the local receipt was
+persisted. The safe terminal state is then unknown until the external identity
+is reconciled. Core's declared-effect policy can deny or shape known effects,
+but it cannot make an arbitrary external operation atomic with run
+finalization. Workflow authors must choose effect-specific idempotency,
+compensation, or human reconciliation where the domain requires it.
+
+## Distinguish Staging From Promotion
+
+Run-local outputs, verified artifacts, and promoted artifacts are different
+states. Atomic writes protect governed records from partial filesystem content;
+they do not authorize an output for downstream use. Promotion needs the source
+digest, destination, policy decision, and resulting destination digest. A
+failed promotion leaves the verified run evidence intact and the delivery
+claim incomplete.
+
 ## Runtime Layers
 
 | Layer | Responsibility |

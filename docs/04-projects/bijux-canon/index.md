@@ -73,6 +73,36 @@ Canon narrows every claim to the retained evidence.
 Missing evidence produces a narrower result or an explicit refusal. It is not
 reconstructed from a plausible final answer.
 
+## Evaluate Retrieval Before Reasoning
+
+A reasoning trace can use every retrieved item correctly and still fail because
+the relevant evidence never entered the candidate population. Retrieval quality
+therefore needs its own evaluation boundary before claim evaluation.
+
+```mermaid
+flowchart LR
+    corpus["Admitted corpus"] --> truth["Evaluation query +<br/>relevance judgments"]
+    truth --> retrieve["Backend and ranking execution"]
+    retrieve --> population["Eligible, retrieved,<br/>missed, and excluded items"]
+    population --> metrics["Recall, ranking, cost,<br/>latency, and refusal"]
+    population --> reason["Claim-scoped reasoning"]
+```
+
+| Retrieval record | Question it answers |
+| --- | --- |
+| corpus and index identity | which material could have been found? |
+| evaluation query and relevance source | what counts as a relevant item, under whose judgment? |
+| candidate and filter population | what was eligible before ranking? |
+| ranked result with scores and provenance | which items were returned and why can they be traced? |
+| missed and excluded relevant items | which evidence burden did retrieval fail to surface? |
+| backend, approximation, and configuration | which execution semantics produced the ranking? |
+| cost, latency, and terminal state | did the route meet its declared operational boundary? |
+
+A target-recall configuration is not a measured recall result. A dry run can
+validate shape without executing the evaluation population. Likewise, a fluent
+answer cannot repair a retrieval denominator that omitted contradicting or
+relevant evidence.
+
 ## Preserve Evidence At Every Handoff
 
 Composition is trustworthy only when adapters retain the identity and decision
@@ -98,6 +128,25 @@ An adapter owns more than serialization. It must state how source identities,
 missing fields, scores, ordering, tenancy, and failure semantics map across the
 boundary. An end-to-end demo that does not retain those mappings cannot prove
 cross-package evidence custody.
+
+## Preserve Provider And Prompt Identity Without Claiming Determinism
+
+Provider-backed agent calls add a mutable external boundary. A reviewable call
+records provider and model identity, prompt and model hashes where available,
+input reference, configuration, usage, output or typed error, retries or
+fallbacks, and the controller decision that followed.
+
+Those records establish what the host requested and observed. They cannot
+freeze a remote provider's historical serving environment, hidden system
+configuration, model routing, safety layers, or nondeterministic behavior.
+Trace reconstruction is therefore different from provider re-execution.
+
+Provider output remains untrusted role output until it satisfies the agent
+contract and the lifecycle controller admits the transition. A prompt cannot
+grant runtime authority, change tenant policy, or turn missing evidence into an
+acceptable claim. When provider behavior changes, compare retained inputs,
+call identity, outputs, errors, usage, and downstream decisions; do not label
+the entire knowledge run equivalent merely because its final prose is similar.
 
 ## Start With The Owning Package
 
