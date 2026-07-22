@@ -44,6 +44,50 @@ A course is successful when the learner can predict behavior, identify the
 owning boundary, choose proportionate evidence, and explain where a tool should
 stop owning the system.
 
+## Progress From Recognition To Transfer
+
+Reading and reproducing an example are early evidence states, not completion.
+The programs ask learners to move through progressively stronger demonstrations.
+
+```mermaid
+flowchart LR
+    recognize["Recognize the model"] --> predict["Predict behavior"]
+    predict --> implement["Implement under constraints"]
+    implement --> diagnose["Diagnose injected failure"]
+    diagnose --> operate["Recover with evidence"]
+    operate --> transfer["Apply the model<br/>to a new system"]
+```
+
+| Evidence state | Learner can demonstrate | Insufficient substitute |
+| --- | --- | --- |
+| recognition | explain the vocabulary and locate the relevant boundary | repeating a definition without a concrete system |
+| prediction | state expected behavior before running the example | explaining the result only after seeing it |
+| implementation | preserve the contract while changing the system | copying the reference output |
+| diagnosis | localize a failure from retained evidence | trial-and-error edits until checks turn green |
+| operation | publish, roll back, recover, or migrate without losing identity | one clean-path execution |
+| transfer | apply the judgment to unfamiliar constraints and defend tradeoffs | reproducing the capstone unchanged |
+
+Course completion should identify the strongest state actually demonstrated.
+A passing capstone can establish implementation and operation for its declared
+scenario; it does not automatically establish transfer to every production or
+research context.
+
+## Build A Reviewable Evidence Packet
+
+An inspectable learning result retains:
+
+- the starting revision and declared problem;
+- the learner's model and pre-execution predictions;
+- commands, configuration, environment, and input identity;
+- passing and failing observations, including injected failures;
+- generated artifacts and their verification route;
+- the recovery, migration, or design decision and its rationale; and
+- limitations plus one transfer question not answered by the capstone.
+
+The packet is not a surveillance record or a score by volume. It exists so a
+reviewer can distinguish correct reasoning from accidental success and so the
+learner can revisit the decision after the system changes.
+
 ## What The Programs Share
 
 | Principle | How it appears |
@@ -82,6 +126,11 @@ When evaluating a learning claim, inspect four surfaces:
 A table of contents proves coverage. It does not prove that a learner can
 apply the idea. The proof route and capstone show whether the program connects
 explanation to behavior.
+
+When comparing programs, also inspect whether failure is intentionally
+exercised, whether the learner must predict before execution, whether recovery
+preserves identity, and whether a transfer exercise changes the constraints.
+Those properties reveal more about engineering depth than chapter count.
 
 Continue with [Reproducible Research](reproducible-research/index.md) for
 workflow and state systems, or [Python Programming](python-programming/index.md)

@@ -60,6 +60,48 @@ rerun must establish which inputs, graph, parameters, environment, and output
 identity were compared. External services and undeclared ambient state remain
 outside the proof unless the workflow records and controls them.
 
+## Test Failure, Not Only Repetition
+
+Reproducibility contracts become visible when a workflow is interrupted,
+partially stale, concurrently executed, or separated from an ambient cache.
+
+| Failure exercise | Contract under review | Evidence of a correct response |
+| --- | --- | --- |
+| modify one prerequisite | dependency graph | exactly the affected descendants rebuild; unrelated outputs remain stable |
+| interrupt before publication | atomic promotion | readers observe the prior complete state or no promoted state, never a partial product |
+| run independent branches concurrently | parallel ownership | no shared-path corruption, hidden ordering, or nondeterministic output identity |
+| remove local generated state | reconstruction | retained sources and declared commands reproduce the governed outputs |
+| change parameters with fixed data | experiment identity | comparison attributes differences to parameter state rather than ambiguous filenames |
+| remove or replace a remote | recovery boundary | the failure is explicit; restoration uses named custody and verifies reconstructed identity |
+| alter execution profile only | policy separation | workflow meaning stays stable while operational configuration changes visibly |
+
+Failure injection must have a bounded target and cleanup path. Deleting the
+only copy of data or corrupting a shared environment is not a useful proof.
+Capstones operate on owned fixtures and preserve pre-failure identity so the
+recovery result can be compared.
+
+## Distinguish Rebuild, Replay, Restore, And Reproduce
+
+| Operation | Question |
+| --- | --- |
+| rebuild | do declared dependencies produce the target from current inputs? |
+| replay | does a retained execution or event record compare under a named rule? |
+| restore | can an owned prior state be recovered after loss or corruption? |
+| reproduce | can another controlled execution reconstruct the claimed result and evidence? |
+
+These operations may share commands but not conclusions. Restoring cached
+outputs does not exercise reconstruction. A clean rebuild does not prove that
+a remote backup is usable. Reproducing one metric does not establish identity
+for the full experiment state.
+
+## Capstone Evidence Packet
+
+Each reproducibility capstone should leave a reviewer with the dependency or
+state model, input and tool identities, clean-path result, injected failure,
+observed partial state, recovery action, output verification, and remaining
+ambient assumptions. The learner should be able to explain which edge or state
+record made the failure diagnosable before showing the command that repaired it.
+
 ## Deep Dive Make
 
 Use Make when the central question is whether dependencies and targets tell the

@@ -125,6 +125,56 @@ when each mechanism owns a different concern.
 | how is attribute behavior owned across instances? | descriptor, when ordinary properties are insufficient |
 | how is class creation governed globally? | metaclass only when lower-power mechanisms cannot own the rule |
 
+## Choose The Lowest-Power Mechanism That Owns The Rule
+
+Mechanism choice is an engineering decision with compatibility and operational
+cost, not a style preference.
+
+```mermaid
+flowchart TD
+    rule["Rule or invariant"] --> local{"Can an ordinary function<br/>or explicit call own it?"}
+    local -->|yes| function["Function or explicit composition"]
+    local -->|no| state{"Does durable state<br/>and lifecycle own it?"}
+    state -->|yes| object["Object or aggregate"]
+    state -->|no| attribute{"Is attribute access<br/>the true boundary?"}
+    attribute -->|yes| descriptor["Property or descriptor"]
+    attribute -->|no| creation{"Must every class obey<br/>a creation-time rule?"}
+    creation -->|yes| metaclass["Class hook or metaclass"]
+    creation -->|no| explicit["Reconsider explicit policy"]
+```
+
+For every move upward in power, the learner should show why the lower level
+cannot preserve the contract, which new behavior occurs at import, definition,
+instance, or call time, and how a maintainer can inspect and disable it.
+
+## Preserve Compatibility And Observability
+
+| Design surface | Compatibility evidence | Operational evidence |
+| --- | --- | --- |
+| public object API | constructor and method contracts, state-transition tests, serialized-shape policy | invariant failures, lifecycle events, persistence and integration diagnostics |
+| functional pipeline | input/output types, failure algebra, ordering and materialization contract | stage timing, bounded resource use, retries, backpressure, and terminal disposition |
+| decorator or wrapper | signature, metadata, descriptor binding, exception and async behavior | wrapper provenance, call attribution, timing and failure transparency |
+| descriptor | class/instance access, storage ownership, validation, inheritance behavior | attribute-resolution diagnostics without hidden global state |
+| registry or plugin | registration identity, duplicate and ordering policy, discovery contract | loaded provider set, provenance, refusal, and isolation boundary |
+| class-creation hook | namespace transformation, inheritance interaction, generated API and version policy | import-time failures, global reach, escape hatch, and audit record |
+
+Tests should include negative and introspection paths. A wrapper that returns
+the right value but destroys its signature, a registry that works only in one
+import order, or a descriptor that changes behavior under inheritance has not
+preserved its public contract.
+
+## Cross-Track Transfer Exercise
+
+The strongest family-level evidence asks the learner to solve one system
+pressure with all three ownership models visible: objects protect domain
+invariants, pure transformations make dataflow reviewable, and a narrowly
+governed runtime hook supplies extension. The review must also identify a place
+where metaprogramming was deliberately rejected in favor of an explicit API.
+
+This exercise demonstrates composition judgment. It does not reward using all
+mechanisms everywhere; unnecessary mechanism power is a design failure even
+when the program remains functional.
+
 ## Evidence Of Understanding
 
 A program is not complete because its code runs once. The learner should be
