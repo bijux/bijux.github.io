@@ -4,118 +4,144 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-28
+last_reviewed: 2026-07-22
 ---
 
 # Delivery Surfaces
 
-A delivery surface is any public output through which the system is
-used, understood, or trusted.
-
-In Bijux, delivery includes more than published software. It includes
-the control plane, the documentation layer, the interfaces, and the
-evidence that keeps them dependable over time.
-
-## What Counts As Delivery In Bijux
-
-- public documentation that shows ownership, operating routes, and system boundaries
-- published software and artifacts that can be traced back to build and release routines
-- service and runtime interfaces that are reviewable outside local developer context
-- release and operational evidence that shows how quality checks are run, not only claimed
-
-## Delivery Map
-
-```mermaid
-graph LR
-    governance["Governance and merge controls"] --> build["Build, validation, and release routines"]
-    standards["Shared docs and quality standards"] --> build
-    build --> docs["Documentation surfaces"]
-    build --> interfaces["Interfaces and contracts"]
-    build --> artifacts["Artifacts, packages, and datasets"]
-    docs --> reader["Public reader or integrator"]
-    interfaces --> reader
-    artifacts --> reader
-```
+A Bijux system is delivered when a reader or user can reach a maintained
+contract and trace it back to an owner. Delivery therefore includes more than
+binary publication: documentation, packages, APIs, datasets, reports, and
+operational evidence each have a distinct custody path.
 
 ## Delivery Classes
 
-| Class | Ownership source | What it includes | What it makes clear |
+| Class | Public object | Contract | Primary evidence |
 | --- | --- | --- | --- |
-| Governance | `bijux-iac` and repository-owned workflow policy | branch protection, required checks, merge discipline, and controlled release paths | that repository policy is deliberate and reviewable |
-| Documentation | shared standards in `bijux-std`, consumed by repository docs | repository handbooks, docs navigation, and public explanatory routes | that movement across sites stays coherent |
-| Published software | repository-owned delivery responsibilities | packages, generated artifacts, and versioned release outputs | that build and release paths are stable enough to publish |
-| Service interfaces | repository-owned service and runtime boundaries | APIs, runtime interfaces, and user-facing data endpoints | that interface behavior is treated as a maintained surface |
-| Release and ops evidence | repository checks aligned by shared quality standards | CI checks, validation routines, and promotion workflows | that quality claims are backed by visible routine work |
+| documentation | versioned site and stable route | navigation, rendered content, source ownership, and canonical URL | strict build and Pages artifact |
+| software package | versioned archive or registry object | name, version, dependencies, compatibility, and checksums | release workflow and registry metadata |
+| service interface | network endpoint | schema, request behavior, response behavior, authorization, and failure semantics | contract tests and operational evidence |
+| dataset | immutable or versioned data object | identity, schema, provenance, publication state, and retrieval behavior | manifest, fingerprint, and validation report |
+| scientific report | interpretation bound to evidence | cited inputs, methods, assumptions, limitations, and output identity | reproducible build and evidence bundle |
+| learning program | published curriculum and runnable work | prerequisites, sequence, exercises, and completion evidence | capstones and inspectable outputs |
 
-## Why This Matters Beyond Ops
+Calling all of these “artifacts” would hide the most important differences.
+An API needs availability and failure semantics; a dataset needs identity and
+provenance; a report needs defensible interpretation; documentation needs
+stable routes and a source relationship.
 
-Delivery is where architecture stops being a claim and becomes a public
-surface. Even if you are reviewing design rather than operations, this
-page shows whether the stated structure can be used, checked, and
-trusted outside the original implementation team.
+## Custody Flow
 
-## Where Delivery Shows Up
+```mermaid
+flowchart LR
+    source["Owned source"] --> contract["Declared contract"]
+    contract --> verify["Class-specific verification"]
+    verify --> publish["Versioned publication"]
+    publish --> operate["Availability and lifecycle"]
+    operate --> observe["Evidence and feedback"]
+    observe --> change["Reviewed change"]
+    change --> source
+```
 
-| Surface | What to inspect | Why it is useful |
-| --- | --- | --- |
-| Repository-owned delivery surfaces | [Bijux Atlas](../../04-projects/bijux-atlas/index.md) APIs, dataset routes, and release-facing docs | shows where product delivery contracts are owned directly by a delivery repository |
-| Shared docs delivery continuity | `bijux.github.io` platform docs and [Masterclass](../../05-learning/index.md) docs routes backed by shared shell standards | shows how documentation delivery stays consistent across separate sites while local content remains independent |
-| Contract discipline | repository docs, generated artifacts, schema surfaces, and handbook ownership | serious systems make their interfaces and operating rules visible |
-| Release posture | release workflows, published docs, versioned repositories, and visible distribution surfaces | public work should show how it is built, checked, and published |
-| Operational thinking | runtime handbooks, validation commands, docs checks, and repository automation | delivery quality is easier to trust when routine checks are part of the workflow |
-| Information design | shared docs chrome, stable navigation, scoped handbooks, and repository-specific documentation systems | documentation quality is part of delivery quality, not a separate editorial concern |
+Each transition has an owner:
 
-## Public Destinations
+- source owners decide meaning;
+- verification owners decide whether the declared evidence is sufficient;
+- publication automation transfers a specific revision into a destination;
+- operators own availability, rollback, and recovery within the published
+  surface's stated boundary;
+- maintainers reconcile observed behavior with the next reviewed change.
 
-These are the main places where delivery becomes visible to a reader.
+## Authority Does Not Follow Distribution
 
-| If you want to open... | Start here | What it gives you |
-| --- | --- | --- |
-| the hub and route layer | [bijux.github.io](https://github.com/bijux/bijux.github.io) | the public entry point into the family |
-| governance and merge controls | [bijux-iac](https://github.com/bijux/bijux-iac) | the control plane behind repository delivery rules |
-| shared shell and checks | [bijux-std](https://github.com/bijux/bijux-std) | the shared standards behind docs and baseline repo behavior |
-| delivery-heavy repository docs | [Bijux Atlas docs](https://bijux.io/bijux-atlas/) | APIs, datasets, reports, and operated delivery routes |
-| project context before repo docs or source | [Projects](../../04-projects/index.md) | repository roles and route hints |
-| implementation detail behind a public surface | the matching GitHub repository | source, history, contracts, and automation |
+Publishing an object does not transfer authority over its meaning.
 
-## Main Routes
+```mermaid
+flowchart TB
+    std["Shared standards"] --> repo["Owning repository"]
+    repo --> output["Published output"]
+    output --> consumer["Reader or integrator"]
+    consumer --> feedback["Issue, evidence, or proposed change"]
+    feedback --> repo
+```
 
-<div class="bijux-panel-grid">
-  <div class="bijux-panel"><h3>Governance</h3><p>Inspect `bijux-iac` and repository workflow policy when you want proof that merge controls and quality gates are part of delivery.</p></div>
-  <div class="bijux-panel"><h3>Core</h3><p>Inspect CLI, DAG, evidence, and release handbooks for runtime and governance delivery boundaries.</p></div>
-  <div class="bijux-panel"><h3>Canon</h3><p>Inspect ingest, indexing, reasoning, and orchestration package boundaries in docs and source layout.</p></div>
-  <div class="bijux-panel"><h3>Atlas</h3><p>Inspect APIs, datasets, docs checks, and operational routes as maintained product delivery surfaces.</p></div>
-</div>
+The standards layer may constrain format and verification. The repository
+still owns the contract. A consumer may report evidence or propose a change,
+but cannot silently redefine the published meaning.
 
-## Where To Inspect
+## Documentation Delivery
 
-### Fast Checks
+The root hub and project sites form a network of separately built
+documentation surfaces:
 
-- open one repository handbook and verify ownership boundaries
-- open one public destination and one matching source repository, then confirm they describe the same owned surface
+- `bijux.io` provides family orientation;
+- `/bijux-core/`, `/bijux-canon/`, and `/bijux-atlas/` provide repository-owned
+  technical handbooks;
+- scientific sites explain curation, analysis, evidence, and outputs;
+- `/bijux-masterclass/` delivers programs and capstones.
 
-### Medium Checks
+They share a navigation shell, not a content database. When a reader crosses
+from the hub into Atlas, authority crosses from hub orientation to the Atlas
+repository. The visible route and source link should make that transition
+clear.
 
-- inspect package and release workflow docs for clear publication boundaries
-- inspect contract or schema references for compatibility promises
+## Service And Dataset Delivery
 
-### Deep Checks
+Bijux Atlas is the clearest service-delivery example. It separates:
 
-- follow one release or validation path end to end and confirm reproducible checks
-- compare docs claims against automation entry points
+- build-time validation from publication;
+- catalog visibility from payload availability;
+- authoritative stores from response and dataset caches;
+- request contracts from operator-only control surfaces;
+- load generation from rollout, rollback, and incident evidence.
 
-## Fast Routes
+This prevents “the API returned a response” from standing in for stronger
+claims about data identity, authorization, recovery, or production readiness.
+See [Bijux Atlas](../../04-projects/bijux-atlas/index.md) for the public route
+into those contracts.
 
-| If you want to start with... | Open |
+## Scientific Delivery
+
+Scientific output has an additional custody requirement: interpretation must
+remain bound to the evidence and method that produced it.
+
+| Surface | Required context |
 | --- | --- |
-| governance and merge discipline | [Bijux Infrastructure-as-Code](../../02-bijux-iac/index.md) |
-| public delivery and service posture | [Bijux Atlas](../../04-projects/bijux-atlas/index.md) |
-| runtime governance and repository discipline | [Bijux Core](../../04-projects/bijux-core/index.md) |
-| governed knowledge-system delivery | [Bijux Canon](../../04-projects/bijux-canon/index.md) |
-| stable published destinations | [Delivery surfaces](index.md) |
+| curated database | source selection, normalization, exclusions, and lineage |
+| analysis result | input identity, parameters, software environment, and method |
+| map or atlas | coordinate model, aggregation choices, uncertainty, and source coverage |
+| evidence book or report | claim, supporting evidence, competing explanations, and limitations |
 
-## Open This Page When
+The public object is incomplete if those relationships are unavailable, even
+when the file itself downloads successfully.
 
-- you want the clearest route into the strongest delivery-oriented material
-- you care more about concrete surfaces than abstract summary
-- you want to see why public docs are treated as part of delivery rather than decoration
+## Operational Evidence
+
+Operational evidence belongs to the surface being operated. Useful evidence
+answers a bounded question:
+
+- Was this exact site revision built and deployed?
+- Did this API contract pass against the exercised topology?
+- Was this dataset fingerprint published and retrievable?
+- Did a rollback restore the previous known behavior under load?
+- Can a report be reconstructed from its declared inputs?
+
+Evidence should also state what was *not* exercised. A local fixture is not a
+production topology; a schema is not a completed drill; a generated OpenAPI
+document is not proof that every route is live.
+
+## Inspect A Delivery Claim
+
+Follow the same sequence for any public output:
+
+1. identify the owning repository;
+2. find the declared contract and version or identity;
+3. find the verification that covers that contract;
+4. identify the publication destination and custody transition;
+5. inspect lifecycle, rollback, or correction behavior;
+6. read the limitations at the same evidence boundary.
+
+Continue with [Publication Integrity](../publication-integrity/index.md) for
+the root-site chain, [Documentation Network](../documentation-network/index.md)
+for cross-site ownership, or [Projects](../../04-projects/index.md) to choose a
+product surface.

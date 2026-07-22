@@ -4,94 +4,129 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-28
+last_reviewed: 2026-07-22
 ---
 
 # Documentation Network
 
-The documentation network lets people move across Bijux repositories
-without losing context. It is part of the architecture, but the shared
-shell it relies on is owned upstream in `bijux-std`.
+Bijux documentation is a network of independently owned sites connected by a
+shared navigation contract. The network keeps orientation stable while letting
+each repository describe its own runtime, operations, scientific evidence, or
+curriculum at the depth the subject requires.
 
-`bijux-std` is the source for the shared documentation shell and the
-shared standards used across the family.
-
-<div class="bijux-callout"><strong>Documentation is a shared communication layer.</strong>
-The shared shell keeps movement and presentation steady across
-repositories while each repository keeps local control of its own
-content.</div>
-
-## Source Flow
+## Network Topology
 
 ```mermaid
-graph TD
-    source["bijux-std standards source"] --> sync["shared shell sync flow"]
-    sync --> hub["bijux.github.io hub"]
-    sync --> repos["repository documentation sites"]
-    sync --> learning["Masterclass documentation"]
+flowchart TB
+    hub["bijux.io<br/>family orientation"]
+    core["/bijux-core/<br/>execution"]
+    canon["/bijux-canon/<br/>knowledge systems"]
+    atlas["/bijux-atlas/<br/>data services"]
+    proteomics["/bijux-proteomics/<br/>proteomics"]
+    pollenomics["/bijux-pollenomics/<br/>pollen evidence"]
+    phylogenetics["/bijux-phylogenetics/<br/>comparative evidence"]
+    learning["/bijux-masterclass/<br/>learning programs"]
 
-    hub --> consume["consume shared shell + local content"]
-    repos --> consume
-    learning --> consume
-
-    consume --> publish["publish stable, coherent public docs surfaces"]
+    hub <--> core
+    hub <--> canon
+    hub <--> atlas
+    hub <--> proteomics
+    hub <--> pollenomics
+    hub <--> phylogenetics
+    hub <--> learning
 ```
 
-## Documentation Architecture Roles
+The hub is an orientation node, not a proxy for destination content. A project
+site remains useful and authoritative even when reached directly.
 
-| Role | Primary owner | What it does |
+## Three Ownership Layers
+
+| Layer | Owner | Responsibility |
 | --- | --- | --- |
-| standards source | `bijux-std` | defines shared shell behavior, navigation contract, and checks used by docs consumers |
-| hub | `bijux.github.io` | provides cross-repository orientation and entry routes into repository and learning docs |
-| repository docs | each destination repository or site | owns local technical content, domain vocabulary, and implementation detail |
+| shell contract | `bijux-std` | shared header, footer, navigation behavior, styling primitives, scripts, icons, and validation rules |
+| network map | `bijux.github.io` | root navigation, family descriptions, route selection, and cross-repository framing |
+| technical content | destination repository | implementation contracts, examples, operational procedures, evidence, and limitations |
 
-## What The Shared Shell Actually Covers
+This division prevents consistent styling from being mistaken for centralized
+technical authority.
 
-The shared shell is the common movement layer across Bijux docs sites.
+## Source And Render Flow
 
-It keeps these parts aligned:
+```mermaid
+flowchart LR
+    standard["Canonical shell in bijux-std"] --> sync["Synchronized consumer files"]
+    local["Repository-owned pages"] --> build["Repository site build"]
+    sync --> contract["Shell contract and drift checks"]
+    contract --> build
+    build --> site["Repository-owned public site"]
+    site --> network["Cross-site navigation network"]
+```
 
-- top navigation behavior
-- shared styles and responsive layout
-- shared shell JavaScript for navigation state
-- shared docs checks that catch drift before publish
+The synchronized files are checked-in mirrors. Build-time synchronization
+copies from that local shared source into generated documentation paths;
+contract checks compare the result back to its canonical input. This makes the
+shell reproducible without loading presentation code from another site at
+runtime.
 
-The shell does **not** own repository meaning. Each repository still
-owns its own pages, examples, diagrams, and technical depth.
+## What Remains Stable Across Sites
 
-## What Stays Shared Vs What Stays Local
+- a family-level destination selector;
+- theme persistence and responsive navigation behavior;
+- familiar header, footer, and content framing;
+- source and repository links;
+- local Mermaid rendering and shared visual tokens;
+- checks that detect drift in synchronized shell files.
 
-- shared: top-level navigation patterns, shell structure, and orientation routes that let readers move across repositories consistently.
-- local: repository-specific docs content, domain vocabulary, and implementation detail owned by the destination handbook.
-- shared and local together: shared chrome provides stable movement; local ownership provides technical depth without flattening repository boundaries.
+Stability does not require every site to have the same information
+architecture. Atlas needs operations, load, and API sections; a scientific
+evidence book needs methods, claims, and limitations; a learning program needs
+prerequisites, sequence, exercises, and capstones.
 
-## How The Shell Stays Aligned
+## Context At A Site Boundary
 
-The shell uses a simple source-and-sync model:
+A useful cross-site transition answers four questions:
 
-1. shared shell files are owned upstream in `bijux-std`
-2. consuming docs sites synchronize the shared layer locally
-3. shared checks verify that the local mirrors still match the source
-4. docs build checks confirm the reader surface still works
+1. **Where am I going?** The destination is named by product or program.
+2. **Who owns the next claim?** The destination repository becomes the content
+   authority.
+3. **Why is this link relevant?** The hub explains the destination's role
+   before sending the reader away.
+4. **How do I return?** Shared family navigation preserves a route back to the
+   hub and adjacent systems.
 
-For readers, the result is simple: moving from one Bijux docs site to
-another should feel familiar even though the content is owned locally.
+## Navigation Is Not Evidence
 
-## What It Gives The Reader
+The shared shell provides continuity, but it cannot prove:
 
-- it reduces documentation drift across related repositories
-- it keeps navigation coherent without flattening local content
-- it makes new sections feel familiar more quickly
-- it helps the family evolve without turning every site into a separate design problem
+- that destination content is current;
+- that a runtime or scientific claim is correct;
+- that every public route is continuously available;
+- that two repositories use the same compatibility policy;
+- that a destination has completed operational qualification.
 
-## Example Reading Route
+Those claims must be supported by repository-owned source, checks, evidence,
+and limitations. The network makes them discoverable; it does not manufacture
+their proof.
 
-1. start at [Home](../../index.md) for orientation.
-2. open [Projects](../../04-projects/index.md) and choose a repository page such as [Bijux Atlas](../../04-projects/bijux-atlas/index.md).
-3. move into the destination docs site; shared shell behavior stays familiar while content becomes local.
-4. return through [Platform](../index.md) when you need system-level context.
+## Failure Isolation
 
-## Stability Rule
+Separate builds provide useful isolation:
 
-If the hub describes a repository, the destination should preserve the
-same shared shell behavior and stable public URL structure.
+- a failed hub deployment affects family orientation but does not rebuild or
+  mutate a project site;
+- a project documentation failure does not change the shared shell source;
+- a shared-shell defect can be corrected canonically and then synchronized to
+  consumers through reviewed changes;
+- repository content can evolve without waiting for an unrelated site's
+  release.
+
+The trade-off is that cross-site links and shared-shell adoption require
+continued verification. A common visual system cannot prevent an obsolete
+destination or an inaccurate hub summary by itself.
+
+## Follow The Network
+
+Start at [Projects](../../04-projects/index.md) when you know the product
+question, [System Map](../system-map/index.md) when you need dependency context,
+or [Publication Integrity](../publication-integrity/index.md) when you need the
+root-site delivery chain.
