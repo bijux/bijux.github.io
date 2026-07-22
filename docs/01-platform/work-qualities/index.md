@@ -39,6 +39,60 @@ flowchart TD
 | visible limitations | unsupported states, missing evidence, and known exceptions are stated near the claim | documentation hides gaps behind future-tense confidence |
 | explainable depth | architecture can be followed from overview to contract to runnable or inspectable proof | every page repeats the same summary without deeper evidence |
 
+## Define Acceptance And Degradation For Each Quality
+
+A quality becomes operational when a reviewer can name its acceptance rule,
+degradation signal, and recovery owner.
+
+| Quality | Acceptance question | Degradation signal | Recovery evidence |
+| --- | --- | --- | --- |
+| ownership | can every consequential decision resolve to one canonical owner and explicit consumers? | duplicated policy, shadow implementations, or unowned adapters | corrected ownership map and consumer migration |
+| compatibility | can supported callers identify what remains stable and how incompatible change is introduced? | aliases diverge, schemas change silently, or old artifacts load ambiguously | compatibility matrix, migration proof, and preserved prior identity |
+| reproducibility | can the declared inputs, configuration, environment, execution, and outputs be reconstructed and compared? | success depends on ambient state, mutable labels, or missing artifacts | independent reconstruction with a bounded comparison verdict |
+| security | does the named enforcement point allow and deny the expected identities and operations? | policy exists without effective-state or negative-path evidence | remediated control, revoked authority, and repeated allowed/denied exercises |
+| operability | can operators observe pressure, distinguish dependencies, and recover identified state? | readiness is the only signal or recovery is procedural only | workload-bound observations and executed recovery result |
+| scientific integrity | do sources, rejected populations, methods, checks, verdicts, and limitations remain joined? | polished outputs omit exclusions, contradictions, or denominator | corrected evidence graph and claim-specific revalidation |
+| documentation integrity | can a reader move from claim to owner, contract, evidence, limitation, and source? | formulaic pages, vague links, duplicated handbooks, or stale capability language | strict build plus source-to-claim review and destination confirmation |
+
+Acceptance is scoped. A service can meet its availability boundary while
+failing scientific freshness; a package can preserve API compatibility while
+changing performance. Quality evidence must retain the dimension being judged.
+
+## Understand Quality Tensions
+
+Improving one quality can damage another when the tradeoff is hidden.
+
+```mermaid
+flowchart TD
+    change["Proposed design change"] --> speed["Performance and delivery speed"]
+    change --> safety["Security and failure isolation"]
+    change --> trace["Provenance and explainability"]
+    change --> compat["Compatibility and migration"]
+    change --> science["Scientific completeness"]
+    speed --> decision["Bounded acceptance decision"]
+    safety --> decision
+    trace --> decision
+    compat --> decision
+    science --> decision
+```
+
+Examples include:
+
+- caching can improve latency while hiding source freshness or authorization
+  mistakes unless authority remains outside the cache;
+- aggressive parallelism can improve throughput while destroying deterministic
+  ordering, failure attribution, or resource isolation;
+- strict schema evolution can protect compatibility while delaying a necessary
+  correction unless explicit versioning and migration are available;
+- evidence compression can improve report usability while erasing rare
+  failures, rejected populations, or contradictory sources;
+- centralized standards can reduce drift while taking product semantics away
+  from the repository that understands them.
+
+The decision record should state the improved dimension, the pressure placed
+on adjacent qualities, the evidence used to accept the tradeoff, and the
+trigger that reopens it.
+
 ## Evidence Is Layered
 
 Evidence becomes stronger as it moves closer to the claim, but different

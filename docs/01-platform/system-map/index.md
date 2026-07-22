@@ -162,6 +162,53 @@ Cross-repository change should move only along the authority edge that owns it.
 Copying the same fix into several consumers is a warning that the canonical
 origin has not been identified.
 
+## Classify The Dependency Before Propagating Change
+
+Not every arrow in the family map carries the same compatibility obligation.
+
+| Dependency class | Consumer relies on | Change evidence needed |
+| --- | --- | --- |
+| governance | required contexts, approval semantics, repository settings, and workflow prerequisites | declared diff, affected inventory, apply result, effective-state audit, and rollback or reconciliation path |
+| synchronized standard | exact managed files, capability set, canonical digest, and consumer checksum | accepted upstream revision, package diff, adoption record, focused consumer checks, and exception review |
+| package or library | public types, functions, commands, schemas, and compatibility policy | release identity, contract diff, dependent compile or behavior evidence, and migration path |
+| execution adapter | input/output mapping, environment, effects, retries, failure semantics, and evidence handoff | adapter contract, positive and negative integration evidence, retained identity, and partial-failure behavior |
+| data or knowledge | dataset, index, vocabulary, provenance, freshness, and interpretation limits | producer revision, schema or semantic diff, consumer admission decision, affected claims, and correction policy |
+| documentation route | stable destination, contextual label, owner, and evidence boundary | owning route build, destination observation, hub route update, and semantic-summary review |
+
+Package compatibility cannot establish data-semantic compatibility. A
+standards checksum cannot establish that a consumer's product behavior is
+correct. The change review must use the evidence class carried by the edge.
+
+## Follow Failure Propagation Without Spreading Ownership
+
+```mermaid
+flowchart LR
+    origin["Canonical failure origin"] --> direct["Directly affected edge"]
+    direct --> consumers["Dependent consumers"]
+    consumers --> outputs["Published outputs and claims"]
+    origin --> correction["Owner correction"]
+    correction --> adoption["Reviewed adoption or migration"]
+    adoption --> requalify["Consumer-specific requalification"]
+    requalify --> outputs
+```
+
+A central correction does not automatically close every downstream risk. Each
+consumer must determine whether the change alters its contract, evidence
+identity, operating envelope, or public claim.
+
+| Failure origin | Immediate containment | Downstream obligation |
+| --- | --- | --- |
+| live governance drift | stop or constrain unsafe application; reconcile declared and effective state | re-evaluate admissions made under the affected control window |
+| defective shared workflow | correct and accept the canonical source; identify affected pins | consumers adopt the corrected revision and reassess runs produced by the defect |
+| incompatible runtime contract | preserve the previous supported line or publish a migration boundary | adapters and products revalidate semantics, not only installation |
+| corrupted or corrected dataset | withdraw or supersede the authoritative identity | analyses and claims reopen only where dependency edges show impact |
+| inaccurate hub summary | narrow or withdraw the public statement | destination remains authoritative; hub correction does not mutate product evidence |
+
+The impact record should name the origin, affected edge, consumer revision,
+public descendants, containment, correction, and evidence required for
+closure. Without that record, teams either overreact across unrelated systems
+or underreact because the original repository is green again.
+
 ## Where Failure Belongs
 
 | Failure | Primary owner | Reader-visible consequence |

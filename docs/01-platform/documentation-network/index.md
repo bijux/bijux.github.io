@@ -94,6 +94,49 @@ A useful cross-site transition answers four questions:
 4. **How do I return?** Shared family navigation preserves a route back to the
    hub and adjacent systems.
 
+## Treat Every Cross-Site Link As A Contract
+
+A link carries more than a URL. It promises a destination identity, a reason
+for the transition, an authority boundary, and enough context for the reader to
+continue without guessing.
+
+| Link field | Reader contract | Failure if omitted |
+| --- | --- | --- |
+| destination | stable canonical route for the owning surface | redirects or guessed paths become the hidden interface |
+| label | product, decision, or evidence surface being opened | generic “learn more” text loses intent outside its paragraph |
+| relationship | why the destination is relevant to the current question | navigation looks like endorsement without a bounded claim |
+| authority | which repository owns the next technical statement | hub orientation and product truth become indistinguishable |
+| expected identity | package, dataset, claim, workflow, or handbook object to retain | the reader reaches a page but cannot join it to the disputed output |
+| return path | family or adjacent-system route | direct visitors become trapped in an isolated site tree |
+
+The shared shell supplies the family and return paths. Page authors still own
+the semantic label and relationship. A visually consistent link with vague
+text is not a complete transition.
+
+## Change A Public Route Without Losing Readers
+
+```mermaid
+stateDiagram-v2
+    [*] --> Canonical
+    Canonical --> DualRoute: replacement published
+    DualRoute --> Redirected: old route preserves intent
+    Redirected --> Retired: consumers and hub migrated
+    Canonical --> Withdrawn: content unsafe or unsupported
+    Withdrawn --> Corrected: owning source restored
+    Corrected --> Canonical
+```
+
+Before retiring a route, identify inbound hub links, shared navigation,
+repository README links, package metadata, release notes, and durable evidence
+records that cite it. Prefer a stable redirect when the destination meaning is
+unchanged. Use an explicit withdrawal or correction notice when the meaning is
+no longer supportable; a redirect to a superficially similar page would hide
+the evidence break.
+
+A route migration closes only when the new destination builds, the old route
+has the intended behavior, the hub and owner agree on the summary, and direct
+navigation still exposes source and return context.
+
 ## Freshness And Authority
 
 Cross-site documentation has two independent freshness questions:
@@ -141,6 +184,20 @@ Separate builds provide useful isolation:
 The trade-off is that cross-site links and shared-shell adoption require
 continued verification. A common visual system cannot prevent an obsolete
 destination or an inaccurate hub summary by itself.
+
+## Preserve Direct-Entry Context
+
+Most readers will not enter through the hub. A repository-owned page should
+therefore remain intelligible from a search result, source link, or saved URL.
+Its opening surface should identify the product, decision or object under
+review, current boundary, and route to deeper owner evidence. Requiring a
+reader to reconstruct context from the family homepage turns navigation order
+into an undocumented dependency.
+
+The hub should likewise avoid summaries that make sense only after reading
+internal platform pages. Public orientation succeeds when a reader can arrive
+at any node, understand its authority, and traverse the evidence chain in both
+directions.
 
 ## Network Failure Modes
 
