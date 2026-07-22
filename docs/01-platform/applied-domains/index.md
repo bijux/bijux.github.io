@@ -67,6 +67,59 @@ normalization, and reconciliation.
 The curation record should preserve these decisions alongside the resulting
 database rather than presenting the database as raw fact.
 
+## Keep Source, Evidence, Analysis, And Claim Populations Distinct
+
+Scientific systems repeatedly narrow and transform a population. Each
+transition needs its own denominator and refusal record.
+
+```mermaid
+flowchart LR
+    discover["Discovered source population"] --> captured["Captured source members"]
+    captured --> governed["Governed evidence objects"]
+    governed --> eligible["Claim-eligible population"]
+    eligible --> analyzed["Analyzed observations"]
+    analyzed --> interpreted["Claim observations"]
+    interpreted --> published["Published members or statements"]
+    captured -. "unavailable or rejected" .-> negative["Negative evidence ledger"]
+    governed -. "conflict or unresolved identity" .-> negative
+    eligible -. "excluded by rule" .-> negative
+    analyzed -. "failed or missing output" .-> negative
+```
+
+| Population | Identity that must survive | Common overclaim |
+| --- | --- | --- |
+| discovered sources | query, registry, bibliography, release, and discovery time | treating search results as captured evidence |
+| captured members | source-native key, payload or locator, version, and access context | treating collection as scientific acceptance |
+| governed objects | normalized identity, fact ownership, lineage, conflicts, and curation decision | treating normalization as truth resolution |
+| eligible objects | named claim, inclusion and exclusion rules, missingness and precision | hiding selection behind the analyzed count |
+| analyzed observations | method, configuration, failures, diagnostics, and complete result inventory | reporting only successful rows |
+| published members | manifestation rule, caveat, revision, and stable public identity | treating visibility as universal support |
+
+Counts are comparable only when their observation unit, identity namespace,
+scope, eligibility, missingness, and revision agree. A larger captured database
+can legitimately produce a smaller public product when the publication burden
+is stricter.
+
+## Propagate Evidence Corrections Without Rewriting History
+
+A source retraction, taxonomy correction, changed protein accession, revised
+coordinate, or invalidated analytical output can affect several descendants.
+The correction should follow explicit dependency edges.
+
+```mermaid
+flowchart LR
+    finding["Corrected or withdrawn evidence"] --> objects["Affected governed objects"]
+    objects --> analyses["Dependent analyses"]
+    analyses --> claims["Claim verdicts and limitations"]
+    claims --> products["Reports, maps, databases, recommendations"]
+    products --> consumers["Consumer notice or migration"]
+```
+
+Preserve the previous record, the correction reason, old and new identities,
+affected descendants, and the decision that supersedes or withdraws each
+claim. Regenerating a polished output without a correction relation destroys
+the evidence needed to understand what changed.
+
 ## Interpretation Boundary
 
 ```mermaid
@@ -138,6 +191,11 @@ A scientific publication route is complete when a reader can connect:
 
 Maps, dashboards, and polished reports are delivery surfaces, not substitutes
 for this chain.
+
+Reproducibility also has a ceiling. Reconstructing identical bytes shows that
+the declared computation is repeatable; it does not establish that the source
+population was unbiased, the method was valid for a new context, or the
+interpretation remains current after upstream evidence changes.
 
 ## Explore The Domains
 

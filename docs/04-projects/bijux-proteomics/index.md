@@ -82,6 +82,37 @@ The rejected portion is evidence about the population actually analyzed. It
 must travel with downstream QC and interpretation because hidden exclusions
 can change the conclusion.
 
+## Database Preparation Is Part Of The Result
+
+Protein databases, spectral libraries, identifier maps, literature collections,
+and benchmark corpora are analytical inputs with their own scientific
+decisions. Their construction must remain visible beside downstream results.
+
+```mermaid
+flowchart LR
+    sources["Versioned sources<br/>and licenses"] --> capture["Captured members<br/>and native identities"]
+    capture --> normalize["Canonical identifiers<br/>and typed records"]
+    normalize --> reconcile["Aliases, isoforms,<br/>decoys, conflicts"]
+    reconcile --> qualify["Coverage, exclusions,<br/>context, and review"]
+    qualify --> publish["Database or library<br/>manifest + digest"]
+    publish --> workflow["Workflow-family input"]
+```
+
+| Preparation decision | Evidence to retain | Scientific consequence if hidden |
+| --- | --- | --- |
+| source and release selection | accession, release, retrieval context, license, and digest | silent database drift or biased coverage |
+| identifier normalization | native ID, canonical ID, organism, isoform, and mapping rule | distinct entities collapse or one entity fragments |
+| sequence and record admission | accepted and rejected members with diagnostics | analyzed population cannot be reconstructed |
+| target/decoy construction | producer, rule, seed or determinism record, and manifest role | error-control assumptions become unverifiable |
+| spectral or assay library transfer | source context, instrument and workflow compatibility, calibration and exclusions | library presence is mistaken for transfer validity |
+| literature and ontology grounding | source version, claim relationship, context, contradiction, and freshness | citation count is mistaken for support |
+| benchmark preparation | truth source, population, leakage controls, expected metrics, and limitations | performance is evaluated against self-confirming evidence |
+
+A database digest identifies bytes, not suitability. Suitability belongs to
+the workflow-family contract and intended use. The same database may be
+adequate for exploratory identification and inadequate for transferable
+quantification or an experimental recommendation.
+
 ## Evidence Ladder
 
 A workflow family earns only the strongest language supported by every
@@ -162,6 +193,55 @@ If removing one evidence axis or increasing downstream burden collapses the
 recommendation, that weaker posture is part of the truthful product surface.
 An observed outcome changes the next decision; it does not rewrite the prior
 record.
+
+## Operate Without Losing Scientific Meaning
+
+Runtime scale and service behavior matter only if the evidence-bearing
+population remains equivalent. Optimizations that discard ambiguity,
+contradictions, provenance, rejections, or rare failure classes change the
+scientific operation even when throughput improves.
+
+| Operational pressure | Preserve | Unsafe shortcut |
+| --- | --- | --- |
+| batched ingestion | source manifest, deterministic member identity, rejection population, and cross-batch integrity | treating batches as independent when identities or conflicts cross them |
+| indexed identifier resolution | every candidate, evidence tier, organism and alias context | first-match collapse of ambiguity |
+| partitioned evidence graph | stable partition key, cross-partition edges, conflicts, and final integrity audit | ignoring relationships outside the selected shard |
+| parallel workflow execution | request and environment identity, event order where meaningful, artifacts, failures, and terminal state | aggregating only successful worker outputs |
+| large recommendation universe | complete candidate population, pruning policy, alternatives, sensitivity, and burden | ranking only preselected favorable candidates |
+| retained laboratory evidence | custody, controls, deviations, observations, and link to the prior decision | replacing analytical history with the eventual outcome |
+
+The repository exposes performance and behavioral evidence but does not turn
+that into a universal service-level objective. Capacity claims require the
+named workload, environment, dataset, evidence-completeness checks, and
+observation window. A faster result that changes ambiguity or conflict counts
+is not the same scientific result.
+
+## Release Authority Is Multi-Dimensional
+
+A candidate may publish only when the required scientific, runtime,
+knowledge, recommendation, laboratory, compatibility, security, and channel
+owners agree for that revision. This is an intersection, not a majority vote.
+
+```mermaid
+flowchart TB
+    candidate["Source candidate"] --> science["Scientific evidence"]
+    candidate --> runtime["Execution evidence"]
+    candidate --> knowledge["Grounding and freshness"]
+    candidate --> decision["Recommendation stability"]
+    candidate --> consequence["Lab consequence boundary"]
+    candidate --> delivery["Compatibility, security,<br/>and channel evidence"]
+    science --> verdict{"Release disposition"}
+    runtime --> verdict
+    knowledge --> verdict
+    decision --> verdict
+    consequence --> verdict
+    delivery --> verdict
+```
+
+One blocking owner narrows or refuses the affected claim even when every other
+lane is green. The disposition must retain blocker codes, affected workflow
+families and claims, evidence identities, and the condition that would permit
+reconsideration.
 
 ## Verify A Proteomics Claim
 
