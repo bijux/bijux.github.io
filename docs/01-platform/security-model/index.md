@@ -126,6 +126,34 @@ flowchart LR
     verify --> replace["Republish, resign,<br/>reconfigure, or refuse"]
 ```
 
+## Treat Build Tools As Executed Dependencies
+
+Package installers, documentation plugins, compilers, generators, Actions,
+and repository scripts execute with the build environment's authority. A
+version pin improves identity; it does not make execution harmless.
+
+```mermaid
+flowchart LR
+    source["Reviewed source and lock state"] --> resolve["Resolve identified dependencies"]
+    resolve --> build["Isolated build authority"]
+    build --> outputs["Artifacts, reports, and provenance"]
+    outputs --> verify["Independent identity and policy checks"]
+```
+
+| Build boundary | Security evidence |
+| --- | --- |
+| dependency resolution | canonical origin, immutable identity, digest or lock relationship, and withdrawal response |
+| credentials | minimum secret class, scoped destination, masking, and absence from artifacts and logs |
+| filesystem | writable paths, source immutability where practical, artifact boundary, and cleanup |
+| network | required destinations, denied ambient access where supported, and retained retrieval identity |
+| generated output | producer identity, explained variance, schema, and review before promotion |
+| runner | image and tool identity, isolation assumptions, and untrusted contribution boundary |
+
+A successful build proves neither that the dependency was benign nor that
+generated output is safe to publish. Compromise response must identify builds,
+artifacts, releases, and deployments that executed the affected dependency,
+not only repositories whose lock file contained it.
+
 ## Execution Isolation
 
 Bijux Core states its execution boundary explicitly. The `bijux-dag` shell

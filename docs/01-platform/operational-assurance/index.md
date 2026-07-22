@@ -152,6 +152,27 @@ green latency chart with missing error outcomes is not a passing performance
 result; it is incomplete evidence. During recovery, restoring the service and
 restoring the ability to observe it are separate closure conditions.
 
+## Connect Alerts To Owned Decisions
+
+An alert is useful when it names the threatened objective, affected identity,
+evidence window, decision owner, and safe action. Alert volume, severity text,
+or acknowledgment speed does not prove that the underlying condition was
+understood or corrected.
+
+| Alert property | Decision value |
+| --- | --- |
+| objective and population | identifies which user-visible or evidence-bearing boundary is threatened |
+| identity and topology | distinguishes release, dataset, route, tenant, and dependency scope |
+| window and missing data | separates sustained breach, transient event, and unknown observation state |
+| runbook action and owner | names who can mitigate without crossing another authority boundary |
+| inhibition and deduplication | prevents one dependency failure from masquerading as many independent causes |
+| closure condition | requires recovered behavior and evidence, not merely a silenced notification |
+
+Tuning should retain false-positive, false-negative, suppressed, and
+unroutable cases. An alert that never fires is not proven correct by quiet
+operations, and muting a noisy detector does not resolve the threatened
+objective.
+
 ## Load And Capacity Evidence
 
 Load evidence is useful only when the workload and environment travel with the
