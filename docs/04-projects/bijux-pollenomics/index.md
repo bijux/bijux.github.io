@@ -128,6 +128,66 @@ Spatial proximity does not establish association, contemporaneity, or
 causation. Matching labels do not establish identity. A contextual period does
 not become a numeric temporal comparison without a shared basis and precision.
 
+## Resolve Conflicts Without Erasing Sources
+
+Two sources can disagree about coordinates, chronology, taxonomy, locality, or
+association while both source-native records remain valid captures. Curation
+decides what a named product may use; it must not rewrite the losing source as
+though the disagreement never existed.
+
+```mermaid
+flowchart TD
+    assertions["Source-native assertions"] --> compare["Normalize for a declared dimension"]
+    compare --> agree{"Compatible under the product rule?"}
+    agree -->|yes| accept["Accept with retained provenance"]
+    agree -->|no| conflict["Record conflict and affected claims"]
+    conflict --> decision{"Evidence supports a decision?"}
+    decision -->|yes| qualify["Select or qualify with reason"]
+    decision -->|no| unresolved["Keep unresolved, exclude,<br/>or block release"]
+```
+
+A reviewable conflict record identifies the assertions, dimension, comparison
+rule, decision owner, evidence, product use, and condition that would reopen
+the decision. Source authority may differ by dimension: a registry can be
+preferred for administrative identity while a primary field record owns a
+sampling coordinate. Selecting one assertion for one use does not grant it
+universal authority over the object.
+
+## Propagate Spatial And Temporal Uncertainty
+
+Coordinates and dates are measurements or interpretations with support, not
+decorative attributes. Precision lost during normalization or aggregation
+cannot be recovered by displaying more decimal places or a narrower chart bin.
+
+| Input state | Public representation | Prohibited inference |
+| --- | --- | --- |
+| point with known precision | point plus method and precision | exact sampling location beyond that precision |
+| polygon, locality, or administrative area | area or bounded locality | point identity at a centroid |
+| conflicting coordinates | qualified selection or visible unresolved state | silent averaging into a new source fact |
+| numeric date or interval | original basis, interval, uncertainty, and conversion | false precision after calendar or age-model conversion |
+| contextual period | categorical context with its vocabulary and source | direct numeric comparability without a governed mapping |
+| missing or withheld location | explicit missingness or access posture | zero coordinate or inferred public point |
+
+Spatial or temporal aggregation adds another claim. A map cell, region count,
+or time bin needs a membership rule for geometries that cross boundaries,
+uncertain dates that overlap bins, duplicates, qualified records, and missing
+values. The aggregate must retain its denominator and the uncertainty policy;
+otherwise its clean visual boundary can imply precision that no member owns.
+
+## Keep Map Semantics Auditable
+
+A rendered feature may represent a source observation, a governed object, a
+product member, or an aggregate. Those roles require different hover text,
+counts, and trace routes. Clustering markers for presentation must not create a
+new scientific population, and proximity on the screen must not create a
+relation absent from the evidence graph.
+
+Readers should be able to identify the feature role, product and evidence
+revision, member or aggregate identity, population rule, caveat, and route back
+to source and curation state. When privacy or source restrictions prevent that
+detail from being public, the feature needs a bounded access explanation—not a
+fabricated precise substitute.
+
 ## Count The Right Population
 
 Captured rows, normalized objects, reviewed claims, eligible candidates,

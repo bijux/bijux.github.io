@@ -109,6 +109,51 @@ another required observation is absent. A matched claim can coexist with a
 mixed bundle. Repository coverage reports how much governed evidence exists;
 it is not a package-wide scientific-validation score.
 
+## Separate Reproduction From Robustness
+
+Reproducing a registered result asks whether the identified computation can be
+recovered and compared under aligned conventions. Robustness asks whether the
+scientific interpretation survives reasonable changes to assumptions,
+population, model, and numerical strategy. One does not imply the other.
+
+| Variation | Evidence to retain | Question it tests |
+| --- | --- | --- |
+| taxon or row eligibility | complete original and varied populations with exclusion reasons | is the result driven by a narrow inclusion decision? |
+| tree identity or uncertainty | tree source, rooting, branch lengths, sample or alternative tree, and node mapping | does phylogenetic uncertainty change the estimand or conclusion? |
+| response or predictor encoding | transformation, units, factor levels, contrasts, and missingness policy | is the result stable to the declared data representation? |
+| evolutionary or covariance model | candidate set, parameterization, likelihood convention, failures, and selection rule | does the interpretation depend on one dependence model? |
+| numerical strategy | starts or chains, seeds, bounds, convergence, and warnings | is the result an optimizer or sampler artifact? |
+| diagnostic or tolerance rule | statistic, scale, threshold, and complete denominator | does a favorable verdict depend on an unexamined acceptance rule? |
+
+```mermaid
+flowchart LR
+    claim["Bounded claim"] --> baseline["Registered analysis"]
+    claim --> variants["Declared sensitivity analyses"]
+    baseline --> compare["Compare estimand, population,<br/>uncertainty, and diagnostics"]
+    variants --> compare
+    compare --> stable["Stable within tested envelope"]
+    compare --> qualified["Sensitive, unresolved,<br/>or refused"]
+```
+
+A sensitivity result must retain the failed and non-comparable variants, not
+only alternatives that support the baseline. “Stable” is always bounded by the
+tested variation set. It does not authorize a universal robustness statement
+over models, trees, transformations, or populations that were not evaluated.
+
+## Invalidate Claims By Dependency
+
+Evidence freshness is a dependency question. A source correction, changed
+taxon mapping, tree revision, model convention, runtime result, comparison
+rule, or tolerance can stale the claims that consume it even when the rendered
+page and bundle bytes have not changed.
+
+The claim index should make that propagation selective: identify affected
+observations, recompute their checks, aggregate the owning claim again, and
+then reassess bundle and study summaries. Unaffected claims retain their own
+evidence history. A new repository release alone neither invalidates every old
+claim nor makes an old claim current; the governed dependency relationship
+decides.
+
 ## Runtime And External Tools
 
 The runtime preserves who owns the computation. Native methods and named
