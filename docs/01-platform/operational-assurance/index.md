@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Operational Assurance
@@ -192,6 +192,36 @@ The report should distinguish generated pressure from real traffic, warm from
 cold state, steady load from bursts, and dependency saturation from application
 behavior. Rate limits, queues, caches, and backpressure are part of the tested
 configuration, not incidental details to omit from the result.
+
+## Locate The Collapse Boundary
+
+Peak throughput is often the least useful point in a capacity exercise. The
+safer boundary is where additional admitted demand begins to produce growing
+queues, retry amplification, missed deadlines, incorrect results, or resource
+exhaustion.
+
+```mermaid
+flowchart LR
+    demand["Increasing admitted demand"] --> stable["Stable service region"]
+    stable --> knee["Latency or queue-growth knee"]
+    knee --> degrade["Bounded degradation"]
+    degrade --> refuse["Load shed or explicit refusal"]
+    knee -. "unbounded admission" .-> collapse["Retry amplification + collapse"]
+```
+
+| Boundary signal | What it can establish | Evidence needed |
+| --- | --- | --- |
+| utilization approaches a limit | which resource may constrain the topology | resource identity, limit, sampling coverage, and competing work |
+| queue age grows after demand stabilizes | service capacity is below admitted demand | arrival rate, completion rate, queue policy, deadlines, and drain behavior |
+| retries increase total work | client or dependency behavior amplifies the incident | original attempts, retry ownership, backoff, terminal outcomes, and fan-out |
+| shedding preserves critical work | degradation policy protects a named class | admission priority, refusal semantics, correctness, and recovery evidence |
+| recovery lags demand removal | retained state or dependency pressure prolongs failure | drain time, cleanup, cache or pool state, and post-load verification |
+
+Exercise beyond the expected envelope only in an isolated, authorized
+topology with explicit stop conditions. A collapse test must not turn shared
+dependencies, production data, or other tenants into undeclared load targets.
+The accepted envelope should end before unstable queue growth, not at the last
+request that happened to return successfully.
 
 ## Recovery Evidence
 

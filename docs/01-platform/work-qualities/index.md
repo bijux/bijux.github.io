@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Engineering Qualities
@@ -96,6 +96,27 @@ Examples include:
 The decision record should state the improved dimension, the pressure placed
 on adjacent qualities, the evidence used to accept the tradeoff, and the
 trigger that reopens it.
+
+## Qualify Efficiency Without Hiding Demand
+
+Efficiency is the amount of correct, useful work produced for the resources
+and external pressure consumed. A faster response is not automatically more
+efficient when it requires disproportionate memory, storage, network calls,
+operator attention, or downstream retries.
+
+| Evidence dimension | Record with the result | Misleading shortcut |
+| --- | --- | --- |
+| admitted demand | operation classes, arrival shape, concurrency, payload distribution, and rejected work | reporting only completed requests |
+| useful work | correct terminal outcomes and the population they represent | counting retries or duplicate work as throughput |
+| resource pressure | CPU, memory, storage, file descriptors, queue depth, and network activity | naming instance size without observed utilization |
+| dependency amplification | calls, bytes, retries, and fan-out per admitted operation | attributing all latency to the local process |
+| economic boundary | priced resources, retention, transfer, and observation window where cost matters | presenting an unscoped currency total as a portable property |
+
+Compare systems at equivalent correctness, workload, topology, and evidence
+coverage. A change that lowers median latency while moving failures into a
+queue, cache, or external service has redistributed pressure; it has not yet
+demonstrated an efficiency improvement. Cost evidence is environment- and
+time-bound, while resource ratios can remain useful across pricing changes.
 
 ## Evaluate Quality Across Reader And Operator Contexts
 
