@@ -23,8 +23,10 @@ flowchart TB
     core["bijux-core<br/>owns execution semantics"]
     canon["bijux-canon<br/>owns knowledge-system semantics"]
     atlas["bijux-atlas<br/>owns data-service delivery"]
+    gnss["bijux-gnss<br/>owns GNSS receiver and navigation evidence"]
     proteomics["bijux-proteomics<br/>owns proteomics meaning"]
     pollenomics["bijux-pollenomics<br/>owns pollen evidence meaning"]
+    phylogenetics["bijux-phylogenetics<br/>owns comparative evidence"]
     masterclass["bijux-masterclass<br/>owns curricula and capstones"]
     public["Public readers and users"]
 
@@ -38,8 +40,10 @@ flowchart TB
     std -->|"shared files and checks"| core
     std -->|"shared files and checks"| canon
     std -->|"shared files and checks"| atlas
+    std -->|"shared files and checks"| gnss
     std -->|"shared files and checks"| proteomics
     std -->|"shared files and checks"| pollenomics
+    std -->|"shared files and checks"| phylogenetics
     std -->|"shared files and checks"| masterclass
 
     core -->|"execution backbone"| canon
@@ -49,8 +53,10 @@ flowchart TB
 
     hub -->|"orientation"| public
     atlas -->|"APIs, datasets, and reports"| public
+    gnss -->|"receiver and positioning evidence"| public
     proteomics -->|"scientific software and evidence"| public
     pollenomics -->|"maps, data, and reports"| public
+    phylogenetics -->|"runtime and evidence books"| public
     masterclass -->|"programs and capstones"| public
 ```
 

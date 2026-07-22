@@ -12,7 +12,10 @@ last_reviewed: 2026-07-22
 <section class="bijux-hero">
   <div class="bijux-hero__eyebrow">governed software, scientific systems, and engineering education</div>
   <h1 class="bijux-hero__title">Bijux builds systems whose authority, evidence, and delivery boundaries remain visible.</h1>
-  <p class="bijux-hero__lede">This hub connects the repositories that govern the family, the runtime and knowledge foundations they protect, and the products and learning programs delivered on top.</p>
+  <p class="bijux-hero__lede">
+    This hub connects family governance, runtime and knowledge foundations,
+    delivered products, and learning programs.
+  </p>
 </section>
 
 Bijux is a family of independently owned repositories. The separation is
@@ -31,7 +34,7 @@ recognizable route from source to delivered output.
 | How is the repository family governed? | [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) | where live GitHub policy is declared, reviewed, and applied |
 | Which behavior is shared across repositories? | [Bijux Standards](03-bijux-std/index.md) | how common files, checks, and documentation behavior are promoted and verified |
 | How do all repositories fit together? | [System Map](01-platform/system-map/index.md) | which repository owns each authority and where dependencies cross boundaries |
-| Where do public interfaces and artifacts appear? | [Delivery Surfaces](01-platform/delivery-surfaces/index.md) | how documentation, packages, datasets, APIs, and evidence reach readers and users |
+| How are outputs published? | [Delivery Surfaces](01-platform/delivery-surfaces/index.md) | how sites, packages, datasets, APIs, and evidence reach users |
 | Which product should I inspect? | [Projects](04-projects/index.md) | the question, inputs, outputs, and proof surface for each project |
 | Where is the engineering taught? | [Learning](05-learning/index.md) | programs grounded in runnable workflows and design judgment |
 
@@ -54,7 +57,8 @@ flowchart TB
         core["bijux-core<br/>execution backbone"]
         canon["bijux-canon<br/>knowledge system"]
         atlas["bijux-atlas<br/>data and service delivery"]
-        domains["scientific repositories<br/>proteomics and pollenomics"]
+        gnss["bijux-gnss<br/>receiver and positioning evidence"]
+        domains["scientific repositories<br/>proteomics, pollenomics, phylogenetics"]
     end
 
     subgraph education["Engineering education"]
@@ -66,12 +70,14 @@ flowchart TB
     std --> core
     std --> canon
     std --> atlas
+    std --> gnss
     std --> domains
     core --> canon
     core --> atlas
     canon --> domains
     hub --> reader
     atlas --> reader
+    gnss --> reader
     domains --> reader
     masterclass --> reader
     systems --> masterclass
@@ -143,8 +149,11 @@ that proof.
 | `bijux-core` | CLI, DAG, execution evidence, and runtime governance | [Bijux Core](04-projects/bijux-core/index.md) |
 | `bijux-canon` | ingest, indexing, retrieval, reasoning, orchestration, and controlled runtime acceptance | [Bijux Canon](04-projects/bijux-canon/index.md) |
 | `bijux-atlas` | versioned dataset, API, query, and operational delivery | [Bijux Atlas](04-projects/bijux-atlas/index.md) |
+| `bijux-gnss` | GNSS signal, receiver, navigation, positioning, and run evidence | [Bijux GNSS](04-projects/bijux-gnss/index.md) |
 | `bijux-proteomics` | evidence-oriented proteomics software and research workflows | [Bijux Proteomics](04-projects/bijux-proteomics/index.md) |
 | `bijux-pollenomics` | curated pollen evidence, reproducible analysis, maps, and reports | [Bijux Pollenomics](04-projects/bijux-pollenomics/index.md) |
+| `bijux-phylogenetics` | phylogenetics runtime, parity, reproducibility records, and claim-scoped evidence | [Bijux Phylogenetics](04-projects/bijux-phylogenetics/index.md) |
+| `bijux-genomics` | governed Rust genomics product with public documentation and packages still planned | no published product route yet |
 | `bijux-masterclass` | long-form engineering programs and executable capstones | [Learning](05-learning/index.md) |
 
 <div class="bijux-quicklinks">

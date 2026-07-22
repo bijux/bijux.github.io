@@ -4,121 +4,102 @@ audience: mixed
 type: index
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-12
+last_reviewed: 2026-07-22
 ---
 
 # Projects
 
-This is the fastest way to understand what each public Bijux repository
-does. The projects stay separate in ownership, but they still share a
-common runtime language and a common standards layer.
+Bijux projects own distinct computational, operational, and scientific
+questions. Choose a project by the decision you need to make, then continue to
+its repository-owned handbook for contracts and evidence.
 
-Open this after Platform when you want the fastest sense of where each
-repository belongs.
+Governance and shared standards are foundations rather than projects:
+[Bijux Infrastructure-as-Code](../02-bijux-iac/index.md) controls repository
+admission, and [Bijux Standards](../03-bijux-std/index.md) supplies canonical
+shared infrastructure.
 
-If your question is still about governance or shared standards, open
-[Bijux Infrastructure-as-Code](../02-bijux-iac/index.md) or
-[Bijux Standards](../03-bijux-std/index.md) first. Projects begin where
-those two shared layers stop and repository-owned runtime, delivery,
-knowledge, or domain work takes over.
+## Project Map
 
 ```mermaid
-graph TD
-    foundations["Shared foundations<br/>bijux-iac + bijux-std"] --> core["Shared runtime backbone<br/>bijux-core"]
-    core --> canon["Canon"]
-    core --> atlas["Atlas"]
-    core --> domains["Proteomics + Pollenomics"]
-    core --> systems["Telecom + Genomics"]
+flowchart TB
+    question["Reader question"] --> execution["Execution and workflows"]
+    question --> knowledge["Knowledge and reasoning"]
+    question --> delivery["Datasets and services"]
+    question --> positioning["GNSS receiver and positioning"]
+    question --> science["Scientific evidence"]
+
+    execution --> core["Bijux Core"]
+    knowledge --> canon["Bijux Canon"]
+    delivery --> atlas["Bijux Atlas"]
+    positioning --> gnss["Bijux GNSS"]
+    science --> proteomics["Bijux Proteomics"]
+    science --> pollenomics["Bijux Pollenomics"]
+    science --> phylogenetics["Bijux Phylogenetics"]
 ```
 
-## Primary Responsibility Clusters
+The branches describe primary responsibility, not isolation. A scientific
+repository may consume execution, knowledge, or delivery patterns while
+retaining authority over its interpretation.
 
-| Capability cluster | Repositories |
-| --- | --- |
-| runtime authority and execution governance | [Bijux Core](bijux-core/index.md) |
-| knowledge-system orchestration and reasoning boundaries | [Bijux Canon](bijux-canon/index.md) |
-| public delivery interfaces and service publication | [Bijux Atlas](bijux-atlas/index.md) |
-| proteomics scientific product workflows | [Bijux Proteomics](bijux-proteomics/index.md) |
-| evidence-mapping product workflows | [Bijux Pollenomics](bijux-pollenomics/index.md) |
+## Choose By Decision
 
-Learning is a top-level branch reference, not a peer project repository:
-[Learning catalog](../05-learning/index.md).
-
-The foundations that support all of these are:
-
-- [`bijux-iac`](../02-bijux-iac/index.md) for GitHub governance as code
-- [`bijux-std`](../03-bijux-std/index.md) for shared standards
-
-The shared runtime backbone for the project family is:
-
-- `bijux-core` for CLI, DAG, evidence, and release discipline reused across projects
-
-The public hub for the family is:
-
-- `bijux.github.io` for documentation and movement across the family
-
-<div class="bijux-showcase-grid">
-  <article class="bijux-showcase-card">
-    <div class="bijux-showcase-card__eyebrow">runtime and governance backbone</div>
-    <h2>Bijux Core</h2>
-    <p>The runtime authority repository for CLI and DAG execution.</p>
-    <p>It keeps execution behavior and governance boundaries stable under long-term change.</p>
-    <p><a href="bijux-core/index.md">Open Bijux Core</a></p>
-  </article>
-  <article class="bijux-showcase-card">
-    <div class="bijux-showcase-card__eyebrow">governed knowledge system</div>
-    <h2>Bijux Canon</h2>
-    <p>The knowledge-system orchestration repository.</p>
-    <p>It separates ingest, indexing, reasoning, orchestration, and runtime control into durable interfaces.</p>
-    <p><a href="bijux-canon/index.md">Open Bijux Canon</a></p>
-  </article>
-  <article class="bijux-showcase-card">
-    <div class="bijux-showcase-card__eyebrow">data and service delivery</div>
-    <h2>Bijux Atlas</h2>
-    <p>The public delivery-interface repository for APIs, datasets, and publication routes.</p>
-    <p>It treats service delivery as a maintained product surface.</p>
-    <p><a href="bijux-atlas/index.md">Open Bijux Atlas</a></p>
-  </article>
-  <article class="bijux-showcase-card">
-    <div class="bijux-showcase-card__eyebrow">applied scientific products</div>
-    <h2>Bijux Proteomics</h2>
-    <p>The proteomics scientific product repository.</p>
-    <p>It applies platform discipline to evidence-heavy discovery workflows.</p>
-    <p><a href="bijux-proteomics/index.md">Open Bijux Proteomics</a></p>
-  </article>
-  <article class="bijux-showcase-card">
-    <div class="bijux-showcase-card__eyebrow">evidence and site selection</div>
-    <h2>Bijux Pollenomics</h2>
-    <p>The evidence-mapping scientific product repository.</p>
-    <p>It keeps archaeology/eDNA/aDNA interpretation outputs traceable and reproducible.</p>
-    <p><a href="bijux-pollenomics/index.md">Open Bijux Pollenomics</a></p>
-  </article>
-</div>
-
-## Primary Responsibility By Repository
-
-| Repository | Primary job | What you can inspect quickly |
+| You need to decide | Project | Strongest first evidence |
 | --- | --- | --- |
-| [Bijux Core](bijux-core/index.md) | runtime authority and execution governance | CLI/DAG split, evidence routes, release discipline |
-| [Bijux Canon](bijux-canon/index.md) | governed knowledge-system decomposition | ingest/index/reason/orchestrate/runtime layer split |
-| [Bijux Atlas](bijux-atlas/index.md) | data-service delivery and operated publication | API, datasets, OpenAPI, reporting, control plane |
-| [Bijux Proteomics](bijux-proteomics/index.md) | proteomics scientific product engineering | workflow contracts, evidence posture, lab-facing outputs |
-| [Bijux Pollenomics](bijux-pollenomics/index.md) | evidence-mapping scientific product engineering | mapped outputs, report bundles, reproducible evidence handling |
+| how a command or DAG executes and records evidence | [Bijux Core](bijux-core/index.md) | runtime contracts, execution semantics, and release evidence |
+| how sources become indexed, queryable, and reasoning-ready | [Bijux Canon](bijux-canon/index.md) | ingest, index, reason, orchestration, and runtime contracts |
+| how a versioned dataset is delivered | [Bijux Atlas](bijux-atlas/index.md) | identity, API contracts, profiles, and qualification evidence |
+| how GNSS samples become positioning evidence | [Bijux GNSS](bijux-gnss/index.md) | run manifest, typed records, diagnostics, and references |
+| how protein evidence supports discovery workflows | [Bijux Proteomics](bijux-proteomics/index.md) | prepared databases, entity lineage, package contracts, and analysis evidence |
+| how pollen supports spatial interpretation | [Bijux Pollenomics](bijux-pollenomics/index.md) | curated records, provenance, methods, maps, and reports |
+| how a phylogenetic claim is supported | [Bijux Phylogenetics](bijux-phylogenetics/index.md) | typed result, manifest, parity record, or claim bundle |
 
-## Reading Guide
+## Choose By Output
 
-| If you care most about... | Start here |
-| --- | --- |
-| shared governance and repo-wide review controls | [Bijux Infrastructure-as-Code](../02-bijux-iac/index.md) |
-| shared standards and cross-repository continuity | [Bijux Standards](../03-bijux-std/index.md) |
-| platform and runtime engineering | [Bijux Core](bijux-core/index.md) |
-| governed AI and knowledge systems | [Bijux Canon](bijux-canon/index.md) |
-| data delivery and service architecture | [Bijux Atlas](bijux-atlas/index.md) |
-| bioinformatics and scientific product work | [Bijux Proteomics](bijux-proteomics/index.md) |
-| evidence mapping and field-oriented domain systems | [Bijux Pollenomics](bijux-pollenomics/index.md) |
-| teaching and engineering communication | [Learning catalog](../05-learning/index.md) |
+| Output | Owning project | Identity to preserve |
+| --- | --- | --- |
+| command or workflow result | Core | inputs, execution semantics, status, artifacts, and evidence |
+| indexed knowledge or reasoning result | Canon | source, normalization, index, model, and acceptance state |
+| dataset, API response, or operational report | Atlas | dataset key, build fingerprint, publication state, request contract, and profile |
+| receiver or positioning result | GNSS | dataset, configuration, stage state, navigation inputs, diagnostics, and run manifest |
+| protein database or analysis result | Proteomics | source accessions, curation, transformations, parameters, and evidence lineage |
+| pollen map or report | Pollenomics | source record, taxonomy, geography, curation decision, method, and uncertainty |
+| phylogenetic result or evidence claim | Phylogenetics | taxa, tree/alignment/trait identity, model, diagnostics, manifest, and claim verdict |
 
-## Reading Rule
+## Evidence Depth
 
-Use the cards for quick orientation, then open the project pages for
-repository-owned details.
+Project pages distinguish four levels that are often blurred:
+
+1. **capability** — a contract says the operation or object is supported;
+2. **execution** — an owned method reached a typed terminal state;
+3. **reproducibility** — inputs, configuration, environment, outputs, and
+   attempts can be reconstructed;
+4. **claim evidence** — a bounded public statement has a current evidence
+   record and limitations.
+
+Not every project output needs all four levels. The required depth depends on
+the decision. A CLI capability demo can be complete without becoming
+scientific validation; a scientific claim cannot rely on capability alone.
+
+## Delivery Status
+
+The governed inventory records published documentation and packages for Core,
+Canon, Atlas, GNSS, Proteomics, Pollenomics, and Phylogenetics. Bijux Genomics
+is governed with documentation and packages marked **planned**, so this catalog
+does not present a public Genomics product route as already delivered.
+
+## Follow A Complete Record
+
+Regardless of project, a trustworthy investigation moves backward from the
+surprising output:
+
+```mermaid
+flowchart RL
+    output["Public output"] --> result["Structured result"]
+    result --> execution["Method and configuration"]
+    execution --> input["Admitted input identity"]
+    input --> source["Source and provenance"]
+```
+
+Start from the page for the owning project. Use [Delivery Surfaces](../01-platform/delivery-surfaces/index.md)
+when the question concerns custody or publication, and [Applied Domains](../01-platform/applied-domains/index.md)
+when the question concerns scientific curation or interpretation.

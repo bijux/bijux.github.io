@@ -48,6 +48,9 @@ extra:
       - key: bijux-atlas
         label: Atlas
         url: https://bijux.io/bijux-atlas/
+      - key: bijux-gnss
+        label: GNSS
+        url: https://bijux.io/bijux-gnss/
       - key: bijux-masterclass
         label: Masterclass
         url: https://bijux.io/bijux-masterclass/
@@ -76,8 +79,10 @@ nav:
       - Bijux Core: 04-projects/bijux-core/index.md
       - Bijux Canon: 04-projects/bijux-canon/index.md
       - Bijux Atlas: 04-projects/bijux-atlas/index.md
+      - Bijux GNSS: 04-projects/bijux-gnss/index.md
       - Bijux Proteomics: 04-projects/bijux-proteomics/index.md
       - Bijux Pollenomics: 04-projects/bijux-pollenomics/index.md
+      - Bijux Phylogenetics: 04-projects/bijux-phylogenetics/index.md
   - Learning:
       - Overview: 05-learning/index.md
       - Reproducible Research: 05-learning/reproducible-research/index.md
