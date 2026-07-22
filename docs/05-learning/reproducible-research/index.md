@@ -4,133 +4,136 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-17
+last_reviewed: 2026-07-22
 ---
 
 # Reproducible Research
 
-The reproducible research program is the route into workflow discipline,
-build systems, automation, and scientific execution habits. It presents
-engineering structure through practical research tooling without
-reducing the work to tool-specific recipes.
-
-In practical terms, this program addresses familiar failure points:
-artifact drift between runs, irreproducible results, unclear execution
-state, and broken promotion boundaries between local experiments and
-publishable outputs.
-
-The public docs surface for this program follows the shared
-documentation shell and standards checks inherited from `bijux-std`.
+The Reproducible Research family teaches how to keep computation truthful
+under changing inputs, parallel execution, publication, handoff, and recovery.
+Its three programs address different trust boundaries: build-graph truth,
+workflow orchestration, and experiment-state identity.
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="https://bijux.io/bijux-masterclass/reproducible-research/">View Family Docs</a>
-<a class="md-button" href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-make/">View Deep Dive Make</a>
-<a class="md-button" href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-snakemake/">View Deep Dive Snakemake</a>
-<a class="md-button" href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-dvc/">View Deep Dive DVC</a>
+<a class="md-button md-button--primary" href="https://bijux.io/bijux-masterclass/reproducible-research/">Open The Family Catalog</a>
+<a class="md-button" href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-make/">Deep Dive Make</a>
+<a class="md-button" href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-snakemake/">Deep Dive Snakemake</a>
+<a class="md-button" href="https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-dvc/">Deep Dive DVC</a>
 </div>
 
-## Concrete Failure Modes Covered
-
-- stale artifacts: outputs appear current but were built from outdated upstream inputs.
-- parameter drift: model or analysis parameters change without a comparable, traceable baseline.
-- workflow graph mismatch: declared dependencies do not match real execution needs, causing partial or incorrect rebuilds.
-
-## Family Shape
-
-This family is not just about research tooling. It is about engineering
-judgment under workflow pressure: build-graph truth, orchestration and
-publish boundaries, dynamic workflow safety, state identity, experiment
-discipline, and reproducible execution. The programs are organized by
-failure mode and design pressure rather than by tool popularity.
-
-## What Appears Across The Program
-
-| Surface | Why it matters |
-| --- | --- |
-| Make, Snakemake, and DVC kept in one family | shows that workflow truth, orchestration, and state identity are treated as one systems problem |
-| capstone outputs | shows that the claims stay attached to runnable proof surfaces |
-| failure-mode framing | shows that the teaching starts from operational risk rather than tool fandom |
-
-## Why Make, Snakemake, And DVC Belong Together
-
-| Tool | Core responsibility | Why it belongs in the same family |
-| --- | --- | --- |
-| Make | build truth | verifies dependency and rebuild correctness at the build-graph level |
-| Snakemake | workflow orchestration | coordinates multi-step data workflows with clear contracts and execution order |
-| DVC | state and version control | tracks experiment state, parameters, metrics, and promotion boundaries over time |
-
-## From Notebook Work To Controlled Outputs
+## Start From The Failure
 
 ```mermaid
-graph LR
-    notebook["Notebook/manual work"] --> workflow["Structured workflow"]
-    workflow --> controlled["Controlled artifacts"]
+flowchart LR
+    failure["Observed failure"] --> graph{"Dependency or rebuild truth?"}
+    failure --> workflow{"Workflow or publication contract?"}
+    failure --> state{"Data, parameter, or experiment identity?"}
+    graph --> make["Deep Dive Make"]
+    workflow --> snakemake["Deep Dive Snakemake"]
+    state --> dvc["Deep Dive DVC"]
 ```
 
-## Program Map
+| Pressure | Program | System model | Completion evidence |
+| --- | --- | --- | --- |
+| targets rebuild incorrectly, parallel execution races, or release artifacts cross unclear boundaries | Deep Dive Make | a build is a truthful dependency graph with public targets and atomic publication contracts | deterministic rebuild behavior, parallel-safety checks, artifact and install proofs |
+| file interfaces are implicit, dynamic discovery changes planning, or profiles mix policy with workflow meaning | Deep Dive Snakemake | a workflow is a file-driven DAG with declared interfaces, execution policy, and downstream publication contracts | planned graph, file-contract checks, controlled profiles, logs, and publish evidence |
+| data, parameters, metrics, and experiments cannot be identified or recovered together | Deep Dive DVC | reproducibility is an explicit state model with remote, registry, promotion, and recovery boundaries | state reconstruction, experiment comparison, promotion record, and recovery drill |
+
+The tools overlap, but the trust problems do not. Make may invoke a scientific
+workflow; Snakemake may track DVC-managed data; neither relationship erases the
+owner of build truth, workflow semantics, or experiment state.
+
+## Evidence Chain For A Reproducible Result
 
 ```mermaid
-graph TD
-    program["Reproducible Research"] --> structure["Workflow structure"]
-    program --> state["State management"]
-    program --> artifacts["Artifact control"]
-
-    structure --> make["Make"]
-    structure --> snakemake["Snakemake"]
-    state --> dvc["DVC"]
-
-    make --> dependencies["Task dependencies"]
-    snakemake --> dependencies
-    dvc --> identity["Versioned data and model state"]
+flowchart LR
+    source["Source and data identity"] --> graph["Declared dependency graph"]
+    graph --> params["Parameters and environment"]
+    params --> execute["Recorded execution"]
+    execute --> artifacts["Verified outputs"]
+    artifacts --> publish["Atomic publication"]
+    publish --> recover["Rebuild or recover from identity"]
 ```
 
-## What Lives Here
+A result is not reproducible merely because a second invocation succeeds. The
+rerun must establish which inputs, graph, parameters, environment, and output
+identity were compared. External services and undeclared ambient state remain
+outside the proof unless the workflow records and controls them.
 
-- workflow and automation thinking arranged as a teachable system
-- comfort with build, workflow, and reproducibility tooling used in real technical and scientific environments
-- data identity, parameters, metrics, experiments, and recovery treated as engineering concerns
-- capstone-backed programs where the claims stay attached to executable capstones
-- the ability to teach system models instead of memorizing command syntax
+## Deep Dive Make
 
-## What This Program Teaches
+Use Make when the central question is whether dependencies and targets tell the
+truth.
 
-- state identity design for experiments and reproducible artifact lineage
-- workflow truth: choosing orchestration models that match failure and change pressure
-- publication boundaries that separate build, review, and release responsibilities
-- recovery posture after drift, parameter churn, or runtime evolution
+The program moves from graph foundations through parallel safety,
+deterministic debugging, rule semantics, portability, generated files,
+repository architecture, release artifacts, observability, and migration
+judgment. It treats Make as a build engine with a public API—not as a shell
+snippet launcher.
 
-## Where To Begin
+The capstone demonstrates:
 
-| If you want to start with... | Start with |
+- correct rebuild and no-op behavior;
+- race-free parallel execution;
+- explicit multi-output and generated-file contracts;
+- atomic publication and install boundaries;
+- evidence for incident review and tool migration.
+
+## Deep Dive Snakemake
+
+Use Snakemake when the central question is how a multi-step data workflow plans,
+executes, publishes, and changes.
+
+The program covers file contracts, dynamic discovery, checkpoints, profiles,
+failure policy, workflow modules, software boundaries, downstream publication,
+operating contexts, observability, and governance. Dynamic behavior is treated
+as a contract that requires deterministic discovery and a visible publish
+boundary.
+
+The capstone demonstrates:
+
+- a reviewable file-driven graph;
+- separation of workflow meaning from execution profiles;
+- controlled dynamic discovery;
+- stable file interfaces between rule families;
+- logs, artifacts, and recovery evidence appropriate to the claim.
+
+## Deep Dive DVC
+
+Use DVC when the central question is which data, parameter, metric, experiment,
+or promoted model state is authoritative.
+
+The program treats data identity, pipeline state, remotes, experiments,
+metrics, registries, promotion, and recovery as one system. Command familiarity
+is secondary to being able to reconstruct why a result was selected and which
+state must be restored.
+
+The capstone demonstrates:
+
+- versioned data and parameter identity;
+- comparable metrics and experiment state;
+- explicit remote and registry boundaries;
+- promotion records that identify the accepted state;
+- recovery without relying on an operator's memory.
+
+## Proof Is Proportional
+
+| Claim | Smallest honest proof |
 | --- | --- |
-| build-system judgment | [Deep Dive Make](https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-make/) and its emphasis on truthful DAGs, atomic publication, and parallel safety |
-| workflow-engineering depth | [Deep Dive Snakemake](https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-snakemake/) and its contract-driven view of workflow design |
-| state identity and experiment recovery | [Deep Dive DVC](https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-dvc/) and its focus on params, metrics, promotion discipline, and trustworthy recovery |
-| program design clarity | the family page in Masterclass, which routes by system pressure instead of generic topic grouping |
+| a dependency edge is correct | change the prerequisite and observe the expected target rebuild |
+| parallel execution is safe | exercise concurrency repeatedly and inspect output integrity |
+| a workflow plans deterministically | compare plans from the same declared inputs and configuration |
+| a publication is atomic | interrupt or fail before promotion and verify readers do not observe partial state |
+| an experiment can be recovered | reconstruct the declared data, parameters, code, and metrics from retained identity |
+| a tool boundary remains appropriate | show which contract the tool owns and which pressure now exceeds it |
 
-## Capstone Outputs
+## Beyond Research
 
-| Capstone | Direct proof surface | Engineering behavior demonstrated |
-| --- | --- | --- |
-| Deep Dive Make capstone | [Capstone docs](https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-make/capstone/docs/) | truthful build graphs, deterministic rebuild behavior, and publication-safe build contracts |
-| Deep Dive Snakemake capstone | [Capstone docs](https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-snakemake/capstone/docs/) | workflow contract integrity, clear file interfaces, and reviewable execution paths |
-| Deep Dive DVC capstone | [Capstone docs](https://bijux.io/bijux-masterclass/reproducible-research/deep-dive-dvc/capstone/docs/) | parameter and metric traceability, experiment recovery, and promotion-boundary discipline |
+These models apply to CI pipelines, package builds, data platforms, model
+training, documentation publication, and service operations. The transferable
+skill is not remembering three command languages. It is recognizing graph,
+state, publication, and recovery contracts wherever they appear.
 
-## When This Page Is Most Useful
-
-- you care about workflow systems, reproducibility, and scientific execution habits
-- you want to see engineering discipline carry into research tooling and publication boundaries
-- you want to understand when DVC is the right model for experiment state, recovery, and promotion boundaries
-- you want to inspect teaching material anchored to executable capstones with direct proof routes
-
-## Why This Matters Outside Research
-
-- CI/CD: deterministic workflows and clear build boundaries reduce release ambiguity
-- data pipelines: state and artifact discipline improve traceability under evolving inputs
-- ML workflows: parameter/metric handling patterns map directly to experiment governance
-- platform reliability: failure-mode-first workflow design supports stable operational behavior
-
-Reproducibility becomes durable when workflow design starts from
-real failure modes rather than tool preference. The material focuses on
-engineering judgment about state, artifacts, and change control so work
-remains inspectable, repeatable, and operationally reliable over time.
+Return to [Learning](../index.md) to compare program families, or continue to
+[Operational Assurance](../../01-platform/operational-assurance/index.md) to
+see how the same evidence principles qualify delivered systems.
