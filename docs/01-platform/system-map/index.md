@@ -162,6 +162,36 @@ Cross-repository change should move only along the authority edge that owns it.
 Copying the same fix into several consumers is a warning that the canonical
 origin has not been identified.
 
+## Decide What Survives A Dependency Outage
+
+An unavailable dependency does not grant a consumer permission to invent the
+missing authority. The consumer contract must say whether it can continue from
+verified retained state, refuse new work, expose a degraded result, or stop.
+
+```mermaid
+flowchart TD
+    request["Consumer request"] --> dependency{"Authoritative dependency available?"}
+    dependency -->|yes| current["Use current admitted identity"]
+    dependency -->|no| retained{"Verified retained identity allowed?"}
+    retained -->|yes| degraded["Serve bounded degraded result<br/>with age and scope"]
+    retained -->|no| refuse["Refuse authority-dependent work"]
+    current --> evidence["Record producer and consumer identities"]
+    degraded --> evidence
+    refuse --> evidence
+```
+
+| Lost dependency | Consumer may preserve | Consumer must not infer |
+| --- | --- | --- |
+| governance observation | the last named audit and its observation time | that live controls remain unchanged |
+| standards source | the selected vendored snapshot and local digest checks | that a newer upstream revision is compatible or adopted |
+| execution service or adapter | completed, verified runs and explicitly resumable state | that an unknown external effect did not occur |
+| knowledge or data source | a permitted immutable generation with freshness and withdrawal checks | that cached content remains current after a correction |
+| documentation destination | the hub's route, owner, and last reviewed summary | that copied technical content would remain authoritative |
+
+Recovery re-establishes the producer identity first, then revalidates the
+consumer decision. A dependency returning healthy does not automatically make
+results created during the outage ordinary current results.
+
 ## Classify The Dependency Before Propagating Change
 
 Not every arrow in the family map carries the same compatibility obligation.

@@ -38,6 +38,8 @@ flowchart TD
 | recoverable delivery | rollback, restore, or reconstruction has an owned path and coherent state boundary | publication is possible but reversal or recovery is undefined |
 | visible limitations | unsupported states, missing evidence, and known exceptions are stated near the claim | documentation hides gaps behind future-tense confidence |
 | explainable depth | architecture can be followed from overview to contract to runnable or inspectable proof | every page repeats the same summary without deeper evidence |
+| accessible use | meaning, navigation, status, and recovery remain available across keyboard, assistive, zoom, contrast, and reduced-motion needs | a technically present capability depends on visual position, color, pointer use, or hidden context |
+| privacy-preserving evidence | retained observations are necessary, purpose-bound, access-controlled, and safe to disclose at their publication surface | trust evidence exposes secrets, personal data, sensitive locality, or unrelated behavior |
 
 ## Define Acceptance And Degradation For Each Quality
 
@@ -53,6 +55,8 @@ degradation signal, and recovery owner.
 | operability | can operators observe pressure, distinguish dependencies, and recover identified state? | readiness is the only signal or recovery is procedural only | workload-bound observations and executed recovery result |
 | scientific integrity | do sources, rejected populations, methods, checks, verdicts, and limitations remain joined? | polished outputs omit exclusions, contradictions, or denominator | corrected evidence graph and claim-specific revalidation |
 | documentation integrity | can a reader move from claim to owner, contract, evidence, limitation, and source? | formulaic pages, vague links, duplicated handbooks, or stale capability language | strict build plus source-to-claim review and destination confirmation |
+| accessibility | can readers reach and interpret the same consequential state through semantic, keyboard, reflow, contrast, and non-visual paths? | focus traps, visual-only status, unexplained diagrams, clipped content, or motion-dependent meaning | repaired semantic and interaction path plus representative rendered checks |
+| privacy | does every retained or published field have a declared purpose, audience, and disclosure boundary? | diagnostics, examples, maps, or evidence packets expose unnecessary sensitive context | containment, minimization, corrected publication, and affected-consumer review |
 
 Acceptance is scoped. A service can meet its availability boundary while
 failing scientific freshness; a package can preserve API compatibility while
@@ -92,6 +96,31 @@ Examples include:
 The decision record should state the improved dimension, the pressure placed
 on adjacent qualities, the evidence used to accept the tradeoff, and the
 trigger that reopens it.
+
+## Evaluate Quality Across Reader And Operator Contexts
+
+A quality claim made for one access path does not automatically transfer to
+another. The same content or service may behave differently for a direct-link
+reader, a keyboard user, a narrow viewport, a cold cache, an unauthenticated
+caller, an operator during dependency loss, or a researcher working with
+restricted evidence.
+
+Qualification should name the representative contexts, why they matter, which
+were exercised, and which remain outside the claim. Sampling every possible
+combination is rarely practical; omitting the context model entirely makes a
+single convenient path look universal.
+
+```mermaid
+flowchart LR
+    claim["Quality claim"] --> contexts["Declared user, data,<br/>topology, and failure contexts"]
+    contexts --> exercises["Representative positive<br/>and negative exercises"]
+    exercises --> results["Context-bound results"]
+    results --> decision["Accepted scope,<br/>degradation, and omissions"]
+```
+
+Representative coverage is a review decision, not a count of screenshots or
+test cases. It should prioritize consequential differences in authority,
+disclosure, interaction, topology, and failure behavior.
 
 ## Evidence Is Layered
 

@@ -82,6 +82,27 @@ architecture. Atlas needs operations, load, and API sections; a scientific
 evidence book needs methods, claims, and limitations; a learning program needs
 prerequisites, sequence, exercises, and capstones.
 
+## Accessibility Is A Network Contract
+
+A reader should not lose access when crossing from the hub into a product
+site. Familiar styling is insufficient if navigation, diagrams, status, or
+evidence can be understood only through pointer precision, color, motion, or a
+particular viewport.
+
+| Reader need | Cross-site expectation | Failure to avoid |
+| --- | --- | --- |
+| keyboard navigation | focus order follows the visible structure and controls expose a visible focus state | a menu opens visually but cannot be reached, dismissed, or escaped without a pointer |
+| assistive technology | headings, landmarks, controls, tables, and link labels carry semantic meaning | generic labels or decorative markup replace the destination and relationship |
+| diagram interpretation | nearby prose or a table states the authority, sequence, or conclusion encoded by the diagram | Mermaid is the only place where the relationship is explained |
+| status interpretation | text names the state, scope, and consequence | color or icon alone distinguishes accepted, degraded, blocked, or withdrawn |
+| zoom and reflow | reading and navigation remain usable without horizontal page-scale dependence | critical controls or evidence disappear at narrow widths or high zoom |
+| reduced motion and theme | motion is non-essential and contrast remains usable across supported themes | animation, persistence, or theme choice obscures content or state |
+
+The shared shell owns reusable interaction behavior. Each destination still
+owns semantic headings, link purpose, alternative explanation, table quality,
+and readable failure language. A shell check cannot make an unlabeled product
+diagram accessible after the fact.
+
 ## Context At A Site Boundary
 
 A useful cross-site transition answers four questions:
