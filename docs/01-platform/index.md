@@ -106,6 +106,46 @@ Repair begins at that boundary. Rebuilding a site cannot correct a runtime
 trace; rerunning a workflow cannot authorize an unreviewed change; a favorable
 scientific result cannot repair a missing publication identity.
 
+## Coordinate Degradation Without Collapsing Authority
+
+A dependency failure can force several planes to act at once, but each plane
+still makes a different decision. Consider a published dataset whose backing
+store becomes unavailable:
+
+```mermaid
+sequenceDiagram
+    participant Evidence as Evidence plane
+    participant Delivery as Delivery plane
+    participant Product as Product plane
+    participant Control as Control plane
+
+    Evidence->>Delivery: store errors and affected observations
+    Delivery->>Delivery: shed, serve governed cache, or refuse
+    Delivery->>Product: report affected dataset and request classes
+    Product->>Product: decide whether the data claim remains usable
+    Product->>Control: request reviewed correction when policy must change
+    Control-->>Delivery: admit accepted configuration or source revision
+    Delivery-->>Evidence: expose restored effective state
+```
+
+Delivery can contain harm without redefining dataset meaning. Product authority
+can narrow or withdraw a claim without rewriting incident telemetry. Control
+authority can admit a correction without declaring the service recovered.
+Recovery is complete only when the relevant planes agree on identity, effective
+state, and the bounded claim that may resume.
+
+| Degraded condition | Immediate owner | Decision that remains elsewhere |
+| --- | --- | --- |
+| required check unavailable | repository and governance operators | whether the product change itself is correct |
+| shared package integrity mismatch | standards consumer | whether the canonical standard needs correction |
+| runtime produces partial evidence | execution owner | whether domain policy accepts any partial result |
+| service dependency fails | delivery operator | whether cached or incomplete data remains scientifically usable |
+| evidence becomes stale or contradicted | claim owner | whether the public route remains available |
+
+This separation prevents emergency action from silently acquiring permanent
+authority. A degraded mode, temporary hold, or reduced feature set needs an
+explicit exit condition and a later effective-state observation.
+
 ## How Change Travels
 
 A cross-repository idea does not become a shared standard merely because it is

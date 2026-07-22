@@ -91,6 +91,39 @@ The standards layer may constrain format and verification. The repository
 still owns the contract. A consumer may report evidence or propose a change,
 but cannot silently redefine the published meaning.
 
+## Keep Distribution Channels Consistent
+
+One release can appear through several channels: a registry package, GitHub
+release, container image, documentation route, catalog entry, or service
+endpoint. Matching version labels do not prove that those channels contain the
+same object or expose the same support posture.
+
+```mermaid
+flowchart TD
+    release["Accepted release identity"] --> package["Package registry"]
+    release --> image["Container registry"]
+    release --> docs["Documentation site"]
+    release --> data["Dataset catalog"]
+    package --> ledger["Cross-channel identity ledger"]
+    image --> ledger
+    docs --> ledger
+    data --> ledger
+```
+
+| Cross-channel question | Evidence |
+| --- | --- |
+| do the bytes belong to the same release? | immutable digests, provenance, and release manifest |
+| are interfaces documented for those bytes? | documentation version or source relation and compatibility statement |
+| are all required members present? | channel inventory and explicit unavailable or excluded members |
+| did a correction reach every affected channel? | predecessor/successor relation plus per-channel publication or withdrawal state |
+| can a consumer verify what it selected? | stable object identity, retrieval location, digest, and trust policy |
+
+A release is partially distributed when one required channel succeeds and
+another fails. The safe response depends on the contract: hold all promotion,
+publish a clearly bounded subset, or withdraw the inconsistent member. It is
+unsafe to let a mutable label make the channels appear converged before their
+identities and support statements agree.
+
 ## Documentation Delivery
 
 The root hub and project sites form a network of separately built

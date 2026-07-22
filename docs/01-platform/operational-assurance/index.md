@@ -101,6 +101,57 @@ arbitrary calendar anniversary. Time still matters for capacity, dependency,
 certificate, threat, and recovery assumptions that can age without a source
 change.
 
+## Connect Service Objectives To Decisions
+
+An objective is useful only when it can change an operational decision. The
+owner must define the measured population, observation window, threshold,
+allowed exclusions, and response when the objective is missed.
+
+| Objective class | Population and signal | Decision it can govern |
+| --- | --- | --- |
+| correctness | contract-eligible results, integrity checks, wrong-success rate | refuse promotion, withdraw data, or narrow supported operations |
+| availability | eligible requests or jobs and explicit terminal outcomes | admit traffic, enter degraded mode, or restore capacity |
+| latency | named request or workflow classes with percentile and window | tune, shed, scale, or reject a release |
+| capacity | correct completed work under a declared topology and workload | set an operating envelope or require more qualification |
+| recovery | incidents or drills with recovery point and recovery time evidence | accept a recovery path or keep it unqualified |
+| evidence completeness | required signals, identities, and retained records | permit or refuse the stronger operational conclusion |
+
+An error budget does not authorize incorrect results. It describes tolerated
+failure within a named availability or reliability contract; integrity and
+security violations can remain release-blocking even when aggregate
+availability is inside budget. Where no objective is declared, report the
+observed measurement and conditions without inventing a target after the run.
+
+```mermaid
+flowchart LR
+    objective["Declared objective<br/>population + window + threshold"] --> observe["Identity-bound observations"]
+    observe --> budget{"Within decision boundary?"}
+    budget -->|yes| accept["Accept within named envelope"]
+    budget -->|no| act["Narrow, hold, shed,<br/>recover, or reject"]
+    missing["Missing or biased signals"] --> unknown["Evidence insufficient"]
+    unknown --> act
+```
+
+## Treat Observability As A Measured Dependency
+
+Telemetry can fail while the service continues. Missing traces, delayed logs,
+cardinality collapse, clock skew, sampling changes, and an unavailable metrics
+backend all reduce what an operator can conclude from the same workload.
+
+| Evidence defect | Consequence |
+| --- | --- |
+| request outcomes are missing | availability and correctness denominators are unknown |
+| timestamps cannot be aligned | causal order across load, service, and dependency events is uncertain |
+| high-cardinality identities are dropped | affected datasets, tenants, routes, or revisions cannot be isolated |
+| sampling changes during the window | before-and-after rates are not directly comparable |
+| only aggregate signals survive | rare but severe failure classes can disappear into a healthy average |
+| evidence retention ends before review | incident scope and recovery cannot be reconstructed reliably |
+
+Qualification should record telemetry coverage alongside product results. A
+green latency chart with missing error outcomes is not a passing performance
+result; it is incomplete evidence. During recovery, restoring the service and
+restoring the ability to observe it are separate closure conditions.
+
 ## Load And Capacity Evidence
 
 Load evidence is useful only when the workload and environment travel with the
