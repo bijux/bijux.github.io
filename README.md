@@ -226,6 +226,46 @@ contract. It does not prove destination availability, product correctness,
 operational fitness, or scientific acceptance; those require the corresponding
 owner evidence above.
 
+## Close A Publication Change
+
+A documentation change is complete when the source, reader route, and bounded
+claim can be reconstructed together. Close the change with an evidence packet
+appropriate to its impact:
+
+| Packet field | Purpose |
+| --- | --- |
+| accepted source revision | identifies the hub content that was reviewed |
+| changed public routes | names the reader-visible blast radius |
+| canonical owners inspected | records where capability, operations, or scientific truth came from |
+| claim and limitation changes | separates stronger, narrower, corrected, and withdrawn statements |
+| focused checks | proves tables, diagrams, links, managed relationships, or owner contracts as applicable |
+| strict build result | proves the complete configured site rendered from the selected source |
+| rendered inspection | confirms material diagrams, navigation, and reader journeys where source checks are insufficient |
+| deployment and observation | identifies the Pages result only when publication itself is part of the claim |
+
+```mermaid
+flowchart LR
+    diff["Source and route diff"] --> owners["Owner evidence review"]
+    owners --> checks["Focused checks"]
+    checks --> build["Strict complete build"]
+    build --> inspect["Material rendered inspection"]
+    inspect --> close{"Claim boundary supported?"}
+    close -->|yes| record["Record verification and limits"]
+    close -->|no| narrow["Narrow, correct, or withdraw"]
+    narrow --> owners
+```
+
+The packet need not be a new committed artifact for ordinary prose changes;
+the pull request, commits, check output, and deployment record can collectively
+provide it. High-impact changes should remain easy to reconstruct without
+depending on a maintainer's local terminal history.
+
+Before closing, verify that no public statement depends on a planned follow-up
+to become true, no withdrawn route remains in navigation, and no destination
+procedure was copied into the hub as a substitute for fixing its canonical
+owner. Record skipped or unavailable verification with the exact affected
+claim rather than treating it as an implicit pass.
+
 ## Operational And Security Ownership
 
 This repository owns a static public documentation deployment, not the

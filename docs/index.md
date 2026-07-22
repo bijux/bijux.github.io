@@ -136,6 +136,40 @@ the claim to the surface that can prove or constrain it.
 | a delivered system is operationally qualified | workload definition, observed behavior, recovery evidence, and explicit omissions | owning product and operations surfaces |
 | a program teaches engineering judgment | runnable exercises, capstones, and observable failure modes | `bijux-masterclass` |
 
+## Reuse Evidence Without Losing Its Boundary
+
+A hub page is a route to evidence, not the final citation for every claim it
+summarizes. When reusing a result, preserve enough identity for another reader
+to reach the same owner, population, and decision.
+
+| Reused claim | Identity to carry forward | Qualification to retain |
+| --- | --- | --- |
+| repository governance | repository, accepted declaration revision, observed live audit, and observation time | modeled settings and ruleset fields only |
+| shared standard | consumer, selected standards commit, capabilities, and verification result | valid for that consumer adoption, not automatically the family |
+| software behavior | package or executable version, configuration, input identity, and owning contract | supported inputs, terminal state, and known limits |
+| dataset or service result | dataset generation, software and profile identity, request or scenario, and observation window | cache, dependency, workload, and qualification conditions |
+| scientific result | claim identifier, source and population, method, primary result, checks, verdict, and freshness | exclusions, uncertainty, sensitivity envelope, and unresolved observations |
+| learning outcome | program revision, exercise or capstone, constraints, and evaluation evidence | demonstrated scope rather than general expertise |
+
+```mermaid
+flowchart LR
+    summary["Hub summary"] --> owner["Owning handbook or evidence surface"]
+    owner --> identity["Stable claim and artifact identities"]
+    identity --> scope["Population, method, conditions,<br/>limitations, and freshness"]
+    scope --> reuse["Bounded citation or downstream use"]
+```
+
+If a stable evidence identity is unavailable, cite the owning page and state
+the observation date and missing identity explicitly. A screenshot, copied
+number, or unversioned map link may document what was visible; it cannot by
+itself preserve the computation, curation decision, or evidence population
+that produced it.
+
+Evidence reuse also inherits corrections. When an owning surface marks a
+dataset generation withdrawn, a claim stale, a product member superseded, or a
+governance audit drifted, downstream statements should be re-evaluated against
+the replacement identity rather than silently retaining the earlier status.
+
 ## Investigate A Disputed Output
 
 Begin at the visible output, then move toward the narrowest authority that can
