@@ -88,6 +88,53 @@ One repository row carries multiple independent governance claims.
 that every GitHub organization feature, environment, secret, team permission,
 or product setting is modeled.
 
+## Report The Observation Population
+
+A family-level coverage percentage is meaningful only when its numerator and
+denominator use the same inventory revision, modeled axes, audit
+implementation, and observation window.
+
+```mermaid
+flowchart LR
+    inventory["Declared repository population"] --> reachable["Reachable live targets"]
+    reachable --> observed["Targets with complete modeled observations"]
+    observed --> matching["Targets matching every expected field"]
+    inventory -. "missing or transferred" .-> gaps["Coverage gaps with reason"]
+    reachable -. "permission or API failure" .-> gaps
+    observed -. "field mismatch" .-> gaps
+```
+
+| Population state | Required interpretation |
+| --- | --- |
+| declared but not reachable | coverage is incomplete; absence is not equality |
+| reachable but only partly observed | report the missing fields and affected repositories |
+| completely observed with mismatch | governance drift is present on the named axes |
+| completely observed and matching | equality is supported for the named revision, axes, and time |
+| outside the inventory | no family-governance claim is made, even if the repository resembles a member |
+
+Do not remove failed observations from the denominator to produce a cleaner
+family result. Permission failures, API omissions, archived targets, and
+transfers are part of the coverage state until ownership and observation are
+reconciled.
+
+## Keep Unmodeled Authority Visible
+
+Repository coverage intentionally omits some organization and product
+surfaces. Those omissions should remain explicit when a governance statement
+is reused.
+
+| Unmodeled surface | Owning evidence boundary |
+| --- | --- |
+| organization roles, teams, and enterprise policy | organization administration and its own effective-state review |
+| Actions environments, secrets, and variable values | repository or organization environment ownership and access audit |
+| package registry permissions and release credentials | owning release and distribution controls |
+| product checks behind required context names | product repository contracts and exercised gate evidence |
+| scientific, data, or service readiness | owning product evidence and operational qualification |
+
+A required context proves that GitHub observed a named result in the admission
+path. The control plane can require that result; it cannot prove the product
+meaning hidden behind the name.
+
 ## Baseline And Extensions
 
 Every governed repository receives the common default-branch baseline. A

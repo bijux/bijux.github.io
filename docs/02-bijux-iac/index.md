@@ -165,6 +165,26 @@ closed on unknown repositories, missing checks, malformed settings, generated
 input drift, failed resource imports, or differences between declared and live
 state.
 
+## Bound Administrative Authority By Operation
+
+Repository administration is not one undifferentiated permission. Planning,
+application, audit, and emergency recovery have different effects and should
+produce distinguishable evidence.
+
+| Operation | Minimum authority purpose | Evidence needed to support the result |
+| --- | --- | --- |
+| validate | read committed declarations and generated projections | revision, inventory result, and deterministic render comparison |
+| plan | observe modeled live state without changing it | observed target set, imported identities, plan, and observation time |
+| apply | write only the accepted settings and ruleset scope | accepted revision, planned scope, serialized execution, per-target results, and post-write audit |
+| audit | read modeled fields across the governed family | audit implementation revision, target population, field coverage, time, and mismatches |
+| recover access | perform the smallest action needed to restore the governed path | incident trigger, approver, exact manual effect, authority expiry, and subsequent declaration-bound reconciliation |
+
+A credential being technically capable of a wider action does not make the
+wider action part of the governance contract. Evidence should show which
+operation invoked authority, which repositories and fields were reachable,
+and whether the authority was revoked or returned to its ordinary boundary
+afterward.
+
 ## Evidence And Limits
 
 A passing local contract suite proves inventory and rendering behavior without

@@ -199,6 +199,59 @@ The administration token is a high-impact credential. Its safety depends on:
 - an immediate post-write audit;
 - fail-closed behavior when state ownership cannot be established.
 
+## Recover Through Explicit Emergency Authority
+
+An ordinary apply path can become unavailable because a required check cannot
+report, the workflow environment is inaccessible, a permission was removed,
+or the ruleset itself blocks the correction. Emergency administration may be
+necessary, but it is a distinct authority state—not an invisible shortcut
+inside normal operations.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Governed
+    Governed --> EmergencyDeclared: ordinary correction path unavailable
+    EmergencyDeclared --> Contained: scope, operator, approval, and expiry recorded
+    Contained --> AccessRestored: minimum live intervention
+    AccessRestored --> Reconciled: reviewed declaration and full audit agree
+    Reconciled --> Governed: emergency authority revoked
+    AccessRestored --> Drifted: declaration and live state differ
+    Drifted --> Reconciled: governed correction completes
+```
+
+The emergency record should identify:
+
+- the blocked ordinary path and consumer consequence;
+- the exact repositories, settings, or rulesets in scope;
+- who authorized and performed the intervention;
+- the live state before and after the intervention;
+- the expiry or revocation of elevated authority; and
+- the accepted declaration and complete audit that closed the drift.
+
+Emergency access should restore the governed path, not become a parallel
+governance channel. A successful manual edit is containment evidence. Only a
+reviewed declaration plus a matching full audit returns the affected controls
+to ordinary governed state.
+
+## Treat Audit Freshness As Dependency Freshness
+
+An audit is an observation over a named target and field population. Its result
+can become stale when the declaration, audit implementation, repository
+membership, GitHub behavior, or live administration state changes.
+
+| Change after audit | What must be reconsidered |
+| --- | --- |
+| inventory or rendered target changes | target population and expected field values |
+| audit implementation changes | which fields and comparison semantics the prior result actually covered |
+| repository transfer, rename, or archival | owner, target identity, residual rulesets, and credential reach |
+| manual or external administration | equality for the affected repositories and fields |
+| required workflow context changes | whether the protected path can still produce the required result |
+
+Calendar recency alone is insufficient. A recent audit performed before a
+material change cannot support the post-change state, while an older audit can
+remain the latest valid observation only if no dependency that affects its
+claim has changed.
+
 ## What Audit Proves
 
 The live audit proves equality for the settings and ruleset fields represented
