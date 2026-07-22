@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Bijux Canon
@@ -157,6 +157,37 @@ An adapter owns more than serialization. It must state how source identities,
 missing fields, scores, ordering, tenancy, and failure semantics map across the
 boundary. An end-to-end demo that does not retain those mappings cannot prove
 cross-package evidence custody.
+
+## Propagate Source Withdrawal Through Derived Knowledge
+
+Removing a source locator or raw object does not automatically remove prepared
+chunks, embeddings, index entries, caches, traces, generated claims, or
+published answers derived from it. Withdrawal needs an impact traversal across
+the same lineage edges used to explain a result.
+
+```mermaid
+flowchart LR
+    source["Withdrawn or restricted source"] --> chunks["Prepared records + chunks"]
+    chunks --> indexes["Index generations + caches"]
+    indexes --> claims["Retrieved spans + claim evidence"]
+    claims --> runs["Agent and runtime records"]
+    runs --> outputs["Published or consumed outputs"]
+    source --> decision["Retention, deletion, or restriction decision"]
+    decision --> outputs
+```
+
+| Derived surface | Required decision |
+| --- | --- |
+| immutable evidence record | retain, restrict, redact, or delete under its custody and audit policy |
+| prepared or indexed material | rebuild or withdraw every generation containing the affected identity |
+| caches and replicas | invalidate by source and generation, then verify effective absence or restriction |
+| claims and reasoning traces | reopen support and contradiction decisions that depended on the source |
+| public outputs | correct, narrow, withdraw, or preserve with an explicit historical limitation |
+
+Physical deletion, loss of retrieval authority, and scientific invalidation
+are different terminal states. The record should identify which one occurred,
+which descendants were evaluated, which could not be located, and what later
+event can change the decision.
 
 ## Preserve Provider And Prompt Identity Without Claiming Determinism
 

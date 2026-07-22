@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Bijux Core
@@ -179,6 +179,27 @@ is reconciled. Core's declared-effect policy can deny or shape known effects,
 but it cannot make an arbitrary external operation atomic with run
 finalization. Workflow authors must choose effect-specific idempotency,
 compensation, or human reconciliation where the domain requires it.
+
+## Treat Exactly-Once As An End-To-End Claim
+
+A scheduler can ensure that it admits one logical node identity, but it cannot
+promise one external effect unless every boundary from attempt creation to the
+remote commit participates in the same deduplication or transaction contract.
+
+| Boundary | Evidence needed for an exactly-once claim |
+| --- | --- |
+| logical work | stable operation identity independent of worker attempt |
+| dispatch | durable record of which operation was offered to which executor |
+| adapter | deterministic mapping from operation identity to remote idempotency identity |
+| remote system | documented deduplication or transactional commit semantics and retention window |
+| acknowledgement | receipt bound to the committed object or transaction, not only request acceptance |
+| reconciliation | query that distinguishes committed, absent, conflicting, and indeterminate state |
+
+When any boundary lacks that contract, describe the narrower guarantee:
+at-most-once attempt, at-least-once delivery, idempotent effect within a named
+window, or reconciled completion. “Exactly once” must not be inferred from a
+single local terminal record while acknowledgements, retries, or remote state
+can be lost independently.
 
 ## Distinguish Staging From Promotion
 
