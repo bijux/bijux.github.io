@@ -94,6 +94,27 @@ checked against the managed manifest. Protected workflow and governance paths
 have additional policy checks because changing the deployment mechanism is
 more sensitive than changing prose.
 
+## Publication Threat Model
+
+The root-site path is designed to reduce four specific risks:
+
+| Risk | Control in the publication path | Remaining boundary |
+| --- | --- | --- |
+| unreviewed source reaches the site | governed admission to `main` and protected policy paths | repository identity and reviewer accounts remain trusted |
+| a shared shell drifts locally | canonical snapshot, checksums, source-of-truth comparison, and contract checks | the accepted upstream revision remains trusted |
+| a build dependency changes implicitly | pinned documentation packages and immutable GitHub Action revisions | upstream code is not formally verified by pinning alone |
+| a deployment credential is overpowered or retained | Pages-scoped permissions, environment deployment, and OIDC | GitHub Pages and GitHub Actions remain external trust dependencies |
+
+The site is public and static. It is not an authenticated application and does
+not offer private-content authorization. Repository secrets must never be
+placed in page source, generated HTML, JavaScript configuration, or retained
+build logs.
+
+Mermaid and shell assets are bundled with the site, so normal rendering does
+not require executing documentation code fetched from a third-party CDN. This
+reduces runtime dependency drift; it does not make arbitrary future scripts
+safe merely because they are checked into the repository.
+
 ## What The Pipeline Does Not Prove
 
 Publication success has a precise scope.
@@ -124,4 +145,6 @@ A reader can verify the public chain at three levels:
 
 Continue with [Documentation Network](../documentation-network/index.md) for
 cross-site navigation ownership or [Delivery Surfaces](../delivery-surfaces/index.md)
-for the broader delivery model.
+for the broader delivery model. [Security Model](../security-model/index.md)
+places this static-site boundary beside runtime, service, data, and repository
+controls.

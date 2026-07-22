@@ -36,6 +36,7 @@ recognizable route from source to delivered output.
 | How do all repositories fit together? | [System Map](01-platform/system-map/index.md) | which repository owns each authority and where dependencies cross boundaries |
 | How are outputs published? | [Delivery Surfaces](01-platform/delivery-surfaces/index.md) | how sites, packages, datasets, APIs, and evidence reach users |
 | How is operational readiness demonstrated? | [Operational Assurance](01-platform/operational-assurance/index.md) | how load, observation, recovery, and release evidence qualify a bounded surface |
+| Where are security boundaries enforced? | [Security Model](01-platform/security-model/index.md) | how repository, runtime, service, data, and publication controls differ |
 | Which product should I inspect? | [Projects](04-projects/index.md) | the question, inputs, outputs, and proof surface for each project |
 | Where is the engineering taught? | [Learning](05-learning/index.md) | programs grounded in runnable workflows and design judgment |
 
