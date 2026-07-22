@@ -120,6 +120,40 @@ Not every project output needs all four levels. The required depth depends on
 the decision. A CLI capability demo can be complete without becoming
 scientific validation; a scientific claim cannot rely on capability alone.
 
+## Choose By Failure Boundary
+
+Start with the first record that does not explain the observed result, not the
+repository whose name appears most often in the pipeline.
+
+| Observed failure | Owning project route | First records to inspect |
+| --- | --- | --- |
+| graph, attempt, cache, resume, replay, or output lineage is surprising | [Core](bijux-core/index.md) | graph and planner fingerprints, node attempts, reuse decision, artifact index, and finalized run |
+| source preparation, retrieval, claim support, orchestration, or run acceptance is surprising | [Canon](bijux-canon/index.md) | source and chunk identities, request and index, evidence spans, trace, authority, and policy verdict |
+| dataset, catalog, API, deployment, load, or recovery identity is surprising | [Atlas](bijux-atlas/index.md) | dataset generation, service configuration, request or scenario, signals, and decision record |
+| acquisition, tracking, observation, navigation, or integrity population is surprising | [GNSS](bijux-gnss/index.md) | capture, configuration, stage ledger, navigation inputs, reference denominator, and manifest |
+| protein input, scientific result, grounding, recommendation, or consequence is surprising | [Proteomics](bijux-proteomics/index.md) | prepared database, acceptance report, workflow-family evidence, runtime bundle, knowledge and decision records |
+| curated record, spatial member, count, ranking, or report is surprising | [Pollenomics](bijux-pollenomics/index.md) | producer, evidence and product revisions, curation decision, manifest population, source lineage, and caveat |
+| comparative estimate, parity result, or public biological statement is surprising | [Phylogenetics](bijux-phylogenetics/index.md) | typed result, primary outputs, complete comparison population, checks, claim verdict, and freshness |
+
+Cross-project integrations retain both sides of the handoff. If Core executed a
+Pollenomics publication workflow, Core owns the execution record while
+Pollenomics owns evidence eligibility and product membership. Neither record
+subsumes the other.
+
+## Compare Lifecycle Authority
+
+| Lifecycle decision | Runtime projects | Service and data projects | Scientific projects |
+| --- | --- | --- | --- |
+| admit | validate graph, manifest, request, policy, or source shape | validate candidate data and deployment configuration | capture sources and record curation eligibility |
+| execute | record plan, attempts, traces, reuse, and terminal state | build, publish, resolve, serve, and observe named identities | run the declared method with accepted and rejected populations |
+| accept | finalize and verify a run under its contract | promote a dataset or qualify an operating envelope | aggregate observations into a bounded verdict or recommendation |
+| correct | preserve failed attempts and create a new governed result | supersede or withdraw catalog, release, deployment, or product identity | reopen dependencies, retain prior verdicts, and publish correction relations |
+| recover | resume, replay, or reconstruct under explicit comparison | roll back, restore, reconstruct, and verify effective state | reconstruct evidence without claiming unchanged interpretation automatically |
+
+This matrix explains why one generic status vocabulary is unsafe. “Success” at
+execution, publication, operation, and scientific acceptance names four
+different authorities.
+
 ## Delivery Status
 
 The governed inventory records published documentation and packages for Core,

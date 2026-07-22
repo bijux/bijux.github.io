@@ -59,6 +59,53 @@ The model makes three questions answerable:
 | scientific claims and interpretations | domain repositories | curated inputs, methods, provenance, limitations, and generated outputs |
 | curricula and capstones | `bijux-masterclass` | runnable materials and inspectable learner outputs |
 
+## Read The Platform As Five Planes
+
+The repository family behaves as a platform because five planes can be joined
+without assigning them to one central runtime.
+
+```mermaid
+flowchart TB
+    control["Control plane<br/>change admission"] --> product["Product plane<br/>domain meaning"]
+    standards["Standards plane<br/>shared contracts"] --> product
+    product --> execution["Execution plane<br/>runtime and transformation"]
+    execution --> delivery["Delivery plane<br/>package, service, data, site"]
+    execution --> evidence["Evidence plane<br/>identity, observations, verdicts"]
+    delivery --> evidence
+    evidence -. "feedback and correction" .-> product
+    evidence -. "drift and control findings" .-> control
+```
+
+| Plane | Decides | Typical failure | Owning response |
+| --- | --- | --- | --- |
+| control | which source changes may enter | declared and effective GitHub state diverge; approval or required checks fail | reconcile through `bijux-iac` and repository policy evidence |
+| standards | which reusable files and checks are canonical | consumer pin, digest, checksum, or capability set drifts | correct `bijux-std`, then adopt and verify the accepted source |
+| product | what an interface, dataset, method, or program means | implementation, docs, and declared contract disagree | correct the owning product contract and its projections |
+| execution | how declared work runs and records outcomes | partial state, incorrect reuse, missing trace, or backend mismatch | retain the failure, correct the owning runtime boundary, and re-exercise |
+| delivery | how an exact object reaches and remains available to users | publication race, wrong identity, stale route, withdrawal, or failed recovery | reconcile the destination and publish or restore an identified object |
+| evidence | which bounded claim the retained records support | missing denominator, stale dependency, contradiction, or overbroad verdict | narrow, refuse, correct, or requalify the owning claim |
+
+The evidence plane observes every other plane but does not govern them by
+itself. A report can reveal drift without being authorized to change GitHub
+state; a scientific verdict can refuse a claim without rewriting the runtime
+that produced its inputs.
+
+## Locate A Failure Before Choosing A Repository
+
+When a public journey fails, identify the first boundary whose record no longer
+matches the intended state:
+
+1. Was the source change admitted under the expected effective controls?
+2. Did the consumer use the intended standards revision and capability set?
+3. Does the product contract name the behavior being claimed?
+4. Did execution reach the required terminal and evidence state?
+5. Did delivery publish and expose the intended identity?
+6. Does the current evidence verdict support the exact public statement?
+
+Repair begins at that boundary. Rebuilding a site cannot correct a runtime
+trace; rerunning a workflow cannot authorize an unreviewed change; a favorable
+scientific result cannot repair a missing publication identity.
+
 ## How Change Travels
 
 A cross-repository idea does not become a shared standard merely because it is

@@ -40,6 +40,36 @@ recognizable route from source to delivered output.
 | Which product should I inspect? | [Projects](04-projects/index.md) | the question, inputs, outputs, and proof surface for each project |
 | Where is the engineering taught? | [Learning](05-learning/index.md) | programs grounded in runnable workflows and design judgment |
 
+## Start From The Boundary You Need To Trust
+
+```mermaid
+flowchart LR
+    question["What must survive review?"] --> change["A source change"]
+    question --> execution["A computation or decision"]
+    question --> delivery["A public object or service"]
+    question --> science["A scientific statement"]
+    question --> learning["Transferable engineering judgment"]
+    change --> governance["Governance + standards"]
+    execution --> projects["Core, Canon, and product runtimes"]
+    delivery --> assurance["Delivery + operational assurance"]
+    science --> domains["Domain evidence + claim verdict"]
+    learning --> programs["Exercises + capstone evidence"]
+```
+
+| Review target | Minimum complete chain |
+| --- | --- |
+| accepted source change | declared policy → required context → approval decision → merged revision → effective-state audit |
+| shared repository behavior | canonical package → accepted upstream revision → consumer pin and capability set → digest and checksum → consumer gates |
+| executed result | admitted inputs → plan and configuration → attempts and terminal state → artifact lineage → finalization and verification |
+| delivered service or dataset | immutable product identity → admitted topology → effective state → bounded observations → recovery and qualification decision |
+| scientific statement | source and curation → eligible population → method and primary outputs → complete checks → verdict, limitations, and freshness |
+| learning outcome | explicit model → prediction → constrained implementation → failure diagnosis → recovery → transfer exercise |
+
+If the available record ends early, use language from the last completed
+boundary. A built candidate is not deployed; a deployed service is not
+qualified; a reproducible result is not automatically a supported scientific
+claim; a completed example is not automatically transferable judgment.
+
 ## The Family At A Glance
 
 ```mermaid
