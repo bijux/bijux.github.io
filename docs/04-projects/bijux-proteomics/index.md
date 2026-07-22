@@ -4,90 +4,193 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-12
+last_reviewed: 2026-07-22
 ---
 
 # Bijux Proteomics
 
-`bijux-proteomics` turns proteomics discovery into a maintained
-software surface with named workflow contracts, repeatable runtime
-behavior, and evidence lineage.
+Bijux Proteomics is a composable Python platform for proteomics analysis,
+reproducible execution, evidence-aware interpretation, decision support, and
+laboratory follow-up. It is designed so a reviewer can trace a result from
+accepted and rejected scientific inputs through execution, grounding,
+recommendation, and observed consequence.
 
-It follows the shared shell and quality standards from `bijux-std` and
-builds on the common CLI and runtime layer from `bijux-core`, while
-keeping scientific workflow ownership in the repository itself.
+No layer receives authority over all the others. A completed run does not prove
+scientific acceptance. Grounded evidence does not authorize an action. A
+recommendation does not establish laboratory value.
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="https://bijux.io/bijux-proteomics/">View Published Docs</a>
-<a class="md-button" href="https://github.com/bijux/bijux-proteomics">View GitHub Repository</a>
+<a class="md-button md-button--primary" href="https://bijux.io/bijux-proteomics/">Open Proteomics Documentation</a>
+<a class="md-button" href="https://bijux.io/bijux-proteomics/01-bijux-proteomics/foundation/scientist-journey/">Follow The Scientist Journey</a>
+<a class="md-button" href="https://bijux.io/bijux-proteomics/01-bijux-proteomics/foundation/current-capability-limits/">Inspect Capability Limits</a>
+<a class="md-button" href="https://github.com/bijux/bijux-proteomics">View Source</a>
 </div>
 
-## Repository Shape
-
-`bijux-proteomics` treats protein discovery as a software system rather
-than a single pipeline. Runtime execution, domain contracts, evidence
-governance, decision logic, and lab planning stay in named package
-boundaries so scientific change does not blur responsibility.
-This map summarizes the core flow in the repository.
+## Six Accountable Layers
 
 ```mermaid
-graph LR
-    input["discovery workflows"] --> contracts["domain contracts"]
-    contracts --> evidence["evidence handling"]
-    evidence --> output["decision-ready outputs"]
+flowchart TD
+    request["Scientific question"] --> core["Core<br/>scientific calculation and acceptance"]
+    core --> runtime["Runtime<br/>execution custody"]
+    runtime --> knowledge["Knowledge<br/>support and contradiction"]
+    knowledge --> intelligence["Intelligence<br/>challenge and recommendation"]
+    intelligence --> lab["Lab<br/>readiness and consequence"]
+    foundation["Foundation<br/>identity, schema, canonical bytes"] -. binds .-> core
+    foundation -. binds .-> runtime
+    foundation -. binds .-> knowledge
+    foundation -. binds .-> intelligence
+    foundation -. binds .-> lab
+    core -. missing burden .-> narrow["Narrow or refuse"]
+    runtime -. missing burden .-> narrow
+    knowledge -. missing burden .-> narrow
+    intelligence -. missing burden .-> narrow
+    lab -. observed outcome .-> knowledge
 ```
 
-The repository keeps scientific workflow concerns in reviewable
-packages instead of burying them in ad hoc glue.
+| Layer | Question it owns | Durable record |
+| --- | --- | --- |
+| Foundation | how is a subject, schema, and serialized record identified? | canonical representation, digest, producer, compatibility, and typed disposition |
+| Core | what scientific computation ran and what did it accept or reject? | inputs, assumptions, QC, result, rejection, benchmark lineage, and limitation |
+| Runtime | what executed, under which state and environment? | request, selected capability, events, artifacts, terminal state, comparison, and replay evidence |
+| Knowledge | which evidence supports or contradicts the claim? | source identity, context, support, contradiction, freshness, and unresolved gaps |
+| Intelligence | why was an action ranked, downgraded, or refused? | candidate universe, policy, alternatives, sensitivity, confidence posture, and refusal conditions |
+| Lab | what follow-up was feasible and what happened? | readiness, controls, custody, deviation, observation, consequence, and feedback |
 
-## Why Scientific Product Systems Require Different Structure
+The stable join between layers is a typed identity or artifact reference. A
+filename, display label, dashboard color, or prose summary is not enough to
+join scientific records across packages or revisions.
 
-| Concern | Scientific product structure |
-| --- | --- |
-| domain contracts | stay reviewable while scientific assumptions evolve |
-| evidence handling | treated as a core output, not a side result |
-| runtime behavior | optimized for reproducibility and review, not only convenience |
-| package boundaries | kept coherent under engineering and domain pressure |
+## Scientific Inputs Preserve Rejection
 
-## What This Repository Covers
-
-- evidence governance as a maintained system concern
-- runtime design that stays legible across domain workflows
-- package boundaries that preserve responsibility and reviewability
-- domain contracts that can evolve without hidden coupling
-
-## What Lives Here
-
-- a contract-first package family for scientific product work
-- domain models, decision logic, evidence handling, and lab planning kept separate
-- reproducibility and reviewability treated as part of the product, not a later cleanup step
-- public scientific software with clear package ownership
-
-## One Repository Flow
+Proteomics input APIs return reports rather than silently filtering to a list
+of accepted values. A partially valid FASTA document, search result, or
+quantification table can therefore retain both the records used and the
+records excluded.
 
 ```mermaid
-graph LR
-    input["Input"] --> workflow["Workflow execution"]
-    workflow --> evidence["Evidence capture"]
-    evidence --> output["Decision-ready output"]
+flowchart LR
+    input["Scientific input"] --> contract["Typed scientific contract"]
+    contract --> accepted["Accepted records"]
+    contract --> rejected["Rejections and diagnostics"]
+    contract --> policy["Assumptions and provenance"]
+    accepted --> result["Scientific result"]
+    rejected --> result
+    policy --> result
 ```
 
-This is the practical path in the repository: ingest input, run the
-workflow, preserve evidence lineage, and publish outputs that can be
-reviewed and reused.
+The rejected portion is evidence about the population actually analyzed. It
+must travel with downstream QC and interpretation because hidden exclusions
+can change the conclusion.
 
-## Where To Begin
+## Evidence Ladder
 
-| If you are looking for... | Start with this part of Proteomics |
+A workflow family earns only the strongest language supported by every
+required layer.
+
+```mermaid
+flowchart LR
+    asset["Source, license, benchmark manifest"] --> science["Scientific contract"]
+    science --> execution["Runtime lane and run bundle"]
+    execution --> grounding["Support, contradiction, context"]
+    grounding --> judgment["Challenge, sensitivity, refusal"]
+    judgment --> consequence["Feasibility and observed outcome"]
+    consequence --> status["Bounded trust status"]
+    asset -. missing .-> narrow["Narrow or refuse"]
+    execution -. imported or unstable .-> narrow
+    grounding -. contradicted .-> narrow
+    consequence -. infeasible .-> narrow
+```
+
+A later success cannot promote an earlier weak record. A complete run bundle
+cannot compensate for an unclear scientific acceptance policy. A grounded
+claim cannot compensate for a decision that reverses under small policy
+changes. A recommendation cannot compensate for infeasible follow-up.
+
+## Workflow Families Have Independent Ceilings
+
+Evidence is assessed separately for DDA, DIA, LFQ, multiplex, PTM, and targeted
+workflows. Scientific assumptions and execution modes differ, so strength in
+one family cannot be borrowed by another.
+
+| Family | Current documented posture | Essential limit |
+| --- | --- | --- |
+| DDA | `review_grade_bounded` | primary evidence begins with external search-engine results; repository-owned raw search execution is not claimed |
+| DIA | `outsider_auditable_bounded` | checked-report execution does not establish chromatogram-native or universal library transfer |
+| LFQ | `outsider_auditable_bounded` | repeatability does not establish cross-cohort transfer or external quantitative truth |
+| multiplex | `internal_support_only` | companion transfer remains fragile and outsider consequence closure is incomplete |
+| PTM | `outsider_auditable_bounded` | localization does not establish occupancy, function, causality, or regulation |
+| targeted | `outsider_auditable_bounded` | vendor parity, calibration transfer, interference, and assay burden remain bounded |
+
+These tokens are claim ceilings, not general maturity grades. The
+[workflow-family guide](https://bijux.io/bijux-proteomics/01-bijux-proteomics/foundation/workflow-families/)
+is the authority for current evidence and blockers.
+
+## Read The Status Vocabulary Literally
+
+| Status | What it permits | What it does not permit |
+| --- | --- | --- |
+| `internal_support_only` | useful implementation inside a restricted authority boundary | public recommendation or outsider consequence claims |
+| `review_grade_bounded` | scientific review under named limits | raw execution parity, general transfer, or authority to act |
+| `outsider_auditable_bounded` | external inspection and rerun of the declared bounded chain | clinical, universal, or decision-grade authority |
+| release-ready | all required repository-wide categories pass for one source candidate | universal scientific validity |
+
+The exact status belongs in machine-readable evidence and public prose.
+Replacing it with a friendlier but stronger phrase creates an unreviewed claim.
+
+## Recommendation Records Preserve Counterfactuals
+
+A defensible recommendation records why it would change. Comparator removal,
+literature removal, policy changes, laboratory burden, and observed outcomes
+are tested as separate drivers.
+
+```mermaid
+flowchart TD
+    prior["Retained prior decision"] --> compare["Compare input revisions"]
+    compare --> evidence{"Evidence changed?"}
+    compare --> policy{"Policy changed?"}
+    compare --> burden{"Burden changed?"}
+    compare --> outcome{"Outcome observed?"}
+    evidence --> attribution["Named driver set"]
+    policy --> attribution
+    burden --> attribution
+    outcome --> attribution
+    attribution --> revised["New posture and rationale"]
+    revised --> audit["Old and new records remain inspectable"]
+```
+
+If removing one evidence axis or increasing downstream burden collapses the
+recommendation, that weaker posture is part of the truthful product surface.
+An observed outcome changes the next decision; it does not rewrite the prior
+record.
+
+## Verify A Proteomics Claim
+
+| Claim | Evidence route |
 | --- | --- |
-| shared runtime consumption | how proteomics uses the common CLI/runtime layer while keeping domain ownership local |
-| domain decomposition | the split across runtime, foundation, core, intelligence, knowledge, and lab packages |
-| governed product behavior | the repository’s emphasis on contracts, release discipline, and package-owned responsibilities |
-| scientific workflow maturity | the fact that lab planning and evidence resolution are first-class parts of the system model |
-| published entry points | the package handbooks and release surfaces for the six published packages |
+| a record entered the calculation | canonical identity, accepted/rejected report, schema, and provenance |
+| a scientific workflow supports a result | family contract, benchmark lineage, QC, comparison, and claim ceiling |
+| the result can be rerun | runtime request, environment, state, artifact ledger, and comparison record |
+| a claim is grounded | cited context, supporting and contradicting evidence, freshness, and gaps |
+| a recommendation is proportionate | alternatives, ranking policy, sensitivity, burden, confidence, and refusal behavior |
+| a follow-up changed the evidence | readiness, custody, controls, deviation, observation, and linked consequence record |
+| a repository candidate may publish | revision-specific readiness matrix, blocker codes, governed outputs, and channel decision |
 
-## When This Page Is Most Useful
+Readiness does not use majority voting. A green runtime result cannot erase a
+benchmark blocker, and a strong benchmark cannot erase an unreviewable
+laboratory consequence path.
 
-- the work is specifically about proteomics, discovery, or lab-facing workflows
-- you want to see how engineering structure adapts to scientific product work
-- you care whether domain software is treated with the same rigor as platform software
+## Scope And Non-Claims
+
+The repository implements sequence, peptide, spectrum, confidence, protein
+inference, quantification, DIA, LFQ, PTM, targeted, evidence-grounding,
+recommendation, and laboratory-follow-up surfaces. Coverage is not a blanket
+accuracy claim.
+
+The platform does not claim universal transfer across cohorts, instruments,
+search engines, acquisition modes, or experimental designs. It does not
+convert execution success into biological truth, or advisory output into
+clinical or autonomous authority.
+
+Continue with [Applied Domains](../../01-platform/applied-domains/index.md) for
+the wider scientific evidence model or [Operational Assurance](../../01-platform/operational-assurance/index.md)
+to compare run evidence with delivery and recovery qualification.

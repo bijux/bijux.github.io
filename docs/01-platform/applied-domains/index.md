@@ -88,6 +88,30 @@ Scientific pages should distinguish:
 - regional or taxonomic scope from universal claims;
 - exploratory findings from evidence ready for downstream use.
 
+## Evidence And Action Remain Separate
+
+Proteomics makes a general scientific principle visible: computation,
+execution, grounding, recommendation, and observed consequence are different
+records with different authorities.
+
+```mermaid
+flowchart LR
+    calculate["Scientific calculation"] --> execute["Execution record"]
+    execute --> ground["Support and contradiction"]
+    ground --> decide["Policy-bound recommendation"]
+    decide --> observe["Laboratory consequence"]
+    observe --> revise["Revised evidence state"]
+    calculate -. failed burden .-> narrow["Narrow or refuse"]
+    ground -. contradiction .-> narrow
+    decide -. instability .-> narrow
+    observe -. infeasible .-> narrow
+```
+
+The chain is asymmetric. Any missing or failed burden can narrow the public
+claim; success later in the chain cannot upgrade weak evidence earlier in the
+chain. An observed outcome informs the next decision without rewriting the
+record that led to the original action.
+
 ## Shared Capabilities, Local Meaning
 
 The scientific repositories can consume common execution, knowledge, and
