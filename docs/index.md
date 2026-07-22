@@ -35,6 +35,7 @@ recognizable route from source to delivered output.
 | Which behavior is shared across repositories? | [Bijux Standards](03-bijux-std/index.md) | how common files, checks, and documentation behavior are promoted and verified |
 | How do all repositories fit together? | [System Map](01-platform/system-map/index.md) | which repository owns each authority and where dependencies cross boundaries |
 | How are outputs published? | [Delivery Surfaces](01-platform/delivery-surfaces/index.md) | how sites, packages, datasets, APIs, and evidence reach users |
+| How is operational readiness demonstrated? | [Operational Assurance](01-platform/operational-assurance/index.md) | how load, observation, recovery, and release evidence qualify a bounded surface |
 | Which product should I inspect? | [Projects](04-projects/index.md) | the question, inputs, outputs, and proof surface for each project |
 | Where is the engineering taught? | [Learning](05-learning/index.md) | programs grounded in runnable workflows and design judgment |
 
@@ -101,6 +102,7 @@ the claim to the surface that can prove or constrain it.
 | knowledge processing is controlled | explicit ingest, index, reason, orchestration, and runtime boundaries | `bijux-canon` |
 | data is delivered as a service | schemas, immutable identity, API behavior, operational evidence, and recovery boundaries | `bijux-atlas` |
 | a scientific interpretation is reproducible | curated inputs, lineage, assumptions, generated outputs, and limitations | scientific repositories |
+| a delivered system is operationally qualified | workload definition, observed behavior, recovery evidence, and explicit omissions | owning product and operations surfaces |
 | a program teaches engineering judgment | runnable exercises, capstones, and observable failure modes | `bijux-masterclass` |
 
 ## Platform Responsibilities
@@ -160,5 +162,6 @@ that proof.
 <a class="md-button md-button--primary" href="01-platform/">Understand the platform</a>
 <a class="md-button" href="04-projects/">Choose a project</a>
 <a class="md-button" href="01-platform/publication-integrity/">Inspect publication integrity</a>
+<a class="md-button" href="01-platform/operational-assurance/">Inspect operational assurance</a>
 <a class="md-button" href="05-learning/">Browse learning programs</a>
 </div>

@@ -130,6 +130,25 @@ Evidence should also state what was *not* exercised. A local fixture is not a
 production topology; a schema is not a completed drill; a generated OpenAPI
 document is not proof that every route is live.
 
+## From Publication To Operation
+
+Publication transfers a revision into a destination. Operation begins when
+that destination is observed and maintained against its declared boundary.
+
+```mermaid
+flowchart LR
+    publish["Published revision"] --> identify["Confirm identity and configuration"]
+    identify --> observe["Observe behavior and dependencies"]
+    observe --> pressure["Exercise expected and adverse conditions"]
+    pressure --> recover["Rehearse rollback or recovery"]
+    recover --> qualify["Accept, narrow, or reject the boundary"]
+```
+
+The qualification decision belongs to the output owner. The publication
+pipeline can supply revision and artifact identity, but it cannot infer an API
+capacity limit, a dataset correction policy, or a scientific acceptance rule.
+Those require surface-specific evidence.
+
 ## Inspect A Delivery Claim
 
 Follow the same sequence for any public output:
@@ -142,6 +161,7 @@ Follow the same sequence for any public output:
 6. read the limitations at the same evidence boundary.
 
 Continue with [Publication Integrity](../publication-integrity/index.md) for
-the root-site chain, [Documentation Network](../documentation-network/index.md)
+the root-site chain, [Operational Assurance](../operational-assurance/index.md)
+for readiness and recovery evidence, [Documentation Network](../documentation-network/index.md)
 for cross-site ownership, or [Projects](../../04-projects/index.md) to choose a
 product surface.

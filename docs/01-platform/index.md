@@ -100,6 +100,7 @@ asking the hub to summarize every implementation detail.
 | --- | --- |
 | Which repositories depend on which others? | [System Map](system-map/index.md) |
 | What counts as a delivered output? | [Delivery Surfaces](delivery-surfaces/index.md) |
+| What qualifies a surface for operation? | [Operational Assurance](operational-assurance/index.md) |
 | How does the public site move from source to `bijux.io`? | [Publication Integrity](publication-integrity/index.md) |
 | How can separate documentation sites remain coherent? | [Documentation Network](documentation-network/index.md) |
 | Which qualities recur across different systems? | [Engineering Qualities](work-qualities/index.md) |
