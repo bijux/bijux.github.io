@@ -4,7 +4,7 @@ audience: mixed
 type: index
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Learning
@@ -108,6 +108,26 @@ for equivalent claims, and an escalation route for ambiguous cases. Reviewer
 agreement should be checked on representative submissions; a precise-looking
 score is not trustworthy when different reviewers apply the boundary
 differently.
+
+## Assess Stewardship After The First Success
+
+Engineering competence includes maintaining a decision when dependencies,
+evidence, policy, or operating conditions change. A capstone should therefore
+apply at least one change pressure after the initial accepted result.
+
+| Change pressure | Stewardship evidence |
+| --- | --- |
+| dependency correction or withdrawal | impact traversal, affected outputs, replacement or refusal, and consumer notice |
+| incompatible interface | contract diff, migration choice, coexistence boundary, and obsolete-path removal |
+| operational regression | envelope comparison, containment, recovery, and revised qualification |
+| security finding | authority-aware containment, evidence custody, rotation or correction, and residual risk |
+| changed scientific assumption | reopened estimand or claim, sensitivity evidence, and bounded revised verdict |
+| inaccessible source or tool | reconstruction ceiling, lawful retained identity, and honest non-reproducible boundary |
+
+The learner should preserve the earlier accepted identity and explain why it
+remains valid, becomes narrower, or is superseded. Silently editing the
+original output into its corrected form removes the most valuable evidence of
+maintenance judgment.
 
 ## Minimize Learning Evidence
 

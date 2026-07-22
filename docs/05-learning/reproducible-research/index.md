@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Reproducible Research
@@ -157,6 +157,36 @@ Use a separately controlled recovery destination, verify identities before
 promotion, and record recovery-point and recovery-time observations for the
 drill. Those observations qualify the tested scenario; they are not universal
 guarantees for every dataset size, provider outage, or corruption mode.
+
+## Reproduce The Correction Lifecycle
+
+A reproducible baseline is incomplete when a source, dependency, exclusion,
+or method can change without a reconstructable impact decision. The exercise
+should preserve both the earlier result and the evidence that produced its
+replacement.
+
+```mermaid
+flowchart LR
+    baseline["Accepted result + dependency graph"] --> finding["Correction or withdrawal"]
+    finding --> impact["Affected inputs, outputs, and claims"]
+    impact --> rebuild["Reconstruct with replacement identity"]
+    rebuild --> compare["Compare complete result populations"]
+    compare --> decide["Retain, narrow, supersede, or withdraw"]
+    decide --> notify["Publish relation and consumer action"]
+```
+
+| Correction evidence | Failure if omitted |
+| --- | --- |
+| old and new dependency identities | the changed input cannot be distinguished from an ordinary rerun |
+| affected-edge traversal | unrelated outputs are rebuilt while hidden descendants remain stale |
+| complete before-and-after manifests | favorable rows can hide losses, new failures, or population changes |
+| comparison contract | numerical difference lacks a declared scientific or operational consequence |
+| supersession and notification | consumers continue to use the earlier identity without a review route |
+
+Exact reproduction of the old result may still be valuable for diagnosis; it
+does not make that result current after its authority or evidence changes. The
+capstone is complete when another reviewer can reconstruct both states and the
+decision between them.
 
 ## Capstone Evidence Packet
 
