@@ -1,122 +1,182 @@
 # bijux.github.io
 
-This repo is where we publish the Bijux documentation hub.
+`bijux.github.io` is the source repository for the public Bijux documentation
+hub at [bijux.io](https://bijux.io/). It owns cross-repository orientation,
+root-site navigation, and the publication path for the hub.
 
+The public content begins at [`docs/index.md`](docs/index.md). This README
+describes how the repository is built and maintained; it is not part of the
+published reader handbook.
 
+## Responsibility
 
-The public site lives here, the shared docs shell comes from `bijux-std`, and
-the actual hub content and navigation stay owned here.
+| Surface | Owner | This repository's relationship |
+| --- | --- | --- |
+| hub pages and root navigation | `bijux.github.io` | authors, validates, and publishes |
+| shared documentation shell | `bijux-std` | consumes a synchronized, checksummed snapshot |
+| managed GitHub workflows and policy files | `bijux-std` | consumes manifest-rendered managed content |
+| live repository settings and branch rules | `bijux-iac` | is governed by the external control plane |
+| project implementation and technical depth | destination repository | links to the owner; does not duplicate its handbook |
 
-## What this repo is
+The hub can explain where a product belongs and why a route matters. Product
+contracts, runtime evidence, operational procedures, and scientific claims
+remain authoritative in the destination repository.
 
-This is the public documentation hub for the Bijux repository family.
+## Repository Architecture
 
-It is the place where the hub site is built, organized, and published so a
-reader can move from high-level orientation into the owning repos and their
-actual delivery surfaces.
+```mermaid
+flowchart LR
+    content["docs/<br/>hub-owned content"]
+    config["mkdocs.yml<br/>hub navigation"]
+    shared[".bijux/shared/bijux-docs<br/>canonical snapshot"]
+    generated["docs assets and overrides<br/>synchronized mirrors"]
+    build["Strict MkDocs build"]
+    artifact["artifacts/docs/site"]
+    pages["GitHub Pages"]
+    public["bijux.io"]
 
-The root README explains the repo itself.
-The public site content starts in [`docs/index.md`](docs/index.md).
+    shared --> generated
+    content --> build
+    config --> build
+    generated --> build
+    build --> artifact --> pages --> public
+```
 
-## What lives here
+There are two source classes:
 
-- `docs/`
-  The hub content, section structure, navigation content, and repository-facing
-  pages that make up the published site.
-- `mkdocs.yml`
-  The hub site configuration for navigation, site metadata, and build behavior.
-- `makes/docs.mk`
-  Repo-owned docs build and serve commands.
-- `.bijux/shared/bijux-docs`
-  The shared docs shell synced from `bijux-std`.
-- `.github`
-  Managed GitHub standards content synced from `bijux-std`.
+- hub-owned Markdown and `mkdocs.yml` define local meaning and routes;
+- the checked-in `.bijux/shared/bijux-docs` snapshot defines shared shell
+  behavior and generates selected files under `docs/assets` and
+  `docs/overrides`.
 
-## What does not live here
+Do not hand-edit a synchronized mirror. Change the canonical source in
+`bijux-std`, accept that change, refresh this consumer from the exact commit,
+and validate the resulting managed diff.
 
-Do not use `bijux.github.io` for:
+## Repository Layout
 
-- shared docs shell source of truth
-- cross-repo standards logic
-- live GitHub admin control-plane settings
-- product or domain implementation code from the other Bijux repos
+| Path | Responsibility |
+| --- | --- |
+| [`docs/`](docs) | public hub pages and synchronized presentation assets |
+| [`mkdocs.yml`](mkdocs.yml) | site identity, root navigation, destination registry, and local theme configuration |
+| [`mkdocs.shared.yml`](mkdocs.shared.yml) | strict shared MkDocs contract consumed by this site |
+| [`makes/docs.mk`](makes/docs.mk) | build, serve, sanity, and artifact commands |
+| [`makes/bijux-docs.mk`](makes/bijux-docs.mk) | shared-shell synchronization and contract checks |
+| [`makes/bijux-std.mk`](makes/bijux-std.mk) | standards snapshot update and verification entry points |
+| [`.bijux/shared/`](.bijux/shared) | managed standards packages vendored from an accepted `bijux-std` revision |
+| [`.github/`](.github) | repository policy, deployment trigger, and managed workflow consumers |
+| [`artifacts/`](artifacts) | generated sites, environments, caches, reports, and local run output |
 
-So the split is:
+## Build The Site
 
-- `bijux.github.io` owns the public hub site and its repo-specific content
-- `bijux-std` owns the shared docs shell and managed standards content
-- `bijux-iac` owns live GitHub admin governance
-
-## How this repo works
-
-The repo has two layers:
-
-1. repo-owned hub content and site structure
-2. synced shared docs shell and standards inputs
-
-That means we write the actual hub pages here, but we do not hand-fork the
-shared shell that should stay aligned across Bijux sites.
-
-Normal flow:
-
-1. edit hub content here when the hub itself changes
-2. change `bijux-std` first when the shared shell or managed standards change
-3. sync the shared layer into this repo
-4. run docs and standards checks before shipping
-
-## Main commands
-
-### Build the site
+The documentation toolchain versions are pinned in
+[`configs/docs/requirements-docs.txt`](configs/docs/requirements-docs.txt).
+With `uv` installed:
 
 ```bash
 make docs
 ```
 
-Builds the site into `artifacts/docs/site`.
+The build:
 
-### Run docs sanity checks
+1. removes the previous generated site;
+2. verifies required configuration, tools, icons, and shared scripts;
+3. synchronizes the checked-in shared shell into consumer paths;
+4. runs MkDocs in strict mode;
+5. writes the site to `artifacts/docs/site`;
+6. copies root compatibility icons and `CNAME` into the bundle.
 
-```bash
-make docs-sanity
-```
+No generated HTML belongs at the repository root or in committed source.
 
-Runs lightweight docs checks, shared shell sync/checks, and a full docs build.
-
-### Serve locally
+## Serve Locally
 
 ```bash
 make docs-serve
 ```
 
-Starts a local MkDocs server and automatically picks another port if `8000` is
-already in use.
+The server binds to `127.0.0.1` and starts at port `8000`. If that port is in
+use and `lsof` is available, the command selects the next free port. Override
+the defaults with `HOST` and `PORT`.
 
-### Refresh shared docs shell
+## Focused Documentation Validation
 
 ```bash
-make bijux-docs-sync
+make docs-sanity
 ```
 
-Synchronizes the shared docs shell into this repo's docs assets.
+The sanity target runs the Markdown table guard, synchronizes the shared shell,
+checks the shell contract and source-of-truth relationship, and completes a
+strict site build.
 
-### Verify shared standards
+Use the narrower standards checks when the managed snapshot changes:
 
 ```bash
+make bijux-docs-check
 make bijux-std-checks
 ```
 
-Checks that the shared standard surfaces still match `bijux-std`.
+`bijux-docs-check` validates the documentation shell and its generated mirrors.
+`bijux-std-checks` validates managed packages against their configured
+canonical source. Neither command replaces review of hub-owned content or
+destination accuracy.
 
-## Relationship to the public site
+## Publication Path
 
-This repo is the source for `bijux.io`.
+A push to `main` invokes the repository-owned deployment trigger, which calls
+the managed reusable documentation workflow.
 
-The published hub is meant to help a reader find the right owning repo first,
-then continue into the real implementation surfaces without losing repository
-boundaries.
+```mermaid
+flowchart LR
+    main["Accepted main revision"] --> build["Strict site build"]
+    build --> validate["Pages bundle validation"]
+    validate --> upload["Pages artifact upload"]
+    upload --> deploy["github-pages environment"]
+    deploy --> domain["bijux.io"]
+```
 
-That is why this repo should stay focused on the hub itself: site structure,
-navigation, public framing, and published documentation delivery.
+The build job has read access to repository contents. Deployment uses scoped
+`pages: write` and `id-token: write` permissions. It does not require a
+general-purpose repository write token. Concurrency is grouped by Git
+reference so a newer deployment can cancel an obsolete in-progress run.
+
+The pipeline establishes that the selected revision produced a valid static
+site bundle and passed the configured publication path. It does not prove
+continuous external-link availability, destination-product correctness, or an
+independent uptime objective for GitHub Pages.
+
+## Change Ownership
+
+Change this repository when the work concerns:
+
+- the public family map or reader routes;
+- hub-owned descriptions and diagrams;
+- root navigation or site metadata;
+- the repository-owned build and deployment composition.
+
+Change `bijux-std` first when the work concerns:
+
+- shared headers, footers, navigation behavior, visual tokens, or shell scripts;
+- canonical reusable workflows, policy scripts, or templates;
+- shared Make, check, Python, or Rust contracts;
+- generators or manifests for managed consumer files.
+
+Change the destination repository when the work concerns its API, runtime,
+dataset, scientific evidence, operations, or technical handbook. Update the hub
+only to keep the public route and bounded summary accurate.
+
+## Content Standard
+
+Public pages are written for readers. They should:
+
+- lead with the system or question, not with documentation-process commentary;
+- distinguish ownership, contract, evidence, and limitation;
+- link overview claims to repository-owned depth;
+- use diagrams for authority, sequence, or state relationships;
+- avoid duplicating entire destination handbooks;
+- state missing qualification and unsupported conclusions directly.
+
+The hub should remain useful when read without access to a maintainer's local
+workspace or institutional memory.
 
 ## License
 
