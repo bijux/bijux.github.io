@@ -122,6 +122,24 @@ publish a governed fixture or redacted manifest that preserves the assessed
 contract without exposing the source. Evidence minimization is part of the
 engineering exercise: a trustworthy review route does not require surveillance.
 
+## Make Feedback Reproducible And Contestable
+
+Feedback should identify the rubric revision, observed evidence, interpretation,
+and strongest demonstrated state. A score without that chain cannot be
+revisited when a rubric, exercise, or evaluator changes.
+
+| Feedback record | Purpose |
+| --- | --- |
+| program and exercise revision | identifies the contract the submission attempted |
+| learner evidence identity | prevents later edits from changing the assessed object silently |
+| rubric criterion and observation | separates what was seen from the evaluator's interpretation |
+| decision and limitation | states the demonstrated scope without generalizing expertise |
+| reconsideration route | permits correction of evaluator error or ambiguous evidence |
+
+Reassessment should preserve the earlier decision and explain the changed
+evidence or rule. It must not rewrite history into the latest score or expose
+private work merely to make reviewer agreement easier.
+
 ## What The Programs Share
 
 | Principle | How it appears |

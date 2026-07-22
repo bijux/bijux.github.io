@@ -121,6 +121,24 @@ sent, not which response was received. Retain a permitted response artifact or
 content digest, request semantics, retrieval time, provider version where
 available, and the policy for a response that can no longer be obtained.
 
+## Preserve Mutable Dependency Responses
+
+URLs, APIs, registries, package indexes, and remote datasets can return
+different content for the same locator. A workflow that records only the
+locator cannot reconstruct which response entered the result.
+
+| Dependency | Identity to preserve |
+| --- | --- |
+| HTTP or API response | request semantics, retrieval time, status, permitted response bytes or digest, and relevant headers |
+| package or container | canonical origin, immutable version or digest, resolver state, and verification result |
+| remote dataset | release or generation, member manifest, access context, and content checksums |
+| hosted model or service | provider and model identity, configuration, observed output identity, and declared non-reproducible boundary |
+| credential-gated source | governed source identity, access purpose, and reconstructable derived evidence without retaining the credential |
+
+When policy forbids retaining source bytes, preserve the strongest permitted
+identity and state the reconstruction ceiling. Secret material and access tokens
+are never reproducibility artifacts.
+
 ## Recover The Evidence Chain, Not Only The Product
 
 Disaster recovery is incomplete when the published file returns but its source
