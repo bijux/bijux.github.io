@@ -172,6 +172,60 @@ owning destination as authority. A project page should say when a route is
 planned, simulated, internal, bounded, or unavailable instead of filling the
 gap with architectural intent.
 
+## Content Custody And Revalidation
+
+Every hub statement has a custody class. The class determines what can change
+it and what evidence is needed before the public summary can remain in present
+tense.
+
+| Content class | Canonical owner | Revalidation trigger | Required review evidence |
+| --- | --- | --- | --- |
+| family topology and reader routes | this repository | repository added, removed, renamed, planned, or published | governed inventory, live destination, and route build |
+| GitHub governance behavior | `bijux-iac` plus observed GitHub state | policy, target set, workflow, or platform-state change | declared configuration, plan or audit, apply evidence, and effective state |
+| shared standards behavior | `bijux-std` plus this consumer snapshot | canonical package, capability set, pin, or managed-file change | accepted upstream revision, canonical digest, consumer checksum, and focused gates |
+| product capability | destination repository | public contract, package, runtime, or release change | owning README, handbook, contract, tests or release evidence, and known limitations |
+| operational qualification | destination operations surface | topology, profile, security control, workload, recovery, or evidence-window change | identity-bound render, admission, effective-state, experiment, and decision records as applicable |
+| scientific or curation claim | destination evidence surface | source, population, method, decision, threshold, output, or freshness dependency change | claim-scoped provenance, complete denominator, checks, verdict, limitations, and freshness |
+| root-site publication claim | this repository and GitHub Pages | source, build, workflow, artifact, deployment, or domain change | strict build, bundle identity, deployment record, and bounded external observation |
+
+Review dates are discovery aids, not automatic validity periods. A material
+upstream change reopens the dependent summary even when its calendar date is
+recent. Conversely, an unchanged owning contract does not need speculative
+rewriting merely to refresh a date.
+
+### Handle destination drift
+
+When a destination and the hub disagree:
+
+1. establish whether the destination is authoritative for the disputed fact;
+2. narrow or remove the hub statement immediately if current evidence cannot
+   support it;
+3. correct the owning repository first when its contract or evidence is wrong;
+4. update the hub route after the owner exposes an accepted durable account;
+5. verify both the local link and the built reader journey.
+
+Do not preserve a stale summary for navigational convenience, and do not copy
+destination procedures into the hub to compensate for a weak owning handbook.
+The durable correction belongs at the authority that can keep it true.
+
+## Evidence For A Documentation Change
+
+Documentation verification should match the claim being changed:
+
+| Change | Minimum focused verification |
+| --- | --- |
+| prose without routes or diagrams | Markdown diff review, claim-owner review, and strict build |
+| relative navigation or destination URL | strict build plus direct route inspection; check the live destination when availability is part of the claim |
+| Mermaid authority, sequence, or state diagram | source review against owning contracts plus rendered inspection |
+| managed shell or synchronized asset | exact upstream pin, canonical digest, managed checksum, shell checks, and strict build |
+| capability, operational, or scientific summary | current owner artifacts, explicit limitations, source-to-summary trace, and strict build |
+| publication or deployment statement | workflow and permission review, built artifact evidence, deployment record, and carefully bounded external observation |
+
+A successful MkDocs build proves that the site renders under the configured
+contract. It does not prove destination availability, product correctness,
+operational fitness, or scientific acceptance; those require the corresponding
+owner evidence above.
+
 ## Operational And Security Ownership
 
 This repository owns a static public documentation deployment, not the

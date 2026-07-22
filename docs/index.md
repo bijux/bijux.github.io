@@ -106,6 +106,49 @@ the claim to the surface that can prove or constrain it.
 | a delivered system is operationally qualified | workload definition, observed behavior, recovery evidence, and explicit omissions | owning product and operations surfaces |
 | a program teaches engineering judgment | runnable exercises, capstones, and observable failure modes | `bijux-masterclass` |
 
+## Investigate A Disputed Output
+
+Begin at the visible output, then move toward the narrowest authority that can
+explain it. A green repository check, a deployed page, and a scientifically
+accepted claim are different conclusions even when they appear in one delivery
+journey.
+
+```mermaid
+flowchart RL
+    output["Visible output<br/>page, package, API, dataset, report"] --> identity["Artifact or result identity"]
+    identity --> decision["Admission, execution,<br/>or publication decision"]
+    decision --> contract["Owning contract<br/>policy, schema, method, threshold"]
+    contract --> source["Source identity<br/>and provenance"]
+    identity --> operations["Deployment and<br/>observation evidence"]
+    decision --> limitations["Exclusions, refusals,<br/>gaps, and freshness"]
+```
+
+| If the dispute concerns | First identity to recover | Continue with |
+| --- | --- | --- |
+| whether a change was admitted correctly | repository, revision, policy context, and approval state | [Infrastructure-as-Code](02-bijux-iac/index.md) |
+| whether shared controls are current | consumer pin, capability set, canonical digest, and managed checksum | [Standards](03-bijux-std/index.md) |
+| whether the public page is the intended revision | source revision, Pages artifact, deployment, and domain response | [Publication Integrity](01-platform/publication-integrity/index.md) |
+| whether a service returned the intended dataset | dataset generation, software and configuration identity, request or scenario | [Atlas](04-projects/bijux-atlas/index.md) |
+| whether a GNSS result survived the right population | capture, configuration, stage ledger, reference denominator, and manifest | [GNSS](04-projects/bijux-gnss/index.md) |
+| whether a map member is evidence-backed | product member, manifest, curation decision, evidence revision, and source | [Pollenomics](04-projects/bijux-pollenomics/index.md) |
+| whether a phylogenetic statement is supported | claim identifier, required observations, checks, verdict, and freshness | [Phylogenetics](04-projects/bijux-phylogenetics/index.md) |
+
+If the chain stops, report the last established boundary and the missing next
+record. Do not replace missing identity with a screenshot, a later success, or
+a nearby claim.
+
+## Treat Limitations As Evidence
+
+Refusal, exclusion, drift, stale evidence, missing reference output, and
+unqualified production state are observable system states. They identify the
+boundary beyond which a current claim cannot safely extend.
+
+The project and platform pages preserve these states because they make review
+more precise: a reader can distinguish an unavailable capability from an
+implemented but unqualified one, a mismatch from a non-comparable result, and
+a collected record from an admitted publication member. Trust comes from that
+specificity, not from presenting every route as complete.
+
 ## Platform Responsibilities
 
 The family uses three different kinds of authority:
