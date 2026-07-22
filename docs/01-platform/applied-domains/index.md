@@ -4,77 +4,125 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-28
+last_reviewed: 2026-07-22
 ---
 
 # Applied Domains
 
-Applied domains show how the same engineering posture behaves when the
-subject matter gets more demanding.
+Bijux scientific repositories treat data preparation, evidence selection, and
+interpretation as first-class product work. Analysis begins only after source
+identity, inclusion decisions, normalization, and provenance are made visible.
 
-That story starts before the product layer. `bijux-canon` is the
-knowledge-system substrate for ingest, indexing, retrieval, and
-reasoning. `bijux-proteomics` and `bijux-pollenomics` then carry that
-discipline into domain-facing product work.
-
-## Domain Map
+## Scientific Evidence Chain
 
 ```mermaid
-graph LR
-    foundations["Shared platform discipline"] --> canon["Canon"]
-    canon --> proteomics["Proteomics"]
-    canon --> pollenomics["Pollenomics"]
-    canon --> learning["Reproducible Research"]
+flowchart LR
+    source["Source records and literature"] --> curate["Curate and qualify"]
+    curate --> normalize["Normalize and reconcile identity"]
+    normalize --> model["Model domain relationships"]
+    model --> analyze["Analyze and compare"]
+    analyze --> interpret["Interpret with limitations"]
+    interpret --> publish["Publish data, maps, or evidence books"]
+    publish --> reproduce["Reconstruct from declared inputs"]
 ```
 
-## Domain Surfaces
+Every transition can change the conclusion. Curation is therefore not a
+preliminary clerical activity; it is part of the evidence model.
 
-| Domain surface | What makes it demanding |
+## Domain Systems
+
+**Bijux Canon — governed knowledge.** Heterogeneous sources move through
+deterministic ingest, structured indexing, retrieval, reasoning, and controlled
+runtime acceptance. Public surfaces include indexed knowledge, query behavior,
+reasoning contracts, and compatibility boundaries.
+
+**Bijux Proteomics — protein evidence and discovery.** Database preparation,
+entity reconciliation, evidence lineage, validation, and analysis contracts
+support packages, knowledge assets, and laboratory-facing workflows.
+
+**Bijux Pollenomics — pollen evidence in place and time.** Source curation,
+taxonomic and spatial reconciliation, archaeology/eDNA/aDNA context, and report
+preparation support curated databases, maps, atlases, and evidence-backed
+interpretation.
+
+**Bijux Phylogenetics — comparative evidence across lineages.** Sequence and
+trait curation, phylogenetic comparative models, and alternative explanations
+support comparative analyses and evidence books.
+
+## Curation As Evidence
+
+A curated dataset expresses scientific judgment through inclusion, exclusion,
+normalization, and reconciliation.
+
+| Curation decision | Why it can change the result |
 | --- | --- |
-| Canon knowledge system | source ingestion, structured indexing, and reasoning have to stay clear enough to support downstream domain systems without turning into one vague layer |
-| Proteomics | schema depth and evidence lineage requirements from laboratory workflows shape package boundaries, validation, and publication paths |
-| Pollenomics | interpretation complexity across archaeology, eDNA, aDNA, and regional context shapes model design and output structure |
-| Learning workflows (Masterclass reproducible research) | reproducibility pressure appears as teachable workflow behavior where reruns, artifact lineage, and review steps are part of the deliverable |
+| source selection | coverage and publication bias enter before analysis begins |
+| entity identity | synonyms, accessions, taxa, sites, or assemblies can otherwise fragment one entity or merge distinct ones |
+| unit and schema normalization | incomparable values can appear compatible when transformation rules are hidden |
+| missingness treatment | absence, unknown, below-detection, and not-applicable carry different meanings |
+| conflict resolution | choosing one source over another changes the authoritative record |
+| exclusion criteria | filtering can change the population to which a conclusion applies |
+| version pinning | upstream drift can make an older result impossible to reconstruct |
 
-## Why These Domains Matter
+The curation record should preserve these decisions alongside the resulting
+database rather than presenting the database as raw fact.
 
-The value here is not breadth by itself. The value is that the work
-moves between infrastructure, data systems, scientific products, and
-teaching without losing structural clarity.
+## Interpretation Boundary
 
-## What Stays The Same
+```mermaid
+flowchart TD
+    observation["Observed or curated evidence"] --> method["Declared method"]
+    method --> signal["Estimated signal"]
+    signal --> alternatives["Alternative explanations"]
+    alternatives --> conclusion["Qualified conclusion"]
+    uncertainty["Coverage, bias, and uncertainty"] --> conclusion
+```
 
-- bounded ownership instead of monolithic responsibility
-- interfaces and operational contracts that stay visible
-- reproducibility and evidence discipline as non-optional quality criteria
+A result becomes trustworthy through qualification, not certainty language.
+Scientific pages should distinguish:
 
-## What Gets Harder
+- observation from inference;
+- correlation from mechanism;
+- model support from proof;
+- signal absence from absence of evidence;
+- regional or taxonomic scope from universal claims;
+- exploratory findings from evidence ready for downstream use.
 
-- schema complexity: domain entities, relationships, and constraints become deeper than generic data models
-- interpretation burden: outputs must remain understandable to specialists making real decisions
-- publication burden: delivery surfaces must preserve context, caveats, and reproducibility in public outputs
+## Shared Capabilities, Local Meaning
 
-## Domain-Driven Repositories
+The scientific repositories can consume common execution, knowledge, and
+documentation capabilities. They retain authority over their domain semantics.
 
-<div class="bijux-panel-grid">
-  <div class="bijux-panel"><h3>Bijux Canon</h3><p>A knowledge-system substrate for ingest, indexing, retrieval, reasoning, and runtime control. It sits closer to domain work than pure platform infrastructure and makes the downstream scientific surfaces possible.</p></div>
-  <div class="bijux-panel"><h3>Bijux Proteomics</h3><p>A domain product surface for proteomics and discovery work, where engineering structure has to remain clear while serving laboratory and scientific context.</p></div>
-  <div class="bijux-panel"><h3>Bijux Pollenomics</h3><p>An evidence-mapping and site-selection surface where technical architecture supports archaeology, eDNA, aDNA, and pollenomics narratives without collapsing into generic geodata language.</p></div>
-  <div class="bijux-panel"><h3>Reproducible Research (Masterclass)</h3><p>A learning workflow surface where methods, artifacts, and review steps are taught and executed under the same reproducibility discipline used in repository work.</p></div>
-</div>
+- `bijux-core` can provide deterministic execution and evidence mechanics;
+- `bijux-canon` can provide knowledge ingest and retrieval contracts;
+- `bijux-atlas` can provide dataset and service-delivery patterns;
+- `bijux-std` can provide shared repository and documentation contracts.
 
-## Pressure Comparison
+None of those layers decides whether a protein relationship, pollen signal, or
+phylogenetic conclusion is scientifically supported. That responsibility stays
+with the domain repository and its evidence.
 
-| Surface | How pressure shows up |
-| --- | --- |
-| Canon | ingest, indexing, retrieval, and reasoning need to stay reviewable enough to support multiple downstream domains without collapsing into one opaque stack |
-| Proteomics | higher schema complexity for biological entities, stronger evidence lineage requirements, and high error cost in interpretation decisions |
-| Pollenomics | heavier interpretation burden across archaeology, eDNA, aDNA, and regional narratives, plus publication pressure for evidence-backed reports |
-| Learning (Reproducible Research) | pacing and proof requirements so learners can run workflows, follow the artifacts, and validate reproducibility claims |
+## Reproducible Publication
 
-## Reading Route
+A scientific publication route is complete when a reader can connect:
 
-Read the platform pages first for shared rules, then move into the
-knowledge and domain repositories to see how those rules hold under
-ingest pressure, evidence pressure, interpretation burden, and
-publication constraints.
+1. the claim to the analysis;
+2. the analysis to parameters, models, and software identity;
+3. the analysis input to a curated dataset version;
+4. the curated dataset to source records and curation decisions;
+5. the output to stated uncertainty and limitations.
+
+Maps, dashboards, and polished reports are delivery surfaces, not substitutes
+for this chain.
+
+## Explore The Domains
+
+- [Bijux Canon](../../04-projects/bijux-canon/index.md) for the knowledge-system
+  boundary;
+- [Bijux Proteomics](../../04-projects/bijux-proteomics/index.md) for protein
+  evidence and discovery workflows;
+- [Bijux Pollenomics](../../04-projects/bijux-pollenomics/index.md) for curated
+  pollen evidence, spatial interpretation, maps, and reports;
+- [Projects](../../04-projects/index.md) for the wider repository catalog;
+- [Reproducible Research](../../05-learning/reproducible-research/index.md) for
+  the workflow principles behind reconstructable outputs.

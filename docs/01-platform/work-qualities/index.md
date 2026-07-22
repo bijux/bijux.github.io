@@ -1,62 +1,118 @@
 ---
-title: Work Qualities
+title: Engineering Qualities
 audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-28
+last_reviewed: 2026-07-22
 ---
 
-# Recurring Engineering Qualities
+# Engineering Qualities
 
-These are the recurring qualities that make the Bijux repository family
-read as one connected system instead of a loose set of unrelated repos.
+The Bijux repository family is designed around qualities that can be inspected,
+not adjectives that must be taken on trust. Each quality has observable
+evidence, a clear failure mode, and an owner capable of correcting it.
 
-## Qualities Map
+## Quality Model
 
 ```mermaid
-graph TD
-    bounded["Bounded ownership"] --> trust["Trust"]
-    delivery["Delivery discipline"] --> trust
-    pressure["Domain pressure handling"] --> trust
-    depth["Explainable depth"] --> trust
+flowchart TD
+    ownership["Bounded ownership"] --> change["Reviewable change"]
+    contracts["Explicit contracts"] --> change
+    change --> evidence["Bounded evidence"]
+    provenance["Traceable provenance"] --> evidence
+    evidence --> delivery["Recoverable delivery"]
+    limitations["Visible limitations"] --> trust["Proportionate trust"]
+    delivery --> trust
 ```
 
-## Canonical Qualities
+## Observable Qualities
 
-| Quality | Verification question | Evidence anchors |
+| Quality | Observable evidence | Contradicting signal |
 | --- | --- | --- |
-| Bounded ownership | Are responsibilities split cleanly so repository boundaries stay non-overlapping under change? | [System map](../system-map/index.md) |
-| Delivery discipline and standards continuity | Are documentation, release behavior, publication routes, and shared standards kept aligned across repositories? | [Delivery surfaces](../delivery-surfaces/index.md) |
-| Domain pressure handling | Does the structure stay coherent when scientific workflows and evidence-heavy interpretation are required? | [Applied domains](../applied-domains/index.md) |
-| Explainable depth | Can architecture and workflow decisions be taught with runnable materials instead of only summaries? | [Learning catalog](../../05-learning/index.md) |
+| bounded ownership | a repository, package, or workflow has a named authority and explicit exclusions | the same rule is independently redefined in multiple repositories |
+| explicit contracts | interfaces are versioned and testable | behavior depends on undocumented local convention |
+| deterministic identity | the same inputs and parameters resolve to a stable artifact, dataset, or execution identity | mutable labels are the only way to identify results |
+| traceable provenance | outputs retain source, transformation, version, and evidence relationships | a public result cannot be reconstructed or attributed |
+| bounded evidence | a check or report states exactly which claim and topology it covers | one green check is used to imply universal readiness |
+| recoverable delivery | rollback, restore, or reconstruction has an owned path and coherent state boundary | publication is possible but reversal or recovery is undefined |
+| visible limitations | unsupported states, missing evidence, and known exceptions are stated near the claim | documentation hides gaps behind future-tense confidence |
+| explainable depth | architecture can be followed from overview to contract to runnable or inspectable proof | every page repeats the same summary without deeper evidence |
 
-Shared continuity comes through the standards layer in
-[Bijux standard layer](../../03-bijux-std/index.md), not only by local repository
-habits.
+## Evidence Is Layered
 
-## Failure Signals When A Quality Is Missing
+Evidence becomes stronger as it moves closer to the claim, but different
+layers answer different questions.
 
-| Quality | Concrete failure signal | Where to inspect the opposite |
-| --- | --- | --- |
-| Bounded ownership | one repository starts absorbing runtime, delivery, and domain concerns in the same change stream | [System map](../system-map/index.md) |
-| Delivery discipline | docs promise routes or release behavior that cannot be matched to maintained automation and destinations | [Delivery surfaces](../delivery-surfaces/index.md) |
-| Domain pressure handling | scientific workflows are carried by one-off scripts with weak evidence or publication contracts | [Applied domains](../applied-domains/index.md), [Bijux Proteomics](../../04-projects/bijux-proteomics/index.md), [Bijux Pollenomics](../../04-projects/bijux-pollenomics/index.md) |
-| Explainable depth | teaching material becomes disconnected from runnable artifacts and repository trade-offs | [Learning catalog](../../05-learning/index.md), [Reproducible Research](../../05-learning/reproducible-research/index.md) |
+```mermaid
+flowchart LR
+    narrative["Narrative<br/>what and why"] --> contract["Contract<br/>allowed behavior"]
+    contract --> check["Check<br/>exercised behavior"]
+    check --> artifact["Artifact<br/>captured result"]
+    artifact --> operation["Operation<br/>behavior over time"]
+```
 
-## Why These Qualities Matter
+- A narrative makes the intent understandable.
+- A contract makes behavior testable.
+- A check records an exercised condition.
+- An artifact preserves the result and identity.
+- Operational evidence shows behavior across change, failure, or recovery.
 
-<div class="bijux-panel-grid">
-  <div class="bijux-panel"><h3>Bounded Ownership</h3><p>Clear repository boundaries only matter when they reflect real work. Here they keep responsibilities visible and changes easier to follow.</p></div>
-  <div class="bijux-panel"><h3>Delivery Discipline</h3><p>Documentation, published endpoints, automation, and operating rules belong to the work itself. They are part of the system, not commentary around it.</p></div>
-  <div class="bijux-panel"><h3>Domain Pressure Handling</h3><p>Infrastructure is only the beginning. The stronger test is whether the same discipline still holds under scientific and evidence-heavy conditions.</p></div>
-  <div class="bijux-panel"><h3>Explainable Depth</h3><p>Complex systems become easier to trust when they can also be explained, sequenced, and taught without losing precision.</p></div>
-</div>
+No layer should claim the proof of a layer it has not reached.
 
-## Why They Recur
+## Review By Question
 
-These qualities function as engineering standards rather than style
-preferences. Bounded ownership, delivery discipline, domain pressure
-handling, and explainable depth are the conditions under which software
-becomes easier to trust, review, and evolve across the full repository
-family.
+### Who owns the meaning?
+
+Repository and package boundaries should reveal where semantics are decided.
+Shared standards may constrain format, but product meaning remains local.
+
+### What establishes identity?
+
+Look for immutable versions, fingerprints, manifests, or content-derived
+identities. Names such as “latest” are useful pointers, not sufficient evidence.
+
+### What happens on failure?
+
+Look for explicit rejection, partial-state prevention, rollback, recovery, and
+evidence preservation. A happy-path diagram is incomplete without the boundary
+where processing stops.
+
+### Which claim was actually exercised?
+
+Read the topology, inputs, profile, and result together. A local dependency
+fixture and a production deployment are different evidence classes even when
+they use the same API.
+
+### What remains unknown?
+
+Strong documentation exposes missing automation, unexecuted scenarios,
+unsupported compatibility, and unverified assumptions. Unknowns are part of
+the trust model, not editorial defects to conceal.
+
+## How The Qualities Appear
+
+| Surface | Qualities under the most pressure |
+| --- | --- |
+| GitHub control plane | bounded ownership, reviewable change, drift detection, and reversibility |
+| shared standards | canonical source, deterministic synchronization, contract validation, and local exceptions |
+| execution runtime | explicit semantics, deterministic identity, replay, and evidence capture |
+| knowledge system | source normalization, index contracts, reasoning boundaries, and controlled acceptance |
+| data service | identity, authorization, cache authority, failure isolation, load evidence, and recovery |
+| scientific product | curation, provenance, method, uncertainty, interpretation, and reproducible publication |
+| learning program | prerequisites, progression, runnable work, feedback, and capstone evidence |
+
+## Trust Is Proportionate
+
+The goal is not to make every surface look finished. It is to make the current
+state legible enough that a reader can distinguish:
+
+- implemented behavior from an architectural direction;
+- generated evidence from an empty schema or example;
+- local qualification from production qualification;
+- a reversible pointer change from a complete backup and restore system;
+- a scientific signal from a general conclusion.
+
+Continue with [Delivery Surfaces](../delivery-surfaces/index.md) to follow these
+qualities into published outputs or [Applied Domains](../applied-domains/index.md)
+to see their scientific consequences.
