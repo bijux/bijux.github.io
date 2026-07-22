@@ -174,6 +174,56 @@ and refused cases. When prerequisites are missing or inconsistent, the honest
 result is unavailable integrity—not a reassuring number inferred from the
 position solution.
 
+## Separate Anomaly Detection From Attribution
+
+Unexpected power, correlation, navigation data, clock behavior, residuals, or
+geometry can indicate interference, spoofing, equipment failure, multipath,
+bad products, or implementation error. Detection establishes that an observed
+contract was violated; it does not identify the cause or actor by itself.
+
+```mermaid
+flowchart LR
+    observations["Signal, receiver, navigation,<br/>and environment observations"] --> detector["Declared detector and threshold"]
+    detector --> event["Anomaly event with time,<br/>channels, and diagnostics"]
+    event --> hypotheses["Competing technical hypotheses"]
+    hypotheses --> evidence["Controlled tests and<br/>independent evidence"]
+    evidence --> conclusion["Bounded classification<br/>or unresolved cause"]
+```
+
+| Claim | Additional evidence burden |
+| --- | --- |
+| an anomaly occurred | detector identity, baseline, threshold, affected population, false-alarm context, and retained observations |
+| a receiver fault caused it | hardware and software identity, health evidence, reproduction or isolation, and competing-cause review |
+| interference was present | spectral and temporal evidence, independent observation where available, equipment response, and local environment |
+| spoofing was present | controlled truth or corroborating inconsistencies across signal, navigation, time, motion, geometry, and independent sensors |
+| an actor or intent caused it | evidence outside ordinary receiver computation and an explicitly separate authority boundary |
+
+Synthetic fault injection can qualify detector behavior for the injected
+scenario. It does not establish field prevalence, universal detection, or
+attribution. When evidence separates normal operation from anomaly but not one
+cause from another, the honest result is detected and unresolved.
+
+## Protect Capture And Location Custody
+
+GNSS evidence can expose observation time, receiver location or trajectory,
+equipment identity, antenna context, nearby interference, and operator
+activity. Reproducibility does not require every field or raw capture to be
+public.
+
+| Custody decision | Preserve | Public boundary |
+| --- | --- | --- |
+| raw sample retention | content identity, format, timing basis, access owner, and retention rule | publish bytes only when rights, sensitivity, and redistribution posture permit |
+| site or trajectory | coordinate frame, precision, transformation, and scientific role | reduce precision or restrict access when exact location creates safety, privacy, or source risk |
+| equipment and operator context | attributes needed to interpret bias, timing, and failure | omit unrelated serials, account identifiers, and personal activity |
+| restricted capture use | stable governed identity and approved analysis route | publish derived evidence with an explanation of unavailable source material |
+| incident evidence | affected interval, diagnostic identity, custody, and authorized reviewers | avoid exposing secrets, protected infrastructure, or unsupported attribution |
+
+A redacted public artifact should state what was withheld, why, which
+interpretive limitation follows, and how an authorized reviewer can resolve
+the governed source. Fabricated coordinates, shifted timestamps without a
+declared transformation, or anonymous files with no custody relation destroy
+the very evidence that restriction is meant to protect.
+
 ## Failure Semantics
 
 A GNSS workflow can produce a complete evidence record without producing a

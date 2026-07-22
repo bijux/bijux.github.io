@@ -215,6 +215,62 @@ invalidated or explicitly bounded. Recovery evidence should demonstrate both
 that the authoritative generation is selected and that stale cache state no
 longer produces an ordinary success.
 
+## Treat Isolation As Query Correctness
+
+Authentication establishes caller identity; authorization decides whether that
+identity may discover, read, change, or administer a dataset surface. A query
+that returns scientifically correct bytes to the wrong caller is still an
+incorrect service result.
+
+```mermaid
+flowchart LR
+    caller["Caller and workload identity"] --> authenticate["Authenticate"]
+    authenticate --> authorize["Authorize route, dataset,<br/>operation, and context"]
+    authorize --> resolve["Resolve catalog generation"]
+    resolve --> cache["Partitioned cache lookup"]
+    cache --> store["Authoritative store read"]
+    store --> response["Bounded response and audit evidence"]
+    authorize -. "deny without disclosure" .-> refusal["Typed refusal"]
+```
+
+| Isolation boundary | Evidence to exercise |
+| --- | --- |
+| route | public, read, write, and administrative routes have explicit caller classes and deny behavior |
+| dataset | authorization binds the exact logical tuple and catalog generation, not only a broad endpoint |
+| cache | key, namespace, invalidation, and hit behavior preserve dataset and authorization context |
+| error | denied and absent states do not reveal protected existence, metadata, credentials, or internal topology |
+| telemetry | logs, metrics, and traces retain attribution without copying tokens, sensitive query content, or unrestricted payloads |
+| operator action | promotion, withdrawal, cache control, and recovery require a named administrative identity and decision record |
+
+Positive access evidence cannot establish isolation. Qualification needs
+cross-identity and negative-path exercises, including cache hits, stale
+entries, dependency failure, and administrative routes. The result remains
+bounded to the identities, routes, datasets, and deployment profile exercised.
+
+## Retire A Dataset Across Every Serving Layer
+
+Withdrawal stops ordinary authority; retention and deletion govern physical
+custody. Those are separate decisions, and neither should be inferred from a
+catalog pointer change.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Published
+    Published --> Promoted: catalog selects generation
+    Promoted --> Withdrawn: authority removed or superseded
+    Withdrawn --> Quarantined: caches and serving membership invalidated
+    Quarantined --> Retained: governed evidence or recovery retention
+    Quarantined --> Deleted: deletion policy and dependency checks satisfied
+    Retained --> Deleted: retention boundary expires
+```
+
+A retirement record should identify the catalog transition, affected clients,
+cache invalidation, serving-store disposition, retained manifests and audit
+evidence, replicas or backups still in scope, and verification that ordinary
+queries no longer return the generation. “Not discoverable” does not mean
+deleted, and “deleted from the primary store” does not prove absence from
+caches, replicas, backups, or consumer exports.
+
 ## Current Qualification Boundaries
 
 The operations handbook keeps important gaps public:
