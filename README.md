@@ -248,6 +248,123 @@ security claim. The public [Operational Assurance](docs/01-platform/operational-
 [Publication Integrity](docs/01-platform/publication-integrity/index.md) pages
 state those boundaries for readers.
 
+## Static-Site Operating Model
+
+The hub is a small service with several independently failing boundaries. Its
+source, generated bundle, GitHub Actions execution, Pages deployment, custom
+domain, and destination links must not be collapsed into one “docs are up”
+state.
+
+```mermaid
+flowchart LR
+    source["Accepted main revision"] --> build["Pinned toolchain<br/>strict build"]
+    shared["Pinned standards snapshot"] --> build
+    build --> bundle["artifacts/docs/site<br/>index + assets + CNAME"]
+    bundle --> pages["Pages artifact<br/>and deployment"]
+    pages --> domain["bijux.io<br/>custom domain"]
+    domain --> routes["Hub routes"]
+    routes --> destinations["Repository-owned sites"]
+```
+
+| Boundary | Repository-owned control | External dependency | Strongest local claim |
+| --- | --- | --- | --- |
+| source | hub Markdown, navigation, configuration, review evidence | GitHub source hosting | exact accepted content is identifiable |
+| shared shell | pinned managed snapshot, digests, checksums, source-of-truth checks | accepted `bijux-std` revision | consumer bytes match the selected canonical source |
+| build | pinned documentation requirements, strict MkDocs, local Mermaid and shell assets | runner image, Python and package availability | selected sources produce a complete local bundle |
+| artifact and deployment | resolved site directory, `index.html` validation, SHA-pinned Pages actions, scoped permissions | GitHub Actions and Pages | a named workflow can upload and deploy the selected bundle |
+| custom domain | `CNAME` included in the built bundle and canonical `site_url` | DNS, TLS, GitHub Pages routing | the bundle requests the intended domain identity |
+| destination network | hub-owned routes and labels | every repository-owned site and external reference | local routing intent is reviewable; destination availability remains external |
+
+The root site has no application database, request-processing backend, private
+reader session, or repository-owned edge cache. That reduces its runtime state
+surface; it does not remove dependency on Actions, Pages, DNS, TLS, browser
+caching, or destination sites.
+
+## Operating States And Signals
+
+| State | Required evidence | Do not infer |
+| --- | --- | --- |
+| source accepted | revision on `main` with required policy context | that a deployment started or succeeded |
+| locally buildable | strict build and bundle checks from the selected revision | that GitHub Pages received the same bundle |
+| artifact uploaded | workflow run and Pages artifact identity | that the custom domain serves it |
+| deployment accepted | Pages deployment record and environment URL | continuous domain availability or cache convergence |
+| route observed | URL, time, response, and expected content marker | ongoing availability or correctness of linked products |
+| destination verified | bounded observation of the repository-owned route | product correctness, operational fitness, or future availability |
+
+The workflow run is the primary deployment record. The generated bundle under
+`artifacts/` is local evidence and remains disposable. Git history is the
+durable source record; generated HTML is reconstructed rather than committed.
+
+This repository does not declare an independent availability objective,
+synthetic monitoring service, latency budget, or traffic-capacity target for
+GitHub Pages. Do not invent one from a successful deployment or occasional
+manual observation.
+
+## Incident Classification
+
+Start with the failed boundary so remediation does not mutate an unrelated
+owner.
+
+| Symptom | Inspect first | Corrective owner and action |
+| --- | --- | --- |
+| strict build fails | failing page, navigation, extension, template, synchronized mirror, or pinned toolchain | correct hub source here, or correct `bijux-std` first when the shared source owns the defect |
+| build passes but bundle validation fails | resolved site directory, `index.html`, icons, and `CNAME` copy | correct repository build composition or managed deployment workflow at its canonical owner |
+| artifact upload or Pages deployment fails | workflow run, action step, permissions, environment, concurrency, and external Pages status | correct repository configuration or upstream shared workflow; retry only after the cause is understood |
+| Pages succeeds but `bijux.io` is unavailable | deployment URL, `CNAME`, DNS, TLS, custom-domain state, and observation time | reconcile the domain or Pages boundary; do not rewrite content as an availability fix |
+| one local route is missing or broken | `mkdocs.yml`, source path, relative link, and built route | correct hub navigation or content and rebuild the whole bundle |
+| destination route is missing | owning repository's published path and current contract | correct the destination first, then update the hub route and bounded summary |
+| visible content is outdated | source revision, deployment identity, browser or intermediary cache, and upstream claim freshness | identify whether source, deployment, observation, or destination evidence is stale before changing anything |
+| unsafe or overstated guidance is public | affected claim, canonical owner, source revision, deployment, and consumer consequence | narrow or remove the statement, correct the owner, redeploy, and preserve the correction relation |
+
+Do not use a deployment retry as a generic incident response. Retries are
+appropriate for a diagnosed transient external failure; they are not evidence
+that source, configuration, permissions, or destination identity is correct.
+
+## Publication Recovery
+
+Recovery selects reviewed source and moves it through the same build and Pages
+path used for normal publication.
+
+```mermaid
+flowchart LR
+    incident["Publication incident"] --> classify["Identify failed boundary"]
+    classify --> select["Select corrected or<br/>known-good source"]
+    select --> verify["Focused review + strict build"]
+    verify --> deploy["Pages artifact + deployment"]
+    deploy --> observe["Verify affected route"]
+    observe --> reconcile["Record cause, scope,<br/>and remaining risk"]
+```
+
+For content defects, prefer a new correction commit that preserves history and
+explains the durable source state. When restoration truly requires an earlier
+revision, select it explicitly and redeploy it; do not overwrite Git history or
+copy generated HTML into source. After recovery, verify the affected route and
+the site entrance, then confirm that the correction did not leave navigation
+pointing at the withdrawn content.
+
+Recovery is incomplete if only the Pages environment turns green. Retain the
+source revision, workflow run, deployment, observed route and time, affected
+claim or navigation surface, and any destination follow-up still required.
+
+## Security And Dependency Response
+
+If a workflow action, documentation dependency, shared shell revision, or
+published instruction becomes unsafe:
+
+1. identify the exact pinned component and affected revisions;
+2. stop or constrain the affected publication path when continued delivery
+   increases harm;
+3. correct the canonical owner rather than patching a generated consumer copy;
+4. update the pin or managed snapshot with digest and checksum verification;
+5. rebuild and inspect the complete bundle;
+6. deploy through the Pages environment and verify the public correction; and
+7. record residual exposure and consumer action when previously published
+   guidance or assets were affected.
+
+Pinning makes change attributable; it does not prove upstream code safe. OIDC
+and Pages-scoped permissions limit deployment authority; they do not make a
+compromised source revision benign.
+
 ## Publication Path
 
 A push to `main` invokes the repository-owned deployment trigger, which calls
