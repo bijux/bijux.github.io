@@ -94,6 +94,24 @@ A useful cross-site transition answers four questions:
 4. **How do I return?** Shared family navigation preserves a route back to the
    hub and adjacent systems.
 
+## Freshness And Authority
+
+Cross-site documentation has two independent freshness questions:
+
+| Question | Owner | Evidence |
+| --- | --- | --- |
+| does the destination still exist at the published route? | publishing repository | successful strict build, deployment identity, and route observation |
+| does the hub summary still match the destination contract? | `bijux.github.io` | review against the owning handbook, contract, capability limits, and review date |
+
+A working link can lead to an obsolete summary. A current summary can point to
+a temporarily unavailable site. Treating availability and semantic freshness
+as separate checks makes both failures diagnosable.
+
+Project capability statements should preserve the destination vocabulary.
+Terms such as `internal_support_only`, stable, simulated, bounded, or
+not implemented must not be translated into stronger marketing language at
+the hub boundary.
+
 ## Navigation Is Not Evidence
 
 The shared shell provides continuity, but it cannot prove:
@@ -123,6 +141,20 @@ Separate builds provide useful isolation:
 The trade-off is that cross-site links and shared-shell adoption require
 continued verification. A common visual system cannot prevent an obsolete
 destination or an inaccurate hub summary by itself.
+
+## Network Failure Modes
+
+| Failure | Correct response |
+| --- | --- |
+| root hub is unavailable | use the destination site directly; product authority remains intact |
+| destination route moved | correct the owner first, then update hub navigation and contextual links |
+| hub summary exceeds destination evidence | narrow the hub claim immediately and point to the owning limitation |
+| shared shell drifts in one consumer | restore the accepted canonical snapshot and validate the generated mirror |
+| shared shell itself is defective | correct `bijux-std`, accept the source change, then refresh consumers |
+| external link is intermittently unavailable | retain source ownership and distinguish transient availability from semantic invalidity |
+
+The network should fail in visible, bounded ways. It should never preserve a
+smooth navigation experience by copying stale technical content into the hub.
 
 ## Follow The Network
 

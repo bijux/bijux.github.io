@@ -60,6 +60,34 @@ flowchart LR
 
 No layer should claim the proof of a layer it has not reached.
 
+## Evidence Must Be Joinable
+
+Evidence is useful only when a reader can connect it to the claim, revision,
+configuration, and owner it qualifies.
+
+```mermaid
+flowchart LR
+    claim["Bounded claim"] --> contract["Named contract"]
+    contract --> exercise["Identified exercise"]
+    exercise --> result["Retained result"]
+    result --> decision["Accepted, narrowed, or refused"]
+    revision["Source and artifact identity"] --> exercise
+    owner["Decision authority"] --> decision
+    limits["Omissions and residual risk"] --> decision
+```
+
+An isolated badge, screenshot, or benchmark number is not a complete evidence
+record. The join must survive after the original operator is unavailable.
+
+| Required join | Question it preserves |
+| --- | --- |
+| claim → contract | which behavior was promised? |
+| contract → exercise | which part of the promise was tested? |
+| exercise → revision | which source, data, environment, and configuration ran? |
+| result → decision | why was the evidence accepted, narrowed, or refused? |
+| decision → owner | who had authority to make that determination? |
+| decision → limitation | what must not be inferred from the result? |
+
 ## Review By Question
 
 ### Who owns the meaning?
@@ -112,6 +140,24 @@ state legible enough that a reader can distinguish:
 - local qualification from production qualification;
 - a reversible pointer change from a complete backup and restore system;
 - a scientific signal from a general conclusion.
+
+## Signals That Reduce Trust
+
+Certain patterns are evidence problems even when every sentence is technically
+true:
+
+- a capability list with no distinction between stable, experimental,
+  simulated, internal, and unavailable behavior;
+- a performance result without workload, topology, configuration, or raw
+  measurements;
+- a reproducibility claim based only on repeated command success;
+- a security claim that names policy but not enforcement;
+- a scientific result whose rejected population or denominator is absent;
+- a recovery claim supported by a procedure that has not been exercised;
+- several repositories claiming ownership of the same canonical rule.
+
+The remedy is not stronger prose. It is a narrower claim connected to better
+identity, evidence, and ownership.
 
 Continue with [Delivery Surfaces](../delivery-surfaces/index.md) to follow these
 qualities into published outputs or [Applied Domains](../applied-domains/index.md)

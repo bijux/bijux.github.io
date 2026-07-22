@@ -63,6 +63,48 @@ flowchart TB
 Solid arrows show consumption or delivery. Dotted arrows show governance.
 Neither arrow transfers product ownership.
 
+## Control, Capability, And Delivery Planes
+
+The repository graph is easier to read when three kinds of relationship remain
+separate.
+
+```mermaid
+flowchart LR
+    subgraph control["Control plane"]
+        iac2["bijux-iac<br/>live repository policy"]
+        std2["bijux-std<br/>shared contracts"]
+    end
+    subgraph capability["Capability plane"]
+        core2["bijux-core<br/>execution"]
+        canon2["bijux-canon<br/>knowledge"]
+    end
+    subgraph delivery["Delivery and domain plane"]
+        hub2["documentation hub"]
+        atlas2["data service"]
+        science2["scientific products"]
+        learning2["learning programs"]
+    end
+
+    iac2 -. governs .-> std2
+    iac2 -. governs .-> capability
+    iac2 -. governs .-> delivery
+    std2 --> capability
+    std2 --> delivery
+    core2 --> canon2
+    capability --> delivery
+```
+
+- The **control plane** constrains how repository source and shared contracts
+  change.
+- The **capability plane** provides execution and knowledge-processing
+  behavior that products may consume.
+- The **delivery and domain plane** owns user contracts, public outputs,
+  scientific meaning, and curricula.
+
+Passing control-plane checks does not prove capability correctness. Consuming
+a capability does not transfer the downstream product's authority to its
+dependency.
+
 ## Authority Matrix
 
 | Repository | Decides | Consumes | Does not decide |
@@ -102,6 +144,23 @@ Evidence travels with the claim it supports: runtime evidence with execution,
 operational evidence with services, and provenance with scientific outputs.
 The hub links these surfaces; it does not aggregate them into a single vague
 quality score.
+
+## Change Propagation
+
+Cross-repository change should move only along the authority edge that owns it.
+
+| Change | Canonical origin | Consumer consequence |
+| --- | --- | --- |
+| branch rule or repository setting | `bijux-iac` inventory and apply path | live GitHub state changes after reviewed application |
+| shared workflow, check, or documentation shell | `bijux-std` canonical package | consumers adopt an exact accepted revision and verify drift |
+| CLI or DAG semantic change | `bijux-core` product contract | explicit compatibility review in dependent workflows |
+| knowledge handoff or runtime acceptance change | `bijux-canon` owning package | adapters and downstream evidence custody must be revalidated |
+| dataset or service contract change | `bijux-atlas` | clients, rollout evidence, and recovery posture must be reviewed |
+| scientific interpretation change | owning scientific repository | affected claims and public products are regenerated or narrowed |
+| root route or family framing change | `bijux.github.io` | orientation changes without redefining destination behavior |
+
+Copying the same fix into several consumers is a warning that the canonical
+origin has not been identified.
 
 ## Where Failure Belongs
 
