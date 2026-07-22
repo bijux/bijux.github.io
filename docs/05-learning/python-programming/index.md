@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Python Programming
@@ -162,6 +162,38 @@ Tests should include negative and introspection paths. A wrapper that returns
 the right value but destroys its signature, a registry that works only in one
 import order, or a descriptor that changes behavior under inheritance has not
 preserved its public contract.
+
+## Make Concurrency Ownership Explicit
+
+Concurrency is not a fourth programming style. It introduces lifetimes,
+ordering, shared-resource pressure, cancellation, and partial effects that must
+still be owned by explicit objects, functions, and adapters.
+
+```mermaid
+flowchart LR
+    admit["Admit bounded work"] --> scope["Create owned execution scope"]
+    scope --> children["Run child operations"]
+    children --> join["Join results and failures"]
+    scope --> cancel["Deadline or cancellation"]
+    cancel --> cleanup["Release resources + classify effects"]
+    cleanup --> join
+```
+
+| Boundary | Design question | Evidence exercise |
+| --- | --- | --- |
+| admission | who limits concurrency and queue growth before work begins? | exceed the limit and inspect wait, refusal, or shedding behavior |
+| lifetime | which scope owns child operations and prevents orphan work? | fail the parent and verify every child reaches an attributable terminal state |
+| ordering | which results require sequence, and which may complete independently? | vary scheduling without changing declared output semantics |
+| cancellation | where is cancellation observed and which effects may already exist? | cancel during I/O and preserve cleanup plus external-effect uncertainty |
+| resource custody | who opens and closes files, connections, processes, and executors? | inject failure at each acquisition boundary and verify release |
+| failure aggregation | how are multiple child failures retained without hiding the first or last? | produce concurrent failures and inspect the complete typed outcome |
+
+The object-oriented track can own a resource or aggregate lifecycle; the
+functional track can keep concurrent transformations explicit and immutable;
+the metaprogramming track can observe a boundary without silently creating
+tasks or changing cancellation behavior. A decorator that schedules hidden
+background work has changed the callable contract even when its return type
+looks unchanged.
 
 ## Make Hidden Behavior Debuggable
 
