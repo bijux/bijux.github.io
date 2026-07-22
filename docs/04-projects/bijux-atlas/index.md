@@ -113,6 +113,61 @@ distribution-channel evidence are separate concerns. A reversible pointer is
 not a complete backup system, and a tarred OCI bundle is not proof of a
 runnable container image.
 
+## Bind Dataset And Service Identity
+
+Atlas has two independent lifecycles that meet only when the server resolves a
+catalog entry. Treating deployment health as dataset identity, or dataset
+publication as deployment fitness, hides the most consequential classes of
+operational error.
+
+```mermaid
+flowchart TB
+    subgraph data["Dataset authority"]
+        inputs["source + policy fingerprints"] --> build["verified build"]
+        build --> published["immutable artifacts"]
+        published --> generation["catalog generation"]
+    end
+    subgraph service["Service authority"]
+        software["software release"] --> rendered["profile + rendered configuration"]
+        rendered --> admitted["admission + rollout"]
+        admitted --> instance["running instance"]
+    end
+    generation --> resolved["resolved serving identity"]
+    instance --> resolved
+    resolved --> observation["request or experiment evidence"]
+```
+
+A useful operational record therefore binds all three identity groups:
+
+| Identity group | Minimum fields | Failure it makes visible |
+| --- | --- | --- |
+| dataset | logical tuple, catalog generation, manifest, artifact fingerprints | wrong, stale, or unpromoted data |
+| service | software release, configuration and chart identity, profile, target | configuration or deployment drift |
+| observation | request or scenario, time window, thresholds, result location | unattributable health, load, or recovery claims |
+
+If any group is absent, narrow the conclusion to the identities actually
+recorded. A latency report without a catalog generation is not evidence about
+a named dataset; a restore report without the resulting service identity is
+not evidence that clients can use the restored state.
+
+## Read Operational Evidence As A Ladder
+
+Operational artifacts establish progressively stronger claims:
+
+1. a **contract** defines allowed configuration, topology, or experiment
+   shape;
+2. a **render or plan** shows intended target-specific state;
+3. an **admission result** shows that intended state passed the selected
+   policy boundary;
+4. an **effective-state observation** shows what the target actually exposed;
+5. an **experiment result** measures behavior under named conditions; and
+6. a **decision record** explains promotion, hold, rollback, or withdrawal.
+
+Higher rungs depend on the lower identities but do not retroactively supply
+them. An executed load test cannot prove that its deployment passed the
+documented admission policy unless that admission result is joined to the same
+service identity.
+
 ## Current Qualification Boundaries
 
 The operations handbook keeps important gaps public:
