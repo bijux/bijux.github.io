@@ -201,6 +201,34 @@ If the chain stops, report the last established boundary and the missing next
 record. Do not replace missing identity with a screenshot, a later success, or
 a nearby claim.
 
+## When Evidence Changes After You Used It
+
+A corrected dataset, withdrawn claim, superseded package, or revised operating
+qualification does not automatically identify every downstream use. Preserve
+the identity you consumed so the replacement can be evaluated against it.
+
+```mermaid
+flowchart LR
+    notice["Correction or withdrawal notice"] --> match["Match the consumed identity"]
+    match --> impact["Find derived results and decisions"]
+    impact --> reassess["Recompute, narrow, or retire"]
+    reassess --> publish["Publish the new status and relation"]
+    publish --> notify["Notify affected consumers"]
+```
+
+| Your use | First question | Safe response |
+| --- | --- | --- |
+| copied fact or citation | did the correction affect the exact source revision, claim, or population cited? | update the citation and state whether the conclusion changed |
+| derived analysis | did an input member, normalization rule, exclusion, or method dependency change? | reconstruct from the replacement identity and compare complete outputs |
+| deployed dataset or service | is the withdrawn object still promoted, cached, or returned by a live route? | contain the affected identity, verify effective state, and publish a replacement or withdrawal |
+| scientific or operational decision | did the corrected evidence cross the decision's declared threshold or assumptions? | reopen the decision and retain both the prior and revised rationale |
+| learning or documentation example | does the example now teach unsafe, unsupported, or obsolete behavior? | narrow or remove it promptly and preserve an attributable correction |
+
+Do not silently edit a downstream result into its new form. Record the old and
+new identities, the reason for reassessment, affected outputs, and any use that
+could not be evaluated. “Latest” is not a sufficient join key when several
+generations or claim populations exist.
+
 ## Treat Limitations As Evidence
 
 Refusal, exclusion, drift, stale evidence, missing reference output, and

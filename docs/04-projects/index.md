@@ -154,6 +154,33 @@ This matrix explains why one generic status vocabulary is unsafe. “Success” 
 execution, publication, operation, and scientific acceptance names four
 different authorities.
 
+## Propagate Corrections Across Project Boundaries
+
+A producer correction changes a consumer only when the affected identity
+crossed the handoff. The consumer owns the impact decision for its derived
+result; the producer owns the corrected object and explanation.
+
+```mermaid
+flowchart LR
+    producer["Producer correction<br/>old and replacement identities"] --> match["Consumer dependency match"]
+    match --> derived["Affected derived artifacts,<br/>services, or claims"]
+    derived --> decision["Recompute, narrow,<br/>withdraw, or retain"]
+    decision --> relation["Consumer correction relation<br/>and notification"]
+```
+
+| Corrected boundary | Producer owns | Consumer must decide |
+| --- | --- | --- |
+| Core execution or artifact | corrected run, attempt, artifact, or comparison identity | whether the product result depended on that execution and must be rerun |
+| Canon source, index, or reasoning evidence | source correction, rebuilt index lineage, or revised acceptance | which queries, grounded claims, or downstream decisions are stale |
+| Atlas dataset or service generation | supersession, withdrawal, catalog state, and effective serving identity | which analyses, caches, or citations used the affected generation |
+| GNSS navigation input or run | corrected input, stage result, denominator, or manifest | which positioning conclusions and comparisons require reassessment |
+| scientific database, method, or verdict | correction relation, affected evidence population, and revised limitation | which reports, recommendations, maps, or claims remain supportable |
+
+Absence of an exact dependency record is itself an impact limitation. Search
+by the strongest surviving identities, publish the unresolved scope, and avoid
+claiming that downstream products are unaffected merely because no automated
+match was found.
+
 ## Delivery Status
 
 The governed inventory records published documentation and packages for Core,

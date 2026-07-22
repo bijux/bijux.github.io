@@ -360,6 +360,34 @@ Do not use a deployment retry as a generic incident response. Retries are
 appropriate for a diagnosed transient external failure; they are not evidence
 that source, configuration, permissions, or destination identity is correct.
 
+## Prioritize Publication Incidents By Consumer Harm
+
+HTTP availability alone does not determine urgency. A reachable page can be a
+more serious incident than an unavailable page when it exposes unsafe
+guidance, secrets, false scientific authority, or an unmarked withdrawn result.
+
+| Impact class | Examples | Immediate publication response | Evidence required before closure |
+| --- | --- | --- | --- |
+| harmful or sensitive content | exposed credential or personal data, unsafe instruction, fabricated authority, materially false security or scientific claim | contain the affected route or statement, preserve source and deployment identity, engage the canonical owner, then publish a correction | exposure window, affected routes and consumers, containment, owner correction, secret or data response where relevant, verified replacement, and residual risk |
+| broken authority or identity | wrong revision, stale dataset generation, superseded claim, cross-project attribution failure | identify the served and intended identities, prevent further ambiguous use, correct the owner or hub route, and redeploy | old-to-new identity relation, dependency impact, complete build, deployment, and bounded route observation |
+| unavailable or degraded route | build failure, Pages failure, DNS/TLS fault, missing local route, unavailable destination | preserve the last known-good state when safe, classify the failing boundary, and recover through the owning path | observation window, failed boundary, recovery action, deployment identity, route verification, and known external dependency state |
+| presentation defect | layout, non-essential asset, or wording problem that does not change meaning or access | correct through normal review while confirming that the defect has no hidden authority or accessibility impact | source review, focused render or accessibility check, strict build, and affected-route inspection |
+
+Impact can move between classes as facts emerge. Record the highest supported
+consumer consequence and the evidence that narrowed it; do not downgrade an
+incident merely because deployment recovered. If affected consumers cannot be
+identified, state the notification gap and use the public correction route as
+an explicit part of containment.
+
+### Preserve evidence without preserving exposure
+
+Retain commit, workflow, artifact, deployment, and observation identities in a
+restricted incident record when public reproduction would repeat sensitive or
+harmful content. Remove secrets and personal data from public pages and normal
+logs, rotate compromised authority, and avoid pasting the exposed value into a
+correction. Evidence custody does not require keeping dangerous bytes publicly
+reachable.
+
 ## Publication Recovery
 
 Recovery selects reviewed source and moves it through the same build and Pages
