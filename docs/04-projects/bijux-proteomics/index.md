@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Bijux Proteomics
@@ -147,6 +147,27 @@ Missingness must preserve scientific meaning. Below-detection, absent from the
 search result, failed quality control, not measured, and structurally
 inapplicable are different states. An imputed value is a modeled value and must
 not replace the observed-state record from which it was derived.
+
+## Recompute Confidence At Every Inference Level
+
+Proteomics decisions move through nested but non-equivalent populations.
+Confidence attached to a spectrum match cannot be copied to a peptide,
+protein group, abundance contrast, pathway, or experimental recommendation.
+
+| Inference level | Decision population that must remain visible |
+| --- | --- |
+| spectrum match | target and decoy candidates, score competition, search space, and accepted and rejected matches |
+| peptide | contributing matches, modifications, mapping, collapse rule, and peptide-level error control |
+| protein or group | unique and shared peptide evidence, grouping alternatives, parsimony or inference rule, and unresolved members |
+| quantitative contrast | eligible samples and proteins, missingness, normalization, model, tested contrasts, and multiplicity |
+| pathway or mechanism | selected entities, background universe, annotation revision, dependence, and enrichment family |
+| recommendation | evidence tier, feasible action, counterfactual, uncertainty, and decision threshold |
+
+Filtering on a favorable intermediate score changes the later population and
+can invalidate a previously calibrated rate. Each aggregation should retain
+its parents, rejected alternatives, selection rule, denominator, and a
+confidence procedure defined at that level. A polished pathway result does not
+repair ambiguous protein identity or uncontrolled selection below it.
 
 ## Keep Batch Correction From Becoming Evidence Erasure
 

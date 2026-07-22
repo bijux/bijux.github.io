@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Bijux Atlas
@@ -266,6 +266,28 @@ Positive access evidence cannot establish isolation. Qualification needs
 cross-identity and negative-path exercises, including cache hits, stale
 entries, dependency failure, and administrative routes. The result remains
 bounded to the identities, routes, datasets, and deployment profile exercised.
+
+## Separate Tenant Fairness From Tenant Isolation
+
+Isolation prevents one caller from reading or mutating another caller's data.
+Fairness prevents one admitted workload from consuming shared queues,
+connections, memory, store capacity, or operator attention until other
+eligible work can no longer meet its declared boundary.
+
+| Fairness control | Evidence question |
+| --- | --- |
+| admission and quota | which identity, route, dataset, and time window own the limit? |
+| scheduling | how are priority, queue order, starvation, and cancellation handled? |
+| shared dependency | can one workload exhaust store connections, cache space, or external rate limits for others? |
+| cost attribution | can expensive scans, retries, exports, and retained results be attributed without exposing query data? |
+| degraded mode | which work is shed first, which continues, and which refusal is returned? |
+| recovery | do queues and resource shares return to policy after the heavy workload stops? |
+
+A per-tenant request limit is incomplete when requests differ greatly in
+fan-out or cost. Qualification should combine an aggressive workload with
+representative competing work, then report correctness, latency, refusals,
+resource share, and recovery for each population. Fairness policy is a product
+decision; a load generator must not invent it after observing saturation.
 
 ## Retire A Dataset Across Every Serving Layer
 
