@@ -253,6 +253,33 @@ Diagnose these states at their owning boundary. Re-running deployment cannot
 repair an outdated product claim, and editing prose cannot repair domain or
 Pages availability.
 
+## Separate Origin, Edge, And Browser State
+
+The source revision, Pages deployment, custom domain, intermediary cache, and
+browser can expose different states during publication or correction. A reader
+observation must identify which boundary it actually reached.
+
+| Boundary | Identity or signal to retain | Misleading conclusion |
+| --- | --- | --- |
+| source | accepted revision and intended public routes | source acceptance means deployment completed |
+| build artifact | workflow run, bundle identity, and included `CNAME` | valid bundle means the domain serves it |
+| Pages deployment | deployment record and environment URL | Pages acceptance means every edge or browser is current |
+| domain and edge | hostname, resolution, TLS result, response headers, time, and content marker | one successful location proves global convergence |
+| browser | requested URL, cache mode, service-worker state where relevant, and visible marker | a stale local copy proves the origin is stale |
+
+```mermaid
+flowchart LR
+    source["Accepted source"] --> artifact["Built artifact"]
+    artifact --> pages["Pages deployment"]
+    pages --> edge["DNS, TLS, and edge response"]
+    edge --> browser["Browser-visible document"]
+```
+
+Correction verification should sample the affected route and the site entrance,
+compare an identity-bearing marker, and record the observation time. Cache
+bypass can diagnose staleness; it does not itself evict every retained copy or
+prove that all readers received the correction.
+
 ## Reader Verification
 
 A reader can verify the public chain at three levels:

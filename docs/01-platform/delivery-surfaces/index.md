@@ -215,6 +215,33 @@ old identity. A correction record should state affected scope, old and new
 identities, reason, compatibility or scientific consequence, and any action a
 consumer must take.
 
+## Prove Consumer Convergence After A Delivery Change
+
+Publishing a replacement does not prove that consumers stopped using the
+superseded object. Package resolvers, container tags, catalogs, API clients,
+documentation links, intermediary caches, and local mirrors converge through
+different mechanisms.
+
+```mermaid
+flowchart LR
+    release["Replacement identity published"] --> discovery["Indexes, catalogs,<br/>and routes updated"]
+    discovery --> consumers["Consumers resolve and verify"]
+    consumers --> observe["Old and new identity use observed"]
+    observe --> close["Migration, compatibility,<br/>or withdrawal decision"]
+```
+
+| Consumer surface | Convergence evidence |
+| --- | --- |
+| package registry | immutable version available, metadata correct, and supported resolver selects the intended version |
+| container or release artifact | digest-pinned pull, provenance and checksum verification, and obsolete mutable pointer behavior |
+| dataset catalog | promoted generation, cache invalidation, client provenance, and superseded identity status |
+| API | compatibility window, version negotiation, retry behavior, and old-client refusal or migration evidence |
+| documentation | canonical route, redirect or withdrawal behavior, search freshness, and direct-entry context |
+
+A migration closes only for the named consumer population and observation
+window. Absence of support requests is not evidence that every dependent user,
+mirror, automation, or cached copy converged.
+
 ## From Publication To Operation
 
 Publication transfers a revision into a destination. Operation begins when
