@@ -55,6 +55,58 @@ different authority.
 A normalized record is not automatically publication-ready. A map marker
 proves product membership, not every scientific statement shown beside it.
 
+## Identify The Result With Three Revisions
+
+Pollenomics results join executable behavior, governed evidence, and a selected
+publication. Those surfaces can change independently, so a package version or
+map URL alone is not a reproducible identity.
+
+| Revision | Owns | Cannot identify alone |
+| --- | --- | --- |
+| producer | collectors, schemas, normalization, validation, ranking, and publication behavior | which governed records or decisions were present |
+| evidence | captured material, typed objects, relations, conflicts, reviews, exclusions, and recovery state | which eligible objects were selected for one product |
+| product | manifest scope, member and non-member sets, roles, caveats, and rendered descendants | the behavior and evidence revision that produced them |
+
+A reusable citation binds all three, then identifies the stable product member
+or reported population. This distinction is especially important when a newer
+runtime can read an older evidence revision, or when several regional products
+select different members from the same governed database.
+
+```mermaid
+flowchart LR
+    producer["Producer version"] --> run["Publication run"]
+    evidence["Evidence revision"] --> run
+    contract["Product contract"] --> run
+    run --> manifest["Manifest identity"]
+    manifest --> member["Member, non-member,<br/>or aggregate identity"]
+```
+
+The installed wheel supplies producer behavior. It does not contain the
+repository's evidence database or checked-in report products. Conversely, a
+tracked report remains a product of its recorded producer and evidence state;
+reopening it with a newer installation does not silently requalify it.
+
+## Propagate Corrections Through Ownership
+
+A source correction should invalidate only the descendants that depend on the
+changed fact, while preserving the previous decision history and unaffected
+members.
+
+```mermaid
+flowchart LR
+    correction["Corrected source identity<br/>or source-native fact"] --> affected["Affected governed objects"]
+    affected --> decisions["Reopened decisions<br/>and conflicts"]
+    decisions --> eligibility["Recomputed eligibility<br/>and ranking inputs"]
+    eligibility --> manifests["Affected manifests<br/>and member sets"]
+    manifests --> views["Regenerated maps,<br/>tables, and reports"]
+```
+
+At each edge, record the old identity, new identity, reason for change, and
+affected descendants. A renderer is not allowed to repair a source or curation
+problem locally. If evidence becomes insufficient, the durable outcome may be
+a qualified member, explicit non-member, exclusion, recovery item, or release
+refusal—not a fabricated replacement value.
+
 ## Evidence Graph
 
 Pollenomics needs several evidence dimensions that cannot substitute for one
@@ -93,6 +145,12 @@ Before reusing a count, retain:
 The repository preserves negative evidence when a visible product member lacks
 one accountability dimension. Removing the member would hide collected
 evidence; presenting it as fully supported would overstate the record.
+
+Product manifests must therefore preserve more than displayed members. Their
+review surface includes eligible members, qualified members, explicit
+non-members, exclusions, unresolved candidates, and the rule that partitions
+those populations. Otherwise, a smaller map could be mistaken for a more
+complete evidence base rather than a stricter publication decision.
 
 ## Current Product Boundary
 
