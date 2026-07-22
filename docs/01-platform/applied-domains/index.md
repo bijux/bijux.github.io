@@ -67,6 +67,58 @@ normalization, and reconciliation.
 The curation record should preserve these decisions alongside the resulting
 database rather than presenting the database as raw fact.
 
+## Make The Measurement Model Visible
+
+Curated entities do not become observations by themselves. A defensible
+analysis records how the biological target was sampled, how the assay produced
+measurements, and which transformations separated those measurements from the
+reported estimate.
+
+```mermaid
+flowchart LR
+    target["Target population"] --> sample["Sample and study design"]
+    sample --> assay["Assay and instrument"]
+    assay --> observed["Observed values and missingness"]
+    observed --> qc["Quality control and error model"]
+    qc --> estimate["Estimate with uncertainty"]
+    estimate --> claim["Bounded scientific claim"]
+```
+
+| Design concern | Evidence needed before interpretation |
+| --- | --- |
+| sampling | target population, recruitment or collection rule, exclusions, and coverage gaps |
+| biological and technical replicates | replicate identity, dependence structure, and aggregation rule |
+| controls | positive, negative, blank, reference, and failure-control behavior where applicable |
+| batch and instrument | run order, platform identity, calibration, drift, and correction policy |
+| missing observations | reason classes, censoring or detection assumptions, and retained denominator |
+| calibration and uncertainty | reference material, fitted range, residual behavior, precision, and limit of use |
+
+A schema-valid table can still encode a confounded design. Reconstructable
+bytes establish custody; they do not establish that treatment, batch,
+instrument, site, or time can be distinguished by the model.
+
+## Protect Evaluation From Leakage And Multiplicity
+
+Discovery, model selection, calibration, threshold selection, and final
+evaluation have different authorities. Reusing the same evidence across those
+roles can produce an optimistic result even when every computation is
+deterministic.
+
+- identify the population used to develop the method separately from the
+  population used to estimate performance;
+- keep subjects, sites, batches, instruments, or lineages together when their
+  dependence would leak across a split;
+- define the family of tested hypotheses, contrasts, or candidate models so an
+  isolated favorable result is not presented without its search burden;
+- label exploratory findings as exploratory until a declared confirmation
+  route has been evaluated;
+- treat performance in a new population as a separate transfer claim, not as a
+  property inherited from internal validation.
+
+An external benchmark is useful only when its truth source, overlap checks,
+observation unit, exclusions, and uncertainty are visible. The benchmark name
+alone does not establish independence.
+
 ## Keep Source, Evidence, Analysis, And Claim Populations Distinct
 
 Scientific systems repeatedly narrow and transform a population. Each

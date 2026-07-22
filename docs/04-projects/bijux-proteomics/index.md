@@ -113,6 +113,64 @@ the workflow-family contract and intended use. The same database may be
 adequate for exploratory identification and inadequate for transferable
 quantification or an experimental recommendation.
 
+## Preserve Study Design And Error Control
+
+Proteomics evidence depends on more than accepted peptide or protein records.
+The study design and its error-control policy determine which comparisons the
+data can support.
+
+| Scientific boundary | Evidence that must remain inspectable |
+| --- | --- |
+| sample structure | subject, condition, biological replicate, technical replicate, blocking, batch, and run order |
+| identification error | target/decoy policy, search space, score direction, threshold scope, and retained population |
+| protein inference | peptide-to-protein ambiguity, grouping rule, shared evidence, and unresolved alternatives |
+| quantification | normalization, aggregation, censoring, imputation, and uncertainty propagation |
+| contrasts and multiplicity | declared contrasts, tested family, correction method, denominator, and omitted tests |
+| calibration and interference | calibrators, fitted range, residuals, carryover, selectivity, and out-of-range behavior |
+
+```mermaid
+flowchart LR
+    design["Study design and contrasts"] --> observations["PSMs, peptides, proteins,<br/>intensities, and missing values"]
+    observations --> decisions["Identification, inference,<br/>normalization, and error control"]
+    decisions --> result["Estimate, uncertainty,<br/>and complete decision population"]
+    result --> transfer["Transfer test in a distinct context"]
+```
+
+False discovery rate and q-values are properties of a declared decision
+population under a declared procedure. They do not prove that an individual
+identification is correct, and a threshold computed for one family cannot be
+silently reused for a narrower favorable subset. Protein-level claims also
+need their own inference and error boundary; peptide-level control is not an
+automatic protein-level guarantee.
+
+Missingness must preserve scientific meaning. Below-detection, absent from the
+search result, failed quality control, not measured, and structurally
+inapplicable are different states. An imputed value is a modeled value and must
+not replace the observed-state record from which it was derived.
+
+## Test Transfer With A Separate Population
+
+Internal repeatability and companion-package performance answer different
+questions. A transfer claim names both the development context and the target
+context, then tests the assumptions expected to survive between them.
+
+For every transfer result, retain:
+
+- the primary and companion or holdout package identities and their selection
+  rules;
+- cohort, specimen, preparation, acquisition, instrument, library, software,
+  and processing differences;
+- the invariant being tested, the allowed tolerance, and the complete eligible
+  denominator;
+- failures, exclusions, missing strata, and the context in which performance
+  no longer supports the declared claim.
+
+When one package determines the method, thresholds, or preferred model and
+also supplies the final score, the result is development evidence. Calling it
+external validation does not create independence. A successful transfer in
+one companion population remains evidence for that named context, not a
+universal claim across laboratories, instruments, or cohorts.
+
 ## Evidence Ladder
 
 A workflow family earns only the strongest language supported by every
