@@ -148,6 +148,32 @@ search result, failed quality control, not measured, and structurally
 inapplicable are different states. An imputed value is a modeled value and must
 not replace the observed-state record from which it was derived.
 
+## Keep Batch Correction From Becoming Evidence Erasure
+
+Normalization and batch correction are models applied to observations. They
+can reduce nuisance variation, but they can also remove biological structure or
+manufacture comparability when batch and condition are confounded.
+
+```mermaid
+flowchart LR
+    raw["Observed intensities and QC"] --> design["Design, batch, run order,<br/>controls, and missingness"]
+    design --> correction["Declared normalization<br/>and correction model"]
+    correction --> diagnostics["Before/after diagnostics<br/>and residual structure"]
+    diagnostics --> estimate["Bounded estimate and limitation"]
+```
+
+Retain the uncorrected observations, transformation parameters, reference or
+control basis, excluded samples, before-and-after distributions, residual
+association with batch and condition, and sensitivity to reasonable alternate
+corrections. A visually compact embedding is not proof that batches are
+reconciled, and absence of a visible batch cluster is not proof that biological
+signal survived.
+
+For longitudinal or repeated-measure designs, preserve subject and time
+dependence through normalization, missingness, and inference. Treating repeated
+samples as independent can create false precision even when protein-level error
+control and software execution are otherwise correct.
+
 ## Test Transfer With A Separate Population
 
 Internal repeatability and companion-package performance answer different

@@ -170,6 +170,26 @@ service identity.
 
 ## Define Capacity As An Operating Envelope
 
+## Keep Pagination And Retries On One Dataset Identity
+
+A multi-page query can cross a catalog promotion unless the continuation token
+binds dataset generation, query semantics, ordering, filters, and expiry.
+Combining pages from different generations can yield duplicates, omissions, or
+a result population that never existed.
+
+| Client behavior | Service contract needed |
+| --- | --- |
+| continue a page | opaque token bound to generation, query, ordering, and expiration |
+| retry a read | stable request identity or semantics showing repetition is safe |
+| retry a mutation | explicit idempotency identity and committed-state lookup |
+| follow a redirect | preserved authorization and method semantics without credential leakage |
+| handle overload | bounded backoff and refusal signals that do not create retry amplification |
+
+Capacity evidence should include client retries and abandoned work. Offered
+requests, server attempts, and completed logical operations are different
+denominators; counting retry amplification as useful throughput overstates the
+operating envelope.
+
 Atlas capacity is not the largest offered request rate observed before a run
 ended. It is the lowest repeatable boundary at which the named traffic mix
 finishes with correct responses, declared latency and error budgets, bounded
