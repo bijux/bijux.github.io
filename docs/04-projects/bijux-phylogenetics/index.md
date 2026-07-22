@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Bijux Phylogenetics
@@ -139,6 +139,26 @@ A sensitivity result must retain the failed and non-comparable variants, not
 only alternatives that support the baseline. “Stable” is always bounded by the
 tested variation set. It does not authorize a universal robustness statement
 over models, trees, transformations, or populations that were not evaluated.
+
+## Separate Tree Uncertainty From Model Adequacy
+
+Alternative trees ask whether plausible ancestry changes the result. Model
+adequacy asks whether the stochastic assumptions can reproduce relevant
+features of the observations at all. Agreement across several trees does not
+repair a systematically inadequate trait or substitution model.
+
+| Evidence question | Required record |
+| --- | --- |
+| which trees are plausible? | source or inference method, rooting, branch lengths, support, filtering, and retained sample or set |
+| how are taxa mapped? | stable taxon identity, duplicate or unmatched handling, pruning, and changed claim population |
+| how is tree uncertainty propagated? | per-tree fits or justified integration, weighting, failures, and between-tree variation |
+| is the model adequate? | discrepancy measures, simulated or predictive reference, observed statistic, calibration, and refusal rule |
+| where do conclusions fail? | trees, parameters, diagnostics, or observed structures that contradict the accepted interpretation |
+
+Tree selection, model selection, and adequacy checking are different decision
+stages and should not reuse one favorable score as universal approval. When no
+candidate model reproduces a consequential feature, the result can remain
+computationally valid while the scientific claim is narrowed or refused.
 
 ## Account For Analytical Search
 

@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Bijux GNSS
@@ -159,6 +159,26 @@ The evidence must retain the unpaired and invalid population as well as the
 aligned population. “At least one epoch aligned” proves that a comparison can
 begin; it does not prove that coverage is representative or that position
 error is acceptable.
+
+## Preserve Time Authority And Holdover State
+
+Receiver time is both an input to navigation and a result affected by clocks,
+products, signal tracking, and system-time conversion. A timestamp without its
+time scale and authority path cannot establish when an observation occurred or
+whether two systems agreed.
+
+| Timing state | Evidence to retain |
+| --- | --- |
+| signal-disciplined | constellation, tracked signals, navigation-data validity, receiver clock state, and conversion rule |
+| externally disciplined | external source identity, synchronization method, uncertainty, and observation interval |
+| holdover | last valid discipline event, oscillator model, elapsed duration, uncertainty growth, and exit condition |
+| stepped or corrected | prior and revised time, cause, affected epochs, and downstream recomputation decision |
+| unavailable or ambiguous | unresolved scale, rollover, leap-second, clock, or source condition and refused outputs |
+
+Position continuity during holdover does not prove timing continuity within an
+unchanged uncertainty budget. Comparisons should use the timing state valid for
+each epoch, retain discontinuities, and reopen dependent velocity, clock,
+integrity, or event-order claims when the authority changes.
 
 ## Separate Accuracy From Integrity
 

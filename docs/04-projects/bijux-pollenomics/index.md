@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Bijux Pollenomics
@@ -255,6 +255,27 @@ review surface includes eligible members, qualified members, explicit
 non-members, exclusions, unresolved candidates, and the rule that partitions
 those populations. Otherwise, a smaller map could be mistaken for a more
 complete evidence base rather than a stricter publication decision.
+
+## Separate Biological Absence From Observation Failure
+
+A source with no reported pollen occurrence may represent true absence, no
+sampling, inadequate effort, preservation loss, detection below a threshold,
+taxonomic ambiguity, inaccessible evidence, or an unpublished negative result.
+Those states must not collapse into the same map value.
+
+| Evidence state | Strongest safe interpretation |
+| --- | --- |
+| surveyed with declared method and valid non-detection | not detected under that effort, material, method, place, and time |
+| sampled but assay or preservation failed | occurrence remains unknown for the failed observation |
+| source reviewed with no eligible record | absent from the governed source population, not necessarily biologically absent |
+| taxon unresolved or grouped | evidence applies only to the reported identification level |
+| locality or chronology unusable | occurrence may exist but cannot enter the spatial or temporal claim |
+| no source or sampling evidence | no observation claim is available |
+
+An absence claim needs a target taxon, opportunity to observe, detection model
+or limit, eligible negative population, and uncertainty. Map styling and counts
+should distinguish non-detection, missing evidence, and excluded evidence so
+visual emptiness does not become a biological conclusion.
 
 ## Current Product Boundary
 
