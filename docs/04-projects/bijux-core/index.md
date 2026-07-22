@@ -123,6 +123,30 @@ equivalent. Replay “match” means only that the registered comparison fields
 agree; environment, external effects, or domain meaning remain separate unless
 the replay contract names them.
 
+## Treat Cancellation And Deadlines As Terminal Evidence
+
+Cancellation, timeout, worker loss, and caller abandonment are not equivalent
+to work that never started. Work may have acquired resources, emitted
+artifacts, mutated external state, or completed after the caller stopped
+waiting.
+
+```mermaid
+flowchart LR
+    admitted["Admitted work"] --> started["Attempt started"]
+    started --> signal["Cancel or deadline signal"]
+    signal --> stopped["Owned work stops and resources close"]
+    signal --> unknown["External effect or worker state unknown"]
+    stopped --> terminal["Typed terminal record"]
+    unknown --> reconcile["Reconcile before retry"]
+    reconcile --> terminal
+```
+
+A useful terminal record retains who requested cancellation, when the signal
+was observed, which attempts and descendants stopped, cleanup outcomes,
+artifacts already committed, external-effect certainty, and whether retry is
+safe. A client-side timeout is not proof of server-side cancellation, and a
+cancelled parent does not prove every child or adapter stopped.
+
 ## Keep External Effects Outside Reproducibility Claims
 
 A run can reproduce its retained files while an external side effect differs.

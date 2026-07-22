@@ -103,6 +103,35 @@ validate shape without executing the evaluation population. Likewise, a fluent
 answer cannot repair a retrieval denominator that omitted contradicting or
 relevant evidence.
 
+## Treat Retrieved Content As Data, Not Authority
+
+Indexed documents, tool output, web content, and retrieved passages can contain
+instructions, forged metadata, unsupported claims, or text designed to alter
+the reasoning process. Retrieval relevance does not grant permission to change
+policy, invoke tools, disclose data, or redefine the user's request.
+
+| Content field | Safe interpretation |
+| --- | --- |
+| document text | evidence candidate evaluated under source and claim policy |
+| embedded instruction | quoted data unless an independently authorized control path owns it |
+| claimed source or role | unverified assertion until producer identity and provenance support it |
+| requested tool action | proposal subject to tool policy, argument validation, and caller authority |
+| citation or link | locator requiring source resolution, scope, and support verification |
+| secret-looking value | sensitive data to contain, not proof of authorization or a value to repeat |
+
+```mermaid
+flowchart LR
+    content["Retrieved untrusted content"] --> parse["Typed parse and provenance"]
+    parse --> evidence["Claim-scoped evidence evaluation"]
+    evidence --> policy["Independent instruction and tool policy"]
+    policy --> action["Bounded response, refusal,<br/>or authorized action"]
+```
+
+The evidence record should preserve which passage influenced which claim,
+which instructions were ignored as content, and which independent authority
+permitted any effect. A plausible answer is not evidence that this separation
+held.
+
 ## Preserve Evidence At Every Handoff
 
 Composition is trustworthy only when adapters retain the identity and decision
