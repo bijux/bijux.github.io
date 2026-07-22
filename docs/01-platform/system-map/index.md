@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # System Map
@@ -208,6 +208,35 @@ Not every arrow in the family map carries the same compatibility obligation.
 Package compatibility cannot establish data-semantic compatibility. A
 standards checksum cannot establish that a consumer's product behavior is
 correct. The change review must use the evidence class carried by the edge.
+
+## Join The Identities Of A Running System
+
+A source repository revision rarely identifies a complete delivered system.
+The reviewable identity is a graph whose nodes include every selected producer
+and whose edges record the consumer's compatibility decision.
+
+```mermaid
+flowchart LR
+    source["Product source revision"] --> build["Package or image digest"]
+    standard["Standards revision"] --> build
+    runtime["Runtime + adapter identity"] --> deploy["Deployment identity"]
+    build --> deploy
+    data["Dataset or index generation"] --> deploy
+    deploy --> observe["Observation + qualification window"]
+```
+
+| Join | Evidence that prevents ambiguity |
+| --- | --- |
+| source → build | build invocation, dependency resolution, toolchain, and artifact digest |
+| standard → consumer | exact standard revision, capabilities, generated digest, and consumer checksum |
+| runtime → product | resolved runtime and adapter versions plus exercised contract |
+| data → service | admitted generation, schema, semantic profile, and correction posture |
+| deployment → observation | topology, effective configuration, route, time window, and telemetry coverage |
+
+An incident or scientific result should retain the smallest complete subgraph
+that can explain it. Recording every repository's current head adds noise;
+recording only the top-level product version hides the dependencies that can
+change behavior without changing that label.
 
 ## Follow Failure Propagation Without Spreading Ownership
 

@@ -142,6 +142,24 @@ example, `bijux-std` exports common standards into consumers, but it does not
 own their product meaning. The [System Map](01-platform/system-map/index.md)
 describes these distinctions in detail.
 
+## Identify The System You Actually Observed
+
+A family-level observation needs more than a repository name. Preserve the
+identities that met at the observed boundary so another reader can distinguish
+the same system from a later compatible—or incompatible—combination.
+
+| Observed surface | Identities to retain |
+| --- | --- |
+| command or package | product version, resolved dependencies, configuration, and input identity |
+| workflow result | graph or plan, runtime and adapter, attempts, environment, and artifacts |
+| data or knowledge service | software deployment, dataset or index generation, schema, request, and observation window |
+| scientific publication | source and curation revisions, population, method, output manifest, checks, and verdict |
+| documentation route | canonical owner, source revision where exposed, route, deployment, and observation time |
+
+The current head of every repository is not a substitute for this record. A
+consumer can legitimately remain on an earlier supported standard, runtime, or
+dataset generation; the selected edge is the evidence-bearing identity.
+
 ## What Makes A Public Claim Trustworthy
 
 A repository summary is only an orientation layer. Trust comes from following

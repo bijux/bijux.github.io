@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Documentation Network
@@ -157,6 +157,25 @@ the evidence break.
 A route migration closes only when the new destination builds, the old route
 has the intended behavior, the hub and owner agree on the summary, and direct
 navigation still exposes source and return context.
+
+## Separate Canonical Identity From Route Aliases
+
+A page can be reachable through a custom domain, repository Pages path,
+redirect, language or format projection, and search result. Those routes may
+converge on one document, but they are not independent authorities.
+
+| Route role | Required behavior |
+| --- | --- |
+| canonical route | names the owning public identity used for citation and correction |
+| compatibility alias | preserves old inbound intent and resolves to the canonical meaning |
+| mirror or projection | discloses its source identity and does not appear fresher than the owner |
+| withdrawn route | explains the unsafe or unsupported state instead of redirecting invisibly |
+| search result | remains discovery evidence only; title or excerpt does not supersede the destination |
+
+Canonical metadata, navigation, sitemaps, and redirects should agree on the
+same owner. When two reachable pages contain materially different claims,
+resolve the authority conflict explicitly; choosing whichever ranks higher or
+loads faster would make delivery behavior decide product truth.
 
 ## Freshness And Authority
 

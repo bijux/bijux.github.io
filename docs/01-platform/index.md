@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Platform
@@ -164,6 +164,25 @@ flowchart TD
 This preserves local experimentation while giving mature behavior a canonical
 source. It also keeps the direction of authority clear: consumers verify
 shared material; they do not redefine it locally.
+
+## Release Independently Without Losing Compatibility
+
+Repositories do not form one release train. A product can adopt a standards
+revision, runtime package, knowledge index, or dataset generation on its own
+review schedule. The integration boundary must therefore make version skew an
+explicit supported or refused state.
+
+| Crossing edge | Producer publishes | Consumer records |
+| --- | --- | --- |
+| shared standard | immutable source revision, capability contract, and digests | selected revision, resolved capabilities, checksum, and local gate result |
+| runtime package | versioned interface, failure semantics, and compatibility boundary | resolved package identity, adapter contract, and exercised behavior |
+| knowledge or data product | generation, schema, provenance, and correction state | admitted generation, semantic assumptions, and affected outputs |
+| public route | canonical destination, authority, and replacement relation | linked identity, contextual summary, and review observation |
+
+Coexistence is safe only when the supported combinations and exit condition
+are named. “Uses the latest family stack” cannot identify a reproducible
+system, and synchronized calendar releases cannot replace per-edge
+compatibility evidence.
 
 ## Trust Boundaries
 
