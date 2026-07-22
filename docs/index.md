@@ -210,6 +210,25 @@ dataset generation withdrawn, a claim stale, a product member superseded, or a
 governance audit drifted, downstream statements should be re-evaluated against
 the replacement identity rather than silently retaining the earlier status.
 
+## Verify The Statement, Not The Badge
+
+When a package, dataset, container, report, or site exposes a checksum,
+signature, provenance record, or bill of materials, first identify exactly
+what that evidence says and which bytes it names.
+
+| Reader question | Evidence to recover |
+| --- | --- |
+| what object is named? | immutable subject identity and digest |
+| who made the statement? | issuer, key or workload identity, and trust policy |
+| what is being asserted? | statement type, predicate, materials, builder, and relevant parameters |
+| was the statement preserved? | signature verification and transparency or custody record where available |
+| what remains outside it? | product correctness, vulnerability status, deployment, scientific acceptance, and freshness unless explicitly covered |
+
+Verification failure is not repaired by a matching filename or nearby green
+badge. Preserve the artifact and statement identities, report the failed
+policy condition, and return to the owning delivery surface for correction or
+a supported replacement.
+
 ## Carry Evidence Into Your Own Work
 
 Downloading a file or copying a result creates a new custody boundary. Record

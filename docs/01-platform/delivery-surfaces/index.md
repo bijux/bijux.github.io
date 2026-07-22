@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Delivery Surfaces
@@ -51,6 +51,27 @@ Each transition has an owner:
 - operators own availability, rollback, and recovery within the published
   surface's stated boundary;
 - maintainers reconcile observed behavior with the next reviewed change.
+
+## Read Provenance Attestations By Their Predicate
+
+A signature or attestation is evidence about a specific statement made by an
+identified producer. It does not make every statement about the object true.
+Readers should inspect the predicate, subject digest, builder identity, inputs,
+and verification policy rather than treating the presence of signed metadata
+as a universal trust badge.
+
+| Evidence object | Strongest direct claim | Does not establish alone |
+| --- | --- | --- |
+| content digest | retrieved bytes match the named identity | who produced or approved them |
+| signature | a controlled key or identity signed a message | that the signer followed the expected build or review path |
+| provenance statement | named builder reports declared materials and invocation for the subject | safety of every material or correctness of the output |
+| software bill of materials | enumerated components were reported under a defined method | absence of undeclared components or vulnerabilities |
+| transparency record | statement was recorded at a position and time in an append-only service | scientific validity, deployment, or current support posture |
+
+Verification must bind the statement to the exact delivered subject and to a
+policy that names accepted issuers, builders, repositories, workflows, and
+predicate types. Metadata copied beside an artifact without digest binding can
+describe a different object while appearing complete.
 
 ## Name The Delivery State
 

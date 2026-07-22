@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Publication Integrity
@@ -69,6 +69,27 @@ The source link helps a reader inspect authorship, but it is not a
 cryptographic statement that the open browser tab contains that revision.
 Conversely, matching visible prose does not identify the complete bundle,
 shared shell, or deployment that served it.
+
+## Distinguish Available Evidence From Missing Attestation
+
+The root publication currently has review, source, checksum, strict-build,
+artifact, deployment, and route evidence at different boundaries. These
+records can be joined to investigate a page, but the public response does not
+by itself expose a signed statement binding browser-visible bytes to the
+source revision.
+
+| Question | Evidence route | Remaining boundary |
+| --- | --- | --- |
+| which content was accepted? | repository revision and governed admission history | acceptance does not identify the bytes served by a later response |
+| which shared inputs were selected? | pinned standards revision, package digests, and consumer checksums | matching inputs do not prove a particular deployment used them |
+| did the complete site build? | strict build result and resolved site artifact | a local or CI artifact is not automatically the public response |
+| did Pages accept the artifact? | workflow run, Pages artifact, and deployment record | deployment does not prove every cache serves it immediately |
+| what did a reader receive? | URL, time, response metadata, and content marker | visible content may not expose a verifiable source-to-response attestation |
+
+State the missing link rather than upgrading adjacent evidence. If stronger
+public verification is introduced later, it must define the subject bytes,
+producer identity, statement format, verification policy, and behavior when
+the statement is absent or invalid.
 
 ## Shared And Local Ownership
 
