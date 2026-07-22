@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Security Model
@@ -238,6 +238,37 @@ The owning surface decides whether containment means disabling a workflow,
 withdrawing a release, isolating a service, revoking a credential, or refusing
 a dataset or publication. Incident closure needs the resulting effective
 state, not only the intended remediation.
+
+## Coordinate Incidents Without Expanding Authority
+
+Incident response needs one decision record but several distinct authorities.
+Urgency does not allow the response lead to redefine product semantics,
+scientific acceptance, credential ownership, or public disclosure unilaterally.
+
+| Incident responsibility | Decision owned |
+| --- | --- |
+| response lead | coordinates scope, priorities, handoffs, and the current incident state |
+| control owner | contains or restores the affected enforcement point within its authority |
+| evidence custodian | preserves trustworthy records, access boundaries, and chain of custody |
+| product or claim owner | accepts, narrows, suspends, or withdraws affected behavior and conclusions |
+| communications owner | publishes audience-appropriate facts, uncertainty, and required consumer action |
+
+```mermaid
+flowchart LR
+    finding["Security finding"] --> command["Shared incident record"]
+    command --> contain["Control-owner containment"]
+    command --> impact["Product + claim impact"]
+    command --> evidence["Evidence custody"]
+    contain --> status["Verified effective state"]
+    impact --> status
+    evidence --> status
+    status --> communicate["Bounded public or private communication"]
+```
+
+Every handoff should retain the decision, owner, time, affected identities,
+evidence basis, uncertainty, and next condition. A public status update can
+reduce consumer harm, but it must not expose exploit detail, credentials,
+personal data, restricted locality, or unsupported attribution.
 
 ## When Security Evidence Is Untrusted
 

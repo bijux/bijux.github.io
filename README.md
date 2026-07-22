@@ -430,6 +430,33 @@ Do not use a deployment retry as a generic incident response. Retries are
 appropriate for a diagnosed transient external failure; they are not evidence
 that source, configuration, permissions, or destination identity is correct.
 
+## Assign Publication Incident Authority
+
+One maintainer may coordinate an incident, but the repository does not acquire
+authority over every destination it describes. Record ownership at the start
+so containment can move quickly without turning the hub into a shadow product
+or scientific control plane.
+
+| Decision | Owning authority |
+| --- | --- |
+| remove, replace, or mark unsafe hub content | this repository's publication maintainers |
+| correct a shared shell or managed workflow | `bijux-std`, followed by reviewed consumer adoption |
+| reconcile branch rules or repository settings | `bijux-iac` and observed GitHub effective state |
+| determine whether a product capability remains supported | destination repository owner |
+| determine whether scientific evidence remains acceptable | owning evidence and claim authority |
+| state public impact and consumer action | coordinated communications based on the owners above |
+
+The incident record should identify the coordinator, affected source and
+deployment identities, canonical owner contacts, containment decision,
+verification owner, communication audience, and next review condition. Transfer
+of coordination must be explicit; an unattended chat or issue assignment is
+not an accepted handoff.
+
+If the canonical owner cannot be reached, the hub may narrow or withdraw its
+own statement to stop further harm. It must not invent a replacement product
+contract or scientific verdict. Publish the uncertainty and the route by which
+the owner can later correct the record.
+
 ## Prioritize Publication Incidents By Consumer Harm
 
 HTTP availability alone does not determine urgency. A reachable page can be a
