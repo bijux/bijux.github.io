@@ -140,6 +140,54 @@ only alternatives that support the baseline. “Stable” is always bounded by t
 tested variation set. It does not authorize a universal robustness statement
 over models, trees, transformations, or populations that were not evaluated.
 
+## Account For Analytical Search
+
+A reported phylogenetic result may be selected from many traits, taxon sets,
+trees, transformations, evolutionary models, starting conditions, diagnostic
+rules, and response definitions. Reproducibility of the selected path does not
+expose the search process that made it appear favorable.
+
+```mermaid
+flowchart LR
+    question["Declared scientific question"] --> candidates["Candidate populations,<br/>models, and encodings"]
+    candidates --> runs["Complete attempted analyses"]
+    runs --> selection["Registered selection and<br/>multiplicity policy"]
+    selection --> retained["Selected result plus<br/>non-selected outcomes"]
+    retained --> claim["Bounded claim and uncertainty"]
+```
+
+| Search dimension | Evidence to retain |
+| --- | --- |
+| traits and contrasts | complete tested family, directionality, transformations, and multiplicity treatment |
+| taxa and missingness | every eligibility rule, dropped row, alternative population, and changed denominator |
+| trees | primary and alternative tree identities, mapping, branch-length treatment, and failed variants |
+| models | candidate set, parameterization, selection criterion, diagnostics, and non-converged fits |
+| thresholds | preregistered or selected rule, scale, sensitivity, and consequence of moving it |
+| exploratory follow-up | distinction from confirmatory analysis and the independent evidence needed for confirmation |
+
+If the complete search family cannot be reconstructed, the claim should state
+that limitation rather than presenting the selected p-value, information
+criterion, posterior summary, or parity result as though it came from one
+predeclared comparison.
+
+## Keep Association, History, And Mechanism Separate
+
+Phylogenetic structure changes how observations are related; it does not turn
+an association into a causal mechanism or a reconstructed history into an
+observed event.
+
+| Result | Strongest direct interpretation | Additional burden for a stronger claim |
+| --- | --- | --- |
+| phylogenetically adjusted association | traits covary under the declared population, tree, and model | temporal direction, confounding analysis, intervention or mechanistic evidence |
+| ancestral-state reconstruction | model-based distribution over historical states | sensitivity to tree and transition model plus independent historical or biological evidence |
+| rate or regime shift | the declared model places change on named branches or regimes | robust alternative models, event timing, external covariates, and mechanism-specific evidence |
+| convergence or repeated association | similar states or changes appear in declared lineages | independence of events, opportunity set, null process, and functional validation |
+| parity with an external tool | implementations agree under aligned conventions | scientific validity of the estimand, model, and biological interpretation |
+
+The Evidence Book can support a precise comparative statement while refusing
+the neighboring mechanistic story. That refusal is a successful evidence
+outcome when the required observations do not exist.
+
 ## Invalidate Claims By Dependency
 
 Evidence freshness is a dependency question. A source correction, changed

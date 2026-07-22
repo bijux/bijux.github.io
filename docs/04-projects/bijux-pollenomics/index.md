@@ -188,6 +188,50 @@ to source and curation state. When privacy or source restrictions prevent that
 detail from being public, the feature needs a bounded access explanation—not a
 fabricated precise substitute.
 
+## Govern Sensitive Evidence Without Breaking Lineage
+
+Some records can be scientifically relevant and still unsafe or unauthorized
+for unrestricted publication. Exact archaeological localities, vulnerable
+sites, contributor details, culturally restricted knowledge, licensed source
+material, and field observations may require different public and governed
+representations.
+
+```mermaid
+flowchart LR
+    source["Governed source record"] --> classify["Rights, sensitivity,<br/>purpose, and audience review"]
+    classify --> full["Restricted evidence object<br/>with complete lineage"]
+    classify --> public["Public projection<br/>with bounded disclosure"]
+    full --> decision["Claim-specific curation decision"]
+    public --> product["Map, aggregate, or report"]
+    decision --> product
+```
+
+| Sensitive dimension | Governed record preserves | Public representation may use |
+| --- | --- | --- |
+| vulnerable or protected locality | source geometry, precision, restriction basis, custodian, and authorized purpose | coarser area, withheld geometry, or aggregate whose uncertainty and disclosure rule are stated |
+| personal or contributor context | identity only where required for consent, custody, or scientific interpretation | role, organization, or anonymized attribution when sufficient |
+| licensed or non-redistributable material | source identity, access terms, digest, derived-use rule, and reviewer access path | permitted citation, metadata, and non-reconstructive derived evidence |
+| culturally restricted knowledge | provenance, authority, permitted uses, review decision, and withdrawal condition | only the description and conclusion authorized for that audience |
+| embargoed or under-review evidence | capture identity, embargo owner, scope, and expiry or review event | explicit unavailable or pending state rather than inferred content |
+
+Generalization must not create false scientific precision. A public centroid is
+not the hidden sampling point, an approximate date is not the restricted
+source chronology, and an aggregate must not permit trivial reconstruction of
+a protected member. The public product should retain a stable relation to the
+governed object, the reason for restriction, the interpretive limitation, and
+the authority that can revise or withdraw the projection.
+
+## Separate Permission From Scientific Acceptance
+
+Permission to access, transform, or publish a source and scientific fitness for
+a claim are independent decisions. An openly licensed record may remain
+scientifically ineligible; a restricted record may be strong evidence for an
+authorized internal review but unavailable for public reproduction.
+
+Every product decision should therefore retain both the rights posture and the
+claim-specific evidence verdict. Neither “public” nor “restricted” is a
+scientific quality grade.
+
 ## Count The Right Population
 
 Captured rows, normalized objects, reviewed claims, eligible candidates,
