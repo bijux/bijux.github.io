@@ -4,7 +4,7 @@ audience: mixed
 type: index
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Projects
@@ -86,6 +86,27 @@ Core execution record can show that an Atlas build ran, but Atlas publication
 and catalog evidence must still establish dataset authority. A successful
 Phylogenetics computation can establish a model result, while a public claim
 still needs its bounded evidence verdict and limitations.
+
+## Compare Results At The Correct Unit Of Inference
+
+The projects expose different observation units and dependence structures.
+Counts, error rates, or successful outputs cannot be compared across them
+without first identifying what one row or terminal result represents.
+
+| Project | Possible unit of observation | Dependence that must remain visible |
+| --- | --- | --- |
+| Core | node attempt, command, artifact, or finalized run | retries, graph ancestry, reuse, and shared external effects |
+| Canon | source object, chunk, retrieval result, evidence span, or accepted run | shared source, index generation, query, model, and policy context |
+| Atlas | request, dataset member, scenario, or observation window | dataset generation, cache, client, route, topology, and repeated traffic |
+| GNSS | sample, epoch, satellite observation, solution, segment, or capture | receiver clock, satellite, geometry, environment, and temporal sequence |
+| Proteomics | peptide, protein, sample, assay, batch, subject, or study | shared spectra, accession mapping, repeated measures, batch, and inference hierarchy |
+| Pollenomics | source record, occurrence, site, time interval, taxon, or publication | duplicate evidence, collection effort, source, spatial precision, and chronology |
+| Phylogenetics | taxon, branch, site, gene, tree, fit, or claim observation | shared ancestry, alignment, model search, tree uncertainty, and repeated traits |
+
+The owning analysis defines the actual unit; this table is a diagnostic map,
+not a universal schema. Report denominators and uncertainty at the level where
+the decision is made, while retaining lower-level failures and exclusions that
+can change that decision.
 
 ## Follow Cross-Project Handoffs
 

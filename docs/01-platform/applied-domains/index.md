@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-23
 ---
 
 # Applied Domains
@@ -96,6 +96,27 @@ flowchart LR
 A schema-valid table can still encode a confounded design. Reconstructable
 bytes establish custody; they do not establish that treatment, batch,
 instrument, site, or time can be distinguished by the model.
+
+## Name The Estimand Before The Estimate
+
+An estimate is interpretable only relative to the quantity it is intended to
+represent. The evidence record should define the unit, population, contrast,
+time horizon, and handling of events that prevent or alter observation before
+presenting a numerical result.
+
+| Estimand component | Question that must be answerable |
+| --- | --- |
+| unit | is inference about a measurement, sample, subject, site, taxon, lineage, or study? |
+| population | which members and conditions are eligible for the intended quantity? |
+| treatment or exposure | what intervention, state, or comparison is defined, and when? |
+| outcome | what is measured, at which time, in which units, and under which detection process? |
+| intercurrent event | how are dropout, assay failure, death, migration, contamination, or protocol change handled? |
+| aggregation | which dependence, weighting, repeated measures, and uncertainty produce the reported scale? |
+
+Changing any component can change the scientific question even when the same
+rows and software are used. A precise confidence interval around an unnamed or
+shifted estimand is not stronger evidence; it is a precise answer to an
+ambiguous question.
 
 ## Protect Evaluation From Leakage And Multiplicity
 
