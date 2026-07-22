@@ -77,6 +77,21 @@ surfaces reinforce each other but should not be confused:
 - the control plane audits that the requirements remain active;
 - product checks remain owned by the product repository.
 
+### Approval Is A Required Check
+
+The default-branch ruleset requires pull requests but sets the native approving
+review count to zero. Approval policy is enforced through the required
+`policy / pr approval` workflow:
+
+- an owner-authored pull request must carry `owner-self-signoff`;
+- a non-owner pull request must have the owner's latest review state recorded
+  as approved;
+- labeling, new commits, review dismissal, and draft transitions rerun the
+  policy check.
+
+This separates merge mechanics from approval authority while retaining a
+single required context that the control plane can audit across repositories.
+
 ## Failure Policy
 
 The governance path rejects rather than silently normalizes:
@@ -91,6 +106,29 @@ The governance path rejects rather than silently normalizes:
 
 The correct response is to reconcile source or live state. Weakening the
 validator would destroy the evidence that the control plane exists to provide.
+
+## Drift And Reconciliation
+
+```mermaid
+stateDiagram-v2
+    [*] --> Declared
+    Declared --> Planned: import live state and calculate change
+    Planned --> Applied: accepted revision writes settings and rulesets
+    Applied --> Verified: live audit matches inventory
+    Applied --> Drifted: audit finds a mismatch
+    Verified --> Drifted: later manual or external change
+    Drifted --> Planned: reconcile declaration or live state
+```
+
+Drift is not automatically classified as malicious or accidental. The audit
+establishes a mismatch; maintainers must decide whether the accepted inventory
+or the live system is wrong, then reconcile through the governed path.
+
+Repository settings and Terraform-managed rulesets are written through two
+different APIs. The apply workflow serializes writers and audits afterward,
+but it does not claim one cross-API transaction or automatic rollback. If a
+later write fails after earlier settings changed, the failed workflow and live
+audit boundary require explicit reconciliation.
 
 ## Credential Boundary
 

@@ -71,6 +71,23 @@ This is particularly important for durable identity. Renames and obsolete
 repository labels must not re-enter governance through an old script or local
 list.
 
+## Coverage Has Several Axes
+
+One repository row carries multiple independent governance claims.
+
+| Axis | Inventory meaning | Live evidence |
+| --- | --- | --- |
+| identity | stable repository name and family membership | repository exists under the governed owner |
+| classification | stack and responsibility used by family contracts | validated inventory value; not inferred from file extensions |
+| delivery | documentation and package state | declared `published`, `planned`, or `not-applicable` posture |
+| settings | feature, merge, visibility, and branch-cleanup policy | GitHub repository fields equal the merged defaults and overrides |
+| admission | baseline and repository-specific required checks | active default-branch ruleset has the exact expected contexts |
+| destructive protection | default branch cannot be deleted or force-pushed | active deletion and non-fast-forward rules |
+
+“Covered” means these modeled axes are declared and auditable. It does not mean
+that every GitHub organization feature, environment, secret, team permission,
+or product setting is modeled.
+
 ## Baseline And Extensions
 
 Every governed repository receives the common default-branch baseline. A
@@ -97,6 +114,22 @@ In particular:
 - stack-specific workflows remain in their owning repositories;
 - control-plane repositories are not forced to pretend they publish packages;
 - live ruleset equality does not prove product readiness.
+
+## Coverage Changes Require Deliberate Evidence
+
+Adding, renaming, publishing, or retiring a repository changes more than one
+list. The review must reconcile:
+
+1. durable identity and family membership;
+2. stack and responsibility classification;
+3. documentation and package delivery state;
+4. repository-specific required contexts;
+5. rendered Terraform targets;
+6. live settings and ruleset audit after application.
+
+This prevents a new repository from appearing in the public catalog while
+remaining outside governance, or a retired name from surviving in policy after
+its replacement is active.
 
 Continue with [Governance Model](../governance-model/index.md) for how this
 inventory becomes live policy or [System Map](../../01-platform/system-map/index.md)

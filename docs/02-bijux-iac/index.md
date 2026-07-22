@@ -90,6 +90,13 @@ The family baseline names four required contexts:
 Repository-specific checks can extend the baseline when they run reliably for
 that repository.
 
+The native ruleset approval count is zero because approval authority is
+enforced by the required `policy / pr approval` context. Owner-authored pull
+requests require the `owner-self-signoff` label; other pull requests require
+the owner's latest review state to be approved. Keeping this rule in a named
+check makes both paths explicit instead of pretending that an owner can submit
+a separate approval review on their own pull request.
+
 ## Change Path
 
 ```mermaid
@@ -134,6 +141,18 @@ active GitHub settings.
 The control plane governs GitHub repository admission and settings. It does not
 establish the correctness, availability, or scientific validity of a product
 delivered from those repositories.
+
+## Governance Claim Ladder
+
+| Claim | Minimum evidence | What it does not prove |
+| --- | --- | --- |
+| the inventory is structurally valid | network-free contract tests and deterministic rendering | that GitHub currently matches the declaration |
+| a proposed ruleset change is known | import of live resources and a Terraform plan | that the change was applied |
+| an apply workflow completed | settings patch and Terraform apply results | that every modeled field now equals the declaration |
+| governance is active as declared | post-apply live audit at an identified revision | historical continuity or future freedom from manual drift |
+
+The strongest governance statement therefore needs the live audit. A local
+green check is necessary source evidence, not evidence of active GitHub state.
 
 Continue with [Governance Model](governance-model/index.md) for the evidence
 boundaries or [Repository Coverage](repository-coverage/index.md) for the
