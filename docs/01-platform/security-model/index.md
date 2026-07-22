@@ -97,6 +97,35 @@ all dependencies are formally verified or that a compromised maintainer
 account is harmless. Identity protection, credential hygiene, and upstream
 risk remain part of the threat model.
 
+## Bound Credential And Authority Exposure
+
+A credential incident is scoped by what the credential could do, where it was
+accepted, and for how long—not only by where it was stored.
+
+| Authority | Potential effect | Evidence needed to bound exposure |
+| --- | --- | --- |
+| repository write or maintainer identity | source, tags, workflow definitions, and review state may change | audit events, accepted revisions, protected-path decisions, sessions, and revocation time |
+| GitHub administration token | repository settings and rulesets across its target family may change | token scope, target inventory, API events, live governance audit, and rotation time |
+| Pages deployment authority | an untrusted static bundle may become public | workflow run, artifact and deployment identities, environment history, and observed routes |
+| package or image publication credential | consumers may receive an unauthorized release object | registry events, immutable digests, provenance, channel inventory, and withdrawal state |
+| service or store credential | requests, data, catalog state, or administrative operations may be exposed or changed | identity use, affected resources, audit telemetry, data-integrity comparison, and effective revocation |
+| evidence signing or custody key | forged or unverifiable evidence may appear authoritative | key identity, signed-object inventory, verification time, revocation relation, and replacement trust root |
+
+Rotation stops future use of the old authority; it does not prove that earlier
+objects, decisions, or settings are trustworthy. Incident review must inspect
+every accepted surface within the authority's scope and mark evidence unknown
+when attribution or integrity cannot be reconstructed.
+
+```mermaid
+flowchart LR
+    finding["Credential or identity finding"] --> scope["Resolve authority,<br/>targets, and exposure window"]
+    scope --> contain["Revoke, rotate,<br/>disable, or isolate"]
+    scope --> inventory["Inventory affected<br/>changes and objects"]
+    inventory --> verify["Re-establish effective state<br/>from independent evidence"]
+    contain --> verify
+    verify --> replace["Republish, resign,<br/>reconfigure, or refuse"]
+```
+
 ## Execution Isolation
 
 Bijux Core states its execution boundary explicitly. The `bijux-dag` shell
@@ -181,6 +210,29 @@ The owning surface decides whether containment means disabling a workflow,
 withdrawing a release, isolating a service, revoking a credential, or refusing
 a dataset or publication. Incident closure needs the resulting effective
 state, not only the intended remediation.
+
+## When Security Evidence Is Untrusted
+
+Audit records are part of the protected system. If the same compromised
+identity could change the object and its local evidence, agreement between the
+two is not independent corroboration.
+
+Use the strongest evidence outside the suspected boundary: immutable registry
+records, separately controlled audit events, consumer-retained digests,
+independent source mirrors, external observations, or a reconstructed object
+from known inputs. Record the trust basis and observation time for each.
+
+| Situation | Honest conclusion |
+| --- | --- |
+| product bytes differ but producer logs are intact and independently retained | investigate the producer-to-artifact boundary |
+| product bytes and colocated logs changed under one compromised identity | both are suspect until independently reconstructed |
+| audit coverage has a gap during the exposure window | scope is at least unknown for the missing interval |
+| a known-good source reconstructs the expected object | expected identity is recovered; earlier unauthorized use still needs impact review |
+| allowed and denied paths pass after rotation | current enforcement is observed; historical confidentiality or integrity is not restored |
+
+Evidence uncertainty is itself a security result. Do not convert “no retained
+record of misuse” into “no misuse occurred” when the record source was absent,
+mutable by the suspected actor, or outside its retention window.
 
 ## Public Documentation Boundary
 

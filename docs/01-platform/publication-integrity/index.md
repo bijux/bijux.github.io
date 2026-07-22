@@ -143,6 +143,25 @@ not require executing documentation code fetched from a third-party CDN. This
 reduces runtime dependency drift; it does not make arbitrary future scripts
 safe merely because they are checked into the repository.
 
+## Treat Content As An Operational Input
+
+Static prose can change operator behavior. Commands, configuration examples,
+download destinations, compatibility statements, and security boundaries need
+the same owner and revision discipline as other public interfaces.
+
+| Content risk | Reader consequence | Required control |
+| --- | --- | --- |
+| command omits a destructive or irreversible condition | unintended data or state loss | explicit preconditions, target identity, bounded scope, and recovery route |
+| example contains a secret or private locator | credential or data disclosure | source and built-bundle inspection, revocation, and history-aware response |
+| download or repository link changes authority | consumer selects untrusted bytes | canonical owner, immutable identity where available, and correction of every affected route |
+| isolation or authorization language is stronger than enforcement | unsafe execution or exposure | enforcement-point review, negative-path evidence, and narrowed public wording |
+| stale compatibility or migration guidance remains visible | consumer breakage or unsupported deployment | predecessor/successor identity, current support posture, and visible replacement route |
+
+The strict build cannot determine whether a shell command is safe or a security
+claim is true. Those statements require review against the owning product or
+control boundary. When safe use depends on context, the page should name the
+context rather than rely on a generic warning detached from the action.
+
 ## What The Pipeline Does Not Prove
 
 Publication success has a precise scope.
@@ -190,6 +209,32 @@ reference. That reduces a deployment race, but it is not an automatic content
 rollback, a cache purge guarantee, or an external availability monitor. A
 known-good site is restored by selecting reviewed source and redeploying it
 through the governed path.
+
+## Publish A Correction That Readers Can Follow
+
+Removing incorrect text protects future readers but does not tell prior readers
+what changed. A material correction should preserve a relation between the
+affected statement and its replacement.
+
+```mermaid
+flowchart LR
+    old["Earlier public statement"] --> finding["Defect or changed evidence"]
+    finding --> contain["Remove, qualify,<br/>or withdraw"]
+    contain --> owner["Correct canonical owner"]
+    owner --> replacement["Replacement statement<br/>and source revision"]
+    replacement --> impact["Affected consumers<br/>and required action"]
+```
+
+The correction record should identify the affected route or claim, earlier and
+replacement source identities, reason, owner, consequence, and whether readers
+must rerun a command, replace an artifact, revisit a decision, or take no
+action. Scientific and dataset corrections also retain their evidence or
+generation identities; a documentation revision alone cannot describe their
+full impact.
+
+If the exposure window or affected readership is unknown, say so. Page views
+are not proof that guidance was followed, and lack of a reported incident is
+not proof that an unsafe instruction caused no harm.
 
 ## Interpret Public Staleness Carefully
 
