@@ -4,70 +4,213 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-28
+last_reviewed: 2026-07-23
 ---
 
 # Platform
 
-Platform explains how the Bijux repository family is held together.
+The Bijux platform is the set of authorities and contracts that lets separate
+repositories behave as a coherent public system without collapsing their
+ownership boundaries.
 
-It shows the shared foundations underneath the family, the runtime
-backbone in the middle, and the project and learning surfaces built on
-top.
+It is not one runtime and not one deployment. It combines:
 
-It introduces the family shape without replacing the deeper `bijux-iac`
-and `bijux-std` branches.
+- a GitHub control plane for repository governance;
+- a standards source for shared files and validation contracts;
+- an execution backbone for commands and workflows;
+- a knowledge-system stack for structured ingest, retrieval, and reasoning;
+- delivery systems for APIs, datasets, reports, and documentation;
+- scientific products and learning programs that own their domain meaning.
 
-<div class="bijux-callout"><strong>Start with responsibility before repository count.</strong>
-The key question is why each part of the family has its own home, yet
-still reads as one system.</div>
-
-## Platform Map
+## Operating Model
 
 ```mermaid
-graph TD
-    foundations["Shared foundations<br/>bijux-iac + bijux-std"] --> hub["Documentation hub<br/>bijux.github.io"]
-    foundations --> core["Shared runtime backbone<br/>bijux-core"]
-    foundations --> projects["Project repositories"]
-    hub --> projects
-    core --> projects
-    projects --> learning["Learning programs<br/>bijux-masterclass"]
+flowchart LR
+    change["Proposed change"] --> control{"Control authority"}
+    control -->|repository policy| review["Reviewed and checked source"]
+    standards["Standard authority"] --> review
+    review --> owner{"Product authority"}
+    owner --> runtime["Runtime or workflow"]
+    owner --> docs["Documentation"]
+    owner --> artifact["Package, dataset, report, or site"]
+    runtime --> evidence["Execution evidence"]
+    artifact --> evidence
 ```
 
-## What This Branch Covers
+The model makes three questions answerable:
 
-- the shared layers underneath the family
-- the route from foundations to projects and learning
-- the best next page for the question you want to answer
+1. **Who may change this surface?** Control authority is visible in repository
+   governance and review policy.
+2. **Which parts must match the family contract?** Standard authority is
+   visible in source manifests, synchronized files, and drift checks.
+3. **Who defines the meaning of the output?** Product authority remains with
+   the repository that implements and documents the behavior.
 
-## Where To Continue
+## Responsibility Boundaries
 
-- GitHub governance ownership: [Bijux Infrastructure-as-Code](../02-bijux-iac/index.md)
-- shared shell and cross-repository standards: [Bijux standard layer](../03-bijux-std/index.md)
-- repository ownership and split intent: [System map](system-map/index.md)
-- delivery and publication posture: [Delivery surfaces](delivery-surfaces/index.md)
-- recurring standards that remain stable across repositories: [Work qualities](work-qualities/index.md)
+| Responsibility | Authority | Evidence boundary |
+| --- | --- | --- |
+| GitHub rules, required checks, and merge constraints | `bijux-iac` | declared control-plane state and applied repository policy |
+| shared documentation shell and repository standards | `bijux-std` | canonical exports, consumer checksums, and contract validation |
+| family orientation and root-site publication | `bijux.github.io` | hub content, strict build, Pages artifact, and public routes |
+| CLI and DAG execution semantics | `bijux-core` | contracts, execution records, and release evidence |
+| knowledge ingestion, retrieval, and reasoning | `bijux-canon` | package contracts and controlled runtime boundaries |
+| datasets, queries, APIs, and service operations | `bijux-atlas` | immutable identities, schemas, endpoint behavior, and operational evidence |
+| scientific claims and interpretations | domain repositories | curated inputs, methods, provenance, limitations, and generated outputs |
+| curricula and capstones | `bijux-masterclass` | runnable materials and inspectable learner outputs |
 
-## System Shape
+## Read The Platform As Five Planes
 
-<div class="bijux-panel-grid">
-  <div class="bijux-panel"><h3>Control Plane</h3><p>`bijux-iac` keeps GitHub governance visible as code instead of leaving it buried in repository settings.</p></div>
-  <div class="bijux-panel"><h3>Hub</h3><p>`bijux.github.io` is the public route layer: it helps readers move through the repository family, but it is not the source of shared shell behavior.</p></div>
-  <div class="bijux-panel"><h3>Core</h3><p>`bijux-core` is the shared runtime backbone for command surfaces, DAG behavior, evidence, and repository discipline used across the project family.</p></div>
-  <div class="bijux-panel"><h3>Canon</h3><p>The governed knowledge-system stack for ingest, indexing, reasoning, orchestration, and controlled runtime behavior.</p></div>
-  <div class="bijux-panel"><h3>Atlas</h3><p>The delivery and control-plane surface for APIs, datasets, docs-aware checks, and operational reporting.</p></div>
-  <div class="bijux-panel"><h3>Bijux Standard Layer</h3><p>`bijux-std` is the shared standards source for documentation shell continuity, cross-repository checks, and promoted shared make behavior.</p></div>
-  <div class="bijux-panel"><h3>Products And Programs</h3><p>Canon, Atlas, Proteomics, Pollenomics, Telecom, Genomics, and Masterclass consume these shared layers while owning their own knowledge, delivery, domain, or learning work.</p></div>
-</div>
+The repository family behaves as a platform because five planes can be joined
+without assigning them to one central runtime.
 
-## Reading Order
+```mermaid
+flowchart TB
+    control["Control plane<br/>change admission"] --> product["Product plane<br/>domain meaning"]
+    standards["Standards plane<br/>shared contracts"] --> product
+    product --> execution["Execution plane<br/>runtime and transformation"]
+    execution --> delivery["Delivery plane<br/>package, service, data, site"]
+    execution --> evidence["Evidence plane<br/>identity, observations, verdicts"]
+    delivery --> evidence
+    evidence -. "feedback and correction" .-> product
+    evidence -. "drift and control findings" .-> control
+```
 
-| Read this first when you need to understand... | Open |
+| Plane | Decides | Typical failure | Owning response |
+| --- | --- | --- | --- |
+| control | which source changes may enter | declared and effective GitHub state diverge; approval or required checks fail | reconcile through `bijux-iac` and repository policy evidence |
+| standards | which reusable files and checks are canonical | consumer pin, digest, checksum, or capability set drifts | correct `bijux-std`, then adopt and verify the accepted source |
+| product | what an interface, dataset, method, or program means | implementation, docs, and declared contract disagree | correct the owning product contract and its projections |
+| execution | how declared work runs and records outcomes | partial state, incorrect reuse, missing trace, or backend mismatch | retain the failure, correct the owning runtime boundary, and re-exercise |
+| delivery | how an exact object reaches and remains available to users | publication race, wrong identity, stale route, withdrawal, or failed recovery | reconcile the destination and publish or restore an identified object |
+| evidence | which bounded claim the retained records support | missing denominator, stale dependency, contradiction, or overbroad verdict | narrow, refuse, correct, or requalify the owning claim |
+
+The evidence plane observes every other plane but does not govern them by
+itself. A report can reveal drift without being authorized to change GitHub
+state; a scientific verdict can refuse a claim without rewriting the runtime
+that produced its inputs.
+
+## Locate A Failure Before Choosing A Repository
+
+When a public journey fails, identify the first boundary whose record no longer
+matches the intended state:
+
+1. Was the source change admitted under the expected effective controls?
+2. Did the consumer use the intended standards revision and capability set?
+3. Does the product contract name the behavior being claimed?
+4. Did execution reach the required terminal and evidence state?
+5. Did delivery publish and expose the intended identity?
+6. Does the current evidence verdict support the exact public statement?
+
+Repair begins at that boundary. Rebuilding a site cannot correct a runtime
+trace; rerunning a workflow cannot authorize an unreviewed change; a favorable
+scientific result cannot repair a missing publication identity.
+
+## Coordinate Degradation Without Collapsing Authority
+
+A dependency failure can force several planes to act at once, but each plane
+still makes a different decision. Consider a published dataset whose backing
+store becomes unavailable:
+
+```mermaid
+sequenceDiagram
+    participant Evidence as Evidence plane
+    participant Delivery as Delivery plane
+    participant Product as Product plane
+    participant Control as Control plane
+
+    Evidence->>Delivery: store errors and affected observations
+    Delivery->>Delivery: shed, serve governed cache, or refuse
+    Delivery->>Product: report affected dataset and request classes
+    Product->>Product: decide whether the data claim remains usable
+    Product->>Control: request reviewed correction when policy must change
+    Control-->>Delivery: admit accepted configuration or source revision
+    Delivery-->>Evidence: expose restored effective state
+```
+
+Delivery can contain harm without redefining dataset meaning. Product authority
+can narrow or withdraw a claim without rewriting incident telemetry. Control
+authority can admit a correction without declaring the service recovered.
+Recovery is complete only when the relevant planes agree on identity, effective
+state, and the bounded claim that may resume.
+
+| Degraded condition | Immediate owner | Decision that remains elsewhere |
+| --- | --- | --- |
+| required check unavailable | repository and governance operators | whether the product change itself is correct |
+| shared package integrity mismatch | standards consumer | whether the canonical standard needs correction |
+| runtime produces partial evidence | execution owner | whether domain policy accepts any partial result |
+| service dependency fails | delivery operator | whether cached or incomplete data remains scientifically usable |
+| evidence becomes stale or contradicted | claim owner | whether the public route remains available |
+
+This separation prevents emergency action from silently acquiring permanent
+authority. A degraded mode, temporary hold, or reduced feature set needs an
+explicit exit condition and a later effective-state observation.
+
+## How Change Travels
+
+A cross-repository idea does not become a shared standard merely because it is
+useful once.
+
+```mermaid
+flowchart TD
+    local["Repository-owned solution"] --> proven{"Repeated and stable?"}
+    proven -->|no| local
+    proven -->|yes| standard["Canonical standard in bijux-std"]
+    standard --> consumers["Synchronized consumer surfaces"]
+    consumers --> verify["Checksum and contract verification"]
+    verify --> publish["Repository-owned delivery"]
+```
+
+This preserves local experimentation while giving mature behavior a canonical
+source. It also keeps the direction of authority clear: consumers verify
+shared material; they do not redefine it locally.
+
+## Release Independently Without Losing Compatibility
+
+Repositories do not form one release train. A product can adopt a standards
+revision, runtime package, knowledge index, or dataset generation on its own
+review schedule. The integration boundary must therefore make version skew an
+explicit supported or refused state.
+
+| Crossing edge | Producer publishes | Consumer records |
+| --- | --- | --- |
+| shared standard | immutable source revision, capability contract, and digests | selected revision, resolved capabilities, checksum, and local gate result |
+| runtime package | versioned interface, failure semantics, and compatibility boundary | resolved package identity, adapter contract, and exercised behavior |
+| knowledge or data product | generation, schema, provenance, and correction state | admitted generation, semantic assumptions, and affected outputs |
+| public route | canonical destination, authority, and replacement relation | linked identity, contextual summary, and review observation |
+
+Coexistence is safe only when the supported combinations and exit condition
+are named. “Uses the latest family stack” cannot identify a reproducible
+system, and synchronized calendar releases cannot replace per-edge
+compatibility evidence.
+
+## Trust Boundaries
+
+The platform does not treat every green check as equivalent.
+
+- A source checksum proves byte-level alignment, not product correctness.
+- A strict documentation build proves the configured site renders without
+  build errors, not that every external destination is available forever.
+- A passing runtime check proves the exercised contract, not every production
+  topology.
+- A published artifact proves delivery occurred, not that scientific
+  interpretation is universally valid.
+
+The evidence must be read at the boundary it actually covers. This is why
+public pages link into repository-owned contracts and limitations rather than
+asking the hub to summarize every implementation detail.
+
+## Explore The Platform
+
+| Question | Continue with |
 | --- | --- |
-| the layered structure of the whole public system family | [System map](system-map/index.md) |
-| where live GitHub governance is owned and enforced | [Bijux Infrastructure-as-Code](../02-bijux-iac/index.md) |
-| where shared standards are defined and verified across repositories | [Bijux standard layer](../03-bijux-std/index.md) |
-| where delivery work shows up most clearly across the repositories | [Delivery surfaces](delivery-surfaces/index.md) |
-| how the engineering extends into domain-heavy product work | [Applied domains](applied-domains/index.md) |
-| which qualities recur across the public work | [Work qualities](work-qualities/index.md) |
-| why the docs shell is shared instead of duplicated carelessly | [Documentation network](documentation-network/index.md) |
+| Which repositories depend on which others? | [System Map](system-map/index.md) |
+| What counts as a delivered output? | [Delivery Surfaces](delivery-surfaces/index.md) |
+| What qualifies a surface for operation? | [Operational Assurance](operational-assurance/index.md) |
+| Where are security controls actually enforced? | [Security Model](security-model/index.md) |
+| How does the public site move from source to `bijux.io`? | [Publication Integrity](publication-integrity/index.md) |
+| How can separate documentation sites remain coherent? | [Documentation Network](documentation-network/index.md) |
+| Which qualities recur across different systems? | [Engineering Qualities](work-qualities/index.md) |
+| How does the model hold under scientific pressure? | [Applied Domains](applied-domains/index.md) |
+| How are repository controls applied? | [Bijux Infrastructure-as-Code](../02-bijux-iac/index.md) |
+| How is shared behavior promoted? | [Bijux Standards](../03-bijux-std/index.md) |

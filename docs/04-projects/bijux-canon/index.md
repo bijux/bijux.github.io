@@ -4,121 +4,348 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-12
+last_reviewed: 2026-07-23
 ---
 
 # Bijux Canon
 
-`bijux-canon` is the repository that turns incoming knowledge sources
-into structured, queryable, and runtime-controlled system behavior.
+Bijux Canon turns documents and datasets into evidence-bearing, inspectable
+knowledge runs. Five canonical Python packages separate preparation,
+retrieval, reasoning, orchestration, and runtime authority so a reviewer can
+identify who made each decision and which artifact supports it.
 
-`bijux-canon` is the knowledge-system stack for deterministic ingest,
-retrieval, reasoning, orchestration, and controlled runtime
-acceptance.
-
-It is split into five linked surfaces: ingestion, indexing, retrieval
-and reasoning, orchestration, and runtime control.
-
-Shared standards note: Canon docs and checks align with the shared
-documentation shell and shared quality standards owned in `bijux-std`.
-Canon also consumes the shared runtime backbone from `bijux-core` while
-owning its own knowledge-system behavior.
+Determinism does not make a source correct or a conclusion true. It makes the
+conditions, transformations, decisions, and retained evidence available for
+review.
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="https://bijux.io/bijux-canon/">View Published Docs</a>
-<a class="md-button" href="https://github.com/bijux/bijux-canon">View GitHub Repository</a>
+<a class="md-button md-button--primary" href="https://bijux.io/bijux-canon/">Open Canon Documentation</a>
+<a class="md-button" href="https://bijux.io/bijux-canon/01-bijux-canon/foundation/evidence-map/">Trace Claims To Evidence</a>
+<a class="md-button" href="https://bijux.io/bijux-canon/08-compat-packages/">Inspect Compatibility</a>
+<a class="md-button" href="https://github.com/bijux/bijux-canon">View Source</a>
 </div>
 
-## Repository Shape
-
-`bijux-canon` is built as separate layers with accountable interfaces.
-Ingest, indexing, reasoning, orchestration, and runtime control are
-kept separate through packages, contracts, compatibility surfaces, and
-runtime boundaries.
-This map shows how knowledge moves through the stack.
+## Five Decision Authorities
 
 ```mermaid
-graph LR
-    sources["source material"] --> ingest["ingest"]
-    ingest --> index["index"]
-    index --> reasoning["retrieve and reason"]
-    reasoning --> orchestration["orchestrate decisions"]
-    orchestration --> runtime["controlled runtime acceptance"]
+flowchart LR
+    source["Documents and datasets"]
+    ingest["Ingest<br/>prepare material"]
+    index["Index<br/>execute retrieval"]
+    reason["Reason<br/>form and verify claims"]
+    agent["Agent<br/>coordinate traced work"]
+    runtime["Runtime<br/>accept, persist, replay"]
+    record["Governed run record"]
+
+    source -. custody .-> ingest
+    ingest -. custody .-> index
+    index -. custody .-> reason
+    reason -. custody .-> agent
+    agent -. custody .-> runtime
+    runtime --> record
 ```
 
-Each layer stays separate so inputs, reasoning, and runtime behavior can
-be reviewed as connected responsibilities.
+The sequence is an ownership model, not a promise that one installed command
+currently composes every package. Each package can be used at its documented
+boundary; end-to-end composition requires explicit adapters and its own
+integration evidence.
 
-## What You Can Verify Quickly
+| Package | Decision it owns | Evidence it produces | Failure it keeps visible |
+| --- | --- | --- | --- |
+| `bijux-canon-ingest` | how source material is cleaned, chunked, and prepared | normalized records, chunk identity, configuration, typed observations and failures | parse, validation, safeguard, or transformation error |
+| `bijux-canon-index` | how a declared retrieval or vector request executes | capability resolution, execution artifact, ranked result, provenance, and cost | unsupported capability or backend failure |
+| `bijux-canon-reason` | how evidence supports, contradicts, or refuses a claim | evidence spans, checks, claim status, manifest, reasoning trace, and replay record | insufficient or unverifiable evidence |
+| `bijux-canon-agent` | how role-specific work is ordered and stopped | ordered calls, lifecycle transitions, convergence, termination, and complete trace | provider, orchestration, convergence, or trace failure |
+| `bijux-canon-runtime` | whether a whole run may be accepted, stored, resumed, or replayed | immutable plan, policy verdict, stored projection, causal trace, replay and diff result | authority, budget, policy, identity, or replay mismatch |
 
-| Surface | Why it matters |
-| --- | --- |
-| package split | shows that ingest, index, reason, orchestrate, and runtime are not collapsed into one layer |
-| compat surfaces | shows that migration and naming changes are handled in public |
-| runtime-control language | shows that knowledge-system behavior is reviewed with the same discipline as execution systems |
+## Trust Model
 
-## Why The Package Split Is Intentional
+Canon narrows every claim to the retained evidence.
 
-| Split reason | Why it matters |
-| --- | --- |
-| layers change at different speeds | ingest, indexing, reasoning, orchestration, and runtime can evolve without forcing synchronized rewrites |
-| compatibility is visible | compat surfaces stay visible instead of hidden migration breakage |
-| boundaries are reviewable | each package edge is a public interface, not only an internal convention |
-| growth stays bounded | changes in one layer do not force unrelated redesign in others |
+| Claim | Required evidence | What remains unproven |
+| --- | --- | --- |
+| preparation is repeatable | input identity, effective configuration, normalized records, chunks, and typed failures | that the source content is correct |
+| retrieval is reproducible | request, backend capability, index identity, ranked result, and provenance | that the best evidence exists in the corpus |
+| a claim is supported | exact spans, content digests, checks, status, and reasoning trace | truth beyond the registered evidence and rules |
+| agent work is auditable | ordered calls, convergence decision, terminal state, and complete trace | deterministic provider behavior |
+| a run is replayable | manifest, dataset and plan identities, policy, entropy record, finalized trace, and replay envelope | equivalence outside the declared comparison boundary |
 
-## What Each Layer Prevents
+Missing evidence produces a narrower result or an explicit refusal. It is not
+reconstructed from a plausible final answer.
 
-- ingest: prevents raw upstream variability from leaking directly into downstream reasoning.
-- indexing: prevents retrieval behavior from depending on ad hoc input assumptions.
-- retrieval and reasoning: prevents query and decision logic from being mixed with storage and transport details.
-- orchestration: prevents execution flow and policy decisions from being hidden inside single-package internals.
-- runtime control: prevents acceptance, replay, and verification rules from becoming implicit and unreviewable.
+## Evaluate Retrieval Before Reasoning
 
-## What Lives Here
-
-- a contract-first package family instead of one all-purpose AI library
-- separation between ingest, index, reason, agent, and runtime responsibilities
-- compatibility handled openly through dedicated package surfaces rather than hidden breaking changes
-- release and documentation discipline aligned with the repository layout
-
-## Canon Does Not Own
-
-Canon does not own runtime backbone authority, domain-specific scientific
-product workflows, or cross-repository standards ownership. Those
-responsibilities belong to `bijux-core`, domain repositories, and
-`bijux-std`.
-
-## Where To Begin
-
-| If you are looking for... | Start with this part of Canon |
-| --- | --- |
-| knowledge-system boundaries | the package map across runtime, ingest, index, reason, and agent surfaces |
-| contract discipline | checked-in schemas, package-specific docs, and the repository-owned documentation structure |
-| compatibility judgment | the compat packages and consolidation material that keep older names visible |
-| runtime control | runtime and replay language that makes control and verification part of the system model |
-
-## One Path Through The Stack
+A reasoning trace can use every retrieved item correctly and still fail because
+the relevant evidence never entered the candidate population. Retrieval quality
+therefore needs its own evaluation boundary before claim evaluation.
 
 ```mermaid
-graph LR
-    input["source input"] --> structure["structured index"]
-    structure --> reasoning["retrieval and reasoning"]
-    reasoning --> orchestration["orchestration"]
-    orchestration --> runtime["accepted runtime behavior"]
+flowchart LR
+    corpus["Admitted corpus"] --> truth["Evaluation query +<br/>relevance judgments"]
+    truth --> retrieve["Backend and ranking execution"]
+    retrieve --> population["Eligible, retrieved,<br/>missed, and excluded items"]
+    population --> metrics["Recall, ranking, cost,<br/>latency, and refusal"]
+    population --> reason["Claim-scoped reasoning"]
 ```
 
-Follow this flow to inspect the stack in order: ingest input,
-index structure, reasoning behavior, orchestration control, then runtime
-acceptance/replay surfaces.
+| Retrieval record | Question it answers |
+| --- | --- |
+| corpus and index identity | which material could have been found? |
+| evaluation query and relevance source | what counts as a relevant item, under whose judgment? |
+| candidate and filter population | what was eligible before ranking? |
+| ranked result with scores and provenance | which items were returned and why can they be traced? |
+| missed and excluded relevant items | which evidence burden did retrieval fail to surface? |
+| backend, approximation, and configuration | which execution semantics produced the ranking? |
+| cost, latency, and terminal state | did the route meet its declared operational boundary? |
 
-## When This Page Is Most Useful
+A target-recall configuration is not a measured recall result. A dry run can
+validate shape without executing the evaluation population. Likewise, a fluent
+answer cannot repair a retrieval denominator that omitted contradicting or
+relevant evidence.
 
-- the question is about ingest, indexing, reasoning, agents, or runtime control
-- you want to see how a knowledge system is split into accountable components
-- you care whether AI-oriented architecture stays understandable as the package family grows
+## Treat Retrieved Content As Data, Not Authority
 
-## In The Larger Picture
+Indexed documents, tool output, web content, and retrieved passages can contain
+instructions, forged metadata, unsupported claims, or text designed to alter
+the reasoning process. Retrieval relevance does not grant permission to change
+policy, invoke tools, disclose data, or redefine the user's request.
 
-Canon keeps knowledge workflows split into maintained parts instead of
-collapsing them into one vague layer. The package boundaries stay
-visible all the way out to public docs.
+| Content field | Safe interpretation |
+| --- | --- |
+| document text | evidence candidate evaluated under source and claim policy |
+| embedded instruction | quoted data unless an independently authorized control path owns it |
+| claimed source or role | unverified assertion until producer identity and provenance support it |
+| requested tool action | proposal subject to tool policy, argument validation, and caller authority |
+| citation or link | locator requiring source resolution, scope, and support verification |
+| secret-looking value | sensitive data to contain, not proof of authorization or a value to repeat |
+
+```mermaid
+flowchart LR
+    content["Retrieved untrusted content"] --> parse["Typed parse and provenance"]
+    parse --> evidence["Claim-scoped evidence evaluation"]
+    evidence --> policy["Independent instruction and tool policy"]
+    policy --> action["Bounded response, refusal,<br/>or authorized action"]
+```
+
+The evidence record should preserve which passage influenced which claim,
+which instructions were ignored as content, and which independent authority
+permitted any effect. A plausible answer is not evidence that this separation
+held.
+
+## Preserve Evidence At Every Handoff
+
+Composition is trustworthy only when adapters retain the identity and decision
+records owned by both sides of a boundary. Passing text or vectors alone loses
+the information needed to explain a later claim.
+
+| Handoff | Producer must retain | Consumer must add |
+| --- | --- | --- |
+| source → ingest | source bytes, locator, media or schema identity, retrieval context | effective preparation configuration, normalized identities, transformations, and rejections |
+| ingest → index | chunks or records, content hashes, parentage, and preparation observations | backend capability, index identity, execution request, ranking, provenance, and cost |
+| index → reason | query, ranked evidence identities, scores, backend and index identity | selected spans, claim relationship, checks, contradiction or refusal state, and reasoning trace |
+| reason → agent | bounded claims, evidence links, verification state, and limitations | ordered calls, role decisions, convergence, termination, and complete lifecycle trace |
+| agent → runtime | definition, calls, artifacts, trace, and terminal decision | tenant and authority checks, immutable plan, policy verdict, storage identity, finalization, and replay envelope |
+
+```mermaid
+flowchart LR
+    producer["Producer record<br/>identity + decision"] --> adapter["Explicit adapter<br/>schema + mapping"]
+    adapter --> consumer["Consumer record<br/>new decision + parentage"]
+    adapter -. "loss, coercion, or refusal" .-> failure["Typed handoff evidence"]
+```
+
+An adapter owns more than serialization. It must state how source identities,
+missing fields, scores, ordering, tenancy, and failure semantics map across the
+boundary. An end-to-end demo that does not retain those mappings cannot prove
+cross-package evidence custody.
+
+## Propagate Source Withdrawal Through Derived Knowledge
+
+Removing a source locator or raw object does not automatically remove prepared
+chunks, embeddings, index entries, caches, traces, generated claims, or
+published answers derived from it. Withdrawal needs an impact traversal across
+the same lineage edges used to explain a result.
+
+```mermaid
+flowchart LR
+    source["Withdrawn or restricted source"] --> chunks["Prepared records + chunks"]
+    chunks --> indexes["Index generations + caches"]
+    indexes --> claims["Retrieved spans + claim evidence"]
+    claims --> runs["Agent and runtime records"]
+    runs --> outputs["Published or consumed outputs"]
+    source --> decision["Retention, deletion, or restriction decision"]
+    decision --> outputs
+```
+
+| Derived surface | Required decision |
+| --- | --- |
+| immutable evidence record | retain, restrict, redact, or delete under its custody and audit policy |
+| prepared or indexed material | rebuild or withdraw every generation containing the affected identity |
+| caches and replicas | invalidate by source and generation, then verify effective absence or restriction |
+| claims and reasoning traces | reopen support and contradiction decisions that depended on the source |
+| public outputs | correct, narrow, withdraw, or preserve with an explicit historical limitation |
+
+Physical deletion, loss of retrieval authority, and scientific invalidation
+are different terminal states. The record should identify which one occurred,
+which descendants were evaluated, which could not be located, and what later
+event can change the decision.
+
+## Preserve Provider And Prompt Identity Without Claiming Determinism
+
+Provider-backed agent calls add a mutable external boundary. A reviewable call
+records provider and model identity, prompt and model hashes where available,
+input reference, configuration, usage, output or typed error, retries or
+fallbacks, and the controller decision that followed.
+
+Those records establish what the host requested and observed. They cannot
+freeze a remote provider's historical serving environment, hidden system
+configuration, model routing, safety layers, or nondeterministic behavior.
+Trace reconstruction is therefore different from provider re-execution.
+
+Provider output remains untrusted role output until it satisfies the agent
+contract and the lifecycle controller admits the transition. A prompt cannot
+grant runtime authority, change tenant policy, or turn missing evidence into an
+acceptable claim. When provider behavior changes, compare retained inputs,
+call identity, outputs, errors, usage, and downstream decisions; do not label
+the entire knowledge run equivalent merely because its final prose is similar.
+
+## Start With The Owning Package
+
+Canon packages are independent distributions, not installation tiers.
+
+| Question | Start with | Retain first |
+| --- | --- | --- |
+| How did source bytes become retrieval-ready material? | [Ingest](https://bijux.io/bijux-canon/02-bijux-canon-ingest/) | source record, effective configuration, cleaned record, chunks, and rejections |
+| Why did retrieval select, rank, refuse, or diverge? | [Index](https://bijux.io/bijux-canon/03-bijux-canon-index/) | capability profile, request, artifact, provenance, and cost |
+| Which evidence supports this claim? | [Reason](https://bijux.io/bijux-canon/04-bijux-canon-reason/) | support spans, content hashes, checks, trace, and verification report |
+| Why did the workflow stop? | [Agent](https://bijux.io/bijux-canon/05-bijux-canon-agent/) | definition, ordered calls, convergence decision, termination, and trace |
+| May this run become durable? | [Runtime](https://bijux.io/bijux-canon/06-bijux-canon-runtime/) | manifest, authority, policy, trace, store identity, and replay verdict |
+
+Beginning with the decision under review keeps evidence custody intact. A host
+application that composes multiple packages also owns proof that its adapters
+preserved those identities at every handoff.
+
+## A Safe Whole-Repository Proof
+
+Runtime plan mode resolves a checked-in manifest into an immutable execution
+contract without invoking live package adapters or allocating a stored run.
+
+```mermaid
+flowchart LR
+    manifest["Flow manifest"] --> validate["Schema and authority validation"]
+    validate --> resolve["Dataset and dependency resolution"]
+    resolve --> plan["Immutable plan and plan hash"]
+    plan -. not called .-> adapters["Live package adapters"]
+    plan -. no run allocated .-> store["Execution store"]
+```
+
+This proves that the declaration, authority, data identity, dependency order,
+entropy policy, replay envelope, and environment fingerprint resolve into a
+reviewable plan. It does not prove step execution, trace finalization, storage,
+or live cross-package composition.
+
+## Run Acceptance Is A Separate Decision
+
+Producing an answer or trace does not authorize the runtime to retain or
+promote a run. Acceptance joins execution evidence with authority, tenancy,
+policy, verification, and replay posture.
+
+```mermaid
+flowchart LR
+    plan["Immutable plan"] --> execute["Observed execution"]
+    execute --> trace["Finalized trace"]
+    trace --> verify["Verification results"]
+    authority["Tenant + authority"] --> arbitrate["Policy arbitration"]
+    verify --> arbitrate
+    policy["Policy fingerprint"] --> arbitrate
+    arbitrate --> verdict{"acceptability"}
+    verdict -->|acceptable| retain["Durable governed run"]
+    verdict -->|warnings| qualify["Retained with explicit warnings"]
+    verdict -->|unacceptable| refuse["Refusal and evidence"]
+```
+
+The runtime artifact record separates metadata and parentage from payload
+storage; consumers must verify retrieved payload bytes against their recorded
+content hashes. Trace finalization closes ordered execution evidence. Amending
+events or decisions after that boundary creates a different record rather than
+repairing the finalized trace in place.
+
+Replay acceptability also has limits. A permissive difference policy can allow
+declared event or artifact differences, but it cannot turn a structurally
+non-certifiable trace into acceptable evidence or erase blocking plan, tenant,
+environment, dataset, policy, or replay-envelope differences.
+
+## Composition Status
+
+The package architecture is more complete than the current turnkey
+integration. Canon documents that distinction directly.
+
+| Surface | Current trustworthy claim |
+| --- | --- |
+| package-local ingest, index, reason, and agent interfaces | each can be evaluated against its own implemented and tested contract |
+| runtime planning | a manifest can resolve into an immutable plan without lower-package execution |
+| runtime live composition | intended owners are named, but the canonical package roots do not yet expose the complete adapter set expected by runtime |
+| runtime HTTP run and replay | schemas describe the intended interface; the routes currently return `501 Not Implemented` |
+| compatibility packages | preserved names map to canonical implementations; aliases do not supply missing adapters |
+
+This honesty protects real package achievements from being overstated as an
+end-to-end product claim.
+
+## Compatibility Is Explicit
+
+Canon publishes five canonical product packages and six compatibility
+distributions. Compatibility packages preserve existing installation, import,
+or command names while canonical ownership stays with the `bijux-canon-*`
+packages.
+
+An alias is not a second implementation and not a hidden migration promise.
+Its evidence should establish alias identity, exported surface parity, and the
+canonical destination. New integrations should use the owning canonical
+package unless they deliberately require a preserved name.
+
+## Artifact And Security Boundaries
+
+Schemas, fingerprints, and typed loaders establish structure and identity
+within their documented scope. They do not authenticate an artifact or its
+producer.
+
+- Index loaders validate schema, backend discrimination, chunk identity, and
+  representation, but callers must impose external size and trust controls on
+  untrusted payloads.
+- Trace validation checks declared lifecycle and compatibility fields; producer
+  identity and tamper resistance require an external authenticated envelope.
+- Replay comparisons cover named fields. A reported match must not be expanded
+  to runtime version, model, prompt, convergence, or fingerprint equality when
+  those fields were not compared.
+- HTTP schema presence does not prove that a route is implemented, authorized,
+  or suitable for public exposure.
+
+## Diagnose A Knowledge Disagreement
+
+Work backward from the disputed claim through its support references, content
+hashes, retrieved population, query, index and backend identities, prepared
+chunks, and source record. Then inspect the reasoning and agent decisions that
+selected or rejected evidence.
+
+This separates four failures that often look alike in a final answer:
+
+- the relevant source never entered the admitted corpus;
+- ingest changed or rejected the relevant material;
+- retrieval did not select it under the named request and backend;
+- reasoning or orchestration misused evidence that was available.
+
+Changing a prompt cannot repair absent source custody. Rebuilding an index
+cannot repair an unsupported reasoning rule. The correction belongs at the
+first boundary whose retained record diverges from the intended contract.
+
+## Canon's Boundary In The Family
+
+Canon owns knowledge-processing contracts and evidence custody. It does not
+own Core's command and DAG semantics, Atlas service authorization, a scientific
+repository's interpretation, or family-wide standards. A domain repository
+may use Canon capabilities while retaining full authority over source
+selection, curation, and scientific meaning.
+
+Continue with [Applied Domains](../../01-platform/applied-domains/index.md) to
+see how knowledge infrastructure supports domain evidence without inheriting
+domain authority, or [Security Model](../../01-platform/security-model/index.md)
+to compare artifact validation with authentication and service controls.

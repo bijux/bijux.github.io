@@ -26,32 +26,6 @@ extra:
     repository: bijux
     nav_mode: default
     theme_key: bijux:theme
-    hub_links:
-      - key: bijux
-        label: Bijux
-        url: https://bijux.io/
-      - key: bijux-core
-        label: Core
-        url: https://bijux.io/bijux-core/
-      - key: bijux-proteomics
-        label: Proteomics
-        url: https://bijux.io/bijux-proteomics/
-      - key: bijux-pollenomics
-        label: Pollenomics
-        url: https://bijux.io/bijux-pollenomics/
-      - key: bijux-phylogenetics
-        label: Phylogenetics
-        url: https://bijux.io/bijux-phylogenetics/
-      - key: bijux-canon
-        label: Canon
-        url: https://bijux.io/bijux-canon/
-      - key: bijux-atlas
-        label: Atlas
-        url: https://bijux.io/bijux-atlas/
-      - key: bijux-masterclass
-        label: Masterclass
-        url: https://bijux.io/bijux-masterclass/
-
 nav:
   - Home:
       - Overview: index.md
@@ -60,6 +34,9 @@ nav:
       - Work Qualities: 01-platform/work-qualities/index.md
       - System Map: 01-platform/system-map/index.md
       - Delivery Surfaces: 01-platform/delivery-surfaces/index.md
+      - Operational Assurance: 01-platform/operational-assurance/index.md
+      - Security Model: 01-platform/security-model/index.md
+      - Publication Integrity: 01-platform/publication-integrity/index.md
       - Applied Domains: 01-platform/applied-domains/index.md
       - Documentation Network: 01-platform/documentation-network/index.md
   - Bijux Infrastructure-as-Code:
@@ -75,8 +52,10 @@ nav:
       - Bijux Core: 04-projects/bijux-core/index.md
       - Bijux Canon: 04-projects/bijux-canon/index.md
       - Bijux Atlas: 04-projects/bijux-atlas/index.md
+      - Bijux GNSS: 04-projects/bijux-gnss/index.md
       - Bijux Proteomics: 04-projects/bijux-proteomics/index.md
       - Bijux Pollenomics: 04-projects/bijux-pollenomics/index.md
+      - Bijux Phylogenetics: 04-projects/bijux-phylogenetics/index.md
   - Learning:
       - Overview: 05-learning/index.md
       - Reproducible Research: 05-learning/reproducible-research/index.md

@@ -1,50 +1,253 @@
 ---
-title: Promotion Model
+title: Standards Adoption Model
 audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-28
+last_reviewed: 2026-07-23
 ---
 
-# Promotion Model
+# Standards Adoption Model
 
-`bijux-std` does not invent standards in the abstract. It promotes
-shared behavior after the pattern is already visible, repeated, and
-stable across repositories.
+A shared standard moves through two independent decisions: acceptance in
+`bijux-std` and adoption in each consuming repository. This prevents one merge
+from silently mutating the entire repository family.
 
-## Promotion Flow
+## From Local Invariant To Shared Contract
 
 ```mermaid
-graph LR
-    local["local repository pattern"] --> repeated["repeated across repositories"]
-    repeated --> stable["stable enough to describe clearly"]
-    stable --> upstream["promoted into bijux-std"]
-    upstream --> sync["synchronized back into consuming repositories"]
-    sync --> checks["verified by shared checks"]
+flowchart TD
+    local["Repository-owned invariant"] --> repeat{"Needed unchanged elsewhere?"}
+    repeat -->|no| remain["Remain product-owned"]
+    repeat -->|yes| contract["Define shared contract"]
+    contract --> implementation["Canonical implementation and tests"]
+    implementation --> digest["Generated surfaces and package digest"]
+    digest --> review["Standards review and CI"]
+    review --> accepted["Accepted immutable commit"]
 ```
 
-## What Qualifies For Promotion
+Reuse alone is not enough. A candidate belongs in the standards layer only
+when its meaning can remain stable across consumers and local divergence would
+represent a defect.
 
-- the same problem is being solved in similar ways across repositories
-- the pattern has enough maturity that a shared rule will reduce drift instead of causing friction
-- the standard can be described without hand-waving or repository-specific exceptions
-- the consuming repositories can verify the result with named checks
+## Qualification Questions
 
-## What Should Stay Local
+| Question | Standardize when | Keep local when |
+| --- | --- | --- |
+| Is the invariant cross-repository? | consumers need the same semantics | the behavior expresses one product's contract |
+| Is the interface stable? | inputs, outputs, and failures can be described precisely | the design is still exploratory |
+| Can consumers verify it? | adoption has deterministic checks | success depends on undocumented local state |
+| Can it be selected coherently? | it belongs to a capability with clear dependencies | it requires arbitrary individual-file choices |
+| Is ownership unambiguous? | canonical fixes have one durable home | consumers would still need incompatible forks |
 
-- repository-specific product behavior
-- one-off experiments that have not proved themselves yet
-- Rust or Python workflow details that still differ meaningfully by repository
-- temporary shortcuts that would become expensive if frozen into the standard layer
+## Source Acceptance
 
-## Why This Matters
+The canonical change includes every inseparable part of the invariant:
 
-This model keeps `bijux-std` honest. Shared standards are strongest
-when they come from repeated use, not from early theory.
+- implementation;
+- executable contract or test;
+- generated output where applicable;
+- package and managed-file digests;
+- documentation of inputs, effects, failure behavior, and extension points.
 
-## Continue Reading
+Standards CI validates the source, contract tests, reports, pinned actions,
+generated configuration, and repository policy. The merged commit becomes the
+immutable source identity available to consumers.
 
-- [Bijux Standards](../index.md)
-- [Documentation Network](../../01-platform/documentation-network/index.md)
-- [Repository Coverage](../../02-bijux-iac/repository-coverage/index.md)
+## Compatibility Classification
+
+The managed diff must be interpreted as an interface change, not just as a set
+of files. Review classifies which consumer assumptions may move:
+
+| Change class | Examples | Required adoption evidence |
+| --- | --- | --- |
+| content-preserving | comment, documentation, or equivalent generated formatting | identity checks and affected contract checks |
+| additive | new optional target, manifest field, or capability behavior | default behavior remains valid; opt-in path is tested |
+| behavior-changing | target semantics, workflow trigger, default, or validation rule changes | affected consumers run contract and product gates against the new behavior |
+| structural | managed path, package boundary, capability membership, or manifest shape changes | old layout is removed deliberately and new layout and digests resolve |
+| withdrawing | target, field, output, or extension point is removed | all known consumers have migrated or explicitly retain a supported prior pin |
+
+The commit identity tells consumers exactly which implementation they selected;
+it does not make every change backward compatible. Compatibility is established
+by the contract for the affected interface and by consumer evidence at adoption.
+When the change is behavior-changing or structural, the standards change should
+name the affected capability and consumer obligation so a repository can decide
+whether to adopt, hold, or prepare a local product change.
+
+## Evolve Parseable Contracts Deliberately
+
+A machine-consumed manifest or report needs separate reader and writer
+compatibility. Accepting a new producer does not prove that existing consumers
+can parse its output, and accepting an old artifact does not prove that a new
+consumer interprets every field the same way.
+
+| Evolution question | Evidence required |
+| --- | --- |
+| how is the contract identified? | explicit schema or format identity tied to producer behavior |
+| which fields are required? | validation that rejects absence instead of inventing meaning |
+| how are unknown fields handled? | declared preserve, ignore, warn, or reject behavior |
+| did a default change semantics? | before-and-after fixtures and consumer decision-path checks |
+| can old and new forms coexist? | reader/writer compatibility matrix and bounded coexistence window |
+| how is withdrawal detected? | obsolete-form inventory, consumer migration evidence, and refusal test |
+
+Dual reading or dual writing is a migration contract, not a permanent excuse
+for ambiguity. It needs one canonical meaning, an owner, telemetry or inventory
+that shows remaining use, and an exit condition. A parser that silently guesses
+the format from available fields makes corrupted and unsupported inputs look
+compatible.
+
+## Consumer Adoption
+
+```mermaid
+flowchart LR
+    accepted["Accepted commit SHA"] --> resolve["Resolve declared capabilities"]
+    resolve --> stage["Stage vendored snapshot"]
+    stage --> checks["Verify digests and contracts"]
+    checks --> product["Run repository-specific gates"]
+    product --> review["Review consumer diff"]
+    review --> merge["Adopt in consumer"]
+```
+
+The consumer records the exact upstream commit, reviews the managed diff,
+recomputes its checksum manifest, and runs both standards and product checks.
+An accepted standard can therefore be valid upstream yet unsuitable for one
+consumer until a compatibility issue is resolved.
+
+For a multi-commit migration, consumers should select only accepted commits
+that each represent a coherent contract. A temporary source state that needs
+unpublished follow-up work is not an adoption point. If old and new consumer
+shapes must coexist, that coexistence needs an explicit contract and removal
+condition rather than a generator that guesses which shape a repository uses.
+
+## Qualify Fleet Rollout By Consumer Class
+
+One successful consumer cannot represent every contract shape. A documentation
+site, Python product, Rust workspace, control plane, and scientific repository
+exercise different capabilities, extension points, permissions, and product
+gates.
+
+```mermaid
+flowchart LR
+    accepted["Accepted standards revision"] --> classify["Affected capabilities<br/>and consumer classes"]
+    classify --> representative["Representative consumer adoption"]
+    representative --> learn{"Contract and product evidence pass?"}
+    learn -->|yes| expand["Reviewed fleet adoption"]
+    learn -->|no| hold["Hold affected class<br/>and correct ownership"]
+    expand --> report["Per-consumer pins,<br/>results, holds, and exceptions"]
+    hold --> report
+```
+
+| Change surface | Representative difference to exercise |
+| --- | --- |
+| documentation shell | navigation depth, direct entry, diagrams, themes, responsive behavior, and local content extensions |
+| Python Make contract | environment resolution, package layout, API checks, generated references, and product gate composition |
+| Rust Make contract | workspace structure, feature sets, nextest behavior, pinned-source gates, and artifact paths |
+| GitHub workflow or policy | event, permission, context name, environment, concurrency, and repository classification |
+| capability or manifest shape | selection, exclusion, obsolete-path removal, rendering, and checksum regeneration |
+
+Representative adoption is an early warning boundary, not an authority to
+merge changes into other consumers. Every repository still reviews its managed
+diff and runs the checks required for its product. Fleet rollout is complete
+only when per-consumer state makes adopted, held, excepted, and drifted members
+distinguishable.
+
+## Deprecation And Withdrawal
+
+Deprecation is a compatibility window, not a synonym for deletion. A useful
+deprecation identifies:
+
+- the interface being superseded and its owning package;
+- the replacement and any consumer-side preparation;
+- how use of the old interface can be detected;
+- the evidence required before withdrawal;
+- the last accepted source revision that retains the old contract when known.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Supported
+    Supported --> Deprecated: replacement and detection exist
+    Deprecated --> Migrating: consumers adopt compatible replacement
+    Migrating --> ReadyToWithdraw: known consumers provide migration evidence
+    ReadyToWithdraw --> Withdrawn: old interface removed and contracts updated
+    Deprecated --> Supported: replacement is rejected
+```
+
+Withdrawal is safe only when known consumers no longer depend on the old
+interface or when remaining consumers deliberately stay on a prior supported
+pin with their limitation recorded. Silently changing a shared target's
+meaning under the same interface is not deprecation; it is an unclassified
+behavior change.
+
+## Generated Content
+
+Managed consumer files are outputs of a manifest, generator, or canonical
+package. Hand-editing them breaks the source relationship and creates a local
+fork with no durable repair path.
+
+When a generated surface is wrong:
+
+1. identify the canonical source or typed manifest;
+2. correct and validate it in `bijux-std`;
+3. accept that change through standards review;
+4. refresh the consumer from the accepted commit;
+5. validate the consumer in its own context.
+
+## Exceptions
+
+A repository-specific difference is legitimate when it represents product
+meaning rather than a shared-infrastructure defect. It should be implemented
+as an explicit extension or local policy, not as an untracked mutation of a
+managed file.
+
+Temporary local exceptions weaken reproducibility because the consumer no
+longer matches the standard it claims to use. They need a narrow scope, an
+owner, and a removal or upstream path.
+
+## Exception Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> LocalExtension
+    LocalExtension --> DurableLocal: expresses product meaning
+    LocalExtension --> UpstreamCandidate: invariant is shared unchanged
+    UpstreamCandidate --> Canonical: accepted with contract and tests
+    Canonical --> ConsumerAdoption: exact revision selected
+    ConsumerAdoption --> Verified: standards and product gates pass
+    ConsumerAdoption --> Held: compatibility evidence fails
+    Held --> Verified: consumer adapts and revalidates
+    Held --> LocalException: urgent bounded deviation is explicitly owned
+    LocalException --> Canonical: durable fix accepted upstream
+    LocalException --> Removed: exception no longer needed
+```
+
+A local exception must never become a second silent source of truth. Its
+record should identify the exact managed surface, why local ownership is
+temporarily necessary, what evidence bounds the deviation, and which event
+removes or upstreams it.
+
+## Adoption Is Independently Reversible
+
+Consumer adoption changes a pinned revision and a managed snapshot. If the new
+standard is incompatible, the consumer can retain or restore its last accepted
+pin while the upstream standard remains valid for other repositories.
+
+Reversal must preserve identity:
+
+- restore an exact previously accepted commit, not a remembered branch state;
+- regenerate the selected capabilities from that source;
+- recompute managed checksums rather than copying old files selectively;
+- rerun standards and product gates;
+- retain the failed adoption evidence for diagnosis.
+
+This is a repository-level rollback of shared inputs. It does not roll back
+product data, releases, or live GitHub administration.
+
+## Evidence Boundary
+
+Upstream acceptance proves the shared package against the standards contract.
+Consumer adoption proves the selected snapshot against that repository's
+declared capabilities and local gates. Neither proves the consumer's
+production readiness unless its product qualification exercises that claim.
+
+Continue with [Shared Surfaces](../shared-surfaces/index.md) to see what each
+capability brings into a repository.

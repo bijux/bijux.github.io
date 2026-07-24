@@ -4,182 +4,391 @@ audience: mixed
 type: index
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-12
+last_reviewed: 2026-07-23
 ---
 
 # Bijux
 
 <section class="bijux-hero">
-  <div class="bijux-hero__eyebrow">platform systems, delivery interfaces, scientific software, and technical programs</div>
-  <h1 class="bijux-hero__title">Bijux is a repository family for governed platform, data, and scientific systems.</h1>
-  <p class="bijux-hero__lede"><code>bijux.io</code> is the public hub for that family. It connects the shared foundations, the runtime backbone, the project systems, and the learning programs in one readable surface.</p>
-  <div class="bijux-topic-row">
-    <span class="bijux-topic-pill">platform architecture</span>
-    <span class="bijux-topic-pill">control-plane design</span>
-    <span class="bijux-topic-pill">data-service design</span>
-    <span class="bijux-topic-pill">bioinformatics software</span>
-    <span class="bijux-topic-pill">documentation as delivery</span>
-    <span class="bijux-topic-pill">teaching through systems</span>
-  </div>
+  <div class="bijux-hero__eyebrow">governed software, scientific systems, and engineering education</div>
+  <h1 class="bijux-hero__title">Bijux builds systems whose authority, evidence, and delivery boundaries remain visible.</h1>
+  <p class="bijux-hero__lede">
+    This hub connects family governance, runtime and knowledge foundations,
+    delivered products, and learning programs.
+  </p>
 </section>
 
-<div class="bijux-callout"><strong>Start with the foundations, then follow the branch that matches your question.</strong>
-The rest of the site stays organized around that same split.</div>
+Bijux is a family of independently owned repositories. The separation is
+deliberate: GitHub governance, shared standards, runtime execution, knowledge
+processing, service delivery, scientific interpretation, and teaching do not
+share the same change authority.
 
-## What Bijux Is
+The repositories still form one system. They use common documentation and
+quality contracts, link to the evidence behind public claims, and preserve a
+recognizable route from source to delivered output.
 
-Bijux is a repository family for platform engineering, data and service
-delivery, scientific software, and technical education.
+## Choose Your Route
 
-It stays readable because ownership changes hands in named places:
-
-- one branch explains the platform structure of the family
-- one repository owns the live GitHub control plane
-- one repository owns the shared standards layer
-- one repository owns the public documentation hub
-- one repository owns the shared runtime backbone used across projects
-- other repositories own knowledge, delivery, domain, and learning work
-
-## At A Glance
-
-| Layer | Owned in | What becomes visible |
+| Your question | Begin with | You will learn |
 | --- | --- | --- |
-| control plane | [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) | GitHub governance applied as code |
-| shared standards | [Bijux standard layer](03-bijux-std/index.md) | shared docs shell, shared checks, shared repo contracts |
-| documentation hub | [Platform overview](01-platform/index.md) and this site | cross-repository orientation and route design |
-| shared runtime backbone | [Bijux Core](04-projects/bijux-core/index.md) | CLI, DAG, evidence, and release discipline used across projects |
-| project systems | [Projects](04-projects/index.md) | knowledge, APIs, datasets, packages, and domain systems |
-| learning surface | [Learning catalog](05-learning/index.md) | technical programs built from the same engineering language |
+| How is the repository family governed? | [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) | where live GitHub policy is declared, reviewed, and applied |
+| Which behavior is shared across repositories? | [Bijux Standards](03-bijux-std/index.md) | how common files, checks, and documentation behavior are promoted and verified |
+| How do all repositories fit together? | [System Map](01-platform/system-map/index.md) | which repository owns each authority and where dependencies cross boundaries |
+| How are outputs published? | [Delivery Surfaces](01-platform/delivery-surfaces/index.md) | how sites, packages, datasets, APIs, and evidence reach users |
+| How is operational readiness demonstrated? | [Operational Assurance](01-platform/operational-assurance/index.md) | how load, observation, recovery, and release evidence qualify a bounded surface |
+| Where are security boundaries enforced? | [Security Model](01-platform/security-model/index.md) | how repository, runtime, service, data, and publication controls differ |
+| Which product should I inspect? | [Projects](04-projects/index.md) | the question, inputs, outputs, and proof surface for each project |
+| Where is the engineering taught? | [Learning](05-learning/index.md) | programs grounded in runnable workflows and design judgment |
 
-## Core Ideas
+## Reach The Same Meaning Through More Than One Path
 
-- Separate repositories by operating responsibility so boundaries remain stable as systems grow.
-- Treat documentation, contracts, and release behavior as owned delivery outputs.
-- Make the control plane, standards layer, hub, and project layers visible as different kinds of work.
-- Keep the same engineering language across platform, domain, and learning surfaces.
+Public evidence should remain interpretable when a reader enters from search,
+uses a keyboard or assistive technology, zooms or reflows the page, cannot load
+a destination, or is not authorized to inspect a restricted source.
 
-## How It Is Organized
-
-The site starts from repository ownership, then opens into reading
-routes. Shared documentation shell behavior and cross-repository
-standards checks live in
-[Bijux Standards](03-bijux-std/index.md), while live GitHub policy is
-owned in
-[Bijux Infrastructure-as-Code](02-bijux-iac/index.md).
-
-### Reading Approach
-
-Start with the family shape, then continue into the branch that matches
-your interest.
-
-| Start here for... | Open this first | What you will find |
+| If you encounter | What should remain available | How to interpret the boundary |
 | --- | --- | --- |
-| how the repositories fit together | [Platform overview](01-platform/index.md) -> [System map](01-platform/system-map/index.md) | the split across shared foundations, runtime, knowledge, delivery, and domain work |
-| how GitHub governance is applied across the family | [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) | the live control plane and the review model behind the repositories |
-| how shared behavior stays aligned across repositories | [Bijux standard layer](03-bijux-std/index.md) | shared docs shell, shared make behavior, and standards promotion |
-| how delivery appears in public | [Delivery surfaces](01-platform/delivery-surfaces/index.md) -> [Bijux Atlas](04-projects/bijux-atlas/index.md) | documentation, published destinations, and operated service surfaces |
-| how the work behaves under domain pressure | [Applied domains](01-platform/applied-domains/index.md) -> [Bijux Proteomics](04-projects/bijux-proteomics/index.md) -> [Bijux Pollenomics](04-projects/bijux-pollenomics/index.md) | scientific and evidence-heavy product systems |
-| how the same technical style carries into teaching | [Learning catalog](05-learning/index.md) | course books and programs built around the same technical language |
+| a Mermaid diagram | nearby prose or a table naming the important owners, sequence, states, or conclusion | the diagram aids orientation; it is not the only evidence record |
+| a colored status, badge, or icon | a textual state with scope, evidence, and consequence | color is not an additional approval level |
+| an unavailable destination | canonical owner, route purpose, and source repository where public | temporary availability does not transfer authority to the hub |
+| restricted evidence | stable governed identity, reason for restriction, public projection, and interpretive limitation | unavailable source bytes do not authorize a stronger public inference |
+| a wide table or dense technical page | semantic headings, labels, and a reading order that survives zoom and narrow viewports | visual layout must not redefine the evidence hierarchy |
+| an unfamiliar status token | the owning page's definition and explicit non-claims | do not replace a precise bounded state with a friendlier general word |
+
+When an access problem blocks a consequential claim, retain the public URL,
+page or control, time, access context, expected route, and observed barrier.
+Do not include credentials, private data, restricted coordinates, or sensitive
+payloads in a public report. An accessibility failure can hide a limitation or
+recovery action just as effectively as a broken link, so it belongs in the
+trust boundary rather than being treated as presentation polish.
+
+## Start From The Boundary You Need To Trust
 
 ```mermaid
-graph TD
-    foundations["Shared foundations<br/>bijux-iac + bijux-std"] --> hub["Documentation hub<br/>bijux.github.io"]
-    foundations --> core["Shared runtime backbone<br/>bijux-core"]
-    foundations --> canon["Knowledge system<br/>bijux-canon"]
-    core --> projects["Project systems<br/>atlas, telecom, genomics, proteomics, pollenomics"]
-    canon --> projects
-    hub --> projects
-    projects --> learning["Learning programs<br/>bijux-masterclass"]
+flowchart LR
+    question["What must survive review?"] --> change["A source change"]
+    question --> execution["A computation or decision"]
+    question --> delivery["A public object or service"]
+    question --> science["A scientific statement"]
+    question --> learning["Transferable engineering judgment"]
+    change --> governance["Governance + standards"]
+    execution --> projects["Core, Canon, and product runtimes"]
+    delivery --> assurance["Delivery + operational assurance"]
+    science --> domains["Domain evidence + claim verdict"]
+    learning --> programs["Exercises + capstone evidence"]
 ```
 
-## Reading Paths
-
-<div class="bijux-callout"><strong>New here?</strong> Start with
-<a href="index.md">Home</a> -> <a href="01-platform/index.md">Platform</a> ->
-<a href="02-bijux-iac/index.md">Bijux Infrastructure-as-Code</a> ->
-<a href="03-bijux-std/index.md">Bijux Standards</a>. This is the shortest route into the shared foundations.</div>
-
-The map below summarizes the main route families at a glance.
-
-```mermaid
-graph LR
-    entry["Reader starts here"] --> split{"What do you want first?"}
-    split --> architecture["System architecture"]
-    split --> delivery["Delivery and service behavior"]
-    split --> domain["Scientific and evidence-heavy systems"]
-    split --> teaching["Transferable engineering practice"]
-
-    architecture --> platform["Platform"]
-    architecture --> map["System map"]
-
-    delivery --> surfaces["Delivery surfaces"]
-    delivery --> atlas["Bijux Atlas"]
-
-    domain --> applied["Applied domains"]
-    domain --> scientific["Proteomics and Pollenomics"]
-
-    teaching --> learning["Learning"]
-    teaching --> programs["Masterclass programs"]
-```
-
-Choose a route below by intent or by time.
-
-### By Intent
-
-| If you want to inspect... | Start here | Then continue into |
-| --- | --- | --- |
-| system design and repository split | [Platform overview](01-platform/index.md) | [System map](01-platform/system-map/index.md) |
-| control plane design and repository governance | [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) | [Platform overview](01-platform/index.md), [System map](01-platform/system-map/index.md) |
-| shared standards and cross-repository continuity | [Bijux standard layer](03-bijux-std/index.md) | [Documentation Network](01-platform/documentation-network/index.md) |
-| delivery and service interfaces | [Delivery surfaces](01-platform/delivery-surfaces/index.md) | [Bijux Atlas](04-projects/bijux-atlas/index.md) |
-| domain-heavy product work | [Applied domains](01-platform/applied-domains/index.md) | [Bijux Proteomics](04-projects/bijux-proteomics/index.md), [Bijux Pollenomics](04-projects/bijux-pollenomics/index.md) |
-| technical teaching built from the same system language | [Learning catalog](05-learning/index.md) | [Reproducible Research](05-learning/reproducible-research/index.md), [Python Programming](05-learning/python-programming/index.md) |
-
-### By Time
-
-| If you have... | Read this route |
+| Review target | Minimum complete chain |
 | --- | --- |
-| 10 minutes | [Home](index.md) -> [Platform](01-platform/index.md) -> [Projects](04-projects/index.md) |
-| 20 minutes | [Platform](01-platform/index.md) -> [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) -> [Bijux standard layer](03-bijux-std/index.md) |
-| 30 minutes | [Platform](01-platform/index.md) -> [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) -> [Bijux standard layer](03-bijux-std/index.md) -> [Bijux Core](04-projects/bijux-core/index.md) -> [Bijux Atlas](04-projects/bijux-atlas/index.md) |
+| accepted source change | declared policy → required context → approval decision → merged revision → effective-state audit |
+| shared repository behavior | canonical package → accepted upstream revision → consumer pin and capability set → digest and checksum → consumer gates |
+| executed result | admitted inputs → plan and configuration → attempts and terminal state → artifact lineage → finalization and verification |
+| delivered service or dataset | immutable product identity → admitted topology → effective state → bounded observations → recovery and qualification decision |
+| scientific statement | source and curation → eligible population → method and primary outputs → complete checks → verdict, limitations, and freshness |
+| learning outcome | explicit model → prediction → constrained implementation → failure diagnosis → recovery → transfer exercise |
 
-<div class="bijux-showcase-grid">
-  <article class="bijux-showcase-card">
-    <div class="bijux-showcase-card__eyebrow">architecture route</div>
-    <h2>Start with the system split</h2>
-    <p>Open Platform and the System Map first, then Core and Canon, to see how runtime, knowledge, and governance divide cleanly.</p>
-    <p><a href="#reading-paths">See reading paths</a></p>
-  </article>
-  <article class="bijux-showcase-card">
-    <div class="bijux-showcase-card__eyebrow">delivery route</div>
-    <h2>Start with delivery surfaces</h2>
-    <p>Open Delivery Surfaces and then Atlas for the fastest route into service contracts, APIs, datasets, and publication.</p>
-    <p><a href="#reading-paths">See reading paths</a></p>
-  </article>
-  <article class="bijux-showcase-card">
-    <div class="bijux-showcase-card__eyebrow">domain route</div>
-    <h2>Start where the work gets harder</h2>
-    <p>Open Applied Domains, then Proteomics and Pollenomics, to see the same engineering posture under scientific constraints.</p>
-    <p><a href="#reading-paths">See reading paths</a></p>
-  </article>
-</div>
+If the available record ends early, use language from the last completed
+boundary. A built candidate is not deployed; a deployed service is not
+qualified; a reproducible result is not automatically a supported scientific
+claim; a completed example is not automatically transferable judgment.
+
+## The Family At A Glance
+
+```mermaid
+flowchart TB
+    reader["Reader, user, or integrator"]
+
+    subgraph foundation["Governance and shared contracts"]
+        iac["bijux-iac<br/>live GitHub control plane"]
+        std["bijux-std<br/>shared repository standards"]
+    end
+
+    subgraph orientation["Public orientation"]
+        hub["bijux.github.io<br/>family map and routes"]
+    end
+
+    subgraph systems["Software systems"]
+        core["bijux-core<br/>execution backbone"]
+        canon["bijux-canon<br/>knowledge system"]
+        atlas["bijux-atlas<br/>data and service delivery"]
+        gnss["bijux-gnss<br/>receiver and positioning evidence"]
+        domains["scientific repositories<br/>proteomics, pollenomics, phylogenetics"]
+    end
+
+    subgraph education["Engineering education"]
+        masterclass["bijux-masterclass<br/>programs and capstones"]
+    end
+
+    iac --> std
+    std --> hub
+    std --> core
+    std --> canon
+    std --> atlas
+    std --> gnss
+    std --> domains
+    core --> canon
+    core --> atlas
+    canon --> domains
+    hub --> reader
+    atlas --> reader
+    gnss --> reader
+    domains --> reader
+    masterclass --> reader
+    systems --> masterclass
+```
+
+Arrows describe a dependency or delivery relationship, not ownership. For
+example, `bijux-std` exports common standards into consumers, but it does not
+own their product meaning. The [System Map](01-platform/system-map/index.md)
+describes these distinctions in detail.
+
+## Identify The System You Actually Observed
+
+A family-level observation needs more than a repository name. Preserve the
+identities that met at the observed boundary so another reader can distinguish
+the same system from a later compatible—or incompatible—combination.
+
+| Observed surface | Identities to retain |
+| --- | --- |
+| command or package | product version, resolved dependencies, configuration, and input identity |
+| workflow result | graph or plan, runtime and adapter, attempts, environment, and artifacts |
+| data or knowledge service | software deployment, dataset or index generation, schema, request, and observation window |
+| scientific publication | source and curation revisions, population, method, output manifest, checks, and verdict |
+| documentation route | canonical owner, source revision where exposed, route, deployment, and observation time |
+
+The current head of every repository is not a substitute for this record. A
+consumer can legitimately remain on an earlier supported standard, runtime, or
+dataset generation; the selected edge is the evidence-bearing identity.
+
+## What Makes A Public Claim Trustworthy
+
+A repository summary is only an orientation layer. Trust comes from following
+the claim to the surface that can prove or constrain it.
+
+| Claim | Evidence to seek | Owning surface |
+| --- | --- | --- |
+| a repository is governed | declared policy, required checks, and an applied control path | `bijux-iac` and repository policy workflows |
+| shared behavior is aligned | a source manifest, synchronized consumer files, and drift checks | `bijux-std` |
+| a command or workflow is deterministic | contracts, execution semantics, and replayable evidence | `bijux-core` |
+| knowledge processing is controlled | explicit ingest, index, reason, orchestration, and runtime boundaries | `bijux-canon` |
+| data is delivered as a service | schemas, immutable identity, API behavior, operational evidence, and recovery boundaries | `bijux-atlas` |
+| a scientific interpretation is reproducible | curated inputs, lineage, assumptions, generated outputs, and limitations | scientific repositories |
+| a delivered system is operationally qualified | workload definition, observed behavior, recovery evidence, and explicit omissions | owning product and operations surfaces |
+| a program teaches engineering judgment | runnable exercises, capstones, and observable failure modes | `bijux-masterclass` |
+
+## Reuse Evidence Without Losing Its Boundary
+
+A hub page is a route to evidence, not the final citation for every claim it
+summarizes. When reusing a result, preserve enough identity for another reader
+to reach the same owner, population, and decision.
+
+| Reused claim | Identity to carry forward | Qualification to retain |
+| --- | --- | --- |
+| repository governance | repository, accepted declaration revision, observed live audit, and observation time | modeled settings and ruleset fields only |
+| shared standard | consumer, selected standards commit, capabilities, and verification result | valid for that consumer adoption, not automatically the family |
+| software behavior | package or executable version, configuration, input identity, and owning contract | supported inputs, terminal state, and known limits |
+| dataset or service result | dataset generation, software and profile identity, request or scenario, and observation window | cache, dependency, workload, and qualification conditions |
+| scientific result | claim identifier, source and population, method, primary result, checks, verdict, and freshness | exclusions, uncertainty, sensitivity envelope, and unresolved observations |
+| learning outcome | program revision, exercise or capstone, constraints, and evaluation evidence | demonstrated scope rather than general expertise |
+
+```mermaid
+flowchart LR
+    summary["Hub summary"] --> owner["Owning handbook or evidence surface"]
+    owner --> identity["Stable claim and artifact identities"]
+    identity --> scope["Population, method, conditions,<br/>limitations, and freshness"]
+    scope --> reuse["Bounded citation or downstream use"]
+```
+
+If a stable evidence identity is unavailable, cite the owning page and state
+the observation date and missing identity explicitly. A screenshot, copied
+number, or unversioned map link may document what was visible; it cannot by
+itself preserve the computation, curation decision, or evidence population
+that produced it.
+
+Evidence reuse also inherits corrections. When an owning surface marks a
+dataset generation withdrawn, a claim stale, a product member superseded, or a
+governance audit drifted, downstream statements should be re-evaluated against
+the replacement identity rather than silently retaining the earlier status.
+
+## Verify The Statement, Not The Badge
+
+When a package, dataset, container, report, or site exposes a checksum,
+signature, provenance record, or bill of materials, first identify exactly
+what that evidence says and which bytes it names.
+
+| Reader question | Evidence to recover |
+| --- | --- |
+| what object is named? | immutable subject identity and digest |
+| who made the statement? | issuer, key or workload identity, and trust policy |
+| what is being asserted? | statement type, predicate, materials, builder, and relevant parameters |
+| was the statement preserved? | signature verification and transparency or custody record where available |
+| what remains outside it? | product correctness, vulnerability status, deployment, scientific acceptance, and freshness unless explicitly covered |
+
+Verification failure is not repaired by a matching filename or nearby green
+badge. Preserve the artifact and statement identities, report the failed
+policy condition, and return to the owning delivery surface for correction or
+a supported replacement.
+
+## Carry Evidence Into Your Own Work
+
+Downloading a file or copying a result creates a new custody boundary. Record
+what entered your work before renaming, transforming, or combining it so a
+later correction can be matched to the exact object you used.
+
+| Consumption record | Why it matters |
+| --- | --- |
+| canonical owner and public route | preserves authority when a copied file loses its surrounding page |
+| immutable artifact, dataset, claim, or source identity | distinguishes the consumed object from a later object at the same locator |
+| retrieval time, resolved route, and integrity result | identifies the observed delivery state and detects incomplete or substituted bytes |
+| population, profile, method, or request | preserves the conditions under which the result was produced |
+| exclusions, limitations, and decision state | prevents a bounded result from becoming an unconditional downstream claim |
+| license, access, and redistribution boundary | keeps technical reuse from silently exceeding permitted use |
+| correction or withdrawal route | makes replacement and impact review possible after consumption |
+
+Keep the original identity alongside derived outputs, and record the
+transformation from consumed input to new result. If a source permits access
+but not redistribution, retain a lawful reconstruction record or digest rather
+than republishing restricted bytes. A digest can establish identity; it does
+not grant access, reproduce the source, or transfer its license.
+
+```mermaid
+flowchart LR
+    owner["Owning evidence surface"] --> acquire["Acquire + verify identity"]
+    acquire --> derive["Transform with recorded inputs"]
+    derive --> cite["Publish bounded result + citation"]
+    owner --> notice["Correction or withdrawal"]
+    notice --> match["Match consumed identity"]
+    match --> derive
+```
+
+## Investigate A Disputed Output
+
+Begin at the visible output, then move toward the narrowest authority that can
+explain it. A green repository check, a deployed page, and a scientifically
+accepted claim are different conclusions even when they appear in one delivery
+journey.
+
+```mermaid
+flowchart RL
+    output["Visible output<br/>page, package, API, dataset, report"] --> identity["Artifact or result identity"]
+    identity --> decision["Admission, execution,<br/>or publication decision"]
+    decision --> contract["Owning contract<br/>policy, schema, method, threshold"]
+    contract --> source["Source identity<br/>and provenance"]
+    identity --> operations["Deployment and<br/>observation evidence"]
+    decision --> limitations["Exclusions, refusals,<br/>gaps, and freshness"]
+```
+
+| If the dispute concerns | First identity to recover | Continue with |
+| --- | --- | --- |
+| whether a change was admitted correctly | repository, revision, policy context, and approval state | [Infrastructure-as-Code](02-bijux-iac/index.md) |
+| whether shared controls are current | consumer pin, capability set, canonical digest, and managed checksum | [Standards](03-bijux-std/index.md) |
+| whether the public page is the intended revision | source revision, Pages artifact, deployment, and domain response | [Publication Integrity](01-platform/publication-integrity/index.md) |
+| whether a service returned the intended dataset | dataset generation, software and configuration identity, request or scenario | [Atlas](04-projects/bijux-atlas/index.md) |
+| whether a GNSS result survived the right population | capture, configuration, stage ledger, reference denominator, and manifest | [GNSS](04-projects/bijux-gnss/index.md) |
+| whether a map member is evidence-backed | product member, manifest, curation decision, evidence revision, and source | [Pollenomics](04-projects/bijux-pollenomics/index.md) |
+| whether a phylogenetic statement is supported | claim identifier, required observations, checks, verdict, and freshness | [Phylogenetics](04-projects/bijux-phylogenetics/index.md) |
+
+If the chain stops, report the last established boundary and the missing next
+record. Do not replace missing identity with a screenshot, a later success, or
+a nearby claim.
+
+## When Evidence Changes After You Used It
+
+A corrected dataset, withdrawn claim, superseded package, or revised operating
+qualification does not automatically identify every downstream use. Preserve
+the identity you consumed so the replacement can be evaluated against it.
+
+```mermaid
+flowchart LR
+    notice["Correction or withdrawal notice"] --> match["Match the consumed identity"]
+    match --> impact["Find derived results and decisions"]
+    impact --> reassess["Recompute, narrow, or retire"]
+    reassess --> publish["Publish the new status and relation"]
+    publish --> notify["Notify affected consumers"]
+```
+
+| Your use | First question | Safe response |
+| --- | --- | --- |
+| copied fact or citation | did the correction affect the exact source revision, claim, or population cited? | update the citation and state whether the conclusion changed |
+| derived analysis | did an input member, normalization rule, exclusion, or method dependency change? | reconstruct from the replacement identity and compare complete outputs |
+| deployed dataset or service | is the withdrawn object still promoted, cached, or returned by a live route? | contain the affected identity, verify effective state, and publish a replacement or withdrawal |
+| scientific or operational decision | did the corrected evidence cross the decision's declared threshold or assumptions? | reopen the decision and retain both the prior and revised rationale |
+| learning or documentation example | does the example now teach unsafe, unsupported, or obsolete behavior? | narrow or remove it promptly and preserve an attributable correction |
+
+Do not silently edit a downstream result into its new form. Record the old and
+new identities, the reason for reassessment, affected outputs, and any use that
+could not be evaluated. “Latest” is not a sufficient join key when several
+generations or claim populations exist.
+
+## Treat Limitations As Evidence
+
+Refusal, exclusion, drift, stale evidence, missing reference output, and
+unqualified production state are observable system states. They identify the
+boundary beyond which a current claim cannot safely extend.
+
+The project and platform pages preserve these states because they make review
+more precise: a reader can distinguish an unavailable capability from an
+implemented but unqualified one, a mismatch from a non-comparable result, and
+a collected record from an admitted publication member. Trust comes from that
+specificity, not from presenting every route as complete.
+
+## Platform Responsibilities
+
+The family uses three different kinds of authority:
+
+- **control authority** decides which changes may enter governed repositories;
+- **standard authority** defines which cross-repository files and contracts are
+  canonical;
+- **product authority** decides what a runtime, API, dataset, scientific model,
+  or learning program means.
+
+Keeping those authorities separate prevents a shared template from silently
+becoming product policy, or a product repository from redefining family-wide
+governance for its own convenience.
+
+## Public Delivery
+
+This hub is published at `bijux.io`. Project documentation is published under
+stable paths such as `/bijux-core/`, `/bijux-canon/`, and `/bijux-atlas/`.
+Each destination owns its technical depth; the hub supplies cross-repository
+orientation and the shared shell supplies familiar navigation behavior.
+
+The publication path is itself governed:
+
+```mermaid
+flowchart LR
+    source["Reviewed source"] --> checks["Policy and standards checks"]
+    checks --> strict["Strict documentation build"]
+    strict --> bundle["Immutable Pages artifact"]
+    bundle --> pages["GitHub Pages deployment"]
+    pages --> domain["bijux.io"]
+```
+
+Read [Publication Integrity](01-platform/publication-integrity/index.md) for
+the exact boundary between what the pipeline verifies and what remains outside
+that proof.
+
+## Repository Catalog
+
+| Repository | Primary responsibility | Public destination |
+| --- | --- | --- |
+| `bijux-iac` | live GitHub governance for the repository family | [Control-plane overview](02-bijux-iac/index.md) |
+| `bijux-std` | shared files, checks, and documentation shell contracts | [Standards overview](03-bijux-std/index.md) |
+| `bijux.github.io` | cross-repository orientation and the root public site | this hub |
+| `bijux-core` | CLI, DAG, execution evidence, and runtime governance | [Bijux Core](04-projects/bijux-core/index.md) |
+| `bijux-canon` | ingest, indexing, retrieval, reasoning, orchestration, and controlled runtime acceptance | [Bijux Canon](04-projects/bijux-canon/index.md) |
+| `bijux-atlas` | versioned dataset, API, query, and operational delivery | [Bijux Atlas](04-projects/bijux-atlas/index.md) |
+| `bijux-gnss` | GNSS signal, receiver, navigation, positioning, and run evidence | [Bijux GNSS](04-projects/bijux-gnss/index.md) |
+| `bijux-proteomics` | evidence-oriented proteomics software and research workflows | [Bijux Proteomics](04-projects/bijux-proteomics/index.md) |
+| `bijux-pollenomics` | curated pollen evidence, reproducible analysis, maps, and reports | [Bijux Pollenomics](04-projects/bijux-pollenomics/index.md) |
+| `bijux-phylogenetics` | phylogenetics runtime, parity, reproducibility records, and claim-scoped evidence | [Bijux Phylogenetics](04-projects/bijux-phylogenetics/index.md) |
+| `bijux-genomics` | governed Rust genomics product with public documentation and packages still planned | no published product route yet |
+| `bijux-masterclass` | long-form engineering programs and executable capstones | [Learning](05-learning/index.md) |
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="04-projects/">Browse the repositories</a>
-<a class="md-button" href="01-platform/">Read the platform branch</a>
-<a class="md-button" href="02-bijux-iac/">Open the control plane</a>
-<a class="md-button" href="03-bijux-std/">Open the standards layer</a>
-<a class="md-button" href="#reading-paths">Choose a reading path</a>
+<a class="md-button md-button--primary" href="01-platform/">Understand the platform</a>
+<a class="md-button" href="04-projects/">Choose a project</a>
+<a class="md-button" href="01-platform/publication-integrity/">Inspect publication integrity</a>
+<a class="md-button" href="01-platform/operational-assurance/">Inspect operational assurance</a>
+<a class="md-button" href="05-learning/">Browse learning programs</a>
 </div>
-
-## Repository Family
-
-| Repository | Role in the system family | Public entry point |
-| --- | --- | --- |
-| `bijux-core` | execution and governance backbone | CLI, DAG, evidence, and release surfaces |
-| `bijux-canon` | knowledge-system stack | ingest, indexing, reasoning, orchestration, and controlled runtime behavior |
-| `bijux-atlas` | data and service delivery surface | APIs, datasets, reporting, and docs-aware operations |
-| `bijux-proteomics` | scientific product system | proteomics-oriented packages and runtime surfaces |
-| `bijux-pollenomics` | evidence mapping product system | Nordic atlas outputs, tracked data, and report publication |
-| `bijux-masterclass` | public learning surface | course books and long-form technical programs |
-| `bijux-std` | shared standards layer | shared docs shell, shared checks, and shared make modules |

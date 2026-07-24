@@ -4,50 +4,238 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-04-28
+last_reviewed: 2026-07-23
 ---
 
 # Shared Surfaces
 
-`bijux-std` becomes visible through the surfaces it exports into the
-repository family.
+`bijux-std` exports six managed packages through four capabilities. Together
+they define how consumers synchronize shared behavior, verify its identity,
+and extend it without losing product ownership.
 
-## Standards Surface Map
+## Capability Map
 
 ```mermaid
-graph TD
-    std["bijux-std"] --> shell["shared documentation shell"]
-    std --> makes["shared make behavior"]
-    std --> checks["shared checks and manifests"]
+flowchart TD
+    std["bijux-std"] --> common["common"]
+    std --> docs["docs"]
+    std --> python["python"]
+    std --> rust["rust"]
 
-    shell --> hub["bijux.github.io"]
-    shell --> masterclass["bijux-masterclass"]
-    shell --> projectdocs["project docs sites"]
+    common --> makes["bijux-makes"]
+    common --> checks["bijux-checks"]
+    common --> gh["bijux-gh"]
+    docs --> docs_pkg["bijux-docs"]
+    python --> py["bijux-makes-py"]
+    rust --> rs["bijux-makes-rs"]
 
-    makes --> python["python-oriented repositories"]
-    checks --> family["public repository family"]
+    makes --> consumer["Consumer repository"]
+    checks --> consumer
+    gh --> consumer
+    docs_pkg --> consumer
+    py --> consumer
+    rs --> consumer
 ```
 
-## Main Shared Surfaces
+## Common Foundation
 
-| Surface | What it gives the family | What remains local |
+The `common` capability is always installed.
+
+### Language-neutral Make contract
+
+`bijux-makes` provides stable entry points for help, environment guards,
+artifact containment, documentation execution, and gate composition. A
+consumer may add product-specific prerequisites, but should not silently change
+the meaning of a shared target.
+
+### Synchronization and checks
+
+`bijux-checks` resolves the selected capability set, stages remote content,
+validates directory digests, rejects unknown capabilities and layout drift,
+and emits standards reports under the consumer's `artifacts/` boundary.
+
+### GitHub governance sources
+
+`bijux-gh` contains canonical workflow, template, policy-script, and repository
+configuration sources. Typed manifests select and render consumer-specific
+outputs. The package declares expected repository behavior; `bijux-iac`
+separately applies live GitHub administration.
+
+## Documentation Capability
+
+`bijux-docs` supplies:
+
+- shared MkDocs header, footer, and family navigation;
+- styles, responsive layout primitives, icons, and theme behavior;
+- local Mermaid initialization and navigation scripts;
+- synchronization, source-of-truth, contract, and table checks;
+- viewport and navigation regression tooling in the standards source.
+
+Consumers own page content, local navigation, technical examples, and domain
+meaning. The documentation capability makes movement familiar; it does not
+standardize every handbook into one structure.
+
+## Python Capability
+
+`bijux-makes-py` composes Python-specific formatting, linting, testing,
+packaging, environment, and API-contract behavior. It supports repository
+consistency without deciding the consumer's package architecture, public API,
+or release eligibility.
+
+## Rust Capability
+
+`bijux-makes-rs` composes Cargo checks, nextest lanes, explicit slow-test
+selection, and pinned-source full-suite execution. Rust products still own
+their toolchain policy, crate architecture, benchmarks, operational tests, and
+release gates.
+
+## Consumer Layout
+
+Managed packages are vendored under `.bijux/shared/`. The exact directory set
+depends on declared capabilities. The consumer also keeps its capability and
+check configuration in `.bijux/checks.consumer.json` and records managed
+integrity in repository checksum manifests.
+
+A second root-level shared tree is not an alternate source. Layout validation
+rejects that ambiguity because two candidate authorities would make updates
+and audits unreliable.
+
+## Build-Time And Runtime Boundaries
+
+Shared packages are vendored repository infrastructure. They do not create a
+runtime control service.
+
+| Surface | When it acts | Network dependency after checkout |
 | --- | --- | --- |
-| shared documentation shell | common navigation, chrome, docs assets, and presentation continuity | repository-specific meaning, diagrams, and page content |
-| shared make behavior | repeated automation entry points where the workflow is mature enough to share | product logic, domain logic, and repository-specific commands |
-| shared checks and manifests | verifiable alignment for synchronized content and baseline repo discipline | repository-specific tests and product-specific gates |
+| Make contracts | local or CI command execution | none for vendored behavior; individual product commands may use networks |
+| standards checks | local or CI validation | canonical comparison may resolve the pinned source; local digest checks use vendored bytes |
+| GitHub workflows | GitHub Actions event execution | Actions and declared external services only |
+| documentation shell | build time and browser render time | shell, Mermaid, and visual assets are local to the published site |
+| capability update | explicit consumer refresh | requires access to the accepted `bijux-std` source revision |
 
-## Why These Surfaces Matter
+The absence of a central runtime dependency is deliberate. A consumer can
+build and inspect its selected standards snapshot without fetching presentation
+code or Make logic from `bijux.io`.
 
-These surfaces keep the family legible without collapsing it into one
-repository:
+## Verification Matrix
 
-- shared presentation signals continuity
-- shared commands reduce workflow drift
-- shared checks keep synchronization honest
-- local ownership remains intact where the work actually differs
+| Surface | Identity check | Contract check | Product check |
+| --- | --- | --- | --- |
+| shared directory | canonical directory digest | capability and layout validation | consumer gate composition |
+| generated GitHub file | managed-file checksum | manifest and renderer parity | repository policy workflow |
+| documentation shell | source/generated comparison | MkDocs and shell contract | local strict site build |
+| Make library | package digest | target semantics and contract tests | consumer-specific commands |
 
-## Continue Reading
+Each column matters. Identity without a contract only proves matching bytes;
+a contract without product checks cannot establish local correctness.
 
-- [Bijux Standards](../index.md)
-- [Promotion Model](../promotion-model/index.md)
-- [Documentation Network](../../01-platform/documentation-network/index.md)
+## Compatibility Surface
+
+Compatibility attaches to observable interfaces, not to package names alone.
+A package can retain its directory name while breaking a consumer through a
+changed target, workflow event, manifest field, generated path, or browser
+contract.
+
+| Interface | Compatibility question | Evidence boundary |
+| --- | --- | --- |
+| Make target | do invocation, prerequisites, outputs, and failure behavior retain their contract? | shared contract tests plus consumer command composition |
+| typed manifest | can the selected schema be parsed and rendered without guessing defaults? | schema or validator and renderer parity |
+| generated GitHub file | do event triggers, permissions, context names, and managed paths remain deliberate? | manifest output, policy checks, and consumer workflow validation |
+| documentation shell | do navigation hooks, assets, responsive behavior, and build integration remain valid? | shell contracts, strict consumer build, and relevant visual checks |
+| capability | does selection still resolve one coherent package set and remove excluded packages? | capability, layout, and digest validation |
+| report or artifact | do path, format, and meaning remain usable by the consumer that reads it? | producer contract and downstream parser or policy gate |
+
+An additive file is not necessarily an additive interface change: a new
+required check can block admission, and a new manifest default can alter every
+rendered consumer. Conversely, a large internal rewrite can remain compatible
+when all observable contracts and evidence stay stable.
+
+## Preserve Failure As A Machine Contract
+
+Automation must distinguish a contract refusal from an implementation failure
+and from incomplete evidence. Collapsing every condition into either success or
+a generic nonzero result forces downstream policy to guess whether retry,
+correction, or containment is safe.
+
+| Outcome class | Meaning to preserve | Unsafe interpretation |
+| --- | --- | --- |
+| accepted | declared contract and required evidence passed | every consumer product is correct |
+| refused | input, capability, layout, or policy is unsupported or invalid | transient infrastructure failure worth blind retry |
+| failed | the implementation could not complete its owned operation | consumer input is necessarily wrong |
+| incomplete | required source or evidence was unavailable or indeterminate | a weaker check may substitute silently |
+| held by consumer | shared contract passed but repository-owned gates did not | canonical standard is invalid for all consumers |
+
+The concrete encoding may be an exit code, report field, workflow conclusion,
+or artifact state, but it must be documented and tested at the consuming
+boundary. Logs may add diagnosis; they must not be the only place where a
+policy-relevant outcome can be recovered.
+
+## Compose Extensions Without Shadow Authority
+
+Consumer extensions should add product meaning at named extension points. They
+must not silently override a shared target, workflow context, generated path,
+environment variable, or artifact contract while continuing to claim the
+canonical behavior.
+
+| Collision surface | Safe composition evidence | Shadow-authority failure |
+| --- | --- | --- |
+| Make target | local target has a distinct name or documented prerequisite relationship | consumer redefines a shared target with different effects |
+| workflow check | product context has stable ownership and does not impersonate a managed policy context | two workflows can report the same required name with different semantics |
+| generated path | manifest owns the managed path and local output uses an explicitly local path | handwritten content competes with renderer output |
+| environment input | namespace, default, validation, secrecy, and precedence are declared | local variable changes shared behavior through an undocumented ambient value |
+| artifact or report | producer, schema, path, retention, and consumer are identifiable | local output overwrites a shared report with a different meaning |
+| documentation hook | shared interaction remains intact and local behavior is independently labeled and tested | page script depends on private shell structure or changes global navigation semantics |
+
+Composition checks should exercise both capabilities together and also verify
+removal. After a local extension is disabled, the canonical behavior should
+remain; after a managed interface is withdrawn, no local alias should continue
+to present the obsolete authority under a familiar name.
+
+## Keep Execution Environments Inside The Claim
+
+Shared commands run in developer workstations, CI runners, and sometimes
+restricted or offline contexts. Identical target names do not guarantee
+identical evidence when tools, network access, filesystem permissions, clocks,
+or platform architecture differ.
+
+The result should retain the relevant environment and dependency identities,
+whether the command used vendored or remote inputs, and which outputs were
+compared. A contract may deliberately support only a bounded environment; that
+limit is preferable to a portability claim inferred from one runner image.
+
+## Removal Boundary
+
+Removing a managed interface requires coordinated source and consumer work.
+The canonical change owns contract withdrawal, generator and manifest changes,
+digest updates, and detection of obsolete managed output. Each consumer owns
+the adoption diff, removal of product references, and local verification.
+
+Obsolete files must not survive as untracked alternatives to the new managed
+surface. Layout and checksum checks should make residual authority visible.
+The standards source can prove that the withdrawn interface is absent from its
+packages; only consumer adoption evidence can prove that a particular
+repository no longer carries or calls it.
+
+## Failure Ownership
+
+| Failure | Correct owner |
+| --- | --- |
+| canonical package digest is wrong | `bijux-std` package source and manifest |
+| consumer vendored bytes differ from the selected source | consumer adoption change |
+| generated GitHub file differs from its manifest output | canonical generator or manifest, then consumer refresh |
+| shared target semantics are incorrect everywhere | owning shared Make package |
+| shared target is correct but one product needs more gates | consumer-owned extension |
+| documentation shell behavior fails across sites | `bijux-docs` canonical source |
+| one site's content or navigation is wrong | destination repository |
+| live branch protection differs from declared governance | `bijux-iac` reconciliation path |
+
+The owner is selected by the failed invariant, not by the repository where the
+symptom was first observed.
+
+## Extension Boundary
+
+A consumer can compose shared mechanics with local behavior when ownership
+stays explicit. Atlas can add load and recovery gates; a scientific repository
+can add evidence and data-validation gates; Masterclass can add curriculum
+builds. Those extensions remain local unless their unchanged invariant later
+qualifies for the [Standards Adoption Model](../promotion-model/index.md).
