@@ -2,7 +2,8 @@
 
 BIJUX_STD_CHECK_SCRIPT ?= .bijux/shared/bijux-checks/check-bijux-std.sh
 BIJUX_STD_UPDATE_SCRIPT ?= .bijux/shared/bijux-checks/update-bijux-std.sh
-BIJUX_STD_REF ?= 50123ccb7600ede086c734f470bd5c4d369e04af
+BIJUX_STD_PIN_FILE ?= .github/standards/bijux-std.sha
+BIJUX_STD_REF ?= $(strip $(shell cat "$(BIJUX_STD_PIN_FILE)"))
 BIJUX_STD_GIT_URL ?= https://github.com/bijux/bijux-std.git
 BIJUX_STD_CAPABILITIES ?= docs python
 BIJUX_STD_UPDATE_CHANNEL ?= branch
