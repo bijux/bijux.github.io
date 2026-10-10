@@ -67,6 +67,12 @@ Do not hand-edit a synchronized mirror. Change the canonical source in
 `bijux-std`, accept that change, refresh this consumer from the exact commit,
 and validate the resulting managed diff.
 
+The shared link producer respects the authored destination, target, download,
+and referrer policy. Offsite links use normal browser navigation unless their
+markup explicitly requests a new tab; explicit new-tab links receive opener
+isolation and a visible warning. The hub does not impose a blanket new-tab
+script alongside the shared producer.
+
 ## Repository Layout
 
 | Path | Responsibility |
@@ -121,6 +127,12 @@ The build:
 
 No generated HTML belongs at the repository root or in committed source.
 
+Build and shell-check commands fetch the full tracked standards pin from the
+official GitHub repository into `artifacts/bijux-std/accepted-source`. They
+verify the clean source and origin before consuming it. An explicit
+`BIJUX_STD_ROOT` may select another independently fetched clean checkout at
+the same pin; an incidental sibling checkout is not a build input.
+
 ## Serve Locally
 
 ```bash
@@ -139,7 +151,10 @@ make docs-sanity
 
 The sanity target runs the Markdown table guard, synchronizes the shared shell,
 checks the shell contract and source-of-truth relationship, and completes a
-strict site build.
+strict site build. It then verifies the selected production bundle's routes,
+local resources, canonical URLs, sitemap and search index. Run that final
+verification separately with `make docs-verify`; the shared Pages workflow
+uses the equivalent `gh-docs-verify` entrypoint.
 
 Use the narrower standards checks when the managed snapshot changes:
 

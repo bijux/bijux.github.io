@@ -60,3 +60,8 @@ nav:
       - Overview: 05-learning/index.md
       - Reproducible Research: 05-learning/reproducible-research/index.md
       - Python Programming: 05-learning/python-programming/index.md
+exclude_docs: |
+  /overrides/
+  /hooks/
+  /assets/styles/README.md
+  /assets/javascripts/shell/README.md

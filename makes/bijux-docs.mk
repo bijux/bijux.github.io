@@ -12,6 +12,8 @@ BIJUX_DOCS_PYCACHE_DIR ?= $(BIJUX_DOCS_ARTIFACTS_DIR)/pycache
 BIJUX_DOCS_XDG_CACHE_DIR ?= $(BIJUX_DOCS_ARTIFACTS_DIR)/xdg_cache
 BIJUX_DOCS_HYPOTHESIS_DIR ?= $(BIJUX_DOCS_ARTIFACTS_DIR)/hypothesis
 BIJUX_DOCS_CONTRACT_VENV_DIR ?= $(BIJUX_DOCS_ARTIFACTS_DIR)/venv
+BIJUX_STD_ROOT ?= $(abspath artifacts/bijux-std/accepted-source)
+export BIJUX_STD_ROOT
 
 ifeq ($(strip $(UV_BIN)),)
 BIJUX_DOCS_CONTRACT_RUN = "$(PYTHON_BIN)"
@@ -19,15 +21,18 @@ else
 BIJUX_DOCS_CONTRACT_RUN = UV_PROJECT_ENVIRONMENT="$(BIJUX_DOCS_CONTRACT_VENV_DIR)" "$(UV_BIN)" run --with-requirements "$(DOCS_REQUIREMENTS)" python
 endif
 
-.PHONY: bijux-docs-sync bijux-docs-check shell-sync shell-check
+.PHONY: docs-standard-source bijux-docs-sync bijux-docs-check shell-sync shell-check
 
-bijux-docs-sync: ## Synchronize shared Bijux docs shell into docs assets
+docs-standard-source: ## Fetch and verify the exact accepted documentation standard
+	@bash scripts/docs/prepare-standard.sh
+
+bijux-docs-sync: docs-standard-source ## Synchronize shared Bijux docs shell into docs assets
 	@mkdir -p "$(BIJUX_DOCS_LOG_DIR)"
 	@bash -o pipefail -c 'bash "$(BIJUX_DOCS_SYNC_SCRIPT)" 2>&1 | tee "$(BIJUX_DOCS_LOG_DIR)/sync.log"'
 
-bijux-docs-check: ## Validate Bijux docs shell contract and drift checks
+bijux-docs-check: docs-standard-source ## Validate Bijux docs shell contract and drift checks
 	@mkdir -p "$(BIJUX_DOCS_LOG_DIR)" "$(BIJUX_DOCS_PYCACHE_DIR)" "$(BIJUX_DOCS_XDG_CACHE_DIR)" "$(BIJUX_DOCS_HYPOTHESIS_DIR)" "$(BIJUX_DOCS_CONTRACT_VENV_DIR)"
-	@PYTHONPYCACHEPREFIX="$(abspath $(BIJUX_DOCS_PYCACHE_DIR))" XDG_CACHE_HOME="$(abspath $(BIJUX_DOCS_XDG_CACHE_DIR))" HYPOTHESIS_STORAGE_DIRECTORY="$(abspath $(BIJUX_DOCS_HYPOTHESIS_DIR))" $(BIJUX_DOCS_CONTRACT_RUN) "$(BIJUX_DOCS_CONTRACT_GUARD)" . 2>&1 | tee "$(BIJUX_DOCS_LOG_DIR)/contract.log"
+	@bash -o pipefail -c 'PYTHONPYCACHEPREFIX="$(abspath $(BIJUX_DOCS_PYCACHE_DIR))" XDG_CACHE_HOME="$(abspath $(BIJUX_DOCS_XDG_CACHE_DIR))" HYPOTHESIS_STORAGE_DIRECTORY="$(abspath $(BIJUX_DOCS_HYPOTHESIS_DIR))" $(BIJUX_DOCS_CONTRACT_RUN) "$(BIJUX_DOCS_CONTRACT_GUARD)" . 2>&1 | tee "$(BIJUX_DOCS_LOG_DIR)/contract.log"'
 	@bash -o pipefail -c 'bash "$(BIJUX_DOCS_SOT_GUARD)" 2>&1 | tee "$(BIJUX_DOCS_LOG_DIR)/source-of-truth.log"'
 
 # Backward-compatible aliases.
