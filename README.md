@@ -179,6 +179,30 @@ make bijux-std-checks
 canonical source. Neither command replaces review of hub-owned content or
 destination accuracy.
 
+Every authored Mermaid fence must also produce a healthy SVG in the built
+site. Run the complete reader gate with Node 24.21.0 and `uv` installed:
+
+```bash
+make docs-reader-ci
+```
+
+The pinned Playwright 1.58.2 runtime checks every page in Chromium, Firefox,
+and WebKit, at phone and desktop widths in light and dark themes. It compares
+each rendered diagram with its authored source and rejects missing, empty,
+hidden, or error SVGs, fallback status text, retry controls, and browser errors.
+A blocked-renderer control proves that source disclosure cannot satisfy the
+rendering gate. Reports and failure screenshots stay under
+`artifacts/docs/readers/`; browser binaries, profiles, and npm caches also stay
+under `artifacts/`.
+
+The shared standards workflow runs the hub reader check on every pull request.
+The required `std / report` check succeeds only when the contracts job,
+including all three browser engines, succeeds. The Pages verification command
+runs the same check on the bundle before uploading it.
+Use `make docs-reader-check` to inspect an already built bundle, or set
+`DOCS_READER_BROWSERS=chromium` for a focused local check. Partial browser
+coverage does not replace the complete integration gate.
+
 ## Verify Accessible Reader Paths
 
 A strict build establishes document structure and route resolution; it does
