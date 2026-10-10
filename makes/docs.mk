@@ -26,7 +26,7 @@ else
   DOCS_RUN = XDG_CACHE_HOME="$(DOCS_CACHE_DIR)" UV_PROJECT_ENVIRONMENT="$(DOCS_VENV_DIR)" $(DOCS_ENV) "$(UV_BIN)" run --with-requirements "$(DOCS_REQUIREMENTS)" mkdocs
 endif
 
-.PHONY: docs docs-clean docs-require docs-serve docs-sanity docs-sync-root-icons
+.PHONY: docs docs-clean docs-require docs-serve docs-sanity docs-verify gh-docs-verify docs-sync-root-icons
 
 ##@ Documentation
 docs-require: ## Verify the documentation build inputs are present
@@ -60,6 +60,13 @@ docs-sanity: docs-require ## Run lightweight documentation sanity checks
 	@$(MAKE) bijux-docs-sync
 	@$(MAKE) bijux-docs-check
 	@$(MAKE) docs
+	@$(MAKE) docs-verify
+
+docs-verify: docs-standard-source ## Verify the exact production bundle, routes and search
+	@mkdir -p "$(BIJUX_DOCS_LOG_DIR)"
+	@bash -o pipefail -c 'DOCS_SITE_DIR="$(DOCS_SITE_DIR)" SITE_URL="$(SITE_URL)" DOCS_PYTHON="$(PYTHON_BIN)" bash .bijux/shared/bijux-docs/tooling/scripts/verify_bijux_docs_site.sh 2>&1 | tee "$(BIJUX_DOCS_LOG_DIR)/site-verification.log"'
+
+gh-docs-verify: docs-verify ## Verify the bundle selected by the shared Pages workflow
 
 docs-serve: docs-require ## Serve documentation locally with automatic reloads
 	@HOST=$${HOST:-$(DOCS_HOST)}; PORT=$${PORT:-$(DOCS_PORT)}; \
