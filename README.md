@@ -95,7 +95,10 @@ these canonical paths. The pinned redirects plugin maps former numbered paths
 to their corresponding pages through `mkdocs.yml`; keep those compatibility
 mappings when editing navigation so existing bookmarks continue to resolve.
 Redirects are generated build output and are excluded from the search index
-and sitemap.
+and sitemap. The shared redirect processor verifies the exact pinned plugin
+output before normalizing it to replace the browser history entry and preserve
+incoming anchors and the bounded search-highlight parameter. It records its
+evidence outside the published bundle.
 
 The hub answers a bounded set of cross-repository questions:
 
