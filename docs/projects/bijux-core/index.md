@@ -4,7 +4,7 @@ audience: mixed
 type: guide
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-23
+last_reviewed: 2026-10-10
 ---
 
 # Bijux Core
@@ -18,8 +18,8 @@ They share repository governance and release evidence. They do not share one
 executable or one installation contract.
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="https://bijux.io/bijux-core/">Open Core Documentation</a>
-<a class="md-button" href="https://bijux.io/bijux-core/bijux-cli/">Open The CLI Handbook</a>
+<a class="md-button md-button--primary" href="https://bijux.io/bijux-core/bijux-cli/operations/installation-and-setup/">Install The CLI</a>
+<a class="md-button" href="https://bijux.io/bijux-core/bijux-dag/operations/first-run-tutorial/">Run The DAG Tutorial</a>
 <a class="md-button" href="https://bijux.io/bijux-core/bijux-dag/">Open The DAG Handbook</a>
 <a class="md-button" href="https://github.com/bijux/bijux-core">View Source</a>
 </div>
@@ -28,8 +28,8 @@ executable or one installation contract.
 
 | Product | Use it for | Distribution boundary | Start here |
 | --- | --- | --- | --- |
-| `bijux` | mounted apps, plugins, layered configuration, diagnostics, history, memory, and REPL workflows | Rust crate and Python distribution; it does not install `bijux-dag` | [CLI handbook](https://bijux.io/bijux-core/bijux-cli/) |
-| `bijux-dag` | graph validation, planning, execution, evidence retention, cache explanation, replay, comparison, and verification | Rust crate family and command; it does not provide the `bijux` plugin or REPL runtime | [DAG handbook](https://bijux.io/bijux-core/bijux-dag/) |
+| `bijux` | mounted apps, plugins, layered configuration, diagnostics, history, memory, and REPL workflows | Rust crate and Python distribution; it does not install `bijux-dag` | [CLI installation](https://bijux.io/bijux-core/bijux-cli/operations/installation-and-setup/) |
+| `bijux-dag` | graph validation, planning, execution, evidence retention, cache explanation, replay, comparison, and verification | Rust crate family and command; it does not provide the `bijux` plugin or REPL runtime | [DAG installation](https://bijux.io/bijux-core/bijux-dag/operations/installation-and-setup/) and [first-run tutorial](https://bijux.io/bijux-core/bijux-dag/operations/first-run-tutorial/) |
 
 The private `bijux-dev` control plane generates and checks repository evidence.
 It is maintainer tooling, not a third public runtime.
