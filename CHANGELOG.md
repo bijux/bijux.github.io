@@ -5,6 +5,8 @@ Changes after [v0.3.1](https://github.com/bijux/bijux.github.io/tree/v0.3.1) rem
 
 ## Unreleased
 
+- Preserve one primary homepage heading and direct CLI installation and DAG tutorial links.
+
 - [#84](https://github.com/bijux/bijux.github.io/pull/84) isolates browser diagnostics by page so cancelled requests from a departed
   document cannot contaminate the next diagram case.
 

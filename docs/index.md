@@ -4,19 +4,27 @@ audience: mixed
 type: index
 status: canonical
 owner: bijux-docs
-last_reviewed: 2026-07-23
+last_reviewed: 2026-10-10
 ---
 
 # Bijux
 
 <section class="bijux-hero">
   <div class="bijux-hero__eyebrow">governed software, scientific systems, and engineering education</div>
-  <h1 class="bijux-hero__title">Bijux builds systems whose authority, evidence, and delivery boundaries remain visible.</h1>
+  <p class="bijux-hero__title">Software, science, and learning.</p>
   <p class="bijux-hero__lede">
-    This hub connects family governance, runtime and knowledge foundations,
-    delivered products, and learning programs.
+    This hub connects family governance, runtime foundations,
+    delivered products, and engineering learning.
   </p>
 </section>
+
+<div class="bijux-quicklinks">
+<a class="md-button md-button--primary" href="https://bijux.io/bijux-core/bijux-cli/operations/installation-and-setup/">Install the CLI</a>
+<a class="md-button" href="https://bijux.io/bijux-core/bijux-dag/operations/first-run-tutorial/">DAG first-run tutorial</a>
+</div>
+
+Bijux builds systems whose authority, evidence, and delivery boundaries remain
+visible.
 
 Bijux is a family of independently owned repositories. The separation is
 deliberate: GitHub governance, shared standards, runtime execution, knowledge
@@ -31,6 +39,8 @@ recognizable route from source to delivered output.
 
 | Your question | Begin with | You will learn |
 | --- | --- | --- |
+| How do I install and use the command runtime? | [Install the CLI](https://bijux.io/bijux-core/bijux-cli/operations/installation-and-setup/) | choose one distribution and verify the installed command |
+| How do I run a local workflow and inspect its evidence? | [DAG first-run tutorial](https://bijux.io/bijux-core/bijux-dag/operations/first-run-tutorial/) | prepare a checkout, run the checked-in example, and inspect retained results |
 | How is the repository family governed? | [Bijux Infrastructure-as-Code](infrastructure/index.md) | where live GitHub policy is declared, reviewed, and applied |
 | Which behavior is shared across repositories? | [Bijux Standards](standards/index.md) | how common files, checks, and documentation behavior are promoted and verified |
 | How do all repositories fit together? | [System Map](platform/system-map/index.md) | which repository owns each authority and where dependencies cross boundaries |
