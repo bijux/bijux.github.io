@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 import subprocess
 
-from scripts.project_bijux_docs import published_bytes, source_context
+from scripts.project_bijux_docs import committed_prior_pin, published_bytes, source_context
 
 PIN = '.github/standards/bijux-std.sha'
 BASELINE = 'bijux-docs/config/mkdocs-baseline.json'
@@ -30,7 +30,6 @@ LEGACY_SOURCE_PATHS = frozenset({
     'bijux-docs/scripts/bootstrap.js',
     'bijux-docs/scripts/nav-sync.js',
 })
-SHA = re.compile(r'[a-f0-9]{40}\Z')
 
 
 def git(root: Path, *arguments: str) -> str:
@@ -96,21 +95,8 @@ def prior_javascript(repository: Path, shared: Path) -> tuple[str, ...] | None:
     if os.environ.get('BIJUX_DOCS_SOURCE_MODE') != 'accepted-github':
         return None
     context = source_context()
-    root = repository.resolve()
-    if git(root, 'rev-parse', '--show-toplevel') != str(root):
-        raise RuntimeError('Prior asset authority: explicit consumer repository root is required')
-    pin = root / PIN
-    if any(path.is_symlink() for path in (pin, pin.parent, pin.parent.parent)) or not pin.is_file():
-        raise RuntimeError('Prior asset authority: regular working standard pin is required')
-    if pin.read_text().strip() != context['sha']:
-        raise RuntimeError('Prior asset authority: working standard pin differs from accepted source')
-    committed = git(root, 'ls-tree', 'HEAD', '--', PIN)
-    if not re.fullmatch(r'100644 blob [a-f0-9]{40}\t' + re.escape(PIN), committed):
-        raise RuntimeError('Prior asset authority: committed regular standard pin is required')
-    previous = git(root, 'show', 'HEAD:' + PIN)
-    if not SHA.fullmatch(previous):
-        raise RuntimeError('Prior asset authority: committed exact previous standard pin is required')
-    if previous == context['sha']:
+    previous = committed_prior_pin(repository, context, git)
+    if previous is None:
         return None
     authority(context)
     current = published_bytes(context, context['sha'], BASELINE)
