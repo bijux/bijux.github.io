@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Isolate browser pages and diagnostics for each rendered diagram case so
+  requests cancelled during page disposal stay attributed to their owning page.
+
 - [#83](https://github.com/bijux/bijux.github.io/pull/83) repairs Mermaid node
   identifiers, checks every authored diagram in three browser engines across
   themes and viewport widths, and requires rendered verification before

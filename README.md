@@ -193,6 +193,8 @@ The pinned Playwright 1.58.2 runtime checks every page in Chromium, Firefox,
 and WebKit, at phone and desktop widths in light and dark themes. It compares
 each rendered diagram with its authored source and rejects missing, empty,
 hidden, or error SVGs, fallback status text, retry controls, and browser errors.
+Each page case owns a separate browser page and its diagnostics, keeping
+request cancellation during page disposal within that case.
 A blocked-renderer control proves that source disclosure cannot satisfy the
 rendering gate. Reports and failure screenshots stay under
 `artifacts/docs/readers/`; browser binaries, profiles, and npm caches also stay

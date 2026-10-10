@@ -110,30 +110,32 @@ async function audit(engine) {
     for (const width of [390, 1280]) for (const theme of ['light', 'dark']) {
       const context = await browser.newContext({ viewport: { width, height: 900 }, colorScheme: theme });
       try {
-        const page = await context.newPage();
-        let errors = [];
-        page.on('pageerror', error => errors.push(String(error)));
-        page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
-        page.on('response', response => { if (response.url().startsWith(origin) && response.status() >= 400) errors.push(`${response.status()} ${response.url()}`); });
-        page.on('requestfailed', request => { if (request.url().startsWith(origin)) errors.push(`${request.url()}: ${request.failure()?.errorText}`); });
         for (const entry of pages) {
-          errors = [];
-          let result;
+          // A page owns its diagnostics, including requests cancelled when it closes.
+          const page = await context.newPage();
+          const errors = [];
+          page.on('pageerror', error => errors.push(String(error)));
+          page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
+          page.on('response', response => { if (response.url().startsWith(origin) && response.status() >= 400) errors.push(`${response.status()} ${response.url()}`); });
+          page.on('requestfailed', request => { if (request.url().startsWith(origin)) errors.push(`${request.url()}: ${request.failure()?.errorText}`); });
           try {
-            result = await inspect(page, entry);
-            const palette = await page.locator('body').getAttribute('data-md-color-scheme');
-            assert.equal(palette, theme === 'dark' ? 'slate' : 'default', 'requested theme was not applied');
-          } catch (error) {
-            result = { failures: [String(error)], diagrams: [] };
-          }
-          result.failures.push(...errors);
-          const record = { file: entry.file, route: entry.route, width, theme, ...result };
-          records.push(record);
-          if (result.failures.length) {
-            failures.push(record);
-            console.error(`${engine} ${width} ${theme} ${entry.file}: ${result.failures.join('; ')}`);
-            await page.screenshot({ path: path.join(reports, `${engine}-${width}-${theme}-${entry.file.replaceAll('/', '_')}.png`), fullPage: true });
-          }
+            let result;
+            try {
+              result = await inspect(page, entry);
+              const palette = await page.locator('body').getAttribute('data-md-color-scheme');
+              assert.equal(palette, theme === 'dark' ? 'slate' : 'default', 'requested theme was not applied');
+            } catch (error) {
+              result = { failures: [String(error)], diagrams: [] };
+            }
+            result.failures.push(...errors);
+            const record = { file: entry.file, route: entry.route, width, theme, ...result };
+            records.push(record);
+            if (result.failures.length) {
+              failures.push(record);
+              console.error(`${engine} ${width} ${theme} ${entry.file}: ${result.failures.join('; ')}`);
+              await page.screenshot({ path: path.join(reports, `${engine}-${width}-${theme}-${entry.file.replaceAll('/', '_')}.png`), fullPage: true });
+            }
+          } finally { await page.close(); }
         }
       } finally { await context.close(); }
     }
