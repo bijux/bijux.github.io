@@ -376,6 +376,6 @@ search engines, acquisition modes, or experimental designs. It does not
 convert execution success into biological truth, or advisory output into
 clinical or autonomous authority.
 
-Continue with [Applied Domains](../../01-platform/applied-domains/index.md) for
-the wider scientific evidence model or [Operational Assurance](../../01-platform/operational-assurance/index.md)
+Continue with [Applied Domains](../../platform/applied-domains/index.md) for
+the wider scientific evidence model or [Operational Assurance](../../platform/operational-assurance/index.md)
 to compare run evidence with delivery and recovery qualification.

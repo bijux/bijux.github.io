@@ -284,10 +284,10 @@ or underreact because the original repository is green again.
 
 | Intent | Route |
 | --- | --- |
-| inspect governance | [Infrastructure-as-Code](../../02-bijux-iac/index.md) |
-| inspect shared standards | [Bijux Standards](../../03-bijux-std/index.md) |
-| inspect execution | [Bijux Core](../../04-projects/bijux-core/index.md) |
-| inspect knowledge processing | [Bijux Canon](../../04-projects/bijux-canon/index.md) |
-| inspect service and dataset delivery | [Bijux Atlas](../../04-projects/bijux-atlas/index.md) |
+| inspect governance | [Infrastructure-as-Code](../../infrastructure/index.md) |
+| inspect shared standards | [Bijux Standards](../../standards/index.md) |
+| inspect execution | [Bijux Core](../../projects/bijux-core/index.md) |
+| inspect knowledge processing | [Bijux Canon](../../projects/bijux-canon/index.md) |
+| inspect service and dataset delivery | [Bijux Atlas](../../projects/bijux-atlas/index.md) |
 | inspect scientific systems | [Applied Domains](../applied-domains/index.md) |
 | inspect public documentation delivery | [Publication Integrity](../publication-integrity/index.md) |

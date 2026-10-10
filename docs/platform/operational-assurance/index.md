@@ -267,11 +267,11 @@ blocking.
 
 ## Where To Inspect The Evidence
 
-- [Bijux Core](../../04-projects/bijux-core/index.md) connects DAG execution to
+- [Bijux Core](../../projects/bijux-core/index.md) connects DAG execution to
   run manifests, node traces, artifact identity, replay, and isolation limits.
-- [Bijux Canon](../../04-projects/bijux-canon/index.md) connects knowledge
+- [Bijux Canon](../../projects/bijux-canon/index.md) connects knowledge
   processing to ingest, index, retrieval, decision, and runtime evidence.
-- [Bijux Atlas](../../04-projects/bijux-atlas/index.md) connects datasets and
+- [Bijux Atlas](../../projects/bijux-atlas/index.md) connects datasets and
   APIs to rollout, load, telemetry, authorization, and recovery boundaries.
 - [Publication Integrity](../publication-integrity/index.md) defines what the
   root-site deployment path verifies.

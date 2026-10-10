@@ -31,14 +31,14 @@ recognizable route from source to delivered output.
 
 | Your question | Begin with | You will learn |
 | --- | --- | --- |
-| How is the repository family governed? | [Bijux Infrastructure-as-Code](02-bijux-iac/index.md) | where live GitHub policy is declared, reviewed, and applied |
-| Which behavior is shared across repositories? | [Bijux Standards](03-bijux-std/index.md) | how common files, checks, and documentation behavior are promoted and verified |
-| How do all repositories fit together? | [System Map](01-platform/system-map/index.md) | which repository owns each authority and where dependencies cross boundaries |
-| How are outputs published? | [Delivery Surfaces](01-platform/delivery-surfaces/index.md) | how sites, packages, datasets, APIs, and evidence reach users |
-| How is operational readiness demonstrated? | [Operational Assurance](01-platform/operational-assurance/index.md) | how load, observation, recovery, and release evidence qualify a bounded surface |
-| Where are security boundaries enforced? | [Security Model](01-platform/security-model/index.md) | how repository, runtime, service, data, and publication controls differ |
-| Which product should I inspect? | [Projects](04-projects/index.md) | the question, inputs, outputs, and proof surface for each project |
-| Where is the engineering taught? | [Learning](05-learning/index.md) | programs grounded in runnable workflows and design judgment |
+| How is the repository family governed? | [Bijux Infrastructure-as-Code](infrastructure/index.md) | where live GitHub policy is declared, reviewed, and applied |
+| Which behavior is shared across repositories? | [Bijux Standards](standards/index.md) | how common files, checks, and documentation behavior are promoted and verified |
+| How do all repositories fit together? | [System Map](platform/system-map/index.md) | which repository owns each authority and where dependencies cross boundaries |
+| How are outputs published? | [Delivery Surfaces](platform/delivery-surfaces/index.md) | how sites, packages, datasets, APIs, and evidence reach users |
+| How is operational readiness demonstrated? | [Operational Assurance](platform/operational-assurance/index.md) | how load, observation, recovery, and release evidence qualify a bounded surface |
+| Where are security boundaries enforced? | [Security Model](platform/security-model/index.md) | how repository, runtime, service, data, and publication controls differ |
+| Which product should I inspect? | [Projects](projects/index.md) | the question, inputs, outputs, and proof surface for each project |
+| Where is the engineering taught? | [Learning](learning/index.md) | programs grounded in runnable workflows and design judgment |
 
 ## Reach The Same Meaning Through More Than One Path
 
@@ -139,7 +139,7 @@ flowchart TB
 
 Arrows describe a dependency or delivery relationship, not ownership. For
 example, `bijux-std` exports common standards into consumers, but it does not
-own their product meaning. The [System Map](01-platform/system-map/index.md)
+own their product meaning. The [System Map](platform/system-map/index.md)
 describes these distinctions in detail.
 
 ## Identify The System You Actually Observed
@@ -280,13 +280,13 @@ flowchart RL
 
 | If the dispute concerns | First identity to recover | Continue with |
 | --- | --- | --- |
-| whether a change was admitted correctly | repository, revision, policy context, and approval state | [Infrastructure-as-Code](02-bijux-iac/index.md) |
-| whether shared controls are current | consumer pin, capability set, canonical digest, and managed checksum | [Standards](03-bijux-std/index.md) |
-| whether the public page is the intended revision | source revision, Pages artifact, deployment, and domain response | [Publication Integrity](01-platform/publication-integrity/index.md) |
-| whether a service returned the intended dataset | dataset generation, software and configuration identity, request or scenario | [Atlas](04-projects/bijux-atlas/index.md) |
-| whether a GNSS result survived the right population | capture, configuration, stage ledger, reference denominator, and manifest | [GNSS](04-projects/bijux-gnss/index.md) |
-| whether a map member is evidence-backed | product member, manifest, curation decision, evidence revision, and source | [Pollenomics](04-projects/bijux-pollenomics/index.md) |
-| whether a phylogenetic statement is supported | claim identifier, required observations, checks, verdict, and freshness | [Phylogenetics](04-projects/bijux-phylogenetics/index.md) |
+| whether a change was admitted correctly | repository, revision, policy context, and approval state | [Infrastructure-as-Code](infrastructure/index.md) |
+| whether shared controls are current | consumer pin, capability set, canonical digest, and managed checksum | [Standards](standards/index.md) |
+| whether the public page is the intended revision | source revision, Pages artifact, deployment, and domain response | [Publication Integrity](platform/publication-integrity/index.md) |
+| whether a service returned the intended dataset | dataset generation, software and configuration identity, request or scenario | [Atlas](projects/bijux-atlas/index.md) |
+| whether a GNSS result survived the right population | capture, configuration, stage ledger, reference denominator, and manifest | [GNSS](projects/bijux-gnss/index.md) |
+| whether a map member is evidence-backed | product member, manifest, curation decision, evidence revision, and source | [Pollenomics](projects/bijux-pollenomics/index.md) |
+| whether a phylogenetic statement is supported | claim identifier, required observations, checks, verdict, and freshness | [Phylogenetics](projects/bijux-phylogenetics/index.md) |
 
 If the chain stops, report the last established boundary and the missing next
 record. Do not replace missing identity with a screenshot, a later success, or
@@ -364,7 +364,7 @@ flowchart LR
     pages --> domain["bijux.io"]
 ```
 
-Read [Publication Integrity](01-platform/publication-integrity/index.md) for
+Read [Publication Integrity](platform/publication-integrity/index.md) for
 the exact boundary between what the pipeline verifies and what remains outside
 that proof.
 
@@ -372,23 +372,23 @@ that proof.
 
 | Repository | Primary responsibility | Public destination |
 | --- | --- | --- |
-| `bijux-iac` | live GitHub governance for the repository family | [Control-plane overview](02-bijux-iac/index.md) |
-| `bijux-std` | shared files, checks, and documentation shell contracts | [Standards overview](03-bijux-std/index.md) |
+| `bijux-iac` | live GitHub governance for the repository family | [Control-plane overview](infrastructure/index.md) |
+| `bijux-std` | shared files, checks, and documentation shell contracts | [Standards overview](standards/index.md) |
 | `bijux.github.io` | cross-repository orientation and the root public site | this hub |
-| `bijux-core` | CLI, DAG, execution evidence, and runtime governance | [Bijux Core](04-projects/bijux-core/index.md) |
-| `bijux-canon` | ingest, indexing, retrieval, reasoning, orchestration, and controlled runtime acceptance | [Bijux Canon](04-projects/bijux-canon/index.md) |
-| `bijux-atlas` | versioned dataset, API, query, and operational delivery | [Bijux Atlas](04-projects/bijux-atlas/index.md) |
-| `bijux-gnss` | GNSS signal, receiver, navigation, positioning, and run evidence | [Bijux GNSS](04-projects/bijux-gnss/index.md) |
-| `bijux-proteomics` | evidence-oriented proteomics software and research workflows | [Bijux Proteomics](04-projects/bijux-proteomics/index.md) |
-| `bijux-pollenomics` | curated pollen evidence, reproducible analysis, maps, and reports | [Bijux Pollenomics](04-projects/bijux-pollenomics/index.md) |
-| `bijux-phylogenetics` | phylogenetics runtime, parity, reproducibility records, and claim-scoped evidence | [Bijux Phylogenetics](04-projects/bijux-phylogenetics/index.md) |
+| `bijux-core` | CLI, DAG, execution evidence, and runtime governance | [Bijux Core](projects/bijux-core/index.md) |
+| `bijux-canon` | ingest, indexing, retrieval, reasoning, orchestration, and controlled runtime acceptance | [Bijux Canon](projects/bijux-canon/index.md) |
+| `bijux-atlas` | versioned dataset, API, query, and operational delivery | [Bijux Atlas](projects/bijux-atlas/index.md) |
+| `bijux-gnss` | GNSS signal, receiver, navigation, positioning, and run evidence | [Bijux GNSS](projects/bijux-gnss/index.md) |
+| `bijux-proteomics` | evidence-oriented proteomics software and research workflows | [Bijux Proteomics](projects/bijux-proteomics/index.md) |
+| `bijux-pollenomics` | curated pollen evidence, reproducible analysis, maps, and reports | [Bijux Pollenomics](projects/bijux-pollenomics/index.md) |
+| `bijux-phylogenetics` | phylogenetics runtime, parity, reproducibility records, and claim-scoped evidence | [Bijux Phylogenetics](projects/bijux-phylogenetics/index.md) |
 | `bijux-genomics` | governed Rust genomics product with public documentation and packages still planned | no published product route yet |
-| `bijux-masterclass` | long-form engineering programs and executable capstones | [Learning](05-learning/index.md) |
+| `bijux-masterclass` | long-form engineering programs and executable capstones | [Learning](learning/index.md) |
 
 <div class="bijux-quicklinks">
-<a class="md-button md-button--primary" href="01-platform/">Understand the platform</a>
-<a class="md-button" href="04-projects/">Choose a project</a>
-<a class="md-button" href="01-platform/publication-integrity/">Inspect publication integrity</a>
-<a class="md-button" href="01-platform/operational-assurance/">Inspect operational assurance</a>
-<a class="md-button" href="05-learning/">Browse learning programs</a>
+<a class="md-button md-button--primary" href="platform/">Understand the platform</a>
+<a class="md-button" href="projects/">Choose a project</a>
+<a class="md-button" href="platform/publication-integrity/">Inspect publication integrity</a>
+<a class="md-button" href="platform/operational-assurance/">Inspect operational assurance</a>
+<a class="md-button" href="learning/">Browse learning programs</a>
 </div>

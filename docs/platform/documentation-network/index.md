@@ -255,7 +255,7 @@ smooth navigation experience by copying stale technical content into the hub.
 
 ## Follow The Network
 
-Start at [Projects](../../04-projects/index.md) when you know the product
+Start at [Projects](../../projects/index.md) when you know the product
 question, [System Map](../system-map/index.md) when you need dependency context,
 or [Publication Integrity](../publication-integrity/index.md) when you need the
 root-site delivery chain.

@@ -271,5 +271,5 @@ skill is not remembering three command languages. It is recognizing graph,
 state, publication, and recovery contracts wherever they appear.
 
 Return to [Learning](../index.md) to compare program families, or continue to
-[Operational Assurance](../../01-platform/operational-assurance/index.md) to
+[Operational Assurance](../../platform/operational-assurance/index.md) to
 see how the same evidence principles qualify delivered systems.
