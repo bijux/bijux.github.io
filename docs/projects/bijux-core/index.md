@@ -42,7 +42,7 @@ planned, executed, consumed, produced, cached, or promoted.
 
 ```mermaid
 flowchart LR
-    graph["Authored graph"] --> validate["Validate and canonicalize"]
+    authored_graph["Authored graph"] --> validate["Validate and canonicalize"]
     validate --> plan["Lowered execution plan"]
     plan --> execute["Backend execution"]
     execute --> nodes["Node traces and attempts"]
@@ -286,7 +286,7 @@ flowchart RL
     output["Output digest"] --> producer["Producer node + attempt"]
     producer --> execution["Execution fingerprint"]
     execution --> plan["Planner fingerprint"]
-    plan --> graph["Graph fingerprint"]
+    plan --> graph_identity["Graph fingerprint"]
     producer --> reuse["Cache, resume, or retry decision"]
     execution --> environment["Declared environment + backend"]
 ```

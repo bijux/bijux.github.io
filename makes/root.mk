@@ -3,10 +3,11 @@ ROOT_MAKEFILE_DIR := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
 include $(ROOT_MAKEFILE_DIR)/bijux-docs.mk
 include $(ROOT_MAKEFILE_DIR)/bijux-std.mk
 include $(ROOT_MAKEFILE_DIR)/docs.mk
+include $(ROOT_MAKEFILE_DIR)/docs-readers.mk
 
 .PHONY: help
 
 ##@ Repository
 help: ## Show available repository commands
 	@awk 'BEGIN {FS = ":.*## "}; /^[a-zA-Z0-9_.-]+:.*## / {printf "%-18s %s\n", $$1, $$2}' \
-	  "$(ROOT_MAKEFILE_DIR)/bijux-docs.mk" "$(ROOT_MAKEFILE_DIR)/bijux-std.mk" "$(ROOT_MAKEFILE_DIR)/docs.mk" "$(CURDIR)/Makefile"
+	  "$(ROOT_MAKEFILE_DIR)/bijux-docs.mk" "$(ROOT_MAKEFILE_DIR)/bijux-std.mk" "$(ROOT_MAKEFILE_DIR)/docs.mk" "$(ROOT_MAKEFILE_DIR)/docs-readers.mk" "$(CURDIR)/Makefile"

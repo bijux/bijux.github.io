@@ -16,6 +16,8 @@ REPLACEMENT = 'zi=document.forms.namedItem("search")?window.bijuxSearchIndex.obs
 WORKER_REPLACEMENT = 'function Ei(e,t){let r=window.bijuxSearchWorker.channel(e,T);'
 FRAGMENT_SCROLL_BOUNDARY = 'function gn(e){let t=x("a",{href:e});t.addEventListener("click",r=>r.stopPropagation()),t.click()}'
 FRAGMENT_SCROLL_REPLACEMENT = 'function gn(e){__bijuxScrollCurrentFragment(e)}'
+VIEWPORT_HISTORY_BOUNDARY = 'r.pipe(ne("offset"),Ae(100)).subscribe(({offset:a})=>{history.replaceState(a,"")})'
+VIEWPORT_HISTORY_REPLACEMENT = '__bijuxWatchViewportHistory(()=>r.pipe(ne("offset"),Ae(100)))'
 
 GLOBAL_CHARACTER_SHORTCUTS = ',r.pipe(g(({mode:c})=>c==="global")).subscribe(c=>{switch(c.type){case"f":case"s":case"/":i.focus(),i.select(),c.claim();break}});'
 
@@ -90,10 +92,14 @@ def compile_runtime(templates: Path, installed_version: str) -> tuple[str, bytes
         raise ValueError('Native fragment restoration boundary must occur exactly once')
     fragment_scroll = (OWNED / 'fragment-restoration.js').read_bytes()
     modified = modified.replace(FRAGMENT_SCROLL_BOUNDARY, FRAGMENT_SCROLL_REPLACEMENT)
+    if original.count(VIEWPORT_HISTORY_BOUNDARY) != 1 or '__bijuxWatchViewportHistory' in original:
+        raise ValueError('Native viewport history boundary must occur exactly once')
+    viewport_history = (OWNED / 'viewport-history.js').read_bytes()
+    modified = modified.replace(VIEWPORT_HISTORY_BOUNDARY, VIEWPORT_HISTORY_REPLACEMENT)
     resize = (OWNED / 'element-resize-delivery.js').read_bytes()
     modified = modified.replace(resize_needle, resize_replacement)
     navigation = (OWNED / 'search-capability-boundary.js').read_bytes()
-    modified = modified.replace(renderer_needle, renderer_replacement).replace(opening, opening + navigation.decode() + resize.decode() + fragment_scroll.decode())
+    modified = modified.replace(renderer_needle, renderer_replacement).replace(opening, opening + navigation.decode() + resize.decode() + fragment_scroll.decode() + viewport_history.decode())
     modified, maps = re.subn(r'(?m)^//# sourceMappingURL=.*(?:\n|$)', '', modified)
     if maps != 1:
         raise ValueError('Expected exactly one upstream source-map annotation')
@@ -115,6 +121,9 @@ def compile_runtime(templates: Path, installed_version: str) -> tuple[str, bytes
         'fragment_restoration_owned_source': 'tooling/material/fragment-restoration.js',
         'fragment_restoration_sha256': sha256(fragment_scroll),
         'fragment_restoration_boundary': {'original': FRAGMENT_SCROLL_BOUNDARY, 'replacement': FRAGMENT_SCROLL_REPLACEMENT, 'occurrences': 1, 'behavior': 'Scroll only the fragment of the current native history entry; do not queue a redundant native anchor navigation.'},
+        'viewport_history_owned_source': 'tooling/material/viewport-history.js',
+        'viewport_history_sha256': sha256(viewport_history),
+        'viewport_history_boundary': {'original': VIEWPORT_HISTORY_BOUNDARY, 'replacement': VIEWPORT_HISTORY_REPLACEMENT, 'occurrences': 1, 'behavior': 'Cancel pending native viewport debounce work on cross-document departure and pagehide; recreate the subscription on trusted persisted pageshow. Preserve foreign object history state keys while saving native x/y.'},
         'element_resize_owned_source': 'tooling/material/element-resize-delivery.js',
         'element_resize_sha256': sha256(resize),
         'element_resize_boundary': {'original': resize_needle, 'replacement': resize_replacement, 'occurrences': 1, 'helper_scope': 'admitted native IIFE; no global observer or error interception'},

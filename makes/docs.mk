@@ -13,6 +13,9 @@ SITE_URL             ?= https://bijux.io/
 DOCS_ENV             :=
 PYTHON_BIN           ?= $(shell command -v python3 2>/dev/null)
 TABLE_GUARD          ?= .bijux/shared/bijux-docs/tooling/quality/markdown_table_guard.py
+DOCS_REDIRECT_PROCESSOR ?= .bijux/shared/bijux-docs/security/redirects.py
+DOCS_REDIRECT_REPORT  ?= artifacts/website-security/redirects.json
+DOCS_PUBLIC_ROUTE_REPORT ?= artifacts/docs/readers/public-routes.json
 SITE_ICONS_DIR       ?= docs/assets/site-icons
 ROOT_COMPAT_ICONS    ?= favicon.ico apple-touch-icon.png apple-touch-icon-precomposed.png
 
@@ -26,7 +29,7 @@ else
   DOCS_RUN = XDG_CACHE_HOME="$(DOCS_CACHE_DIR)" UV_PROJECT_ENVIRONMENT="$(DOCS_VENV_DIR)" $(DOCS_ENV) "$(UV_BIN)" run --with-requirements "$(DOCS_REQUIREMENTS)" mkdocs
 endif
 
-.PHONY: docs docs-clean docs-require docs-serve docs-sanity docs-verify gh-docs-verify docs-sync-root-icons
+.PHONY: docs docs-clean docs-require docs-serve docs-sanity docs-verify docs-public-routes gh-docs-verify docs-sync-root-icons
 
 ##@ Documentation
 docs-require: ## Verify the documentation build inputs are present
@@ -35,6 +38,7 @@ docs-require: ## Verify the documentation build inputs are present
 	@test -n "$(DOCS_RUN)" || (echo "ERROR: install uv or mkdocs to build docs" && exit 1)
 	@test -n "$(PYTHON_BIN)" || (echo "ERROR: install python3 for docs sanity checks" && exit 1)
 	@test -f "$(TABLE_GUARD)" || (echo "ERROR: missing $(TABLE_GUARD)" && exit 1)
+	@test -f "$(DOCS_REDIRECT_PROCESSOR)" || (echo "ERROR: missing $(DOCS_REDIRECT_PROCESSOR)" && exit 1)
 	@test -f "$(BIJUX_DOCS_SYNC_SCRIPT)" || (echo "ERROR: missing $(BIJUX_DOCS_SYNC_SCRIPT)" && exit 1)
 	@test -f "$(BIJUX_DOCS_SOT_GUARD)" || (echo "ERROR: missing $(BIJUX_DOCS_SOT_GUARD)" && exit 1)
 	@test -f "$(BIJUX_DOCS_CONTRACT_GUARD)" || (echo "ERROR: missing $(BIJUX_DOCS_CONTRACT_GUARD)" && exit 1)
@@ -51,6 +55,7 @@ docs: docs-clean docs-require bijux-docs-sync ## Build documentation into artifa
 	@echo "Building documentation"
 	@mkdir -p "$(DOCS_CACHE_DIR)" "$(DOCS_VENV_DIR)"
 	@SITE_URL="$(SITE_URL)" $(DOCS_RUN) build --strict --config-file "$(MKDOCS_CFG)" --site-dir "$(DOCS_SITE_DIR)"
+	@XDG_CACHE_HOME="$(DOCS_CACHE_DIR)" $(BIJUX_DOCS_CONTRACT_RUN) "$(DOCS_REDIRECT_PROCESSOR)" --config "$(MKDOCS_CFG)" --site-dir "$(DOCS_SITE_DIR)" --site-url "$(SITE_URL)" --output "$(DOCS_REDIRECT_REPORT)"
 	@$(MAKE) docs-sync-root-icons
 	@if test -f CNAME; then cp CNAME "$(DOCS_SITE_DIR)/CNAME"; fi
 	@echo "Documentation build complete"
@@ -65,6 +70,11 @@ docs-sanity: docs-require ## Run lightweight documentation sanity checks
 docs-verify: docs-standard-source ## Verify the exact production bundle, routes and search
 	@mkdir -p "$(BIJUX_DOCS_LOG_DIR)"
 	@bash -o pipefail -c 'DOCS_SITE_DIR="$(DOCS_SITE_DIR)" SITE_URL="$(SITE_URL)" DOCS_PYTHON="$(PYTHON_BIN)" bash .bijux/shared/bijux-docs/tooling/scripts/verify_bijux_docs_site.sh 2>&1 | tee "$(BIJUX_DOCS_LOG_DIR)/site-verification.log"'
+	@$(MAKE) docs-public-routes
+
+docs-public-routes: ## Reject numbered hub URLs in navigation, canonical links, search and sitemap
+	@PYTHONDONTWRITEBYTECODE=1 "$(PYTHON_BIN)" -m unittest discover -s tests/docs/readers -p 'test_*.py'
+	@PYTHONDONTWRITEBYTECODE=1 "$(PYTHON_BIN)" tests/docs/readers/routes.py --site-dir "$(DOCS_SITE_DIR)" --site-url "$(SITE_URL)" --redirect-report "$(DOCS_REDIRECT_REPORT)" --output "$(DOCS_PUBLIC_ROUTE_REPORT)"
 
 gh-docs-verify: docs-verify ## Verify the bundle selected by the shared Pages workflow
 

@@ -94,8 +94,14 @@ Public routes use stable subject names: `/platform/`, `/infrastructure/`,
 these canonical paths. The pinned redirects plugin maps former numbered paths
 to their corresponding pages through `mkdocs.yml`; keep those compatibility
 mappings when editing navigation so existing bookmarks continue to resolve.
+`make docs-public-routes` rejects numbered hub URLs in navigation, canonical
+links, search entries, and the sitemap. It runs inside `docs-verify`, so both
+the required reader CI gate and Pages verification enforce clean public routes.
 Redirects are generated build output and are excluded from the search index
-and sitemap.
+and sitemap. The shared redirect processor verifies the exact pinned plugin
+output before normalizing it to replace the browser history entry and preserve
+incoming anchors and the bounded search-highlight parameter. It records its
+evidence outside the published bundle.
 
 The hub answers a bounded set of cross-repository questions:
 
@@ -175,6 +181,30 @@ make bijux-std-checks
 `bijux-std-checks` validates managed packages against their configured
 canonical source. Neither command replaces review of hub-owned content or
 destination accuracy.
+
+Every authored Mermaid fence must also produce a healthy SVG in the built
+site. Run the complete reader gate with Node 24.21.0 and `uv` installed:
+
+```bash
+make docs-reader-ci
+```
+
+The pinned Playwright 1.58.2 runtime checks every page in Chromium, Firefox,
+and WebKit, at phone and desktop widths in light and dark themes. It compares
+each rendered diagram with its authored source and rejects missing, empty,
+hidden, or error SVGs, fallback status text, retry controls, and browser errors.
+A blocked-renderer control proves that source disclosure cannot satisfy the
+rendering gate. Reports and failure screenshots stay under
+`artifacts/docs/readers/`; browser binaries, profiles, and npm caches also stay
+under `artifacts/`.
+
+The shared standards workflow runs the hub reader check on every pull request.
+The required `std / report` check succeeds only when the contracts job,
+including all three browser engines, succeeds. The Pages verification command
+runs the same check on the bundle before uploading it.
+Use `make docs-reader-check` to inspect an already built bundle, or set
+`DOCS_READER_BROWSERS=chromium` for a focused local check. Partial browser
+coverage does not replace the complete integration gate.
 
 ## Verify Accessible Reader Paths
 

@@ -1,0 +1,12 @@
+{
+  "name": "bijux-hub-reader-checks",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Rendered reader checks for the public Bijux hub",
+  "engines": {
+    "node": "24.21.0"
+  },
+  "devDependencies": {
+    "playwright": "1.58.2"
+  }
+}

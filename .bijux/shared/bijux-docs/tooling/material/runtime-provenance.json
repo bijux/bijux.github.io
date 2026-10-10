@@ -41,6 +41,14 @@
     "occurrences": 1,
     "behavior": "Scroll only the fragment of the current native history entry; do not queue a redundant native anchor navigation."
   },
+  "viewport_history_owned_source": "tooling/material/viewport-history.js",
+  "viewport_history_sha256": "60a66a9c298cf4ec5c6b21d54b3e2fefb65baaefb2e01c70c76dcf9eeaf63801",
+  "viewport_history_boundary": {
+    "original": "r.pipe(ne(\"offset\"),Ae(100)).subscribe(({offset:a})=>{history.replaceState(a,\"\")})",
+    "replacement": "__bijuxWatchViewportHistory(()=>r.pipe(ne(\"offset\"),Ae(100)))",
+    "occurrences": 1,
+    "behavior": "Cancel pending native viewport debounce work on cross-document departure and pagehide; recreate the subscription on trusted persisted pageshow. Preserve foreign object history state keys while saving native x/y."
+  },
   "element_resize_owned_source": "tooling/material/element-resize-delivery.js",
   "element_resize_sha256": "c673a8ff4d509c9af14b4a6c9692c7d29feb5a6f32fc129140e4a2169153e4c9",
   "element_resize_boundary": {
@@ -57,8 +65,8 @@
     "occurrences": 1,
     "helper_scope": "unique admitted native runtime IIFE"
   },
-  "output_asset": "assets/javascripts/material-search.430a43a148880186a0981dcff9aea38caff90b29d2744b91a38ebe37f6213a19.js",
-  "output_sha256": "430a43a148880186a0981dcff9aea38caff90b29d2744b91a38ebe37f6213a19",
+  "output_asset": "assets/javascripts/material-search.4b099ef8b0fc29069e50781122ce83e6c955ec2a46b6537b06c856d746c6727b.js",
+  "output_sha256": "4b099ef8b0fc29069e50781122ce83e6c955ec2a46b6537b06c856d746c6727b",
   "syntax_validation": {
     "parser": "Node.js vm.Script",
     "required_version": "v24.21.0",

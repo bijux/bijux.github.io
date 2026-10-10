@@ -1,4 +1,4 @@
-# Admitted Material search runtime
+# Admitted Material runtime boundaries
 
 Runtime emission requires the admitted Node.js 24.21.0 classic-script parser.
 The complete generated script is syntax checked after all owned transformations
@@ -150,6 +150,23 @@ content-tab selection. The target owns sequential focus: a nonfocusable target
 receives a negative tabindex while focused, and blur restores that owned attribute
 without erasing a later authored value. Provenance binds this source and its exact
 native boundary; the complete generated classic script is parsed before emission.
+
+## Native viewport history
+
+`viewport-history.js` owns the admitted instant-navigation viewport subscription's
+native lifecycle. Its native 100ms debounce remains unchanged while the document
+is active. Cross-document native departure and trusted pagehide unsubscribe the
+pending work, preventing a delayed `replaceState` from committing after the realm
+has entered the browser cache. Trusted persisted pageshow creates a fresh native
+subscription; canceled or aborted departures resume only their own generation.
+An older navigation cancellation cannot reactivate a newer or cached departure.
+
+Same-document instant and fragment navigation keep their native subscription.
+The current viewport x/y update preserves other object history state keys, including
+authored reader entry context. Foreign non-object state remains untouched. Engines
+without the Navigation API cancel explicit native same-window links and pagehide
+without intercepting navigation or replacing the History API. The canonical compiler
+admits exactly one upstream viewport writer and binds the owned source in provenance.
 
 ## Consumer-owned head additions
 

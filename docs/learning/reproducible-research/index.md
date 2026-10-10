@@ -25,10 +25,10 @@ workflow orchestration, and experiment-state identity.
 
 ```mermaid
 flowchart LR
-    failure["Observed failure"] --> graph{"Dependency or rebuild truth?"}
+    failure["Observed failure"] --> dependency_model{"Dependency or rebuild truth?"}
     failure --> workflow{"Workflow or publication contract?"}
     failure --> state{"Data, parameter, or experiment identity?"}
-    graph --> make["Deep Dive Make"]
+    dependency_model --> make["Deep Dive Make"]
     workflow --> snakemake["Deep Dive Snakemake"]
     state --> dvc["Deep Dive DVC"]
 ```
@@ -47,8 +47,8 @@ owner of build truth, workflow semantics, or experiment state.
 
 ```mermaid
 flowchart LR
-    source["Source and data identity"] --> graph["Declared dependency graph"]
-    graph --> params["Parameters and environment"]
+    source["Source and data identity"] --> dependencies["Declared dependency graph"]
+    dependencies --> params["Parameters and environment"]
     params --> execute["Recorded execution"]
     execute --> artifacts["Verified outputs"]
     artifacts --> publish["Atomic publication"]
