@@ -345,7 +345,7 @@ repository's interpretation, or family-wide standards. A domain repository
 may use Canon capabilities while retaining full authority over source
 selection, curation, and scientific meaning.
 
-Continue with [Applied Domains](../../01-platform/applied-domains/index.md) to
+Continue with [Applied Domains](../../platform/applied-domains/index.md) to
 see how knowledge infrastructure supports domain evidence without inheriting
-domain authority, or [Security Model](../../01-platform/security-model/index.md)
+domain authority, or [Security Model](../../platform/security-model/index.md)
 to compare artifact validation with authentication and service controls.

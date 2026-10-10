@@ -212,5 +212,5 @@ asking the hub to summarize every implementation detail.
 | How can separate documentation sites remain coherent? | [Documentation Network](documentation-network/index.md) |
 | Which qualities recur across different systems? | [Engineering Qualities](work-qualities/index.md) |
 | How does the model hold under scientific pressure? | [Applied Domains](applied-domains/index.md) |
-| How are repository controls applied? | [Bijux Infrastructure-as-Code](../02-bijux-iac/index.md) |
-| How is shared behavior promoted? | [Bijux Standards](../03-bijux-std/index.md) |
+| How are repository controls applied? | [Bijux Infrastructure-as-Code](../infrastructure/index.md) |
+| How is shared behavior promoted? | [Bijux Standards](../standards/index.md) |

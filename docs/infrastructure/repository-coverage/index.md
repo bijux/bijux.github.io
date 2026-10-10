@@ -244,5 +244,5 @@ continuity remain responsibilities of their owning repositories and must not be
 inferred from a successful governance audit.
 
 Continue with [Governance Model](../governance-model/index.md) for how this
-inventory becomes live policy or [System Map](../../01-platform/system-map/index.md)
+inventory becomes live policy or [System Map](../../platform/system-map/index.md)
 for product and standards dependencies.

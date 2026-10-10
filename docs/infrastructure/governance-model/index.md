@@ -288,5 +288,5 @@ Continuous trust comes from repeating the audit after governed changes and
 treating drift as an actionable failure.
 
 Continue with [Repository Coverage](../repository-coverage/index.md) for the
-governed family or [Bijux Standards](../../03-bijux-std/index.md) for the
+governed family or [Bijux Standards](../../standards/index.md) for the
 separate shared-content authority.

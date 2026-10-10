@@ -272,12 +272,12 @@ interpretation remains current after upstream evidence changes.
 
 ## Explore The Domains
 
-- [Bijux Canon](../../04-projects/bijux-canon/index.md) for the knowledge-system
+- [Bijux Canon](../../projects/bijux-canon/index.md) for the knowledge-system
   boundary;
-- [Bijux Proteomics](../../04-projects/bijux-proteomics/index.md) for protein
+- [Bijux Proteomics](../../projects/bijux-proteomics/index.md) for protein
   evidence and discovery workflows;
-- [Bijux Pollenomics](../../04-projects/bijux-pollenomics/index.md) for curated
+- [Bijux Pollenomics](../../projects/bijux-pollenomics/index.md) for curated
   pollen evidence, spatial interpretation, maps, and reports;
-- [Projects](../../04-projects/index.md) for the wider repository catalog;
-- [Reproducible Research](../../05-learning/reproducible-research/index.md) for
+- [Projects](../../projects/index.md) for the wider repository catalog;
+- [Reproducible Research](../../learning/reproducible-research/index.md) for
   the workflow principles behind reconstructable outputs.

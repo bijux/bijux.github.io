@@ -302,7 +302,7 @@ an Atlas API authorizes a consumer, or which shared workflow is canonical
 across every repository. Those authorities remain with domain repositories,
 service owners, and `bijux-std`.
 
-Continue with [Operational Assurance](../../01-platform/operational-assurance/index.md)
+Continue with [Operational Assurance](../../platform/operational-assurance/index.md)
 to compare execution evidence with service and publication evidence, or
-[Security Model](../../01-platform/security-model/index.md) to place Core's
+[Security Model](../../platform/security-model/index.md) to place Core's
 isolation guarantees in the wider trust model.

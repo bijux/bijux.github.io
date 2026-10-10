@@ -89,6 +89,14 @@ script alongside the shared producer.
 
 ## Public Information Architecture
 
+Public routes use stable subject names: `/platform/`, `/infrastructure/`,
+`/standards/`, `/projects/`, and `/learning/`. Navigation and content links use
+these canonical paths. The pinned redirects plugin maps former numbered paths
+to their corresponding pages through `mkdocs.yml`; keep those compatibility
+mappings when editing navigation so existing bookmarks continue to resolve.
+Redirects are generated build output and are excluded from the search index
+and sitemap.
+
 The hub answers a bounded set of cross-repository questions:
 
 | Reader question | Owning hub route |
@@ -368,9 +376,9 @@ operations of every destination it describes.
   correction, and scientific acceptance remain with the owning repositories.
 
 Do not turn a successful site deployment into a broader product-readiness or
-security claim. The public [Operational Assurance](docs/01-platform/operational-assurance/index.md),
-[Security Model](docs/01-platform/security-model/index.md), and
-[Publication Integrity](docs/01-platform/publication-integrity/index.md) pages
+security claim. The public [Operational Assurance](docs/platform/operational-assurance/index.md),
+[Security Model](docs/platform/security-model/index.md), and
+[Publication Integrity](docs/platform/publication-integrity/index.md) pages
 state those boundaries for readers.
 
 ## Static-Site Operating Model

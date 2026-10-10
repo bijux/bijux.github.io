@@ -263,6 +263,6 @@ able to:
 - state the compatibility and operational cost of the design.
 
 Return to [Learning](../index.md) to compare program families, or inspect
-[Bijux Canon](../../04-projects/bijux-canon/index.md) for a production package
+[Bijux Canon](../../projects/bijux-canon/index.md) for a production package
 system where ownership, typed contracts, composition, and runtime evidence are
 kept deliberately separate.

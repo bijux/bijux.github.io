@@ -14,8 +14,8 @@ questions. Choose a project by the decision you need to make, then continue to
 its repository-owned handbook for contracts and evidence.
 
 Governance and shared standards are foundations rather than projects:
-[Bijux Infrastructure-as-Code](../02-bijux-iac/index.md) controls repository
-admission, and [Bijux Standards](../03-bijux-std/index.md) supplies canonical
+[Bijux Infrastructure-as-Code](../infrastructure/index.md) controls repository
+admission, and [Bijux Standards](../standards/index.md) supplies canonical
 shared infrastructure.
 
 ## Project Map
@@ -222,6 +222,6 @@ flowchart RL
     input --> source["Source and provenance"]
 ```
 
-Start from the page for the owning project. Use [Delivery Surfaces](../01-platform/delivery-surfaces/index.md)
-when the question concerns custody or publication, and [Applied Domains](../01-platform/applied-domains/index.md)
+Start from the page for the owning project. Use [Delivery Surfaces](../platform/delivery-surfaces/index.md)
+when the question concerns custody or publication, and [Applied Domains](../platform/applied-domains/index.md)
 when the question concerns scientific curation or interpretation.

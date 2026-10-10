@@ -26,40 +26,72 @@ extra:
     repository: bijux
     nav_mode: default
     theme_key: bijux:theme
+plugins:
+  - search
+  - autorefs
+  - redirects:
+      redirect_maps:
+        01-platform/applied-domains/index.md: platform/applied-domains/index.md
+        01-platform/delivery-surfaces/index.md: platform/delivery-surfaces/index.md
+        01-platform/documentation-network/index.md: platform/documentation-network/index.md
+        01-platform/index.md: platform/index.md
+        01-platform/operational-assurance/index.md: platform/operational-assurance/index.md
+        01-platform/publication-integrity/index.md: platform/publication-integrity/index.md
+        01-platform/security-model/index.md: platform/security-model/index.md
+        01-platform/system-map/index.md: platform/system-map/index.md
+        01-platform/work-qualities/index.md: platform/work-qualities/index.md
+        02-bijux-iac/governance-model/index.md: infrastructure/governance-model/index.md
+        02-bijux-iac/index.md: infrastructure/index.md
+        02-bijux-iac/repository-coverage/index.md: infrastructure/repository-coverage/index.md
+        03-bijux-std/index.md: standards/index.md
+        03-bijux-std/promotion-model/index.md: standards/promotion-model/index.md
+        03-bijux-std/shared-surfaces/index.md: standards/shared-surfaces/index.md
+        04-projects/bijux-atlas/index.md: projects/bijux-atlas/index.md
+        04-projects/bijux-canon/index.md: projects/bijux-canon/index.md
+        04-projects/bijux-core/index.md: projects/bijux-core/index.md
+        04-projects/bijux-gnss/index.md: projects/bijux-gnss/index.md
+        04-projects/bijux-phylogenetics/index.md: projects/bijux-phylogenetics/index.md
+        04-projects/bijux-pollenomics/index.md: projects/bijux-pollenomics/index.md
+        04-projects/bijux-proteomics/index.md: projects/bijux-proteomics/index.md
+        04-projects/index.md: projects/index.md
+        05-learning/index.md: learning/index.md
+        05-learning/python-programming/index.md: learning/python-programming/index.md
+        05-learning/reproducible-research/index.md: learning/reproducible-research/index.md
+
 nav:
   - Home:
       - Overview: index.md
   - Platform:
-      - Overview: 01-platform/index.md
-      - Work Qualities: 01-platform/work-qualities/index.md
-      - System Map: 01-platform/system-map/index.md
-      - Delivery Surfaces: 01-platform/delivery-surfaces/index.md
-      - Operational Assurance: 01-platform/operational-assurance/index.md
-      - Security Model: 01-platform/security-model/index.md
-      - Publication Integrity: 01-platform/publication-integrity/index.md
-      - Applied Domains: 01-platform/applied-domains/index.md
-      - Documentation Network: 01-platform/documentation-network/index.md
+      - Overview: platform/index.md
+      - Work Qualities: platform/work-qualities/index.md
+      - System Map: platform/system-map/index.md
+      - Delivery Surfaces: platform/delivery-surfaces/index.md
+      - Operational Assurance: platform/operational-assurance/index.md
+      - Security Model: platform/security-model/index.md
+      - Publication Integrity: platform/publication-integrity/index.md
+      - Applied Domains: platform/applied-domains/index.md
+      - Documentation Network: platform/documentation-network/index.md
   - Bijux Infrastructure-as-Code:
-      - Overview: 02-bijux-iac/index.md
-      - Governance Model: 02-bijux-iac/governance-model/index.md
-      - Repository Coverage: 02-bijux-iac/repository-coverage/index.md
+      - Overview: infrastructure/index.md
+      - Governance Model: infrastructure/governance-model/index.md
+      - Repository Coverage: infrastructure/repository-coverage/index.md
   - Bijux Standards:
-      - Overview: 03-bijux-std/index.md
-      - Promotion Model: 03-bijux-std/promotion-model/index.md
-      - Shared Surfaces: 03-bijux-std/shared-surfaces/index.md
+      - Overview: standards/index.md
+      - Promotion Model: standards/promotion-model/index.md
+      - Shared Surfaces: standards/shared-surfaces/index.md
   - Projects:
-      - Overview: 04-projects/index.md
-      - Bijux Core: 04-projects/bijux-core/index.md
-      - Bijux Canon: 04-projects/bijux-canon/index.md
-      - Bijux Atlas: 04-projects/bijux-atlas/index.md
-      - Bijux GNSS: 04-projects/bijux-gnss/index.md
-      - Bijux Proteomics: 04-projects/bijux-proteomics/index.md
-      - Bijux Pollenomics: 04-projects/bijux-pollenomics/index.md
-      - Bijux Phylogenetics: 04-projects/bijux-phylogenetics/index.md
+      - Overview: projects/index.md
+      - Bijux Core: projects/bijux-core/index.md
+      - Bijux Canon: projects/bijux-canon/index.md
+      - Bijux Atlas: projects/bijux-atlas/index.md
+      - Bijux GNSS: projects/bijux-gnss/index.md
+      - Bijux Proteomics: projects/bijux-proteomics/index.md
+      - Bijux Pollenomics: projects/bijux-pollenomics/index.md
+      - Bijux Phylogenetics: projects/bijux-phylogenetics/index.md
   - Learning:
-      - Overview: 05-learning/index.md
-      - Reproducible Research: 05-learning/reproducible-research/index.md
-      - Python Programming: 05-learning/python-programming/index.md
+      - Overview: learning/index.md
+      - Reproducible Research: learning/reproducible-research/index.md
+      - Python Programming: learning/python-programming/index.md
 exclude_docs: |
   /overrides/
   /hooks/

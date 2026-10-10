@@ -173,7 +173,7 @@ Bijux Atlas is the clearest service-delivery example. It separates:
 
 This prevents “the API returned a response” from standing in for stronger
 claims about data identity, authorization, recovery, or production readiness.
-See [Bijux Atlas](../../04-projects/bijux-atlas/index.md) for the public route
+See [Bijux Atlas](../../projects/bijux-atlas/index.md) for the public route
 into those contracts.
 
 ## Scientific Delivery
@@ -296,5 +296,5 @@ Follow the same sequence for any public output:
 Continue with [Publication Integrity](../publication-integrity/index.md) for
 the root-site chain, [Operational Assurance](../operational-assurance/index.md)
 for readiness and recovery evidence, [Documentation Network](../documentation-network/index.md)
-for cross-site ownership, or [Projects](../../04-projects/index.md) to choose a
+for cross-site ownership, or [Projects](../../projects/index.md) to choose a
 product surface.
