@@ -16,9 +16,9 @@
       "sha256": "051fec9ad5e5488b47ec1ae18b108750d19a5faed105965fb3cb743cf94a008f",
       "source": "bijux-docs/scripts/external-links.js"
     },
-    "docs/assets/javascripts/material-search.430a43a148880186a0981dcff9aea38caff90b29d2744b91a38ebe37f6213a19.js": {
-      "sha256": "430a43a148880186a0981dcff9aea38caff90b29d2744b91a38ebe37f6213a19",
-      "source": "bijux-docs/assets/javascripts/material-search.430a43a148880186a0981dcff9aea38caff90b29d2744b91a38ebe37f6213a19.js"
+    "docs/assets/javascripts/material-search.4b099ef8b0fc29069e50781122ce83e6c955ec2a46b6537b06c856d746c6727b.js": {
+      "sha256": "4b099ef8b0fc29069e50781122ce83e6c955ec2a46b6537b06c856d746c6727b",
+      "source": "bijux-docs/assets/javascripts/material-search.4b099ef8b0fc29069e50781122ce83e6c955ec2a46b6537b06c856d746c6727b.js"
     },
     "docs/assets/javascripts/mermaid-init.js": {
       "sha256": "6208b08cf51a2b0ef7ec8a86d0b9598c66f33993ecb40d291bbf779d55ce13ed",
@@ -125,7 +125,7 @@
       "source": "bijux-docs/styles/extra.css"
     },
     "docs/overrides/main.html": {
-      "sha256": "5d0f46520746804968785c34057f454926a3829f71bc6b45d925a1b338a720d3",
+      "sha256": "cbb687c06dfcd5733c1d52186af9468e68412e2c317a4a010209495129359ffa",
       "source": "bijux-docs/partials/main.html"
     },
     "docs/overrides/partials/bijux-nav.html": {
@@ -177,6 +177,6 @@
   "source": {
     "mode": "accepted-github",
     "origin": "https://github.com/bijux/bijux-std.git",
-    "sha": "7e8b7c83a15cfd80e357e3ecdaf6dea6a1e29e6f"
+    "sha": "426e772a5c251a8a33ad55e0faf6501b8d62acfc"
   }
 }
