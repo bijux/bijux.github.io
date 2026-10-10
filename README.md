@@ -67,6 +67,12 @@ Do not hand-edit a synchronized mirror. Change the canonical source in
 `bijux-std`, accept that change, refresh this consumer from the exact commit,
 and validate the resulting managed diff.
 
+The shared link producer respects the authored destination, target, download,
+and referrer policy. Offsite links use normal browser navigation unless their
+markup explicitly requests a new tab; explicit new-tab links receive opener
+isolation and a visible warning. The hub does not impose a blanket new-tab
+script alongside the shared producer.
+
 ## Repository Layout
 
 | Path | Responsibility |

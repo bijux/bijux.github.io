@@ -133,6 +133,5 @@ extra_javascript:
   - assets/javascripts/shell/nav-reveal.js
   - assets/javascripts/shell/bootstrap.js
   - assets/javascripts/navigation-sync.js
-  - assets/javascripts/external-links.js
 
 copyright: "© 2026 Bijan Mousavi <bijan@bijux.io>"
