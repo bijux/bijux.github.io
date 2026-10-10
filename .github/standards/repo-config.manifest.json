@@ -469,7 +469,29 @@
         "release-ghcr",
         "release-github"
       ],
-      "pinned_std_sha": "44a77e32edc759e92b95feb63b2988ff90f0ca59"
+      "pinned_std_sha": "44a77e32edc759e92b95feb63b2988ff90f0ca59",
+      "workflow_execution_policy": {
+        "schema": 1,
+        "publication_entrypoints": {
+          "deploy-docs": {
+            "mode": "manual-only",
+            "controller": "iac",
+            "refs": "main-only"
+          },
+          "release-crates": {
+            "mode": "manual-only",
+            "controller": "iac"
+          },
+          "release-ghcr": {
+            "mode": "manual-only",
+            "controller": "iac"
+          },
+          "release-github": {
+            "mode": "manual-only",
+            "controller": "iac"
+          }
+        }
+      }
     },
     {
       "name": "bijux-canon",
@@ -924,39 +946,11 @@
             "push": {
               "branches": [
                 "main"
-              ],
-              "paths": [
-                ".github/workflows/**",
-                "apis/**",
-                "configs/**",
-                "docs/**",
-                "makes/**",
-                "packages/**",
-                "Makefile",
-                "mkdocs.shared.yml",
-                "mkdocs.yml",
-                "pyproject.toml",
-                "tox.ini",
-                "uv.lock"
               ]
             },
             "pull_request": {
               "branches": [
                 "main"
-              ],
-              "paths": [
-                ".github/workflows/**",
-                "apis/**",
-                "configs/**",
-                "docs/**",
-                "makes/**",
-                "packages/**",
-                "Makefile",
-                "mkdocs.shared.yml",
-                "mkdocs.yml",
-                "pyproject.toml",
-                "tox.ini",
-                "uv.lock"
               ]
             },
             "workflow_dispatch": null,
@@ -1199,7 +1193,7 @@
                     "SUPPORTED_PYTHON_RESULT": "${{ needs.supported_python.result }}",
                     "INSTALLED_FAMILY_RESULT": "${{ needs.installed_family.result }}"
                   },
-                  "run": "set -euo pipefail\n[[ \"${REPOSITORY_RESULT}\" == \"success\" ]]\n[[ \"${PACKAGE_RESULT}\" == \"success\" ]]\n[[ \"${SUPPORTED_PYTHON_RESULT}\" == \"success\" ]]\n[[ \"${INSTALLED_FAMILY_RESULT}\" == \"success\" ]]\n"
+                  "run": "set -euo pipefail\n[[ \"${REPOSITORY_RESULT}\" == \"success\" ]] || exit 1\n[[ \"${PACKAGE_RESULT}\" == \"success\" ]] || exit 1\n[[ \"${SUPPORTED_PYTHON_RESULT}\" == \"success\" ]] || exit 1\n[[ \"${INSTALLED_FAMILY_RESULT}\" == \"success\" ]] || exit 1\n"
                 }
               ]
             }
@@ -1215,7 +1209,30 @@
         "release-github",
         "release-pypi"
       ],
-      "pinned_std_sha": "214f8c6e8881a97a258e57c450badb74a5fb7b5c"
+      "pinned_std_sha": "214f8c6e8881a97a258e57c450badb74a5fb7b5c",
+      "workflow_execution_policy": {
+        "schema": 1,
+        "dependency_pull_requests": "canonical",
+        "publication_entrypoints": {
+          "deploy-docs": {
+            "mode": "manual-only",
+            "controller": "iac",
+            "refs": "main-only"
+          },
+          "release-ghcr": {
+            "mode": "manual-only",
+            "controller": "iac"
+          },
+          "release-github": {
+            "mode": "manual-only",
+            "controller": "iac"
+          },
+          "release-pypi": {
+            "mode": "manual-only",
+            "controller": "iac"
+          }
+        }
+      }
     },
     {
       "name": "bijux-core",
@@ -1610,7 +1627,33 @@
         "release-github",
         "release-pypi"
       ],
-      "pinned_std_sha": "a44a4e85b09714ce8863c9573ef1059e843b5e8e"
+      "pinned_std_sha": "a44a4e85b09714ce8863c9573ef1059e843b5e8e",
+      "workflow_execution_policy": {
+        "schema": 1,
+        "publication_entrypoints": {
+          "deploy-docs": {
+            "mode": "manual-only",
+            "controller": "iac",
+            "refs": "main-only"
+          },
+          "release-crates": {
+            "mode": "manual-only",
+            "controller": "iac"
+          },
+          "release-ghcr": {
+            "mode": "manual-only",
+            "controller": "iac"
+          },
+          "release-github": {
+            "mode": "manual-only",
+            "controller": "iac"
+          },
+          "release-pypi": {
+            "mode": "manual-only",
+            "controller": "iac"
+          }
+        }
+      }
     },
     {
       "name": "bijux-genomics",
@@ -2291,7 +2334,17 @@
         "github-policy",
         "pr-approval-policy"
       ],
-      "pinned_std_sha": "05d63cd12b4d96afe4b74dbda1cd1e27bee344e5"
+      "pinned_std_sha": "05d63cd12b4d96afe4b74dbda1cd1e27bee344e5",
+      "workflow_execution_policy": {
+        "schema": 1,
+        "publication_entrypoints": {
+          "deploy-docs": {
+            "mode": "manual-only",
+            "controller": "iac",
+            "refs": "main-only"
+          }
+        }
+      }
     },
     {
       "name": "bijux-iac",
@@ -2299,7 +2352,25 @@
       "workflow_allowlist": [
         "github-policy",
         "pr-approval-policy"
-      ]
+      ],
+      "additional_required_status_checks": [
+        {
+          "context": "iac / contracts",
+          "workflow": "github-governance-plan"
+        },
+        {
+          "context": "iac / plan",
+          "workflow": "github-governance-plan"
+        },
+        {
+          "context": "iac / governance",
+          "workflow": "github-governance-plan"
+        }
+      ],
+      "workflow_execution_policy": {
+        "schema": 1,
+        "publication_entrypoints": {}
+      }
     },
     {
       "name": "bijux-masterclass",
@@ -2398,7 +2469,17 @@
         "github-policy",
         "pr-approval-policy"
       ],
-      "pinned_std_sha": "5d4059e207559a51ed40dac1384693c57347018f"
+      "pinned_std_sha": "5d4059e207559a51ed40dac1384693c57347018f",
+      "workflow_execution_policy": {
+        "schema": 1,
+        "publication_entrypoints": {
+          "deploy-docs": {
+            "mode": "manual-only",
+            "controller": "iac",
+            "refs": "main-only"
+          }
+        }
+      }
     },
     {
       "name": "bijux-phylogenetics",
@@ -2919,7 +3000,29 @@
         "release-github",
         "release-pypi"
       ],
-      "pinned_std_sha": "214f8c6e8881a97a258e57c450badb74a5fb7b5c"
+      "pinned_std_sha": "214f8c6e8881a97a258e57c450badb74a5fb7b5c",
+      "workflow_execution_policy": {
+        "schema": 1,
+        "publication_entrypoints": {
+          "deploy-docs": {
+            "mode": "manual-only",
+            "controller": "iac",
+            "refs": "main-only"
+          },
+          "release-ghcr": {
+            "mode": "manual-only",
+            "controller": "iac"
+          },
+          "release-github": {
+            "mode": "manual-only",
+            "controller": "iac"
+          },
+          "release-pypi": {
+            "mode": "manual-only",
+            "controller": "iac"
+          }
+        }
+      }
     },
     {
       "name": "bijux-pollenomics",
@@ -3286,39 +3389,11 @@
             "push": {
               "branches": [
                 "main"
-              ],
-              "paths": [
-                ".github/workflows/**",
-                "apis/**",
-                "configs/**",
-                "docs/**",
-                "makes/**",
-                "packages/**",
-                "Makefile",
-                "mkdocs.shared.yml",
-                "mkdocs.yml",
-                "pyproject.toml",
-                "tox.ini",
-                "uv.lock"
               ]
             },
             "pull_request": {
               "branches": [
                 "main"
-              ],
-              "paths": [
-                ".github/workflows/**",
-                "apis/**",
-                "configs/**",
-                "docs/**",
-                "makes/**",
-                "packages/**",
-                "Makefile",
-                "mkdocs.shared.yml",
-                "mkdocs.yml",
-                "pyproject.toml",
-                "tox.ini",
-                "uv.lock"
               ]
             },
             "workflow_dispatch": null,
@@ -3407,6 +3482,26 @@
                 "api_toolchain_targets": "${{ matrix.api_toolchain_targets || '[\"api\", \"openapi-drift\"]' }}",
                 "post_test_command": "${{ matrix.post_test_command || '' }}"
               }
+            },
+            "verification_ready": {
+              "name": "verification-ready",
+              "if": "${{ always() }}",
+              "needs": [
+                "repository",
+                "package"
+              ],
+              "runs-on": "ubuntu-latest",
+              "steps": [
+                {
+                  "name": "Require repository and package verification success",
+                  "shell": "bash",
+                  "env": {
+                    "REPOSITORY_RESULT": "${{ needs.repository.result }}",
+                    "PACKAGE_RESULT": "${{ needs.package.result }}"
+                  },
+                  "run": "set -euo pipefail\n[[ \"${REPOSITORY_RESULT}\" == \"success\" ]] || exit 1\n[[ \"${PACKAGE_RESULT}\" == \"success\" ]] || exit 1\n"
+                }
+              ]
             }
           }
         }
@@ -3420,7 +3515,36 @@
         "release-github",
         "release-pypi"
       ],
-      "pinned_std_sha": "214f8c6e8881a97a258e57c450badb74a5fb7b5c"
+      "pinned_std_sha": "214f8c6e8881a97a258e57c450badb74a5fb7b5c",
+      "additional_required_status_checks": [
+        {
+          "context": "verification-ready",
+          "workflow": "repo / verify"
+        }
+      ],
+      "workflow_execution_policy": {
+        "schema": 1,
+        "dependency_pull_requests": "canonical",
+        "publication_entrypoints": {
+          "deploy-docs": {
+            "mode": "manual-only",
+            "controller": "iac",
+            "refs": "main-only"
+          },
+          "release-ghcr": {
+            "mode": "manual-only",
+            "controller": "iac"
+          },
+          "release-github": {
+            "mode": "manual-only",
+            "controller": "iac"
+          },
+          "release-pypi": {
+            "mode": "manual-only",
+            "controller": "iac"
+          }
+        }
+      }
     },
     {
       "name": "bijux-proteomics",
@@ -3883,39 +4007,11 @@
             "push": {
               "branches": [
                 "main"
-              ],
-              "paths": [
-                ".github/workflows/**",
-                "apis/**",
-                "configs/**",
-                "docs/**",
-                "makes/**",
-                "packages/**",
-                "Makefile",
-                "mkdocs.shared.yml",
-                "mkdocs.yml",
-                "pyproject.toml",
-                "tox.ini",
-                "uv.lock"
               ]
             },
             "pull_request": {
               "branches": [
                 "main"
-              ],
-              "paths": [
-                ".github/workflows/**",
-                "apis/**",
-                "configs/**",
-                "docs/**",
-                "makes/**",
-                "packages/**",
-                "Makefile",
-                "mkdocs.shared.yml",
-                "mkdocs.yml",
-                "pyproject.toml",
-                "tox.ini",
-                "uv.lock"
               ]
             },
             "workflow_dispatch": null,
@@ -4034,7 +4130,7 @@
                     "REPOSITORY_RESULT": "${{ needs.repository.result }}",
                     "PACKAGE_RESULT": "${{ needs.package.result }}"
                   },
-                  "run": "set -euo pipefail\n[[ \"${REPOSITORY_RESULT}\" == \"success\" ]]\n[[ \"${PACKAGE_RESULT}\" == \"success\" ]]\n"
+                  "run": "set -euo pipefail\n[[ \"${REPOSITORY_RESULT}\" == \"success\" ]] || exit 1\n[[ \"${PACKAGE_RESULT}\" == \"success\" ]] || exit 1\n"
                 }
               ]
             }
@@ -4050,7 +4146,36 @@
         "release-github",
         "release-pypi"
       ],
-      "pinned_std_sha": "214f8c6e8881a97a258e57c450badb74a5fb7b5c"
+      "pinned_std_sha": "214f8c6e8881a97a258e57c450badb74a5fb7b5c",
+      "additional_required_status_checks": [
+        {
+          "context": "verification-ready",
+          "workflow": "repo / verify"
+        }
+      ],
+      "workflow_execution_policy": {
+        "schema": 1,
+        "dependency_pull_requests": "canonical",
+        "publication_entrypoints": {
+          "deploy-docs": {
+            "mode": "manual-only",
+            "controller": "iac",
+            "refs": "main-only"
+          },
+          "release-ghcr": {
+            "mode": "manual-only",
+            "controller": "iac"
+          },
+          "release-github": {
+            "mode": "manual-only",
+            "controller": "iac"
+          },
+          "release-pypi": {
+            "mode": "manual-only",
+            "controller": "iac"
+          }
+        }
+      }
     },
     {
       "name": "bijux-std",
@@ -4102,7 +4227,11 @@
         "github-policy",
         "pr-approval-policy"
       ],
-      "pinned_std_sha": "5da4225aedcfc2af92bb431875243fa2db2b0ce9"
+      "pinned_std_sha": "5da4225aedcfc2af92bb431875243fa2db2b0ce9",
+      "workflow_execution_policy": {
+        "schema": 1,
+        "publication_entrypoints": {}
+      }
     },
     {
       "name": "bijux-gnss",
@@ -4468,7 +4597,29 @@
         "release-ghcr",
         "release-github"
       ],
-      "pinned_std_sha": "44a77e32edc759e92b95feb63b2988ff90f0ca59"
+      "pinned_std_sha": "44a77e32edc759e92b95feb63b2988ff90f0ca59",
+      "workflow_execution_policy": {
+        "schema": 1,
+        "publication_entrypoints": {
+          "deploy-docs": {
+            "mode": "manual-only",
+            "controller": "iac",
+            "refs": "main-only"
+          },
+          "release-crates": {
+            "mode": "manual-only",
+            "controller": "iac"
+          },
+          "release-ghcr": {
+            "mode": "manual-only",
+            "controller": "iac"
+          },
+          "release-github": {
+            "mode": "manual-only",
+            "controller": "iac"
+          }
+        }
+      }
     },
     {
       "name": "bijux.github.io",
@@ -4507,7 +4658,17 @@
         "github-policy",
         "pr-approval-policy"
       ],
-      "pinned_std_sha": "5d4059e207559a51ed40dac1384693c57347018f"
+      "pinned_std_sha": "5d4059e207559a51ed40dac1384693c57347018f",
+      "workflow_execution_policy": {
+        "schema": 1,
+        "publication_entrypoints": {
+          "deploy-docs": {
+            "mode": "manual-only",
+            "controller": "iac",
+            "refs": "main-only"
+          }
+        }
+      }
     }
   ]
 }

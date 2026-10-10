@@ -66,6 +66,7 @@ DEFAULT_REPOS = [
 ]
 
 BASE_FILE_MAPPINGS: list[tuple[str, str]] = [
+    ("shared/bijux-gh/scripts/publication_admission.py", ".bijux/shared/bijux-gh/scripts/publication_admission.py"),
     (".github/CODEOWNERS", ".github/CODEOWNERS"),
     (".github/ISSUE_TEMPLATE/bug-report.yml", ".github/ISSUE_TEMPLATE/bug-report.yml"),
     (".github/ISSUE_TEMPLATE/config.yml", ".github/ISSUE_TEMPLATE/config.yml"),
@@ -253,6 +254,10 @@ def prepare_runtime_workflows(repo_config: dict[str, Any], manifest: dict[str, A
                 if path.suffix in {".yml", ".yaml"} and relative not in owned:
                     documents[relative] = WORKFLOW_EXECUTION.parse_workflow(path.read_bytes(), relative)
     WORKFLOW_EXECUTION.validate_publication_calls(documents, policy)
+    if policy.get("publication_entrypoints") == {} and not (WORKFLOW_EXECUTION.requires_event_projection(policy) or WORKFLOW_EXECUTION.requires_dependency_projection(policy)):
+        # An explicitly publisher-free repository still admits authored callers.
+        # Its unmodified canonical workflows retain their source bytes.
+        return {}
     return prepared
 
 
@@ -284,8 +289,8 @@ def copy_repo_files(target_repo: str, repo_config: dict[str, Any], manifest: dic
     WORKFLOW_EXECUTION.validate_manifest(manifest, [target_repo])
     if repo_config != find_repo_config(manifest, target_repo):
         raise ValueError("repository configuration must match canonical manifest")
-    prepared = prepare_runtime_workflows(repo_config, manifest)
     source_snapshots = WORKFLOW_EXECUTION.capture_sources(STD_REPO)
+    prepared = prepare_runtime_workflows(repo_config, manifest)
     repo_dir = resolve_repository_checkout(target_repo)
     legacy_helper = qualified_legacy_policy_helper(repo_dir)
     for relative, content in source_snapshots.items():
