@@ -94,6 +94,9 @@ Public routes use stable subject names: `/platform/`, `/infrastructure/`,
 these canonical paths. The pinned redirects plugin maps former numbered paths
 to their corresponding pages through `mkdocs.yml`; keep those compatibility
 mappings when editing navigation so existing bookmarks continue to resolve.
+`make docs-public-routes` rejects numbered hub URLs in navigation, canonical
+links, search entries, and the sitemap. It runs inside `docs-verify`, so both
+the required reader CI gate and Pages verification enforce clean public routes.
 Redirects are generated build output and are excluded from the search index
 and sitemap. The shared redirect processor verifies the exact pinned plugin
 output before normalizing it to replace the browser history entry and preserve
