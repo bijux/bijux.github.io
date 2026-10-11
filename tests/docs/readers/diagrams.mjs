@@ -4,6 +4,7 @@ import { readFile, readdir, mkdir, writeFile, stat } from 'node:fs/promises';
 import { createServer } from 'node:http';
 import path from 'node:path';
 import { createRequire } from 'node:module';
+import { observeDiagnostics } from './network.mjs';
 
 const root = process.cwd();
 const site = path.resolve(process.env.DOCS_SITE_DIR || 'artifacts/docs/site');
@@ -67,7 +68,9 @@ const origin = process.env.DOCS_READER_ORIGIN || `http://127.0.0.1:${server.addr
 const authoredSha256 = createHash('sha256').update(JSON.stringify(pages)).digest('hex');
 
 async function inspect(page, entry) {
-  await page.goto(origin + entry.route, { waitUntil: 'networkidle', timeout: 30000 });
+  const response = await page.goto(origin + entry.route, { waitUntil: 'networkidle', timeout: 30000 });
+  assert.equal(response?.status(), 200, 'reader destination must return HTTP 200');
+  assert.equal(page.url(), origin + entry.route, 'reader must reach its exact authored destination');
   if (entry.diagrams.length) {
     await page.waitForFunction(expected => {
       const diagrams = [...document.querySelectorAll('.md-typeset .bijux-diagram')];
@@ -113,11 +116,7 @@ async function audit(engine) {
         for (const entry of pages) {
           // A page owns its diagnostics, including requests cancelled when it closes.
           const page = await context.newPage();
-          const errors = [];
-          page.on('pageerror', error => errors.push(String(error)));
-          page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
-          page.on('response', response => { if (response.url().startsWith(origin) && response.status() >= 400) errors.push(`${response.status()} ${response.url()}`); });
-          page.on('requestfailed', request => { if (request.url().startsWith(origin)) errors.push(`${request.url()}: ${request.failure()?.errorText}`); });
+          const diagnostics = observeDiagnostics(page, origin);
           try {
             let result;
             try {
@@ -127,7 +126,35 @@ async function audit(engine) {
             } catch (error) {
               result = { failures: [String(error)], diagrams: [] };
             }
-            result.failures.push(...errors);
+            const observed = await diagnostics.drain();
+            result.failures.push(...observed.errors);
+            const verifiedPrefetches = [];
+            const destinations = [...observed.cancelled];
+            const visited = new Set();
+            for (const cancelled of destinations) {
+              if (visited.has(cancelled.url)) continue;
+              visited.add(cancelled.url);
+              const target = pages.find(candidate => origin + candidate.route === cancelled.url);
+              if (!target) {
+                result.failures.push(`cancelled prefetch has no authored destination: ${cancelled.url}`);
+                continue;
+              }
+              const destination = await context.newPage();
+              const destinationDiagnostics = observeDiagnostics(destination, origin);
+              try {
+                const verified = await inspect(destination, target);
+                const palette = await destination.locator('body').getAttribute('data-md-color-scheme');
+                assert.equal(palette, theme === 'dark' ? 'slate' : 'default', 'destination theme was not applied');
+                const destinationObserved = await destinationDiagnostics.drain();
+                result.failures.push(...verified.failures.map(failure => `${cancelled.url}: ${failure}`), ...destinationObserved.errors);
+                destinations.push(...destinationObserved.cancelled);
+                verifiedPrefetches.push({ url: cancelled.url, cancellation: cancelled.failure, headers: cancelled.headers,
+                  httpStatus: 200, exactDestination: true, diagrams: verified.diagrams, failures: verified.failures });
+              } catch (error) {
+                result.failures.push(`cancelled prefetch destination failed: ${error}`);
+              } finally { await destination.close(); }
+            }
+            result.verifiedPrefetches = verifiedPrefetches;
             const record = { file: entry.file, route: entry.route, width, theme, ...result };
             records.push(record);
             if (result.failures.length) {
@@ -139,6 +166,17 @@ async function audit(engine) {
         }
       } finally { await context.close(); }
     }
+    const requestControl = await browser.newContext();
+    try {
+      const page = await requestControl.newPage();
+      const diagnostics = observeDiagnostics(page, origin);
+      await requestControl.route('**/*.css', route => route.abort('failed'));
+      await inspect(page, pages.find(candidate => candidate.diagrams.length));
+      assert((await diagnostics.drain()).errors.length, 'failed required stylesheet request was accepted');
+      records.push({ control: 'failed-stylesheet', rejected: true });
+      await assert.rejects(inspect(page, { route: '/missing-reader-destination/', diagrams: [] }), /HTTP 200/);
+      records.push({ control: 'missing-destination', rejected: true });
+    } finally { await requestControl.close(); }
     // Prove that inaccessible rendering fails the same acceptance predicate used above.
     const controlContext = await browser.newContext();
     try {
@@ -152,7 +190,7 @@ async function audit(engine) {
   } finally { await browser.close(); }
   const report = { engine, node: process.versions.node, playwright: '1.58.2', origin, authoredSha256, pages: pages.length, authoredDiagrams: pages.reduce((total, entry) => total + entry.diagrams.length, 0), records, failedCases: failures.length };
   await writeFile(path.join(reports, `${engine}.json`), JSON.stringify(report, null, 2) + '\n');
-  console.log(`${engine}: ${records.length - 1} page cases, ${report.authoredDiagrams} authored diagrams, ${failures.length} failures; blocked renderer rejected`);
+  console.log(`${engine}: ${records.filter(record => !record.control).length} page cases, ${report.authoredDiagrams} authored diagrams, ${failures.length} failures; blocked renderer rejected`);
   return failures.length;
 }
 

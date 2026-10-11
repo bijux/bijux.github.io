@@ -18,6 +18,7 @@ docs-reader-browsers: docs-reader-install ## Install browser engines for the rea
 
 docs-reader-check: ## Reject any authored diagram without a healthy rendered SVG
 	@mkdir -p "$(DOCS_READER_REPORT_DIR)" artifacts/docs/browser-profiles
+	@node --test tests/docs/readers/test_network.mjs
 	@$(DOCS_READER_ENV) node tests/docs/readers/diagrams.mjs
 
 docs-reader-ci: ## Build and verify every diagram in real browser engines
