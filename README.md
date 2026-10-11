@@ -194,9 +194,15 @@ and WebKit, at phone and desktop widths in light and dark themes. It compares
 each rendered diagram with its authored source and rejects missing, empty,
 hidden, or error SVGs, fallback status text, retry controls, and browser errors.
 Each page case owns a separate browser page and its diagnostics, keeping
-request cancellation during page disposal within that case.
-A blocked-renderer control proves that source disclosure cannot satisfy the
-rendering gate. Reports and failure screenshots stay under
+request cancellation during page disposal within that case. A cancelled Firefox
+native prefetch is recorded only when its browser headers identify a speculative,
+non-navigation request. The checker then opens that exact authored destination
+and requires HTTP 200, the expected URL and theme, and healthy rendered diagrams.
+Other request failures remain errors.
+Blocked-renderer, failed-stylesheet and missing-destination controls prove that
+browser failures still reject the bundle. Focused network controls reject
+navigation cancellations, ordinary fetch failures and unclassified requests.
+Reports and failure screenshots stay under
 `artifacts/docs/readers/`; browser binaries, profiles, and npm caches also stay
 under `artifacts/`.
 
