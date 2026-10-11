@@ -37,6 +37,18 @@ class PublicRouteTests(unittest.TestCase):
     def test_clean_discovery_and_declared_bookmark_redirect_pass(self):
         self.assertEqual(self.check()["compatibility_redirects"], 1)
 
+    def test_canonical_csp_redirect_receipt_checks_the_same_public_routes(self):
+        redirects = json.loads(self.report.read_text())
+        self.report.write_text(json.dumps({"redirects": redirects, "site_url": self.url}))
+        self.assertEqual(self.check()["compatibility_redirects"], 1)
+
+    def test_csp_redirect_receipt_cannot_select_another_site(self):
+        redirects = json.loads(self.report.read_text())
+        redirects["site_url"] = "https://other.example/"
+        self.report.write_text(json.dumps({"redirects": redirects}))
+        with self.assertRaisesRegex(ValueError, "does not describe this public hub build"):
+            self.check()
+
     def test_numbered_navigation_and_encoded_alias_fail(self):
         for href in ("/04-projects/bijux-canon/", "/%30%34-projects/bijux-canon/"):
             with self.subTest(href=href):

@@ -25,5 +25,3 @@ docs-reader-ci: ## Build and verify every diagram in real browser engines
 	@$(MAKE) docs-sanity
 	@$(MAKE) docs-reader-browsers
 	@$(MAKE) docs-reader-check
-
-gh-docs-install: docs-reader-browsers ## Prepare the browser verification required by Pages

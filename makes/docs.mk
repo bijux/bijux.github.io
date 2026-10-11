@@ -76,7 +76,6 @@ docs-public-routes: ## Reject numbered hub URLs in navigation, canonical links, 
 	@PYTHONDONTWRITEBYTECODE=1 "$(PYTHON_BIN)" -m unittest discover -s tests/docs/readers -p 'test_*.py'
 	@PYTHONDONTWRITEBYTECODE=1 "$(PYTHON_BIN)" tests/docs/readers/routes.py --site-dir "$(DOCS_SITE_DIR)" --site-url "$(SITE_URL)" --redirect-report "$(DOCS_REDIRECT_REPORT)" --output "$(DOCS_PUBLIC_ROUTE_REPORT)"
 
-gh-docs-verify: docs-verify ## Verify the bundle selected by the shared Pages workflow
 
 docs-serve: docs-require ## Serve documentation locally with automatic reloads
 	@HOST=$${HOST:-$(DOCS_HOST)}; PORT=$${PORT:-$(DOCS_PORT)}; \
