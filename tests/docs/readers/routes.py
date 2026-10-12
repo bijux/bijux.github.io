@@ -37,7 +37,8 @@ def verify(site: Path, site_url: str, redirect_report: Path) -> dict:
             raise ValueError(f"{owner}: numbered public hub URL: {href}")
         return absolute
 
-    redirects = json.loads(redirect_report.read_text())
+    report = json.loads(redirect_report.read_text())
+    redirects = report.get("redirects", report)
     if redirects.get("schema") != 1 or redirects.get("policy") != "exact-declared-redirects" or redirects.get("site_url") != site_url:
         raise ValueError("Redirect report does not describe this public hub build")
     records = redirects["records"]

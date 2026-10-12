@@ -6,7 +6,7 @@ DOCS_READER_BROWSER_FLAGS ?=
 DOCS_READER_BROWSER_DIR ?= $(CURDIR)/artifacts/docs/browsers
 DOCS_READER_ENV = DOCS_SITE_DIR="$(DOCS_SITE_DIR)" DOCS_READER_RUNTIME="$(DOCS_READER_RUNTIME)" DOCS_READER_REPORT_DIR="$(DOCS_READER_REPORT_DIR)" DOCS_READER_BROWSERS="$(DOCS_READER_BROWSERS)" PLAYWRIGHT_BROWSERS_PATH="$(DOCS_READER_BROWSER_DIR)" TMPDIR="$(CURDIR)/artifacts/docs/browser-profiles"
 
-.PHONY: docs-reader-install docs-reader-browsers docs-reader-check docs-reader-ci gh-docs-install
+.PHONY: docs-reader-install docs-reader-browsers docs-reader-check docs-reader-ci docs-reader-publication-check docs-reader-publication-controls gh-docs-install
 
 docs-reader-install: ## Install the pinned documentation browser runtime under artifacts
 	@mkdir -p "$(DOCS_READER_RUNTIME)" artifacts/docs/npm-cache artifacts/docs/browser-profiles
@@ -26,4 +26,12 @@ docs-reader-ci: ## Build and verify every diagram in real browser engines
 	@$(MAKE) docs-reader-browsers
 	@$(MAKE) docs-reader-check
 
-gh-docs-install: docs-reader-browsers ## Prepare the browser verification required by Pages
+# Publication exercises the final artifact without repeating the authored diagram matrix.
+docs-reader-publication-check: ## Verify published routes, menu, search and CSP in all three browsers
+	@mkdir -p "$(DOCS_READER_REPORT_DIR)" artifacts/docs/browser-profiles
+	@$(DOCS_READER_ENV) node tests/docs/readers/publication.mjs
+
+# Refusal fixtures qualify the reader validator when its owning source changes.
+docs-reader-publication-controls: ## Reject damaged publication reader fixtures
+	@mkdir -p "$(DOCS_READER_REPORT_DIR)" artifacts/docs/browser-profiles
+	@$(DOCS_READER_ENV) node tests/docs/readers/publication.mjs --verify-refusals

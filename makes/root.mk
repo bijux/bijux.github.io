@@ -11,3 +11,5 @@ include $(ROOT_MAKEFILE_DIR)/docs-readers.mk
 help: ## Show available repository commands
 	@awk 'BEGIN {FS = ":.*## "}; /^[a-zA-Z0-9_.-]+:.*## / {printf "%-18s %s\n", $$1, $$2}' \
 	  "$(ROOT_MAKEFILE_DIR)/bijux-docs.mk" "$(ROOT_MAKEFILE_DIR)/bijux-std.mk" "$(ROOT_MAKEFILE_DIR)/docs.mk" "$(ROOT_MAKEFILE_DIR)/docs-readers.mk" "$(CURDIR)/Makefile"
+
+include makes/docs-publication.mk

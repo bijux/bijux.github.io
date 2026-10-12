@@ -7,6 +7,8 @@ Changes after [v0.3.1](https://github.com/bijux/bijux.github.io/tree/v0.3.1) rem
 
 ### Changed
 
+- Bind manual documentation publication to the admitted Linux renderer and source/artifact receipts, with focused browser menu, search, foundation-route and CSP checks. ([#91](https://github.com/bijux/bijux.github.io/pull/91)).
+
 - Adopt trusted manual publication admission and accepted shared documentation policy ([#86](https://github.com/bijux/bijux.github.io/pull/86)).
 
 - Preserve one primary homepage heading and direct CLI installation and DAG tutorial links.

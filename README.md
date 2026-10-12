@@ -208,8 +208,19 @@ under `artifacts/`.
 
 The shared standards workflow runs the hub reader check on every pull request.
 The required `std / report` check succeeds only when the contracts job,
-including all three browser engines, succeeds. The Pages verification command
-runs the same check on the bundle before uploading it.
+including all three browser engines, succeeds.
+
+Pages publishing runs `make docs-reader-publication-check` against its final
+source-qualified bundle: Chromium, Firefox and WebKit inspect desktop and phone
+navigation, live search, the standards and infrastructure destinations, CSP and
+browser diagnostics. When the owning checker changes, run
+`make docs-reader-publication-controls`: native controls remove the menu, search
+control, search results, foundation destination, script permission or script
+resource and must reject each broken reader path. These validator regressions
+have their own receipt and are not repeated by an unrelated publication. This
+narrower publication proof supplements the
+complete authored diagram matrix retained by the pull-request gate; it does not
+claim that a newly produced bundle repeats that full matrix.
 Use `make docs-reader-check` to inspect an already built bundle, or set
 `DOCS_READER_BROWSERS=chromium` for a focused local check. Partial browser
 coverage does not replace the complete integration gate.
