@@ -26,5 +26,5 @@ gh-docs-build: ## Build and qualify the exact production documentation artifact
 	  $(MAKE) --no-print-directory docs-reader-check DOCS_SITE_DIR="$(DOCS_PUBLICATION_SITE_DIR)"; \
 	  SITE_URL="$(DOCS_PUBLICATION_SITE_URL)" "$(DOCS_PUBLICATION_PYTHON)" "$(DOCS_PUBLICATION_BUILDER)" admit --site-dir "$(DOCS_PUBLICATION_SITE_DIR)" --site-url "$(DOCS_PUBLICATION_SITE_URL)";'
 
-gh-docs-verify: ## Verify accepted source and artifact receipts without rebuilding
+gh-docs-verify: ## Reconstruct accepted source and verify the publication artifact
 	@SITE_URL="$(DOCS_PUBLICATION_SITE_URL)" "$(DOCS_PUBLICATION_PYTHON)" "$(DOCS_PUBLICATION_BUILDER)" verify
