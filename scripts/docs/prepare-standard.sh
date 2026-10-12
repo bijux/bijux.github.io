@@ -3,9 +3,19 @@ set -euo pipefail
 
 repo_root="$(git rev-parse --show-toplevel)"
 source_root="${BIJUX_STD_ROOT:?BIJUX_STD_ROOT must select the accepted source cache}"
-pin="$(tr -d '[:space:]' < "${repo_root}/.github/standards/bijux-std.sha")"
-[[ "${pin}" =~ ^[a-f0-9]{40}$ ]] || {
-  echo 'ERROR: the standard pin must be one full commit SHA' >&2
+pin_path='.github/standards/bijux-docs.sha'
+pin_file="${repo_root}/${pin_path}"
+[[ -f "${pin_file}" && ! -L "${pin_file}" ]] || {
+  echo 'ERROR: the documentation pin must be a regular tracked file' >&2
+  exit 1
+}
+git -C "${repo_root}" ls-files --error-unmatch "${pin_path}" >/dev/null
+git -C "${repo_root}" diff --quiet -- "${pin_path}"
+git -C "${repo_root}" diff --cached --quiet -- "${pin_path}"
+pin="$(cat "${pin_file}")"
+pin_bytes="$(wc -c < "${pin_file}" | tr -d '[:space:]')"
+[[ "${pin}" =~ ^[a-f0-9]{40}$ && ( "${pin_bytes}" == 40 || "${pin_bytes}" == 41 ) ]] || {
+  echo 'ERROR: the documentation pin must be one full commit SHA' >&2
   exit 1
 }
 
