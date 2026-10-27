@@ -1,0 +1,3 @@
+# Preserve admitted compiler bytes, including whitespace in generated templates.
+.bijux/shared/bijux-docs/assets/javascripts/vendor/mermaid-*.min.js whitespace=-blank-at-eol,-blank-at-eof linguist-generated=true
+docs/assets/javascripts/vendor/mermaid-*.min.js whitespace=-blank-at-eol,-blank-at-eof linguist-generated=true
