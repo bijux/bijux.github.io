@@ -7,6 +7,8 @@ Changes after [v0.3.1](https://github.com/bijux/bijux.github.io/tree/v0.3.1) rem
 
 ### Changed
 
+- Pending review: adopt accepted shared governance and renderer security recipes, consolidate five Action dependency proposals, and upgrade `mkdocs-autorefs` to 1.4.5 and `pymdown-extensions` to 12.3 ([#103](https://github.com/bijux/bijux.github.io/pull/103)).
+
 - Adopt accepted reader preference recovery, inert native search, patched publication dependencies and authenticated workflow actions ([#93](https://github.com/bijux/bijux.github.io/pull/93)).
 
 - Bound manual documentation publication to the canonical 60-minute hosted budget and verify common governance independently from the retained documentation source; resolve the documentation cache from its tracked docs pin ([#92](https://github.com/bijux/bijux.github.io/pull/92)).
