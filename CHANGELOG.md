@@ -7,7 +7,11 @@ Changes after [v0.3.1](https://github.com/bijux/bijux.github.io/tree/v0.3.1) rem
 
 ### Changed
 
-- Pending review: adopt accepted shared governance and renderer security recipes, consolidate five Action dependency proposals, and upgrade `mkdocs-autorefs` to 1.4.5 and `pymdown-extensions` to 12.3 ([#103](https://github.com/bijux/bijux.github.io/pull/103)).
+- Qualify Material 9.8 development builds, mobile and desktop reader interactions,
+  and all authored diagrams in three browsers; adopt accepted workflow action
+  pins while retaining the frozen publication renderer.
+
+- Adopt accepted shared governance and renderer security recipes, consolidate five Action dependency proposals, and upgrade `mkdocs-autorefs` to 1.4.5 and `pymdown-extensions` to 12.3 ([#103](https://github.com/bijux/bijux.github.io/pull/103)).
 
 - Adopt accepted reader preference recovery, inert native search, patched publication dependencies and authenticated workflow actions ([#93](https://github.com/bijux/bijux.github.io/pull/93)).
 
