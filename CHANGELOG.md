@@ -7,10 +7,10 @@ Changes after [v0.3.1](https://github.com/bijux/bijux.github.io/tree/v0.3.1) rem
 
 ### Changed
 
-- Consolidate the Ruby action proposal through accepted shared governance while
-  retaining the independently pinned documentation renderer and GitHub Pages
-  publication contract; strict site and dependency audits pass, with the shared
-  retained-documentation verifier correction pending ([#109](https://github.com/bijux/bijux.github.io/pull/109)).
+- Consolidate the Ruby action proposal through accepted shared governance and
+  qualify retained documentation guards against their own accepted source,
+  preserving the independent renderer and GitHub Pages publication contract
+  ([#109](https://github.com/bijux/bijux.github.io/pull/109)).
 
 - Qualify Material 9.8 development builds, mobile and desktop reader interactions,
   and all authored diagrams in three browsers; adopt accepted workflow action
